@@ -1,0 +1,145 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Inspect Illegal Dumping</title>
+<link rel="Stylesheet" href="http://austinea.org/style/hover.css" type="text/css" />
+</head>
+<body bgcolor="#ddd8c2">
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="650" align="center">
+<tr><td style="padding: 0;" height="130" valign="top"><a href="http://austinea.org">
+<img src="http://austinea.org/image/iTHeader.jpg" alt="austinea.org - home..." border="0"></a></td></tr>
+<!-- Text Area -->
+<tr><td>
+
+<p style="text-align: center; font-weight: bold;">Inspect Illegal Dumping<br />Use Case Specification</p>
+<p style="text-align: center;">12/3/2015
+
+<!--  IF Printable document option Included  
+<p style="text-align: center;">download <a href="http://austinea.org/arch/code/***.docx">printable version</a>
+-- >
+
+<b> Austin Code Logical Data Model </b>
+<!-- Image -  Logical Data Model -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="http://austinea.org/arch/code/ldm.jpg"><img src="http://austinea.org/arch/code/ldm.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Austin Code Logical Data Model</p>
+</td></tr></table> 
+
+<!-- USE CASE IMAGE -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/code/inspectIllegalDumping/ucd.jpg"><img src="http://austinea.org/arch/code/inspectIllegalDumping/ucd.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Inspect Illegal Dumping<br />Use Case Model</span>
+</td></tr></table>
+
+<p><b>Scope: </b>If Surveillance Cameras need to be installed to monitor illegal dumping, the Austin Code Officer configures the Surveillance Camera's RecordingSettings and then installs the Surveillance Camera at the desired location. The Austin Code Officer monitors daily the Surveillance Cameras for illegal dumping, which entails visiting the Surveillance Cameras and retrieving photographs. The Austin Code Officer then resets the Surveillance Camera and researches the photographs for illegal dumping. If the Offender is identifiable through the photographs, the Austin Code Officer begins the Issue Violation Citation use case, and orders the Offender to abate the property. The Austin Code Officer performs a follow up inspection to ensure the property is abated and takes additional photographs. The Austin Code Officer accesses the Case Management System and creates an IllegalDumpingCase. The IllegalDumpingCase is closed when the associated LegalCase, if created, is closed, or if no LegalCase is created due to no Offender being identified.
+
+
+
+<!-- IF INTERACTION OVERVIEW IS INCLUDED 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/code/***.jpg"><img src="http://austinea.org/arch/code/***.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Interaction Overview</span>
+</td></tr></table>
+-->
+
+
+<br />
+
+
+<!-- SEQUENCE DIAGRAM  -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/code/inspectIllegalDumping/sd01.jpg"><img src="http://austinea.org/arch/code/inspectIllegalDumping/sd01.jpg" border="0" alt="" width="600"/></a><br />
+<span style="font-weight: bold;">Inspect Illegal Dumping<br />Sequence Diagram</span>
+</td></tr></table>
+<br />
+
+
+<!-- INTERFACE TABLE  -->
+<table align="center" id="custom">
+<tr><th width="9%">Req#</th><th width="70%">Type/Interface - Requirement Description</th><th>Performance</th></tr>
+<tr>
+<td rowspan="2">001</td>
+<td style="font-weight: bold; background: lightgray;">Surveillance Camera/configureRecordingSettings</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Officer configures the Surveillance Camera's settings, including the interval to record, number of photographs to take, how fast to take photographs, and the date and time.</td>
+</tr>
+<tr>
+<td rowspan="2">002</td>
+<td style="font-weight: bold; background: lightgray;">Austin Code Officer/installSurveillanceCamera</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Officer installs the Surveillance Camera, which are installed in a variety of locations. The Austin Code Officer monitors and performs maintenance on the Surveillance Cameras as necessary, including replacing batteries, charging batteries, etc.</td>
+</tr>
+<tr>
+<td rowspan="2">003</td>
+<td style="font-weight: bold; background: lightgray;">Surveillance Camera/providePhotographs</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Officer downloads photographs from the Surveillance Cameras. Some Surveillance Cameras require a manual download from hardware; other Surveillance Cameras have a wireless download (pole cameras, surveillance cameras, flash cams, etc.). The Austin Code Officer deletes the photographs to free up memory, and resets the Surveillance Cameras ("rearming").</td>
+</tr>
+<tr>
+<td rowspan="2">004</td>
+<td style="font-weight: bold; background: lightgray;">Austin Code Officer/researchIllegalDumping</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Officer reviews the photographs from the Surveillance Cameras and performs an on-site inspection of the location for Offender identifiable information. The Austin Code Officer reviews the photographs searching for vehicle information, including vehicle type, color and license plate.</td>
+</tr>
+<tr>
+<td rowspan="2">005</td>
+<td style="font-weight: bold; background: lightgray;">Offender/abateProperty</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Officer requests the Offender to abate the property.</td>
+</tr>
+<tr>
+<td rowspan="2">006</td>
+<td style="font-weight: bold; background: lightgray;">Austin Code Officer/performFollowUpInspection</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>Follow-up Inspection for Lodging License: The Austin Code Officer checks for GFCI outlets, smoke detectors (set off and sound), trip hazards, cracked windows, broken windows, weather stripping, temperature of hot water, pest infestation, secured balcony railing, overhead light inspection outside, loose shower spouts, secured toilet, faucet handles, locks on windows (if three feet up). Ten percent of the total rooms are inspected. Checklist: Structure Maintenance Report. 
+Follow-up inspection for Waste Hauler: A WasteHaulerApplication is turned in, and the Austin Code Officer works with the Austin Code Program Specialist to ensure the WasteHaulerApplication is complete. 
+If Illegal Dumping, the Austin Code Officer ensures property is abated and takes photographs.</td>
+</tr>
+<tr>
+<td rowspan="2">007</td>
+<td style="font-weight: bold; background: lightgray;">Case Management System/createIllegalDumpingCase</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Officer uses the Case Management System to create a IllegalDumpingCase. The Austin Code Officer provides the Location, Photographs (Surveillance Camera, Austin Code Officer photos taken at site, clean up), Inspection, Synopsis of dumped items, Offender (if available), information on Property Abatement, and Citation (if Offender identified).
+If Offender identified the IllegalDumpingCase remains open until the LegalCase is completed.</td>
+</tr>
+<tr>
+<td rowspan="2">008</td>
+<td style="font-weight: bold; background: lightgray;">Case Management System/closeIllegalDumpingCase</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Officer requests the Case Management System close the IllegalDumpingCase. Cases are closed if no Offender is identified and property is abated; or, if the Offender is identified, after the LegalCase is closed.</td>
+
+</tr>
+
+</table>
+
+
+<br />
+
+
+
+
+</td></tr></table>
+</td></tr></table></body></html>

@@ -1,0 +1,150 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Create Code Complaint Case</title>
+<link rel="Stylesheet" href="http://austinea.org/style/hover.css" type="text/css" />
+</head>
+<body bgcolor="#ddd8c2">
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="650" align="center">
+<tr><td style="padding: 0;" height="130" valign="top"><a href="http://austinea.org">
+<img src="http://austinea.org/image/iTHeader.jpg" alt="austinea.org - home..." border="0"></a></td></tr>
+<!-- Text Area -->
+<tr><td>
+
+<p style="text-align: center; font-weight: bold;">Create Code Complaint Case<br />Use Case Specification</p>
+<p style="text-align: center;">01/21/2016
+
+<!--  IF Printable document option Included  
+<p style="text-align: center;">download <a href="http://austinea.org/arch/code/***.docx">printable version</a>
+-- >
+
+<b> Austin Code Logical Data Model </b>
+<!-- Image -  Logical Data Model 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="http://austinea.org/arch/code/ldm.jpg"><img src="http://austinea.org/arch/code/ldm.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Austin Code Logical Data Model</p>
+</td></tr></table> 
+-->
+
+<!-- USE CASE IMAGE -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/code/createCodeComplaintCase/ucd.jpg"><img src="http://austinea.org/arch/code/createCodeComplaintCase/ucd.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Create Code Complaint Case<br />Use Case Model</span>
+</td></tr></table>
+
+<p><b>Scope: </b>Violations are identified either by Complainants or Austin Code Officers. If a Complainant identifies the Violation, the Complainant contacts Austin 311 to report the Violation. Austin 311 uses the CSR system to create an Austin Code ServiceRequest (ServiceRequestAustinCode). If the ServiceRequest involves a short-term rental, the CSR system sends a Notification to the Austin Code Officer. ARR Customer Service queries the CSR system for new Austin Code ServiceRequests, and then creates a CodeComplaintCase for each ServiceRequestAustinCode in the queue within the Case Management System. Alternatively, Violations are identified by Austin Code Officers while out in the field. Once the Violation is identified, the Austin Code Officer notifies ARR Customer Service to create a CodeComplaintCase. ARR Customer Service uses the CSR system to create a ServiceRequestAustinCode for the Violation (primarily for tracking and reporting purposes), and then creates the CodeComplaintCase in the Case Management System. ARR Customer Service assigns an Austin Code Officer (AssignedCodeOfficer) and Austin Code Program Specialist (AssignedProgramSpecialist) to the CodeComplaintCase. ARR Customer Service then updates the ServiceRequestAustinCode with the CodeComplaintCase information and closes the ServiceRequest. If the CodeComplaintCase needs to be reassigned, the Chain of Command reasisgns the CodeComplaintCase to the appropriate Austin Code Officer. This is primarily a district and/or zoning alignment.
+
+
+
+<!-- IF INTERACTION OVERVIEW IS INCLUDED 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/code/***.jpg"><img src="http://austinea.org/arch/code/***.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Interaction Overview</span>
+</td></tr></table>
+-->
+
+
+<br />
+
+
+<!-- SEQUENCE DIAGRAM  -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/code/createCodeComplaintCase/sd01.jpg"><img src="http://austinea.org/arch/code/createCodeComplaintCase/sd01.jpg" border="0" alt="" width="600"/></a><br />
+<span style="font-weight: bold;">Create Code Complaint Case<br />Sequence Diagram</span>
+</td></tr></table>
+<br />
+
+
+<!-- INTERFACE TABLE  -->
+<table align="center" id="custom">
+<tr><th width="9%">Req#</th><th width="70%">Type/Interface - Requirement Description</th><th>Performance</th></tr>
+<tr>
+<td rowspan="2">001</td>
+<td style="font-weight: bold; background: lightgray;">Austin 311/reportCodeViolation</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Complainant contacts Austin 311 to report a Violation and request a ServiceRequestAustinCode be created. Austin 311 creates the requested ServiceRequest and provides the Complainant with a ServiceRequestNumber to track the progress of their request until a CodeComplaintCase is created.</td>
+</tr>
+<tr>
+<td rowspan="2">002</td>
+<td style="font-weight: bold; background: lightgray;">CSR/createAustinCodeServiceRequest</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The user uses the CSR system to create a ServiceRequest for Austin Code (ServiceRequestAustinCode). If a Complainant reported the Issue (Violation), Austin 311 returns a ServiceRequestNumber to the requestor.</td>
+</tr>
+<tr>
+<td rowspan="2">003</td>
+<td style="font-weight: bold; background: lightgray;">CSR/sendNotification</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The CSR system sends a notification to the Austin Code Officer with description of issue, issue type, complaint SR, SR number, date entered, reported location, comments, nature of concern, time happening, date happening, type of short-term rental, and geo information).</td>
+</tr>
+<tr>
+<td rowspan="2">004</td>
+<td style="font-weight: bold; background: lightgray;">CSR/queryQueueOfServiceRequests</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>ARR Customer Service uses the CSR system to query (CSRQuery) for new ServiceRequests for Austin Code (ServiceRequestAustinCode). The system returns new ServiceRequestAustinCode records.</td>
+</tr>
+<tr>
+<td rowspan="2">005</td>
+<td style="font-weight: bold; background: lightgray;">Case Management System/createCodeComplaintCase</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>ARR Customer Service uses the system to create CodeComplaintCases for each ServiceRequestAustinCode in the queue.</td>
+</tr>
+<tr>
+<td rowspan="2">006</td>
+<td style="font-weight: bold; background: lightgray;">ARR Customer Service/createCodeComplaintCase</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>TThe Austin Code Officer requests ARR Customer Service, typically through email, to create a CodeComplaintCase based on their observation of a Violation from the field.</td>
+</tr>
+<tr>
+<td rowspan="2">007</td>
+<td style="font-weight: bold; background: lightgray;">Case Management System/assignInspectorToCase</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Officer and the Austin Code Program Specialist are assigned to the case simultaneously. Both are assigned based on location/district.</td>
+</tr>
+<tr>
+<td rowspan="2">008</td>
+<td style="font-weight: bold; background: lightgray;">CSR/updateServiceRequest</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The user updates the ServiceRequest with notes concerning their resolution of the ServiceRequest. For Austin Code ServiceRequests (ServiceRequestAustinCode), the ServiceRequest is closed once the CodeComplaintCase is created and assigned to an Austin Code Officer (AssignedCodeOfficeR).</td>
+</tr>
+<tr>
+<td rowspan="2">009</td>
+<td style="font-weight: bold; background: lightgray;">CSR/closeServiceRequest</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The ServiceRequest is closed by a user or the system. Closed ServiceRequests may not be edited by users or reopened per the user's access permissions.</td>
+</tr>
+
+</table>
+
+
+<br />
+
+
+
+
+</td></tr></table>
+</td></tr></table></body></html>

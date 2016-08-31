@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Provide WIC Services</title>
+<link rel="Stylesheet" href="http://austinea.org/style/email.css" type="text/css" />
+</head>
+<body bgcolor="#ddd8c2">
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="650" align="center">
+<tr><td style="padding: 0;" height="130" valign="top"><a href="http://austinea.org">
+<img src="http://austinea.org/image/iTHeader.jpg" alt="austinea.org - home..." border="0"></a></td></tr>
+<!-- Text Area -->
+<tr><td>
+
+<p style="text-align: center; font-weight: bold;">Provide WIC Services<br />Use Case Specification
+
+<!-- Image Title -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/hhs/ehr/provideWICServices/ucd.jpg"><img src="http://austinea.org/arch/hhs/ehr/provideWICServices/ucd.jpg" border="0" width="600" alt="" /></a><br />
+<span style="font-weight: bold;">Provide WIC Services<br />Use Case Model</span>
+</td></tr></table>
+
+<p><b>Scope: </b>Women, Infants and Children (WIC) is a nutrition program that helps pregnant women, new mothers, and young children eat well, learn about nutrition, and stay healthy. Nutrition education and counseling, breastfeeding support, nutritious foods, and help accessing health care for low-income women, infants, and children through the Special Supplemental Nutrition Program. Services are free to those who are eligible. Part of the WIC nutrition program includes breastfeeding clinic (Mom's Place) run by the City of Austin. The state does not provide electronic record access at Mom's Place clinics. Therefore, there's a need for a system to track client demographics, schedule appointments and administered breastfeeding and nutrition services - includes electronic health records. Clinic Staff use the system to connect virtually using tele-presence to the locally run WIC Office when specialized hands on support require Mom's Place Clinic Staff. The system provides a Web interface to replace current intake forms - allows Clients to enter demographics and other questionnaire queries prior to each visit. The system uses the same system interface as computer kiosks in local WIC Clinics. Clinic Staff use the system to assist in finding Client referrals, track referrals to and from other programs/clinics, track non-returnable inventory, track breast pumps, and identify follow up items.
+
+<!-- Image Title -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/hhs/ehr/provideWICServices/sd01.jpg"><img src="http://austinea.org/arch/hhs/ehr/provideWICServices/sd01.jpg" border="0" width="600" alt="" /></a><br />
+<span style="font-weight: bold;">Provide WIC Services<br />Seqeunce Diagram</span>
+</td></tr></table>
+
+<!-- Table definition -->
+<p style="text-align: center; font-weight: bold;">Table of Interface and Functional Descriptions</p>
+<table align="center" id="custom">
+<tr><th width="9%">Req#</th><th width="70%">Type/Interface - Requirement Description</th><th>Required Response</th></tr>
+<tr>
+<td rowspan="2"></td>
+<td style="font-weight: bold; background: lightgray;">Client/contactClinic</td>
+<td rowspan="2">Provided for context.</td>
+</tr>
+<tr>
+<td>The Client may contact the WIC for advise and or immediate services.</td>
+</tr>
+<tr>
+<td rowspan="2"></td>
+<td style="font-weight: bold; background: lightgray;">Ensure Efficient and Coordinated Public Health Services/provideVirtualPresence</td>
+<td rowspan="2">Virtual presence is outside the scope of work.</td>
+</tr>
+<tr>
+<td>Women, Infants and Children (WIC) provides service registration, nutrition information, food benefits, and breast feeding education. However, Mom's Place provides specialized lactation hands on training not offered by the WIC clinic. The system provides a virtual tele-presence between WIC Clinic and Mom's Place to enhance the user experience and reduce transportation needs.</td>
+</tr>
+<tr>
+<td rowspan="2">32</td>
+<td style="font-weight: bold; background: lightgray;">Ensure Efficient and Coordinated Public Health Services/accessClientNeeds</td>
+<td rowspan="2">Explain system's abilities regarding the specification.</td>
+</tr>
+<tr>
+<td>The Client (mom with infant) contacts Mom's Place for lactation services. A Clinic Staff (WIC Consultant) uses a system provided questionnaire to query the Client as an initial assessment. The system provides intake and assessment with features of the state provided Healthcare Provider's Guide to Breast Feeding. The system stores the Clinic Staff entered Client response - response may include textual note entries. If the Client already has a Client Medical Record, the system stores questionnaire response with the Client Medical Record. If the Client does not have a Client Medical Record, the system collects enough Client demographics such as phone number, name, birth date, etc. to establish an initial Client Medical Record for completion at a future date. The Clinic Staff use the system to collect Client Demographic and lactation service information even if the Client is not a registered WIC participant. The system uses the information to provide performance metrics on Client demographics and other relevant lactation services reporting. Report needs include total number of clients seen for a given period, how many were initial appointments and subsequent appointments, number of Clients exclusively breast feeding vise mix of formulas, metrics performed by follow up phone calls or appointment visits, and the number of phone calls per month – among other user definable reporting needs. The system provides similar, more comprehensive questionnaire on initial visit using a computer kiosk or by Client completing a form - Clinic Staff enter form information into the Client Medical Record. Provides support for multiple languages.</td>
+</tr>
+<tr>
+<td rowspan="2">33</td>
+<td style="font-weight: bold; background: lightgray;">Ensure Efficient and Coordinated Public Health Services/provideReferralInformation</td>
+<td rowspan="2">Explain the system's ability to provide referral information.</td>
+</tr>
+<tr>
+<td>During the interview assessment, the Clinic Staff may provide referral information regarding possible services available to the Client such as food stamps, depression assistance, and other medical needs such as immunization - could include a printout offered to Client. Under some circumstances, the Clinic Staff use the system to research identify a referral in a database. Under certain configurable Client demographic elements (such as missing pediatrician information, home residence location, infant safety guidance, tobacco user, etc.) the system proposes recommended referral information. The system provides electronic transfer (e.g., email and electronic fax) of Client demographics to referring agency. Certain referral types require state referrals to occur within 24 hours of recommendation. Includes tracking referrals to/from referee – the system provides follow up indication when required.</td>
+</tr>
+<tr>
+<td rowspan="4">34</td>
+<td style="font-weight: bold; background: lightgray;">Ensure Efficient and Coordinated Public Health Services/trackNonReturnableInventory</td>
+<td rowspan="4">Explain the system's ability to track inventory to include returnable items such as breast pump.</td>
+</tr>
+<tr>
+<td>The Clinic Staff use the system to track non-returnable inventory items (medical aids) when dispensed to Client. When thresholds exceed settings, the system provides warning indication to Clinic Staff. Approved Clinic Staff may use the system to adjust these thresholds. Clinic Staff use this information to reorder through state office Web site as well as other approved sources. The system emulates printable state approved forms for Client review and approval (requires digital signature) to be stored with Client electronic health records for future state audits.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Ensure Efficient and Coordinated Public Health Services/trackBreastPump</td>
+</tr>
+<tr>
+<td>When a Client requires a breast pump, the Clinic Staff use the system to identify available breast pump and associate with the Client Medical Record. The system provides a tracking mechanism to ensure breast pump scheduled return. The system provides information such as condition (ex., bugs requiring special cleaning), state of repair, location, number of times used, warrantee, etc. When pumps not returned by the due date, the Clinic Staff contacts Client (possibly automated). Provide ability to print notification letter to Client. If no response, the Clinic Staff reports Client information to the state - if subsequently returned, Client Staff informs state by email.</td>
+</tr>
+<tr>
+<td rowspan="2">35</td>
+<td style="font-weight: bold; background: lightgray;">Ensure Efficient and Coordinated Public Health Services/provideFaxServices</td>
+<td rowspan="2">Explain application's ability to process electronic fax.</td>
+</tr>
+<tr>
+<td>The system provides a fax service - the service allows for the receipt of electronic fax documents entered into a queue. A system queue operator can route received faxes to designated parties via email or directly within the system. The system provides a means to attach received fax documents to designated health records. The system fax service provides for outgoing fax for scanned documents or directly from the system. The system provides shortcuts to fax address book items to search and retrieve frequently used fax numbers.</td>
+</tr>
+
+</table>
+<br /><br />
+
+<!-- Table definition
+<table align="center" id="custom">
+<tr><th>Number</th><th>Category</th><th>Description</th><th>Criticality</th></tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table> -->
+
+</td></tr></table>
+</td></tr></table></body></html>

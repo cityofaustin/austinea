@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<title>Muni Court "Modify PID" Requirements</title>
+<link rel="StyleSheet" href="http://austinea.org/style/email.css" type="text/css">
+</head>
+<body>
+
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="600" align="center"><tr><td>
+
+<!-- Online reference -->
+<p><class="lbl">Note: This report is also <a href="http://austinea.org/arch/municourt/report/update130906.html" style="font-size: 7pt;">available online</a> by following link.</p>
+
+<div>
+<p>Muni Court Architecture Team,</p> 
+</div>
+
+<p>Attached is the information for the "Modify PID" use case that was reviewed last Friday morning with the team. Please take a moment to check my work and let me know if there are any changes I can make to improve this, or if this requirement is as discussed! 
+<p>
+
+
+<!-- Signature-->
+<table cellpadding="0" cellspacing="0" border="0" width="350" style="border-collapse: collapse;"><tr><td>
+<p>Respectfully,</p>
+
+<table cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;" align="right">
+<tr>
+<td>
+<img src="http://austinea.org/image/austinLogo.jpg" border="0" width="100" height="100" alt="Austin Logo" />
+</td>
+</tr>
+</table>
+<p><img src="http://coawss3a.coacd.org/sites/CTM/EA/Shared Documents/Images/ABSIG.JPG" border="0" width="143" height="83" alt="sign" /> </p>
+
+<p><b>Aaron Brown</b> 
+<span style="color: red; font-weight: bold;">|</span> 
+<b>City of Austin</b>
+<a href="http://www.linkedin.com/in/austnaaron"><img src="http://journeycolorado.com/images/linkedin.jpg" border="0" alt="Linkin Logo" /> </a> <br />
+Senior Enterprise Architect<br />
+Direct: (512) 974-2960 </p>
+Email: Aaron.Brown2@austintexas.gov </p>
+</td></tr></table>
+
+
+<!-- Use case information below -->
+
+<hr>
+
+<!-- Muni Court Requirements Model -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="right">
+<tr>
+<td align="center">
+<span class="lbl">Note: Select to download</span><br />
+<a href="http://austinea.org/arch/municourt/report/AccountingForCommunityServiceTimeUseCase.png"><img src="http://austinea.org/arch/municourt/report/AccountingForCommunityServiceTimeUseCase.png" border="0" width="200" alt="" /></a><br />
+<span style="font-weight: bold;">Modify PID<br />Use Case</span>
+</td></tr></table>
+
+
+<p><b>Use Case Scope</b></p>
+<p>The Clerk conducts a PID search with any or all of the following information: Partial First name, Partial Last Name, First Name, Last Name, Email Address, Alias, Address, Case no. , Driver's License Number, Plate Number, Date of Birth, Telephone number and/or PID id. If there is ambiguity, The system presents a list of matches for the search, and the Clerk specifies the matching person. 
+
+The Clerk makes the desired changes to the PID record, and commits the changes. The Clerk can add Cases to the PID, Merge another PID (consolidating two PIDs into one), remove Cases from a PID, or even Delete a PID as necessary. The System stores a historical snapshot of the information prior to change, and an audit log is written to indicate what was changed on the PID, who changed it, and the date on which it was done. The System creates an event (Action) indicating the appropriate change to all open cases. Any query against an open Case will show this action listed. For example, if an address is changed on the PID, each case associated with the same Defendant (PID) will also reflect the action of an address change.  </p>
+
+<!-- Image - File For Motion Sequence Diagram -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="http://austinea.org/arch/municourt/report/modifyPIDSequenceDiagram01.png"><img src="http://austinea.org/arch/municourt/report/modifyPIDSequenceDiagram01.png" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Modify PID Sequence Diagram</p>
+</td></tr></table> 
+
+
+<p style="font-weight: bold; text-align: center;">Modify PID</p>
+<!-- Table definition -->
+<table align="center" id="custom">
+<tr><th width="195">Type/Interface</th><th>Description</th></tr>
+<tr>
+<td>Manage Court Case/ <br /> locatePID</td> <td>The User is presented a list of fields to provide information for the system to locate the Person ID (PID) for a defendant. The fields used for the PID search include, but are not limited to, Partial First name, Partial Last Name, First Name, Last Name, Address, Driver's License Number, Plate Number, Date of Birth, Telephone number. The System conducts a search and provides a list of matching Defendants from which the User can choose. </td> </tr>
+<tr>
+<td>Manage Court Case/ <br /> modifyPID</td> <td>The Clerk makes the desired changes to the PID record, and commits the changes. The System stores a historical snapshot of the information prior to change, and an audit log is written to indicate what was changed on the PID, who changed it, and the date on which it was done. The System reflects the changes in all open cases associated with the PID. Any query against a Case will show the changes listed. For example, if an address is changed on the PID, each case associated with the same Defendant (PID) will also reflect an address change has occurred. The old address will still be recoverable in the historical record associated with the PID. </td> </tr>
+</tr>
+</table>
+
+
+
+<!-- Table definition
+<table align="center" id="custom">
+<tr><th>Number</th><th>Category</th><th>Description</th><th>Criticality</th></tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table> -->
+
+</td></tr></table> 
+
+</td></tr></table>
+</td></tr></table></body></html>

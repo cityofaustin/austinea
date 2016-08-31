@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<title>Convention Center "Initiate Survey"</title>
+<link rel="StyleSheet" href="http://austinea.org/style/email.css" type="text/css">
+</head>
+<body>
+
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="600" align="center"><tr><td>
+
+<!-- Online reference -->
+<p><class="lbl">Note: This report is also <a href="http://austinea.org/arch/acc/report/update062714.html" style="font-size: 7pt;">available online</a> by following link.</p>
+
+<div>
+<p>Hi All,</p> 
+</div>
+
+<p>Attached is the information for the "Initiate Survey" use case that was reviewed June 27th, 2014, with the Convention Center Team. Please take a moment to check my work and let me know if there are any changes I can make to improve this, or if this requirement is as discussed! Additionally, I wanted to let you know the Online repository of Convention Center Use Cases is now up to date ( http://coaspweb1.coacd.org/sites/CTM/EA/Convention%20Center/index.html )
+<p>
+
+
+<!-- Signature-->
+<table cellpadding="0" cellspacing="0" border="0" width="350" style="border-collapse: collapse;"><tr><td>
+<p>Cheers!</p>
+
+<table cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;" align="right">
+<tr>
+<td>
+<img src="http://austinea.org/image/austinLogo.jpg" border="0" width="100" height="100" alt="Austin Logo" />
+</td>
+</tr>
+</table>
+<p><img src="http://coawss3a.coacd.org/sites/CTM/EA/Shared Documents/Images/ABSIG.JPG" border="0" width="143" height="83" alt="sign" /> </p>
+
+<p><b>Aaron Brown</b> 
+<span style="color: red; font-weight: bold;">|</span> 
+<b>City of Austin</b>
+<a href="http://www.linkedin.com/in/austnaaron"><img src="http://journeycolorado.com/images/linkedin.jpg" border="0" alt="Linkin Logo" /> </a> <br />
+Senior IT Enterprise Architect<br />
+Direct: (512) 974-2960 </p>
+Email: Aaron.Brown2@austintexas.gov </p>
+</td></tr></table>
+
+
+<!-- Use case information below -->
+
+<hr>
+
+<!-- Muni Court Requirements Model -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="right">
+<tr>
+<td align="center">
+<span class="lbl">Note: Select to download</span><br />
+<a href="http://austinea.org/arch/acc/report/initiateSurveyUseCase.jpg"><img src="http://austinea.org/arch/acc/report/initiateSurveyUseCase.jpg" border="0" width="200" alt="" /></a><br />
+<span style="font-weight: bold;">Initiate Survey<br />Use Case</span>
+</td></tr></table>
+
+
+<p><b>Use Case Scope</b></p>
+<p>Within a pre-defined number of days from Event completion a Notification is sent to the Event Coordinator, reminding them to initiate the Survey. The Event Coordinator uses the system to Survey Contact List (Event Representative Contact Names and Email Addresses). The Event Coordinator modifies the Survey Contact List as needed and submits it for approval by the Survey Approver (Assistant Director or Designee). The Survey Approver is notified by the system a Survey Contact List is ready for approval/modification. The Survey Approver uses the system to review and modify the Survey Contact List of and approves the Final Survey Contact List. The system sends notification of the approval to the Event Coordinator. The Event Coordinator uses the system to send the approved Survey Contact List to the Survey Company. Upon receipt of the Survey Results in PDF format the Event Coordinator uses the system to upload the Survey Results and attaches them to the Event. </p>
+<p>Notes:The Current State is as follows: The Event Representative Contacts selected by the Event Coordinator are shown for the Account, not specific to an Event. The Assistant Director sees the items on the Survey Contact List that require approval and addresses approval individually. On a nightly basis, the Survey Contact List is exported to an Extensible Markup Language (XML) file that is then grabbed via File Transfer Protocol (FTP) and the City of Austin Communications & Technology Department (CTM) moves the Survey Contact List into the Survey System. Survey System is maintained by CTM. The Survey is sent out to the Contacts fourteen days after the Event completion date. Reminders are sent to the Contacts; however, the reminders currently do not include a link back to the Survey). The Survey remains indefinitably available for the Contact to complete. Currently, a notification is sent to non-responders every six months, reminding them to complete their Survey, but it is desired to have it be sent quarterly. All completed Surveys are gathered and reported by mid-October to apply results toward performance measures. Sales employees can go to system and print survey results as a PDF at any time.</p>
+
+<!-- Image -  Sequence Diagram -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="http://austinea.org/arch/acc/report/initiateSurveySequenceDiagram01.jpg"><img src="http://austinea.org/arch/acc/report/initiateSurveySequenceDiagram01.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Initiate Survey</p>
+</td></tr></table> 
+
+
+
+<p style="font-weight: bold; text-align: center;">Initiate Survey Interface Descriptions</p>
+<!-- Table definition -->
+<table align="center" id="custom">
+<tr><th width="195">Type/Interface</th><th>Description</th></tr>
+<tr>
+<td>Establish Event Booking/ <br /> specifySurveyContactList</td> <td>No later than the last day of the Event, the system sends the Event Coordinator a notification, reminding them to initiate the Survey Process. Within five days after Event completion, the Event Coordinator uses the system to choose Event Representative Contacts provided on the system to be part of the Survey Contact List. Salutation, Name, and Email Address, must be present for a person to be included. The Event Coordinator creates additional Contacts as needed to the Survey Contact List. The Final Survey Contact List includes the Survey Issuance Date, the date on which the Survey should be conducted.
+ </td> </tr>
+ 
+<tr>
+<td>Establish Event Booking/ <br /> notifySurveyApproverOfPendingSurveyContactList</td> <td>The system sends a notification to the Survey Approver indicating a new Survey Contact List has been created and needs review and approval. The Notification includes the Event Name and provides a hot link to the form/interface on the system in which Survey Contact List is approved. The system automatically understands the Contract ID and Event to which the Survey Contact List belongs.   </td> </tr>
+
+<tr>
+<td>Establish Event Booking/ <br /> approveSurveyContactList</td> <td>The Survey Approver uses the system to review the Survey Contact List. The Survey Approver examines all Salutations, Names and Email Addresses and edits/deletes or adds Contacts to the Survey Contact List as needed. Added Contacts are automatically stored to the Contact Information for the specific Event to which the Survey belongs (guaranteeing their inclusion in the next Survey for this Event.) The Survey Approver uses the system to approve the final Survey Contact List.   </td> </tr>
+
+<tr>
+<td>Establish Event Booking/<br /> notifyEventCoordinatorOfSurveyContactListApproval</td> <td>Upon Survey List Approval, the system sends notification to the Event Coordinator indicating the Survey Contact List has been approved and includes the Event Name for which the Survey was created and a hot link to the system where the approved Survey Contact List is viewed. </td> </tr>
+
+<tr>
+<td>Establish Event Booking/<br /> createSurveyContactListFile</td> <td>Upon Approval of the Survey Contact List, the system generates the required Survey Contact List File, an Extensible Markup Language (XML) output file of Survey Contacts expected by the Survey Company. The Survey Contact List File contains a list of Salutations, Names, Email Addresses, and the Survey Issuance Date. The file layout of the file to be produced will be provided as a supplemental specification attached to the Statement Of Work. </td> </tr>
+
+<tr>
+<td>Survey Company/ <br /> performSurvey</td> <td>The Survey Company receives the Survey Contact List File at their File Transfer Protocol (FTP) site (by the date of the Survey Issuance Date included in the Survey Contact List File) and conducts the Survey. Upon completion of the Survey, the Survey Results are sent to the Event Coordinator Supervisor (or Manager) and the Survey Approver. </td> </tr>
+
+<tr>
+<td>Establish Event Booking/<br /> attachSurveyResultsToEvent</td> <td>The Event Coordinator uses the system to access the Event for which the Survey was done, and attaches the Survey Results to the event. The system provides a mechanism for "tagging" the attached file with a description, keywords, and date and time attached. Note: It is desirable for this function to be automated.  </td> </tr>
+
+
+</table>
+
+
+
+<!-- Table definition
+<table align="center" id="custom">
+<tr><th>Number</th><th>Category</th><th>Description</th><th>Criticality</th></tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table> -->
+
+</td></tr></table> 
+
+</td></tr></table>
+</td></tr></table></body></html>

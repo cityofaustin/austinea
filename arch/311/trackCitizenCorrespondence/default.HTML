@@ -1,0 +1,130 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Track Citizen Correspondence</title>
+<link rel="Stylesheet" href="http://austinea.org/style/hover.css" type="text/css" />
+</head>
+<body bgcolor="#ddd8c2">
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="650" align="center">
+<tr><td style="padding: 0;" height="130" valign="top"><a href="http://austinea.org">
+<img src="http://austinea.org/image/iTHeader.jpg" alt="austinea.org - home..." border="0"></a></td></tr>
+<!-- Text Area -->
+<tr><td>
+
+<p style="text-align: center; font-weight: bold;">Track Citizen Correspondence<br />Use Case Specification</p>
+<p style="text-align: center;">04/12/16
+
+<!--  IF Printable document option Included  
+<p style="text-align: center;">download <a href="http://austinea.org/arch/as/***.docx">printable version</a>
+-- >
+
+<b> Animal Services Logical Data Model </b>            
+<!-- Image -  Logical Data Model 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="http://austinea.org/arch/as/ldm.jpg"><img src="http://austinea.org/arch/as/ldm.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Animal Services Logical Data Model</p>
+</td></tr></table> -->
+
+<!-- USE CASE IMAGE -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/311/trackCitizenCorrespondence/ucd.jpg"><img src="http://austinea.org/arch/311/trackCitizenCorrespondence/ucd.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Track Citizen Correspondence<br />Use Case Model</span>
+</td></tr></table>
+
+<p><b>Scope: </b>A CRM User uses the system to request correspondence from a Citizen. Correspondence is requested through the system so responses are tracked, archived, and reportable. The system sends the Notification to the Citizen and then updates the ServiceRequest the correspondence is tracked on. The Citizen responds to the correspondence and sends the Notification to the system. The system identifies the correspondence either through a dedicated response URL, email subject, etc. The system updates the ServiceRequet to track the correspondence as an Attachment, along with any Attachments included in the message.  
+
+
+
+<!-- IF INTERACTION OVERVIEW IS INCLUDED 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/as/***.jpg"><img src="http://austinea.org/as/code/***.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Interaction Overview</span>
+</td></tr></table>
+-->
+
+<!-- ACTIVITY DIAGRAM 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/as/***.jpg"><img src="http://austinea.org/as/code/***.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Track Citizen Correspondence<br />Activity Diagram</span>
+</td></tr></table>
+-->
+
+
+<br />
+
+
+<!-- SEQUENCE DIAGRAM  -->                 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/311/trackCitizenCorrespondence/sd01.jpg"><img src="http://austinea.org/arch/311/trackCitizenCorrespondence/sd01.jpg" border="0" alt="" width="600"/></a><br />
+<span style="font-weight: bold;">Track Citizen Correspondence<br />Sequence Diagram</span>
+</td></tr></table>
+<br />
+
+
+<!-- INTERFACE TABLE  -->
+<table align="center" id="custom">
+<tr><th width="9%">Req#</th><th width="70%">Type/Interface - Requirement Description</th><th>Performance</th></tr>
+<tr>
+<td rowspan="2">001</td>
+<td style="font-weight: bold; background: lightgray;">Provide Customer Relationship Management/requestCorrespondenceFromCitizen</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The user uses the system to request correspondence from a Citizen. The user provides the Notification contents, including any attachments, and the recipients (identified through a CRMSearch) to the system. The system sends the Notification to the requested Citizens (message may be sent to multiple recipients) and then updates the ServiceRequest used to track the responses (created previously).</td>
+</tr>
+<tr>
+<td rowspan="2">002</td>
+<td style="font-weight: bold; background: lightgray;">Provide Customer Relationship Management/sendNotification</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The system sends a Notification (email, text, etc.) to the recipient. Notification includes Attachments as relevant. If a response from a Citizen is requested the system provides either a URL to respond, generates a subject line for response to the system so the system recognizes the response, etc. The system saves a copy of the Notification after transmission for archival purposes (copy of message, recipients, transmission date/time, schedule, etc.). For public notifications the system sends the Notification per the schedule defined by the Public Information Manager. For ServiceRequest Notifications the system attaches a copy of the Notification with the ServiceRequest for archival purposes. CRM Users resend/cancel Notifications as desired. Notifications are sent ad hoc and also scheduled based on configuration by a CRM Manager. If a delivery receipt is configured the system tracks delivery status of the Notification. For GISLayer updates the system notifies the GISManager identified for the GISLayer. The system includes the number of changes to the GISLayers, date/time of retrieval from GIS, and GISLayer name. For InterfaceServiceRequests, if the system receives an EnterpriseServiceBusStatus back that is not success then the system notifies the CRM Manager. If a KnowledgeBaseItem fails to index the system notifies the KnowledgeBaseItem's Editor with the KnowledgeBaseItem's title and date of failed index.</td>
+</tr>
+<tr>
+<td rowspan="2">003</td>
+<td style="font-weight: bold; background: lightgray;">Provide Customer Relationship Management/updateServiceRequest</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The system, or a CRM User, updates a ServiceRequest per the requested update. If the ServiceRequest is configured with auto-assignment rules for CRM Users the system assigns the ServiceRequest Activities to resources based on Questions/Answers, Location, GISLayer, Time of Day, Shift, Route, Zone, etc. encompassing business process rules for group. CRM Users update the ServiceRequest, and if interfaced with an external system, may request an update be sent to the interface. If an Interface updates the ServiceRequest the Interface transmits an update Notification to the system and includes the information to update/append, etc. Interface updates any portion of the ServiceRequest required to complete ServiceRequest (Status, Questions/Answers, Activities, etc.). ServiceRequest Activities are assignable to multiple Resources/CRMUsers and Activities track Resource usage. The ServiceRequest is configured to require specific be completed by a user before it may be saved (answering a question, completing an activity, etc.). ServiceRequest updates are completed by CRM Users and any portion of the ServiceRequest may be updated by the CRM User per their Access Permissions. Parts of the ServiceRequest (activities, questions, attachments, participants) are designated as required for completion and must be completed before the ServiceRequest is closed. As CRM Users check in at Locations the system updates Activities with arrival date/time, Location (GPS coordinates). Activities allow CRM Users to estimate completion duration and actual completion duration. Multiple activities may be added to a ServiceRequest simultaneously either by a CRM User, Interface, or auto-processing rules. CRM Users can attach relevant information to the ServiceRequest including (pointers to other ServiceRequests, Locations, GISData, etc.). The system updates the ServiceRequest with any Notifications sent. If Citizens provide a requested response to the system the system updates the ServiceRequest with the response Notification as an Attachment. Additionally, the system saves any Attachments included in the Notification. When the ServiceRequest work is completed the ServiceRequest status is changed to a Closed status. Once closed a ServiceRequest is not editable by CRM Users. Some CRM Users, based on their access permissions, may reopen a ServiceRequest to make additional edits.</td>
+</tr>
+<tr>
+<td rowspan="2">004</td>
+<td style="font-weight: bold; background: lightgray;">Citizen/respondToCorrespondence</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>Citizen responds to the Notification. The Notification provided to the Citizen provides either a dedicated response URL, generated unique email subject, etc. for the system to identify the response Notification.</td>
+</tr>
+<tr>
+<td rowspan="2">005</td>
+<td style="font-weight: bold; background: lightgray;">Provide Customer Relationship Management/trackCorrespondence</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The system receives a response Notification (identified either through a response to a unique URL, unique subject line, etc.) and adds the response Notification to the ServiceRequest. The system saves the Notification along with any Attachments included.</td>
+</tr>
+<tr>
+
+
+
+
+
+</table>
+
+
+<br />
+
+
+
+
+</td></tr></table>
+</td></tr></table></body></html>

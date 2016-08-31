@@ -1,0 +1,114 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Create Feedback Request and Triage</title>
+<link rel="Stylesheet" href="http://austinea.org/style/hover.css" type="text/css" />
+</head>
+<body bgcolor="#ddd8c2">
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="650" align="center">
+<tr><td style="padding: 0;" height="130" valign="top"><a href="http://austinea.org">
+<img src="http://austinea.org/image/iTHeader.jpg" alt="austinea.org - home..." border="0"></a></td></tr>
+<!-- Text Area -->
+<tr><td>
+
+<p style="text-align: center; font-weight: bold;">Create Feedback Request and Triage<br />Use Case Specification</p>
+<p style="text-align: center;">03/23/16
+
+<!--  IF Printable document option Included  
+<p style="text-align: center;">download <a href="http://austinea.org/arch/as/***.docx">printable version</a>
+-- >
+
+<b> Animal Services Logical Data Model </b>            
+<!-- Image -  Logical Data Model 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="http://austinea.org/arch/as/ldm.jpg"><img src="http://austinea.org/arch/as/ldm.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Animal Services Logical Data Model</p>
+</td></tr></table> -->
+
+<!-- USE CASE IMAGE -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/311/createFeedbackRequestAndTriage/ucd.jpg"><img src="http://austinea.org/arch/311/createFeedbackRequestAndTriage/ucd.jpg" border="0" alt="" width="620"/></a><br />
+<span style="font-weight: bold;">Create Feedback Request and Triage<br />Use Case Model</span>
+</td></tr></table>
+
+<p><b>Scope: </b>A Feedback Reporter requests a Feedback Submitter submits Feedback for Austin 311 or the City of Austin on their behalf. The Feedback Submitter creates a ServiceRequest311Feedback which is sent to the 311 Command Center. The 311 Command Center reviews the ServiceRequest311Feedback (identify severity, priority, timeliness, group responsible for resolution). If more information is required to resolve the ServiceRequest311Feedback the 311 Command Center notifies a Feedback Resource (Feedback Report or End User Department). The Feedback Resource provides additional information to the 311 Command Center. The process loops until the 311 Command Center is capable of determining the appropriate Resolution required.   
+
+
+
+<!-- IF INTERACTION OVERVIEW IS INCLUDED -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/311/createFeedbackRequestAndTriage/ad01.jpg"><img src="http://austinea.org/arch/311/createFeedbackRequestAndTriage/ad01.jpg" border="0" alt="" width="600"/></a><br />
+<span style="font-weight: bold;">Create Feedback Request and Triage<br />Activity Diagram</span>
+</td></tr></table>
+
+
+
+<br />
+
+
+<!-- SEQUENCE DIAGRAM              
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/311/abatePropertyWithContractor/sd01.jpg"><img src="http://austinea.org/arch/311/abatePropertyWithContractor/sd01.jpg" border="0" alt="" width="600"/></a><br />
+<span style="font-weight: bold;">Create Feedback Request and Triage<br />Sequence Diagram</span>
+</td></tr></table>
+<br />  -->     
+
+
+<!-- INTERFACE TABLE  -->
+<table align="center" id="custom">
+<tr><th width="9%">Req#</th><th width="70%">Type/Interface - Requirement Description</th><th>Performance</th></tr>
+<tr>
+<td rowspan="2">001</td>
+<td style="font-weight: bold; background: lightgray;">Feedback Submitter/Create Feedback Service Request in CSR System</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>A Feedback Reporter requests a Feedback Submitter (Austin 311 Agent, CSR system, or CSR user) submits Feedback on their behalf. The Feedback Submitter creates a ServiceRequest311Feedback, answers the pertinent feedback questions and saves the ServiceRequest311Feedback. The ServiceRequest311Feedback sends a Notification to the 311 Command Center indicating a new ServiceRequest311Feedback has been submitted and needs triage.</td>
+</tr>
+<tr>
+<td rowspan="2">002</td>
+<td style="font-weight: bold; background: lightgray;">311 Command Center/Review Feedback, Determine Resonse, Update Feedback, and Notify Appropriate Role</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The 311 Command Center retrieves the ServiceRequest311Feedback from the CSR system. The 311 Command Center reviews the ServiceRequest311Feedback and determines the response required through the use of a DispositionMatrix. Review includes listening to CallRecordings, researching KnowledgeBase, Websites, contacting End User Departments, Reviewing Emails & Processes. If the ServiceRequest311Feedback has insufficient information to complete triage the 311 Command Center contacts the Feedback Resource (Feedback Reporter or End User Department) and requests additional information on the Feedback. If the ServiceRequest311Feedback was submitted by an internal Austin 311 staff member and involves an Austin 311 Agent transaction, the 311 Command Center coaches the Austin 311 Agent. If the ServiceRequest311Feedback requires a 311 Work Group to resolve the Feedback the 311 Command Center assigns the ServiceRequest311Feedback to the appropriate 311 Work Group (Extension Point). The 311 Command Center answers the Root Cause Flex Note before assigning to appropriate resolution user. Once assigned the CSR system notifies the assigned user of new ServiceRequest311Feedbacks in their queue.</td>
+</tr>
+<tr>
+<td rowspan="2">003</td>
+<td style="font-weight: bold; background: lightgray;">Feedback Resource/Provide Additional Information on Feedback</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Feedback Reporter provides additional information on the Feedback to the 311 Command Center.</td>
+</tr>
+<tr>
+<td rowspan="2">004</td>
+<td style="font-weight: bold; background: lightgray;">311 Command Center/Coach Staff on Feedback</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The 311 Command Center coaches the impacted Austin 311 Agent on the Feedback received. The 311 Command Center updates the assigned ServiceRequest311Feedback with actions taken. CallRecordings are used, as necessary, to coach the Austin 311 Agent.</td>
+</tr>
+<tr>
+
+
+
+
+
+</table>
+
+
+<br />
+
+
+
+
+</td></tr></table>
+</td></tr></table></body></html>

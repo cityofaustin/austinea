@@ -1,0 +1,208 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>Request Maintenance</title>
+
+
+  
+
+  
+  
+  <link rel="Stylesheet" href="http://austinea.org/style/email.css" type="text/css"></head><body style="background-color: rgb(221, 216, 194);">
+<!-- Border Background Table -->
+<table style="border-collapse: collapse; background-color: rgb(244, 202, 144);" align="center" border="0" cellpadding="4" cellspacing="0">
+
+  <tbody>
+    <tr>
+      <td><!-- Online reference
+
+<p class="lbl" style="text-align: center;">This report is also <a href="http://austinea.org/">available online</a> by following link.</p> --><!-- EA Motto -->
+      <p style="color: gray; font-size: 8pt; text-align: center; font-weight: bold;">Enterprise
+Architecture <i>- aligning IT services with business needs</i></p>
+<!-- Main Body -->
+      <table style="border-collapse: collapse; background-color: rgb(255, 255, 255);" align="center" border="0" cellpadding="5" cellspacing="0" width="650">
+        <tbody>
+          <tr>
+            <td>
+            <p style="text-align: center; font-weight: bold;">Request Maintenance Use Case Specification</p>
+<!-- Image Title -->
+            <table style="border-collapse: collapse;" align="center" border="0" cellpadding="5" cellspacing="0">
+              <tbody>
+                <tr>
+                  <td align="center"><span class="lbl">Select to
+enlarge...</span><br>
+                  <a href="createcontractdeliverable_ucd.jpg"><span style="text-decoration: underline;"></span></a><a href="requestmaintenance_ucd.jpg"><img style="border: 0px solid ; width: 600px; height: 422px;" src="requestmaintenance_ucd.jpg" alt=""></a><br>
+                  <span style="font-weight: bold;"><br>
+Request Maintenance Use
+Case Model<br>
+                  <br>
+<br>
+                  </span> </td>
+                </tr>
+              </tbody>
+            </table>
+            <p class="MsoNormal"><b>Scope:</b>&nbsp;&nbsp; The
+Maintenance Requestor (any person requesting
+maintenance: COA employee or citizen) observes a need for maintenance
+in a
+Austin Convention Center facility and uses their mobile device to scan
+a Quick
+Response Code (QR Code). When scanned, the QR Code presents the
+Maintenance
+Requestor with the Maintenance Request Form. The QR Code is
+location-specific
+and automatically enters the Location, Date and Time into the Form. The
+Maintenance Requestor next chooses a Maintenance Need from a list of
+pre-defined values. If the Maintenance Requestor has chosen 'Other'
+from the
+pre-defined value list of Maintenance Needs or would otherwise like to
+input
+additional information, they type information into the Additional Info
+field.
+If the Maintenance Requestor wishes to include a photo of the area of
+Maintenance Need, they may tap a button to use their mobile device to
+take the
+photo. The process of attaching a photo follows normal convention,
+namely a
+photo is taken and the user is able to use the photo or discard it and
+take
+another photo, repeating the process until a suitable photo is chosen.
+When
+ready, the Maintenance Requestor taps a Submit button to submit the
+Maintenance
+Request Form, saving the information. <br>
+</p><br>
+            <p class="MsoNormal"><br>
+            </p>
+
+            <p class="MsoNormal"><b> </b> <o:p></o:p></p>
+            <p class="MsoNormal"><br>
+            <o:p></o:p></p>
+<!-- Image Title -->
+            <table style="border-collapse: collapse;" align="center" border="0" cellpadding="5" cellspacing="0">
+              <tbody>
+                <tr>
+                  <td align="center"><span class="lbl">Select to
+enlarge...</span><br>
+                  <a href="createcontractdeliverable_sqd.jpg"><span style="text-decoration: underline;"></span></a><a href="requestmaintenance_sqd.jpg"><img style="border: 0px solid ; width: 570px; height: 297px;" alt="" src="requestmaintenance_sqd.jpg"></a><br>
+                  <br>
+                  <span style="font-weight: bold;">Request Maintenance
+Sequence Diagram</span> </td>
+                </tr>
+              </tbody>
+            </table>
+            <br>
+<p style="text-align: center; font-weight: bold;"><br>
+</p>
+            <p style="text-align: center; font-weight: bold;"><br>
+            </p>
+
+            <p style="text-align: center; font-weight: bold;">Table of
+Interface Descriptions</p><br>
+            <table style="text-align: left; margin-left: auto; margin-right: auto;" id="custom">
+
+              <tbody>
+                <tr>
+                  <th>Type/Interface</th>
+                  <th>Description</th>
+                </tr>
+                <tr>
+                  <td>QR Code Reader App/<br>
+                  <span style="font-weight: bold;">scanQRCode</span><br>
+                  </td>
+                  <td>
+                  <p class="MsoNormal"> </p>
+                  <p class="MsoNormal">
+
+</p>
+                  <p class="MsoNormal">The Maintenance Requestor uses the QR Code Reader
+application on their mobile device to scan/read the Maintenance Request QR
+Code. The QR Code Reader application returns a location-specific QR Code
+Uniform Resource Locator (QR Code URL).<o:p></o:p></p>
+
+
+                  <p class="MsoNormal"><o:p></o:p></p>
+
+                  </td>
+                </tr>
+                <tr>
+                  <td>Provide a Safe and Clean Space/<br>
+                  <span style="font-weight: bold;">displayMaintenanceRequestForm</span></td>
+                  <td>
+                  <p class="MsoNormal">
+
+</p>
+                  <p class="MsoNormal">The QR Code Reader uses the system to display a new
+Maintenance Request Form, by supplying the location-specific QR Code URL. The
+new Maintenance Request Form appears and is auto-populated with the Location,
+Date and Time. The Maintenance Requestor next chooses a Maintenance Need from a
+list of pre-defined values (Restock Soap, Restock Toilet Paper, Unclog
+Toilet/Urinal, Clean Toilet/Urinal, Clean Mirror, Clean Floor, Replace Light
+Bulb, Repair Stall Door, Repair Hand Dryer, Other.) If the Maintenance
+Requestor has chosen 'Other' from the pre-defined value list of Maintenance
+Needs or would otherwise like to input additional information, they type
+information into the Additional Info field. If the Maintenance Requestor wishes
+to include a photo of the area of Maintenance Need, they may tap the Include
+Photo button and use their mobile device to take the photo. The process of
+attaching a photo follows normal convention, namely a photo is taken and the
+user is able to use the photo or discard it and take another photo, repeating the
+process until a suitable photo is chosen.<o:p></o:p></p>
+
+
+                  <p class="MsoNormal"><o:p></o:p></p>
+
+                  </td>
+                </tr>
+                <tr>
+                  <td>Provide a Safe and Clean Space/<br>
+
+                  <span style="font-weight: bold;">recordRequestFormInformation</span><span style="font-weight: bold;"></span>
+                  </td>
+                  <td>
+                  
+                  
+                  <p class="MsoNormal">
+
+</p>
+                  <p class="MsoNormal">The Maintenance Requestor taps a Submit button to submit the
+Maintenance Request Form, storing the Maintenance Request Info.&nbsp; Every
+five minutes the ACCD Maintenance Manager application sends a web service query
+to retrieve all Maintenance Request Forms that have been submitted over the
+past five minute. The returned value is parsed and stored in the ACCD
+Maintenance Manager system as a new Maintenance Request, to be provisioned the
+same as an internal Maintenance Request Form.<o:p></o:p></p>
+
+
+                  <p class="MsoNormal"><o:p></o:p></p>
+
+                  </td>
+                </tr>
+                
+                
+              </tbody>
+            
+            </table>
+            <br>
+            <p style="text-align: center; font-weight: bold;"><br>
+            </p>
+            <p style="text-align: center; font-weight: bold;"><br>
+            </p>
+            <div style="text-align: center;"><span style="font-weight: bold;">Request Maintenance Logical Data Model<br>
+            <br>
+            <br>
+</span><span class="lbl">Select to
+enlarge...</span><br>
+            <span style="font-weight: bold;">
+            <a href="requestmaintenance_ldm.jpg"><img style="border: 0px solid ; width: 600px; height: 233px;" alt="" src="requestmaintenance_ldm.jpg"></a><br>
+            </span></div>
+            <p style="text-align: center; font-weight: bold;"><br>
+            </p>
+
+<!-- Table definition --></td>
+          </tr>
+        </tbody>
+      </table>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+</body></html>

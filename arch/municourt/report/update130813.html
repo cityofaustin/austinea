@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<title>Muni Court "File for Motion' Requirements</title>
+<link rel=StyleSheet href="http://austinea.org/style/email.css" type="text/css">
+</head>
+<body>
+
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="600" align="center"><tr><td>
+
+<!-- Online reference -->
+<p><span class="lbl">Note: This report is also <a href="http://austinea.org/arch/municourt/report/update130813.html" style="font-size: 7pt;">available online</a> by following link.</span></p>
+
+<p>Muni Court Architecture Team, 
+<div>
+
+<p>Attached is the information for the "File a Motion" use case that was reviewed last week with the team. Please take a moment to check my work and let me know if there are any changes I can make to improve this, or if this requirement is as discussed! 
+<p>
+
+
+<!-- Signature-->
+<table cellpadding="0" cellspacing="0" border="0" width="350" style="border-collapse: collapse;"><tr><td>
+<p>Respectfully,</p>
+
+<table cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;" align="right">
+<tr>
+<td>
+<img src="http://austinea.org/image/austinLogo.jpg" border="0" width="100" height="100" alt="Austin Logo" />
+</td>
+</tr>
+</table>
+<p><img src="http://coawss3a.coacd.org/sites/CTM/EA/Shared Documents/Images/ABSIG.JPG" border="0" width="143" height="83" alt="sign" /> </p>
+
+<p style="font-size: 8pt;"><b>Aaron Brown</b> 
+<span style="color: red; font-weight: bold;">|</span> 
+<b>City of Austin</b>
+<a href="http://www.linkedin.com/in/austnaaron"><img src="http://journeycolorado.com/images/linkedin.jpg" border="0" alt="Linkin Logo"> </a> <br />
+Senior Enterprise Architect<br />
+Direct: (512) 974-2960
+Email: Aaron.Brown2@austintexas.gov
+</td></tr></table>
+
+
+<!-- Use case information below -->
+
+<hr>
+
+<!-- Muni Court Requirements Model -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="right">
+<tr>
+<td align="center">
+<span class="lbl">Note: Select to download</span><br />
+<a href="http://austinea.org/arch/municourt/report/FileForMotionUseCase.jpg"><img src="http://austinea.org/arch/municourt/report/FileForMotionUseCase.jpg" border="0" width="200" alt="" /></a><br />
+<span style="font-weight: bold;">File For Motion<br />Use Case</span>
+</td></tr></table>
+
+
+<p><b>Use Case Scope</b></p>
+<p>Once the online user has verified their identity and has designated their specific case, they are offered legal options, which may include "File for Motion". In response to a "file for Motion" the system will present the appropriate application as an online form. The user completes the form, and provides the apropos electronic signature. Upon completion, the system places the Case in a queue for the Prosecutor to review. They will provide their feedback, and digitally sign the Motion. The System will then place the signed motion into a Judge's queue, who will grant or deny their motion. Upon completion, the user is sent an email indicating the Case, and the Motion they requested, and the Judge's ruling on this judgment. Lastly the electronic case file is added to the Court Clerk's queue for the appropriate reviews and notations. It should be noted the Online user must have previously indicated their plea for the business rule engine to provide this option.</p>
+
+<!-- Image - File For Motion Sequence Diagram -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="http://austinea.org/arch/municourt/report/FileForMotionSequenceDiagram01.jpg"><img src="http://austinea.org/arch/municourt/report/FileForMotionSequenceDiagram01.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">File For Motion Sequence Diagram</p>
+</td></tr></table> 
+
+<p>Prior to the message on the sequence diagram is a Reference item [Ref] essentially identifying a preconditional element to the sequence events where the Motion Filer established the File Motion option. A summary of the reference follows:</p>
+
+<p><b>Ref: 1. Select Legal Option</b></p>
+<p>The system provides the ability for a Respondent or Defendant to manage all Case Files identified in the case management system using a Web Presence online. The system provides a legally binding form of identification to be persistent throughout the Web session. When a Defendant or Respondent selects a particular Case File of interest from the Web Presence Case File Queue, the system determines the various legal options available to the Defendant or Respondent. The system provides a Municipal Court staff a configurable rules engine to allow Court Staff to modify business rules associated with the options provided to the Defendant or Respondent via Web Presence. The rules engine provides a customizable response based on current Case File attributes such as warrant status, age of Defendant or Respondent, attorney assigned to the case, and plea state (just to name a few) leading to the legal options provided to the Defendant or Respondent. Depending on Municipal Court Staff needs, some responses are non-selectable and grayed out providing indication to Defendant or Respondent why the legal option is not selectable. Because laws frequently change, it's important the legal options are not hard coded into the case management system; rather, the system allows the Court Staff to make appropriate legal option changes using customizable rules filters. Once a Legal Option is selected, the system confirms the Legal Option and it's implication to Respondent or Defendant before storing it with the Case File. </p>
+
+<p style="font-weight: bold; text-align: center;">File for Motion Interface Descriptions</p>
+<!-- Table definition -->
+<table align="center" id="custom">
+<tr><th width="195">Type/Interface</th><th>Description</th></tr>
+<tr>
+<td>Web Presence/ <br /> selectMotionOption</td> <td>The online user is offered the appropriate types of Motions they can file legally aligned with their case. For the option to effect a motion on the case to be offered, a plea must have already been designated for the case.</td> </tr>
+
+<td>Manage Court Case/ <br /> presentApplication</td> <td>Based on the case details, the plea specified, and the motion requested, the Court Case Management system's business rule engine is requested to have the Motion Filers complete an application for their Motion.</td> </tr>
+
+<td>Web Presence/<br /> completeApplication</td> <td>The system presents a form of fields for the Motion Filer to complete related to the Motion just requested be filed for the case in question. The Motion Filer completes the form (application) and on completion and submission, the system presents a completed view for final acceptance into the system.</td> </tr>
+
+<td>Manage Court Case/ <br /> storeInMotionQueue</td> <td>The user has specified a desire for filing a motion on a case, has filled out the requested information (form) and approved/digitally signed the request. The system routes the request to the Case's Prosecutor by placing the Case in the Prosecutor Queue.</td> </tr>
+
+<td>Manage Court Case/ <br /> selectFileMotionFromQueue</td> <td>The Prosecutor identifies and selects relevant filed motions from the pending queue.</td> </tr>
+
+<td>Manage Court Case/ <br /> signAndStoreInJudgesQueue</td> <td>The Prosecutor uses the system to select one of three actions to include: object to the motion, not object to the motion, or submit original motion to the judge. The system adds their signature and stores case (with the Prosecutor Motion selection) in the Judges queue for review.</td> </tr>
+
+<td>Manage Court Case/<br /> selectMotionFromJudgesQueue</td> <td>The Judge identifies and selects relevant Motions filed against a case from their pending queue. They see all associated forms and signatures associate with the case selected.</td> </tr>
+
+<td>Manage Court Case/ <br /> grantOrDenyMotion</td> <td>The judge selects one of three actions: Grant, Deny or "set conditions" on the case selected from their work queue. The system attaches their signature, adds the judge's action to the case.</td> </tr>
+
+<td>Manage Court Case/ <br /> sendMotionFilerEmail</td> <td>The System generates an email in response to the Judge's Motion Ruling and sends email to the address linked (and verified) with the Motion Filer's identity. The system records the date and time the notification is sent to the Motion Filer. This Email provides a summary of case information, including but not limited to the Motion Requested, the motion granted and/or any conditions set by the judge.</td> </tr>
+
+<td>Manage Court Case/ <br /> storeInClerkQueue</td> <td>The system adds a changed Case in a queue for a Court Clerk. </td> </tr>
+
+
+</tr>
+</table>
+
+
+
+<!-- Table definition
+<table align="center" id="custom">
+<tr><th>Number</th><th>Category</th><th>Description</th><th>Criticality</th></tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table> -->
+
+</td></tr></table> 
+
+</td></tr></table>
+</td></tr></table></body></html>

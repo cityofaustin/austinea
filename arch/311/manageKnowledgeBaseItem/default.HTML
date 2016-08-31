@@ -1,0 +1,155 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Manage Knowledge Base Item</title>
+<link rel="Stylesheet" href="http://austinea.org/style/hover.css" type="text/css" />
+</head>
+<body bgcolor="#ddd8c2">
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="650" align="center">
+<tr><td style="padding: 0;" height="130" valign="top"><a href="http://austinea.org">
+<img src="http://austinea.org/image/iTHeader.jpg" alt="austinea.org - home..." border="0"></a></td></tr>
+<!-- Text Area -->
+<tr><td>
+
+<p style="text-align: center; font-weight: bold;">Manage Knowledge Base Item<br />Use Case Specification</p>
+<p style="text-align: center;">03/22/16
+
+<!--  IF Printable document option Included  
+<p style="text-align: center;">download <a href="http://austinea.org/arch/as/***.docx">printable version</a>
+-- >
+
+<b> Animal Services Logical Data Model </b>            
+<!-- Image -  Logical Data Model 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="http://austinea.org/arch/as/ldm.jpg"><img src="http://austinea.org/arch/as/ldm.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Animal Services Logical Data Model</p>
+</td></tr></table> -->
+
+<!-- USE CASE IMAGE -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/311/manageKnowledgeBaseItem/ucd.jpg"><img src="http://austinea.org/arch/311/manageKnowledgeBaseItem/ucd.jpg" border="0" alt="" width="620"/></a><br />
+<span style="font-weight: bold;">Manage Knowledge Base Item<br />Use Case Model</span>
+</td></tr></table>
+
+<p><b>Scope: </b>A Knowledge Base Manager requests the system to create/update a KnowledgeBaseItem. Alternatively, if many KnowledgeBaseItems need to be created or updated, the Knowledge Base Manager uploads an Attachment to the system for a bulk creation/update by the system. The system performs the KnowledgeBaseItem creation/update for each item in the Attachment. The KnowledgeBaseItem is published to the desired CRM system either manually by the Knowledge Base Manager or automatically by the system depending on the disposition of the Attachment file. If an index is required to make the KnowledgeBaseItem searchable, the KnowledgeBaseItem is either indexed manually by the Knowledge Base Manager, or the system indexes the KnowledgeBaseItem per an IndexSchedule configured by the Knowledge Base Manager. If the index fails, the system notifies the KnowledgeBaseItem's Editor. If public sharing is selected for the KnowledgeBaseItem the system requests either a Website or Social Media to post an update on the KnowledgeBaseItem. If the KnowledgeBaseItem requires acknowledgment the system updates the CRM Users' WorkQueues. The Acknowledge CRM Change use case is invoked.  
+
+
+
+<!-- IF INTERACTION OVERVIEW IS INCLUDED 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/as/***.jpg"><img src="http://austinea.org/as/code/***.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Interaction Overview</span>
+</td></tr></table>
+-->
+
+
+<br />
+
+
+<!-- SEQUENCE DIAGRAM  -->                 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/311/manageKnowledgeBaseItem/sd01.jpg"><img src="http://austinea.org/arch/311/manageKnowledgeBaseItem/sd01.jpg" border="0" alt="" width="600"/></a><br />
+<span style="font-weight: bold;">Manage Knowledge Base Item<br />Sequence Diagram</span>
+</td></tr></table>
+<br />
+
+
+<!-- INTERFACE TABLE  -->
+<table align="center" id="custom">
+<tr><th width="9%">Req#</th><th width="70%">Type/Interface - Requirement Description</th><th>Performance</th></tr>
+<tr>
+<td rowspan="2">001</td>
+<td style="font-weight: bold; background: lightgray;">Provide Customer Relationship Management/createUpdateKnowledgeBaseItem</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Knowledge Base Manager, or the system, accesses the system and requests the system creates a new KnowledgeBaseItem, or update an existing KnowledgeBaseItem. The Knowledge Base Manager provides (owning group, start date, stop date, title, name, description, keywords, file, associated ServiceRequests, associated files/URLs/Searches/FAQs, version, isAcknowledged per version, users required to acknowledge, change list, user comments, search depth, KB maintainer/responsible for editing/updating, interval for review, next review date, view count, isPublished, private information, public information). The Knowledge Base Manager must select the isPublished option in the system for the KnowledgeBaseItem change to appear. The system maintains old versions of KnowledgeBaseItems for historical review and auditing purposes. If a Comment is received the system attaches the Comment to the KnowledgeBaseItem.</td>
+</tr>
+<tr>
+<td rowspan="2">002</td>
+<td style="font-weight: bold; background: lightgray;">Provide Customer Relationship Management/publishKnowledgeBaseItem</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>A Knowledge Base Manager requests the system publishes the KnowledgeBaseItem to the desired CRM system. Alternatively, if the system performs a bulk KnowledgeBaseItem creation/update the system publishes the KnowledgeBaseItem to the desired CRM system per the Attachment's disposition.</td>
+</tr>
+<tr>
+<td rowspan="2">003</td>
+<td style="font-weight: bold; background: lightgray;">Provide Customer Relationship Management/createUpdateBulkKnowledgeBaseItems</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Knowledge Base Manager accesses the system and uploads an Attachment containing the bulk KnowledgeBaseItem update, including creation or modification. </td>
+</tr>
+<tr>
+<td rowspan="2">004</td>
+<td style="font-weight: bold; background: lightgray;">Provide Customer Relationship Management/indexKnowledgeBaseItem</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The system indexes the KnowledgeBaseItems on a scheduled interval (new, changed KnowledgeBaseItems based on group scope, interval [time of day, day of week, time elapsed, trigger by status or change to KnowledgeBaseItem]), controlled by the Knowledge Base Manager, or ad hoc per Knowledge Base Manager request. If the index encounters an error the system generates an update to the KnowledgeBaseItem's Manager for review (updateUserWorkQueue, information on error: reason, time). After indexing the KnowledgeBaseItem is available for searching by CRM Users, the public, etc.</td>
+</tr>
+<tr>
+<td rowspan="2">005</td>
+<td style="font-weight: bold; background: lightgray;">Provide Customer Relationship Management/sendNotification</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The system sends a Notification (email, text, etc.) to the recipient. Notification includes Attachments as relevant. If a response from a Citizen is requested the system provides either a URL to respond, generates a subject line for response to the system so the system recognizes the response, etc. The system saves a copy of the Notification after transmission for archival purposes (copy of message, recipients, transmission date/time, schedule, etc.). For public notifications the system sends the Notification per the schedule defined by the Public Information Manager. For ServiceRequest Notifications the system attaches a copy of the Notification with the ServiceRequest for archival purposes. CRM Users resend/cancel Notifications as desired. Notifications are sent ad hoc and also scheduled based on configuration by a CRM Manager. If a delivery receipt is configured the system tracks delivery status of the Notification. For GISLayer updates the system notifies the GISManager identified for the GISLayer. The system includes the number of changes to the GISLayers, date/time of retrieval from GIS, and GISLayer name. For InterfaceServiceRequests, if the system receives an EnterpriseServiceBusStatus back that is not success then the system notifies the CRM Manager. If a KnowledgeBaseItem fails to index the system notifies the KnowledgeBaseItem's Editor with the KnowledgeBaseItem's title and date of failed index.</td>
+</tr>
+<tr>
+<td rowspan="2">006</td>
+<td style="font-weight: bold; background: lightgray;">Website/postUpdate</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The system requests a Website posts an update containing the message contents (text, etc.). The message contains an expiration date for the Website post. </td>
+</tr>
+<tr>
+<td rowspan="2">007</td>
+<td style="font-weight: bold; background: lightgray;">Social Media/postUpdate</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The system requests the Social Media platform posts an update on the requested SocialMediaSMSServiceRequest and disposition (created, cancelled, etc.), or public notification (text).</td>
+</tr>
+<tr>
+<td rowspan="2">008</td>
+<td style="font-weight: bold; background: lightgray;">Provide Customer Relationship Management/updateWorkQueue</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The system updates the CRM User's WorkQueue to include the KnowledgeBaseItem's requirement for acknowledgment. CRM User accesses the system and updates the WorkQueue to identify acknowledgment of KnowledgeBaseItem. After completed the CRM User's WorkQueue removes the KnowledgeBaseItem from the WorkQueue. The system updates the CRM User's WorkQueue indicating a KnowledgeBaseItem did not index properly, and requires CRM User review. The system updates the Editor's (CRM User) WorkQueue indicating a KnowledgeBaseItem received a Comment and requires CRM User review.</td>
+</tr>
+<tr>
+<td rowspan="2">009</td>
+<td style="font-weight: bold; background: lightgray;">Provide Customer Relationship Management/submitCommentOnCRM</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>CRM User requests the system to submit CRMComment and the system prompts the CRM User for their comment. Comment is added to the appropriate CRM system item (KnowledgeBaseItem, GISLayer, etc.) and the WorkQueue updated for the appropriate CRM User.</td>
+</tr>
+<tr>
+
+
+
+
+
+
+</table>
+
+
+<br />
+
+
+
+
+</td></tr></table>
+</td></tr></table></body></html>

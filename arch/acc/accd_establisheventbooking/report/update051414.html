@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<title>Convention Center "Create Project Charter"</title>
+<link rel="StyleSheet" href="http://austinea.org/style/email.css" type="text/css">
+</head>
+<body>
+
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="600" align="center"><tr><td>
+
+<!-- Online reference -->
+<p><class="lbl">Note: This report is also <a href="http://austinea.org/arch/acc/report/update051414.html" style="font-size: 7pt;">available online</a> by following link.</p>
+
+<div>
+<p>Hi All,</p> 
+</div>
+
+<p>Attached is the information for the "Create Project Charter" use case that was reviewed yesterday, with the Convention Center Team. Please take a moment to check my work and let me know if there are any changes I can make to improve this, or if this requirement is as discussed! 
+<p>
+
+
+<!-- Signature-->
+<table cellpadding="0" cellspacing="0" border="0" width="350" style="border-collapse: collapse;"><tr><td>
+<p>Cheers!</p>
+
+<table cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;" align="right">
+<tr>
+<td>
+<img src="http://austinea.org/image/austinLogo.jpg" border="0" width="100" height="100" alt="Austin Logo" />
+</td>
+</tr>
+</table>
+<p><img src="http://coawss3a.coacd.org/sites/CTM/EA/Shared Documents/Images/ABSIG.JPG" border="0" width="143" height="83" alt="sign" /> </p>
+
+<p><b>Aaron Brown</b> 
+<span style="color: red; font-weight: bold;">|</span> 
+<b>City of Austin</b>
+<a href="http://www.linkedin.com/in/austnaaron"><img src="http://journeycolorado.com/images/linkedin.jpg" border="0" alt="Linkin Logo" /> </a> <br />
+Senior IT Enterprise Architect<br />
+Direct: (512) 974-2960 </p>
+Email: Aaron.Brown2@austintexas.gov </p>
+</td></tr></table>
+
+
+<!-- Use case information below -->
+
+<hr>
+
+<!-- Muni Court Requirements Model -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="right">
+<tr>
+<td align="center">
+<span class="lbl">Note: Select to download</span><br />
+<a href="http://austinea.org/arch/acc/report/createProjectCharterUseCase.jpg"><img src="http://austinea.org/arch/acc/report/createProjectCharterUseCase.jpg" border="0" width="200" alt="" /></a><br />
+<span style="font-weight: bold;">Create Project Charter<br />Use Case</span>
+</td></tr></table>
+
+
+<p><b>Use Case Scope</b></p>
+<p>A request is entered into the system by the Chain of Command for a project, and the Project manager is sent a notification of a new project. The information on the system includes "Official project name", Budget, which funding (CIP, FDU, etc.) , Estimate for when it would need to be completed, stakeholders, location, description of project. The Project Manager fills out the Project Charter template, and then schedules an appointment with Stakeholders. With Stakeholders, the project Manager fills out: Risks, Scope, Assumptions/clarifications, sets expectations, Other stakeholders. The Stakeholders vet the Charter, and the Sponsor and the Stakeholders sign the Charter. </p>
+<br><br><br><br><br><br><br><br><br><br>
+
+
+<!-- Image - File For Motion Sequence Diagram -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="http://austinea.org/arch/acc/report/createProjectCharterSequenceDiagram01.jpg"><img src="http://austinea.org/arch/acc/report/createProjectCharterSequenceDiagram01.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Create Project Charter</p>
+</td></tr></table> 
+
+
+
+<p style="font-weight: bold; text-align: center;">Create Project Charter Interface Descriptions</p>
+<!-- Table definition -->
+<table align="center" id="custom">
+<tr><th width="195">Type/Interface</th><th>Description</th></tr>
+<tr>
+<td>Provide Functional Conference and Facility Space/ <br /> initiateNewProject</td> <td>The Chain of Command accesses the System and chooses to Initiate a "new project". They specify the following information: "Official project name", Budget, which funding (CIP, FDU, etc.) , Estimate for when it would need to be completed, stakeholders, location, description of project. 
+ </td> </tr>
+ 
+<tr>
+<td>Provide Functional Conference and Facility Space/ <br /> notifyProjectManagerOfNewProject</td> <td>They System sends a message to the project Manager indicating a new Project has been initiated by the Chain of Command, and the name of the project. </td> </tr>
+
+<tr>
+<td>Provide Functional Conference and Facility Spacer/<br /> createInitialCharter</td> <td>The Project Manager Accesses the system and creates an Initial Project Charter. This is comprised of the following information: "Official project name", Budget, which funding (CIP, FDU, etc.) , Estimate for when it would need to be completed, stakeholders, location, description of project, project manager notes, Core Team Members, target Date, an initial scope (purpose), objective/goal, What's IN scope and what's NOT in Scope. </td> </tr>
+
+<tr>
+<td>Project Manager/<br /> scheduleMeetingWithStakeholder</td> <td>Based on initial information provided when the project initiation occurred, the Project Manager schedules a meeting and sends notification to all stakeholders to gather additional information about the project.  </td> </tr>
+
+<tr>
+<td>Project Manager/ <br /> recordCharterInformation</td> <td>The Project Manager meets with Stakeholders and gathers additional information for the project Charter.</td> </tr>
+
+<tr>
+<td>Provide Functional Conference and Facility Space/<br /> updateCharterInfo</td> <td>The Project Manager accesses the System, looks up the project for which the Charter is being completed, and provides additional charter information: Risks, Scope, Assumptions/clarifications, sets expectations, Other stakeholders, critical success factors, Deliverables, Milestones, basic budget, constraints.  </td> </tr>
+
+
+<tr>
+<td>Provide Functional Conference and Facility Space/ <br /> notifyStakeholderAndChainOfCommandToSignCharter</td> <td>The System send a notification to Chain of Command and to the Stakeholders to access the project information on the system and electronically "Sign" the Charter. </td> </tr>
+
+
+<tr>
+<td>Provide Functional Conference and Facility Space/ <br /> approveCharter</td> <td>The User (chain of command and/or stakeholders) access the system, look up the project by project name, and provide a digital signature indicating acceptance of the Charter for the Project.  </td> </tr>
+
+<tr>
+<td>Provide Functional Conference and Facility Space/ <br /> notifyProjectManagerOfCharterApproval</td> <td>The System sends a message to the project Manager indicating all stakeholders and Chain of command have approved the project charter. </td> </tr>
+
+
+
+
+
+</table>
+
+
+
+<!-- Table definition
+<table align="center" id="custom">
+<tr><th>Number</th><th>Category</th><th>Description</th><th>Criticality</th></tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table> -->
+
+</td></tr></table> 
+
+</td></tr></table>
+</td></tr></table></body></html>

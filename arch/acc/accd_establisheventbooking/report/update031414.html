@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<title>Convention Center "Schedule Site Visit"</title>
+<link rel="StyleSheet" href="http://austinea.org/style/email.css" type="text/css">
+</head>
+<body>
+
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="600" align="center"><tr><td>
+
+<!-- Online reference -->
+<p><class="lbl">Note: This report is also <a href="http://austinea.org/arch/acc/report/update031414.html" style="font-size: 7pt;">available online</a> by following link.</p>
+
+<div>
+<p>Hi All,</p> 
+</div>
+
+<p>Attached is the information for the "Schedule Site Visit" use case that was reviewed March 14th, 2014, with the Convention Center Team. Please take a moment to check my work and let me know if there are any changes I can make to improve this, or if this requirement is as discussed! 
+<p>
+
+
+<!-- Signature-->
+<table cellpadding="0" cellspacing="0" border="0" width="350" style="border-collapse: collapse;"><tr><td>
+<p>Cheers!</p>
+
+<table cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;" align="right">
+<tr>
+<td>
+<img src="http://austinea.org/image/austinLogo.jpg" border="0" width="100" height="100" alt="Austin Logo" />
+</td>
+</tr>
+</table>
+<p><img src="http://coawss3a.coacd.org/sites/CTM/EA/Shared Documents/Images/ABSIG.JPG" border="0" width="143" height="83" alt="sign" /> </p>
+
+<p><b>Aaron Brown</b> 
+<span style="color: red; font-weight: bold;">|</span> 
+<b>City of Austin</b>
+<a href="http://www.linkedin.com/in/austnaaron"><img src="http://journeycolorado.com/images/linkedin.jpg" border="0" alt="Linkin Logo" /> </a> <br />
+Senior IT Enterprise Architect<br />
+Direct: (512) 974-2960 </p>
+Email: Aaron.Brown2@austintexas.gov </p>
+</td></tr></table>
+
+
+<!-- Use case information below -->
+
+<hr>
+
+<!-- Muni Court Requirements Model -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="right">
+<tr>
+<td align="center">
+<span class="lbl">Note: Select to download</span><br />
+<a href="http://austinea.org/arch/acc/report/scheduleSiteVisitUseCase.jpg"><img src="http://austinea.org/arch/acc/report/scheduleSiteVisitUseCase.jpg" border="0" width="200" alt="" /></a><br />
+<span style="font-weight: bold;">Schedule Site Visit<br />Use Case</span>
+</td></tr></table>
+
+
+<p><b>Use Case Scope</b></p>
+<p>The Sales Manager checks the Schedule to determine if there are conflict (appropriate time to show space, Availability of Staff.) The Sales manager will outline who should attend the site visit (Catering , IT, Event Coordinators, Security) and invite them to attend, and then sends an Email to all appropriate Site Staff to ensure the building is active (lights on, water fountains on, etc.)
+Some Vendors do not want others to be able to see the convention center while they are renting (private meetings, secret info presented, etc.)</p>
+<br><br><br><br><br><br><br><br>
+
+
+<!-- Image - File For Motion Sequence Diagram -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="http://austinea.org/arch/acc/report/scheduleSiteVisitSequenceDiagram01.jpg"><img src="http://austinea.org/arch/acc/report/scheduleSiteVisitSequenceDiagram01.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Schedule Site Visit</p>
+</td></tr></table> 
+
+
+
+<p style="font-weight: bold; text-align: center;">Schedule Site Visit Interface Descriptions</p>
+<!-- Table definition -->
+<table align="center" id="custom">
+<tr><th width="195">Type/Interface</th><th>Description</th></tr>
+<tr>
+<td>Sales Manager/ <br /> requestSiteVisit</td> <td>The Event Representative contacts the Sales Manager and requests a site visit.
+ </td> </tr>
+ 
+<tr>
+<td>Establish Event Booking/ <br /> checkAvailabilityOfSpace</td> <td>Once the customer meeting requirements are received, the Sales Manager pulls up an Event Diary which displays a grid indicating who is in what room, when, which status the groups are in (current system color codes - contracted groups are displayed in one color, definite groups are in another - the system allows for the displayed colors to be configured), and what's currently available.  The Grid allows the Sales Manager to drill down to see other options offered to other potential groups. When a customer negotiates for business, they may be provided several dates and space option(s) and the each options is specified in the Event Diary. The Sales Manager can change the reserve space options to have what's shown indicate different offerings and the available space. The Grid also allows the Sales Manager to schedule site visits during times in which there is little/no event activity, as deemed appropriate by the Sales Manager. </td> </tr>
+
+<tr>
+<td>Sales Manager/<br /> sendEmailToSiteInspectionGroup</td> <td>The Sales Manager uses an Outlook Address Book group to send all the members of the Site Inspection Group an Email indicating the Date a Site visit will occur, indicating specifics desired by the Event Representative. </td> </tr>
+
+<tr>
+<td>Establish Event Booking/<br /> scheduleSiteVisitForCustomer</td> <td>The Sales Manager accesses the System to annotate a Site visit has been scheduled on a specific Customer Account. If the Site visit is in relationship to a specific booking, the Site visit is added/logged to the specific booking ( Contract ID ). If the Site visit is occurring in the future, then an Activity (trace) is scheduled to remind staff of the Site Visit.  </td> </tr>
+
+<tr>
+<td>Sales Manager/ <br /> conductSiteVisit</td> <td>The Sales manager and the Site Inspection Team meet with the Event Representative to tour the facility, during which additional booking information may be provided by the Event Representative.</td> </tr>
+
+<tr>
+<td>Establish Event Booking/<br /> updateCustomerOrBookingInfo</td> <td>A Member of the Inspection Group goes to the Customer Account or a specific Booking (contract ID) and provides additional information related to the event or the customer. The System automatically sends email notifying the Sales Manager and/or the Sales Director for the booking/Customer, as well as automatically logging the activity. This notification is configurable by activity. The inspection Group can not make changes to the Booking information, or space planning. Only Sales managers and Directors can effect these kind of critical changes.  </td> </tr>
+
+
+<tr>
+<td>Establish Event Booking/ <br /> updateCustomerInformation</td> <td>The Site Manager takes all the information garnered from the Site visit with the Event Representative, and adds them to the Customer account and/or the Specific Booking comments (Contract ID). The booking is updated with any salient information (estimated attendance records, space needed, profile, competitors, comments, etc.)</td> </tr>
+<tr>
+
+
+
+</table>
+
+
+
+<!-- Table definition
+<table align="center" id="custom">
+<tr><th>Number</th><th>Category</th><th>Description</th><th>Criticality</th></tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table> -->
+
+</td></tr></table> 
+
+</td></tr></table>
+</td></tr></table></body></html>

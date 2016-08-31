@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<title>Convention Center "Manage Out of Service Inventory"</title>
+<link rel="StyleSheet" href="http://austinea.org/style/email.css" type="text/css">
+</head>
+<body>
+
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="600" align="center"><tr><td>
+
+<!-- Online reference -->
+<p><class="lbl">Note: This report is also <a href="http://austinea.org/arch/acc/report/update050714.html" style="font-size: 7pt;">available online</a> by following link.</p>
+
+<div>
+<p>Hi All,</p> 
+</div>
+
+<p>Attached is the information for the "Manage Out of Service Inventory" use case that was reviewed last week with the Convention Center Team. Please take a moment to check the work and let me know if there are any changes I can make to improve this, or if this requirement is as discussed! 
+<p>
+
+
+<!-- Signature-->
+<table cellpadding="0" cellspacing="0" border="0" width="350" style="border-collapse: collapse;"><tr><td>
+<p>Cheers!</p>
+
+<table cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;" align="right">
+<tr>
+<td>
+<img src="http://austinea.org/image/austinLogo.jpg" border="0" width="100" height="100" alt="Austin Logo" />
+</td>
+</tr>
+</table>
+<p><img src="http://coawss3a.coacd.org/sites/CTM/EA/Shared Documents/Images/ABSIG.JPG" border="0" width="143" height="83" alt="sign" /> </p>
+
+<p><b>Aaron Brown</b> 
+<span style="color: red; font-weight: bold;">|</span> 
+<b>City of Austin</b>
+<a href="http://www.linkedin.com/in/austnaaron"><img src="http://journeycolorado.com/images/linkedin.jpg" border="0" alt="Linkin Logo" /> </a> <br />
+Senior IT Enterprise Architect<br />
+Direct: (512) 974-2960 </p>
+Email: Aaron.Brown2@austintexas.gov </p>
+</td></tr></table>
+
+
+<!-- Use case information below -->
+
+<hr>
+
+<!-- use case  -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="right">
+<tr>
+<td align="center">
+<span class="lbl">Note: Select to download</span><br />
+<a href="http://austinea.org/arch/acc/report/ManageOutOfServiceInventoryUseCasejpg"><img src="http://austinea.org/arch/acc/report/ManageOutOfServiceInventoryUseCase.jpg" border="0" width="200" alt="" /></a><br />
+<span style="font-weight: bold;">Manage Out of Service Inventory<br />Use Case</span>
+</td></tr></table>
+
+<!-- Use Case Scope  -->
+
+<p><b>Use Case Scope</b></p>
+<p>The Materials Planner uses the System to choose an Inventory Item that must be taken out of service. The System presents the Material Planner with a calendar of reservations for the Inventory Item. The Materials Planner evaluates reasons for reservations and the need for taking Inventory Item out of service. If reservation need outweighs the 'out of service' need, the Materials Planner chooses an available start date/time and end date/time during which the Inventory Item will be out of service. The Materials planner uses the system to specify the reason the Inventory Item is 'out of Service'. The Materials Planner completes the out of service reservation and during the date range specified, the System changes the Inventory Item's status to 'Out of Service'. If the 'out of service' need outweighs reservation needs, the Materials Planner chooses the start date/time and end date/time during which Inventory Item will be out of service as well as reason. The System changes the Inventory Item's status to 'Out of Service'. The System notifies effected Employees letting them know their reservation is no longer valid and includes the reason entered by the Materials Planner. The System presents the Employee with the option to make a future reservation. The Inventory Item remains 'out of service' until the end date/time or until the Materials Planner changes status back to 'In Service'. If Inventory Item service extends beyond end date/time the Materials Planner uses the System to extend the 'out of service' reservation. If reservations exist that conflict with 'out of service' periods the System notifies effected Employees letting them know their reservation is no longer valid and includes the reason entered by the Materials Planner. The System presents the Employee with the option to make a future reservation. </p>
+<br>
+<br>
+
+<p><class="lbl">The following Sequence diagram references the "RESERVE INVENTORY" Use case, which can be located by clicking the following link: <a href="http://austinea.org/arch/acc/report/update043014-2.html" style="font-size: 7pt;">Reserve Inventory</a></p>
+
+<p><class="lbl">The following Sequence diagram references the "CHECK IN OR CHECK OUT INVENTORY" Use case, which can be located by clicking the following link: <a href="http://austinea.org/arch/acc/report/update043014.html" style="font-size: 7pt;">Check In or Check Out Inventory</a></p>
+
+
+<!-- Sequence Diagram -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="http://austinea.org/arch/acc/report/ManageOutOfServiceInventorySequenceDiagram01.jpg"><img src="http://austinea.org/arch/acc/report/ManageOutOfServiceInventorySequenceDiagram01.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Manage Out of Service Inventory Sequence Diagram</p>
+</td></tr></table> 
+
+
+
+<p style="font-weight: bold; text-align: center;">Manage Out of Service Inventory</p>
+<!-- Table definition -->
+<table align="center" id="custom">
+<tr><th width="195">Type/Interface</th><th>Description</th></tr>
+
+
+<tr>
+<td>provide Functional Conference and Facility Space/ <br /> chooseInventoryItem</td> <td>The Employee accesses a Search Mechanism and provides Description or Asset ID or Manufacturer and the System provides a list of all Inventory Items matching the Search Criteria. Employee chooses Inventory Item from Inventory List and System retrieves Reservation Info relevant to Inventory Item.</td> </tr>
+
+<tr>
+<td>provide Functional Conference and Facility Space/<br /> notifyEmployeeToTakeItemOutOfService</td> <td>The Materials Planner has a need to take an Inventory Item out of Service. They System sends email to the employee currently in possession of the inventory item, requesting they check in the item. The email indicates Inventory Item, Date/time needed to be returned, reason for need, etc.  </td> </tr>
+
+<tr>
+<td>provide Functional Conference and Facility Space/ <br /> notifyMaterialsPlannerOfInventoryReturn</td> <td>The Employee, after being requested to return and Item to inventory, checks in the item, and the system generates an email to the Materials Planner indicating the inventory item, and the date/time it was checked back in. </td> </tr>
+
+
+</table>
+
+
+
+<!-- Table definition
+<table align="center" id="custom">
+<tr><th>Number</th><th>Category</th><th>Description</th><th>Criticality</th></tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table> -->
+
+</td></tr></table> 
+
+</td></tr></table>
+</td></tr></table></body></html>

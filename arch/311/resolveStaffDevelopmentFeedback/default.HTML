@@ -1,0 +1,163 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Resolve Staff Development Feedback</title>
+<link rel="Stylesheet" href="http://austinea.org/style/hover.css" type="text/css" />
+</head>
+<body bgcolor="#ddd8c2">
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="650" align="center">
+<tr><td style="padding: 0;" height="130" valign="top"><a href="http://austinea.org">
+<img src="http://austinea.org/image/iTHeader.jpg" alt="austinea.org - home..." border="0"></a></td></tr>
+<!-- Text Area -->
+<tr><td>
+
+<p style="text-align: center; font-weight: bold;">Resolve Staff Development Feedback<br />Use Case Specification</p>
+<p style="text-align: center;">03/24/16
+
+<!--  IF Printable document option Included  
+<p style="text-align: center;">download <a href="http://austinea.org/arch/as/***.docx">printable version</a>
+-- >
+
+<b> Animal Services Logical Data Model </b>            
+<!-- Image -  Logical Data Model 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="http://austinea.org/arch/as/ldm.jpg"><img src="http://austinea.org/arch/as/ldm.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Animal Services Logical Data Model</p>
+</td></tr></table> -->
+
+<!-- USE CASE IMAGE -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/311/resolveStaffDevelopmentFeedback/ucd.jpg"><img src="http://austinea.org/arch/311/resolveStaffDevelopmentFeedback/ucd.jpg" border="0" alt="" width="620"/></a><br />
+<span style="font-weight: bold;">Resolve Staff Development Feedback<br />Use Case Model</span>
+</td></tr></table>
+
+<p><b>Scope: </b>The Staff Development work group receives a ServiceRequest311Feedback in CSR. The Feedback Reviewer reviews the ServiceRequest311Feedback, and associated CallRecording, and determines if the Feedback is valid or invalid, or needs to be rerouted to another work group.
+If assigned to incorrect group, the Feedback Reviewer assigns the ServiceRequest311Feedback to the appropriate response group and submits Feedback to initiate the Respond to 311 Feedback use case.
+For Feedback pertaining to Processes the ServiceRequest311Feedback is assigned to the Staff Development Manager and the Adjust 311 Business Process use case is started.
+If the Feedback concerns a Transaction (phone call, information provided, email, service request created) the ServiceRequest311Feedback is assigned to the QC Specialist.
+If the Feedback is for a behavior the ServiceRequest311Feedback is assigned to the appropriate Supervisor based on the 311 Agent Feedback received for.
+The QC Specialist creates a EUFQualityEvaluation. The QC Specialist updates and assigns the ServiceRequest311Feedback to the appropriate supervisor for the 311 Agent and notifies the Supervisor and Staff Development team of the assigned Feedback.
+The Supervisor reviews the ServiceRequest311Feedback and performs research as needed (CallRecording, etc.). If the Supervisor disagrees with the Feedback the Supervisor initiates the Resolve 311 Process Dispute use case.
+If the Behavior Feedback is Positive the Supervisor creates a BravoAward, notifies Austin 311 through email of the Positive Behavior, and delivers a printed copy of the BravoAward to the 311 Agent. If the Behavior is Negative, or the Feedback is for a Transaction, the Supervisor coaches the 311 Agent using the EUFEvaluation as a reference. Coaching sessions occur regularly every two-weeks.
+However, if the ServiceRequest311Feedback is a high Priority or Severity the Chain of Command is notified of the ServiceRequest311Feedback, and the Chain of Command contacts the Citizen to review the Feedback. The Supervisor reviews additional contacts before and after the Feedback. The Supervisor adjusts the 311 Agent's schedule to coach the 311 Agent immediately.  
+
+
+
+<!-- IF INTERACTION OVERVIEW IS INCLUDED 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/as/***.jpg"><img src="http://austinea.org/as/code/***.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Interaction Overview</span>
+</td></tr></table>
+-->
+
+<!-- ACTIVITY DIAGRAM -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/311/resolveStaffDevelopmentFeedback/ad01.jpg"><img src="http://austinea.org/arch/311/resolveStaffDevelopmentFeedback/ad01.jpg" border="0" alt="" width="600"/></a><br />
+<span style="font-weight: bold;">Resolve Staff Development Feedback<br />Activity Diagram</span>
+</td></tr></table>
+
+
+<br />
+
+
+<!-- SEQUENCE DIAGRAM                  
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/311/abatePropertyWithContractor/sd01.jpg"><img src="http://austinea.org/arch/311/abatePropertyWithContractor/sd01.jpg" border="0" alt="" width="600"/></a><br />
+<span style="font-weight: bold;">Resolve Staff Development Feedback<br />Sequence Diagram</span>
+</td></tr></table>
+<br />
+--> 
+
+
+<!-- INTERFACE TABLE  -->
+<table align="center" id="custom">
+<tr><th width="9%">Req#</th><th width="70%">Type/Interface - Requirement Description</th><th>Performance</th></tr>
+<tr>
+<td rowspan="2">001</td>
+<td style="font-weight: bold; background: lightgray;">QC Specialist/Create EUF Evaluation</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The QC Specialist creates an EUFEvaluation. The QC Specialist assigns the ServiceRequest311Feedback to the appropriate Supervisor for the 311 Agent and the CSR system notifies the Supervisor of an assigned ServiceRequest311Feedback.</td>
+</tr>
+<tr>
+<td rowspan="2">002</td>
+<td style="font-weight: bold; background: lightgray;">Supervisor/Review Feedback, and Determine Validity</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Supervisor reviews the ServiceRequest311Feedback and identifies additional coaching opportunities including tone, etc. The Supervisor determines whether to dispute the Feedback or coach the impacted agent. If the Feedback is a high priority the Supervisor coaches the impacted agent immediately.</td>
+</tr>
+<tr>
+<td rowspan="2">003</td>
+<td style="font-weight: bold; background: lightgray;">Supervisor/Create Bravo Award and Notify Staff of Award</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Supervisor creates a BravoAward (form on AE website, summary of compliment, date, agent name, supervisor name). The Supervisor prints the BravoAward, delivers the BravoAward to the impacted Agent, and the Supervisor sends an email to the entire 311 call center containing the contents of the BravoAward. </td>
+</tr>
+<tr>
+<td rowspan="2">004</td>
+<td style="font-weight: bold; background: lightgray;">Chain of Command/Contact Citizen to Review Feedback</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Chain of Command contacts the Citizen by phone to discuss Feedback and provide additional information on resolution actions.</td>
+</tr>
+<tr>
+<td rowspan="2">005</td>
+<td style="font-weight: bold; background: lightgray;">Supervisor/Review Additional Contacts Before and After Feedback Issue</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Supervisor reviews contacts for the 311 Agent before and after the Feedback time to identify additional coaching opportunities.</td>
+</tr>
+<tr>
+<td rowspan="2">006</td>
+<td style="font-weight: bold; background: lightgray;">Resolve 311 Process Dispute</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td><br></td>
+</tr>
+<tr>
+<td rowspan="2">007</td>
+<td style="font-weight: bold; background: lightgray;">Modify 311 Agent Schedule</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td><br></td>
+</tr>
+<tr>
+<td rowspan="2">008</td>
+<td style="font-weight: bold; background: lightgray;">Supervisor/Coach Staff on Feedback</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Supervisor coaches the Agent on Feedback. Coaching sessions occur every 2 weeks, unless a high Priority and then coaching occurs immediately. Supervisor reviews attendance and other metrics (scorecard, quality, ASA, QM, disposition, attendance, corrective actions, RONA, adherence) Personal goals are discussed. 
+Feedback is discussed (number received since last coaching session, specific errors, areas for improvement, agent input on decision making, correct process if applicable). Coaching is tracked on a CoachingForm (each section has check box/initial box: attendance, quality, EUF, all categories have box, AE core competencies, signature, date, initials, supervisor signature) (spreadsheet and paper copy is kept in EmployeeFile). </td>
+</tr>
+<tr>
+
+
+
+
+
+</table>
+
+
+<br />
+
+
+
+
+</td></tr></table>
+</td></tr></table></body></html>

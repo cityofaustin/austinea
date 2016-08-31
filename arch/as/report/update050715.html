@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<title>Animal Services "Manage Community Cat Services"</title>
+<link rel="StyleSheet" href="http://austinea.org/style/email.css" type="text/css">
+</head>
+<body>
+
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="600" align="center"><tr><td>
+
+<!-- Online reference -->
+<p><class="lbl">Note: This report is also <a href="http://austinea.org/arch/as/report/update050715.html" style="font-size: 7pt;">available online</a> by following link.</p>
+
+<div>
+<p>Hi All,</p> 
+</div>
+
+<p>Attached is the information for the updated "Manage Community Cat Services" use case that was reviewed May 7th, 2015, with the Animal Services Team. Please take a moment to check my work and let me know if there are any changes I can make to improve this, or if this requirement is as discussed! Please remember that this specific flow is not exactly as the current process is done today, but a conceptualization of what we would like a new system to do for Animal Services in the future. </p> <p>
+
+Additionally, I wanted to let you know the Online repository of Animal Services Use Cases is now up to date ( http://austinea.org/arch/as/report/index.html )
+<p>
+
+
+<!-- Signature-->
+<table cellpadding="0" cellspacing="0" border="0" width="350" style="border-collapse: collapse;"><tr><td>
+<p>Cheers!</p>
+
+<table cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;" align="right">
+<tr>
+<td>
+<img src="http://austinea.org/image/austinLogo.jpg" border="0" width="100" height="100" alt="Austin Logo" />
+</td>
+</tr>
+</table>
+<p><img src="http://coawss3a.coacd.org/sites/CTM/EA/Shared Documents/Images/ABSIG.JPG" border="0" width="143" height="83" alt="sign" /> </p>
+
+<p><b>Aaron Brown</b> 
+<span style="color: red; font-weight: bold;">|</span> 
+<b>City of Austin</b>
+<a href="http://www.linkedin.com/in/austnaaron"><img src="http://journeycolorado.com/images/linkedin.jpg" border="0" alt="Linkin Logo" /> </a> <br />
+Senior IT Enterprise Architect<br />
+Direct: (512) 974-2960 </p>
+Email: Aaron.Brown2@austintexas.gov </p>
+</td></tr></table>
+
+
+<!-- Use case information below -->
+
+<hr>
+
+<b> Animal Shelter Logical Data Model </b>
+<!-- Image -  Logical Data Model -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="http://austinea.org/arch/as/report/animalShelterLogicalDataModel.jpg"><img src="http://austinea.org/arch/as/report/animalShelterLogicalDataModel.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Animal Shelter Logical Data Model</p>
+</td></tr></table> 
+
+<!-- Muni Court Requirements Model -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="right">
+<tr>
+<td align="center">
+<span class="lbl">Note: Select to download</span><br />
+<a href="http://austinea.org/arch/as/report/manageCommunityCatServicesUseCase.jpg"><img src="http://austinea.org/arch/as/report/manageCommunityCatServicesUseCase.jpg" border="0" width="200" alt="" /></a><br />
+<span style="font-weight: bold;">Manage Community Cat Services<br />Use Case</span>
+</td></tr></table>
+
+
+
+
+
+<p><b>Use Case Scope</b></p>
+<p>A Cat is identified as needing the Community Cat Services. This is either from a customer request (animal discovered and they are temporarily caretaking), a mobile unit seeing it on the street, a field officer referral, or from a log with previous contact with the team, reaches out to the complainant to get information about the cat(s). The Outreach & Education Team accesses the system and adds the cat(s) the trapper list. The Field officer accesses the system and retrieves a list of all animals to be trapped that day. They contact Animal Services Dispatch to indicate the start of an activity, they Trap the animal, deliver the animal to the Mobile Mini and then return it from whence it came. Once completed the Field Officer contacts Animal Services Dispatch to indicate completion of an activity. Note: it is desirable to que the start and ending activity on an IPAD in the field as opposed to physically calling the dispatcher.  </p>
+
+<!-- Image -  Sequence Diagram -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="http://austinea.org/arch/as/report/manageCommunityCatServicesSequenceDiagram01.jpg"><img src="http://austinea.org/arch/as/report/manageCommunityCatServicesSequenceDiagram01.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Manage Community Cat Services Sequence Diagram</p>
+</td></tr></table> 
+
+
+
+<p style="font-weight: bold; text-align: center;">Manage Community Cat Services Interface Descriptions</p>
+<!-- Table definition -->
+<table align="center" id="custom">
+<tr><th width="195">Type/Interface</th><th>Description</th></tr>
+<tr>
+<td>Customer Service/ <br /> requestOutreachServices</td> <td>The animal owner contacts Customer Service and is prompted for customer name, address, animal breed, animal age, animal size and number of animals. 
+ </td> </tr>
+ 
+<tr>
+<td>Outreach & Education Team/ <br /> provideCustomerContact</td> <td>Customer Service contacts the Outreach & Education Team via email and provides the customer name, litter size, breed, sex, name of animals needing Spay Neuter Services. </td> </tr>
+
+<tr>
+<td>Outreach & Education Team/ <br /> discoverAnimalOwner</td> <td>The Outreach & Education Team patrols the city and see's an animal or feral cat colony that needs attention or medical needs.  </td> </tr>
+
+<tr>
+<td>Outreach & Education Team/<br /> investigateAnimalIssue</td> <td>The animal owner or the field officer contacts the Outreach & Education team to convey the need for a customer interaction. They convey the address or any other information indicating the need for Outreach team attention. </td> </tr>
+
+
+<tr>
+<td>Animal Owner/<br /> provideInformation</td> <td>The Outreach & Education team knocks on doors, or directly contacts the animal owner (if known) and requests additional information such as: address, animal owner name, pet name, number of pets, spay or neutered, age of animals, sex of animal, size of animal, breed, color, current vaccinations, friendliness with strangers, and email address. They determine if the Animal Owner can provide their own transportation. If no email is available, the animal owner is provided the dates and locations when services are available on the phone. The outreach team will encourage the animal owner to get all animals spayed/neutered. This is to add animal information in the system, for future potential animal/owner matches. Additionally the owner signs release forms authorizing the surgery for the animal, provided documentation about surgery risks, and Emancipet info. When owner needs Community Cat assistance, trapper will collect the same information, along with feeding schedule and size of cat colony. There are no inquiries to transportation as the trapper will be providing that in entirety. </td> </tr>
+
+<tr>
+<td>Provide Animal Shelter and Rescue/<br /> addAnimaltoTrapperList</td> <td>The Outreach & Education team accesses the system and provide animal info for field officer trapper team. This includes: request date, date contacted by outreach, date trappers informed, date trapped, name, address, zipcode, number of animals, phone number, own or rent, email, availability, who referred, special notes, are they (the complainant) handicapped?, are aggressive animals present, are the animals friendly, barriers to access (locked gate?), is all recorded by the system for the TrapperList  </td> </tr>
+
+
+<tr>
+<td>Provide Animal Shelter and Rescue/<br /> getNextAnimalToTrap</td> <td>The Field officer accesses the system and retrieves a list of all animals to be trapped for a specific date range.</td> </tr>
+
+
+<tr>
+<td>Provide Animal Shelter and Rescue/<br /> createActivity</td> <td>The Outreach & Education team accesses the system and indicates the address, owner information, date of pickup, whether the owner will be picking up the animal, or whether the outreach team will be returning the animal after surgery. Additionally the outreach team sets up an outlook calendar appointment, copying internal staff as well as Emancipet. When owner needs Community Cat assistance, Outreach & Education follow the same process, but there are no inquiries to transportation as the trapper will be providing that in entirety. </td> </tr>
+
+<tr>
+<td>Animal Services Dispatcher/<br /> recordStartOfActivity</td> <td>The Outreach & Education Team contacts dispatch and indicates the address at which they will retrieve the animal. In some instances, if the animal has been discovered, Outreach & Education Team tells dispatcher to create an activity,which will be further details at the end of the engagement. </td> </tr>
+
+
+<tr>
+<td>Provide Animal Shelter and Rescue/<br /> recordBeginningActivity</td> <td>A Field Officer uses the system to start a timer for the activity they are about to begin. Timers are associated with a specific Activity number, and activity type (New, Dispatched, working, at vet services, enroute, customer service, desk, field, outreach, other agency handling, behavior evaluation). The Field Officer records the starting mileage if they are currently using a fleet vehicle (and the FleetIdNo, if they are using a fleet vehicle to which they are not assigned) </td> </tr>
+
+<tr>
+<td>Field Officer/<br /> trapAnimal</td> <td>The Field Officer goes to the reported location, at the agreed upon time, and sets traps for animal capture. The Officer hangs out and waits until animals enter the trap. This normally happens early in the morning (because the Mobile Mini cutoff for surgery dropoff is 9 AM). The cat's ear is clipped to indicate they have been spayed/neutered. If the ear is already clipped, the cat is released immediately. </td> </tr>
+
+<tr>
+<td>Mobile Mini/<br /> spayOrNeuterCat</td> <td>The Field officer fills out the CommunityCatAustinHumaneSocietySurgeryForm, which contains: name, address,  trapper name, zip code, trapping location, number of cats trapped that, dates trapped, cat description (color, size, sex, breed, county), surgery consent, signature, date signed, Mobile mini booth number, antibiotic release, and then leaves the animal in an assigned booth. They clip the Surgery Release form to the trap/cage. They call the Community Cats voice mail and leave info (trapper name, date, time, number of cats left, and trapper phone number.) The Trapper, flips the booth sign to "RED" (indicating a dirty/occupied booth)  </td> </tr>
+
+<tr>
+<td>Mobile Mini/<br /> provideAnimal</td> <td>The Field Officer goes to the booth in which the animal was placed, and attached to the cage will be the post-surgery paperwork and Rabies certificate. The Field officer checks to ensure the animal is the correct animal. The Field Officer, cleans up the Mobile mini booth (flipping the sign to GREEN, which means clean/Available. Note: If Austin Humane Society recommends further housing (terminated pregnancy), storming outside, below freezing temperature, the animals will stay with Mobile Mini an additional day, and the Field Officer is required to feed and water the animal during the duration of stay.  </td> </tr>
+
+
+<tr>
+<td>Provide Animal Shelter and Rescue/<br /> recordEndofActivity</td> <td>A Field Officer uses the system to stop a timer for the activity they have just completed. Timers are associated with a specific Activity number, and activity type (new, dispatched, working, At Vet services, enroute, customer service, desk, field, outreach, other Agency handling, Behavior Evaluation). The Field Officer records the ending mileage if they are currently using a Fleet vehicle (and the FleetIdNo, if they are using a Fleet vehicle to which they are not assigned). </td> </tr>
+
+
+<tr>
+<td>Animal Owner/<br /> releaseAnimalBackToPickupLocation</td> <td>The Field Officer returns the animal to the location at which it was trapped.  </td> </tr>
+
+<tr>
+<td>Animal Services Dispatcher/<br /> recordEndOfActivity</td> <td>The Outreach & Education team contacts Dispatch and indicates the completion of animal release.  </td> </tr>
+
+<tr>
+<td>Provide Animal Shelter and Rescue/<br /> updateActivityInformation</td> <td>The Outreach & Education Team accesses the system and records information related the the animal delivery (date, time, final disposition, etc. ) </td> </tr>
+
+
+</table>
+
+
+
+<!-- Table definition
+<table align="center" id="custom">
+<tr><th>Number</th><th>Category</th><th>Description</th><th>Criticality</th></tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table> -->
+
+</td></tr></table> 
+
+</td></tr></table>
+</td></tr></table></body></html>

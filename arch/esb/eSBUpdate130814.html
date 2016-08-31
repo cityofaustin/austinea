@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Enterprise Service Buss (ESB) Update</title>
+<link rel="Stylesheet" href="http://austinea.org/style/email.css" type="text/css" />
+</head>
+<body>
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="650" align="center"><tr><td>
+
+<!-- Online reference -->
+<p class="lbl">Note: This report is also <a href="http://coawss3a/sites/CTM/EA/Lists/Team%20Discussion/Flat.aspx?RootFolder=%2fsites%2fCTM%2fEA%2fLists%2fTeam%20Discussion%2fEnterprise%20Service%20Buss%20%28ESB%29%20Update&FolderCTID=0x01200200B80C3FD648704546B9FD2222BC5DFD5C">available on SharePoint</a> by following link.</p>
+
+<h1>Enterprise Architecture ESB Sequencing Plan</h1>
+
+<p>This report provides an update on the &quot;proposed&quot; strategy for a citywide Enterprise Service Bus (ESB) fulfilling the goal to Implement SOA Strategy. Feel free to share with others as needed. And, your comments and/or suggestions are always welcome.</p>
+
+<!-- Image ESB Strategy -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="right"><tr><td align="center">
+<span class="lbl">Note: Select to view</span><br />
+<a href="http://austinea.org/arch/esb/eSBStrategyView2.jpg" target="new_window"><img src="http://austinea.org/arch/esb/eSBStrategyView2.jpg" border="0" width="300" alt="" /></a><br />
+<span style="font-weight: bold;">Updated SOA Strategy Graphical View</span>
+</td></tr></table>
+
+<div>
+
+<p><b>Executive Summary</b></p>
+
+<p>The CIO Council identified the need for a citywide Service Oriented Architecture (SOA) capability to improve the city's information technology (IT) infrastructure. This capability is part of the Department Directors Advisory Council (DDAC) Essential Capability to better manage IT infrastructure. As such, the CIO Council requested Enterprise Architecture (EA) to lead an Enterprise Service Bus (ESB) Task Force to <i>Implement SOA Strategy</i> - a goal established by the Council. An ESB is a software component used for designing and implementing the interaction and communication between mutually interacting software applications leading to a service-oriented architecture. SOA is a software architecture model for distributed computing. It is a variant of the more general client-server software architecture model and promotes agility and flexibility concerning communication and interaction between city applications. Its primary use is in enterprise application integration of mixed and complex IT landscapes - an ESB is also instrumental in Business Intelligence also a DDAC Essential Capability. Finally, there are several important City of Austin goals that depend on a successful implementation of a SOA strategy. Per CIO Council guidance, the ESB Task Force identified relevant SOA milestones leading to the accomplishment of these goals to include:</p>
+
+<ul>
+<li>Determine if and how Austin Water Utility's ESB can be used for general city purposes</li> 
+<li>Develop Service Level Agreement</li>
+<li>Determine ESB interface organizational responsibility for CSR project</li> 
+<li>Identify ESB tooling requirements</li>
+<li>Identify resource/organizational participation</li> 
+<li>Create Use Case Model for 311 CSR/Case and Asset Management interface</li>
+<li style="color: blue;">New: Obtain ESB Staff Augmentation</li>
+</ul>
+
+<p>An EA strategic viewpoint can be seen by selecting the graphical icon above.</p>
+
+<p>The status of each milestone follows:</p>
+
+<p><b>Determine if and how Austin Water Utility's ESB can be used for general city purposes</b></p>
+<p>After careful study, the ESB Task Force determined that Austin Water Utility's IBM&reg; WebSphere&reg; Process Server (WPS) ESB is not a good choice for a citywide solution. If we decide to remain with IBM products, we should upgrade WPS to IBM Integration Bus (IIB). IIB is very impressive and very expensive (i.e., greater than $300K for production, development and test). We requested IBM to propose the cost associated with upgrading AWU's WPS to IIB and allow the city time to migrate existing WPS interfaces to the newly deployed IIB. We have not heard back from IBM on this proposal. IBM engineers indicated, however, that they have a conversion toolkit to migrate WPS interfaces to IIB, which would greatly simplify the transition.</p>
+
+<p><b>Develop Service Level Agreement</b></p>
+<p>Assuming our strategy is to upgrade from WPS to IIB, this may require a Service Level Agreement (SLA) between Austin Water Utility (AWU) and Communications Technology and Management (CTM). Due to the relatively high cost associated with the IIB upgrade and the ESB budget (~$650K per year), CTM cannot afford to employ and staff IIB without some level of financial commitment from AWU (possibly equating to their current annual licensing of WPS). To afford this endeavor, IBM suggested we spread out our IIB expense over multiple years (in essence obtain a loan for the initial IIB cost - between $210K - 420K depending on the number of cores our server uses); in addition, annual maintenance costs, depending on our configuration, is between $42K - $84K annually. If we spread out our software expenses, there's still enough resources to staff, develop and operate the needed interfaces. IBM indicated a substantial discount is usually offered in December to increase their annual sales numbers. Alternately, we can accept the risk of a less expensive and less scalable ESB options such as Neuron ESB, Microsoft BizTalk Server, or Talend Open Studio for ESB, which we'll discuss later.</p>
+
+<!-- Image ESB with CSR -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="right"><tr><td align="center">
+<span class="lbl">Note: Select to view</span><br />
+<a href="http://austinea.org/arch/awu/esbwithcsr.jpg" target="new_window"><img src="http://austinea.org/arch/awu/esbwithcsr.jpg" border="0" width="250" alt="" /></a><br />
+<span style="font-weight: bold;">ESB System Diagram with CSR</span>
+</td></tr></table>
+
+<p><b>Determine ESB interface organizational responsibility for CSR project</b></p>
+<p>The details of an organizational responsibility with the Customer Service Request (CSR) system has not been fully worked out because an ESB strategy is not yet approved and the ESB infrastructure is not in place. The plan, however, (see diagram) is to introduce an ESB as an integration element between Motorola's CSR App Hub and the City's asset and case management systems (AWU's Infor/Hansen, Maximo, and Amanda). The purpose of the interface is to streamline work flow management of service requests generated by CSR. Currently, the process of updating each system is accomplished manually increasing the risk of data continuity between the systems. In addition, the interface eliminates staff time required to keep work flow synchronized between the systems.</p>
+
+<p><b>Identify ESB tooling requirements</b></p>
+<p>There are a number of viable ESB applications on the market. The big ones include IBM Integration Bus and Oracle Service Bus - they, of course, are the most expensive. Notable Microsoft (.NET based) ESBs in the market place include Neuron ESB and Microsoft BizTalk Server, which are &quot;much&quot; less expensive. There are also open source ESBs such as Talend Open Studio for ESB. From the Task Force's observation, they all provide graphical user interfaces and you don't need to be a coder to write basic interfaces. Advanced coding skills are still required, however, regardless of the solution, because the interface developer must reverse engineer data structures and file formats to develop a successful interface. In addition, complex interfaces may require code development to transform message sets. Although IIB is an expensive solution, it's the lowest risk alternative because we can leverage our existing WPS investment and annual maintenance (assuming an SLA can be worked out between AWU and CTM). We're also certain that IIB is scalable for future demands and it can be configured for fail-over at no additional cost. The ESB Task Force will present its findings to the CIO Council at a future date to obtain consensus on future ESB tooling.</p>
+
+<p><b>Identify resource/organizational participation</b></p>
+<p>A case has been made through the city's governance and budgeting process that an ESB is an essential ingredient for a service-oriented architecture leading to a more integrated city. In order to employ a citywide solution, CTM is the primary citywide ESB interface developer. In the future, Departments use Enterprise Architecture (EA) to identify relevant interface needs and their associated business rules and CTM develops, tests and deploys the interfaces defined in the EA. CTM is also responsible for relevant ESB interface maintenance as applications evolve and/or change over time. Currently, point-to-point interface solutions lead to a myriad of application interface dependencies causing great operational risk when a business application is upgraded - in many situations there are so many interfaces that application upgrades are essentially impossible without breaking something. Using an ESB, the interfaces requiring changes during an upgrade are substantially reduced and/or there's a substantial reduction in the amount of effort to change an interface - i.e., days instead of weeks or even months. Finally, an ESB greatly reduces the complexity of interface connections while simultaneously increasing the reusable nature of our business system interfaces.</p>
+
+<p><b>Create Use Case Model for 311 CSR/Case and Asset Management interface</b></p>
+<p>To be worked at a future date.</p>
+
+<p style="color: blue;"><b>New: Obtain ESB Staff Augmentation</b></p>
+<p>The City does not currently have internal ESB talent. Therefore, a contract with a third party system engineering and technical assistance (STEA) vendor is required to setup, configure and train future city ESB professionals. In addition, the CTM must hire qualified ESB developers because they're not staffed to take on the additional ESB workload. It is proposed that a vendor augmented staff kick-start our ESB initiative and gradually transition the City to a fully capable staff for future interface development and operations.</p>
+
+<p><b>Early Uses of an ESB</b></p>
+<p>Other than the proposed use of ESB for Citizen Service Requests, discussed earlier, Enterprise Architecture has identified other significant City goal dependencies of an implemented SOA strategy. Planning &amp; Development Review, Public Works, and Transportation mutually identified a need to integrate case and asset management with emphasis on geographic information system (GIS). These same departments plus Water Utility and Austin Energy benefit from an ESB to integrate and provide an electronic solution for both commercial and residential design and compliance review integrated with the permitting and inspection process. Inspectors could have mobile pad devices to geospatially review their inspection sites to include all relevant Submittal Package items and Project Information digitally available at their fingertips while recording their inspection findings remotely. Transactions at the ESB interface could provide performance metrics for business intelligence reporting of project status. In addition, citizen applicants can transact designs and permit needs in near real time. Yes, all of this could be accomplished without an ESB; however, sustaining such a complex infrastructure without an ESB would be impossibly expensive due to a spaghetti bowl of required interfaces. An ESB unravels the spaghetti bowl into a well-managed service-oriented architecture.</p>
+
+<p>Please let me know if you have any questions or concerns.</p>
+
+</div>
+
+<!-- Image Title
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="right"><tr><td align="center">
+<span class="lbl">Note: Select to download</span><br />
+<a href="http://austinea.org/"><img src="http://austinea.org/" border="0" width="200" alt="" /></a><br />
+<span style="font-weight: bold;">Image Title</span>
+</td></tr></table> -->
+
+<!-- Table definition
+<table align="center" id="custom">
+<tr><th>Number</th><th>Category</th><th>Description</th><th>Criticality</th></tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table> -->
+
+<!-- Signature -->
+<table cellpadding="0" cellspacing="0" border="0" width="350" style="border-collapse: collapse;"><tr><td>
+<p>Respectfully,</p>
+<table cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;" align="right"><tr><td>
+<img src="http://austinea.org/image/austinLogo.jpg" border="0" width="100" height="100" alt="Austin Logo" />
+</td></tr></table>
+<p><img src="http://journeycolorado.com/images/Signature.jpg" border="0" width="143" height="83" alt="sign" /></p>
+<p><b>Rob Byrd</b> <span style="color: red; font-weight: bold;">|</span> <b>City of Austin</b>
+<a href="http://www.linkedin.com/in/robbyrd"><img src="http://journeycolorado.com/images/linkedin.jpg" border="0" alt="LinkedIn Logo" /></a><br />
+Chief Enterprise Architect - Corporate<br />
+Direct: (512) 974-1615 | Mobile: (512) 431-0700</p>
+</td></tr></table>
+
+</td></tr></table>
+</td></tr></table></body></html>

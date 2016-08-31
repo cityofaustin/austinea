@@ -1,0 +1,265 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>Provide Client Survey</title>
+
+
+
+  
+
+  
+  
+  <link rel="Stylesheet" href="http://austinea.org/style/email.css" type="text/css"></head>
+<body style="background-color: rgb(221, 216, 194);">
+<!-- Border Background Table -->
+<table style="border-collapse: collapse; background-color: rgb(244, 202, 144);" align="center" border="0" cellpadding="4" cellspacing="0">
+
+  <tbody>
+    <tr>
+      <td><!-- Online reference
+
+<p class="lbl" style="text-align: center;">This report is also <a href="http://austinea.org/">available online</a> by following link.</p> --><!-- EA Motto -->
+      <p style="color: gray; font-size: 8pt; text-align: center; font-weight: bold;">Enterprise
+Architecture <i>- aligning IT services with business needs</i></p>
+<!-- Main Body -->
+      <table style="border-collapse: collapse; background-color: rgb(255, 255, 255);" align="center" border="0" cellpadding="5" cellspacing="0" width="650">
+        <tbody>
+          <tr>
+            <td>
+            <p style="text-align: center; font-weight: bold;">Provision Digital Signs Use Case Specification</p>
+<!-- Image Title -->
+            <table style="border-collapse: collapse;" align="center" border="0" cellpadding="5" cellspacing="0">
+              <tbody>
+                <tr>
+                  <td align="center"><span class="lbl">Select to
+enlarge...</span><br>
+                  <a href="createcontractdeliverable_ucd.jpg"><span style="text-decoration: underline;"></span></a><a href="provideclientsurvey_ucd.jpg"><span style="text-decoration: underline;"></span></a><br><a href="provisiondigitalsigns_ucd.jpg"><img style="border: 0px solid ; width: 600px; height: 366px;" alt="" src="provisiondigitalsigns_ucd.jpg"></a><br><br><br>
+                  <span style="font-weight: bold;"><br>Provision Digital Signs Use
+Case Model<br>
+                  <br>
+                  <br>
+                  </span> </td>
+                </tr>
+              </tbody>
+            </table>
+            
+            
+            
+
+
+            
+
+
+
+            
+
+            
+            <p class="MsoNormal"><b>Scope:&nbsp;</b>
+            </p>If
+a Site Tour is required, the Sales Manager asks the Digital Sign
+Administrator to create Kiosk Digital Signs for the site tour and
+includes a Site Tour Plan and Event Logo and the Digital Sign
+Administrator uses the system to store and schedule Kiosk Digital
+Signs. The Event Coordinator asks the Client to complete the Permission
+to Publish Form and return the form along with an Event Logo. The
+completed Permission to Publish is returned to the Contract
+Administrator who uses the Event Booking System to store the form and
+Event Logo. The Event Coordinator asks the Client to provide Digital
+Sign Content and the Client returns Digital Sign Content to the Digital
+Sign Administrator. If the Client requires Advanced Digital Signs, the
+Client includes an Event Space Schedule. If the Client requires Meeting
+Room Signs, the Client includes a Meeting Room Schedule. If answers are
+required of the Client, the Digital Sign Administrator asks the Client
+to answer Digital Sign Content Questions and this process repeats until
+all questions are answered. If additional artwork is required, the
+Digital Sign Administrator asks the Graphic Designer to produce Digital
+Sign Additional Artwork. If a special database configuration is
+required, the Digital Sign Administrator asks the Database
+Administrator to configure the database and provide confirmation. When
+all materials are received, the Digital Sign Administrator uses the
+system to store and schedule Basic Digital Signs. If the Client
+indicated on the Permission to Publish Form the event was a Public
+Event, the Digital Sign Administrator stores and schedules Marquee Sign
+Content. If the Client requested Advanced Digital Signs, the Digital
+Sign Administrator stores and schedules Digital Sign Content inclusive
+of the Event Space Schedule. If the Client requested Meeting Room
+Signs, the Digital Sign Administrator stores and schedules Digital Sign
+Content inclusive of the Meeting Room Schedule. With all digital signs
+provisioned, if Digital Sign Service Fees are required, the Digital
+Sign Administrator asks the Utility Services Coordinator to store these
+fees in the Event Booking System.<p class="MsoNormal"><br>
+            <o:p></o:p></p>
+<!-- Image Title -->
+            <table style="border-collapse: collapse;" align="center" border="0" cellpadding="5" cellspacing="0">
+              <tbody>
+                <tr>
+                  <td align="center"><span class="lbl">Select to
+enlarge...<br>
+                  <br>
+</span>
+                  <a href="createcontractdeliverable_sqd.jpg"><span style="text-decoration: underline;"></span></a><a href="provideclientsurvey_sqd.jpg"><span style="text-decoration: underline;"></span></a><a href="provisiondigitalsigns_sqd.jpg"><span style="text-decoration: underline;"><span style="font-weight: bold;"><a href="provisiondigitalsigns_sqd.jpg"><img style="border: 0px solid ; width: 600px; height: 679px;" alt="" src="provisiondigitalsigns_sqd.jpg"></a></span></span></a><br>
+                  <br>
+                  <span style="font-weight: bold;">Provision Digital Signs Sequence Diagram</span> </td>
+                </tr>
+              </tbody>
+            </table>
+            <br>
+            <p style="text-align: center; font-weight: bold;"><br>
+            </p>
+            <p style="text-align: center; font-weight: bold;"><br>
+            </p>
+            <p style="text-align: center; font-weight: bold;">Table of
+Interface Descriptions</p>
+            <br>
+            <table style="text-align: left; margin-left: auto; margin-right: auto;" id="custom">
+              <tbody>
+                <tr>
+                  <td style="vertical-align: top; background-color: rgb(153, 0, 0);"><span style="color: white; font-weight: bold;">FS#</span> &nbsp;  <br>
+                  </td>
+<th style="background-color: rgb(153, 0, 0);">Type/Interface</th>
+                  <th style="background-color: rgb(153, 0, 0);">Description</th>
+                </tr>
+                <tr>
+                  <td style="vertical-align: top;">FS001 <br>
+                  </td>
+<td>Digital Sign Administrator/<br>
+                  <span style="font-weight: bold;">createKioskDigitalSignsForSiteTour</span><br>
+                  </td>
+                  <td>
+                  
+                  
+                  The
+Sales Manager sends a SiteTourNotification to the Digital Sign
+Administrator, requesting they create Kiosk Digital Signs for a Site
+Tour. The SiteTourNotification contains a SiteTourPlan and an EventLogo.<br>
+
+                  
+                  </td>
+                </tr>
+                <tr>
+                  <td style="vertical-align: top;">FS002<br>
+                  </td>
+<td>Digital Sign Software/<br>
+                  <span style="font-weight: bold;">storeAndScheduleKioskDigitalSigns</span></td>
+                  <td>The
+Digital Sign Administrator uses the Digital Sign Software to store and
+schedule the Kiosk Digital Signs, using DigitalSignContent and
+DigitalSignStartEndDateTime.<br></td>
+                </tr>
+                <tr>
+                  <td style="vertical-align: top;">FS003<br>
+                  </td>
+<td>Client/<br>
+                  <span style="font-weight: bold;">completePermissionToPublishForm</span><span style="font-weight: bold;"></span> </td>
+                  <td>
+                  
+                  
+                  
+                  
+
+
+                  <p class="MsoNormal">&nbsp;The
+Event Coordinator asks the Client to complete the Permission to Publish
+Form and in return receives a completed Permission to Publish Form and
+EventLogo.</p><p class="MsoNormal"><o:p></o:p></p>
+
+                  
+                  </td>
+                </tr><tr>
+                  <td style="vertical-align: top;">FS004<br>
+                  </td>
+<td style="vertical-align: top;">Event Booking System/<br>
+
+                  <span style="font-weight: bold;">storePermissionToPublishForm</span></td>
+                  <td style="vertical-align: top;">The Contract Administrator uses the Event Booking system to store the PermissionToPublishForm and the EventLogo.<br></td>
+                </tr>
+                
+                <tr>
+<td style="vertical-align: top;">FS005<br>
+</td>
+<td>Client/<br>
+                  <span style="font-weight: bold;">provideDigitalSignMaterials</span><span style="font-weight: bold;"></span> </td><td>The
+Event Coordinator sends a DigitalSignMaterialsRequest to the Client and
+in return the Client sends DigitalSignContent to the Digital Sign
+Administrator.<br></td></tr>
+<tr>
+                  <td style="vertical-align: top;">FS006<br>
+                  </td>
+<td style="vertical-align: top;">Digital Sign Administrator/<br>
+
+
+
+                  <span style="font-weight: bold;">recordEventSpaceSchedule</span></td>
+                  <td style="vertical-align: top;">If
+the Client requires Advanced (Directional) Digital Signs around the
+interior of the facility, the Client asks the Digital Sign
+Administrator to record an EventSpaceSchedule.<br></td>
+                </tr>
+                
+
+              <tr><td style="vertical-align: top;">FS007</td><td style="vertical-align: top;">Digital Sign Administrator/<br>
+
+
+
+                  <span style="font-weight: bold;">recordMeetingRoomSignSchedule</span></td><td style="vertical-align: top;">If
+the Client requires Meeting Room Signs, the Client asks the Digital
+Sign Administrator to record a MeetingRoomSchedule. The
+MeetingRoomSchedule is in the form of an Excel template provided to the
+Client via the Austin Convention Center or Palmer Event Center websites.<br></td></tr><tr><td style="vertical-align: top;">FS008</td><td style="vertical-align: top;">Client/<br>
+                  <span style="font-weight: bold;">answerDigitalSignContentQuestions</span><span style="font-weight: bold;"></span></td><td style="vertical-align: top;">If
+answers are required of the Client, the Digital Sign Administrator asks
+the Client to answer DigitalSignContentQuestions and in return receives
+DigitalSignContentAnswers. This process loops until all answers are
+received.<br></td></tr><tr><td style="vertical-align: top;">FS009</td><td style="vertical-align: top;">Graphic Designer/<br>
+                  <span style="font-weight: bold;">createArtwork</span></td><td style="vertical-align: top;">If
+additional artwork is required for digital signs, the Digital Sign
+Administrator sends a DigitalSignAdditionalArtworkRequest to the
+Graphic Designer and in response receives DigitalSignAdditionalArtwork.<br></td></tr><tr><td style="vertical-align: top;">FS010</td><td style="vertical-align: top;">Database Administrator/<br>
+                  <span style="font-weight: bold;">configureDatabase</span></td><td style="vertical-align: top;">If
+a database configuration is required, the Digital Sign Administrator
+sends a DatabaseConfigurationRequest to the Database Administrator,
+resulting in a DatabaseConfigurationConfirmation from the Database
+Administrator.<br></td></tr><tr><td style="vertical-align: top;">FS011</td><td style="vertical-align: top;">Digital Sign Software/<br>
+                  <span style="font-weight: bold;">storeAndScheduleBasicDigitalSigns</span></td><td style="vertical-align: top;">The
+Database Administrator uses the Digital Sign Software to store and
+schedule Basic Digital Signs, using DigitalSignContent and
+DigitalSignStartEndDateTime. Basic Digital Signs simply contain the
+name and logo of an event.<br></td></tr><tr><td style="vertical-align: top;">FS012</td><td style="vertical-align: top;">Digital Sign Software/<br>
+                  <span style="font-weight: bold;">storeAndScheduleMarqueeSignContent</span></td><td style="vertical-align: top;">If
+the event is a public event (not private) the Digital Sign
+Administrator uses the Digital Sign Software to store and schedule the
+Marquee Digital Signs, using DigitalSignContent and
+DigitalSignStartEndDateTime. <br></td></tr><tr><td style="vertical-align: top;">FS013</td><td style="vertical-align: top;">Digital Sign Software/<br>
+                  <span style="font-weight: bold;">storeAndScheduleAdvancedDigitalSigns</span></td><td style="vertical-align: top;">If
+Advanced Digital Signs are required, the Digital Sign Administrator
+uses the Digital Sign Software to store and schedule Advanced Digital
+Signs using DigitalSignContent, EventSpaceSchedule and
+DigitalSignStartEndDateTime. Advanced Digital Signs are those that
+contain more specific directions and directional indicators, for
+example: Registration in Hall 1, Exhibits in Halls 2 &amp; 3, etc. with
+associated arrows pointing to the event halls.<br></td></tr><tr><td style="vertical-align: top;">FS014</td><td style="vertical-align: top;">Digital Sign Software/<br>
+                  <span style="font-weight: bold;">storeAndScheduleMeetingRoomSigns</span></td><td style="vertical-align: top;">If
+Meeting Signs are required, the Digital Sign Administrator uses the
+Digital Sign Software to store and schedule Meeting Room Signs using
+DigitalSignContent, DigitalSignStartEndDateTime and the
+MeetingRoomSchedule.<br></td></tr><tr><td style="vertical-align: top;">FS015</td><td style="vertical-align: top;">Utility Services Coordinator/<br>
+                  <span style="font-weight: bold;">recordDigitalSignServicesFees</span></td><td style="vertical-align: top;">If
+any fees are required for Digital Sign Services, the Digital Sign
+Administrator notifies the Utility Services Coordinator with a request
+to record DigitalSignServiceFees.<br></td></tr><tr><td style="vertical-align: top;">FS016</td><td style="vertical-align: top;">Event Booking/<br>
+                  <span style="font-weight: bold;">storeDigitalSignServicesFees</span></td><td style="vertical-align: top;">The Utility Services Coordinator uses the Event Booking system to store the DigitalSignServiceFees for the specific event.<br></td></tr></tbody>
+            </table>
+            <br>
+
+            <p style="text-align: center; font-weight: bold;"><br>
+            </p>
+            <p style="text-align: center; font-weight: bold;"><br>
+            </p>
+<!-- Table definition --></td>
+          </tr>
+        </tbody>
+      </table>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+</body></html>

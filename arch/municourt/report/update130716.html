@@ -1,0 +1,244 @@
+<!DOCTYPE HTML>
+<html><head>
+<title>COA Municipal Court Requirements Review</title>
+<link rel=StyleSheet href="http://austinea.org/style/email.css" type="text/css">
+</head>
+<body>
+<!--Border Background Table-->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse;"  align="center" style="background-color: #F4CA90;">
+<tr><td>
+<!--Main Body-->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" width="600" align="center" style="background-color: #ffffff;">
+<tr><td>
+<!-- Online reference-->
+<p style="color: gray; font-size: 7pt;">Note: This report is also <a href="http://austinea.org/arch/municourt/report/update130716.html" style="font-size: 7pt;">available online</a> by following link.</p> 
+
+<!-- Image - Set Criminal Case On Docket
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;"  align="right"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view.<br>
+<a href="http://austinea.org/arch/municourt/report/setCriminalCaseOnDocket.jpg"><img src="http://austinea.org/arch/municourt/report/setCriminalCaseOnDocket.jpg" border="0" width="200"></a>
+<p style="text-align: center; font-weight: bold;">Set Criminal Case on Docket<br>Interaction Overview
+</td></tr></table> -->
+
+<p>Muni Court Architecture Team,
+
+<p>I went through some of the items in the Court Draft Scope 04-13 we identified during our last session and added some recommended changes and comments for further review. Let's discuss during our next meeting. I recommend that we continue through the rest of the list to prepare for some sort of submission to CDSC. We should also examine our Use Case development work and consider submitting them as well. I spoke to Paul Hopingardner and informed him that we would have some form of input (albeit incomplete) by 31 July. According to Paul, it would be good to deliver CDSC some of our requirements even if there are more to follow.
+
+<p>Please be advised that no requirements will go to CDSC until the Mini Court Architecture Team approves.
+
+<p>Respectfully,
+
+<!-- Signature Corporate -->
+<p style="font-size: 8pt;"><b>Rob Byrd</b> <span style="color: red; font-weight: bold;">|</span> <b>City of Austin</b><br>
+Chief Enterprise Architect - Corporate<br>
+Direct: (512) 974-1615 | Mobile: (512) 431-0700
+
+<hr>
+<!-- Past Reports -->
+<p style="font-weight: bold;">Past Reports
+<p>
+05/17/13 - <a href="http://austinea.org/arch/municourt/report/visionSession.htm">Vision / Mission Development</a><br>
+06/05/13 - <a href="http://austinea.org/arch/municourt/report/update130605.html">Interface Descriptions and Development</a><br>
+06/12/13 - <a href="http://austinea.org/arch/municourt/report/update130612.html">Select Legal Option</a><br>
+06/25/13 - <a href="http://austinea.org/arch/municourt/report/update130625.html">Process Not Guilty Plea</a><br>
+07/09/13 - <a href="http://austinea.org/arch/municourt/report/update130709.html">Establish Case File Legal Option</a>
+<hr>
+
+<p><b>Criticality Level Definitions</b>
+
+<p>All requirements are assigned one of the following three criticality levels:
+
+<ul>
+<li>Must Have - these requirements are considered highly critical and must be satisfied by the CMS upgrade in some way.
+<li>Expected - these requirements are somewhat critical to the end users of the CMS upgrade.
+<li>Desired - these requirements would add value but are not critical.
+</ul>
+
+<table align="center" id="custom">
+<tr><th>Number</th><th>Category</th><th>Description</th><th>Criticality</th></tr>
+
+<tr>
+<td>H002, H004</td>
+<td>General Technical</td>
+<td>Extend case management functionality to include secure mobile devices (also known as a handheld device, handheld computer or simply handheld). Provide Downtown Austin Community Court (DACC) outreach program ability to interact with customers in the field among other mobile device needs where applicable. <span style="color: red;">[Note combined requirements.]</span></td>
+<td>Must Have</td>
+</tr>
+
+<tr>
+<td>H003</td>
+<td>Functional</td>
+<td>During financial transactions at the cashier window, the system shall use a camera to capture photograph of customer and associate the photograph to the transaction record.</td>
+<td>Must Have</td>
+</tr>
+
+<tr>
+<td>H006</td>
+<td>Functional</td>
+<td>Provide means to read driver's license magnetic and 3-dimensional strip. <span style="color: red;">[Need context on when used.]</span></td>
+<td>Expected</td>
+</tr>
+
+<tr>
+<td>F003</td>
+<td>General Technical</td>
+<td>When local personal computers have dual displays (monitors) properly configured, provide means for optimal use of the dual display device. <span style="color: red;">[Note text change.]</span></td>
+<td>Must Have</td>
+</tr>
+
+<tr>
+<td>F004</td>
+<td>General Technical</td>
+<td>To enhance Web Presence and exploit Internet technology, provide means to collect and reference defendant email address where appropriate.</td>
+<td>Must Have</td>
+</tr>
+
+<tr>
+<td>F005</td>
+<td>General Technical</td>
+<td>The Web-based Presence (interface) must use W3 open protocol standards and be Americans with Disabilities Act (ADA) compliant.</td>
+<td>Must Have</td>
+</tr>
+
+<tr>
+<td>F006</td>
+<td>General Technical</td>
+<td>DACC and Municipal Court shall have appropriate interfaces to facilitate effective information exchange - i.e., both DACC and Municipal Court shall be able to read and update each other's case management system files. <span style="color: red;">[Note text change.]</span></td>
+<td>Must Have</td>
+</tr>
+
+<tr>
+<td>F007</td>
+<td>Functional</td>
+<td>The solution's public portal for Court shall have real-time updates to the database. <span style="color: red;">[This is best explained at the use case level. We need to define what database items require update and what Web Presence interface is required - we already have some of this.]</span></td>
+<td>Must Have</td>
+</tr>
+
+<tr>
+<td>F008</td>
+<td>Functional</td>
+<td>The solution shall be able to validate against data fields in the database to determine the options available for users for criminal and civil cases. <span style="color: red;">[This is where we identify our rules engine needs and requires operational context in the form of a use case - we already captured some of this.</span></td>
+<td>Must Have</td>
+</tr>
+
+<tr>
+<td>F009, F010, F011</td>
+<td>General Technical</td>
+<td>For all Web Presence interfaces where the defendant may have questions regarding their case or use of the Web Presence interface, provide instant messaging (IM) function to chat with a court system representative. Similar to customary IM chat sessions, chat requests shall be entered into a queue for response by the first available representative with identified anticipated wait time. IM chat sessions shall be recorded and automatically attached to the represented case file. <span style="color: red;">[Note combined requirements.]</span></td>
+<td>Expected</td>
+</tr>
+
+<tr>
+<td>F012</td>
+<td>General Technical<span style="color: red;">?</span></td>
+<td>Provide new data fields to include: Class Completion Date, Judgment Amount, Judgment Date, Deferral Amount, Defendants Age at Citation, Defendants Age Now, Conviction Date, Disposition Date and performance measure data fields for DACC (list to be provided). <span style="color: red;">[This sounds like a continuation of our use case development activity to define in context how these additional record attributes are used. Without operational context, the vendor is not likely to fully understand the need.]</span></td>
+<td>Must Have</td>
+</tr>
+
+<tr>
+<td>F013</td>
+<td>General Technical</td>
+<td>The solution shall allow for importing case numbers from spreadsheets or text files into the solution so any batch process can be run on the imported list of cases. <span style="color: red;">[Suggest changing to: The system shall provide the ability to batch process attribute value changes across multiple selected case files (or something similar). Appears similar to F028.]</span></td>
+<td>Expected</td>
+</tr>
+
+<tr>
+<td>F014</td>
+<td></td>
+<td>The solution shall implement event logging which will categorize actions on a case into legal actions (e.g., signing up for disposition) and administrative actions (e.g., confirming a defendant's contact information). Only legal actions shall be visible to defendants. Court users will have the option to view one or both action categories. <span style="color: red;">[Confusing - needs further context.]</span></td>
+<td>Must Have</td>
+</tr>
+
+<tr>
+<td>F016</td>
+<td>General Technical</td>
+<td>The solution must be able to secure confidential case notes so only defined users can see them on the case. <span style="color: red;">[Suggest changing to: Throughout the case management process, provide secure and confidential case notes viewable only by defined case management users.]</span></td>
+<td>Must Have</td>
+</tr>
+
+<tr>
+<td>F019</td>
+<td>Functional</td>
+<td>When displaying the fines and costs of a case, the solution's display window will be big enough to see all the fines and costs on a single screen grouped by fines and costs. <span style="color: red;">[This sounds like a Web Presence function associated with the summary of costs. Per our last discussion, we didn't fully decide if we'll provide a case cost summary or deal with each case one at a time.]</span></td>
+<td>Must Have</td>
+</tr>
+
+<tr>
+<td>F020</td>
+<td>General Technical</td>
+<td>The solution shall consistently allow the user to hit enter to accept changes. <span style="color: red;">[The W3 standard should adequately address this concern. If I understand correctly, the new AMANDA upgrade includes a normalized, Web screen interface.]</span></td>
+<td>Must Have</td>
+</tr>
+
+<tr>
+<td>F022</td>
+<td>General Technical</td>
+<td>The solution shall be Web-based and accessible by any Court work-station. <span style="color: red;">[Recommend removing requirement. New solution proposed in Web-based.]</span></td>
+<td>Must Have</td>
+</tr>
+
+<tr>
+<td>F023</td>
+<td>Functional</td>
+<td>The Web-based solution shall allow attorneys to e-file a letter of representation, choose a case, file a motion on a case and add the attorney as a case party. <span style="color: red;">[This requirement will require a use case to adequately define the functional need.]</span></td>
+<td>Must Have</td>
+</tr>
+
+<tr>
+<td>F024</td>
+<td>Functional</td>
+<td>The solution shall record in the database prosecutor's activities (e.g., updates, document attachments) on the application. <span style="color: red;">[This is a confusing requirement. Possibly redundant to F014. Recommend use case to flush out need.]</span></td>
+<td>Must Have</td>
+</tr>
+
+<tr>
+<td>F026</td>
+<td>General Technical</td>
+<td>After logging onto the Web-based solution, a selectable menu shall be available to specify what location, and unit - the user is working from. This information shall be stored so Court Administrator can run metrics against that information. <span style="color: red;">[Recommend changing to: When defendant is using a Web Presence solution, the system shall collect specific information on the Web session (such as Web browser, location, type of device used, IP address, etc.) depending on typical Web session values available. This information is to be used for future analysis of Web user experience and overall value reporting on the usefulness of the Web interface.]</span></td>
+<td>Must Have</td>
+</tr>
+
+<tr>
+<td>F028</td>
+<td>General Technical</td>
+<td>The system shall provide improved functionality when dealing with &quot;associated cases.&quot; The clerk be able to enter information once and have the option to have all associated cases updated with the same information. <span style="color: red;">[Appears to be similar to F013.]</span></td>
+<td>Must Have</td>
+</tr>
+
+<tr>
+<td>F029</td>
+<td>General Technical</td>
+<td>The system shall be able to display all case notes regardless of what level the note was attached. <span style="color: red;">[Needs more contextual explanation.]</span></td>
+<td>Must Have</td>
+</tr>
+
+<tr>
+<td>F030</td>
+<td>General Technical</td>
+<td>The solution shall log in the database the date, time and user information for any deletion of attachments or actions (e.g., warrants) and any change to the money of a case. <span style="color: red;">[Suggest changing to: The system shall log the date, time and user information for any deletion of attachments or actions (e.g., warrants) and any change to the money of a case. There appears to be an similar requirement F014.]</span></td>
+<td>Must Have</td>
+</tr>
+
+<tr>
+<td>F031</td>
+<td>General Technical</td>
+<td>The system shall save any deleted attachments in a queue for review before final removal. <span style="color: red;">[Elaborated on text some.]</span></td>
+<td>Must Have</td>
+</tr>
+
+<tr>
+<td>F032</td>
+<td>General Technical</td>
+<td>The system shall provide security measures when affixing an auto signature to a document. <span style="color: red;">[We need to specifically indicate when the additional security measures are needed - i.e., what signatures are we referring?]</span></td>
+<td>Must Have</td>
+</tr>
+
+<tr>
+<td>TBD</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table>
+
+</td></tr></table>
+</td></tr></table></body></html>

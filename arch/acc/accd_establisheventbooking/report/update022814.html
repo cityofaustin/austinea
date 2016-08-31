@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<title>Convention Center "Create Event Work Order</title>
+<link rel="StyleSheet" href="http://austinea.org/style/email.css" type="text/css">
+</head>
+<body>
+
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="600" align="center"><tr><td>
+
+<!-- Online reference -->
+<p><class="lbl">Note: This report is also <a href="http://austinea.org/arch/acc/report/update022814.html" style="font-size: 7pt;">available online</a> by following link.</p>
+
+<div>
+<p>Hi All,</p> 
+</div>
+
+<p>Attached is the information for the "Create Event Work Order" use case that was reviewed this week with the Convention Center Team. Please take a moment to check my work and let me know if there are any changes I can make to improve this, or if this requirement is as discussed! 
+<p>
+
+
+<!-- Signature-->
+<table cellpadding="0" cellspacing="0" border="0" width="350" style="border-collapse: collapse;"><tr><td>
+<p>Cheers!</p>
+
+<table cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;" align="right">
+<tr>
+<td>
+<img src="http://austinea.org/image/austinLogo.jpg" border="0" width="100" height="100" alt="Austin Logo" />
+</td>
+</tr>
+</table>
+<p><img src="http://coawss3a.coacd.org/sites/CTM/EA/Shared Documents/Images/ABSIG.JPG" border="0" width="143" height="83" alt="sign" /> </p>
+
+<p><b>Aaron Brown</b> 
+<span style="color: red; font-weight: bold;">|</span> 
+<b>City of Austin</b>
+<a href="http://www.linkedin.com/in/austnaaron"><img src="http://journeycolorado.com/images/linkedin.jpg" border="0" alt="Linkin Logo" /> </a> <br />
+Senior IT Enterprise Architect<br />
+Direct: (512) 974-2960 </p>
+Email: Aaron.Brown2@austintexas.gov </p>
+</td></tr></table>
+
+
+<!-- Use case information below -->
+
+<hr>
+
+<!-- Muni Court Requirements Model -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="right">
+<tr>
+<td align="center">
+<span class="lbl">Note: Select to download</span><br />
+<a href="http://austinea.org/arch/acc/report/createEventWorkOrderUseCase.jpg"><img src="http://austinea.org/arch/acc/report/createEventWorkOrderUseCase.jpg" border="0" width="200" alt="" /></a><br />
+<span style="font-weight: bold;">Create Event Work Order<br />Use Case</span>
+</td></tr></table>
+
+
+<p><b>Use Case Scope</b></p>
+<p>Once the Event is contracted, the Event Coordinator opens the Customer Account and examines the Booking Information (determines needs for the day, analyze everything about Account that Sales has given them.) The Event Coordinator takes planning information from the Client and inputs that info into the System, using ACCD standards and conventions.
+The Event Coordinator creates a Time-line by adding a new Event Line. This could be one of many items: Event name, time and location(unlock doors at 6am, general session 10am, etc.) Prefunction space, Dock Space, Security Details, timing for setup and teardown by both internal employees and Vendor, Move-In/Move-Out days/times, Registration, Book Signings, Breakfast/Lunch/Dinner Food Functions, Plated versus Buffet Meals, Breakouts & Meetings, Bag Stuffing, Trade Show Open, Client Staff Show Offices, Computer Labs, Poster Sessions, Food & Beverage, room changeovers, room refresh. Each are all outlined as part of the Time-line. 
+The timeline may include meeting room schedule details (location, start date/time, end Date/time, meeting title, speaker name, private or public), added by the Event Coordinator or the event Representative via a Web Portal. The Results of this time-line may be used to populate digital signs. 
+The System allows for the addition of new Work Order Items as well as the use of predefined (drop-down) type selections. 
+The Event Coordinator also includes Booking Notes (free flow of information that the system does not allow by predefined value lists, ie. Digital Signs and marquees, Vendor Contact Information, Timing of things that will happen outside of the contracted space, ie. pickup/dropoff of items by a decorator or Contractor. Equipment Lists, ie. where all Water Coolers need to be placed in the building. Shuttle Bus information. Hotel Information as it relates to Service Needs, ie. Security, Parking. 
+The System additionally allows for the creation of "Template profiles" - these are groups of Event Items which can be reused for future Work Orders. 
+An Event has a Event Work Order for the contracted Space, and separate Event Work Orders for each day of the Event with associated Event Items for all of the Services required. Each of the Work Orders is associated by a common Contract ID for the Event.
+The Event Coordinator inputs information (Equipment, Labor, Security, Utilities, Parking, Food & Beverage, Damages) for each Day of the Event (note: Unit Charges for Line Items are variable from Event to Event). 
+After all information has been entered, The Event Supervisor reviews the Event Work Orders, provides feedback, and the Event coordinator researches and modifies the Event Work order as appropriate. A notification (email, text or scheduled activity) is routed to Accounting with attached Work Orders and Itemized Work Order Items.    </p>
+
+<!-- Image - File For Motion Sequence Diagram -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="http://austinea.org/arch/acc/report/createEventWorkOrderSequenceDiagram01.jpg"><img src="http://austinea.org/arch/acc/report/createEventWorkOrderSequenceDiagram01.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Create Event Work Order Sequence Diagram</p>
+</td></tr></table> 
+
+
+
+<p style="font-weight: bold; text-align: center;">Create Event Work Order Interface Descriptions</p>
+<!-- Table definition -->
+<table align="center" id="custom">
+<tr><th width="195">Type/Interface</th><th>Description</th></tr>
+<tr>
+<td>Establish Event Booking/ <br /> retrieveBookingInformationForContractID</td> <td>Event Coordinator opens the Account and examines the Booking Information (determines needs for the day, analyze everything about Account that Sales has given them.) The Event Coordinator takes planning information from the Client and inputs that info into the System, using ACCD standards and conventions. </td> </tr>
+<tr>
+<td>Customer/ <br /> providePlanningDocuments</td> <td>The Event coordinator reaches out to the client via phone, meeting, site tours, and emails and gathers client event information. As part of this effort, the Event Coordinator provides the customer with a Planning Document, which they fill out and return to the Event Coordinator.  </td> </tr>
+<tr>
+<td>Establish Event Booking/<br /> updateEventItemForContractID</td> <td>The User Accesses the System, and makes changes to Event work order(s) associated with a Contract ID. This could originate from Event Coordinator, Event Supervisor, Crew Lead, and Security Security lead. This can include booking information, Planning Documents, Security Information, Crew Information, or any of the free form text items added manually to the Event Work Order.  </td> </tr>
+
+<tr>
+<td>Establish Event Booking/<br /> requestSupervisorApproval</td> <td>The Event coordinator indicates the Event Work Order is ready for the Event Supervisor to approve the invoice items. The system notifies the Supervisor (email, text or creates an activity for the supervisor) their input is required. </td> </tr>
+
+<tr>
+<td>Event Supervisor/ <br /> reviewEventWorkOrder</td> <td>The Event Supervisor will access the system and review the charges against the contract for accuracy, review the charges against itemized invoices from the other units (crew, security, parking, catering), ensures applicable discounts are applied, and verifies account/billing info. If the Supervisor signs off on the Work Order, the event is ready to be invoiced. If the supervisor has issues with the charges, they will contact the Event Coordinator and request they review the portions in question.  </td> </tr>
+
+<tr>
+<td>Establish Event Booking/<br /> requestEventCoordinatorModifyEventWorkOrder</td> <td>If the supervisor has issues with the charges listed on the Event work Order, they will contact the Event Coordinator and request they review the portions in question. The System sends a notification to the Event Coordinator (email, text, activity scheduled) indicating the work order is not yet ready for invoicing.  </td> </tr>
+
+
+<tr>
+<td>Establish Event Booking/ <br /> approveEventWorkOrder</td> <td>The Supervisor signs off on the Event Work Order, indicating the Contract ID is ready to be invoiced. The System sends notification to the Accounting Department notifying of the completion of the Event Work Order creation.  </td> </tr>
+<tr>
+
+<tr>
+<td>Establish Event Booking/ <br /> createChargeList</td> <td>The Event Coordinator uses the system to construct a Charge list that will be used in the Invoice Creation Process. The Charge List is based on the PrePlan and indicates, of the charges assigned to the specific event, which are charged and at what price. </td> </tr>
+<tr>
+
+</table>
+
+
+
+<!-- Table definition
+<table align="center" id="custom">
+<tr><th>Number</th><th>Category</th><th>Description</th><th>Criticality</th></tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table> -->
+
+</td></tr></table> 
+
+</td></tr></table>
+</td></tr></table></body></html>

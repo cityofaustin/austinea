@@ -1,0 +1,173 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+<title>Answers to Common UML Enterprise Architecture Questions</title>
+<meta name="description" content="">
+</head>
+
+<body><table width="700" border="0" cellpadding="0" cellspacing="0"><tr><td style="font-family: verdana; font-size: 8pt; font-weight: normal; color: black;">
+
+<br><h1 style="font-size: 10pt; color: maroon;" align="center">Answers to Common UML Enterprise Architecture Questions</h1>
+
+<p>I'm frequently asked many questions regarding our decision to migrate from a structured analysis enterprise architecture approach using Integrated Definition (IDEF) to an object-oriented method using the Unified Modeling Language (UML). These frequently asked questions are explored and explained to assist other's making similar considerations. 
+
+<p style="font-weight: bold;">Questions
+
+<p>
+<a href="#1">1. What drove your team to an object-oriented approach?</a><br>
+<a href="#2">2. Regarding UML: Do you consider it more of a modeling tool or analysis tool?</a><br>
+<a href="#3">3. What is UML best used for, if other than modeling and/or analysis?</a><br>
+<a href="#4">4. How does UML support functional flow analysis and representation of processes?</a><br>
+<a href="#5">5. Which UML tool provides the most flexibility and is &quot;user friendly&quot;?</a><br>
+<a href="#6">6. Do UML tools have the ability to ingest data from other IDEF0 applications?</a><br>
+<a href="#7">7. Discuss portability and reuse of developed data/models utilizing UML/Rational.</a><br>
+<a href="#8">8. Discuss the strength of Rational vs. other UML tools with respect to hands on experience, license cost, training, etc.</a><br>
+<a href="#9">9. How quickly can this capability be implemented?</a><br>
+<a href="#10">10. What was your biggest challenge in implementing UML with your current customers?</a><br>
+<br>
+<hr>
+
+<h1 style="font-size: 10pt; color: maroon;"><a name="1">1. What drove your team to an object-oriented approach?</a></h1>
+
+<p>We believe the object-oriented approach to architecture-centric acquisition produces more highly integrated, agile, and affordable systems, fielded in a shorter amount of time compared to the traditional structured analysis approach that commonly employ Integrated Definition (IDEF). We also determined that UML architectures used as a functional requirements model are easier to understand by developers.
+
+<p>As the software development industry is acutely aware, the significant power of an object-oriented approach is the ability to identify reusable elements within and among enterprises using a service-oriented architecture (SOA) approach to include:
+
+<ul>
+<li>Processes (operational or business activities)
+<li>System components such as sensors, enterprise workstations and servers
+<li> Interfaces such as those between sensors and command and control (C2) systems
+<li>Nodes taking into account organizational considerations
+<li>Architectural concepts such as information exchanges
+</ul>
+
+<p>The power of reuse and service-orientation can, if properly exploited, reduce development costs, schedule, and risks, while facilitating integration and interoperability.
+
+<p>An architecture-centric approach to systems engineering improves acquisitions by enhancing discipline, improving communications and collaboration among stakeholders, clarifying definition of the enterprise boundary, documenting the operational need and solution, and synchronizing concepts, requirements, products, and systems. This approach fosters greater understanding of organizational, system, and enterprise relationships, identifies reusable components, aids integration of acquisition and warfighter Decision Support System (DSS) processes, and provides flexibility needed to assess impacts and manage change. In short, object-oriented architectures provide a framework for effectively defining and managing the evolution of an information technology intensive enterprise.
+
+<table width="452" align="right" border="0" cellpadding="5" cellspacing="0"><tr><td style="font-family: verdana; font-size: 8pt; font-weight: bold; color: maroon; font-style: italic;" align="center">
+<p><img src="QAtoCommonUMLEAQuestions_files/image001.jpg" width=432 height=311 alt="" border="0">
+<p>Figure 1 - Use Cases describe participants, roles and responsibilities, and desired outcomes (i.e., results of value) for a given process (e.g., timely missile warning to a forward user)
+</td></tr></table>
+
+<p>Some significant challenges in pursuing architecture-centric acquisition include:
+
+<ul>
+<li>Effectively defining, modeling, and communicating enterprise complexity
+<li>Ensuring required operational capabilities drive system development &#150; linking capabilities directly to enterprise components
+<li>Identifying and managing enterprise and program boundaries
+<li>Recognizing reusable operations and components in a service-oriented way to reduced ownership cost
+<li>Coping with change (threats, missions, operations, organizations responsibilities, technology, etc)
+</ul>
+
+<p>The object-oriented approach provides a solution to meet these challenges. Drawing upon principles of modern software engineering, we extended industry best practices in object-oriented analysis and design (OOAD) to address enterprise architecture development. Key features of the object-oriented approach include:
+
+<uL>
+<li>Scalable to enterprise size and complexity and broadly applicable to many different programs
+<li>Common modeling language easily understood by warfighters, operators and system developers to facilitate clear and unambiguous collaboration/communication and stakeholder buy-in
+<li>Effects-based approach ensures fielded systems deliver stakeholder required outcomes (services and products)
+<li>Synchronized evolution of operational capabilities and systems solutions
+<li>Adaptation mechanisms readily identify reusable operations and supporting capabilities
+<li>Flexible structure rapidly accommodates large and/or frequent change
+</ul>
+
+<table width="452" align="right" border="0" cellpadding="5" cellspacing="0"><tr><td style="font-family: verdana; font-size: 8pt; font-weight: bold; color: maroon; font-style: italic;" align="center">
+<p><img src="QAtoCommonUMLEAQuestions_files/image002.jpg" width=432 height=331 alt="" border="0">
+<p>Figure 2 - Operational Sequence Diagrams model operational activities and supporting information exchanges
+</td></tr></table>
+
+<p>Our service-oriented architecture approach delivers all relevant DoDAF 2.0 views necessary for effective integration. In fact, we authored most of the UML portions of DoDAF 1.5. Key architecture products include use case models, operational sequence diagrams, and system sequence diagrams, which used in combination, achieve an integrated architecture as described by the DoDAF. The object-oriented approach uses interfaces (IDEF doe not employ the concept of an interface)  to provide clear traceability between required operational capabilities and supporting systems.
+
+<p>Use Cases (Figure 1) capture and describe operational capabilities by defining key processes (e.g., Maintain Relevant Missile Warning Information), a desired outcome (e.g., timely missile warning to a forward user), the participants (organizations and systems), and the participants individual roles and responsibilities to produce the desired outcome.
+
+<p>Operational Sequence Diagrams (Figure 2) model the interactions and information flows between warfighters, operators, and supporting systems to capture the process detail of the desired capability and desired outcomes.
+
+<table width="490" align="center" border="0" cellpadding="5" cellspacing="0"><tr><td style="font-family: verdana; font-size: 8pt; font-weight: bold; color: maroon; font-style: italic;" align="center">
+<p><img src="QAtoCommonUMLEAQuestions_files/image003.jpg" width=480 height=234 alt="" border="0">
+<p>Figure 3 - System Sequence Diagrams model the interactions among system elements needed to achieve the required operational capability
+</td></tr></table>
+
+<h1 style="font-size: 10pt; color: maroon;"><a name="2">2. Regarding UML: Do you consider it more of a modeling tool or analysis tool?</a></h1>
+
+<p>Both &#150; the UML and the object-oriented method and tools provide the operations (business) analyst the necessary elements to think through the business process and create relevant collaborations between important stakeholders and systems without imposing a solution on the operational need. During the process of building UML use cases, the operations analyst models operational processes to achieve the desired outcome (result of value). The operational need is further refined to involve the implementing systems assisting in the process &#150; the nature of the use case places systems in context of their operational use. Reusable libraries assist in vertical and horizontal integration because architects draw on existing process and objects when appropriate and available. Generalization and specialization constrain process while allowing for specialized adaptation of process when necessary. Logical and physical realizations align operational and system functions into a service-oriented framework. Analysis is the natural outcome of the method and the use case is the resulting model.
+
+<h1 style="font-size: 10pt; color: maroon;"><a name="3">3. What is UML best used for, if other than modeling and/or analysis?</a></h1>
+
+<p>To explain the usefulness of the UML, we need to explore its differences with traditional architecture techniques. Before selecting a specific architecture tool-set, the architecture team needs to determine the best method (i.e. object-oriented or structured analysis) to implement the purpose of the architecture. If the purpose of the architecture is to design a system (to include software development) or to understand a service-oriented perspective of the system, then UML tools are the best choice. Alternately, if the purpose of the architecture is to analyze business processes, then IDEF (Integrated Definition or Integrated Computer Aided Manufacturing Definition Methodology) tools are possibly a good option. Because IDEF favors process while the UML favors objects, the architecture team must carefully select the best method &#150; there are no known automated tools to convert one method to the other (i.e., IDEF to UML, UML to IDEF). We'll discuss this in more detail in our response to <a href="#6">Question 6</a>. Other important considerations should include the experience of the architecture staff because much architecture training and mentoring is required to succeed regardless of the method. In addition, an architectural team well versed in IDEF is not likely to succeed in UML without experienced object-oriented technical leadership and vice-versa. It's important that architecture leadership understand that there are significant differences between the two methods.
+
+<p>Structured analysis typically creates a rigid hierarchy employing a single abstraction mechanism. The structured analysis method employs IDEF (Figure 4), is very process driven, and starts with a purpose and a viewpoint. This method identifies the overall function and iteratively divides functions into smaller functions, preserving inputs, outputs, controls, and mechanisms necessary to optimize processes. Also known as a functional decomposition approach, it focuses on cohesion within functions and coupling between functions leading to structured data.
+
+<p>The functional decomposition of the structured method describes process without delineating system behavior and dictates system structure in the form of required functions. The method identifies inputs and outputs without describing interaction with the external source and destination. Because the method focuses on coherent sub function structure, it breaks up objects in favor of functional boundaries, impeding future reuse opportunities and process consistency.
+
+<table width="490" align="center" border="0" cellpadding="5" cellspacing="0"><tr><td style="font-family: verdana; font-size: 8pt; font-weight: bold; color: maroon; font-style: italic;" align="center">
+<p align="center"><img src="QAtoCommonUMLEAQuestions_files/image004.jpg" width=480 height=293 alt="" border="0">
+<p>Figure 4: Example Structured Analysis
+</td></tr></table>
+
+<p>One reason for the popularity of structured analysis is its intuitive ability to communicate high-level processes and concepts, whether single system or enterprise levels. Discovering how objects might support functions for commercially prevalent object-oriented and service-oriented development is unclear. As a software development tool, IDEF lacks the ability to model object-oriented processes.
+
+<p>The UML is data and highly interface driven with multiple abstraction mechanisms useful in describing service-oriented architectures. The object-oriented method (Figure 5) starts with the stakeholder and the operational activities required. The method identifies a use case (ways the user employs or makes use of the system) to generate important results &#150; also known as results of value (ROV) thereby achieving warfighter desired effects. The method assigns required behavior (the way that machines or systems operate or interact) to the systems as described by the use case. The process iteratively allocates behavior to smaller system elements (products, services, functions, classes, objects, etc.) while optimizing and identifying reuse opportunities.
+
+<p>The object-oriented method and associated UML tools<a href="#f1">[1]</a> provide object decomposition focused on operational objects and generalization (inheritance<a href="#f2">[2]</a>). This practice creates a flexible interdependent web of elements with inherited properties and relationships. In addition, well-designed object-oriented tools provide an architecture environment where multiple architecture teams share visionary process consistency, architectural artifacts such as use cases and classes while managing the evolution of the architecture over time.
+
+<table width="490" align="center" border="0" cellpadding="5" cellspacing="0"><tr><td style="font-family: verdana; font-size: 8pt; font-weight: bold; color: maroon; font-style: italic;" align="center">
+<p><img src="QAtoCommonUMLEAQuestions_files/image005.jpg" width=480 height=337 alt="" border="0">
+<p>Figure 5: Example Object-Oriented
+</td></tr></table>
+
+<p>The UML describes the system behavior at its surface from the user's perspective by explicitly representing operator and inter-system dialog. The method organizes functionality along generalization-specialization lines, promoting process consistency and product line development. The ROV focused method pays special attention to component interfaces and system behavior while leaving the design space open for designers and keeps user behavioral needs (functions) foremost. This method lays the foundation for direct object-oriented development activities. In short, structured analysis emphasizes process and functions while object-oriented analysis emphasizes system behavior using objects.
+
+<h1 style="font-size: 10pt; color: maroon;"><a name="4">4. How does UML support functional flow analysis and representation of processes?</a></h1>
+
+<p>Because the UML represents behavior at the system surface (functions), functional flow analysis is much simpler and easier to understand. The object-oriented method and tools provide an architectural process to understand the required behavior (the way people, organizations, and systems collaborate to achieve a desired effect). The UML encapsulates these service-oriented patterns of behavior (sequence diagrams) in UML activities (sometimes referred as action steps). The UML activities align (operational or business process) using flow of controls, decision points and synchronizations (forks and joins) to capture the business rules or business logic on Activity Diagrams or Interaction Overview Diagrams in UML 2.0. Our UML approach goes beyond traditional functional flow analysis.
+
+<p>Our approach identifies real world data objects (DoDAF OV-7/DIV-1 entities) and binds them to functions shown in the signature of the message on the sequence diagram (Figure 5). This is a valuable capability not provided by the IDEF method. The UML binding mechanism puts information in context of its use. Also shown in Figure 5, the use case instantiates (e.g., from start to finish completes one discrete set of decision points); therefore, each instantiation of the use case represents a function flow (UML sequence) based on the use case business rules (activity decision points on the UML activity diagram). For example, one instance of the use case may take the controlled flow with a message not required; therefore, the functional flow would not stimulate an alert. Another instance of the use case may require an alert and the functional flow would include the present alerts and notifications function. The instantiation property of the use case increases reusability and significantly reduces maintenance of the model. We've taken functional flow analysis to the next level by connecting UML architectures to one, two, and three-dimensional animations and simulations (kind of like an animated DoDAF OV-5 and OV-1).
+
+<table width="490" align="center" border="0" cellpadding="5" cellspacing="0"><tr><td style="font-family: verdana; font-size: 8pt; font-weight: bold; color: maroon; font-style: italic;" align="center">
+<p align="center"><img src="QAtoCommonUMLEAQuestions_files/image006.gif" width=480 height=356 alt="" border="0">
+<p>Figure 6: Using UML Architectures to Drive Two-Dimensional Animations
+</td></tr></table>
+
+<p>We developed an animation application (Figure 6) that communicates directly with the UML architecture to allow enterprise architects to visualize a functioning, animated mission scenario based on the functional flow of the UML model. We have discovered much utility with this tool. Primarily, the tool enforces a process where the architect must think through the architecture using objects in the real world along with operator prescribed mission threads. We determined that important non-architectural elements influence the architecture design such as events, timing and speed characteristics of moving objects (e.g., vehicles and aircraft), or timing required in decision-making. When this occurs, the architect frequently discovers flaws in the architecture, which require correction before the simulation performs properly. The new insight provides opportunity for a verified and validated DoDAF architecture. Finally, the process provides a visual method to vet architecture based mission scenarios (threads) through non-architectural stakeholders.
+
+<h1 style="font-size: 10pt; color: maroon;"><a name="5">5. Which UML tool provides the most flexibility and is &quot;user friendly&quot;?</a></h1>
+
+<p>We favor IBM's Rational Software Modeler (RSM) mostly for its popularity and the fact that it provides a good object-oriented implementation. IBM's Rational Software Modeler and Rational Software Architect (RSA) provide UML 2.0 and Systems Modeling Language (SysML) capabilities. RSM/RSA and the underlying open source Eclipse engine provide an opportunity for improved data mining of our models (useful in analysis). We have already exploited Rose's data mining features and anticipate increased capabilities with RSM/RSA. Be aware that just because the tool claims to be UML does not mean that it provides a scalable and manageable object-oriented implementation. From a business perspective, IBM dominates the UML market space (85% in 2004) and in common use by large system developers, so their tools make sense. Not to mention the fact that IBM (Rational) largely led the effort to standardize the UML.
+
+<p>From the perspective of user friendliness, no UML tool is user friendly. To be successful with a UML tool, you must first be proficient with the Unified Modeling Language &#150; one might then consider the number of &quot;clicks&quot; required to build use cases and enter all the required data to capture the use case views. Generally, a knowledgeable UML person can quickly learn to use any good UML tool. To this end, we favor an efficient object-oriented implementation over user friendliness. Finally, once you learn the tool, the tool generally becomes friendlier.
+
+<h1 style="font-size: 10pt; color: maroon;"><a name="6">6. Do UML tools have the ability to ingest data from other IDEF0 applications?</a></h1>
+
+<p>We would not recommend doing this, even if a tool advertises that it can make the conversion, because UML and IDEF use different methods to derive the architecture. IBM System Architect (IDEF) and Rational Software Modeler (UML), for example, are not just different tools; they employ different approaches to architectural design. There is no clean &quot;universal translator&quot; between an IDEF and UML application, other than a well-trained object-oriented architect who can analyze the IDEF architecture from a object-oriented perspective.
+
+<p>The IDEF method breaks up data objects in favor of process and the UML favors data objects as the basis to model the process (activities) &#150; reference <a href="#3">Question 3</a>. However, this does not mean that you must abandon your existing structured models and start over. An experienced object-oriented modeler can review the structured models looking for roles, nouns, and verbs to rebuild the model into an object-oriented framework. Finally, the underlying method used by the UML does not employ controls and mechanisms and IDEF does not capture process (activities) the same way the UML does. In essence, a structured model imported into an object-oriented tool would not provide model data in a reusable framework and the object-oriented value of the UML is lost.
+
+<h1 style="font-size: 10pt; color: maroon;"><a name="7">7. Discuss portability and reuse of developed data/models utilizing UML/Rational.</a></h1>
+
+<p>Rational Rose uses data storage elements called controlled units (RSM does similar by assembling model files into fragments and projects). Each controllable unit or fragment logically packages architecture data into reusable groups called packages. In essence, we use these packages as reusable use case (process) and data class libraries. Controlled unit libraries support many models as a means to configuration manage and constrain process. The advantage of this technique is the ability to change the library entity once and it changes anywhere it is used &#150; these loose couplings between architectures significantly reduces maintenance as the architecture evolves over time. Because we define the architecture from an interface perspective, the architect does not need to be concerned about impacts changes have on other architectures because the interface insulates the architecture from its implementation &#150; this is the real strength  behind object-oriented business models. This principle is common in the software industry and we learned how to abstract the same technique for enterprise modeling. Once architecture interface classes are defined, the architecture provides exportable XML Metadata Interchange (XMI &#150; UML stored in XML format) useful to exchange interface information among different UML tools. Assuming other UML architectures apply the same abstraction technique, integration across multiple architectures is greatly simplified (e.g., manageable with no data concordance issues). We currently employ this data sharing technique among many architectures, saving the government significant time and money in developing homeland defense, space, missile, and cyber defense architectures.
+
+<h1 style="font-size: 10pt; color: maroon;"><a name="8">8. Discuss the strength of Rational vs. other UML tools with respect to hands on experience, license cost, training, etc.</a></h1>
+
+<p>The most significant strength of IBM Rational tools is their popularity within industry. Because IBM is the founder of the UML (then Rational), their tool is more likely to provide a proper object-oriented implementation (another significant attribute). IBM still provides the UML leadership today through the Object Management Group (OMG). In addition, we have strong partnership with IBM Rational; IBM recognizes our technical leadership in object-oriented enterprise modeling &#150; they frequently refer to us as enterprise architecture thought leaders. Be aware, just because you are using UML stereotypes (i.e. symbols, relationships, etc.) does not necessarily mean the underlying tool storage mechanisms are object-oriented. Scalability is important &#150; this is particularly true if you're modeling complex enterprises or you intend for your architecture to go to code. Business (operational) models built using RSM are importable into Rational Software Architect (RSA) a UML tool that provides code management and generation. RSx tools use a similar packaging schema described in the previous discussion. This approach allows the requirements model to evolve simultaneously with the implementation system model with no data concordance issues. This approach provides full traceability from concept to code laying the foundation for UML models as a technical portfolio management and decision making mechanism. Finally, good configuration control is required to ensure large teams don't walk on each other's work. We employ successful configuration management techniques to allow large architecture teams to unify successfully in a single model. We employ the open source Subversion (SVN) to configuration manage our Rational files. As for cost, there are many ways to approach this problem.
+
+<p>Here at Serco, we already provide the appropriate tools, laboratories, and agreements with IBM; therefore, you wouldn't accrue any additional costs. However, if you require tooling in another location, IBM RSM cost ~$2,600 per seat. IBM employs both a shared licensing and node lock licensing agreement. Shared licenses cost more; however, they can be shared across the network.
+
+<p>Serco can't share insight into tool vendor training because we have our own training program. We base our training program on IBM Rational products and our custom applications. Folks who attended IBM courses tell us that Serco's courses are much more comprehensive and relevant to DoD architectures.
+
+<h1 style="font-size: 10pt; color: maroon;"><a name="9">9. How quickly can this capability be implemented?</a></h1>
+
+<p>There are many dependencies related to this question. The answer differs depending on how and where you want to implement the architecture. Building a UML architecture team with the necessary skills and resources from scratch in a new location can take as long as one to two years depending on the availability of a skilled staff. Exercising an architecture project using Serco's Enterprise Architecture Center of Excellence in Colorado Springs shortens the time significantly. In essence, our experienced staff begins work from day one using our existing architecture laboratories &#150; reducing the time required to train and mentor a capable staff. Laboratories are another resource element to consider because our UML approach is very collaborative and requires special facility considerations. To be successful in developing use cases, architects collaborate and mentor in architecture laboratories properly equipped with large visual displays, computers, and controlled data access points. The large displays are necessary to observe all views of the use case and the many data sources (CONOPS, JCIDS documents, etc.) sometimes used to understand the required behavior (i.e., use case description) being modeled. These architecture environments allow the architects, subject matter experts, and stakeholders to collaborate on the architecture to agree on the optimal solution. We do not consider these architecture laboratories optional &#150; we're so adamant regarding their use that we built six architecture laboratories capable of creating architectures through TS/SCI and they're in regular use today. If an architecture capability is required at your site, we can reduce the risk and shorten the time by exploiting our Colorado Springs capabilities while simultaneously instituting a local architecture capability. We successfully employed this option at Army Training and Doctrine Command (TRADOC) at Fort Monroe, VA.
+
+<h1 style="font-size: 10pt; color: maroon;"><a name="10">10. What was your biggest challenge in implementing UML with your current customers?</a></h1>
+
+<p>For the uninformed architecture customer, we're challenged with explaining what an architecture is and is not. For the informed architecture customer, our challenge is to explain why the object-oriented approach provides the best method (overcoming the structured analysis paradigm), and how to exploit the UML architecture to develop concept of operations, determine gaps and shortfalls, and manage functional requirements. To be successful in an object-oriented, UML environment, the informed customer must learn to think differently about the architecture problem &#150; this is always our largest challenge. Some people find it daunting to rethink functional decomposition to object decomposition. On the surface, it seems the difference is small; however, in practice it's significant. We're successfully overcoming these challenges through education and mentoring. Serco has an extensive two-week training program, which includes hands on use of our tools. During our training, the student learns the UML, our tools and method, and as a group, they actually create a use case from scratch. Our training program teaches the student to think object-oriented by describing the process of collecting architecture requirements from an interface perspective. Enterprise architecture is not easy and it takes many years of mentoring and experience to succeed with the many enterprise architecture challenges. Finally, Serco is exceptionally successful at taking care of our people and our staff includes many Principal Enterprise Architects with OMG UML Professional Certifications practicing the object-oriented trade in excess of eight years. Our architect staff currently consists of more than 40 trained and experienced object-oriented UML professionals.
+
+<p><hr width="25%" align="left">
+
+<p><a name="f1"></a>[1] It's important to note that not all UML tools employ effective object-oriented methods. The modeling language itself is not object-oriented, but provides the basis for well-written object-oriented tools. Some tools on the surface appear to be object-oriented due to their apparent UML construct, but employ structured analysis concepts.
+
+<p><a name="f2"></a>[2] Inheritance - a feature whereby a new object can be created from existing objects and, as a consequence of creation, possess the variables and methods of the parent object.
+
+</td></tr></table></body>
+</html>

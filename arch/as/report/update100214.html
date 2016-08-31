@@ -1,0 +1,174 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<title>Animal Services &quot; Issue Citation &quot; </title>
+<link rel="StyleSheet" href="http://austinea.org/style/email.css" type="text/css">
+</head>
+<body>
+
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="600" align="center"><tr><td>
+
+<!-- Online reference -->
+<p class="lbl">Note: This report is also <a href="http://austinea.org/arch/as/report/update100214.html" style="font-size: 7pt;">available online</a> by following link.</p>
+
+<div>
+<p>Hi All,</p> 
+</div>
+
+<p>Attached is the information for the "Issue Citation" use case that was reviewed October 2nd, 2014, with the Animal Services Team. Please take a moment to check my work and let me know if there are any changes I can make to improve this, or if this requirement is as discussed! </p>
+
+Additionally, I wanted to let you know the Online repository of Animal Services Use Cases is now up to date ( http://austinea.org/arch/as/report/index.html )
+<p>
+
+
+<!-- Signature-->
+<table cellpadding="0" cellspacing="0" border="0" width="350" style="border-collapse: collapse;"><tr><td>
+<p>Cheers!</p>
+
+<table cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;" align="right">
+<tr>
+<td>
+<img src="http://austinea.org/image/austinLogo.jpg" border="0" width="100" height="100" alt="Austin Logo" />
+</td>
+</tr>
+</table>
+<p><img src="http://coawss3a.coacd.org/sites/CTM/EA/Shared%20Documents/Images/ABSIG.JPG" border="0" width="143" height="83" alt="sign" /> </p>
+
+<p><b>Aaron Brown</b> 
+<span style="color: red; font-weight: bold;">|</span> 
+<b>City of Austin</b>
+<a href="http://www.linkedin.com/in/austnaaron"><img src="http://journeycolorado.com/images/linkedin.jpg" border="0" alt="Linkin Logo" /> </a> <br />
+Senior IT Enterprise Architect<br />
+Direct: (512) 974-2960 <br>
+Email: Aaron.Brown2@austintexas.gov </p> 
+</td></tr></table>
+
+
+<!-- Use case information below -->
+
+<hr>
+
+<b> Animal Shelter Logical Data Model </b>
+<!-- Image -  Logical Data Model -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="http://austinea.org/arch/as/report/animalShelterLogicalDataModel.jpg"><img src="http://austinea.org/arch/as/report/animalShelterLogicalDataModel.jpg" border="0" width="600" alt=""></a>
+<p style="text-align: center; font-weight: bold;">Animal Shelter Logical Data Model</p>
+</td></tr></table> 
+
+<!-- Muni Court Requirements Model -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="right">
+<tr>
+<td align="center">
+<span class="lbl">Note: Select to download</span><br />
+<a href="http://austinea.org/arch/as/report/issueCitationUseCase.jpg"><img src="http://austinea.org/arch/as/report/issueCitationUseCase.jpg" border="0" width="200" alt="" /></a><br />
+<span style="font-weight: bold;">Issue Citation<br />Use Case</span>
+</td></tr></table>
+
+
+
+
+
+<p><b>Use Case Scope</b></p>
+<p>Animal Services receives a complaint. This can be via the 311 Call Center, a legal entity (APD or Travis county), or a field officer. If received via the 311 center, the complaint is recorded and forwarded to the Animal Services System. Legal entities like APD and Travis county call and talk to the Animal Services dispatcher, who then adds the complaint to the appropriate Animal Services Queue. Field Officers can access the system remotely from a mobile device and can add reports of animal issues they encounter while on duty. The Field officer assigned, based on the district to which the complaint belongs and to which district the Field Officer is assigned.
+The Field officer accesses the system and "begins" an activity. The Field Officer specifies the activity number (a unique number assigned to all complaints), and the Activity Type (any of a number of activities the Field Officer can do) about to begin. The system records the date and time associated with the complaint and activity. The System provides a mechanism for starting, stopping, and completing activities, as well as provides reports for detailing the activities associated with an activity no. The Field officer evaluates the complaint and takes appropriate action. Non-Owner Animals are impounded, relocated, delivered to a Vet, an Emergency Clinic, or delivered to Wildlife Rescue. Animals whose Owner can be determined are either contained in a place accessible to the owner, or are brought to the Animal Services Intake. Depending on the circumstances and City policy, the owner is issued a requirement to complete Responsible Pet Owner Training (RPO) or may be issued a citation.  Owners who do not complete the RPO as dictated are issued a citation. Citations require the Field Officer to go the court for which the citation has been drawn, and deliver a copy. Once completed, the Field officer accesses the system and "ends" the activity. The Field Officer specifies the activity number (a unique number assigned to all complaints), and the Activity Type (any of a number of activities the Field Officer can do) to end. The system records the date and time associated with the complaint and activity. </p>
+
+<!-- Image -  Sequence Diagram -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="http://austinea.org/arch/as/report/issueCitationSequenceDiagram01.jpg"><img src="http://austinea.org/arch/as/report/issueCitationSequenceDiagram01.jpg" border="0" width="600" alt=""></a>
+<p style="text-align: center; font-weight: bold;">Issue Citation Sequence Diagram</p>
+</td></tr></table> 
+
+
+
+<p style="font-weight: bold; text-align: center;">Issue Citation Interface Descriptions</p>
+<!-- Table definition -->
+<table align="center" id="custom">
+<tr><th width="195">Type/Interface</th><th>Description</th></tr>
+<tr>
+<td>311 Call Center/ <br /> reportAnimalControlIssue</td> <td>A Complainant contacts the 311 Call Center and reports an issue with an animal. 311 validates jurisdictional authority and creates a service request associated with managing the Animal issue.
+ </td> </tr>
+ 
+<tr>
+<td>provide Animal Rescue and Shelter/ <br /> addCallToFieldOfficerQue</td> <td>The system adds a complaint to one of the Field Officer's queue (which field officer gets the call is determined by the districts to which the complaint belongs and the Field officer assigned to manage issues within that district), and creating a unique Activity Number.  </td> </tr>
+
+<tr>
+<td>Legal Entity/ <br /> reportAnimalcontrolIssue</td> <td>The Austin Police Department or the Travis County Police contact Animal Services during working hours and report an animal Complaint.  </td> </tr>
+
+<tr>
+<td>Provide Animal Shelter and Rescue/<br /> recordBeginningActivity</td> <td>A Field Officer uses the system to start a timer for the activity they are about to begin. Timers are associated with a specific Activity number, and activity type (New, Dispatched, working, at vet services, enroute, customer service, desk, field, outreach, other agency Handling, behavior evaluation). The Field Officer records the starting mileage if they are currently using a fleet vehicle (and the FleetIdNo, if they are using a fleet vehicle to which they are not assigned).</td> </tr>
+
+<tr>
+<td>Field Officer/<br /> deliverAnimalToWildlifeRescue</td> <td>The Field Officer delivers the Animal to Wildlife Rescue. </td> </tr>
+
+
+<tr>
+<td>Field Officer/<br /> deliverAnimalToNearbyLocale</td> <td>The Field Officer delivers the Animal to locale near to where the animal was found and releases it back into the wild.</td> </tr>
+
+<tr>
+<td>Field Officer/<br /> deliverAnimalToElginVetClinic</td> <td>The Field Officer delivers the livestock to Elgin Vet Clinic where it will be housed until Animal Services has a disposition for the animals situation.  </td> </tr>
+
+<tr>
+<td>Field Officer/<br /> deliverAnimalToEmergencyClinic</td> <td>The animal recovered isn't livestock, and is sick or injured. The Field officer delivers the animal to the Emergency Clinic. </td> </tr>
+
+<tr>
+<td>Provide Animal Shelter and Rescue/<br /> updateAnimalInfo</td> <td>The field Officer uses the system to update information on the Animal info record. This includes specifying Memo's, and providing delivery information, and recording any fees incurred with animal delivery and care.</td> </tr>
+
+<tr>
+<td>Provide Animal Shelter and Rescue/<br /> recordEndOfActivity</td> <td>A Field Officer uses the system to Stop a timer for the activity they have jus completed. Timers are associated with a specific Activity number, and activity type (Dispatched, Working, At Vet Services, Enroute, Customer service, Desk, Field, Outreach, Other Agency Handling, Behavior Evaluation). The Field Officer records the ending mileage if they are currently using a Fleet vehicle (and the FleetIdNo, if they are using a Fleet vehicle to which they are not assigned). </td> </tr>
+
+<tr>
+<td>Provide Animal Shelter and Rescue/<br /> provideAnimalHistoryInformation</td> <td>The User provides Activity Information and an Animal ID, to inquire about the history of an Animal. The system provides a summary of all activity with a specific animal associated with the unique Animal ID.</td> </tr>
+
+<tr>
+<td>Provide Animal Shelter and Rescue/<br /> createCitation</td> <td>The Field Officer, having ruled out Responsible Pet training as an option, creates a citation for the pet owner. The Field Officer provides the Activity Number as a way of linking the citation and the activity. Depending on the Owner location, the citation will either be handed to the owner, posted on their front door, or some clearly visible location. The information is recorded in the system, associated with the Activity Number of the incident.</td> </tr>
+
+
+<tr>
+<td>Field Officer/<br /> deliverCitationToAppropriateCourt</td> <td>The Field Officer delivers a copy of the Citation to the Court associated with the district in which the citation was created. This could be Either Austin Municipal Court, or Travis County Municipal Court.  </td> </tr>
+
+<tr>
+<td>Provide Animal Shelter and Rescue/<br /> initiateRPOEnrollmentProcess</td> <td>The Field officer determines the violator is eligible for Responsible Pet Owner Training. They provide information to the Violator as well as annotate date issued, and date by when the Violator must complete the training. The information is recorded in the system, associated with the Activity Number of the incident.</td> </tr>
+
+<tr>
+<td>Field Officer/<br /> postDoorNotification</td> <td>The owner is not currently available to the Field officer, so they post a Door notification for the Owner/Violator to discover. This is either Responsible Pet Owner Training notification, or a Citation. </td> </tr>
+
+<tr>
+<td>Field Officer/<br /> transportAnimalToShelter</td> <td>The Field Officer transports the animal to Animal Services and begins the process for Animal Intake. </td> </tr>
+
+
+<tr>
+<td>311 Call Center/ <br /> updateCSR311Status</td> <td>The System sends a message updating the CSR 311 database with the disposition of the Customer Service Number associated with activity created by 311 Call center receiving a customer complaint.  </td> </tr>
+
+<tr>
+<td>Provide Animal Shelter and Rescue/<br /> verifyRPOCompletion</td> <td>The Field Officer uses the system to look up history indicating the completion or failure of completion by a violator of a Responsible Pet Owner Training class.</td> </tr>
+
+
+
+<tr>
+<td>Provide Animal Shelter and Rescue/<br /> updatePersonInfo</td> <td>The Field Officer uses the system to update the Person info to indicate completion of the Responsible Pet Owner Training class.</td> </tr>
+
+
+
+</table>
+
+
+
+<!-- Table definition
+<table align="center" id="custom">
+<tr><th>Number</th><th>Category</th><th>Description</th><th>Criticality</th></tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table> 
+
+</td></tr></table> -->
+
+</table>
+</table></body></html>

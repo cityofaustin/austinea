@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Respond to Drug and Alcohol Test Request</title>
+<link rel="Stylesheet" href="http://austinea.org/style/hover.css" type="text/css" />
+</head>
+<body bgcolor="#ddd8c2">
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="650" align="center">
+<tr><td style="padding: 0;" height="130" valign="top"><a href="http://austinea.org">
+<img src="http://austinea.org/image/iTHeader.jpg" alt="austinea.org - home..." border="0"></a></td></tr>
+<!-- Text Area -->
+<tr><td>
+
+<p><a href="http://austinea.org/arch/eoss/">EOSS Use Case Summary</a></p>
+
+<p style="text-align: center; font-weight: bold;">Respond to Drug and Alcohol Test Request<br />Use Case Specification</p>
+
+<!-- Image Title -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/eoss/respondToDrugAndAlcoholTestRequest/UCD.jpg"><img src="http://austinea.org/arch/eoss/respondToDrugAndAlcoholTestRequest/UCD.jpg" border="0" width="600" alt="" /></a><br />
+<span style="font-weight: bold;">Respond to Drug and Alcohol Test Request<br />Use Case Model</span>
+</td></tr></table>
+
+<p><b>Scope: </b>The Department Alcohol and Drug Coordinator uses the system to create an Alcohol and Drug Test indication for selected Employee. The system notifies the appropriate staff (based on the test type) of alcohol and drug test need. The Supervisor transports the Employee to designated medical facility for all test Types except pre-employment. The Employee completes an Alcohol or Drug test at a designated medical facility. The medical facility forwards test results to Human Resources Alcohol and Drug Coordinator for distribution. The Department Alcohol and Drug Coordinator receives Test Results from HR Alcohol and Drug Coordinator. The Department Alcohol and Drug Coordinator updates the Alcohol and Drug Test with the results provided by the HR Alcohol and Drug Coordinator.</p>
+
+<!-- Image Title -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/eoss/respondToDrugAndAlcoholTestRequest/1SD.jpg"><img src="http://austinea.org/arch/eoss/respondToDrugAndAlcoholTestRequest/1SD.jpg" border="0" width="600" alt="" /></a><br />
+<span style="font-weight: bold;">Respond to Drug and Alcohol Test Request<br />Sequence Diagram</span>
+</td></tr></table>
+
+<p style="text-align: center; font-weight: bold;">Interface Descriptions</p>
+<!-- Table definition -->
+<table align="center" id="custom">
+<tr><th width="5%">Req#</th><th width="70%">Type/Interface - Requirement Description</th><th width="25%">Required Response</th></tr>
+<tr>
+<td rowspan="2">##</td>
+<td style="font-weight: bold; background: lightgray;">ensure Employee Safety/createTestRequest</td>
+<td rowspan="12">If proposing a Software as a Service (SaaS) solution, indicate for each requirement the SaaS solution's ability to provide the needed function or service. If proposing a Platform as a Service (PaaS) solution, indicate past performance examples of similar scope of work and other unique qualifications useful to a successful solution.</td>
+</tr>
+<tr>
+<td>The Department Alcohol and Drug Coordinator uses the system to create an Alcohol and Drug Test indication for selected Employee. The Alcohol and Drug Coordinator identifies the test trigger (random, post-accident, pre-employment verification, or reasonable suspicion, etc.). Alcohol and drug test trigger indication is customizable by approved city staff based on their role.</td>
+</tr>
+<tr>
+<td rowspan="2">##</td>
+<td style="font-weight: bold; background: lightgray;">ensure Employee Safety/notifyStaffOfDrugAndAlcoholTest</td>
+
+</tr>
+<tr>
+<td>The system notifies the appropriate staff (based on the test type) of alcohol and drug test need. If test type is pre-employment then only the future Employee is notified. Based on the test disposition (new or update) the system will either request a test (new) or provide test results (update).</td>
+</tr>
+<tr>
+<td rowspan="2">##</td>
+<td style="font-weight: bold; background: lightgray;">supervisor/transportEmployee</td>
+
+</tr>
+<tr>
+<td>Depending on the disposition of the Employee, the Supervisor ensures Employee medical attention by escorting or following the emergency response team to medical treatment facility. For a requested drug or alcohol test, the Supervisor transports the Employee to designated medical facility for all test Types except pre-employment (Employees transport themselves for pre-employment tests).</td>
+</tr>
+<tr>
+<td rowspan="2">##</td>
+<td style="font-weight: bold; background: lightgray;">employee/completeDrugOrAlcoholTest</td>
+
+</tr>
+<tr>
+<td>The Employee completes an Alcohol or Drug test at a designated medical facility. The medical facility forwards test results to Human Resources Alcohol and Drug Coordinator for distribution.</td>
+</tr>
+<tr>
+<td rowspan="2">##</td>
+<td style="font-weight: bold; background: lightgray;">department Alcohol and Drug Coordinator/reviewTestResults</td>
+
+</tr>
+<tr>
+<td>The Department Alcohol and Drug Coordinator receives Test Results from HR Alcohol and Drug Coordinator.</td>
+</tr>
+<tr>
+<td rowspan="2">##</td>
+<td style="font-weight: bold; background: lightgray;">ensure Employee Safety/updateDrugAndAlcoholTestRequest</td>
+
+</tr>
+<tr>
+<td>The Department Alcohol and Drug Coordinator updates the Alcohol and Drug Test with the results provided by the HR Alcohol and Drug Coordinator. Since only positive test results are forwarded for random, post-accident, and reasonable suspicion, the system updates the Employee's Alcohol and Drug Test with a negative result if the test Type equals random, post-accident, or reasonable suspicion, and a set time period has elapsed since Alcohol and Drug Test was created.</td>
+</tr>
+</table>
+
+
+<br />
+</td></tr></table>
+</td></tr></table></body></html>

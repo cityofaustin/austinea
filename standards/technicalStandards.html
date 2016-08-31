@@ -1,0 +1,168 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>COA Technical Standards</title>
+<link rel="Stylesheet" href="http://austinea.org/style/email.css" type="text/css" />
+</head>
+<body bgcolor="#ddd8c2">
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="650" align="center">
+<tr><td style="padding: 0;" height="130" valign="top"><a href="http://austinea.org">
+<img src="http://austinea.org/image/iTHeader.jpg" alt="austinea.org - home..." border="0"></a></td></tr>
+<!-- Text Area -->
+<tr><td>
+
+<p style="text-align: center; font-weight: bold;">Technical Standards
+
+<p style="text-align: center; font-weight: normal;">06/10/2016
+
+<p style="text-align: center; font-weight: normal;">Download <a href="http://austinea.org/standards/technicalStandards.docx">printable version</a><br />
+Download <a href="http://austinea.org/standards/technicalStandards.xlsx">spreadsheet version</a>
+
+<p><b>SaaS/PaaS</b> - Solutions using Software as a Service (SaaS) or Platform as a Service (PaaS).<br />
+<b>Internal</b> - Solutions hosted within City of Austin infrastructure.
+
+<p>Mandatory - Essential requirement<br />
+Expected - Anticipated or presumed requirement<br />
+_____ - No preference</p>
+
+<br />
+
+<table id="custom">
+<tr><th>ID#</th><th>Topic</th><th>Description</th><th>Internal</th><th>SaaS/PaaS</th></tr>
+<tr><td>1</td><td>Application Architecture</td><td>The application provides Web-enabled components to meet the Rehabilitation Act of 1973 Section 503, W3C and industry standards for graphics and design; speed; reliability; and security for dynamic content and user interaction.</td><td>Mandatory</td><td>Mandatory</td></tr>
+<tr><td>2</td><td>Application Architecture</td><td>Ensure compatibility of software with the current version of the following: iOS, Windows and Android mobile devices - Chrome, Safari, IE and Firefox browsers (within 12 months); Windows and Apple operating systems - Office productivity (within 18 months); Oracle and MS SQL databases (within 24 months). Current version is defined as the manufacturer's latest production point version of the product.</td><td>Mandatory</td><td>Mandatory</td></tr>
+<tr><td>3</td><td>Application Architecture</td><td>No requirement to deploy application code to client workstations (note: Java Runtime Environment (JRE) is an exception).</td><td>Mandatory</td><td>Mandatory</td></tr>
+<tr><td>4</td><td>Application Architecture</td><td>The application provides the ability to automate the deployment of software and updates to user workstations including, but not limited to Web-based deployment tools to push/pull software to the desktop (note: applicable only to run-time environment, like Java). Unless the contractor provides an alternative solution, users do not require administrative privileges.</td><td>Mandatory</td><td>Mandatory</td></tr>
+<tr><td>5</td><td>Application Architecture</td><td>The application provides built-in application and system configuration tables accessible by all modules.</td><td>Mandatory</td><td>Mandatory</td></tr>
+<tr><td>6</td><td>Application Architecture</td><td>The application provides (if needed) ability to manage automatic job scheduling (i.e., batch jobs, billing) including, but not limited to, the interface with external job schedulers and automatic notification capabilities when a job abnormally terminates. The City currently support UNIX CRON, Tivoli work Scheduler, Oracle DBMS_JOBS, and MS SQL DTS.</td><td>Mandatory</td><td>_____</td></tr>
+<tr><td>7</td><td>Application Architecture</td><td>The application provides forms-based data validation (field level validation) and displays error messages when validation fails (i.e., user enters text in a numeric field).</td><td>Mandatory</td><td>Mandatory</td></tr>
+<tr><td>8</td><td>Application Architecture</td><td>The application provides copy, cut, paste, and undo functions from data fields and screens to other applications.</td><td>Mandatory</td><td>Mandatory</td></tr>
+<tr><td>9</td><td>Application Architecture</td><td>The application provides ability to perform mass changes to a defined group of transactions with appropriate selection criteria.</td><td>Mandatory</td><td>Mandatory</td></tr>
+<tr><td>10</td><td>Application Architecture</td><td>The application provides ability to effective date transactions and table updates including, but not limited to future and retroactive changes, based on user-defined criteria.</td><td>Mandatory</td><td>Mandatory</td></tr>
+<tr><td>11</td><td>Application Architecture</td><td>The application provides ability to drill down from a transaction view to the supporting source document or record, regardless of the module source.</td><td>Mandatory</td><td>Mandatory</td></tr>
+<tr><td>12</td><td>Application Architecture</td><td>The system provides ability to restrict free form entry (e.g., require use of drop-down calendar for date field).</td><td>Mandatory</td><td>Mandatory</td></tr>
+<tr><td>13</td><td>Application Architecture</td><td>The system meets Web Accessibility standards including, but not limited to, ability to support ADA and compliant with Section 508 of the Federal Rehabilitation Act (see http://www.access-board.gov/sec508/summary.htm). Web based applications must be compliant following the specifications of 508c of the Americans with Disabilities Act. If compliance is not possible, reasonable alternatives may be considered.</td><td>Mandatory</td><td>Mandatory</td></tr>
+<tr><td>14</td><td>Application Architecture</td><td>The application provides ability to apply upgrades and patches without impact to existing user interface customizations (e.g., user-defined forms/fields, Web interface, etc.).</td><td>Expected</td><td>Expected</td></tr>
+<tr><td>15</td><td>Application Architecture</td><td>The solution supports Distributed File System (DFS) shares for file access.</td><td>Expected</td><td>_____</td></tr>
+<tr><td>16</td><td>Audit</td><td>The system provides user-defined audit features for all transactions in solution including, but not limited to, all historical changes, date, time, and user ID of the person making the change.</td><td>Expected</td><td>Expected</td></tr>
+<tr><td>17</td><td>Audit</td><td>The system provides ability to prevent audit records from being deleted or altered, except as part of a system administration archival process.</td><td>Expected</td><td>Expected</td></tr>
+<tr><td>18</td><td>Audit</td><td>The system provides ability for audit-tracking reports including, but not limited to user access and usage logs.</td><td>Expected</td><td>Expected</td></tr>
+<tr><td>19</td><td>Audit</td><td>The system provides ability to archive and restore audit logs.</td><td>Expected</td><td>Expected</td></tr>
+<tr><td>20</td><td>Business Continuity and Disaster Recovery</td><td>The system provides full recovery and system backup capabilities for all online and batch transactions according to City-specified timeframes.</td><td>Mandatory</td><td>Mandatory</td></tr>
+<tr><td>21</td><td>Business Continuity and Disaster Recovery</td><td>The system provides software redundancy including, but not limited to, integrity checking capability to identify the existence of program and/or system discrepancies and issue an alert to the appropriate systems operations team.</td><td>Mandatory</td><td>Mandatory</td></tr>
+<tr><td>22</td><td>Business Continuity and Disaster Recovery</td><td>The system provides ability to alert specified users when key components are unavailable (e.g., DBMS, servers, interfaces, network transport, etc.).</td><td>Mandatory</td><td>Preferred</td></tr>
+<tr><td>23</td><td>Business Continuity and Disaster Recovery</td><td>The system provides ability to restore transactions from the database transaction log.</td><td>Expected</td><td>_____</td></tr>
+<tr><td>24</td><td>Business Continuity and Disaster Recovery</td><td>The system provides software redundancy including, but not limited to, software crash tolerance (i.e., server and client software shall maintain its integrity in case of power failures and abrupt shutdowns); redundancy in the application server tier with automated cut-over; redundancy in the database server tier with automated cut-over; restart and recovery capability after system/server failure with no loss of data or software components; and roll-back.</td><td>Expected</td><td>Expected</td></tr>
+<tr><td>25</td><td>Business Continuity and Disaster Recovery</td><td>The system provides software redundancy including, but not limited to, file protection capability to limit the types of operations (e.g. read, write, delete, and data dictionary modification) that individual users on given data or program files can perform.</td><td>Expected</td><td>Expected</td></tr>
+<tr><td>26</td><td>Business Continuity and Disaster Recovery</td><td>The system provides software redundancy including, but not limited to, incremental, differential, and full backups and restores of the database, core and customized software, software and database configuration options, user preferences and rights, etc. This includes the ability to recover specific data records and/or files from backup and/or near-line storage.</td><td>Expected</td><td>_____</td></tr>
+<tr><td>27</td><td>Data Storage and Archiving</td><td>The solution supports future releases of the application without rendering the archived data unusable.</td><td>Mandatory</td><td>Mandatory</td></tr>
+<tr><td>28</td><td>Data Storage and Archiving</td><td>The solution utilizes storage area network (SAN).</td><td>Mandatory</td><td>_____</td></tr>
+<tr><td>29</td><td>Data Storage and Archiving</td><td>The system provides online access to the current year plus unlimited previous years of all types of data retained in the system, and provides archive capabilities thereafter.</td><td>Expected</td><td>Expected</td></tr>
+<tr><td>30</td><td>Data Storage and Archiving</td><td>The system provides ability to archive data to external storage media and support partitions, based on user-defined including, but not limited to, number of years.</td><td>Expected</td><td>Preferred</td></tr>
+<tr><td>31</td><td>Data Storage and Archiving</td><td>The system allows the City to accurately plan for storage and backup requirements, both for initial implementation and for future growth.</td><td>Expected</td><td>_____</td></tr>
+<tr><td>32</td><td>Data Storage and Archiving</td><td>The contractor provides the City a complete copy of current and archived data hosted by an ASP provider in the event of contract termination within a month of notification in one of the required formats listed above. (ASP Hosted)</td><td>_____</td><td>Mandatory</td></tr>
+<tr><td>33</td><td>Database Architecture</td><td>The application provides standardized data extraction Application Program Interface (API) to allow import and export of data to other systems.</td><td>Mandatory</td><td>Mandatory</td></tr>
+<tr><td>34</td><td>Database Architecture</td><td>The application provides ability to encrypt sensitive data when required by federal or state compliance (e.g., PII, PCI, HIPAA, etc.).</td><td>Mandatory</td><td>Mandatory</td></tr>
+<tr><td>35</td><td>Database Architecture</td><td>The application provides use of Structured Query Language (SQL) for database queries.</td><td>Mandatory</td><td>_____</td></tr>
+<tr><td>36</td><td>Database Architecture</td><td>The solution uses the same data validation criteria for bulk data loads as it does for manual data entry.</td><td>Mandatory</td><td>Mandatory</td></tr>
+<tr><td>37</td><td>Database Architecture</td><td>The application provides ability to exchange database information using industry accepted standards and formats including Extensible Markup Language (XML).</td><td>Expected</td><td>Expected</td></tr>
+<tr><td>38</td><td>Database Architecture</td><td>The application provides ability to copy, archive and retrieve data to external storage media (e.g., tape, DVD, SAN) based on user-defined selection criteria.</td><td>Expected</td><td>_____</td></tr>
+<tr><td>39</td><td>Database Architecture</td><td>The application provides ability to perform database maintenance including, but not limited to, backup and upgrades without requiring system downtime during core business hours.</td><td>Expected</td><td>Expected</td></tr>
+<tr><td>40</td><td>Database Architecture</td><td>The solution includes a method of purging record data from the database(s) ensuring referential integrity with master/child records.</td><td>Expected</td><td>Expected</td></tr>
+<tr><td>41</td><td>Database Architecture</td><td>The system provides ability to set up log event triggers to automatically notify the system administrator when user-defined database conditions are met. (Note: If hosted solution, provide access to configurable alerts.)</td><td>Expected</td><td>_____</td></tr>
+<tr><td>42</td><td>Information Management</td><td>The system prevents the loss or unauthorized deletion of records before the expiration of their retention period as authorized by an approved records control schedule or with the written permission of the Texas State Library and Archives Commission. Texas Local Government Records Act §202.001(a).</td><td>Mandatory</td><td>Mandatory</td></tr>
+<tr><td>43</td><td>Information Management</td><td>The system prevents the unauthorized alteration of records before the expiration of their retention period. The system provides logs or audit trails that document edits and views of records. This is a requirement for records governed by HIPAA; and, depending on the type of record, there may be additional integrity requirements governed by Texas House Bill 300.</td><td>Mandatory</td><td>Mandatory</td></tr>
+<tr><td>44</td><td>Information Management</td><td>The system provides systematic deletion of records upon expiration of their retention period as authorized by an approved records control schedule or with the written permission of the Texas State Library and Archives Commission. Texas Local Government Records Act §202.001(a) and §201.003(16), Austin City Code §2-11-11. Sufficient metadata must be present to identify records eligible for disposition based on defined triggering events and dates.</td><td>Mandatory</td><td>Mandatory</td></tr>
+<tr><td>45</td><td>Information Management</td><td>Upon expiration of the retention period, the system ensures destruction of all duplicate records to include convenience copies. Texas Rules of Evidence, Rule 1003. The system's back-up strategy ensures retention of backup records doesn't excessively exceed destruction of originals. System procedures must ensure retention rules apply to copies of production data used to develop, test, or train.</td><td>Mandatory</td><td>Mandatory</td></tr>
+<tr><td>46</td><td>Information Management</td><td>The system ensures records are retrievable and available until the expiration of their approved retention period. Texas Local Government Records Act §205.008(b). Records stored on contractor, outsourced, cloud, or hosted platforms remain the property and responsibility of the City. When contacted by an authorized City employee or when the contract ends or is terminated, contractors must deliver records, in all requested formats and media, along with all finding aids and metadata, to the City at no cost. Austin City Code §2-11-15.</td><td>Mandatory</td><td>Mandatory</td></tr>
+<tr><td>47</td><td>Information Management</td><td>Until expiration of retention period, hardware and software must be available to access records and sufficient metadata must be present to facilitate timely retrieval of records. Contracts with hosted solution providers must specify the contractor's duties with respect to management of records as required by Austin City Code §2-11-15. The system ensures retention of specific records - even if their retention period has expired - if they are the subject of known or reasonably anticipated litigation, public information request, audit or other legal action. Texas Local Government Records Act §202.002, Austin City Code § 2-11-11. The system maintains a log of litigation and other holds allowing release of holds after resolution of litigation, audit, or public information requests.</td><td>Mandatory</td><td>Mandatory</td></tr>
+<tr><td>48</td><td>Information Management</td><td>The system creates records/logs of destruction activity. Texas Local Government Records Act §203.046, Austin City Code §2-11-11. Destruction logs must (a) show a minimal set of metadata sufficient to uniquely identify the records purged; (b) show who approved and who executed the destruction, and the dates on which these events took place; (c) reflect compliance with an approved, written standard operating procedure; and (d) be retained permanently.</td><td>Mandatory</td><td>Mandatory</td></tr>
+<tr><td>49</td><td>Infrastructure</td><td>The system uses industry standard virtualization infrastructure to support load balancing.</td><td>Mandatory</td><td>_____</td></tr>
+<tr><td>50</td><td>Infrastructure</td><td>If the system is Simple Network Management Protocol (SNMP V.3) compliant, the contractor provides standard Management Information Base (MIB) files for all SNMP-enabled components.</td><td>Mandatory</td><td>_____</td></tr>
+<tr><td>51</td><td>Infrastructure</td><td>The solution uses an accurate, NIST time source for traceable time stamp. If back-end components use date/time stamping, client-side components synchronize with back-end servers.</td><td>Mandatory</td><td>Mandatory</td></tr>
+<tr><td>52</td><td>Infrastructure</td><td>If the solution includes electronic hardware such as servers or network devices, all network-enabled hardware supports auto-negotiation of network speeds and duplex settings, including 10 mbps, 100 mbps and Gigabit Ethernet, if applicable.</td><td>Expected</td><td>_____</td></tr>
+<tr><td>53</td><td>Infrastructure</td><td>If applicable, all portable devices (laptops, hand-held units, etc.) provide display screens readable in conditions ranging from darkness to direct sunlight.</td><td>Expected</td><td>Expected</td></tr>
+<tr><td>54</td><td>Infrastructure</td><td>If applicable, all supplied portable devices (laptops, hand-held units, etc.) are resistant to heat, cold, moisture, dust and shock.</td><td>Expected</td><td>Expected</td></tr>
+<tr><td>55</td><td>Infrastructure</td><td>If applicable, all supplied portable devices (laptops, hand-held units, etc.) are capable to receive program or firmware updates via network connections.</td><td>Expected</td><td>Expected</td></tr>
+<tr><td>56</td><td>Infrastructure</td><td>System server components use standard Domain Name Services (DNS).</td><td>Expected</td><td>_____</td></tr>
+<tr><td>57</td><td>Integration Architecture</td><td>The system provides the ability to set up appropriate approval, audit trail, and reconciliation procedures for all inbound and outbound interfaces.</td><td>Mandatory</td><td>Mandatory</td></tr>
+<tr><td>58</td><td>Integration Architecture</td><td>If application requires integration with other City data, the application must integrate using an enterprise service bus.</td><td>Expected</td><td>Expected</td></tr>
+<tr><td>59</td><td>Security and Authentication</td><td>If applicable, the system provides adequate protection of data covered by regulatory or other compliance requirements (e.g., U.S. Health Insurance Portability and Accountability Act (HIPAA), Family Educational Rights and Privacy Act (FERPA), Payment Card Industry (PCI).</td><td>Mandatory</td><td>Mandatory</td></tr>
+<tr><td>60</td><td>Security and Authentication</td><td>The system authenticates with multiple internal Microsoft Active Directories.</td><td>Mandatory</td><td>_____</td></tr>
+<tr><td>61</td><td>Security and Authentication</td><td>The application provides encryption for data exchanged between the front-end user application and the back-end servers - federal or state compliance required (e.g., PII, PCI, HIPAA, etc.).</td><td>Mandatory</td><td>Mandatory</td></tr>
+<tr><td>62</td><td>Security and Authentication</td><td>The system provides protection against unauthorized access to data by persons and other software programs.</td><td>Mandatory</td><td>Mandatory</td></tr>
+<tr><td>63</td><td>Security and Authentication</td><td>The system masks (i.e., substituting characters with '*') passwords as they are entered into the system.</td><td>Mandatory</td><td>Mandatory</td></tr>
+<tr><td>64</td><td>Security and Authentication</td><td>The system is PCI-compliant when handling credit card transactions.</td><td>Mandatory</td><td>Mandatory</td></tr>
+<tr><td>65</td><td>Security and Authentication</td><td>The solution does not require operating system administrator privileges on the client workstation(s) to run or receive application updates or the vendor must provide another solution for updates.</td><td>Mandatory</td><td>Mandatory</td></tr>
+<tr><td>66</td><td>Security and Authentication</td><td>The solution provides a method to change the passwords for built-in system accounts (i.e. Administrator, Admin, Super, etc.)</td><td>Mandatory</td><td>Mandatory</td></tr>
+<tr><td>67</td><td>Security and Authentication</td><td>When the contractor is connected to the City's Virtual Private Network (VPN) for solution support purposes, the contractor uses single tunneling, which means the contractor disconnects from their local network during the VPN session.</td><td>Mandatory</td><td>_____</td></tr>
+<tr><td>68</td><td>Security and Authentication</td><td>Passwords must NOT be included in automated sign-on procedures, stored unencrypted in cache, or transmitted as clear text over the network.</td><td>Mandatory</td><td>Mandatory</td></tr>
+<tr><td>69</td><td>Security and Authentication</td><td>The application allows the Application Administrator to restrict generic logins.</td><td>Mandatory</td><td>Mandatory</td></tr>
+<tr><td>70</td><td>Security and Authentication</td><td>When applicable, the system provides 128-bit SSL or higher or TLS, between the client browser and application modules.</td><td>Expected</td><td>Expected</td></tr>
+<tr><td>71</td><td>Security and Authentication</td><td>The system allows an approved administrator to inactivate user access.</td><td>Expected</td><td>Expected</td></tr>
+<tr><td>72</td><td>Security and Authentication</td><td>The system provides ability to manage user permissions centrally for all modules of the applications.</td><td>Expected</td><td>Expected</td></tr>
+<tr><td>73</td><td>Security and Authentication</td><td>The system provides ability to use tokens and/or passwords for user logons.</td><td>Expected</td><td>Expected</td></tr>
+<tr><td>74</td><td>Security and Authentication</td><td>The system provides users the ability to change password, users to change their password on set period and password expiration.</td><td>Expected</td><td>Expected</td></tr>
+<tr><td>75</td><td>Security and Authentication</td><td>The system provides ability to configure passwords including, but not limited to the following: minimum password length of at least eight characters; case sensitive, contain numbers, alphanumeric characters, and special characters; and complex passwords based on user-defined criteria.</td><td>Expected</td><td>Expected</td></tr>
+<tr><td>76</td><td>Security and Authentication</td><td>The system provides ability to record the date and time of changed password.</td><td>Expected</td><td>Expected</td></tr>
+<tr><td>77</td><td>Security and Authentication</td><td>The system provides ability to deny user access after a definable number of unsuccessful attempts to logon.</td><td>Expected</td><td>Expected</td></tr>
+<tr><td>78</td><td>Security and Authentication</td><td>The system provides ability to log, based on user-defined criteria, each authorized and/or unauthorized access attempt. Log information includes, but is not limited to, user identification, IP address, date, time, transaction type, and type of access (e.g., read, modify).</td><td>Expected</td><td>Expected</td></tr>
+<tr><td>79</td><td>Security and Authentication</td><td>The system provides ability to assign application access rights for the entire suite of applications at a single point of entry.</td><td>Expected</td><td>Expected</td></tr>
+<tr><td>80</td><td>Security and Authentication</td><td>The system provides ability to control access to all activities (e.g., online transactions, batch processing, report writer, query, system utilities) including, but not limited to the following levels: system, database, module, field, inquiry, approval, report, transaction, table, individual, group, organization (e.g., department, division), user role, user site, time period, and position across all functional areas.</td><td>Expected</td><td>Expected</td></tr>
+<tr><td>81</td><td>Security and Authentication</td><td>The system provides ability to create and maintain security profiles to control access including, but not limited to the following: employee level, module, field, transaction type, employee group, standard report, and ad hoc report.</td><td>Expected</td><td>Expected</td></tr>
+<tr><td>82</td><td>Security and Authentication</td><td>The system provides ability to automatically log users off the system when there has been no activity for a definable (pre-defined) period.</td><td>Expected</td><td>Expected</td></tr>
+<tr><td>83</td><td>Security and Authentication</td><td>The system provides ability to generate summary and detail reports including, but not limited to user access, usage logs, audit logs, failed and/or unauthorized access attempts based on user defined parameters (e.g., audit requirements). The system provides ability to alert the application administrator when any of these events exceed a specific, definable threshold.</td><td>Expected</td><td>Expected</td></tr>
+<tr><td>84</td><td>Security and Authentication</td><td>The system provides ability to utilize session encryption methods necessary to ensure the secure electronic transfer of sensitive information.</td><td>Expected</td><td>Expected</td></tr>
+<tr><td>85</td><td>Security and Authentication</td><td>If the system requires bulk data loads via the Internet, the system uses a secure network transport method.</td><td>Expected</td><td>Expected</td></tr>
+<tr><td>86</td><td>Security and Authentication</td><td>New user permissions default to least privileges security permissions.</td><td>Expected</td><td>Expected</td></tr>
+<tr><td>87</td><td>Security and Authentication</td><td>The application provides a transaction log related to changes made to security (roles, groups, and permissions).</td><td>Expected</td><td>Expected</td></tr>
+<tr><td>88</td><td>Security and Authentication</td><td>To help enforce City's security policies, the solution allows the application administrator to disconnect a particular user and to lock out a user during an active session.</td><td>Expected</td><td>Expected</td></tr>
+<tr><td>89</td><td>Security and Authentication</td><td>The system provides ability to restrict remote access to the application by client IP address or network address range.</td><td>_____</td><td>Expected</td></tr>
+<tr><td>90</td><td>Security and Authentication</td><td>The system uses Microsoft Active Directory Federated Services (ADFS) [current version minus 1] for federated identity management.</td><td>_____</td><td>Mandatory</td></tr>
+<tr><td>91</td><td>Security and Authentication</td><td>The system ensures the City's data is not made available to any other parties not specifically authorized to view or access the data. (ASP Hosted)</td><td>_____</td><td>Mandatory</td></tr>
+<tr><td>92</td><td>Security and Authentication</td><td>For systems with sensitive data (personally identifiable information (PII), city confidential data, or data covered by a federal security standard), the contractor conducts an annual security assessment of all tiers of its hosting facility, including application servers and network devices. Provide summary copies of the security audit reports to the City of Austin annually. We prefer an annual 3rd party security assessment, which we may require depending on the data being hosted.</td><td>_____</td><td>Mandatory</td></tr>
+<tr><td>93</td><td>System Flexibility</td><td>The system provides the ability to define business rules based on user-defined criteria (e.g., organizational level, account code, bargaining unit, location, program, grant, etc.).</td><td>Mandatory</td><td>Expected</td></tr>
+<tr><td>94</td><td>System Flexibility</td><td>The system solution is compatible with Citrix for client server configurations.</td><td>Expected</td><td>Expected</td></tr>
+</table>
+
+<br /><br />
+
+
+<!-- Image Title
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="right"><tr><td align="center">
+<span class="lbl">Note: Select to download</span><br />
+<a href="http://austinea.org/"><img src="http://austinea.org/" border="0" width="200" alt="" /></a><br />
+<span style="font-weight: bold;">Image Title</span>
+</td></tr></table> -->
+
+
+<!-- Table definition
+<table align="center" id="custom">
+<tr><th width="9%">Req#</th><th width="70%">Type/Interface - Requirement Description</th><th>Performance</th></tr>
+<tr>
+<td rowspan="2">SS02</td>
+<td style="font-weight: bold; background: lightgray;">method</td>
+<td rowspan="2">performance</td>
+</tr>
+<tr>
+<td>description</td>
+</tr>
+</table> -->
+
+
+<!-- Table definition
+<table align="center" id="custom">
+<tr><th>Number</th><th>Category</th><th>Description</th><th>Criticality</th></tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table> -->
+
+</td></tr></table>
+</td></tr></table></body></html>

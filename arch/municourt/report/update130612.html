@@ -1,0 +1,94 @@
+<html>
+<head>
+<title>COA Municipal Court Interface Description Development</title>
+<link rel=StyleSheet href="http://austinea.org/style/email.css" type="text/css">
+</head>
+<body>
+<!--Border Background Table - 1em-->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse;"  align="center" style="background-color: #F4CA90;">
+<tr><td>
+<!--Main Body-->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" width="600" align="center" style="background-color: #ffffff;">
+<tr><td>
+<!-- Online reference -->
+<p style="color: gray; font-size: 7pt;">Note: This report is also <a href="http://austinea.org/arch/municourt/report/update130612.html">available online</a> by following link.
+<!--Vision Graphic-->
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse;" align="right">
+<tr><td style="font-weight: bold; text-align: center;">
+<a href="http://austinea.org/arch/municourt/report/muniCourtVision.png"><img src="http://austinea.org/arch/municourt/report/muniCourtVision.png" border="0" width="250"></a><br>
+Municipal Court<br>Strategic Viewpoint
+</td></tr></table>
+
+<p>Muni Court Team,
+
+<p>The steam is building in our locomotive and we're gaining momentum! It's important that we maintain focus on the underlying principles leading to the desired outcomes enterprise architecture facilitates. Therefore, let's review the architecture principles we're pursuing:
+
+<ul>
+<li>Use architecture to collaboratively identify future state court system needs in context of prescribed customer and staff usage.
+<li>Use architecture artifacts as guiding elements for court case management system statement of work (SOW) future functional requirements. Ensure clarity of understanding useful to City of Austin (COA) contract staff to negotiate scope of agreement with court system vendor.
+<li>Minimize or eliminate duplicative interface descriptions to reduce overall contract costs and provide functional clarity to reduce implementation risk.
+<li class="lmargin">Lay foundation for future architecture efforts to capture Municipal Court business processes in context of court system usage for future business process reengineering efforts.
+</ul>
+
+<p>Feel free to offer feedback if I missed something.
+
+<!--Sequence Diagram Figure-->
+<table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse; margin-bottom: 5pt;" align="center">
+<tr><td>
+<img src="http://austinea.org/arch/municourt/report/selectWebPresenceLegalOption.png" border="0" width="550">
+</td></tr></table>
+<p style="text-align: center; font-weight: bold;">Sequence Diagram to Select Legal Option
+
+<p style="color: gray; font-size: 7pt;">*Note: Table below defines each interface shown on the sequence diagram.
+
+<p>If we agree to the architecture principles listed above, it's not necessary at this point in the architecture process that we capture all the relevant business rules associated with the rules engine interface (<b>determineLegalOptions</b>) that we discussed last week. Between now and vendor implementation, it is likely that the rules we capture today will change prior to contract award anyway. For now, it's important that we capture the specification for the SOW contract language. The criticality of the business rules becomes important once the rules engine interface exists requiring Court Staff setup or when (if) the vendor elicits a reasonable set of examples to create the business rules engine to successfully implement the service interface. Regardless, we want the case management vendor to deliver a flexible rules engine to capture any necessary business rules associated with the Case File. From a business need perspective, the <b>determineLegalOptions</b> interface description in the table below provides the business need for contracting purposes. I created a draft description, which we can modify during our next meeting if necessary.
+
+<!-- Table of Interface Descriptions -->
+<p style="text-align: center; font-weight: bold;">Table of Interface Descriptions
+<table align="center" id="custom">
+<tr><th>Type/Interface</th><th>Description</th></tr>
+<tr>
+<td>Web Presence/<br>identifyCaseFile</td>
+<td>Provides secure means of identity for Defendant or Respondent to identify Case File of interest. If there are multiple Case Files, they are presented in a tabular queue for Defendant or Respondent to select Case File of interest.</td>
+</tr>
+
+<tr>
+<td>Manage Court Case/<br>retrieveCaseFile</td>
+<td>Provides interface for the Web Presence to retrieve a Case File Queue (list of available Case Files) based on approved identity criteria from Web Presence.</td>
+</tr>
+
+<tr>
+<td>Manage Court Case/<br>determineLegalOptions</td>
+<td>When a Defendant or Respondent selects a particular Case File of interest from the Web Presence Case File Queue, the system determines the various legal options available to the Defendant or Respondent. The system provides a Court Staff configurable rules engine to allow Court Staff to modify business rules associated with the options provided to the Defendant or Respondent via Web Presence. The rules engine provides a customizable response based on current Case File attributes such as warrant status, age of Defendant or Respondent, attorney assigned to the case, and plea state (just to name a few) leading to the legal options provided to the Defendant or Respondent. Depending on Court Staff needs, some responses will be non-selectable and grayed out providing indication to Defendant or Respondent why the legal option is not selectable. Because laws frequently change, it's important that the legal options are not hard coded into the case management system; rather, the system should allow the Court Staff to make appropriate legal option changes using a customizable rules filter.</td>
+</tr>
+
+<tr>
+<td>Web Presence/<br>selectLegalOption</td>
+<td>Based on a customizable Legal Option rules engine, the Defendant or Respondent is provided a list of legal options to proceed with the Case File. To reduce confusion, some of the legal options (determined by Court Staff) will be grayed out and non-selectable with an explanation as to why the Legal Option is not available.</td>
+</tr></table><br>
+
+<p>Inherently, we'll better understand and document many of the resulting business rules as we explore the various processes triggered by the legal options selected by Defendant or Respondent through the interface <b>selectLegalOption</b>. Therefore, it's important that we maintain this function as a reusable service recognizing it as a triggering event element. As we continue to work together, these salient approaches to requirements specification development will become more  familiar and we'll generate more steam in our locomotive. 8^)
+
+<p>Please feel free to reach out with any questions or concerns.
+
+<p>Cheers!
+<!-- Austin Logo -->
+<table cellpadding=5 cellspacing=0 border=0 style="border-collapse: collapse;" align="right"><tr><td>
+<img src="http://austinea.org/image/austinLogo.jpg" border="0" width="100">
+</td></tr></table>
+
+<p><img src="http://journeycolorado.com/images/signature.jpg" border="0" width="150">
+<!-- Signature Corporate -->
+<p><b>Rob Byrd</b> <span style="color: red; font-weight: bold;">|</span> <b>City of Austin</b><br>
+Chief Enterprise Architect - Corporate<br>
+Direct: (512) 974-1615 | Mobile: (512) 431-0700
+<hr>
+<!-- Past Reports -->
+<table cellpadding=0 cellspacing=0 border=0 style="border-collapse: collapse;" align="left"><tr><td>
+<b>Past Reports</b>
+<p><a href="http://austinea.org/arch/municourt/report/visionSession.htm">Vision / Mission Development</a> - Requires definitions for Capabilities and Goals<br>
+<a href="http://austinea.org/arch/municourt/report/update130605.html">Interface Descriptions and Development</a>
+</td></tr></table>
+
+</td></tr></table>
+</td></tr></table></body></html>

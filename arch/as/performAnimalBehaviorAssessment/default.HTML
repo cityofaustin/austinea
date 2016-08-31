@@ -1,0 +1,146 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Perform Animal Behavior Assessment</title>
+<link rel="Stylesheet" href="http://austinea.org/style/hover.css" type="text/css" />
+</head>
+<body bgcolor="#ddd8c2">
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="650" align="center">
+<tr><td style="padding: 0;" height="130" valign="top"><a href="http://austinea.org">
+<img src="http://austinea.org/image/iTHeader.jpg" alt="austinea.org - home..." border="0"></a></td></tr>
+<!-- Text Area -->
+<tr><td>
+
+<p style="text-align: center; font-weight: bold;">Perform Animal Behavior Assessment<br />Use Case Specification</p>
+<p style="text-align: center;">01/06/16
+
+<!--  IF Printable document option Included  
+<p style="text-align: center;">download <a href="http://austinea.org/arch/as/***.docx">printable version</a>
+-- >
+
+<b> Animal Services Logical Data Model </b>            
+<!-- Image -  Logical Data Model 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="http://austinea.org/arch/as/ldm.jpg"><img src="http://austinea.org/arch/as/ldm.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Animal Services Logical Data Model</p>
+</td></tr></table> -->
+
+<!-- USE CASE IMAGE -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/as/performAnimalBehaviorAssessment/ucd.jpg"><img src="http://austinea.org/arch/as/performAnimalBehaviorAssessment/ucd.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Perform Animal Behavior Assessment<br />Use Case Model</span>
+</td></tr></table>
+
+<p><b>Scope: </b>The Behavior Team runs a report showing animal that needs assessment by the Behavior Team. Additionally, they run the Behavior Lock Report. Each animal on the list is evaluated to determine their adoptability and their social interaction skills. Given this assessment, the Behavior Team will take various courses of action from suggesting an animal stay or be removed from behavior modification training and service, to suggesting foster or rescue placement, to suggesting movement to Pets Alive, or even euthanasia. If an animal is deemed potentially harmful, it is designated as being on Behavioral Lock, and a physical lock is placed on the animal's cage. Once the evaluations are done, the Behavior Team uses the system to record the animal disposition and behavioral information within the AnimalInfo record. Additionally, the Behavior Team will placed corresponding colored dots on the animal's kennel, providing a visual cue to other Animal Services personnel pertaining to the animal's behavioral status.   
+
+
+
+<!-- IF INTERACTION OVERVIEW IS INCLUDED 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/as/***.jpg"><img src="http://austinea.org/as/code/***.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Interaction Overview</span>
+</td></tr></table>
+-->
+
+
+<br />
+
+
+<!-- SEQUENCE DIAGRAM  -->                 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/as/performAnimalBehaviorAssessment/sd01.jpg"><img src="http://austinea.org/arch/as/performAnimalBehaviorAssessment/sd01.jpg" border="0" alt="" width="600"/></a><br />
+<span style="font-weight: bold;">Perform Animal Behavior Assessment<br />Sequence Diagram</span>
+</td></tr></table>
+<br />
+
+
+<!-- INTERFACE TABLE  -->
+<table align="center" id="custom">
+<tr><th width="9%">Req#</th><th width="70%">Type/Interface - Requirement Description</th><th>Performance</th></tr>
+<tr>
+<td rowspan="2">001</td>
+<td style="font-weight: bold; background: lightgray;">Provide Resources for People and Pets/generateAnimalAssessmentReport</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Behavior Team uses the system to generate a behavior attention report. This report includes AnimalID, animal name, kennel location, sex, description, and color at the shelter. The report describes animals currently in the center that have staff reports indicating possible behavior issues.</td>
+</tr>
+<tr>
+<td rowspan="2">002</td>
+<td style="font-weight: bold; background: lightgray;">Provide Resources for People and Pets/generateBehaviorLockReport</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Behavior Team uses the system to generate a behavior lock report. This report includes AnimalID, animal name, kennel location, sex, description, and color at the shelter. This report describes the animals currently on behavioral lock.</td>
+</tr>
+<tr>
+<td rowspan="2">003</td>
+<td style="font-weight: bold; background: lightgray;">Behavior Team/evaluateAnimal</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Behavior Team evaluates an animal for behavioral issues. They perform a standardized test (match-up 2 test), and the Behavior Team records the responses and observations seen during the test.</td>
+</tr>
+<tr>
+<td rowspan="2">004</td>
+<td style="font-weight: bold; background: lightgray;">Behavior Team/recommendEuthanasia</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Behavior Team makes the unfortunate determination that an animal is non-rehabilitatable, and designates the animal as recommended for euthanasia. The Behavior Team consults with the Deputy Chief to see if the euthanasia process needs to begin or if alternate plans need to be pursued first. 
+</td>
+</tr>
+<tr>
+<td rowspan="2">005</td>
+<td style="font-weight: bold; background: lightgray;">Behavior Team/offerAnimalToPetsAlive</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Behavior Team makes the determination that an animal is non-rehabilitatable for maintaining their stay at the Austin Animal Shelter or feel APA (Austin Pets Alive) is better equipped to provide more consistent handling, training, and enrichment for a particular animal, and designates the animal as recommended for transfer to APA).</td>
+</tr>
+<tr>
+<td rowspan="2">006</td>
+<td style="font-weight: bold; background: lightgray;">Behavior Team/physicallyLockCage</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Behavior Team makes the determination that an animal can only interact with employees and staff of the Austin Animal Shelter. A physical lock is placed on the cage preventing unauthorized access to the animal.</td>
+</tr>
+<tr>
+<td rowspan="2">007</td>
+<td style="font-weight: bold; background: lightgray;">Perform Animal and Behavior Assessment/addAndUpdatePersonAndAnimalInfo</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>Customer Service/Foster Coordinator/Other users will access the system and add or update person and animal info. They will include information like owner, owner address, pet name, pet breed, pet sex, pet microchip info, rabies certificate information, as well as other important information. If the animal or person is already in the system, Customer Service uses the system to update the information. In the case of Trappers, add the date they signed the Standards of Conduct and the Standard Operating Procedure. In the event of Volunteer Applicant for Trappers, the Outreach Education Team will access the system and provide information from the TrapperApplication to create a PersonInfo record for the Applicant (including verification date and time for the signing of the Standard of Conduct, and the Standard Operating Procedure), if one does not already exist. If a PersonInfo record exists, the Outreach Education Team will update the information as necessary based on the Applicant’s information. 
+For spay/neuter, the user modifies the sex of the animal from M/F (male/female) to S/N (spay/neuter), and records the date of surgery, date processed, vet clinic ID (the system maintains a list of all vet clinics on record within the area).
+Foster Coordinators/Rescue Coordinators create PersonInfo records for Citizens acting/assisting with foster care, and annotate AnimalInfo Records with information indicating Foster Care Providers who have taken ownership of the animals.</td>
+</tr>
+<tr>
+<td rowspan="2">008</td>
+<td style="font-weight: bold; background: lightgray;">Behavior Team/placeColoredDotOnKennel</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>Based on the final disposition of an animal's most recent behavioral assessment, the Behavior Team places colored dots on kennel cards, as well as on the centralized animal activity whiteboard, indicating safety. Red dots indicate animal is to stay on behavioral lock, blue dots indicate that only staff Volunteers may interact with the animal, and green dots indicate anyone, including the public, may interact with the animal.</td>
+</tr>
+
+
+
+</table>
+
+
+<br />
+
+
+
+
+</td></tr></table>
+</td></tr></table></body></html>

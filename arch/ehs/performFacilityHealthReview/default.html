@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Perform Facility Health Review</title>
+<link rel="Stylesheet" href="http://austinea.org/style/email.css" type="text/css" />
+</head>
+<body bgcolor="#ddd8c2">
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="650" align="center">
+<tr><td style="padding: 0;" height="130" valign="top"><a href="http://austinea.org">
+<img src="http://austinea.org/image/iTHeader.jpg" alt="austinea.org - home..." border="0"></a></td></tr>
+<!-- Text Area -->
+<tr><td>
+
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="right"><tr><td align="center">
+<span class="lbl">Select image to enlarge...</span><br />
+<a href="http://austinea.org/arch/ehs/performFacilityHealthReview/eHSCAA.jpg"><img src="http://austinea.org/arch/ehs/performFacilityHealthReview/eHSCAA.jpg" border="0" width="250" alt="" /></a><br />
+<span style="font-weight: bold;">Evironmental Health Services<br />Capability Area Architecture</span>
+</td></tr></table>
+
+<p>This report provides an update on the use case to <i>Perform Facility Health Review</i>. We made some substantial changes in the way the use case looks; albeit, the content is the same. Instead of embedding the business rules in one sequence diagram, we abstracted the business rules to an <a href="http://austinea.org/arch/ehs/performFacilityHealthReview/performFacilityHealthReviewAD.jpg">activity model</a> referred to as an <a href="http://austinea.org/definition/#interaction_overview">Interaction Overview</a>. This approach makes the use case model much easier to understand. Each activity on the activity model has its own separate sequence diagram using the same activity name - there are now five smaller sequence diagrams.</p>
+
+<p>We updated the <a href="http://austinea.org/definition/#caa">Capability Area Architecture (CAA)</a> based on our discussions and anticipate the CAA to continue to mature over time. As you may have noticed, we've been able to combine capabilities by identifying common processes - this is the nature of the <a href="http://austinea.org/definition/#ooad">object-oriented analysis and design (OOAD)</a> method we're using and a key reason this reengineering approach is beneficial. You can select any diagram to open it in your browser to view in a more readable form.</p>
+
+<p style="font-weight: bold; text-align: center;">Perform Facility Health Review</p>
+
+<p><b>Scope:</b> The Applicant uses the system to complete an Facility Health Application to obtain a facility health review. This may include a request for Operating Permit, a facility health inspection for general facility assessment, custodial care inspection, or health facility related complaint. Based on application attributes, the system determines applicable fees for processing with the city's approved Electronic Financial Service. Once submitted, the Facility Health Application is added to a Review Queue for quality review by an Application Reviewer. Once approved and a facility inspection is required, the system adds the reviewed Facility Health Application to an Inspection Queue. The Applicant or the Health Inspector can make modifications to the scheduled Inspection Queue and the Health Inspection Supervisor can reassign Health Inspectors. Based on Inspection Queue, the Health Inspector retrieves assigned inspections using a mobile device to retrieve location, contact, and other details of the facility to be inspected and completes an Inspection Report. Following an inspection, the system automatically updates the Inspection Queue and provides Notification to the Applicant on the details of the inspection and its status, i.e., pass or fail. When an Operating Permit is required, the system automatically generates an Operating Permit for issuance to the Applicant.</p>
+
+
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select image to enlarge...</span><br />
+<a href="http://austinea.org/arch/ehs/performFacilityHealthReview/performFacilityHealthReviewUCD.jpg"><img src="http://austinea.org/arch/ehs/performFacilityHealthReview/performFacilityHealthReviewUCD.jpg" border="0" width="600" alt="" /></a><br />
+<span style="font-weight: bold;">Use Case: Perform Facility Health Review</span>
+</td></tr></table>
+
+<p>&nbsp;</p>
+
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select image to enlarge...</span><br />
+<a href="http://austinea.org/arch/ehs/performFacilityHealthReview/performFacilityHealthReviewAD.jpg"><img src="http://austinea.org/arch/ehs/performFacilityHealthReview/performFacilityHealthReviewAD.jpg" border="0" width="450" alt="" /></a><br />
+<span style="font-weight: bold;">Interaction Overview: Perform Facility Health Review</span>
+</td></tr></table>
+
+<br />
+
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select image to enlarge...</span><br />
+<a href="http://austinea.org/arch/ehs/performFacilityHealthReview/1SD.jpg"><img src="http://austinea.org/arch/ehs/performFacilityHealthReview/1SD.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Sequence Diagram: 1. Perform Intake</span>
+</td></tr></table>
+
+<br />
+
+<table align="center" id="custom">
+<tr><th width="30%">Type/Interface</th width="70%"><th>Description</th></tr>
+<tr>
+<td>Accomplish Inspection and Obtain Operating Permit/<br>submitFacilityHealthApplication</td>
+<td>Through a Web portal, the system guides the Applicant to the proper application(s) to request a facility health review. This may include a request for Operating Permit when a Certificate of Occupancy for new facilities or remodels, a re-occurring request for an Operating Permit, a facility heath inspection for Change of Ownership, a facility health inspection for general facility assessment, custodial care inspection, or health facility related complaint. The system provides form(s) for Health Inspection Application, Operating Permit Application or both when needed, custodial care inspection, a health related complaint requiring a Health Inspector assessment and Food Handler Employee List. When supporting documentation is required such as Certificate of Occupancy or Change of Ownership, the system provides a method for the Applicant to upload the documentation included with the Facility Review Application. If the Applicant obtained a Certificate to Occupancy through the Planning and Development Review (PDR) use case Obtain Final Inspection, the Applicant enters the PDR reference code instead. The system provides the Applicant the ability to expedite inspections and permits. By doing so, the requested Facility Health Application is given higher priority in the selected queue - i.e., Review Queue and/or Inspection Queue. For Food Handler Employee List, the system correlates / adjudicates known food handlers already existing in the system through the food handler registration process.</td>
+</tr>
+<tr>
+<td>Geographic Information System/<br>retrieveGeographicInformation</td>
+<td>The system retrieves geographic information based on address provided on the Facility Health Application to determine geographic boundaries used in Health Inspector assignment or jurisdiction determination. If the jurisdiction is outside city area of responsibility, the Applicant is provided indication the Facility Health Application is outside city jurisdiction.</td>
+</tr>
+<tr>
+<td>Accomplish Inspection and Obtain Operating Permit/<br>determineApplicableFee</td>
+<td>The system determines the required fee based on fee tables or similar means of fee calculation. The fee table or related lookup must be modifiable by approved city staff. The fee table takes into consideration certain attribute values of the Inspection Application such as recent issuance of Certificate of Occupancy, requests for inspection only application or Change of Ownership requiring an inspection. The system checks the Operating Permit application to determine if there's a change in ownership and the system requires an inspection and notifies applicant of the additional inspection application and fees. Fees may include such items as late fees, compliance verification, fess for previously approved but incomplete submission (such as non-compliance of food handlers), expedite inspections and permits, custodial care inspection etc.</td>
+</tr>
+</table>
+
+<br />
+
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select image to enlarge...</span><br />
+<a href="http://austinea.org/arch/ehs/performFacilityHealthReview/2SD.jpg"><img src="http://austinea.org/arch/ehs/performFacilityHealthReview/2SD.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Sequence Diagram: 2. Submit Remittance</span>
+</td></tr></table>
+
+<br />
+
+<table align="center" id="custom">
+<tr><th width="30%">Type/Interface</th width="70%"><th>Description</th></tr>
+<tr>
+<td>Applicant/<br>reviewApplicableFee<br></td>
+<td>The Applicant is presented with a summary representing the required fee and terms and conditions associated with payment.</td>
+</tr>
+<tr>
+<td>Accomplish Inspection and Obtain Operating Permit/<br>processFee</td>
+<td>The Applicant uses the system to process online financial transactions with the city's approved financial service provider.</td>
+</tr>
+<tr>
+<td>Eletronic Financial System/<br>processFee</td>
+<td>Interface to the city's online financial credit card, debit card, and automated clearing house (ACH) service provider.</td>
+</tr>
+<tr>
+<td>Accomplish Inspection and Obtain Operating Permit/<br>storeInTransactionLedger</td>
+<td>When an Acknowledgment is received from the Electronic Financial System (i.e., the city's approved online financial service provider), the system updates the Transaction Ledger for future reconciliation or to determine financial obligation of Applicant based on previous Facility Health Application submissions.</td>
+</tr>
+</table>
+
+<br />
+
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span id="3" class="lbl">Select image to enlarge...</span><br />
+<a href="http://austinea.org/arch/ehs/performFacilityHealthReview/3SD.jpg"><img src="http://austinea.org/arch/ehs/performFacilityHealthReview/3SD.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Sequence Diagram: 3. Quality Review Application</span>
+</td></tr></table>
+
+<br />
+
+<table align="center" id="custom">
+<tr><th width="30%">Type/Interface</th width="70%"><th>Description</th></tr>
+<tr>
+<td>Accomplish Inspection and Obtain Operating Permit/<br>updateReviewQueue<br></td>
+<td>Once Acknowledgment is received from the Electronic Financial System (if fee is required), the Facility Health Application is added to the Review Queue in date/time order for a quality review by Application Reviewer. Expedited Facility Health Applications are given priority in the Review Queue.</td>
+</tr>
+<tr>
+<td>Accomplish Inspection and Obtain Operating Permit/<br>reviewFacilityHealthApplication</td>
+<td>The Application Reviewer selects items in the Quality Review Queue based on the date/time order and reviews the Inspection Application for completeness and accuracy. Once selected for review, the system removes the selected quality item from the queue to prevent multiple reviews from the same item by other Application Reviewers. The Applicant Reviewer can make minor corrections as need for proper processing. The Application Reviewer reviews the Inspection Request Application and determines the condition of the Inspection Application as either approved or denied. If denied, the Application Reviewer indicates the reason for denial and provides relevant information for the Applicant to correct and resubmit. On resubmission, the system bypasses fees already paid. The system provides a template of modifiable, predefined responses selectable by the Application Reviewer. Each template is customizable based on the profile of the Application Reviewer. The template is used for routine and common errors made by Applicant submissions. If a cross reference code was provided for Certificate of Occupancy, the system automatically retrieves the certificate from EDIMS for Application Reviewer verification. The system allows conditional approval when Food Handler Employee List is incomplete, requiring resubmission by the Applicant; however, the Operating Permit may still be issued. The conditional approval is tracked by the system to ensure follow up completion by Applicant.</td>
+</tr>
+<tr>
+<td>EDIMS/<br>retrieveDocument</td>
+<td>When the Applicant provides a cross-reference code from PDR processes to obtain a Certificate of Occupancy, the system automatically recalls the relevant Certificate from the enterprise document imaging and management system (EDIMS).</td>
+</tr>
+<tr>
+<td>Applicant/<br>reviewNotification</td>
+<td>The system provides an electronic means of communicating with the Applicant throughout the Facility Health Application process. The means of communications - i.e., text message, email, etc. is established on the Facility Health Application. During the initial application process, the text message or email is validated with the system to ensure established and valid source. The Applicant receives a Notification on the status of their Facility Health Application as approved or denied with reason for denial and action required to resubmit. This message also provides indication of Health Inspector assigned, their contact information and the initially planned inspection time and date to include continual updates as the Inspection Queue items are completed, feedback on inspection results and link to Operating Permit if applicable. The system identifies renewal dates/time indications and automatically notifies the Applicant to resubmit to renew Operating Permit when time period nears expiration.</td>
+</tr>
+<tr>
+<td>Accomplish Inspection and Obtain Operating Permit/<br>updateInspectionQueue</td>
+<td>Once the Facility Health Application is approved and a facility inspection is requested or required, the system adds certain application attributes needed by the Health Inspector to the Inspection Queue. Inspection Queue items are stored in date/time order to ensure fair inspection order and expedited inspection requests are given priority in the Inspection Queue. The system automatically updates the Inspection Queue by assigning Inspectors based on area of responsibility or jurisdiction - this is determined by the Geographic Information retrieved during Facility Health Application submission. The Inspection Queue includes inspection items relevant to Health Inspector identified on the by PDR use case Obtain Final Inspection for new facility or remodeled facility. The Inspection Queue manages re-occurring inspection needs such as initial 30 day inspection for new or remodeled facilities and other routine re-occurring inspections requiring Health Inspector.</td>
+</tr>
+</table>
+
+<br />
+
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select image to enlarge...</span><br />
+<a href="http://austinea.org/arch/ehs/performFacilityHealthReview/4SD.jpg"><img src="http://austinea.org/arch/ehs/performFacilityHealthReview/4SD.jpg" border="0" width="600" alt="" /></a><br />
+<span style="font-weight: bold;">Sequence Diagram: 4. Inspect Facility</span>
+</td></tr></table>
+
+<br />
+
+<table align="center" id="custom">
+<tr><th width="30%">Type/Interface</th width="70%"><th>Description</th></tr>
+<tr>
+<td>Accomplish Inspection and Obtain Operating Permit/<br>rescheduleInspection<br></td>
+<td>The Applicant use the Web portal to view their scheduled inspection and reschedule the inspection if required. The system provides a selectable calendar of available inspection opportunities. This can also be used by the Inspectors to reschedule inspections when verbal communications occurs between the Applicant and the Inspector. The Notification message provides a link to the rescheduling Web portal for Applicant access when required. The Web portal provides guidance and constraints on any rescheduling limitations.</td>
+</tr>
+<tr>
+<td>Accomplish Inspection and Obtain Operating Permit/<br>updateInspectionQueue</td>
+<td>Once the Facility Health Application is approved and a facility inspection is requested or required, the system adds certain application attributes needed by the Health Inspector to the Inspection Queue. Inspection Queue items are stored in date/time order to ensure fair inspection order and expedited inspection requests are given priority in the Inspection Queue. The system automatically updates the Inspection Queue by assigning Inspectors based on area of responsibility or jurisdiction - this is determined by the Geographic Information retrieved during Facility Health Application submission. The Inspection Queue includes inspection items relevant to Health Inspector identified on the by PDR use case Obtain Final Inspection for new facility or remodeled facility. The Inspection Queue manages re-occurring inspection needs such as initial 30 day inspection for new or remodeled facilities and other routine re-occurring inspections requiring Health Inspector.</td>
+</tr>
+<tr>
+<td>Accomplish Inspection and Obtain Operating Permit/<br>reassignInspectionInformation</td>
+<td>The system provides a Health Inspector Supervisor the ability to modify the Inspection Queue to include Health Inspector assignment, priority order, and inspection timing. The Health Inspector Supervisor may also perform a quality review of Inspection Requests. The system provides adjustable alerts such as an Inspector with too many assigned inspections, Health Inspector not logged in during specified inspection hours, location indication is provided by communicating the mobile device location, customer service indications of inspection times based on nominal, historic results etc. The system alerts the Health Inspector if departing the site without entering some form of inspection result.</td>
+</tr>
+<tr>
+<td>Accomplish Inspection and Obtain Operating Permit/<br>reviewInspectionQueue</td>
+<td>The system provides the Health Inspector with a geographical map with inspection item pins indicating inspection locations and indication of order of inspection. As items are rescheduled by the Applicant or Health Inspector, the system automatically updates the geographical map information. The Health Inspector can use the map to navigate to the inspection location. When a map pin is selected, a pop-up balloon provides selectable details regarding the inspection such as special access information (i.e., codes to gate, on site person to contact, and other relevant information regarding the inspection location). [Note: This information was previously entered as an attribute value on the Inspection Request Application.]</td>
+</tr>
+<tr>
+<td>Accomplish Inspection and Obtain Operating Permit/<br>completeInspectionReport</td>
+<td>On inspection completion, the Health Inspector uses the system to provide assessment feedback regarding inspection result. The Health Inspector may indicate conditional elements requiring correction at some agreed future date. The date and item requiring correction are entered into the system for Inspection Queue update to ensure follow up by a Health Inspector at some future date. [Note: The follow up inspection automatically generates an updated Operating Permit based 12 months of conditional permit.]</td>
+</tr>
+</table>
+
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select image to enlarge...</span><br />
+<a href="http://austinea.org/arch/ehs/performFacilityHealthReview/5SD.jpg"><img src="http://austinea.org/arch/ehs/performFacilityHealthReview/5SD.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Sequence Diagram: 5. Obtain Operating Permit</span>
+</td></tr></table>
+
+<br />
+
+<table align="center" id="custom">
+<tr><th width="30%">Type/Interface</th width="70%"><th>Description</th></tr>
+<tr>
+<td>Accomplish Inspection and Obtain Operating Permit/<br>generateEDIMSMetadata</td>
+<td>The system gathers relevant information from the Inspection Request Application and generates EDIMS meta data.</td>
+</tr>
+<tr>
+<td>Accomplish Inspection and Obtain Operating Permit/<br>generateOperatingPermit</td>
+<td>Using relevant attribute values on the Inspection Request Application such as owner, address, name of establishment, etc., the system automatically generates an Operating Permit. The Operating Permit may include an conditional Operating Permit to include special operating conditions until follow up inspections provide opportunity for a full Operating Permit.</td>
+</tr>
+<tr>
+<td>EDIMS/<br>storeDocument</td>
+<td>The system stores the Operating Permit in the enterprise document imaging and management system (EDIMS) with its associated meta data.</td>
+</tr>
+<tr>
+<td>Accomplish Inspection and Obtain Operating Permit/<br>updateOperatingPermitNotificationQueue</td>
+<td>For certain Operating Permits requiring re-occurring renewal, the system automatically adds the renewal date to the Operating Permit Notification Queue and notifies the Applicant prior to the expiration date that renewal is required - the notification period prior to renewal due date is modifiable by approved staff. The Notification include links to the renewal Facility Health Application for renewal along with the necessary details required for compliance such as Food Handler List requirements, etc.</td>
+</tr>
+<tr>
+<td>Accomplish Inspection and Obtain Operating Permit/<br>retrieveOperatingPermit</td>
+<td>Based on a link provided by the Notification message, the Applicant selects the link to retrieve the Operating Permit to print and display at the appropriate location in the establishment.</td>
+</tr>
+</table>
+
+</td></tr>
+<tr><td style="padding: 0;" height="50" valign="top"><a href="http://austintexas.gov/information-technology/">
+<img src="http://austinea.org/image/footer.jpg" alt="Austin Information Technology" border="0"></a></table>
+</td></tr></table></body></html>

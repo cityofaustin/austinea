@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Implement Corrective Safety Action</title>
+<link rel="Stylesheet" href="http://austinea.org/style/hover.css" type="text/css" />
+</head>
+<body bgcolor="#ddd8c2">
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="650" align="center">
+<tr><td style="padding: 0;" height="130" valign="top"><a href="http://austinea.org">
+<img src="http://austinea.org/image/iTHeader.jpg" alt="austinea.org - home..." border="0"></a></td></tr>
+<!-- Text Area -->
+<tr><td>
+
+<p><a href="http://austinea.org/arch/eoss/">EOSS Use Case Summary</a></p>
+
+<p style="text-align: center; font-weight: bold;">Implement Corrective Safety Action<br />Use Case Specification</p>
+
+<!-- Image Title -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/eoss/implementCorrectiveSafetyAction/UCD.jpg"><img src="http://austinea.org/arch/eoss/implementCorrectiveSafetyAction/UCD.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Implement Corrective Safety Action<br />Use Case Model</span>
+</td></tr></table>
+
+<p><b>Scope: </b>For some Incident Events, the Safety Investigator enters Suggested Corrective Actions. This triggers a Notification to the department specific Safety Professional to ensure appropriate corrective safety action. Otherwise, using the system, a Safety Professional enters a Corrective Action and associates the action with a predefined Distribution List. The Distribution List is definable by selected city staff. For identified Corrective Action Respondents, the system sends an action Notification with the details of the Corrective Action required. The Notification also includes delinquent Corrective Actions. The Corrective Action Respondent uses the system to enter the status of the desired Corrective Action.</p>
+
+<!-- Image Title -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/eoss/implementCorrectiveSafetyAction/1SD.jpg"><img src="http://austinea.org/arch/eoss/implementCorrectiveSafetyAction/1SD.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Implement Corrective Safety Action<br />Sequence Diagram</span>
+</td></tr></table>
+
+<p style="text-align: center; font-weight: bold;">Interface Descriptions</p>
+
+
+<!-- Table definition -->
+<table align="center" id="custom">
+<tr><th width="5%">Req#</th><th width="70%">Type/Interface - Requirement Description</th><th width="25%">Required Response</th></tr>
+<tr>
+<td rowspan="2">##</td>
+<td style="font-weight: bold; background: lightgray;">ensure Employee Safety/notifySafetyProfessional</td>
+<td rowspan="12">If proposing a Software as a Service (SaaS) solution, indicate for each requirement the SaaS solution's ability to provide the need function or service. If proposing a Platform as a Service (PaaS) solution, indicate past performance examples of similar scope of work and other unique qualifications useful to a successful solution.</td>
+</tr>
+<tr>
+<td>For some Incident Events, the Safety Investigator enters Suggested Corrective Actions. This triggers a Notification to the department specific Safety Professional to ensure appropriate corrective safety action.</td>
+</tr>
+<tr>
+<td rowspan="2">##</td>
+<td style="font-weight: bold; background: lightgray;">ensure Employee Safety/enterCorrectiveAction</td>
+
+</tr>
+<tr>
+<td>Using the system, a Safety Professional enters a Corrective Action and associates the action with a predefined Distribution List. The Distribution List is definable by selected city staff. </td>
+</tr>
+<tr>
+<td rowspan="2">##</td>
+<td style="font-weight: bold; background: lightgray;">ensure Employee Safety/distributeCorrectiveAction</td>
+
+</tr>
+<tr>
+<td>The system provides selectable Distribution List used to notify various staff members regarding the status of Corrective Action and action needed to complete requested Corrective Action.</td>
+</tr>
+<tr>
+<td rowspan="2">##</td>
+<td style="font-weight: bold; background: lightgray;">corrective Action Respondent/respondToCorrectiveAction</td>
+
+</tr>
+<tr>
+<td>For certain identified Corrective Action Respondents, the system sends an action Notification with the details of the Corrective Action required. The Notification also includes delinquent Corrective Actions - i.e., actions not completed within the time specified in the Corrective Action.</td>
+</tr>
+<tr>
+<td rowspan="2">##</td>
+<td style="font-weight: bold; background: lightgray;">ensure Employee Safety/enterCorrectiveActionStatus</td>
+
+</tr>
+<tr>
+<td>The Corrective Action Respondent uses the system to enter the status of the desired Corrective Action. Only the Safety Professional who entered the Corrective Action can close the safety action request. Corrective Actions may include modify or clarify standard operating guidelines, replace equipment, additional training needs, etc.</td>
+</tr>
+<tr>
+<td rowspan="2">##</td>
+<td style="font-weight: bold; background: lightgray;">ensure Employee Safety/queryCorrectiveAction</td>
+
+</tr>
+<tr>
+<td>Selected staff use the system to query corrective actions by employee, supervisor, work group or type of corrective action.</td>
+</tr>
+</table>
+
+<br />
+
+</td></tr></table>
+</td></tr></table></body></html>

@@ -1,0 +1,294 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Conduct Administrative Hearing</title>
+<link rel="Stylesheet" href="http://austinea.org/style/hover.css" type="text/css" />
+</head>
+<body bgcolor="#ddd8c2">
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="650" align="center">
+<tr><td style="padding: 0;" height="130" valign="top"><a href="http://austinea.org">
+<img src="http://austinea.org/image/iTHeader.jpg" alt="austinea.org - home..." border="0"></a></td></tr>
+<!-- Text Area -->
+<tr><td>
+
+<p style="text-align: center; font-weight: bold;">Conduct Administrative Hearing<br />Use Case Specification</p>
+<p style="text-align: center;">05/24/2016
+
+<!--  IF Printable document option Included  
+<p style="text-align: center;">download <a href="http://austinea.org/arch/code/***.docx">printable version</a>
+-- >
+
+<b> Austin Code Logical Data Model </b>
+<!-- Image -  Logical Data Model 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="http://austinea.org/arch/code/ldm.jpg"><img src="http://austinea.org/arch/code/ldm.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Austin Code Logical Data Model</p>
+</td></tr></table> -->
+
+<!-- USE CASE IMAGE -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/code/conductAdministrativeHearing/ucd.jpg"><img src="http://austinea.org/arch/code/conductAdministrativeHearing/ucd.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Conduct Administrative Hearing<br />Use Case Model</span>
+</td></tr></table>
+
+<p><b>Scope: </b>The Austin Code Officer issues an AdminHearingWarning to a Violator. If the Violator refuses to sign the AdminHearingWarning, the Austin Code Officer requests the Austin Code Program Specialist send the NoticeOfViolation instead. The Austin Code Officer updates the CodeViolationCase with their notes.
+The AdminHearingWarning provides the Violator 10 days to come into compliance. If the Violator doesn't come into compliance in 10 days, the Austin Code Officer issues an AdminHearingCitation to the Violator. The Austin Code Officer then requests the Austin Code Legal Program Specialist send the NoticeOfCitationIssued letter to the Violator. If the AdminHearingCitation is for a short-term rental, the Austin Code Officer completes the ShortTermRentalChecklist. The Austin Code Officer updates the CodeViolationCase and creates a LegalCase in the Case Management System.
+AdminHearingCitations provide the Violator 10 days to come into compliance and mail in a penalty to avoid the AdminHearing. If the Violator doesn't come into compliance and pay the penalty, the Austin Code Officer creates the AdminHearingPacket, and sends to their Chain of Command for approval. The Chain of Command reviews the AdminHearingPacket, AdminHearingPacketChecklist, and determines if the packet is approved. If not approved, the Chain of Command returns the AdminHearingPacket to the Austin Code Officer for revisions.
+If the Chain of Command approves the AdminHearingPacket, they forward the packet to the Austin Code Legal Program Coordinator for review. If changes are required, the Austin Code Legal Program Coordinator sends the packet to the Austin Code Officer for updates. If approved, the Austin Code Legal Program Coordinator sends the packet to the Austin Code Administrative Hearing Coordinator.
+The Hearing Coordinator reviews the packet and sends the packet back to the Austin Code Officer if changes are necessary. After the Hearing Coordinator approves the AdminHearingPacket, they update the LegalCase in the Case Management System, schedules the AdminHearing, and conducts a preparatory meeting for the AdminHearing.
+During the AdminHearing, the Austin Code Officer presents their case to the Administrative Hearing Officer. The Austin Code Administrative Hearing Coordinator coordinates the AdminHearing, and the Administrative Hearing Officer makes a determination for the AdminHearing (violation present, penalty amount, and if a compliance hearing is necessary). If the Violator doesn't appear at hearing, then an automatic penalty is assessed ($300).
+If the AdminHearing decision is Violations are present, the Administrative Hearing Officer issues an AdministrativeOrder. The Austin Code Administrative Hearing Coordinator distributes the AdministrativeOrder to the parties involved. If a ComplianceHearing is deemed necessary, the Administrative Hearing Officer schedules the ComplianceHearing and conducts the ComplianceHearing (along with determining if compliance is being met by the Violator).
+If the Violator pays the penalty, the Process Payment use case starts. If the Violator doesn't pay the penalty, the Austin Code Legal Program Coordinator creates a BillNotice in the Case Management System, sends Notification of the BillNotice to the Violator, and the CreateReceivable use case starts to indicate the Violator owes money to the City of Austin.
+The Austin Code Legal Program Coordinator updates the LegalCase with notes as necessary. The LegalCase is closed once the Penalty is paid. Until the penalty is paid, the LegalCase remains open.
+
+
+
+
+<!-- IF INTERACTION OVERVIEW IS INCLUDED 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/code/***.jpg"><img src="http://austinea.org/arch/code/***.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Interaction Overview</span>
+</td></tr></table>
+-->
+
+
+<br />
+
+
+<!-- SEQUENCE DIAGRAM  -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/code/conductAdministrativeHearing/sd01.jpg"><img src="http://austinea.org/arch/code/conductAdministrativeHearing/sd01.jpg" border="0" alt="" width="600"/></a><br />
+<span style="font-weight: bold;">Conduct Administrative Hearing<br />Sequence Diagram</span>
+</td></tr></table>
+<br />
+
+
+<!-- INTERFACE TABLE  -->
+<table align="center" id="custom">
+<tr><th width="9%">Req#</th><th width="70%">Type/Interface - Requirement Description</th><th>Performance</th></tr>
+<tr>
+<td rowspan="2">001</td>
+<td style="font-weight: bold; background: lightgray;">Austin Code Officer/issueAdminHearingWarning</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Officer issues an AdminHearingWarning. The AdminHearingWarning gives the Violator 10 days to come into compliance. If Code Officer gets signature from Owner on AdminHearingWarning, then no NoticeOfViolation is sent. If no signature by Owner, then NoticeOfViolation is sent to Owner and Tenant.</td>
+</tr>
+<tr>
+<td rowspan="2">002</td>
+<td style="font-weight: bold; background: lightgray;">Austin Code Program Specialist/sendNoticeOfViolation</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Program Specialist sends the NoticeOfViolation through regular and certified mail-the certified mail receives a CertifiedMailNumber.</td>
+</tr>
+<tr>
+<td rowspan="2">003</td>
+<td style="font-weight: bold; background: lightgray;">Case Management System/updateCodeViolationCase</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The user updates the CodeViolationCase with relevant information to the case. If the CodeViolationCase generated a StopWorkOrder, the StopWorkOrder is attached to the CodeViolationCase.
+The user attaches a copy of the DiagramOfWorkRequired. If a board and secure occurs, a BoardAndSecureBill is attached to the CodeViolationCase by Austin Code Admin. If a sign was removed, the Austin Code Officer adds the sign and information to the CodeViolationCase. Additionally, if CautionBarriers were placed, information on the CautionBarriers is added to the CodeViolationCase. If property information was updated, the Case Management System includes updated property information.
+The user updates the CodeViolationCase with information relevant to the change. This includes, but is not limited to, BoardAndSecureBill, PropertyAbatementBill, FollowUpNotes, photographs (boarded, non-boarded, posted notifications, placards), emails, PhoneCallSummary, other relevant information and inter-department communications. If a ServiceCase is created, the Public Information Office Admin adds notes to the CodeViolationCase including the CitizenNeed and ServicesRecommended for ServiceCase. If CorrectiveResources are identified, the user updates the CodeViolationCase with a list of CorrectiveResources provided (three resources) and notes of contact with Owner/Tenant. HardshipReason is added to the CodeViolationCase.
+If new violations are identified, the user adds the new violation to the Case Management System and the violation is attached to the original CodeComplaintCase. If a TitleSearch is completed, the TitleSearch is added to the CodeViolationCase. If additional LegallyInterestedParties are identified, the parties are added to the CodeViolationCase. If a NoticeOfViolation is generated, the NoticeOfViolation is added to the CodeViolationCase. If posted at the property, photographs are attached to the CodeViolationCase. If the NoticeOfViolation is delivered and a certified mail receipt is received, the receipt is added to the CodeViolationCase.
+If a citation is created, the Case Management System attaches the citation to the CodeViolationCase. Additionally, the user scans and uploads a copy of the physical citation to the Case Management System. If an AdministrativeHearingWarning is issued, the user updates the CodeViolationCase with information on the issued AdministrativeHearingWarning.
+If an AdministrativeHearingCitation is issued, the user updates the CodeViolationCase with the AdministrativeHearingCitation, and a LegalCase is created. The user scans and uploads returned liens to the CodeViolationCase. If a lien is filed for the property, the TRVNumber is added to the CodeViolationCase.
+The Austin Code Officer updates the CodeViolationCase with information concerning Violation extensions, written request, reason for approval/denial, etc.
+If there is a payment then the CodeViolationCase is updated by the user to include the payment.
+</td>
+</tr>
+<tr>
+<td rowspan="2">004</td>
+<td style="font-weight: bold; background: lightgray;">Austin Code Officer/issueAdministrativeHearingCitation</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Officer issues an AdminHearingCitation to the Owner, Tenant, or the Registered Agent (Responsible Party). AdminHearingCitation identifies the hearing date, location, but not the time. The Violator is required to contact the Austin Code Administrative Hearing Coordinator for the exact time. Additionally, the AdminHearingCitation identifies an option to complete a mail-in penalty ($300) within 10 calendar days of the Citation being issued and must come into compliance. The Citation is issued 15 days before the hearing, and includes the date but not the time</td>
+</tr>
+<tr>
+<td rowspan="2">005</td>
+<td style="font-weight: bold; background: lightgray;">Austin Code Legal Program Specialist/sendNoticeOfCitationIssued</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Legal Program Specialist sends a NoticeOfCitationIssued to the Violator. NoticeOfCitationIssued includes date, time, and place of hearing.</td>
+</tr>
+<tr>
+<td rowspan="2">006</td>
+<td style="font-weight: bold; background: lightgray;">Austin Code Officer/completeShortTermRentalChecklist</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Officer completes the ShortTermRentalChecklist to ensure all information and steps were followed for the AdminHearingCitation.</td>
+</tr>
+<tr>
+<td rowspan="2">007</td>
+<td style="font-weight: bold; background: lightgray;">Case Management System/createLegalCase</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The user accesses the Case Management System and creates a LegalCase. The user identifies the case type (Admin Hearing, Building Standards Commission, Municipal Court, or District Court).</td>
+</tr>
+<tr>
+<td rowspan="2">008</td>
+<td style="font-weight: bold; background: lightgray;">Austin Code Officer/createAdministrativeHearingPacket</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Officer assembles an AdministrativeHearingPacket. The AdministrativeHearingPacket contains: AdminHearingPacketChecklist, property information (TCAD, WCAD, county info), complaint (ComplaintCase History), photographs (before and after photographs, as well as current photographs taken three days before the hearing), and correspondence (emails with Violator and Responsible Party).</td>
+</tr>
+<tr>
+<td rowspan="2">009</td>
+<td style="font-weight: bold; background: lightgray;">Chain of Command/reviewAdministrativeHearingPacket</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Chain of Command reviews the AdminHearingPacket and AdminHearingPacketChecklist for completeness. If incomplete, the Chain of Command returns the AdminHearingPacket to the Austin Code Officer for updates.
+</td>
+</tr>
+<tr>
+<td rowspan="2">010</td>
+<td style="font-weight: bold; background: lightgray;">Austin Code Legal Program Specialist/reviewAdministrativeHearingPacket</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Chain of Command requests the Austin Code Legal Program Specialist to review that the AdminHearingPacket has been signed by the Chain of Command (Assistant Division Manager).</td>
+</tr>
+<tr>
+<td rowspan="2">011</td>
+<td style="font-weight: bold; background: lightgray;">Austin Code Officer/updateAdminHearingPacket</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Legal Program Coordinator or the Austin Code Administrative Hearing Coordinator requests the Austin Code Officer to update the AdminHearingPacket.</td>
+</tr>
+<tr>
+<td rowspan="2">012</td>
+<td style="font-weight: bold; background: lightgray;">Austin Code Administrative Hearing Coordinator/reviewAdministrativeHearingPacket</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Legal Program Specialist requests the Austin Code Administrative Hearing Coordinator to review the AdminHearingPacket. The Austin Code Administrative Hearing Coordinator reviews the AdminHearingPacket and focuses specifically on pictures that substantiate the warning and citation, as well as the current photos (taken three days before the hearing).</td>
+</tr>
+<tr>
+<td rowspan="2">013</td>
+<td style="font-weight: bold; background: lightgray;">Case Management System/updateLegalCase</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Legal Coordinator accesses the system and updates the relevant case with updates or follow ups from the BSC hearing (BSCDetermination, Order, etc.). The Austin Code Legal Coordinator updates the LegalCase to include the CauseNumber and final ruling of the case. The Austin Code Administrative Hearing Coordinator updates the LegalCase with the date of the hearing, outcome of hearing, penalty, isComplianceHearingNeeded, if penalty was paid, if penalty needs to be billed, and if the Violator came into compliance.</td>
+</tr>
+<tr>
+<td rowspan="2">014</td>
+<td style="font-weight: bold; background: lightgray;">Austin Code Administrative Hearing Coordinator/scheduleAdministrativeHearing</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>One week in advance, the Austin Code Administrative Hearing Coordinator requests Austin Energy (who manages contracts for all hearings in City of Austin, which includes Austin Code, APD, Austin Water, Austin Energy, etc.) to schedule the AdministrativeHearing. The Austin Code Administrative Hearing Coordinator provides the date, time, and location of hearing. Location is determined by day of the week of the AdministrativeHearing (Fridays at ACD and Mondays at the Research location).</td>
+</tr>
+<tr>
+<td rowspan="2">015</td>
+<td style="font-weight: bold; background: lightgray;">Austin Code Administrative Hearing Coordinator/conductAdministrativeHearingPrepatoryMeeting</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Administrative Hearing Coordinator meets with the Austin Code Officer to prepare for the AdministrativeHearing. This meeting typically occurs two days before the AdministrativeHearing.</td>
+</tr>
+<tr>
+<td rowspan="2">016</td>
+<td style="font-weight: bold; background: lightgray;">Austin Code Officer/presentTheirAdminHearingCase</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Officer presents their AdministrativeHearing case. The Austin Code Officer provides testimony, reviews photographs (initial, past, and current), date of complaint, date of inspection, warning, interval until Citation, Citation, and communication with the responsible party. The Austin Code Officer only speaks to the Austin Code Hearing Officer.</td>
+</tr>
+<tr>
+<td rowspan="2">017</td>
+<td style="font-weight: bold; background: lightgray;">Austin Code Administrative Hearing Coordinator/conductAdministrativeHearing</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Administrative Hearing Coordinator provides the AdminHearingPacket to the Hearing Officer and monitors the AdminHearing to ensure guidelines are specific to the Ordinance and the Ordinance is followed, and keeps the AdminHearing focused on the specific Violation. The Austin Code Administrative Hearing Coordinator ensures the location is prepared for the AdminHearing, provides support to the Austin Code Officer as needed, including making copies of documents. Additionally, the Austin Code Administrative Hearing Coordinator ensures AdminHearing is recorded and saved on a network location. Also, assists Violator to reach Location (correct building, room, etc.). When AdminHearing is completed, the Austin Code Administrative Hearing Coordinator provides the Order (three forms) and presents to the Administrative Hearing Officer for completion. Violator can pay at the AdminHearing.</td>
+</tr>
+<tr>
+<td rowspan="2">018</td>
+<td style="font-weight: bold; background: lightgray;">Administrative Hearing Officer/determineAdministrativeHearingViolation</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Admin Hearing Coordinator determines if a Violation occurred. If Violator is in compliance at hearing a lower penalty may be assessed. Additionally, the Admin Hearing Coordinator may setup a ComplianceHearing, assess a Penalty. The Violator is provided 10 days to come into compliance. </td>
+</tr>
+<tr>
+<td rowspan="2">019</td>
+<td style="font-weight: bold; background: lightgray;">Administrative Hearing Officer/issueAdministrativeOrder</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>After AdministrativeHearing, the Administrative Hearing Officer issues an AdministrativeOrder (selects one of three forms provided by the Austin Code Administrative Hearing Coordinator: client showed up, didn't show up, or continuance). The Administrative Hearing Officer returns the AdministrativeOrder to the Austin Code Administrative Hearing Coordinator.</td>
+</tr>
+<tr>
+<td rowspan="2">020</td>
+<td style="font-weight: bold; background: lightgray;">Austin Code Administrative Hearing Coordinator/distributeAdministrativeOrder</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Administrative Hearing Coordinator distributes the completed AdministrativeOrder to the Violator, the Austin Code Officer, the Administrative Hearing Officer, and the Austin Code Legal Program Specialist.</td>
+</tr>
+<tr>
+<td rowspan="2">021</td>
+<td style="font-weight: bold; background: lightgray;">Administrative Hearing Officer/scheduleComplianceHearing</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Administrative Hearing Officer identifies a date for a ComplianceHearing (the date is at the discretion of the Administrative Hearing Officer). The Administrative Hearing Officer provides the date through the AdministrativeOrder (continuance type).</td>
+</tr>
+<tr>
+<td rowspan="2">022</td>
+<td style="font-weight: bold; background: lightgray;">Administrative Hearing Officer/conductComplianceHearing</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Administrative Hearing Officer conducts a ComplianceHearing to determine if the Violator is in compliance or not. The Administrative Hearing Officer makes a final determination on the case. If in compliance, the fine is lessened; otherwise, the Violator maintains the current fine. The Administrative Hearing Officer updates the ContinuanceOrder with the results. Determination is for value of penalty.</td>
+</tr>
+<tr>
+<td rowspan="2">023</td>
+<td style="font-weight: bold; background: lightgray;">Case Management System/createBill</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The user requests the Case Management System to create a BillNotice. The BillNotice contains the Contractor, when work was done, admin fees, interest charge scale, payment due date, and additional legal actions taken if bill is not paid. If BillNotice is created for a LegalCase, the BillNotice contains the penalty amount.</td>
+</tr>
+<tr>
+<td rowspan="2">024</td>
+<td style="font-weight: bold; background: lightgray;">Austin Code Legal Program Specialist/sendNotificationOfBillToViolator</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Legal Program Coordinator sends the BillNotice to the Violator both through regular mail and certified mail. </td>
+</tr>
+<tr>
+<td rowspan="2">025</td>
+<td style="font-weight: bold; background: lightgray;">Case Management System/closeLegalCase</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The user uses the system to close the LegalCase. LegalCases are only closed once the Penalty has been paid for the LegalCase.</td>
+</tr>
+</table>
+
+
+<br />
+
+
+
+
+</td></tr></table>
+</td></tr></table></body></html>

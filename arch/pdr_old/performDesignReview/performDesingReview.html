@@ -1,0 +1,106 @@
+<html>
+<head>
+<title>PDR Perform Design Review</title>
+<link rel=StyleSheet href="http://austinea.org/style/email.css" type="text/css">
+</head>
+<body>
+<!--Border Background Table - 1em-->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse;"  align="center" style="background-color: #F4CA90;">
+<tr><td>
+<!--Main Body-->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" width="600" align="center" style="background-color: #ffffff;">
+<tr><td>
+<!-- Sub Body -->
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td>
+
+<!-- Online reference -->
+<p style="color: gray; font-size: 7pt;">Note: This report is also <a href="http://austinea.org/arch/pdr/performDesignReview/performDesingReview.html">available online</a> by following link.
+
+<!--Sequence Diagram-->
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse;" align="right">
+<tr><td style="font-weight: bold; text-align: center;">
+<a href="http://austinea.org/arch/pdr/performDesignReview/performDesignReview.jpg"><img src="http://austinea.org/arch/pdr/performDesignReview/performDesignReview.jpg" border="0" width="250"></a><br>
+Perform Design Review<br>Sequence Diagram
+</td></tr></table>
+
+<p>PDR Architecture Team,
+
+<p>Everyone did a fabulous job during our last meeting describing the system <a href="http://austinea.org/definition/default.html#behavior">behavior</a> necessary to recognize the Perform Design Review <a href="http://austinea.org/definition/default.html#pattern">patterns</a> and important <a href="http://austinea.org/definition/default.html#interface">interfaces</a> throughout the review process. We made much more progress than I anticipated. Prior to our next meeting, please review the interface descriptions in the table below to determine if we adequately described each interface explaining the process of the <b>Perform Design Review</b> <a href="http://austinea.org/definition/default.html#capability">capability</a>. Refer to the attached sequence diagram to follow the lineage of the discussion. The interface descriptions align with the sequence diagram step-by-step. Select the sequence diagram image for a larger view in your browser.
+
+<p>Looking at the design review process holistically; it's not as complicated as one would think. In fact, the design review process appears to be a typical case management function and could be implemented by our case management tool AMANDA. Ideally, we would implement such a capability using our enterprise software capabilities rather than procuring another enterprise application. However, a case management tool does not typically include the necessary tools to provide design markup (see provideDesingFeedback interface description in the table below). This interface is likely a key reason why other commercial applications specifically designed for design review are more likely candidates. From a complexity viewpoint, the rules engine for setting up the Group Review Queue is another challenge. Other technical challenges include the Web and Electronic Financial Service interfaces; however, none of these interfaces are rocket science.
+
+<p>Your feedback is always welcomed...
+<!-- Austin Logo -->
+<table cellpadding=5 cellspacing=0 border=0 style="border-collapse: collapse;" align="right"><tr><td>
+<img src="http://austinea.org/image/austinLogo.jpg" border="0" width="100">
+</td></tr></table>
+
+<p>Cheers!
+<!-- <p><img src="http://journeycolorado.com/images/signature.jpg" border="0" width="150">
+Signature Corporate -->
+<p><b>Rob Byrd</b> <span style="color: red; font-weight: bold;">|</span> <b>City of Austin</b><br>
+Chief Enterprise Architect - Corporate<br>
+Direct: (512) 974-1615 | Mobile: (512) 431-0700
+<hr>
+</td></tr></table>
+
+<!-- Table of Interface Descriptions -->
+<p style="text-align: center; font-weight: bold;">Table of Interface Descriptions
+<table align="center" id="custom">
+<tr><th>Type/Interface</th><th>Description</th></tr>
+<tr>
+<td>Perform Design Review/<br>performIntake</td>
+<td>The Submittal Applicant completes a Web-based application form. Based on location values identified on the application form, location-based information automatically populates relevant form elements. The system provides a method to attach relevant design documents and other pertinent Submittal Package attachments. The required items are indicated by the Web-based form. Each required attached line item provides the ability to browse to selected file, ensures all required attachments are included, and only allows approved document format (such as PDF).</td>
+</tr>
+
+<tr>
+<td>Perform Design Review/<br>processApplicationFee</td>
+<td>Depending on disposition in the review cycle (new submittal application or submitting updates to existing application) the Submittal Applicant may be required to pay a fee via electronic payment (uses auto-calculated amount prior to submittal). The fee may include a non-refundable amount of which the final portion is not billable until completion of quality review.</td>
+</tr>
+
+<tr>
+<td>Electronic Financial Service/<br>processApplicationFee</td>
+<td>Interface to Web-based Electronic Financial Service to process Submittal Package fees.</td>
+</tr>
+
+<tr>
+<td>Perform Design Review/<br>reviewNewSubmittalPackage</td>
+<td>The system presents a queue of new submittal packages and provides a means for the Submittal Coordinator to perform a quality check on the submitted items. The system provides the ability to accept or reject the Submittal Package to include relevant comments for rejection. The system provides an automated email to the Submittal Applicant for accepted and rejected application with comment. If accepted, the system processes the application balance with the Electronic Financial Service. The system automatically identifies the Reviewer distribution (setup in Group Review Queue) based on application entries. The distribution rules for Group Review Queue must be modifiable by relevant city staff.</td>
+</tr>
+
+<tr>
+<td>Submittal Applicant/<br>reviewNotification</td>
+<td>The system provides an automated email to the Submittal Applicant for accepted and rejected application (with rejection comment - i.e., reason for rejection and recommended guidance for future submissions). For accepted submissions, the system provides a summary of the submission process and estimation of anticipated review time.</td>
+</tr>
+
+<tr>
+<td>Perform Design Review/<br>setupGroupReviewQueue</td>
+<td>After the Submittal Package is quality approved by the Submittal Coordinator, the system automatically identifies the Group Review Queue based on relevant application entries. The review cycle is adjustable by relevant city staff. For example, some groups may need to sign off (approve or comment) before the Submittal Package shows up in another Group Review Queue. The Group Review Queue is also updated when a Submittal Package is approved or requires additional review based on Reviewer lineage (requires one reviewer to review before another). The Group Review Queue is based on area of responsibility (i.e., constructability, code compliance, etc.). The Submittal Coordinator may return a Submittal Package to the Group Review Queue indicating selected groups during the review cycle to include Submittal Coordinator comments when necessary.</td>
+</tr>
+
+<tr>
+<td>Perform Design Review/<br>provideDesingFeedback</td>
+<td>Routinely, the Reviewer in a particular review group (by order of responsibility area) checks the system Group Review Queue (listed in date/time order) for assigned reviews and submits Submittal Package Reviewer Comments. The system provides automated tools for the Reviewer to markup diagrams including comments, links to references and city codes, among other traditional markup indications to effectively communicate to the Submittal Applicant the required changes. All markups indicate the particular Reviewer for identification by the Submittal Coordinator but not identified when submitted to the Submittal Applicant. If no comments, the Reviewer approves the Submittal Package. The Group Review Queue is per review group (depending on the type of review) and when under review (selected by a Reviewer), the system automatically takes the Submittal Package off the Group Review Queue to prevent multiple reviews by the same area of responsibility. For some reviews, depending on certain attributes identified on the application form, the system provides a priority order of review groups because some review groups may be required to review the Submittal Package and approve or comment before other groups are provided opportunity to review. The business rules for review group order must be modifiable by selected responsible city staff.</td>
+</tr>
+
+<tr>
+<td>Perform Design Review/<br>reviewSubmittalPackageStatus</td>
+<td>The Submittal Coordinator routinely checks the status of submittal packages under review. The Submittal Coordinator reviews comments and quality reviews selected Submittal Package items. Based on Submittal Coordinators review and comment (Submittal Coordinator may also perform role of Reviewer), a Submittal Package may be returned to one or more Group Review Queue for further review and clarity.</td>
+</tr>
+
+<tr>
+<td>Perform Design Review/<br>approveSubmittalPackageComments</td>
+<td>When the Submittal Coordinator is satisfied with the quality of reviewer comments, the Submittal Coordinator approves the Submittal Package for Submittal Applicant notification of Reviewer Comment. If comments require resolution, the system provides Reviewer Comment to the Submittal Applicant. When there are no further comment resolution required, the Submittal Package is approved to enter the next phase of permit issuance. The notification provides indication and guidance of the next steps.</td>
+</tr>
+
+<tr>
+<td>Submittal Applicant/<br>reviewReviewerComments</td>
+<td>The system automatically provides Reviewer Comments (if any) back to the Submittal Applicant in a format that clearly identifies the Reviewer's required corrections or changes. If there are no further comments, the Submittal Applicant receives indication of approval and guidance to the next steps such as permitting.</td>
+</tr>
+
+</table>
+
+
+</td></tr></table>
+</td></tr></table></body>
+</html>

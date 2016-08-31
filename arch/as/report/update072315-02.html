@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<title>Animal Services "Receive Drug Inventory"</title>
+<link rel="StyleSheet" href="http://austinea.org/style/email.css" type="text/css">
+</head>
+<body>
+
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="600" align="center"><tr><td>
+
+<!-- Online reference -->
+<p><class="lbl">Note: This report is also <a href="http://austinea.org/arch/as/report/update072315-02.html" style="font-size: 7pt;">available online</a> by following link.</p>
+
+<div>
+<p>Hi All,</p> 
+</div>
+
+<p>Attached is the information for the updated "Receive Drug Inventory" use case that was reviewed July 23rd, 2015, with the Animal Services Team. Please take a moment to check my work and let me know if there are any changes I can make to improve this, or if this requirement is as discussed!  </p> <p>
+
+Additionally, I wanted to let you know the Online repository of Animal Services Use Cases is now up to date ( http://austinea.org/arch/as/report/index.html )
+<p>
+
+
+<!-- Signature-->
+<table cellpadding="0" cellspacing="0" border="0" width="350" style="border-collapse: collapse;"><tr><td>
+<p>Cheers!</p>
+
+<table cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;" align="right">
+<tr>
+<td>
+<img src="http://austinea.org/image/austinLogo.jpg" border="0" width="100" height="100" alt="Austin Logo" />
+</td>
+</tr>
+</table>
+<p><img src="http://coawss3a.coacd.org/sites/CTM/EA/Shared Documents/Images/ABSIG.JPG" border="0" width="143" height="83" alt="sign" /> </p>
+
+<p><b>Aaron Brown</b> 
+<span style="color: red; font-weight: bold;">|</span> 
+<b>City of Austin</b>
+<a href="http://www.linkedin.com/in/austnaaron"><img src="http://journeycolorado.com/images/linkedin.jpg" border="0" alt="Linkin Logo" /> </a> <br />
+Senior IT Enterprise Architect<br />
+Direct: (512) 974-2960 </p>
+Email: Aaron.Brown2@austintexas.gov </p>
+</td></tr></table>
+
+
+<!-- Use case information below -->
+
+<hr>
+
+<b> Animal Shelter Logical Data Model </b>
+<!-- Image -  Logical Data Model -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="http://austinea.org/arch/as/report/animalShelterLogicalDataModel.jpg"><img src="http://austinea.org/arch/as/report/animalShelterLogicalDataModel.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Animal Shelter Logical Data Model</p>
+</td></tr></table> 
+
+<!--  Requirements Model -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="right">
+<tr>
+<td align="center">
+<span class="lbl">Note: Select to download</span><br />
+<a href="http://austinea.org/arch/as/report/receiveDrugInventoryUseCase.jpg"><img src="http://austinea.org/arch/as/report/receiveDrugInventoryUseCase.jpg" border="0" width="200" alt="" /></a><br />
+<span style="font-weight: bold;">Receive Drug Inventory<br />Use Case</span>
+</td></tr></table>
+
+
+
+
+
+<p><b>Use Case Scope</b></p>
+<p>Boxes are received at the Animal Services facility. The Animal Services Administrator notifies the appropriate team members that drugs have been delivered to the facility. The Drug Receiver will open the box and store the medicines in their proper locations. If there is no Veterinarian available, and controlled substances have been delivered, the controlled substances are stored in a locked safe room until the Veterinarian can handle the controlled substance intake. Once the drugs have been verified, the Drug Receiver enters the receipt of the drugs into the system. For controlled substances a Veterinarian and another Drug Receiver must both be present, verify the drug storage, and then make entries into a DEA Log book (as required by law.) Once drugs have been added to the system and stored and logged, the Drug Receiver forwards the invoice to the Inventory Technician for reconciliation. 
+NOTE: There is a desire to have barcodes of drugs programmed within the system, allowing for a single barcode scan to identify and the drug, automatically know quantity and dosage per item, and add the appropriate information to the system. </p>
+
+<!-- Image -  Sequence Diagram -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="http://austinea.org/arch/as/report/receiveDrugInventorySequenceDiagram01.jpg"><img src="http://austinea.org/arch/as/report/receiveDrugInventorySequenceDiagram01.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Receive Drug Inventory Sequence Diagram</p>
+</td></tr></table> 
+
+
+
+<p style="font-weight: bold; text-align: center;">Receive Drug Inventory Interface Descriptions</p>
+<!-- Table definition -->
+<table align="center" id="custom">
+<tr><th width="195">Type/Interface</th><th>Description</th></tr>
+<tr>
+<td>Drug Receiver/ <br /> openBoxes</td> <td>The Drug Receiver is contacted by the Animal Services Admin indicating a shipment of drugs has arrived. </td> </tr>
+
+<tr> 
+<td>Provide Animal Rescue and Shelter/ <br /> scanPlaceAndRecordInventory</td> <td>The Drug Receiver uses the system to record the receipt of drugs. This includes recording the type, lot number, dosage, manufacturer, date added, date medicine will expire, and count of each item received.
+For controlled substances, the Vet and Drug Receiver verifies the accuracy of the shipment, scans and labels the drugs, enters the info into inventory management log books (DEA requirement). The System manages a list of DEA transactions for recall during audits. On the 222 hardcopy that has been saved, the receipt of the drugs is also recorded/confirmed on the documentation. 
+NOTE: There is a desire to have barcodes or similar automation technology to allow for a simple scan to propagate information to the system. </td> </tr>
+ 
+<tr>
+<td>Drug Receiver/ <br /> lockDrugsInSaferoom</td> <td>The Drug Receiver locks the controlled substances into the safe room. </td> </tr>
+
+<tr>
+<td>Vet/ <br /> enterDrugUsageInDEALogBook</td> <td>The Veterinarian makes entries in a log book indicating which drugs, what dosage, date, time, reason for need, and providing a veterinary signature, in compliance with the Drug Enforcement Administration (DEA) rules. </td> </tr>
+
+<tr>
+<td>Technician Supervisor/<br /> recordInvoiceInformation</td> <td>The Drug Receiver provides the hard copy of the invoice for the drug shipment to the Technician Supervisor for later reconciliation. If the invoice is missing, the Technician Supervisor will access the drug manufacturer's website to retrieve the invoice. </td> </tr>
+
+
+</table>
+
+
+
+<!-- Table definition
+<table align="center" id="custom">
+<tr><th>Number</th><th>Category</th><th>Description</th><th>Criticality</th></tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table> -->
+
+</td></tr></table> 
+
+</td></tr></table>
+</td></tr></table></body></html>

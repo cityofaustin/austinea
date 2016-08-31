@@ -1,0 +1,74 @@
+p
+{
+    font-family: Arial, sans-serif; margin-top: 5pt; margin-bottom: 5pt; margin-left: 0; margin-right: 0; font-size: 11pt;
+}
+
+h1
+{
+    font-family: Arial, sans-serif; margin-top: 5pt; margin-bottom: 5pt; margin-left: 0; margin-right: 0; font-size: 11pt; font-weight: bold;
+}
+
+h2
+{
+    font-family: Arial, sans-serif; margin-top: 5pt; margin-bottom: 5pt; margin-left: 0; margin-right: 0; font-size: 10pt; font-weight: bold;
+}
+
+h3
+{
+    font-family: Arial, sans-serif; margin-top: 5pt; margin-bottom: 5pt; margin-left: 0; margin-right: 0; font-size: 10pt; font-weight: bold;
+}
+
+h4
+{
+    font-family: Arial, sans-serif; margin-top: 5pt; margin-bottom: 5pt; margin-left: 0; margin-right: 0; font-size: 10pt; font-weight: bold;
+}
+
+td, ul
+{
+    font-size: 11pt; font-family: Arial, sans-serif; 
+}
+
+.lmargin
+{
+    margin-bottom: 5pt;
+}
+.lbl
+{
+    color: gray; font-size: 10pt; font-family: Arial;
+}
+
+#custom
+{
+    font-family: Arial, sans-serif; border-collapse: collapse;
+}
+
+#custom td, #custom th
+{
+    border: 1px solid maroon; padding: 3px; vertical-align: top; font-size: 10pt; text-align: left;
+}
+
+#custom th
+{
+    background-color: maroon; color: white; font-weight: bold;
+}
+
+#custom tr.alt td
+{
+    color: #000000; background-color: #EAF2D3;
+}
+
+#custom td.alt1
+{
+    color: #000000; background-color: #EAF2D3;
+}
+
+a { text-decoration: none; }
+a:link { color: blue; }
+a:visited { color: blue; }
+a:hover { text-decoration: underline; }
+a:active { color: blue; }
+
+#caption { font-family: Verdana; border-collapse: collapse; margin:7px; }
+#caption td { border: 2px solid maroon; padding: 5px; font-size: 8pt; font-weight: bold; text-align: left; }
+#caption th { font-size: 8pt; text-align:left; padding:3px; background-color:#A7C942; color:#ffffff; }
+#caption tr.alt td { color:maroon; background-color:#EAF2D3; }

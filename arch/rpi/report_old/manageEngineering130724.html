@@ -1,0 +1,170 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<title>Specification for Residential Review Architecture</title>
+<link rel=StyleSheet href="http://austinea.org/style/email.css" type="text/css">
+</head>
+<body bgcolor="silver">
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+
+<!-- EA Motto -->
+<p style="color: gray; font-size: 8pt; text-align: center; font-weight: bold;">Enterprise Architecture <i>- preparing for the future</i></p>
+
+<!-- Online reference
+<p class="lbl" style="text-align: center;">Note: This report is also <a href="http://austinea.org/arch/pdr/report/manageEngineering130724.html">available online</a> by following link.</p> -->
+
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="650" align="center"><tr><td>
+
+<p>PDR Architecture Team,
+
+<p>I updated the following specification based on our last meeting. I made some language clarification changes on some of the specifications, so please have a look to ensure completeness. Our next step is to analyze the permitting process and identify relevant interfaces. By the way, this architecture is going to be extremely valuable in the future as we roll out the City's Enterprise Service Bus (ESB), because we're building our architecture in a service-oriented framework.  
+
+<!-- Signature -->
+<table cellpadding=0 cellspacing=0 border=0 width="450" style="border-collapse: collapse;"><tr><td>
+<p>Respectfully,
+<table cellpadding=0 cellspacing=0 border=0 style="border-collapse: collapse;" align="right"><tr><td>
+<img src="http://austinea.org/image/austinLogo.jpg" border="0" width="100" height="100" alt="Austin Logo">
+</td></tr></table>
+<p><img src="http://journeycolorado.com/images/Signature.jpg" border="0" width="143" height="83" alt="sign">
+<p style="font-size: 8pt;"><b>Rob Byrd</b> <span style="color: red; font-weight: bold;">|</span> <b>City of Austin</b>
+<a href="http://www.linkedin.com/in/robbyrd"><img src="http://journeycolorado.com/images/linkedin.jpg" border="0" alt="LinkedIn Logo"></a><br>
+Chief Enterprise Architect - Corporate<br>
+Direct: (512) 974-1615 | Mobile: (512) 431-0700
+</td></tr></table>
+
+<hr/>
+
+<p style="font-weight: bold; text-align: center;">Use Case Specification for Perform Regulatory Review</p>
+
+<p><b>Use Case Scope:</b> The Submittal Applicant inputs information and documents representing a Submittal Package and processes a Remittance with a city approved Electronic Financial Service provider if required. The Submittal Package is reviewed by a Submittal Coordinator for acceptance or rejection for non-compliance. Accepted Submittal Packages are added to a Group Review Queue for review by various city Reviewers. The system provides a means to manage the Group Review Queue and provides feedback to the Submittal Applicant based on Reviewer comments until approved.
+
+<!-- Image - Perform Regulatory Review -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p class="lbl">Select image for larger view<br>
+<a href="http://austinea.org/arch/pdr/report/performRegulatoryReview.jpg"><img src="http://austinea.org/arch/pdr/report/performRegulatoryReview.jpg" border="0" width="350"></a>
+<p style="text-align: center; font-weight: bold;">Perform Regulatory Review<br />Interaction Overview
+</td></tr></table>
+
+<p style="font-weight: bold;">1. Perform Intake</p>
+
+<p>The Submittal Applicant inputs information and documents that represent a Submittal Package. For certain types of Submittal Packages, there's a fee required. Because a Submittal Applicant might intake more than one submittal during any given session, Remittance (fees) are stored in a Remittance Queue until the Submittal Applicant session ends.
+
+<!-- Image - 1. Perform Intake -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;"  align="center"><tr><td align="center">
+<p class="lbl">Select image for larger view<br />
+<a href="http://austinea.org/arch/pdr/report/performIntake.jpg"><img src="http://austinea.org/arch/pdr/report/performIntake.jpg" border="0" width="450"></a>
+<p style="text-align: center; font-weight: bold;">Sequence Diagram<br />1. Perform Intake
+</td></tr></table>
+
+<!-- Table of Interface Descriptions -->
+<p style="text-align: center; font-weight: bold;">Table of Interface Descriptions<br />
+1. Perform Intake</p>
+
+<table align="center" id="custom">
+<tr><th>Type/Interface</th><th>Description</th></tr>
+
+<tr>
+<td>Perform Design Review/<br>performIntake</td>
+<td>The Submittal Applicant completes a Web-based application form. Based on location values identified on the application form, location-based information automatically populates relevant form elements. The form contains selectable attributes to identify mechanical, electrical, plumbing, building, driveway, sidewalk, etc. to predetermine permit requirements - the form must accommodate multiple structures. The system provides a method to attach relevant design documents and other pertinent Submittal Package items. These required items are indicated by the Web-based form. Each required attached line item provides the ability to browse to and upload the file, ensures all required attachments, and approved document format (such as PDF). The required items must be indicated depending on submittal type - required items must be changeable by approved city staff.</td>
+</tr>
+
+<tr>
+<td>Perform Design Review/<br>updateRemittanceQueue</td>
+<td>Depending on the type of submittal, there may be fees required for intake. The system adds the required fee to a Remittance Queue for close out processing based on the submittal type. City staff must be able to change the case attributes, which automatically changes the associated fee. The associated fees must be configurable by approved city staff.</td>
+</tr>
+
+</table>
+
+<p style="font-weight: bold;">2. Submit Remittance</p>
+
+<p>The system presents a list of fees (fee breakdown) associated with their related Submittal Package and provides selection to pay Remittance. The system processes the Remittance with a city approved Electronic Financial Service provider.
+
+<!-- Image - 2. Submit Remittance -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;"  align="center"><tr><td align="center">
+<p class="lbl">Select image for larger view<br>
+<a href="http://austinea.org/arch/pdr/report/submitRemittance.jpg"><img src="http://austinea.org/arch/pdr/report/submitRemittance.jpg" border="0" width="450"></a>
+<p style="text-align: center; font-weight: bold;">Sequence Diagram<br />2. Submit Remittance
+</td></tr></table>
+
+<!-- Table of Interface Descriptions -->
+<p style="text-align: center; font-weight: bold;">Table of Interface Descriptions<br />
+2. Submit Remittance</p>
+
+<table align="center" id="custom">
+<tr><th>Type/Interface</th><th>Description</th></tr>
+
+<tr>
+<td>Submittal Applicant/<br>reviewRemittanceQueue</td>
+<td>When all intake items are complete, the Submittal Applicant is presented with a Remittance Queue listing all Submittal Packages submitted and their associated fees.</td>
+</tr>
+
+<tr>
+<td>Perform Design Review/<br>processRemittance</td>
+<td>The Submittal Applicant selects to pay required Remittance via electronic form of payment such as credit or debit card. When successfully transacted, the Submittal Applicant receives an Acknowledgment of successful payment. Requires interface with appropriate city approved Electronic Financial Service.</td>
+</tr>
+
+</table>
+
+<p style="font-weight: bold;">3. Quality Review Submittal Package</p>
+
+<p>The system provides a list of new or updated Submittal Packages for review by the Submittal Coordinator. The Submittal Coordinator reviews the Submittal Package and either rejects or accepts the submittal. If accepted, the system automatically adds the Submittal Package to the Group Review Queue. The type of Submittal Package determines the appropriate Group Review Queue entered and the order in which the groups must review the Submittal Package. If rejected, the system refunds a portion of the remittance and a portion of remittance is retained as a service fee. No matter the state of the Submittal Package, the Submittal Applicant is notified of the status of the submittal.
+
+<!-- Image - 3. Quality Review Submittal Package -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;"  align="center"><tr><td align="center">
+<p class="lbl">Select image for larger view<br>
+<a href="http://austinea.org/arch/pdr/report/qualityReviewSubmittalPackage.jpg"><img src="http://austinea.org/arch/pdr/report/qualityReviewSubmittalPackage.jpg" border="0" width="450"></a>
+<p style="text-align: center; font-weight: bold;">Sequence Diagram<br />3. Quality Review Submittal Package
+</td></tr></table>
+
+<!-- Table of Interface Descriptions -->
+<p style="text-align: center; font-weight: bold;">Table of Interface Descriptions<br />
+3. Quality Review Submittal Package</p>
+
+<table align="center" id="custom">
+<tr><th>Type/Interface</th><th>Description</th></tr>
+
+<tr>
+<td>Perform Design Review/<br>reviewSubmittalPackage</td>
+<td>The system presents a Submittal Package Queue of new submittal packages and provides a means for the Submittal Coordinator to perform a quality check on the submitted items. The system provides the ability to accept or reject the Submittal Package to include relevant comments for rejection or further information on Submittal Package status. If rejected, the system provides an interface to the city approved Electronic Financial Service to refund appropriate portion of fee based on the type of submission. The Submittal Coordinator must be able to override automated queued items in the Group Review Queue to include adding and removing queued groups.</td>
+</tr>
+
+<tr>
+<td>Perform Design Review/<br>setupGroupReviewQueue</td>
+<td>After the Submittal Package is quality approved by the Submittal Coordinator, the system automatically identifies the Group Review Queue (including Submittal Coordinator overridden Group Review Queue items) based on relevant application entries. The review cycle is configurable by relevant city staff. For example, some groups may need to sign off (approve or comment) before the Submittal Package shows up in another Group Review Queue. The Group Review Queue is also updated when a Submittal Package is approved or requires additional review based on Reviewer lineage (requires one reviewer to review before another). The Group Review Queue is based on area of responsibility (i.e., constructability, code compliance, etc.). The Submittal Coordinator may return a Submittal Package to the Group Review Queue indicating selected groups during the review cycle to include Submittal Coordinator comments when necessary.</td>
+</tr>
+
+<tr>
+<td>Submittal Applicant/<br>reviewNotification</td>
+<td>The system provides an automated email to the Submittal Applicant for accepted and rejected Submittal Packages (with rejection comment - i.e., reason for rejection and recommended guidance for future submissions). For accepted submissions, the system provides a summary of the submission process and estimation of anticipated review time. Throughout the Submittal Package review process, the system provides continuous automatic updates to the Submittal Application as it moves through the Group Review Queue.</td>
+</tr>
+
+</table>
+
+<p style="font-weight: bold;">4. Review Submittal Package</p>
+
+<p>The system provides a means for a Reviewer to observe the Group Review Queue and select a Submittal Package for review. Once selected, the Group Review Queue is updated to remove the Submittal Package from the review queue to prevent simultaneous reviews. The Submittal Applicant is notified of the particular group reviewing the Submittal Package. Throughout the review cycle, a Submittal Coordinator may quality review the Reviewer Comment and provide feedback to the Reviewer by returning the Submittal Package back to the Group Review Queue to be addressed. Reviewer Comments made to the Reviewer are not provided as feedback to the Submittal Applicant. On completion of all areas of responsibility in the Group Review Queue, the Submittal Coordinator approves the Reviewer Comments for Submittal Applicant update or approves the Submittal Package for permitting.
+
+<!-- Image - 4. Review Submittal Package -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;"  align="center"><tr><td align="center">
+<p class="lbl">Select image for larger view<br />
+<a href="http://austinea.org/arch/pdr/report/reviewSubmittalPackage.jpg"><img src="http://austinea.org/arch/pdr/report/reviewSubmittalPackage.jpg" border="0" width="450"></a>
+<p style="text-align: center; font-weight: bold;">Sequence Diagram<br />4. Review Submittal Package
+</td></tr></table>
+
+<!-- Table of Interface Descriptions -->
+<p style="text-align: center; font-weight: bold;">Table of Interface Descriptions<br>
+4. Review Submittal Package</p>
+
+<table align="center" id="custom">
+<tr><th>Type/Interface</th><th>Description</th></tr>
+
+<tr>
+<td>Perform Design Review/<br>provideDesignFeedback</td>
+<td>Routinely, the Reviewer in a particular review group (by order of responsibility area setup in the Group Review Queue) checks the system Group Review Queue (listed in date/time order) for assigned reviews and submits Submittal Package Reviewer Comments. The Group Review Queue is per review group (depending on the type of review) and when under review (selected by a Reviewer), the system automatically takes the Submittal Package off the relevant Group Review Queue to prevent multiple reviews by the same area of responsibility. For some reviews, depending on certain attributes identified on the application form, the system provides a priority order of review groups because some review groups may be required to review the Submittal Package and approve or comment before other groups are provided opportunity to review. The business rules for review group order must be modifiable by selected responsible city staff. The system provides automated tools for the Reviewer to markup diagrams including comments, links to references and city codes, among other traditional markup indications to effectively communicate to the Submittal Applicant the required changes to Submittal Package items. The system must provide the ability to identify changes (deltas) for resubmitted design plans when submitted using standardized formats such as PDF and engineering CAD files. Multiple document submissions must be able to be viewed in continuous, unbroken fashion providing a seamlessly adjoined view of the design plans. The system must provide a common, frequently used comment library to include images, text, technical specifications, etc. configurable by the Reviewer. All markups indicate the particular Reviewer layer for identification by the Submittal Coordinator but not identified when submitted to the Submittal Applicant. The Submittal Coordinator may review Group Review Queue items and provide feedback to the Reviewer. If no comments, the Reviewer approves the submittal by providing a group level approval stamp indication on relevant Submittal Package items and the Submittal Coordinator approves the Reviewer Comments or the entire Submittal Package when no comments require updates by the Submittal Applicant.</td>
+</tr>
+
+</table>
+
+</td></tr></table>
+</td></tr></table></body></html>

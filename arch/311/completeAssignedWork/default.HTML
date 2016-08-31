@@ -1,0 +1,246 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Complete Assigned Work</title>
+<link rel="Stylesheet" href="http://austinea.org/style/hover.css" type="text/css" />
+</head>
+<body bgcolor="#ddd8c2">
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="650" align="center">
+<tr><td style="padding: 0;" height="130" valign="top"><a href="http://austinea.org">
+<img src="http://austinea.org/image/iTHeader.jpg" alt="austinea.org - home..." border="0"></a></td></tr>
+<!-- Text Area -->
+<tr><td>
+
+<p style="text-align: center; font-weight: bold;">Complete Assigned Work<br />Use Case Specification</p>
+<p style="text-align: center;">03/21/16
+
+<!--  IF Printable document option Included  
+<p style="text-align: center;">download <a href="http://austinea.org/arch/as/***.docx">printable version</a>
+-- >
+
+<b> Animal Services Logical Data Model </b>            
+<!-- Image -  Logical Data Model 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="http://austinea.org/arch/as/ldm.jpg"><img src="http://austinea.org/arch/as/ldm.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Animal Services Logical Data Model</p>
+</td></tr></table> -->
+
+<!-- USE CASE IMAGE -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/311/completeassignedwork/ucd.jpg"><img src="http://austinea.org/arch/311/completeassignedwork/ucd.jpg" border="0" alt="" width="620"/></a><br />
+<span style="font-weight: bold;">Complete Assigned Work<br />Use Case Model</span>
+</td></tr></table>
+
+<p><b>Scope: </b>The system provides multiple options and services to facilitate CRM Users completing their assigned work and closing a ServiceRequest:
+<li>If the ServiceRequest interfaces with an external system ServiceRequest updates are transmitted back from the Enterprise Service Bus to the system.
+<li>If the ServiceRequest is configured with auto-assignment rules for Resources or CRM Users the system updates the ServiceRequest with the appropriate assignment.
+<li>If the ServiceRequest is assigned to Resources manually by CRM Users the CRM User updates the ServiceRequest with the appropriate assignment.  The system updates the WorkQueue for the assigned Resource once assigned, either manually or automatically.
+<li>If the ServiceRequest has notifications configured for transmission the system sends the notifications per configuration.
+<li>CRM Users either query their WorkQueue for their work including ServiceRequests, or utilize a Dashboard, configurable by the CRM Manager or CRM User, to view work.
+<li>If a WorkRoute is required the CRM User requests the system generates a WorkRoute for the requested ServiceRequests. The system provides different WorkRoute options including generating routes based on shortest distance traveled, etc.
+<li>If GISMaps are needed the CRM User requests the system generates the appropriate GISMap. GISMaps are configured by the CRM User to include different GISLayers, colors, transparency, etc.
+<li>If a ServiceRequestReport is required of the ServiceRequest the CRM User requests the system generates a ServiceRequestReport. ServiceRequestReports are customized by the CRM User to include portions of the ServiceRequest the CRM User requires to complete resolution of the request. Additionally, multiple reports may be printed simultaneously for WorkQueue ServiceRequests.
+<br>
+<br>The CRM User updates the ServiceRequest including adding comments and notes to Activities, uploading Attachments, answering Questions specific to resolving the ServiceRequest, etc.
+<li>If the ServiceRequest was configured to include triggers for additional processing the system updates the ServiceRequest as needed based on the triggers and resulting actions.
+<li>If follow on ServiceRequests are required the CRM User, or the system if ServiceRequest is configured, creates a new ServiceRequest and the two ServiceRequests are linked. Linked ServiceRequests are added to the RelatedServiceRequestList for both ServiceRequests.
+<br>
+<br>If the CRM User is mobile the system provides additional functionality:
+<li>If a WorkRoute was created the CRM User requests a WorkRoute. The WorkRoute is displayed along with relevant information. If a Traffic System is available to look up TrafficData the system requests the Traffic System return the data and the system updates the WorkRoute.
+<li>If the CRM User requires additional Activities the CRM User requests new Activities from the system. The system returns a list of available Activities for the CRM User to select and assign themselves to.
+<li>If the CRM User has arrived at the Location of the ServiceRequest the CRM User checks in and the system updates the ServiceRequest with their arrival time and Location based on GPS coordinates.
+<li>If nearby mobile coworkers are needed the CRM User requests the system display nearby coworkers. The system displays on a map the various nearby coworkers based on the CRM User's requirements.
+The CRM User updates the ServiceRequest when mobile.
+<li>If a WorkRoute was created for the CRM User the WorkRoute is updated each time the CRM User completes their assigned Activity for a ServiceRequest.
+<br>
+<br>Citizens look up the status of their ServiceRequest their an online website through the system. The Citizen provides a ServiceRequestNumber, along with their relevant Participant information and the system returns the ServiceRequest.  
+
+
+
+<!-- IF INTERACTION OVERVIEW IS INCLUDED 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/as/***.jpg"><img src="http://austinea.org/as/code/***.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Interaction Overview</span>
+</td></tr></table>
+-->
+
+
+<br />
+
+
+<!-- SEQUENCE DIAGRAM  -->                 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/311/completeassignedwork/sd01.jpg"><img src="http://austinea.org/arch/311/completeassignedwork/sd01.jpg" border="0" alt="" width="600"/></a><br />
+<span style="font-weight: bold;">Complete Assigned Work<br />Sequence Diagram</span>
+</td></tr></table>
+<br />
+
+
+<!-- INTERFACE TABLE  -->
+<table align="center" id="custom">
+<tr><th width="9%">Req#</th><th width="70%">Type/Interface - Requirement Description</th><th>Performance</th></tr>
+<tr>
+<td rowspan="2">001</td>
+<td style="font-weight: bold; background: lightgray;">Provide Customer Relationship Management/updateServiceRequest</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The system, or a CRM User, updates a ServiceRequest per the requested update. If the ServiceRequest is configured with auto-assignment rules for CRM Users the system assigns the ServiceRequest Activities to resources based on Questions/Answers, Location, GISLayer, Time of Day, Shift, Route, Zone, etc. encompassing business process rules for group. CRM Users update the ServiceRequest, and if interfaced with an external system, may request an update be sent to the interface. If an Interface updates the ServiceRequest the Interface transmits an update Notification to the system and includes the information to update/append, etc. Interface updates any portion of the ServiceRequest required to complete ServiceRequest (Status, Questions/Answers, Activities, etc.). ServiceRequest Activities are assignable to multiple Resources/CRMUsers and Activities track Resource usage. The ServiceRequest is configured to require specific be completed by a user before it may be saved (answering a question, completing an activity, etc.). ServiceRequest updates are completed by CRM Users and any portion of the ServiceRequest may be updated by the CRM User per their Access Permissions. Parts of the ServiceRequest (activities, questions, attachments, participants) are designated as required for completion and must be completed before the ServiceRequest is closed. As CRM Users check in at Locations the system updates Activities with arrival date/time, Location (GPS coordinates). Activities allow CRM Users to estimate completion duration and actual completion duration. Multiple activities may be added to a ServiceRequest simultaneously either by a CRM User, Interface, or auto-processing rules. CRM Users can attach relevant information to the ServiceRequest including (pointers to other ServiceRequests, Locations, GISData, etc.). The system updates the ServiceRequest with any Notifications sent. If Citizens provide a requested response to the system the system updates the ServiceRequest with the response Notification as an Attachment. Additionally, the system saves any Attachments included in the Notification. When the ServiceRequest work is completed the ServiceRequest status is changed to a Closed status. Once closed a ServiceRequest is not editable by CRM Users. Some CRM Users, based on their access permissions, may reopen a ServiceRequest to make additional edits.</td>
+</tr>
+<tr>
+<td rowspan="2">002</td>
+<td style="font-weight: bold; background: lightgray;">Provide Customer Relationship Management/updateWorkQueue</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The system updates the CRM User's WorkQueue to include the KnowledgeBaseItem's requirement for acknowledgment. CRM User accesses the system and updates the WorkQueue to identify acknowledgment of KnowledgeBaseItem. After completed the CRM User's WorkQueue removes the KnowledgeBaseItem from the WorkQueue. The system updates the CRM User's WorkQueue indicating a KnowledgeBaseItem did not index properly, and requires CRM User review. The system updates the Editor's (CRM User) WorkQueue indicating a KnowledgeBaseItem received a Comment and requires CRM User review.</td>
+</tr>
+<tr>
+<td rowspan="2">003</td>
+<td style="font-weight: bold; background: lightgray;">Provide Customer Relationship Management/sendNotification</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The system sends a Notification (email, text, etc.) to the recipient. Notification includes Attachments as relevant. If a response from a Citizen is requested the system provides either a URL to respond, generates a subject line for response to the system so the system recognizes the response, etc. The system saves a copy of the Notification after transmission for archival purposes (copy of message, recipients, transmission date/time, schedule, etc.). For public notifications the system sends the Notification per the schedule defined by the Public Information Manager. For ServiceRequest Notifications the system attaches a copy of the Notification with the ServiceRequest for archival purposes. CRM Users resend/cancel Notifications as desired. Notifications are sent ad hoc and also scheduled based on configuration by a CRM Manager. If a delivery receipt is configured the system tracks delivery status of the Notification. For GISLayer updates the system notifies the GISManager identified for the GISLayer. The system includes the number of changes to the GISLayers, date/time of retrieval from GIS, and GISLayer name. For InterfaceServiceRequests, if the system receives an EnterpriseServiceBusStatus back that is not success then the system notifies the CRM Manager. If a KnowledgeBaseItem fails to index the system notifies the KnowledgeBaseItem's Editor with the KnowledgeBaseItem's title and date of failed index.</td>
+</tr>
+<tr>
+<td rowspan="2">004</td>
+<td style="font-weight: bold; background: lightgray;">Provide Customer Relationship Management/queryWorkQueue</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>A CRM User requests the system queries a WorkQueue. The CRM User provides a variety of information to identify a WorkQueue, or subset of WorkQueue including: ServiceRequest information (CRMSearch, i.e. Status, Type, Date/Time, Outcome, Activity, Question/Answers, Location, GIS Information, Service Level Agreement,), and any ServiceRequest information is available to use for query. Queries are sortable by CRM User for any criteria provided. </td>
+</tr>
+<tr>
+<td rowspan="2">005</td>
+<td style="font-weight: bold; background: lightgray;">Provide Customer Relationship Management/displayDashboard</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The CRM User requests the system display a Dashboard and provides a CRMSearch for the Dashboard criteria. The Dashboard is customized by the CRM User to include different query criteria: ServiceRequests, ServiceRequest statistics (number submitted, divided by group, overdue ServiceRequests, etc.), formatting, etc. The Dashboard is configurable with a refresh interval and automatically updates as the Dashboard remains active. Dashboards display graphs tables, and maps as configured by the CRM User. Dashboards may be saved, are sharable with CRM Users, and external parties through links.</td>
+</tr>
+<tr>
+<td rowspan="2">006</td>
+<td style="font-weight: bold; background: lightgray;">Provide Customer Relationship Management/createWorkRoute</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The CRM User requests the system creates a WorkRoute and provides a CRMSearch to define the WorkRoute's criteria. The CRM User provides query criteria for the WorkRoute including ServiceRequestType, Date(s), Location, User, Activity (type, due date, created date, interval till overdue), Status, Interval till overdue, Priority, Threshold to prioritize, WorkRoute optimization (shortest travel time, etc.), Shift, nearby WorkRoute range. WorkRoutes contain Location(s), ServiceRequest(s), Time (estimated activity start and end, travel time[?]), Route (stops, list of ServiceRequests), and nearby WorkRoutes.</td>
+</tr>
+<tr>
+<td rowspan="2">007</td>
+<td style="font-weight: bold; background: lightgray;">Traffic System/createWorkRoute</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The system requests the Traffic System provide real-time TrafficData for the included WorkRoute. The Traffic System returns the TrafficData to the system.</td>
+</tr>
+<tr>
+<td rowspan="2">008</td>
+<td style="font-weight: bold; background: lightgray;">Provide Customer Relationship Management/updateWorkRoute</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The system updates the WorkRoute to reflect updates to ServiceRequests (completed Activities, Status changes, new ServiceRequests, closed ServiceRequests, Outcomes), or to include TrafficData. The system redraws WorkRoutes as needed based on the initial WorkRoute optimization chosen by the CRM User when the WorkRoute was created (shortest distance, time, etc.). Updated WorkRoutes are presented to the CRM User when completed.</td>
+</tr>
+<tr>
+<td rowspan="2">009</td>
+<td style="font-weight: bold; background: lightgray;">Provide Customer Relationship Management/createGISMap</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The CRM User requests the system creates a GISMap based on various criteria from a CRMSearch (all ServiceRequest information is available for query). The CRM User defines a GIS Area and provides filters (non-spacial data, ServiceRequestType, Date(s), GISLayer(s), etc.), defines labels, transparency, overlays, BaseMap, etc. The system generates a GISMap that's available for saving, or attachment to ServiceRequests, etc. </td>
+</tr>
+<tr>
+<td rowspan="2">010</td>
+<td style="font-weight: bold; background: lightgray;">Provide Customer Relationship Management/createServiceRequestReport</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The CRM User requests the system prints a ServiceRequestReport. The ServiceRequestReport is customizable by the CRM User (Label, Title, Questions/Answers, Activities, Attachments, History, Participant, etc.). The CRM User prints a single ServiceRequestReport or prints multiple reports for different ServiceRequests based on their query. Reports are exportable to a variety of formats, can be saved, attached, and emailed. Alternatively, ServiceRequestReport is scheduled by the CRM User to run automatically and print.</td>
+</tr>
+<tr>
+<td rowspan="2">011</td>
+<td style="font-weight: bold; background: lightgray;">Provide Customer Relationship Management/createServiceRequest</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>A CRM User accesses the system and requests the system creates a ServiceRequest. The system provides multiple ServiceRequestTypes to choose from, pre-configured by a CRM Manager. The system requests a Location, if required, and validates the Location against configured GISLayers (validate against GISLayers, street address or intersection required). The system performs GIS lookup, and general lookup for relevant information (nearby places, resources, schools, parks, alerts, other ServiceRequests, GIS information, KnowledgeBase items, etc.). The system provides Questions of various types, configured by CRM Manager, and prompts the user with Alerts (triggered by Question answers or selection of ServiceRequestType) to alter the ServiceRequest business flow as necessary. The system provides the ability to add, remove, Questions based on previous answers, and alter the business flow based on Question answers. The user is able to attach files to the ServiceRequest. The system sends messages (pages, emails, etc.) based on Question answers to configurable recipients. The system assigns a Priority and Status to the ServiceRequest based on the configured options by the CRM Manager. The system generates a ServiceRequestNumber (unique tracking number for the individual request) once the ServiceRequest is saved. The system allows the CRM user to capture Participant information (name, phone number, location, email, Questions, etc.). The system provides a field to enter general comments/details as needed. Additionally, the system allows users to perform a bulk ServiceRequest creation. The system completes any ServiceRequest configuration for the bulk created ServiceRequests similar to singularly created ServiceRequests. The system provides a mass entry intake option that presents specialized ServiceRequests. MassEntryServiceRequests are created in a user defined status, typically Closed. If the MassEntryServiceRequest is created in a Closed Status the system doeesn't create Activities for the work group to complete as the work was completed previously. The system provides a Website intake for ServiceRequests along with WebsiteServiceRequests that map back to a ServiceRequest in the system. The system provides a Mobile Application intake for ServiceRequests along with MobileApplicationServiceRequests that map back to a ServiceRequest in the system. The system provides the capability for an external system to interface with it. The system interfacing provides the InterfaceServiceRequest information and the system maps the InterfaceServiceRequest back to a ServiceRequest in the system. CRM Users create attachments to other data points in CRM including (ServiceRequests, Locations, GISInformation, etc.).</td>
+</tr>
+<tr>
+<td rowspan="2">012</td>
+<td style="font-weight: bold; background: lightgray;">Provide Customer Relationship Management/linkServiceRequest</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The system links a ServiceRequest to another ServiceRequest. Each ServiceRequest's RelatedServiceRequestList is updated to show the link between related ServiceRequests. ServiceRequests are linked either manually by CRM Users or through automated triggers configured in the system by the CRM Manager. </td>
+</tr>
+<tr>
+<td rowspan="2">013</td>
+<td style="font-weight: bold; background: lightgray;">Provide Customer Relationship Management/displayWorkRoute</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The CRM User requests the system displays the requested WorkRoute. The system displays the WorkRoute on the requested device. </td>
+</tr>
+<tr>
+<td rowspan="2">014</td>
+<td style="font-weight: bold; background: lightgray;">Traffic System/provideTrafficData</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The system requests the Traffic System provide real-time TrafficData for the included WorkRoute. The Traffic System returns the TrafficData to the system.</td>
+</tr>
+<tr>
+<td rowspan="2">015</td>
+<td style="font-weight: bold; background: lightgray;">Provide Customer Relationship Management/requestActivities</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The CRM User requests additional Activities from the system through a query. The system displays available Activities the CRM User is capable of completing resolution on (Location, Resource Availability). The CRM User selects the Activities they choose to work/assign to themselves. </td>
+</tr>
+<tr>
+<td rowspan="2">016</td>
+<td style="font-weight: bold; background: lightgray;">Provide Customer Relationship Management/checkInLocation</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The CRM User checks in at the Location. The system tracks the user's Location (GPS Coordinates, Address), Date/Time of Arrival, and updates the ServiceRequest with arrival information.</td>
+</tr>
+<tr>
+<td rowspan="2">017</td>
+<td style="font-weight: bold; background: lightgray;">Provide Customer Relationship Management/displayNearbyCoWorkers</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The CRM User requests the system displays nearby coworkers. The CRM User specifies the query including Location, distance, etc. and the system displays coworkers in a list and map. The system provides the CRM User the ability to contact coworkers as needed. </td>
+</tr>
+<tr>
+<td rowspan="2">018</td>
+<td style="font-weight: bold; background: lightgray;">Provide Customer Relationship Management/lookupServiceRequestOnWebsite</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>Citizens look up the status of their ServiceRequest their an online website through the system. The Citizen provides a ServiceRequestNumber or CRMSearch, along with their relevant Participant information and the system returns the ServiceRequest.</td>
+</tr>
+<tr>
+
+
+
+</table>
+
+
+<br />
+
+
+
+
+</td></tr></table>
+</td></tr></table></body></html>

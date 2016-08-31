@@ -1,0 +1,166 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Create Building Standards Commission (BSC) Packet</title>
+<link rel="Stylesheet" href="http://austinea.org/style/hover.css" type="text/css" />
+</head>
+<body bgcolor="#ddd8c2">
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="650" align="center">
+<tr><td style="padding: 0;" height="130" valign="top"><a href="http://austinea.org">
+<img src="http://austinea.org/image/iTHeader.jpg" alt="austinea.org - home..." border="0"></a></td></tr>
+<!-- Text Area -->
+<tr><td>
+
+<p style="text-align: center; font-weight: bold;">Create Building Standards Commission (BSC) Packet<br />Use Case Specification</p>
+<p style="text-align: center;">7/18/2016
+
+<!--  IF Printable document option Included  
+<p style="text-align: center;">download <a href="http://austinea.org/arch/as/***.docx">printable version</a>
+-- >
+
+<b> Austin Code Logical Data Model </b>
+<!-- Image -  Logical Data Model
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="http://austinea.org/arch/code/austinCodeLogicalDataModel.jpg"><img src="http://austinea.org/arch/code/austinCodeLogicalDataModel.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Austin Code Logical Data Model</p>
+</td></tr></table>  -->
+
+<!-- USE CASE IMAGE -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/code/createBSCPacket/ucd.jpg"><img src="http://austinea.org/arch/code/createBSCPacket/ucd.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Create Building Standards Commission (BSC) Packet<br />Use Case Model</span>
+</td></tr></table>
+
+<p><b>Scope: </b>An Austin Code Officer requests a Research Analyst creates maps of a Property for a Building Standards Commission case. The Austin Code Officer assembles a BSCPacket. The Austin Code Officer also creates a LegalCase in the Case Management System. The BSCPacket requires multiple levels of approval from the Chain of Command. The Austin Code Officer submits the BSCPacket to the Chain of Command (the Austin Code Officer’s direct manager/supervisor) for review. The Chain of Command reviews the BSCPacket and returns to the Austin Code Officer. If any changes were identified during the Chain of Command Review the Chain of Command requests the Austin Code Officer modify the BSCPacket. The Austin Code Officer updates the CodeViolationCase in the Case Management System after the review. The Austin Code Officer then submits the BSCPacket to the Chain of Command (Assistant Division Manager) for review. The Chain of Command reviews the BSCPacket. If any changes were identified during the Chain of Command Review the Chain of Command requests the Austin Code Officer modify the BSCPacket. The Chain of Command requests the Austin Code Legal Officer review the BSCPacket (typically completed within 72 hours of request). The Austin Code Legal Officer completes their review, and if changes are necessary, requests the Austin Code Officer modify the BSCPacket. The Austin Code Legal Officer then coordinates a BSC case review. The Austin Code Officer, Investigator, Assistant Division Manager, and Austin Code Legal Coordinator meet to discuss the BSCPacket contents in relation to the upcoming BSCCase.
+
+
+<!-- IF INTERACTION OVERVIEW IS INCLUDED 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/code/***.jpg"><img src="http://austinea.org/arch/code/***.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Interaction Overview</span>
+</td></tr></table>
+-->
+
+
+<br />
+
+
+<!-- SEQUENCE DIAGRAM  -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/code/createBSCPacket/sd01.jpg"><img src="http://austinea.org/arch/code/createBSCPacket/sd01.jpg" border="0" alt="" width="600"/></a><br />
+<span style="font-weight: bold;">Create Building Standards Commission (BSC) Packet<br />Sequence Diagram</span>
+</td></tr></table>
+<br />
+
+
+<!-- INTERFACE TABLE  -->
+<table align="center" id="custom">
+<tr><th width="9%">Req#</th><th width="70%">Type/Interface - Requirement Description</th><th>Performance</th></tr>
+<tr>
+<td rowspan="2">001</td>
+<td style="font-weight: bold; background: lightgray;">Research Analyst/createBSCMapsForProperty</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Officer contacts the Research Analyst and requests the creation of structure, location and road maps related to the Property for the Building Standard Commission case. </td>
+</tr>
+<tr>
+<td rowspan="2">002</td>
+<td style="font-weight: bold; background: lightgray;">Austin Code Officer/createBSCPacket</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Officer creates a BSCPacket. The BSCPacket contains a BSCPacketChecklist</td>
+</tr>
+<tr>
+<td rowspan="2">003</td>
+<td style="font-weight: bold; background: lightgray;">Case Management System/createLegalCase</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The user accesses the Case Management System and creates a LegalCase. The user identifies the case type (Admin Hearing, Building Standards Commission, Municipal Court, or District Court).</td>
+</tr>
+<tr>
+<td rowspan="2">004</td>
+<td style="font-weight: bold; background: lightgray;">Chain of Command/reviewBSCPacket</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Chain of Command reviews the BSCPacket for completeness and if correct signs the BSCPacketChecklist. If changes are required the Chain of Command identifies gaps and returns the packet to the Austin Code Officer.</td>
+</tr>
+
+
+<tr>
+<td rowspan="2">005</td>
+<td style="font-weight: bold; background: lightgray;">AustinCodeOfficer/modifyBSCPacket</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The user sends an email to the BSC coordinator, the Assistant Division Manager, and manager indicating the missing required documentation (or any information the Austin code officer supplied.) The Austin Code Officer modifies the BSCPacket as requested. The updated BSCPacket is returned to the original requestor.</td>
+</tr>
+
+
+
+<tr>
+<td rowspan="2">006</td>
+<td style="font-weight: bold; background: lightgray;">Case Management System/updateViolationCase</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The user updates the CodeViolationCase with relevant information to the case. If the CodeViolationCase generated a StopWorkOrder, the StopWorkOrder is attached to the CodeViolationCase.
+The user attaches a copy of the DiagramOfWorkRequired. If a board and secure occurs, a BoardAndSecureBill is attached to the CodeViolationCase by Austin Code Admin. If a sign was removed, the Austin Code Officer adds the sign and information to the CodeViolationCase. Additionally, if CautionBarriers were placed, information on the CautionBarriers is added to the CodeViolationCase. If property information was updated, the Case Management System includes updated property information.
+The user updates the CodeViolationCase with information relevant to the change. This includes, but is not limited to, BoardAndSecureBill, PropertyAbatementBill, FollowUpNotes, photographs (boarded, non-boarded, posted notifications, placards), emails, PhoneCallSummary, other relevant information and inter-department communications. If a ServiceCase is created, the Public Information Office Admin adds notes to the CodeViolationCase including the CitizenNeed and ServicesRecommended for ServiceCase. If CorrectiveResources are identified, the user updates the CodeViolationCase with a list of CorrectiveResources provided (three resources) and notes of contact with Owner/Tenant. HardshipReason is added to the CodeViolationCase.
+If new violations are identified, the user adds the new violation to the Case Management System and the violation is attached to the original CodeComplaintCase. If a TitleSearch is completed, the TitleSearch is added to the CodeViolationCase. If additional LegallyInterestedParties are identified, the parties are added to the CodeViolationCase. If a NoticeOfViolation is generated, the NoticeOfViolation is added to the CodeViolationCase. If posted at the property, photographs are attached to the CodeViolationCase. If the NoticeOfViolation is delivered and a certified mail receipt is received, the receipt is added to the CodeViolationCase.
+If a citation is created, the Case Management System attaches the citation to the CodeViolationCase. Additionally, the user scans and uploads a copy of the physical citation to the Case Management System. If an AdministrativeHearingWarning is issued, the user updates the CodeViolationCase with information on the issued AdministrativeHearingWarning.
+If an AdministrativeHearingCitation is issued, the user updates the CodeViolationCase with the AdministrativeHearingCitation, and a LegalCase is created. The user scans and uploads returned liens to the CodeViolationCase. If a lien is filed for the property, the TRVNumber is added to the CodeViolationCase.
+The Austin Code Officer updates the CodeViolationCase with information concerning Violation extensions, written request, reason for approval/denial, etc.
+If there is a payment, then the CodeViolationCase is updated by the user to include the payment.</td>
+</tr>
+<tr>
+<td rowspan="2">007</td>
+<td style="font-weight: bold; background: lightgray;">Austin Code Legal Officer/reviewBSCPacketAndForwardToLegalOfficer</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Chain of Command (Austin Code Direct Chain Legal Office) reviews the case, examining the BSC folder, verifying labeling, signatures, and enters the case into a tracking BSCTrackingSheet (recording the address, who turned in the file, officer, officer's supervisors, whether it's an unsafe or dangerous structure, commercial or residential, date provided, and the date it was provided to the Legal Officer.) The Legal Office Chain of Command schedules a meeting to review the BSCCasePacket (ensure completeness, history of case, any contact with owner, dangerous, recommendation, substandard, length of issue, etc.). The meeting includes Legal Office Chain of Command, Chain of Command (Division Manager), Austin Code Legal Officer, Austin Code Officer, Chain of Command (Austin Code Officer's), BSC Coordinator.</td>
+</tr>
+
+
+<tr>
+<td rowspan="2">008</td>
+<td style="font-weight: bold; background: lightgray;">Austin Code Legal Officer/reviewBSCPacket</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Legal chain of command hands the file to the Austin code legal officer who reviews the case, examining the BCS folder, verifying the legal check list (type of structure, occupancy, reason for BSC action [ condition, circumstance, required, immediate escalation of enforcement action], Owner has not complied, owner unable to achieve compliance within time frame, provided NOV or within an approved extension time frame, appeal has been filed, relief sought in appeal, Administratively by field staff, field staff recommendations remedy [repair, vacate, secure or fence, demolition, historic preservation office notified (demos only), printouts of current case history with last action/event including contact or attempted contact with owner to inform them of case escalation to BSC (Secretary of state, utilities, homestead exemption, TCAD, title search, OPR, property tax search), and whether a title search has been completed, photocopy of delivered NoticeOfViolation with scanned copy of certified green card or photocopy of returned not delivered NOV with photo of on site posting, documentation in file identifying property owner(s), active permits (Building permit, plumbing permit, electrical permit, mechanical permit, demolition permit) labeled color photos for sited violations, labeled color photos of front/street view, photo of NOV posted at site, GIS and Structure Maps. Additionally, the BSCPacketChecklist is reviewed and printed and signed name by assistant division manager (chain of command). </td>
+</tr>
+
+
+<tr>
+<td rowspan="2">009</td>
+<td style="font-weight: bold; background: lightgray;">Chain of Command/coordinateBSCCaseReview</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Chain of Command (Assistant Division Manager) schedules a BSCCase review with the Austin Code Officer, Investigator, Assistant Division Manager, Austin Code Legal Coordinator. The Chain of Command ensures the Checklist is complete, and any additional information necessary for BSCCase.</td>
+</tr>
+
+
+
+</table>
+
+
+<br />
+
+
+
+
+</td></tr></table>
+</td></tr></table></body></html>

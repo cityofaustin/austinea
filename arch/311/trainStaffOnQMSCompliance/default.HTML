@@ -1,0 +1,134 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Train Staff on QMS Compliance</title>
+<link rel="Stylesheet" href="http://austinea.org/style/hover.css" type="text/css" />
+</head>
+<body bgcolor="#ddd8c2">
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="650" align="center">
+<tr><td style="padding: 0;" height="130" valign="top"><a href="http://austinea.org">
+<img src="http://austinea.org/image/iTHeader.jpg" alt="austinea.org - home..." border="0"></a></td></tr>
+<!-- Text Area -->
+<tr><td>
+
+<p style="text-align: center; font-weight: bold;">Train Staff on QMS Compliance<br />Use Case Specification</p>
+<p style="text-align: center;">06/21/16
+
+<!--  IF Printable document option Included  
+<p style="text-align: center;">download <a href="http://austinea.org/arch/as/***.docx">printable version</a>
+-- >
+
+<b> Animal Services Logical Data Model </b>            
+<!-- Image -  Logical Data Model 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="http://austinea.org/arch/as/ldm.jpg"><img src="http://austinea.org/arch/as/ldm.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Animal Services Logical Data Model</p>
+</td></tr></table> -->
+
+<!-- USE CASE IMAGE -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/311/trainStaffonQMSCompliance/ucd.jpg"><img src="http://austinea.org/arch/311/trainStaffonQMSCompliance/ucd.jpg" border="0" alt="" width="620"/></a><br />
+<span style="font-weight: bold;">Train Staff on QMS Compliance<br />Use Case Model</span>
+</td></tr></table>
+
+<p><b>Scope: </b>A TrainingCase is created by Document Approver (Process Supervisor) when training is identified for a QMSProcess/Document change. TrainingCases are sent to Trainees. Each Trainee must be trained on the ISOProcess change (Process or Document). The Trainee acknowledges the TrainingCase (read and understood the training, need more training, or does not apply to job), date/time captured. 
+If the Trainee needs more training the Process Supervisor is notified the Trainee needs more training. The Process Supervisor coordinates additional training for Trainees. The Trainee must acknowledge they've read and understood the TrainingCase after additional training.
+If the Trainee indicates the TrainingCase does not apply to their job, the Process Supervisor reviews the Trainee response and determines if the TrainingCase truly doesn't apply to the Trainee's job. If the Process Supervisor doesn't concur with the Trainee's decision the TrainingCase is sent back to the Trainee. The Trainee must acknowledge they've read and understood the TrainingCase if the Process Supervisor doesn't concur.
+Once all Trainees have responded the TrainingCase is closed. 
+  
+
+
+
+<!-- IF INTERACTION OVERVIEW IS INCLUDED 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/as/***.jpg"><img src="http://austinea.org/as/code/***.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Interaction Overview</span>
+</td></tr></table>
+-->
+
+<!-- ACTIVITY DIAGRAM -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/311/trainStaffOnQMSCompliance/ad01.jpg"><img src="http://austinea.org/arch/311/trainStaffOnQMSCompliance/ad01.jpg" border="0" alt="" width="600"/></a><br />
+<span style="font-weight: bold;">Train Staff on QMS Compliance<br />Activity Diagram</span>
+</td></tr></table>
+
+
+
+<br />
+
+
+<!-- SEQUENCE DIAGRAM                  
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/311/abatePropertyWithContractor/sd01.jpg"><img src="http://austinea.org/arch/311/abatePropertyWithContractor/sd01.jpg" border="0" alt="" width="600"/></a><br />
+<span style="font-weight: bold;">Train Staff on QMS Compliance<br />Sequence Diagram</span>
+</td></tr></table>
+<br />
+--> 
+
+<!-- INTERFACE TABLE  -->
+<table align="center" id="custom">
+<tr><th width="9%">Req#</th><th width="70%">Type/Interface - Requirement Description</th><th>Performance</th></tr>
+<tr>
+<td rowspan="2">001</td>
+<td style="font-weight: bold; background: lightgray;">Document Approver/Create Training Case and Distribute to Trainees</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Document Approver creates TrainingCases for eachTrainee required to be trained on the ISODocument. TrainingCases are distributed by the system to Trainees.</td>
+</tr>
+<tr>
+<td rowspan="2">002</td>
+<td style="font-weight: bold; background: lightgray;">Trainee/Review Training Case and Determine Acknowledgement</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Trainee reviews the TrainingCase and determines if the TrainingCase applies to their job, they understand the TrainingCase, or require additional training. The Trainee updates the TrainingCase with their notes and acknowledgment. If the TrainingCase doesn't apply to their job the TrainingCase is routed to the Process Supervisor for further review. If the Trainee requires additional training, the TrainingCase is routed to the Process Supervisor to coordinate further training. If the TrainingCase has been acknowledged by all Trainees then the process is complete. If the TrainingCase was returned from a Process Supervisor indicating it is applicable to the Trainee's job, the Trainee acknowledges the TrainingCase. If a Trainee received extra training on the TrainingCase the trainee acknowledges the TrainingCase.</td>
+</tr>
+<tr>
+<td rowspan="2">003</td>
+<td style="font-weight: bold; background: lightgray;">Process Supervisor/Review Trainee Response and Determine if Training Case Applies to Job</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Process Supervisor reviews the Trainees acknowledgment that the TrainingCase doesn't apply to their job. The Process Supervisor determines if the TrainingCase applies. If the TrainingCase doesn't apply the Process Supervisor leaves the non-applicable designation on the TrainingCase, adds their notes of concurrence, and the process ends when the remaining TrainingCases are acknowledged. If the Process Supervisor determines the TrainingCase is applicable, the process Supervisor sends the TrainingCase back to the Trainee to acknowledge.</td>
+</tr>
+<tr>
+<td rowspan="2">004</td>
+<td style="font-weight: bold; background: lightgray;">Process Supervisor/Coordinate Additional Training for Trainee</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Process Supervisor receives a TrainingCase from a Trainee that requests additional training to understand the TrainingCase. The Process Supervisor coordinates additional training with a Trainer and submits a TrainingRequest to the Trainer. The Process Supervisor updates the TrainingCase with their notes on the work requested.</td>
+</tr>
+<tr>
+<td rowspan="2">005</td>
+<td style="font-weight: bold; background: lightgray;">Trainer/Train Staff on Training Case</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Trainer receives the TrainingRequest and TrainingCase. The Trainer trains the Trainee on the TrainingCase, updates the TrainingCase with notes on their training, and routes the TrainingCase back to the Trainee to acknowledge.</td>
+</tr>
+<tr>
+
+
+
+
+
+</table>
+
+
+<br />
+
+
+
+
+</td></tr></table>
+</td></tr></table></body></html>

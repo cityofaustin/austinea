@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<title>Convention Center "Process Change Order"</title>
+<link rel="StyleSheet" href="http://austinea.org/style/email.css" type="text/css">
+</head>
+<body>
+
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="600" align="center"><tr><td>
+
+<!-- Online reference -->
+<p><class="lbl">Note: This report is also <a href="http://austinea.org/arch/acc/report/update072214.html" style="font-size: 7pt;">available online</a> by following link.</p>
+
+<div>
+<p>Hi All,</p> 
+</div>
+
+<p>Attached is the information for the "Process Change Order" use case that was reviewed July 22th, 2014, with the Public Works Team. Please take a moment to check my work and let me know if there are any changes I can make to improve this, or if this requirement is as discussed! </p> <p>
+
+<p>
+
+
+<!-- Signature-->
+<table cellpadding="0" cellspacing="0" border="0" width="350" style="border-collapse: collapse;"><tr><td>
+<p>Cheers!</p>
+
+<table cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;" align="right">
+<tr>
+<td>
+<img src="http://austinea.org/image/austinLogo.jpg" border="0" width="100" height="100" alt="Austin Logo" />
+</td>
+</tr>
+</table>
+<p><img src="http://coawss3a.coacd.org/sites/CTM/EA/Shared Documents/Images/ABSIG.JPG" border="0" width="143" height="83" alt="sign" /> </p>
+
+<p><b>Aaron Brown</b> 
+<span style="color: red; font-weight: bold;">|</span> 
+<b>City of Austin</b>
+<a href="http://www.linkedin.com/in/austnaaron"><img src="http://journeycolorado.com/images/linkedin.jpg" border="0" alt="Linkin Logo" /> </a> <br />
+Senior IT Enterprise Architect<br />
+Direct: (512) 974-2960 </p>
+Email: Aaron.Brown2@austintexas.gov </p>
+</td></tr></table>
+
+
+<!-- Use case information below -->
+
+<hr>
+
+<!-- Muni Court Requirements Model -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="right">
+<tr>
+<td align="center">
+<span class="lbl">Note: Select to download</span><br />
+<a href="http://austinea.org/arch/pwd/report/processChangeOrderUseCase.jpg"><img src="http://austinea.org/arch/pwd/report/processChangeOrderUseCase.jpg" border="0" width="200" alt="" /></a><br />
+<span style="font-weight: bold;">Process Change Order<br />Use Case</span>
+</td></tr></table>
+
+
+<p><b>Use Case Scope</b></p>
+<p>Either the Contractor or the Inspector (the Change Order Creator) determine there is a need for a change order. One of them accesses the system and inputs the change order information associated with a CIP Id. The Change Order Creator They both sign the change order and hand off to the Inspection Supervisor for their approval. The System routes to each person in the chain of command for their respective approvals. The System notifies the next person in the chain their time to approve the change order has come, when the previous person approves the change order. The system provides a mechanism do assign a date/time and signature, indicating approval. The System will offer the approval in the following order: Inspector, Inspector Supervisor, Design Professional, Project Manager, Sponsor, Sponsor's Financial Representative, Project Manager Supervisor, COA Sponsors & External Sponsors, and Contract Management. </p> <p>
+The system sends notification to the project manager upon Contract Management Division approval. The Project Manager is notified that money is encumbered to FDU's, associated with the change order. 
+The Project manager examines eCapris (COA Financial System) to guarantee the encumbered values match as a form of verification. </p>
+
+<!-- Image -  Sequence Diagram -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="http://austinea.org/arch/pwd/report/processChangeOrderSequenceDiagram01.jpg"><img src="http://austinea.org/arch/pwd/report/processChangeOrderSequenceDiagram01.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Process Change Order</p>
+</td></tr></table> 
+
+
+
+<p style="font-weight: bold; text-align: center;">Process Change Order Interface Descriptions</p>
+<!-- Table definition -->
+<table align="center" id="custom">
+<tr><th width="195">Type/Interface</th><th>Description</th></tr>
+<tr>
+<td>Administer Capital Construction Data/ <br /> enterChangeOrder</td> <td>The Change Order Requestor accesses the system and enters the Need for a Change associated with a project. They specify the Capital Improvement Sub Project Id number, and the system automatically fills in header information. Header information includes: Project name, Department, Funding Codes, Contractor Name, Contractor Address, Contract No., Date, Estimate Number, Vendor Code, Capital improvement project inspector, inspection field office, Capital improvement project inspector, professional engineering field office, project manager, Managing Department, change order no. , page no., and submission date on the system.The Change order requestor then fills in the detail associated with the change: Each Change order has many listed rows of items. Each Item has the following: Item No (alpha numeric from contract specification numbers, Change Order Category: AA (Add Alternate),AB (Acceleration Bonus),AD (Allowance decrease), AI (Allowance Increase), AM(Alternate Methods), CC (Changed Conditions <default>), CI (Code Interpretation), CO (Close Out), CR (Credit To Owner), CS (Consultant/Contractor/Supplier Suggestion), DC (delay Costs), DD (Design Deficiency), DO (Design Other), HM (Hazardous Materials), LD (Liquidated Damages), RC (regulatory Change), UC (Utility Conflicts), UR (User Request). Item funding resources/ sources, description of item, quantity, unit, unit cost, amount (quantity * unit cost), days added (subtotal for amount), (subtotal for days added), , signatures (contractor's rep., consultant or owner rep, Inspection Supervisor, Project Manager, Sponsor Department, Sponsor Department Financial Rep) and titles / dates. The Change Order screen also provides totals for: Amount and Percent of this change order, Amount & Percent of Sum of previous change orders, Amount and Percent of total change orders to date (inclusive of this new one!) The system Indicates if the Total change Amount is over 5%, or 25% (performance indicator for PMD) which are flags for legal issues with the change order. Additionally, the contractor provides percentage on an item by item basis for how much of the item was provided in support of Minority Businesses, broken up by:African American (MB), Hispanic (MH), Native/Asian American (MA), Minority Business Enterprise (MBE), Women Owned Business Enterprise (WBE) , Non-minority Woman Business Enterprise (NON M/WBE) The Contractor supplies:Original Contract Days, Contract Days to date, Total Contract Days to Date (inclusive of this new one). The Change order Screen includes a Disclaimer statement as follows: "In consideration of the change order, agreed to herein as complete, equitable adjustments, and full and final payment for the contractors additional work, the contractor hereby releases the owner of any and all liability under this contract for further equitable adjustments, including additional time for performance, attributable to such facts or circumstances giving rise to the proposal for adjustment."
+ </td> </tr>
+ 
+<tr>
+<td>Administer Capital Construction Data/ <br /> notifyContractorPMAndInspectorOfChangeRequest</td> <td>The system will automatically send an email notification to the Inspector and the Contractor indicating a Change order has been entered onto the system and needs their review. The notification includes the contractor and Sub Project Id number.</td> </tr>
+
+<tr>
+<td>Administer Capital Construction Data/ <br /> evaluateChangeOrder</td> <td>The User accesses the System to verify the change order. They specify the Capital Improvement Sub Project Id number, and the system automatically locates all change orders associated with the project (both approved and unapproved.) The User selects the appropriate change order and examines the information provided. The User has the ability to cut and paste from the change order screen, and can choose to initiate email to any of the project members in reference to information on the change order screen. </td> </tr>
+
+<tr>
+<td>Administer Capital Construction Data/<br /> approveChangeOrder</td> <td>The User accesses the System to verify the change order. They specify the Capital Improvement Sub Project Id number, and the system automatically locates all change orders associated with the project (both approved and not approved.) The User selects the appropriate change order and examines the information provided. If all elements of the change order are correct, the User uses the system to Approve the change from their perspective. The system records the user ID, date and time the person approved the change Order.  </td> </tr>
+
+<tr>
+<td>Administer Capital Construction Data/ <br /> notifyInspectionSupervisorOfChangeOrder</td> <td>The System Automatically sends a notification to the Inspection Supervisor indicating a change order is has been entered on the system and has been approved by the Contractor and Inspector. The notification includes the contractor, Sub Project Id number, the approvers, dates and times of the approvals given already for the change order and the date and time the change order was added to the system.  </td> </tr>
+
+<tr>
+<td>Administer Capital Construction Data/<br /> notifyDesignProfessionalForChangeOrder</td> <td>The System Automatically sends a notification to the Design Professional indicating a change order has been entered on the system and has been approved by the Contractor and Inspector and Inspection Supervisor. The notification includes the contractor, Sub Project Id number, the approvers, dates and times of the approvals given already for the change order and the date and time the change order was added to the system. </td> </tr>
+
+
+<tr>
+<td>Administer Capital Construction Data/<br /> notifyProjectManagerOfChangeOrder</td> <td>The System Automatically sends a notification to the Project Manager indicating a change order has been entered on the system and has been approved by the Contractor, Inspector, Inspector Supervisor, and Design Professional (if necessary.) The notification includes the contractor, Sub Project Id number, the approvers, dates and times of the approvals given already for the change order and the date and time the change order was added to the system. </td> </tr>
+
+
+<tr>
+<td>Administer Capital Construction Data/<br /> notifyAllSponsorsOfChangeOrder</td> <td>The System Automatically sends a notification to all Sponsors of the project indicating a change order has been entered on the system and has been approved by the Contractor and Inspector and Inspection Supervisor, Design Professional and Project Manager. The notification includes the contractor, Sub Project Id number, the approvers, dates and times of the approvals given already for the change order and the date and time the change order was added to the system.  </td> </tr>
+
+
+
+<tr>
+<td>Administer Capital Construction Data/<br /> notifySponsorFinancialOfChangeOrder</td> <td>The System Automatically sends a notification to Sponsor Financial Representative for the project indicating a change order has been entered on the system and has been approved by the Contractor and Inspector and Inspection Supervisor, Design Professional, Project Manager, and sponsors. The notification includes the contractor, Sub Project Id number, the approvers, dates and times of the approvals given already for the change order and the date and time the change order was added to the system.  </td> </tr>
+
+
+<tr>
+<td>Administer Capital Construction Data/<br /> notifyProjectManagerSupervisorOfChangeOrder</td> <td>The System Automatically sends a notification to the Project Manager Supervisor indicating a change order has been entered on the system and has been approved by the Contractor and Inspector and Inspection Supervisor, Design Professional and all sponsors of the project. The notification includes the contractor, Sub Project Id number, the approvers, dates and times of the approvals given already for the change order and the date and time the change order was added to the system.  </td> </tr>
+
+
+
+<tr>
+<td>Administer Capital Construction Data/<br /> notifyCOADepartmentOfChangeOrder</td> <td>The System Automatically sends a notification to all Sponsors of the project indicating a change order has been entered on the system and has been approved by the Contractor and Inspector and Inspection Supervisor, Design Professional, Project Manager and Sponsors. The notification includes the contractor, Sub Project Id number, the approvers, dates and times of the approvals given already for the change order and the date and time the change order was added to the system.  </td> </tr>
+
+
+<tr>
+<td>Administer Capital Construction Data/<br /> notifyProjectTeamChangeOrderSubmittedToContractManagement</td> <td>The System automatically sends a notification to All members of the team, indicating a change order has been entered on the system and has been approved by all required parties. The notification includes the contractor, Sub Project Id number, the approvers, dates and times of the approvals given already for the change order and the date and time the change order was added to the system. The notification cues the team all approvals have been made and the change order has been sent to Contract Management for their review. </td> </tr>
+
+
+<tr>
+<td>Administer Capital Construction Data/<br /> approveChangeOrderAndFund</td> <td>Contract Management will use the system to examine all elements of the project and change order, and will evaluate the changes in accordance with city and state policy, audit and evaluate as deemed appropriate, and will encumber the funds if the changes meet their requirements. </td> </tr>
+
+
+
+<tr>
+<td>Administer Capital Construction Data/<br /> notifyProjectTeamOfChangeOrderApproval</td> <td>The System automatically sends a notification to All members of the team, indicating a change order has been entered on the system and has been approved by all required parties. The notification includes the contractor, Sub Project Id number, the approvers, dates and times of the approvals given already for the change order, and the date and time the change order was added to the system. The notification cues the team all approvals have been made and the change order has been sent to Contract Management for their review, who has reviewed it, approved it and encumbered funds associated with it. This is the actually final Approval message. </td> </tr>
+
+</table>
+
+
+
+<!-- Table definition
+<table align="center" id="custom">
+<tr><th>Number</th><th>Category</th><th>Description</th><th>Criticality</th></tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table> -->
+
+</td></tr></table> 
+
+</td></tr></table>
+</td></tr></table></body></html>

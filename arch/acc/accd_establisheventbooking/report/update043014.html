@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<title>Convention Center "Check In or Check Out Inventory"</title>
+<link rel="StyleSheet" href="http://austinea.org/style/email.css" type="text/css">
+</head>
+<body>
+
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="600" align="center"><tr><td>
+
+<!-- Online reference -->
+<p><class="lbl">Note: This report is also <a href="http://austinea.org/arch/acc/report/update043014.html" style="font-size: 7pt;">available online</a> by following link.</p>
+
+<div>
+<p>Hi All,</p> 
+</div>
+
+<p>Attached is the information for the "Check In or Check Out Inventory" use case that was reviewed last week with the Convention Center Team. Please take a moment to check the work and let me know if there are any changes I can make to improve this, or if this requirement is as discussed! 
+<p>
+
+
+<!-- Signature-->
+<table cellpadding="0" cellspacing="0" border="0" width="350" style="border-collapse: collapse;"><tr><td>
+<p>Cheers!</p>
+
+<table cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;" align="right">
+<tr>
+<td>
+<img src="http://austinea.org/image/austinLogo.jpg" border="0" width="100" height="100" alt="Austin Logo" />
+</td>
+</tr>
+</table>
+<p><img src="http://coawss3a.coacd.org/sites/CTM/EA/Shared Documents/Images/ABSIG.JPG" border="0" width="143" height="83" alt="sign" /> </p>
+
+<p><b>Aaron Brown</b> 
+<span style="color: red; font-weight: bold;">|</span> 
+<b>City of Austin</b>
+<a href="http://www.linkedin.com/in/austnaaron"><img src="http://journeycolorado.com/images/linkedin.jpg" border="0" alt="Linkin Logo" /> </a> <br />
+Senior IT Enterprise Architect<br />
+Direct: (512) 974-2960 </p>
+Email: Aaron.Brown2@austintexas.gov </p>
+</td></tr></table>
+
+
+<!-- Use case information below -->
+
+<hr>
+
+<!-- use case  -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="right">
+<tr>
+<td align="center">
+<span class="lbl">Note: Select to download</span><br />
+<a href="http://austinea.org/arch/acc/report/CheckInOrCheckOutInventoryUseCase.jpg"><img src="http://austinea.org/arch/acc/report/CheckInOrCheckOutInventoryUseCase.jpg" border="0" width="200" alt="" /></a><br />
+<span style="font-weight: bold;">Check In or Check Out Inventory<br />Use Case</span>
+</td></tr></table>
+
+<!-- Use Case Scope  -->
+
+<p><b>Use Case Scope</b></p>
+<p>The Employee accesses the system, and indicates they would like to check out an inventory item. If the employee has the proper skill set, and the item is not reserved or currently in use, the Employee is granted access. If the item is checked out or already reserved the Employee is presented with an option to make a reservation. If necessary, the system communicates with the Key Watcher software to unlock the appropriate keys. The employee can provide a reason for the check out, the work order, the project, and based upon the type of equipment must provide feedback on the condition of the item when it's checked out as well as back in. </p>
+<br>
+<br>
+
+<p><class="lbl">The following Sequence diagram references the "RESERVE INVENTORY" Use case, which can be located by clicking the following link: <a href="http://austinea.org/arch/acc/report/update043014-2.html" style="font-size: 7pt;">Reserve Inventory</a></p>
+
+<!-- Sequence Diagram -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="http://austinea.org/arch/acc/report/CheckInOrCheckOutInventorySequenceDiagram01.jpg"><img src="http://austinea.org/arch/acc/report/CheckInOrCheckOutInventorySequenceDiagram01.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Check In or Check Out Inventory Sequence Diagram</p>
+</td></tr></table> 
+
+
+
+<p style="font-weight: bold; text-align: center;">Check In or Check Out Inventory</p>
+<!-- Table definition -->
+<table align="center" id="custom">
+<tr><th width="195">Type/Interface</th><th>Description</th></tr>
+
+<tr>
+<td>provide Functional Conference and Facility Space/ <br /> login</td> <td>The Employee logs into the System using account name and password. The System returns a status indicating login result. If successful Employee is granted access to system. </td> </tr>
+
+<tr>
+<td>provide Functional Conference and Facility Space/ <br /> chooseInventoryItem</td> <td>The Employee accesses a Search Mechanism and provides Description or Asset ID or Manufacturer and the System provides a list of all Inventory Items matching the Search Criteria. Employee chooses Inventory Item from Inventory List and System retrieves Reservation Info relevant to Inventory Item.</td> </tr>
+
+<tr>
+<td>provide Functional Conference and Facility Space/<br /> returnItemToInventory</td> <td>The Employee identifies the inventory item being returned. The System retrieves the check out Info for the inventory item. The Employee completes a post inspection of the condition of inventory item, if necessary, and returns the key to Key watcher if necessary. The System reads the key fob, identifies the inventory item as being returned, and marks Inventory Record as returned by Employee. The System updates the check out Info for the Inventory Item to indicate the checked in date and time. While the Employee is in the System they are able to perform one or more returns simultaneously.  </td> </tr>
+
+<tr>
+<td>Key Watcher/ <br /> returnItemToInventory</td> <td>The System requests that Key Watcher check in an Inventory Item. Key Watcher locates corresponding Key Number for Inventory Item, updates status to Checked In, and returns Key Number so key may be returned.</td> </tr>
+
+
+
+<tr>
+<td>Key Watcher/<br /> unlockKeyLocker</td> <td>Key Watcher opens the corresponding key locker for the key number. </td> </tr>
+
+<tr>
+<td>provide Functional Conference and Facility Space/ <br /> presentErrorMessage</td> <td>The System presents an error message to the Employee due to conditions not met and writes the error to an error table in the System. The error message is specific to the process being performed to include one of the following possibilities: "Insufficient skill set", "Currently checked out", "Reserved"
+Out of service</td> </tr>
+
+<tr>
+<td>provide Functional Conference and Facility Space/<br /> offerFutureReservation</td> <td>The inventory item is currently reserved, checked out, or out of service, and if inventory item is designated as can be reserved the Employee is presented with an option to make a future reservation. The Employee enters reservation date range. The System provides the Employee with an Inventory List that matches the Inventory Record within the Date Range of items available during the projected dates.</td> </tr>
+
+<tr>
+<td>provide Functional Conference and Facility Space <br /> checkOutInventory</td> <td>If managed by Keywatcher, the System communicates with the Key Watcher system and visually and audibly indicates to the Employee the location of the key for the Inventory Item. The Employee retrieves the key and shuts the key watcher cabinet door. 
+The System updates the Inventory Info with the Employee Name, Check Out Date and Time. The System also updates the Inventory Record to identify that the item is checked out. The Employee accesses the Inventory Item using the key and performs a condition assessment, if necessary. The Employee updates the check out Info for the Inventory Item with condition assessment, reason for check out, project, and any other information required for Inventory Item.</td> </tr>
+
+<tr>
+<td>Key Watcher/<br /> checkOutInventory</td> <td>The System requests that Key Watcher check out an Inventory Item. Key Watcher locates corresponding Key Number for Inventory Item, updates status to Checked Out, and returns Key Number so key may be returned. </td> </tr>
+
+
+</table>
+
+
+
+<!-- Table definition
+<table align="center" id="custom">
+<tr><th>Number</th><th>Category</th><th>Description</th><th>Criticality</th></tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table> -->
+
+</td></tr></table> 
+
+</td></tr></table>
+</td></tr></table></body></html>

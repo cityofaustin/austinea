@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<title>Online Financials</title>
+<link rel="Stylesheet" href="http://austinea.org/style/email.css" type="text/css" />
+</head>
+<body>
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="600" align="center"><tr><td>
+
+<!-- Online reference -->
+<p style="color: gray; font-size: 7pt;">Note: This report is also <a href="http://austinea.org/arch/controller/report/update130726.html" style="font-size: 7pt;">available online</a> by following link.</p>
+
+<p>Bob,</p>
+
+<p>Per our discussion, here's the material we collected relevant to Credit Card online financials. During our collaboration with the Controller's Office, we modeled the &quot;ideal&quot; scenario. Now that we have a vendor onboard, it would be useful to update our model to reflect the &quot;executable&quot; model. Although some may view this activity as unnecessary and possibly lengthen the time to delivery, a financial architecture could be the cornerstone to understand &quot;patterns&quot; of operational use to shorten development time and reusable opportunities. The architectural blueprints can also bridge the gap between the operational community in terms of functional needs and the solution providers. With that said, here's the specification for the ideal solution with some activity comments.</p>
+
+<!-- Image - Perform Online Credit Card Pay for Service Interaction Overview -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="right"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="http://austinea.org/arch/controller/report/performOnlineCreditCardPayforService.jpg"><img src="http://austinea.org/arch/controller/report/performOnlineCreditCardPayforService.jpg" border="0" width="200"></a>
+<p style="text-align: center; font-weight: bold;">Perform Online Credit Card<br>Pay for Service<br>Interaction Overview
+</td></tr></table>
+
+<p style="font-weight: bold;">Perform On-line Credit Card Pay for Service</p>
+
+<p>Scope: The system processes credit card transactions, posts transactions to various billing systems, performs daily deposits to City bank account, processes returned items, reconciles department accounts and processes transactions with the City's general ledger.</p> 
+
+<!-- Image - 1. Process Credit Card Transaction -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="http://austinea.org/arch/controller/report/1ProcessCreditCardTransaction.jpg"><img src="http://austinea.org/arch/controller/report/1ProcessCreditCardTransaction.jpg" border="0" width="200"></a></p>
+<p style="text-align: center; font-weight: bold;">1. Process Credit Card Transaction</p>
+</td></tr></table>
+
+<p style="font-weight: bold;">1. Process Credit Card Transaction
+
+<p>Activity Discussion: Originally, we desired the Online Payment Service to directly interface with the Department Billing System (see diagram) to update the customer transaction items. We now know this isn't possible. Therefore, more thought needs to go into the process needed to update billing system transactional records. For example the optional combined fragment [opt - when updating at single transaction level] is no longer valid. The fix is likely an update to the next step 2. Post to Billing System.
+
+<!-- Image - 2. Post to Billing System -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="http://austinea.org/arch/controller/report/2PosttoBillingSystem.jpg"><img src="http://austinea.org/arch/controller/report/2PosttoBillingSystem.jpg" border="0" width="200"></a>
+<p style="text-align: center; font-weight: bold;">2. Post to Billing System
+</td></tr></table>
+
+<p style="font-weight: bold;">2. Post to Billing System
+
+<p>Activity Discussion: This process and its interfaces may be specific to a particular billing system. It would be useful, however, to identify the business patterns to understand the role of an Enterprise Service Bus (ESB) in facilitating this activity. I believe it's possible to develop a single ESB interface useable by any Department Billing System to obtain department specific transactional records. Although, some billing systems may still require human intervention to update transaction records.
+
+<!-- Image - 3. Perform Daily Deposit -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="http://austinea.org/arch/controller/report/3PerformDailyDeposit.jpg"><img src="http://austinea.org/arch/controller/report/3PerformDailyDeposit.jpg" border="0" width="200"></a>
+<p style="text-align: center; font-weight: bold;">3. Perform Daily Deposit
+</td></tr></table>
+
+<p style="font-weight: bold;">3. Perform Daily Deposit
+
+<p>Activity Discussion: This is not a process under our control; however, it would be useful to understand Payment Transaction attributes and its relationship to the Bank Deposit.
+
+<!-- Image - 4. Process Returned Item -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="http://austinea.org/arch/controller/report/4ProcessReturnedItem.jpg"><img src="http://austinea.org/arch/controller/report/4ProcessReturnedItem.jpg" border="0" width="200"></a>
+<p style="text-align: center; font-weight: bold;">4. Process Returned Item
+</td></tr></table>
+
+<p style="font-weight: bold;">4. Process Returned Item
+
+<p>Activity Discussion: With our new vendor onboard, we'll need to rethink this process model. ESB may have a significant role here as well.
+
+<!-- Image - 5. Reconcile Accounts and Process General Ledger Batch -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="http://austinea.org/arch/controller/report/5ReconcileAccountsandProcessGeneralLedgerBatch.jpg"><img src="http://austinea.org/arch/controller/report/5ReconcileAccountsandProcessGeneralLedgerBatch.jpg" border="0" width="200"></a>
+<p style="text-align: center; font-weight: bold;">5. Reconcile Accounts and Process General Ledger Batch
+</td></tr></table>
+
+<p style="font-weight: bold;">5. Reconcile Accounts and Process General Ledger Batch
+
+<p>Activity Discussion: With our new Online Payment Service vendor, this process and its relevant interfaces are likely to require significant changes. After we explore and understand the operational patterns, ESB could play a significant role for a more efficient solution.
+
+<p><b>Logical Data Model</b></p>
+
+<!-- Image - Logical Data Model -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="http://austinea.org/arch/controller/report/logicalDataModel.jpg"><img src="http://austinea.org/arch/controller/report/logicalDataModel.jpg" border="0" width="200"></a>
+<p style="text-align: center; font-weight: bold;">Logical Data Model
+</td></tr></table>
+
+<p>The logical data model is out of date based on our vender selection. Once we identify or rename logical data elements based on the actual process (services), we'll need to update the logical data model along the way.</p>
+
+<p>Let me know if you have any questions. 
+
+<!-- Table definition
+<table align="center" id="custom">
+<tr><th>Number</th><th>Category</th><th>Description</th><th>Criticality</th></tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table> -->
+
+<!-- Signature -->
+<table cellpadding=0 cellspacing=0 border=0 width="350" style="border-collapse: collapse;"><tr><td>
+<p>Respectfully,
+<table cellpadding=0 cellspacing=0 border=0 style="border-collapse: collapse;" align="right"><tr><td>
+<img src="http://austinea.org/image/austinLogo.jpg" border="0" width="100">
+</td></tr></table>
+<p><img src="http://journeycolorado.com/images/signature.jpg" border="0" width="150">
+<p style="font-size: 8pt;"><b>Rob Byrd</b> <span style="color: red; font-weight: bold;">|</span> <b>City of Austin</b>
+<a href="http://www.linkedin.com/in/robbyrd"><img src="http://journeycolorado.com/images/linkedin.jpg" border="0"></a><br>
+Chief Enterprise Architect - Corporate<br>
+Direct: (512) 974-1615 | Mobile: (512) 431-0700
+</td></tr></table>
+
+</td></tr></table>
+</td></tr></table></body></html>

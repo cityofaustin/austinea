@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<title>Muni Court "File for Motion' Requirements</title>
+<link rel="StyleSheet" href="http://austinea.org/style/email.css" type="text/css">
+</head>
+<body>
+
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="600" align="center"><tr><td>
+
+<!-- Online reference -->
+<p><class="lbl">Note: This report is also <a href="http://austinea.org/arch/municourt/report/update130822.html" style="font-size: 7pt;">available online</a> by following link.</p>
+
+<div>
+<p>Muni Court Architecture Team,</p> 
+</div>
+
+<p>Attached is the information for the "File for Representation" use case that was reviewed last week with the team. Please take a moment to check my work and let me know if there are any changes I can make to improve this, or if this requirement is as discussed! 
+<p>
+
+
+<!-- Signature-->
+<table cellpadding="0" cellspacing="0" border="0" width="350" style="border-collapse: collapse;"><tr><td>
+<p>Respectfully,</p>
+
+<table cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;" align="right">
+<tr>
+<td>
+<img src="http://austinea.org/image/austinLogo.jpg" border="0" width="100" height="100" alt="Austin Logo" />
+</td>
+</tr>
+</table>
+<p><img src="http://coawss3a.coacd.org/sites/CTM/EA/Shared Documents/Images/ABSIG.JPG" border="0" width="143" height="83" alt="sign" /> </p>
+
+<p><b>Aaron Brown</b> 
+<span style="color: red; font-weight: bold;"></span> 
+<b>City of Austin</b>
+<a href="http://www.linkedin.com/in/austnaaron"><img src="http://journeycolorado.com/images/linkedin.jpg" border="0" alt="Linkin Logo" /> </a> <br />
+Senior Enterprise Architect<br />
+Direct: (512) 974-2960 </p>
+Email: Aaron.Brown2@austintexas.gov </p>
+</td></tr></table>
+
+
+<!-- Use case information below -->
+
+<hr>
+
+<!-- Muni Court Requirements Model -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="right">
+<tr>
+<td align="center">
+<span class="lbl">Note: Select to download</span><br />
+<a href="http://austinea.org/arch/municourt/report/fileForRepresentationUseCase.jpg"><img src="http://austinea.org/arch/municourt/report/fileForRepresentationUseCase.jpg" border="0" width="200" alt="" /></a><br />
+<span style="font-weight: bold;">File For Representation<br />Use Case</span>
+</td></tr></table>
+
+
+<p><b>Use Case Scope</b></p>
+<p>The Defense Attorney uses the web presence to locate their case. The web presence provides case information. The Attorney chooses an option for 'Filing Representation' on a specific case (if it is offered.) The web presence provides two options "new Attorney" and "sign in". If The Attorney is already vetted and has a password, they use the "Sign in" to log onto the system. If the Attorney is already qualified on the system, and there is no representation on the case already, and there is no disposition on the case, the Attorney is assigned as a case party. The case file is updated with the information that web activity has occurred, and an email is sent to the Attorney confirming the change to the case. </p> 
+
+<p>For a new Attorney who has not be previously vetted, and has no current password for the system, the Attorney is presented a form to fill out. The form is pre-populated with Case information. The Attorney provides their name and Bar Card Number. Once the form is submitted, the Attorney's application is added to a "New Attorney Queue". An Email is generated to the Attorney with a confirmation of submission. The Attorney will be called/vetted, and a password is set for their future use on the system. </p>
+
+<!-- Image - File For Representation Sequence Diagram -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="http://austinea.org/arch/municourt/report/fileForRepresentationSequenceDiagram01.jpg"><img src="http://austinea.org/arch/municourt/report/fileForRepresentationSequenceDiagram01.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">File for Representation Sequence Diagram</p>
+</td></tr></table> 
+
+
+<p style="font-weight: bold; text-align: center;">File For Representation Interface Descriptions</p>
+<!-- Table definition -->
+<table align="center" id="custom">
+<tr><th width="195">Type/Interface</th><th>Description</th></tr>
+<tr>
+<td>Web Presence/ <br /> requestCaseFile</td> <td>The system prompts for a case file number. No identity is required for retrieval of case information, as all details displayed are public record.</td> </tr>
+<tr>
+<td>Manage Court Case/ <br /> retrieveCaseFileByCaseNumber</td> <td>The Web Presence interfaces with the system to retrieve a Case File based on a case number provided.</td> </tr>
+<tr>
+<td>Manage Court Case/<br /> determineOption</td> <td>When a user selects a particular Case File of interest from the Web Presence, the system determines the various options available to the User. The system provides a Municipal Court staff configurable rules engine to allow Court Staff to modify business rules associated with the options provided to the User. The rules engine provides a customizable response based on current Case File attributes such as warrant status, age of Defendant or Respondent, attorney assigned to the case, and plea state (just to name a few) leading to the options provided to the User. Depending on Municipal Court Staff needs, some responses will be non-selectable and grayed out providing indication to the User why the legal option is not selectable. Because laws frequently change, it's important the options are not hard coded into the case management system; rather, the system should allow the Court Staff to make appropriate option changes using customizable rules filter.</td> </tr>
+<tr>
+<td>Web Presence/ <br /> selectOption</td> <td>Based on a customizable Option rules engine, the User is provided a list of options to proceed with the Case File. To reduce confusion, some of the options (determined by Court Staff) will be grayed out and non-selectable with an explanation as to why the Option is not available. When selecting the option, the user will need to provide confirmation of the legal option selected.</td> </tr>
+<tr>
+<td>Manage Court Case/ <br /> fileForRepresentation</td> <td>The Web Presence has provided information about a case and indicates a user has specified they would like to file for Representation for the case. This option will only be offered if the configurable rules engine dictates a ruleset in which the option should appear. The option will not be selectable if there is already representation for the case, or if there is no disposition on the case. </td> </tr>
+<tr>
+<td>Web Presence/ <br /> identifyAttorney</td> <td>The system presents a login to an Attorney for validation of their identity. It presents two options; either a logon id / Password, or the option to establish themselves as a new Attorney on the system.</td> </tr>
+<tr>
+<td>Manage Court Case/ <br /> updateCaseRepresentation</td> <td>The system assigns a validated Attorney to a case file. In order for the system to successfully assign the Attorney, the Attorney must already be qualified on the system, there is no representation on the case already, and there is no disposition on the case at the time of assignment. </td> </tr>
+<tr>
+<td>Manage Court Case/ <br /> provideNewAttorneyForm</td> <td>The Web Presence receives a request to establish a new Attorney on the system, and requests the Court Management System provide the mechanism by which Attorneys register.</td> </tr>
+<tr>
+<td>Web Presence/<br /> completeNewAttorneyForm</td> <td>The system presents a form of fields for an applicant to complete related to establishing themselves as an Attorney within the system. The Attorney completes the form (application) and on completion and submission, the system presents a completed view for final acceptance into the system./td> </tr>
+<tr>
+<td>Manage Court Case/ <br /> AddAttorneyToNewAttorneyQueue</td> <td>A new Attorney application has been completed and is placed in the New Attorney Queue for review and validation. Note: There is a desire for this functionality to become automated in the future, with an interface to the Texas State Bar Association.</td> </tr>
+<tr>
+<td>Manage Court Case/ <br /> sendNotificationToAttorney</td> <td>The System generates a notification in response to either a New Attorney Application or a Request to File for Representation on a case. The system sends notification to the address linked (and verified) with the Attorney's identity. The system records the date and time the notification is sent to the Attorney. If an Attorney has filed for representation on a specific case, the Email provides a summary of case information, including but not limited to the Attorney of Representation. If the notification is in response to a New Attorney Application, the date and time the application was submitted to the new Attorney queue is provided.</td> </tr>
+
+
+</tr>
+</table>
+
+
+
+<!-- Table definition
+<table align="center" id="custom">
+<tr><th>Number</th><th>Category</th><th>Description</th><th>Criticality</th></tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table> -->
+
+</td></tr></table> 
+
+</td></tr></table>
+</td></tr></table></body></html>

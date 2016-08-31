@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Obtain Permits</title>
+<link rel="Stylesheet" href="http://austinea.org/style/email.css" type="text/css" />
+</head>
+<body>
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="600" align="center"><tr><td>
+
+<!-- Online reference -->
+<p><span class="lbl">Note: This report is also <a href="http://austinea.org/arch/pdr/report/manageEngineering130812.html" style="font-size: 7pt;">available online</a> by following link.</span></p>
+
+<div>
+<p>This report contains the details of our last meeting regarding the Unified Modeling Language (UML) Use Case to Obtain Permits. This is a continuance from our previous Use Case to <a href="http://austinea.org/arch/pdr/report/manageEngineering130724.html">Perform Regulatory Review / Review Submittal Package</a>. You can follow the link to this report. As an update to our previous work, we added two new messages (interfaces) to the architecture to accommodate the creation of a Project Folder as an interface to the Issue Permits capability (i.e., AMANDA). Throughout the architecture we used Issue Permits as the capability verses the actual system AMANDA. This is standard architecture practice as not to impose a solution onto the system; rather, explore the capability in it's ideal form. The following diagram (last two messages) and table provides just the update to our previous Use Case model.</p>
+</div>
+
+<!-- Review Submittal Package -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Note: Select to view</span><br />
+<a href="http://austinea.org/arch/pdr/report/reviewSubmittalPackage.jpg"><img src="http://austinea.org/arch/pdr/report/reviewSubmittalPackage.jpg" border="0" width="200" alt="" /></a><br />
+<span style="font-weight: bold;">Sequence Diagram<br />Review Submittal Package</span>
+</td></tr></table>
+<!-- Table of Interface Descriptions -->
+<p style="text-align: center; font-weight: bold;">Table of Interface Descriptions<br />Review Submittal Packages</p>
+
+<table align="center" id="custom">
+<tr><th>Type/Interface</th><th>Description</th></tr>
+
+<tr>
+<td>Perform Design Review/<br />createProjectInformation</td>
+<td>Once a Submittal Package obtains final approval, the system generates the necessary Project Information compatible with the Issue Permits capability. The Project Information intakes all relevant attributes of the Submittal Package to include relevant diagrams, project information, contact information, personal identification number (PIN), contractor, identified permit requirements, etc. to automatically populate the Issue Permits system.</td>
+</tr>
+
+<tr>
+<td>Issue Permits/<br />createProjectFolder</td>
+<td>Project Information is used to create a Project Folder (case package) containing all the relevant information required to process and obtain city permits.</td>
+</tr>
+
+</table>
+
+<div>
+<p>The following Use Case is particular to Obtain Permits as we discussed during our last meeting. Please review and be prepared to discuss during our next meeting. Note: I did not include the predefined contractor escrow accounts, because this is actually a separate Use Case discussion - something like Manage Contractor Escrow Accounts and should be handled separately.</p>
+</div>
+
+<!-- Image Title -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Note: Select to view</span><br />
+<a href="http://austinea.org/arch/pdr/report/obtainPermits.jpg"><img src="http://austinea.org/arch/pdr/report/obtainPermits.jpg" border="0" width="200" alt="" /></a><br />
+<span style="font-weight: bold;">Sequence Diagram Obtain Permits</span>
+</td></tr></table>
+
+<!-- Table of Interface Descriptions -->
+<p style="text-align: center; font-weight: bold;">Table of Interface Descriptions<br />Obtain Permits</p>
+
+<table align="center" id="custom">
+<tr><th>Type/Interface</th><th>Description</th></tr>
+
+<tr>
+<td>Issue Permits/<br />obtainPermit</td>
+<td>During the final review and approval of a Submittal Package, the review Notification provides a link (URL) with Project Information encoded in the link containing information that directs the Submittal Applicant to the correct location to obtain required permits. This message directs the Submittal Applicant to the proper URL where the system looks up relevant permit information.</td>
+</tr>
+
+<tr>
+<td>Issue Permits/<br />lookUpPermitStatus</td>
+<td>The system looks up the Project Information encoded into the obtainPermit URL and presents the Submittal Applicant with options to submit for selected permits previously identified during the Perform Regulatory Review process. The Submittal Applicant owner (owner is defined as residing one calendar year with homestead exemption) is also provided options to transfer building permit and cancel trade permit (if permit was previously issued).</td>
+</tr>
+
+<tr>
+<td>Issue Permits/<br />selectPermitOption</td>
+<td>The Submittal Applicant selects the desired permit for the system to issue.</td>
+</tr>
+
+<tr>
+<td>Issue Permits/<br />determineRemittance</td>
+<td>Based on the permit selected, the system automatically determines the Remittance required and presents the Remittance information to the Submittal Applicant with indication of selected form of payment (i.e., credit card, ACH, etc.). The Remittance amounts must be modifiable by identified city staff and not hard coded into the system.</td>
+</tr>
+
+<tr>
+<td>Issue Permits/<br />payRemittance</td>
+<td>Using traditional online Electronic Financial Services approved by the city, the Submittal Applicant pays the required Remittance and receives Acknowledgment of payment.</td>
+</tr>
+
+<tr>
+<td>Issue Permits/<br />issuePermit</td>
+<td>When the system receives the proper Acknowledgment that the payment transaction was successful, the system prepares the selected permit in a printable form (i.e., PDF, etc.).</td>
+</tr>
+
+<tr>
+<td>Issue Permits/<br />acknowledgeInspectionResponsibility</td>
+<td>Once a permit is prepared by the system, the system indicates to the Submittal Applicant responsibility for proper inspection and provides selected indication that this responsibility is accepted before a printable permit is issued by the system.</td>
+</tr>
+
+<tr>
+<td>Submittal Applicant/<br />printPermitAsRequired</td>
+<td>Once the Submittal Applicant acknowledges inspection responsibility, the system provides a printable permit to display on construction site if required.</td>
+</tr>
+
+<tr>
+<td>Issue Permits/<br />transferBuildingPermit</td>
+<td>There are circumstances when the permit owner (Submittal Applicant) may wish to transfer a building permit to a prescribed contractor. The Submittal Applicant enters relevant information into the system that clearly identifies the contractor receiving the transferred building permit and stores it into the system. Once transferred, the contractor plays the role of Submittal Applicant to obtain future permits relevant to the Project Information associated with the case file building permit.</td>
+</tr>
+
+<tr>
+<td>Issue Permits/<br />cancelTradePermit</td>
+<td>The Submittal Applicant (owner) can cancel trade permits already issued. Owner is defined as residing one calendar year with homestead exemption. If an inspection already occurred at the time of cancellation, there is no refund of Remittance; otherwise, a percentage of the Remittance is returned to Electronic Financial Service account. If a refund is issued, a new contractor must pay 100% of the required Remittance. If no refund issued, the contractor must pay 50% of the required Remittance to reissue the permit.</td>
+</tr>
+
+</table>
+
+<!-- Image Title
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="right"><tr><td align="center">
+<span class="lbl">Note: Select to download</span><br />
+<a href="http://austinea.org/"><img src="http://austinea.org/" border="0" width="200" alt="" /></a><br />
+<span style="font-weight: bold;">Image Title</span>
+</td></tr></table> -->
+
+<!-- Table definition
+<table align="center" id="custom">
+<tr><th>Number</th><th>Category</th><th>Description</th><th>Criticality</th></tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table> -->
+
+<div>
+<p>Feel free to pipe-in with any comments or improvements to the verbiage used in the specifications identified in the tables.</p>
+</div>
+
+<!-- Signature -->
+<table cellpadding="0" cellspacing="0" border="0" width="350" style="border-collapse: collapse;"><tr><td>
+<p>Respectfully,</p>
+<table cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;" align="right"><tr><td>
+<img src="http://austinea.org/image/austinLogo.jpg" border="0" width="100" height="100" alt="Austin Logo" />
+</td></tr></table>
+<p><img src="http://journeycolorado.com/images/Signature.jpg" border="0" width="143" height="83" alt="sign" /></p>
+<p><b>Rob Byrd</b> <span style="color: red; font-weight: bold;">|</span> <b>City of Austin</b>
+<a href="http://www.linkedin.com/in/robbyrd"><img src="http://journeycolorado.com/images/linkedin.jpg" border="0" alt="LinkedIn Logo" /></a><br />
+Chief Enterprise Architect - Corporate<br />
+Direct: (512) 974-1615 | Mobile: (512) 431-0700</p>
+</td></tr></table>
+
+</td></tr></table>
+</td></tr></table></body></html>

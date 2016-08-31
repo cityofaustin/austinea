@@ -1,0 +1,261 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Real Estate Inventory System Memo</title>
+<link rel="Stylesheet" href="http://austinea.org/style/memo.css" type="text/css" />
+</head>
+<body bgcolor="#ddd8c2">
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="8" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="650" align="center"><tr><td>
+
+<!-- Online reference
+<p class="lbl">This report is also <a href="http://austinea.org/arch/realEstate/report/councilMemo.html">available online</a> by following link.</p> -->
+
+<!-- Memo Header -->
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse;" width="650" align="center">
+<tr><td colspan="3" align="center" style="font-weight: bold; font-size: 12pt;"><img src="http://austinea.org/image/austinLogoMemo.jpg" alt="" width="130" height="130"><br /><br />
+M E M O R A N D U M</td><td></td><td></td></tr>
+<tr><td style="font-weight: bold;"><p>TO:</p><p>FROM:</p><p>DATE:</p><p>SUBJECT:</p></td>
+<td style="font-weight: bold;" width="265">
+<p>Mayor and Council</p>
+<p>Rob Byrd, Chief Enterprise Architect</p>
+<p>September 13, 2013</p>
+<p>Real Estate Inventory System</p>
+</td>
+<td><img src="http://journeycolorado.com/images/Signature.jpg" border="0" width="143" height="83" alt="sign" /></td>
+</tr></table>
+<hr />
+
+<!-- Image Title
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="right"><tr><td align="center">
+<span class="lbl">Note: Select to enlarge</span><br />
+<a href="http://austinea.org/arch/realEstate/realEstateVision.jpg" target="new_window"><img src="http://austinea.org/arch/realEstate/realEstateVision.jpg" border="0" width="200" alt="" /></a><br />
+<span style="font-weight: bold;">Real Estate Inventory System<br />Vision/Mission/Goals</span>
+</td></tr></table> -->
+
+<p>The City's Enterprise Architecture (EA) Office, in coordination with the Real Estate Services Office, is undergoing a concerted effort to collect the operational requirements to develop a Citywide Real Estate Inventory System (REIS) per City Council guidance and <a href="http://www.austintexas.gov/sites/default/files/files/Auditor/au12125.pdf">City Auditor recommendation</a>. To communicate REIS scope, the Real Estate Services Office staff developed and coordinated the following vision and mission statements:
+
+<p><b><u>Vision:</u></b><br />
+<i>Comprehensive knowledge of all City owned real property and easements to include relevant details for any given property, to include status, location, staff location, maintenance information, environmental considerations, covenants, use restrictions, leasing, etc. implemented using a well-managed information technology strategy.</i></p>
+<p><b><u>Mission:</u></b><br />
+<i>Develop and evolve integrated real estate information sources, identify relevant roles and responsibilities and department operational needs under the guidance and approval of relevant city leadership.</i></p>
+
+<p>The purpose of REIS includes, but is not limited to, the following capabilities:</p>
+
+<ul>
+<li>Lease and Manage City Properties</li>
+<li>Procure Leases</li>
+<li>Sell City Owned Properties</li>
+<li>Acquire Fee Simple Tracts and Easements</li>
+<li>Manage and Coordinate Eminent Domain Cases</li>
+<li>Process Street/Right of Way Vacations and Easement Releases</li>
+<li>Manage Property Assets</li>
+<li>Process Parkland Dedication and Donations</li>
+</ul>
+
+<p>The table below identifies known city real estate information sources. The City's Enterprise Architecture Office is working closely with each POC to develop department specific operational need specifications and a citywide logical data model for REIS - this activity is essential to ensure REIS satisfies departmental needs. During this activity, EA may be required to document department processes in order to understand the information in context of operational use and to identify important interfaces to inter-department or outside information sources.</p>
+
+<div align=center>
+
+<p align="center" style="font-weight: bold;">Table of Real Estate Information Sources</p>
+
+<table border=0 cellspacing=0 cellpadding=0 width=600 style="border-collapse: collapse" id="custom">
+ <tr>
+  <th nowrap valign=top>Office</th>
+  <th>Responsibility</th>
+  <th nowrap valign=top>POC</th>
+ </tr>
+ <tr>
+  <td nowrap valign=top>Austin Energy</td>
+  <td valign=top>Public Involvement &amp; Real Estate Services</td>
+  <td nowrap valign=top>Sonny Poole</td>
+ </tr>
+ <tr>
+  <td nowrap valign=top>Aviation</td>
+  <td valign=top>Airport DB - Easements, Grant, Deed, etc.</td>
+  <td nowrap valign=top>Joseph Medici</td>
+ </tr>
+ <tr>
+  <td nowrap valign=top>Building Services</td>
+  <td valign=top>FM Interact DB (facility location/structure attributes)</td>
+  <td nowrap valign=top>David Cudzilo</td>
+ </tr>
+ <tr>
+  <td nowrap valign=top>Controller's Office</td>
+  <td valign=top>City Asset List</td>
+  <td nowrap valign=top>Diana Thomas</td>
+ </tr>
+ <tr>
+  <td nowrap valign=top>County Clerk's Office</td>
+  <td valign=top>Deed Record</td>
+  <td nowrap valign=top>N/A</td>
+ </tr>
+ <tr>
+  <td nowrap valign=top>Fire Department</td>
+  <td valign=top>Hydrant Locations/Fire Battalion Chief</td>
+  <td nowrap valign=top>David Brietzke</td>
+ </tr>
+ <tr>
+  <td nowrap valign=top>Human Resources Department</td>
+  <td valign=top>Work Location/Risk Management Database</td>
+  <td nowrap valign=top>Perry Perez</td>
+ </tr>
+ <tr>
+  <td nowrap valign=top>Outside Source</td>
+  <td valign=top>TCAD/WCAD/HCAD (historical information)</td>
+  <td nowrap valign=top>N/A</td>
+ </tr>
+ <tr>
+  <td nowrap valign=top>Public Works</td>
+  <td valign=top>ROW DB (pavements, street furniture, street trees, bicycle
+  facilities, license agreements, encroachment)</td>
+  <td nowrap valign=top>Robert Hinojosa</td>
+ </tr>
+ <tr>
+  <td nowrap valign=top>Real Estate Services</td>
+  <td valign=top>Cemetery Plots</td>
+  <td nowrap valign=top>Eric Hammack</td>
+ </tr>
+ <tr>
+  <td nowrap valign=top>Real Estate Services</td>
+  <td valign=top>Fat Book</td>
+  <td nowrap valign=top>Michael Gates</td>
+ </tr>
+ <tr>
+  <td nowrap valign=top>Real Estate Services</td>
+  <td valign=top>Green Card/Encroachment</td>
+  <td nowrap valign=top>Chris Muraida</td>
+ </tr>
+ <tr>
+  <td nowrap valign=top>Real Estate Services</td>
+  <td valign=top>PDR Plans/Black Book/Parcel Maps</td>
+  <td nowrap valign=top>Marsha Schulz</td>
+ </tr>
+ <tr>
+  <td nowrap valign=top>Real Estate Services</td>
+  <td valign=top>Real Estate Access Database</td>
+  <td nowrap valign=top>Mashell Smith</td>
+ </tr>
+ <tr>
+  <td nowrap valign=top>Real Estate Services</td>
+  <td valign=top>Real Estate GIS Layer (easements/parcels) /Shared Drive</td>
+  <td nowrap valign=top>Charles Boas</td>
+ </tr>
+ <tr>
+  <td nowrap valign=top>Real Estate Services</td>
+  <td valign=top>ROW DB</td>
+  <td nowrap valign=top>Liz Hargrove</td>
+ </tr>
+ <tr>
+  <td nowrap valign=top>Transportation Department</td>
+  <td valign=top>ROW DB (signs, signals, markings, pay stations, meters)</td>
+  <td nowrap valign=top>Andy Halm</td>
+ </tr>
+ <tr>
+  <td nowrap valign=top>Water Utility</td>
+  <td valign=top>List of Real Estate Assets</td>
+  <td nowrap valign=top>Eric Sermeno</td>
+ </tr>
+ <tr>
+  <td nowrap valign=top>Water Utility Wildlands Division</td>
+  <td valign=top>Land Conservation and Habitat Protection</td>
+  <td nowrap valign=top>William Conrad</td>
+ </tr>
+ <tr>
+  <td nowrap valign=top>Watershed</td>
+  <td valign=top>Flooding, Erosion, and Water Quality</td>
+  <td nowrap valign=top>Mike Personett</td>
+ </tr>
+</table>
+
+</div>
+
+<p>Through EA analysis, we determined that REIS is not as simple as consolidating real estate information into a single database. As shown on the table above, City-owned real estate information is used by various department roles throughout the City. Therefore, an operational analysis is required to ensure REIS provides the relevant data attributes to enable various department purpose and value. City departments maintain real estate information differently because the purpose varies significantly between them. As a result, each department developed their own database to suit their needs.</p>
+
+<p>Experience has shown that databases that don't provide useful purpose relevant to the desired outcome (i.e., reports, search elements, attribute stored values, etc.) are not used and duplicative databases are created and maintained leading to data concordance (differences between the data sources) - eventually leading to inaccurate information. This is likely the situation which has led to the city's current state. Furthermore, real estate attribute values must synchronize with unavoidable outside sources such as county deed management systems. Enterprise Architecture, therefore, is addressing these issues.</p>
+
+<p>Through operational analysis, EA is examining each department data source (i.e., Excel spreadsheets, MS Access databases, flat-files, outside sources, etc.) and evaluating the information's purpose and use. Using these sources, EA is creating a Citywide logical data model to be used as a requirements baseline to eliminate data concordance for final development by a selected vendor. There are other benefits to this approach as well.</p>
+
+<p>The operational need specifications and logical data model provide a requirements baseline to write the statement of work (SOW) scope, which substantially reduces vendor risk and overall cost to the city. Also, because EA is performing the operational analysis, the city does not incur additional costs for a vendor provided analysis and solution design.</p>
+
+<p>The following table represents anticipated tasks and dates to develop a citywide Real Estate Information System.</p>
+
+<div align="center">
+<p style="font-weight: bold;">Anticipated Schedule for REIS Acquisition Activities</p>
+<!-- Table definition -->
+<table id="custom" width=600>
+<tr><th>Task</th><th width="120">Tentative Dates</th><th>Description</th></tr>
+
+<tr>
+<td>Enterprise Architecture Operational Need Specification and Logical Data Model Development</td>
+<td>Present - Dec 13</td>
+<td>Perform business analysis of department data/information sources, determine operational need specifications and incorporate into a citywide logical data model solution.</td>
+</tr>
+
+<tr>
+<td>Develop Statement of Work and Elicit Solution Provider</td>
+<td>Jan 14 - Apr 14</td>
+<td>Write statement of work using the Enterprise Architecture, elicit and select qualified database developer.</td>
+</tr>
+
+<tr>
+<td>Develop and Implement Solution</td>
+<td>May 14 - Aug 14</td>
+<td>Vendor uses citywide developed REIS Enterprise Architecture to develop and test solution.</td>
+</tr>
+</table>
+</div>
+
+<p>In addition to the proposed acquisition activities, city leadership must reevaluate current real estate information ownership policy and procedures. Database access controls must be evaluated and established to include Service Level Agreement (SLA) with Communications and Technology Management (CTM) to ensure effective performance, service maintenance, information protection and disaster recovery.</p>
+
+<p>We estimate an initial startup cost for REIS at ~$192K with an annual operating cost of $12K per year. Please let me know if you have any questions or concerns.</p>
+
+<p>&nbsp;</p>
+<!-- Image Title
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="right"><tr><td align="center">
+<span class="lbl">Note: Select to download</span><br />
+<a href="http://austinea.org/"><img src="http://austinea.org/" border="0" width="200" alt="" /></a><br />
+<span style="font-weight: bold;">Image Title</span>
+</td></tr></table> -->
+
+<!-- Table definition
+<table align="center" id="custom">
+<tr><th>Number</th><th>Category</th><th>Description</th><th>Criticality</th></tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table> -->
+
+<!-- Signature
+<table cellpadding="0" cellspacing="0" border="0" width="400" style="border-collapse: collapse;"><tr><td>
+<p>Respectfully,</p>
+<table cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;" align="right"><tr><td>
+<img src="http://austinea.org/image/austinLogo.jpg" border="0" width="100" height="100" alt="Austin Logo" />
+</td></tr></table>
+<p><img src="http://journeycolorado.com/images/Signature.jpg" border="0" width="143" height="83" alt="sign" /></p>
+<p><b>Rob Byrd</b> <span style="color: red; font-weight: bold;">|</span> <b>City of Austin</b>
+<a href="http://www.linkedin.com/in/robbyrd"><img src="http://journeycolorado.com/images/linkedin.jpg" border="0" alt="LinkedIn Logo" /></a><br />
+Chief Enterprise Architect - Corporate<br />
+Direct: (512) 974-1615 | Mobile: (512) 431-0700</p>
+</td></tr></table> -->
+
+<table cellpadding="0" cellspacing="0" border="0" width="400" style="border-collapse: collapse;">
+<tr>
+<td valign="top" width="25">cc:</td>
+<td valign="top">
+Marc Ott<br />
+Anthony Snipes<br />
+Sue Edwards<br />
+Lauraine Rizer<br />
+Stephen Elkins<br />
+Kenneth Mory</td>
+</tr>
+</table>
+
+</td></tr></table>
+</td></tr></table></body></html>

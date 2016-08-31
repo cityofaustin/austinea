@@ -1,0 +1,185 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<title>Convention Center "Provision Work Order</title>
+<link rel="StyleSheet" href="http://austinea.org/style/email.css" type="text/css">
+</head>
+<body>
+
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="600" align="center"><tr><td>
+
+<!-- Online reference -->
+<p><class="lbl">Note: This report is also <a href="http://austinea.org/arch/acc/report/update032614.html" style="font-size: 7pt;">available online</a> by following link.</p>
+
+<div>
+<p>Hi All,</p> 
+</div>
+
+<p>Attached is the information for the "Provision Work Order" use case that was reviewed last week with the Convention Center Team. Please take a moment to check my work and let me know if there are any changes I can make to improve this, or if this requirement is as discussed! 
+<p>
+
+
+<!-- Signature-->
+<table cellpadding="0" cellspacing="0" border="0" width="350" style="border-collapse: collapse;"><tr><td>
+<p>Cheers!</p>
+
+<table cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;" align="right">
+<tr>
+<td>
+<img src="http://austinea.org/image/austinLogo.jpg" border="0" width="100" height="100" alt="Austin Logo" />
+</td>
+</tr>
+</table>
+<p><img src="http://coawss3a.coacd.org/sites/CTM/EA/Shared Documents/Images/ABSIG.JPG" border="0" width="143" height="83" alt="sign" /> </p>
+
+<p><b>Aaron Brown</b> 
+<span style="color: red; font-weight: bold;">|</span> 
+<b>City of Austin</b>
+<a href="http://www.linkedin.com/in/austnaaron"><img src="http://journeycolorado.com/images/linkedin.jpg" border="0" alt="Linkin Logo" /> </a> <br />
+Senior IT Enterprise Architect<br />
+Direct: (512) 974-2960 </p>
+Email: Aaron.Brown2@austintexas.gov </p>
+</td></tr></table>
+
+
+<!-- Use case information below -->
+
+<hr>
+
+<!-- Muni Court Requirements Model -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="right">
+<tr>
+<td align="center">
+<span class="lbl">Note: Select to download</span><br />
+<a href="http://austinea.org/arch/acc/report/ProvisionWorkOrderUseCase.jpg"><img src="http://austinea.org/arch/acc/report/ProvisionWorkOrderUseCase.jpg" border="0" width="200" alt="" /></a><br />
+<span style="font-weight: bold;">Provision Work Order<br />Use Case</span>
+</td></tr></table>
+
+
+<p><b>Use Case Scope</b></p>
+<p>The Maintenence Worker uses the System to review work order assignments from the Maintenence Supervisor. They Evaluate the Duty Plan, examining the priorities specified, and choose a "START TIME" for the Work Order Item on which they are about to work. The System will only allow one work item to be started. all other items started will be paused until they are subsequently started again. Once a work order item is completed, the Maintenence Worker chooses "finished." The System tracks the start date, start time, completed date, completed time, and the composite time for each task. 
+During the Work Order maintenence, new or existing parts may be provisioned via the Materials Planner, approvals or rescheduling may be needed from the Maintenence Supervisor. 
+Sometimes Security Staff is needed for gaining access to secured areas. (Money room, accounting room, First aid room, Locked down areas, vandalism, building damage, etc. )</p>
+
+<!-- Image - File For Motion Sequence Diagram -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="http://austinea.org/arch/acc/report/ProvisionWorkOrderSequenceDiagram01.jpg"><img src="http://austinea.org/arch/acc/report/ProvisionWorkOrderSequenceDiagram01.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Provision Work Order Sequence Diagram</p>
+</td></tr></table> 
+
+
+
+<p style="font-weight: bold; text-align: center;">Provision Work Order Interface Descriptions</p>
+<!-- Table definition -->
+<table align="center" id="custom">
+<tr><th width="195">Type/Interface</th><th>Description</th></tr>
+<tr>
+<td>Provide Functional Conference and Facility Space/ <br /> examineAffectedPartInventoryRecord</td> <td>The Maintenance Manager uses the System to examine the Parts Inventory and associated Information (Vendor Warranty, Last Maintenance Company, When Installed, etc) to determine the Vendor to contact for repair. </td> </tr>
+<tr>
+<td>Service Contractor/ <br /> requestVendorInformation</td> <td>The Maintenance Supervisor contacts the Service Contractor to request information and Quote (Costs, Parts, Labor Availability, etc) in preparation for Requesting a Purchase Order. </td> </tr>
+<tr>
+<td>Provide Functional Conference and Facility Space/<br /> attachVendorQuoteAndNotifyMaintenaceManager</td> <td>The Maintenance Supervisor uses the System to attached the Vendor Quote and send a notification to the Maintenance Manager for Approval.</td> </tr>
+
+<tr>
+<td>Maintenance Manager/<br /> requestApprovalOfVendorQuote</td> <td>The System notifies the Maintenance Manager of a Work Order requiring External Contract Assistance and indicating the Maintenance Supervisor has received and attached a Quote from the Vendor. </td> </tr>
+
+<tr>
+<td>Provide Functional Conference and Facility Space/ <br /> approveExternalContractWork</td> <td>The Maintenance Manager uses the System to Approve the Vendor Quote for Contract Work.</td> </tr>
+
+<tr>
+<td>Provide Functional Conference and Facility Space/<br /> notifyOfWorkOrderUpdate</td> <td>The System updates and sends a Notification of the Current Status of the Work Order to all Persons of Interest (Configurable and Role-Based)e </td> </tr>
+
+
+<tr>
+<td>Provide Functional Conference and Facility Space/ <br /> requestPurchase</td> <td>The Maintenance Supervisor uses the System to route a Request for Purchase to a Buyer for a Work Order associated with a specific Service Contractor.</td> </tr>
+<tr>
+
+<td>Provide Functional Conference and Facility Space/ <br /> requestBuyerCreatePurchaseOrder</td> <td>The System sends a message to the Buyer specified via the Purchase Request notifying them of a Work Order that requires external Service Contractor involvement. The Message includes: Work Order Number, Vendor Name, Vendor Quote, Date Needed By, Date Requested, Funding Information. </td> </tr>
+
+<tr>
+<td>Provide Functional Conference and Facility Space/<br /> createPurchaseOrder</td> <td>The Buyer uses the System to create a Purchase Order associated with the Work Order. The System sends notification to the Maintenance Supervisor indicating the Vendor can be Scheduled. </td> </tr>
+
+<tr>
+<td>Provide Functional Conference and Facility Space/ <br /> determineAffectedAreas</td> <td>The System assesses the Work Order to determine availability of impacted space (ie. Air Handler systems may indicate area(s) served and/or location availability) and provides a calendar of usage opportunities.</td> </tr>
+
+
+<tr>
+<td>Service Contractor/ <br /> requestAndScheduleWork</td> <td>The Maintenance Supervisor contacts the Service Contractor to schedule the required work. The Service Contractor indicates the Dates and Times they are available to perform the work.</td> </tr>
+
+
+
+<tr>
+<td>Provide Functional Conference and Facility Space/ <br /> checkMaintenanceWorkerAvailabilityAndSkills</td> <td>The Maintenance Supervisor accesses the System and evaluates a Pending Work Order. The System displays available Workers whose Skill Set matches the needs of the Work Order and shows their Availability. </td> </tr>
+
+
+
+<tr>
+<td>Provide Functional Conference and Facility Space/ <br /> assignWorkOrder</td> <td>The Maintenance Supervisor uses the System to assign/reassign/add Maintenance Workers to the Work Order. </td> </tr>
+
+
+
+<tr>
+<td>Provide Functional Conference and Facility Space/ <br /> requestSecurityServices</td> <td>The System sends an email to request assistance by Security to access locations that are restricted, indicating time, date, location of work to be done, work Order Number.</td> </tr>
+
+
+
+<tr>
+<td>Provide Functional Conference and Facility Space/ <br /> startWorkOrderTask</td> <td>The Maintenance Worker starts the Work Order Task to which they are assigned. This starts or resumes a Timer. The Timer can be started and stopped for the duration of the entire Work Order or for specific Work Order Tasks.</td> </tr>
+
+
+
+<tr>
+<td>Maintenance Supervisor/ <br /> requestAdditionalInternalLabor</td> <td>The Maintenance Worker requests additional Internal Labor from the Maintenance Supervisor. Note: This is normally a verbal communication.</td> </tr>
+
+
+
+<tr>
+<td>Provide Functional Conference and Facility Space/ <br /> createPartsRequest</td> <td>The Maintenance Worker uses the System to create a Parts Request to include: Part Number, Description, Vendor/Manufacturer, Quantity, What it's for, Work Order Number (auto-fill), When Needed.</td> </tr>
+
+
+
+<tr>
+<td>Materials Planner/ <br /> requestParts</td> <td>The System sends a notification to the Materials Planner indicating a Parts Request has been entered in association with a Work Order, Inventory Need, Tool Need, Personal Protection Equipment (PPE) Need, etc. that needs provisioning. </td> </tr>
+
+
+<tr>
+<td>Provide Functional Conference and Facility Space/ <br /> placeWorkOrderOnHold</td> <td>A Maintenance Supervisor or Materials Planner accesses the System to change the Status of the Work Order to 'On Hold', effectively stopping any Timers that have been started.</td> </tr>
+
+
+<tr>
+<td>Provide Functional Conference and Facility Space/ <br /> notifyMaintenanceSupervisorOfWorkOrderStatusChange</td> <td>The System sends an email to all Personnel configured to receive notification that Work Order Status has changed, the Reason for the Change, the Work Order Number, Date and Time of Status Change, Projected Impacts, Projected New Completion Date and Time.</td> </tr>
+
+
+<tr>
+<td>Provide Functional Conference and Facility Space/ <br /> pauseTask</td> <td>The Maintenance Worker uses the System to Pause the Timer associated with a specific Task or entire Work Order, in order to address Other Activities or times when Work if not needed (waiting for glue to dry, paint to dry, etc)</td> </tr>
+
+<tr>
+<td>Provide Functional Conference and Facility Space/ <br /> restartTask</td> <td>The Maintenance Worker uses the System to Restart the Timer associated with a specific Task or entire Work Order, indicating they are once again Active on the Work Order.</td> </tr>
+
+<tr>
+<td>Provide Functional Conference and Facility Space/ <br /> completeTask</td> <td>The Maintenance Worker uses the System to indicate they have finished a specific Task or entire Work Order and stop all Timers associated.</td> </tr>
+
+
+
+</table>
+
+
+
+<!-- Table definition
+<table align="center" id="custom">
+<tr><th>Number</th><th>Category</th><th>Description</th><th>Criticality</th></tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table> -->
+
+</td></tr></table> 
+
+</td></tr></table>
+</td></tr></table></body></html>

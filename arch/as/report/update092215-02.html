@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<title>Animal Services "Manage Rescue Placement "</title>
+<link rel="StyleSheet" href="http://austinea.org/style/email.css" type="text/css">
+</head>
+<body>
+
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="600" align="center"><tr><td>
+
+<!-- Online reference -->
+<p><class="lbl">Note: This report is also <a href="http://austinea.org/arch/as/report/update092215-02.html" style="font-size: 7pt;">available online</a> by following link.</p>
+
+<div>
+<p>Hi All,</p> 
+</div>
+
+<p>Attached is the information for the updated "Manage Rescue Placement" use case that was reviewed September 22, 2015, with the Animal Services Team. Please take a moment to check my work and let me know if there are any changes I can make to improve this, or if this requirement is as discussed!  </p> <p>
+
+Additionally, I wanted to let you know the Online repository of Animal Services Use Cases is now up to date ( http://austinea.org/arch/as/report/index.html ).
+<p>
+
+
+<!-- Signature-->
+<table cellpadding="0" cellspacing="0" border="0" width="350" style="border-collapse: collapse;"><tr><td>
+<p>Cheers!</p>
+
+<table cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;" align="right">
+<tr>
+<td>
+<img src="http://austinea.org/image/austinLogo.jpg" border="0" width="100" height="100" alt="Austin Logo" />
+</td>
+</tr>
+</table>
+<p><img src="http://coawss3a.coacd.org/sites/CTM/EA/Shared Documents/Images/ABSIG.JPG" border="0" width="143" height="83" alt="sign" /> </p>
+
+<p><b>Aaron Brown</b> 
+<span style="color: red; font-weight: bold;">|</span> 
+<b>City of Austin</b>
+<a href="http://www.linkedin.com/in/austnaaron"><img src="http://journeycolorado.com/images/linkedin.jpg" border="0" alt="Linkin Logo" /> </a> <br />
+Senior IT Enterprise Architect<br />
+Direct: (512) 974-2960 </p>
+Email: Aaron.Brown2@austintexas.gov </p>
+</td></tr></table>
+
+
+<!-- Use case information below -->
+
+<hr>
+
+<b> Animal Shelter Logical Data Model </b>
+<!-- Image -  Logical Data Model -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="http://austinea.org/arch/as/report/animalShelterLogicalDataModel.jpg"><img src="http://austinea.org/arch/as/report/animalShelterLogicalDataModel.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Animal Shelter Logical Data Model</p>
+</td></tr></table> 
+
+<!--  Requirements Model -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="right">
+<tr>
+<td align="center">
+<span class="lbl">Note: Select to download</span><br />
+<a href="http://austinea.org/arch/as/report/manageRescuePlacementUseCase.jpg"><img src="http://austinea.org/arch/as/report/manageRescuePlacementUseCase.jpg" border="0" width="200" alt="" /></a><br />
+<span style="font-weight: bold;">Manage Rescue Placement<br />Use Case</span>
+</td></tr></table>
+
+
+
+
+
+<p><b>Use Case Scope</b></p>
+<p>The Rescue Coordinator advertises animals available for placement within Rescue Groups affiliated with Animal Services. When a Rescue Organization responds with interest, the Animal Services Contact will arrange for the animal's placement. If the animal is old enough for spay/neuter and has no prohibitive health issues, the Animal Services Contact will make arrangements for the animal to get spay/neutered. They will communicate to the Rescue Organization when they should pick up the animal.
+If the age of the animal or health of the animal makes spay/neuter undesirable, the Animal Services Contact will create a vet-care letter outlining the timing for the animal's surgery, and instructions for any medications the animal may need. If the City of Austin Veterinarian dictates specific medication is needed for a preexisting condition, the Rescue Organization will sign the vet-care letter indicating they understand the requirements and timelines defined within the letter.
+Note: It is not uncommon for the Rescue Organization to be provided vouchers for grooming or boarding depending on the circumstances.
+</p>
+
+<!-- Image -  Sequence Diagram -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="http://austinea.org/arch/as/report/manageRescuePlacementSequenceDiagram01.jpg"><img src="http://austinea.org/arch/as/report/manageRescuePlacementSequenceDiagram01.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Manage Rescue Placement Sequence Diagram</p>
+</td></tr></table> 
+
+
+
+<p style="font-weight: bold; text-align: center;">Manage Rescue Placement Interface Descriptions</p>
+<!-- Table definition -->
+<table align="center" id="custom">
+<tr><th width="195">Type/Interface</th><th>Description</th></tr>
+<tr>
+<td>Rescue Coordinator/ <br /> advertiseAnimalforRescue</td> <td>The Rescue Coordinator generates a report listing the description of animal, medical history, behavior observed, behavior profile (any recorded/documented behavior), microchip information, rabies information, animal's name, age, intake date, breed, color, spay/neuter date, vaccinations, medications the animal has been on, any vet exam, and any surgeries. The Rescue Coordinator emails the appropriate Rescue Organizations with the gathered information. Additionally, if merited by situation, vouchers may be offered for grooming, boarding and vet care. </td> </tr>
+
+<tr>
+<td>Rescue Coordinator/ <br /> provideRescueAnimalInfo</td> <td>The Rescue Organization responds to the Rescue Coordinator's email expressing interest in an animal that has been advertised. They specify when they will pick up the animal. </td> </tr>
+ 
+<tr>
+<td>Animal Services Contact/<br /> scheduleSurgeryAndPickupOfAnimal</td> <td>The Animal Services Contact checks availability on the COA surgery list in the system, and adds the animal to an available time slot. Lastly, the Animal Services Contact sends an email to the Rescue Organization indicating when the animal will be available for pickup. </td> </tr>
+
+<tr>
+<td>Provide Animal Rescue and Shelter/<br /> assignAnimalToSurgeryList</td> <td>The Animal Services Contact checks the system and assigns an animal to the first available timeslot for surgery. </td> </tr>
+
+<tr>
+<td>Animal Services Contact/<br /> createVetCareLetter</td> <td>The Animal Services Contact prints out a spay and neuter agreement, a vet-care letter, and all paperwork, which includes: description of animal, medical history, behavior observed, behavior profile (any recorded/documented behavior), microchip information, rabies information, animal's name, age, intake date, breed, color, spay/neuter date, vaccinations, medications the animal has been on, any vet exam, and any surgeries. </td> </tr>
+
+<tr>
+<td>Provide Animal Rescue and Shelter/<br /> printVetCareLetter</td> <td>The Animal Services Contact uses the system to print the Vet Care Packet. </td> </tr>
+
+<tr>
+<td>Rescue Organization/<br /> signVetCareLetter</td> <td>The Animal Services Contact provides documentation for the Rescue Organization to sign to commit to getting the animal spayed or neutered. </td> </tr>
+
+</table>
+
+
+
+<!-- Table definition
+<table align="center" id="custom">
+<tr><th>Number</th><th>Category</th><th>Description</th><th>Criticality</th></tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table> -->
+
+</td></tr></table> 
+
+</td></tr></table>
+</td></tr></table></body></html>

@@ -1,0 +1,144 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Create Court Packet</title>
+<link rel="Stylesheet" href="http://austinea.org/style/hover.css" type="text/css" />
+</head>
+<body bgcolor="#ddd8c2">
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="650" align="center">
+<tr><td style="padding: 0;" height="130" valign="top"><a href="http://austinea.org">
+<img src="http://austinea.org/image/iTHeader.jpg" alt="austinea.org - home..." border="0"></a></td></tr>
+<!-- Text Area -->
+<tr><td>
+
+<p style="text-align: center; font-weight: bold;">Create Court Packet<br />Use Case Specification</p>
+<p style="text-align: center;">9/17/2015
+
+<!--  IF Printable document option Included  
+<p style="text-align: center;">download <a href="http://austinea.org/arch/as/***.docx">printable version</a>
+-- >
+
+<b> Austin Code Logical Data Model </b>
+<!-- Image -  Logical Data Model
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="http://austinea.org/arch/code/austinCodeLogicalDataModel.jpg"><img src="http://austinea.org/arch/code/austinCodeLogicalDataModel.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Austin Code Logical Data Model</p>
+</td></tr></table>  -->
+
+<!-- USE CASE IMAGE -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/code/createCourtPacket/ucd.jpg"><img src="http://austinea.org/arch/code/createCourtPacket/ucd.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Create Court Packet<br />Use Case Model</span>
+</td></tr></table>
+
+<p><b>Scope: </b>The Austin Code Officer creates an Affidavit and then assembles a CourtPacket. The Austin Code Officer then creates a LegalCase in the Case Management System. Alternatively, the Case Management System creates the Affidavit, per the Austin Code Officer's request, the system also creates the CourtPacket, and the LegalCase. The Austin Code Officer requests the Chain of Command review the CourtPacket. The Chain of Command reviews the CourtPacket and if changes are required, sends notes back on the requested changes. If approved, the Chain of Command signs the MunicipalCourtChecklist. The Chain of Command returns the CourtPacket to the Austin Code Officer. If the Case Management System was used to generate the court documents, then the Chain of Command accesses the CourtPacket in the Case Management System to provide notes and their approval. The process of creating the CourtPacket and requesting approval from the Chain of Command loops until the CourtPacket is approved. The Austin Code Officer requests a Notary notarize the Affidavit.
+
+
+<!-- IF INTERACTION OVERVIEW IS INCLUDED 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/code/***.jpg"><img src="http://austinea.org/arch/code/***.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Interaction Overview</span>
+</td></tr></table>
+-->
+
+
+<br />
+
+
+<!-- SEQUENCE DIAGRAM  -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/code/createCourtPacket/sd01.jpg"><img src="http://austinea.org/arch/code/createCourtPacket/sd01.jpg" border="0" alt="" width="600"/></a><br />
+<span style="font-weight: bold;">Create Court Packet<br />Sequence Diagram</span>
+</td></tr></table>
+<br />
+
+
+<!-- INTERFACE TABLE  -->
+<table align="center" id="custom">
+<tr><th width="9%">Req#</th><th width="70%">Type/Interface - Requirement Description</th><th>Performance</th></tr>
+<tr>
+<td rowspan="2">001</td>
+<td style="font-weight: bold; background: lightgray;">Austin Code Officer/createAffidavit</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Officer creates an Affidavit (either search warrant, or event/probable cause), using CodeCase information.</td>
+</tr>
+<tr>
+<td rowspan="2">002</td>
+<td style="font-weight: bold; background: lightgray;">Austin Code Officer/createCourtPacket</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Officer creates the CourtPacket which includes the Affidavit, CodeViolationCase (for supporting case history, Photographs, Violations), NoticeOfViolation, and Property (TCAD/WCAD information, Owner, etc.).</td>
+</tr>
+<tr>
+<td rowspan="2">003</td>
+<td style="font-weight: bold; background: lightgray;">Case Management System/createLegalCase</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The user accesses the Case Management System and creates a LegalCase. The user identifies the case type (Admin Hearing, Building Standards Commission, Municipal Court, or District Court).</td>
+</tr>
+<tr>
+<td rowspan="2">004</td>
+<td style="font-weight: bold; background: lightgray;">Case Management System/createAffidavit</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The user creates an Affidavit in the system (either search warrant, or event/probable cause), using CodeCase information.</td>
+</tr>
+<tr>
+<td rowspan="2">005</td>
+<td style="font-weight: bold; background: lightgray;">Case Management System/createCourtPacket</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The user accesses the system and creates an Affidavit. The user provides the Affidavit, CodeViolationCase (for supporting case history, Photographs, Violations), NoticeOfViolation, and Property (TCAD/WCAD information, Owner, etc.)</td>
+</tr>
+<tr>
+<td rowspan="2">006</td>
+<td style="font-weight: bold; background: lightgray;">Chain of Command/approveCourtPacket</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Officer delivers the CourtPacket to the Chain of Command and requests the Chain of Command reviews and approves the CourtPacket. If changes are required the Chain of Command doesn't sign the Checklist and provides notes on changes required. If approved, the Chain of Command signs the Checklist. The Chain of Command returns the CourtPacket to the Austin Code Officer.</td>
+</tr>
+<tr>
+<td rowspan="2">007</td>
+<td style="font-weight: bold; background: lightgray;">Case Management System/approveCourtPacket</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The user accesses the system and reviews the CourtPacket in the Case Management System. If changes are required the user updates the CourtPacket with notes and the CourtPacket is returned to the Austin Code Officer. If no changes are required the user approves the CourtPacket.</td>
+</tr>
+
+
+<tr>
+<td rowspan="2">008</td>
+<td style="font-weight: bold; background: lightgray;">Notary/notarizeAffidavit</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Officer requests a Notary within the Austin Code Department to notarize the Affidavit. The Notary notarizes the Affidavit and returns to the Austin Code Officer.</td>
+</tr>
+
+
+
+</table>
+
+
+<br />
+
+
+
+
+</td></tr></table>
+</td></tr></table></body></html>

@@ -1,0 +1,138 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Configure Report</title>
+<link rel="Stylesheet" href="http://austinea.org/style/hover.css" type="text/css" />
+</head>
+<body bgcolor="#ddd8c2">
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="650" align="center">
+<tr><td style="padding: 0;" height="130" valign="top"><a href="http://austinea.org">
+<img src="http://austinea.org/image/iTHeader.jpg" alt="austinea.org - home..." border="0"></a></td></tr>
+<!-- Text Area -->
+<tr><td>
+
+<p style="text-align: center; font-weight: bold;">Configure Report<br />Use Case Specification</p>
+<p style="text-align: center;">03/22/16
+
+<!--  IF Printable document option Included  
+<p style="text-align: center;">download <a href="http://austinea.org/arch/as/***.docx">printable version</a>
+-- >
+
+<b> Animal Services Logical Data Model </b>            
+<!-- Image -  Logical Data Model 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="http://austinea.org/arch/as/ldm.jpg"><img src="http://austinea.org/arch/as/ldm.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Animal Services Logical Data Model</p>
+</td></tr></table> -->
+
+<!-- USE CASE IMAGE -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/311/configureReport/ucd.jpg"><img src="http://austinea.org/arch/311/configureReport/ucd.jpg" border="0" alt="" width="620"/></a><br />
+<span style="font-weight: bold;">Configure Report<br />Use Case Model</span>
+</td></tr></table>
+
+<p><b>Scope: </b>A CRM User accesses the system and creates a ReportChange. The system updates the WorkQueue for the assigned Report Manager from the ReportChange. The Report Manager accesses the system and queries their WorkQueue. The Report Manager creates or updates the requested Report, and requests the system publishes the Report to the desired CRMSystem. If a ReportSchedule is required to automate running or sending the Report, the Report Manager creates or updates the appropriate ReportSchedule. The Report Manager updates the ReportChange with information on the work completed and the system updates the WorkQueue for the CRM User responsible for reviewing the Report.  
+
+
+
+<!-- IF INTERACTION OVERVIEW IS INCLUDED 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/as/***.jpg"><img src="http://austinea.org/as/code/***.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Interaction Overview</span>
+</td></tr></table>
+-->
+
+
+<br />
+
+
+<!-- SEQUENCE DIAGRAM  -->                 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/311/configureReport/sd01.jpg"><img src="http://austinea.org/arch/311/configureReport/sd01.jpg" border="0" alt="" width="600"/></a><br />
+<span style="font-weight: bold;">Configure Report<br />Sequence Diagram</span>
+</td></tr></table>
+<br />
+
+
+<!-- INTERFACE TABLE  -->
+<table align="center" id="custom">
+<tr><th width="9%">Req#</th><th width="70%">Type/Interface - Requirement Description</th><th>Performance</th></tr>
+<tr>
+<td rowspan="2">001</td>
+<td style="font-weight: bold; background: lightgray;">Provide Customer Relationship Management/createReportChangeRequest</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>A CRM User submits a ReportChange in the system. The CRM User provides report name, description of changes, reason for change, Report Manager to complete the work, Point of Contact. The system updates the WorkQueue for the identified Report Manager.</td>
+</tr>
+<tr>
+<td rowspan="2">002</td>
+<td style="font-weight: bold; background: lightgray;">Provide Customer Relationship Management/updateWorkQueue</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The system updates the CRM User's WorkQueue to include the KnowledgeBaseItem's requirement for acknowledgment. CRM User accesses the system and updates the WorkQueue to identify acknowledgment of KnowledgeBaseItem. After completed the CRM User's WorkQueue removes the KnowledgeBaseItem from the WorkQueue. The system updates the CRM User's WorkQueue indicating a KnowledgeBaseItem did not index properly, and requires CRM User review. The system updates the Editor's (CRM User) WorkQueue indicating a KnowledgeBaseItem received a Comment and requires CRM User review.</td>
+</tr>
+<tr>
+<td rowspan="2">003</td>
+<td style="font-weight: bold; background: lightgray;">Provide Customer Relationship Management/queryWorkQueue</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>A CRM User requests the system queries a WorkQueue. The CRM User provides a variety of information to identify a WorkQueue, or subset of WorkQueue including: ServiceRequest information (CRMSearch, i.e. Status, Type, Date/Time, Outcome, Activity, Question/Answers, Location, GIS Information, Service Level Agreement,), and any ServiceRequest information is available to use for query. Queries are sortable by CRM User for any criteria provided. </td>
+</tr>
+<tr>
+<td rowspan="2">004</td>
+<td style="font-weight: bold; background: lightgray;">Provide Customer Relationship Management/createUpdateReport</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Report Manager uses the system to create or update the requested Report per the ReportChange.</td>
+</tr>
+<tr>
+<td rowspan="2">005</td>
+<td style="font-weight: bold; background: lightgray;">Provide Customer Relationship Management/publishReport</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Report Manager requests the system publishes the Report to the desired CRMSystem.</td>
+</tr>
+<tr>
+<td rowspan="2">006</td>
+<td style="font-weight: bold; background: lightgray;">Provide Customer Relationship Management/createUpdateReportSchedule</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Report Manager creates or updates the ReportSchedule. The ReportSchedule identifies the Report, recurrence, start time, stop time, file format, delivery method, and recipients.</td>
+</tr>
+<tr>
+<td rowspan="2">007</td>
+<td style="font-weight: bold; background: lightgray;">Provide Customer Relationship Management/updateReportChangeRequest</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Report Manager updates the ReportChange with notes on the work completed and the system updates the WorkQueue for the point of contact to review.</td>
+</tr>
+<tr>
+
+
+
+
+
+</table>
+
+
+<br />
+
+
+
+
+</td></tr></table>
+</td></tr></table></body></html>

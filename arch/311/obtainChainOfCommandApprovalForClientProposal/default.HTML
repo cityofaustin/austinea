@@ -1,0 +1,123 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Obtain Chain of Command Approval for Client Proposal</title>
+<link rel="Stylesheet" href="http://austinea.org/style/hover.css" type="text/css" />
+</head>
+<body bgcolor="#ddd8c2">
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="650" align="center">
+<tr><td style="padding: 0;" height="130" valign="top"><a href="http://austinea.org">
+<img src="http://austinea.org/image/iTHeader.jpg" alt="austinea.org - home..." border="0"></a></td></tr>
+<!-- Text Area -->
+<tr><td>
+
+<p style="text-align: center; font-weight: bold;">Obtain Chain of Command Approval for Client Proposal<br />Use Case Specification</p>
+<p style="text-align: center;">05/27/16
+
+<!--  IF Printable document option Included  
+<p style="text-align: center;">download <a href="http://austinea.org/arch/as/***.docx">printable version</a>
+-- >
+
+<b> Animal Services Logical Data Model </b>            
+<!-- Image -  Logical Data Model 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="http://austinea.org/arch/as/ldm.jpg"><img src="http://austinea.org/arch/as/ldm.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Animal Services Logical Data Model</p>
+</td></tr></table> -->
+
+<!-- USE CASE IMAGE -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/311/obtainChainOfCommandApprovalForClientProposal/ucd.jpg"><img src="http://austinea.org/arch/311/obtainChainOfCommandApprovalForClientProposal/ucd.jpg" border="0" alt="" width="620"/></a><br />
+<span style="font-weight: bold;">Obtain Chain of Command Approval for Client Proposal<br />Use Case Model</span>
+</td></tr></table>
+
+<p><b>Scope: </b>The Client Management Team submits the ClientProposal, either draft or updated, to the Chain of Command.  The Chain of Command reviews the ClientProposal and determines whether to proceed with the ClientProposal.  The Chain of Command's review results in either: approval, final approval, deferral, denial, a request for more information, or additional resources assigned to the ClientProposal.  If additional resources are assigned a 311 Work Group SPOC is assigned and performs Resarch and creates a FeasibilityStudy to supplement the ClientProposal.  The 311 Work Group SPOC sends their Research and FeasibilityStudy to the Client Management Team.  If revisions are required to the ClientProposal, or the ClientProposal is denied, deferred,approved by a lower level of the Chain of Command, or more information is required, the Client Management Team updates the ClientProposal as appropriate.  If the ClientProposal is denied/deferred/approved the Client Management Team sends Notification to the Client Department.  
+
+
+
+<!-- IF INTERACTION OVERVIEW IS INCLUDED 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/as/***.jpg"><img src="http://austinea.org/as/code/***.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Interaction Overview</span>
+</td></tr></table>
+-->
+
+<!-- ACTIVITY DIAGRAM -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/311/obtainChainOfCommandApprovalForClientProposal/ad01.jpg"><img src="http://austinea.org/arch/311/obtainChainOfCommandApprovalForClientProposal/ad01.jpg" border="0" alt="" width="600"/></a><br />
+<span style="font-weight: bold;">Obtain Chain of Command Approval for Client Proposal<br />Activity Diagram</span>
+</td></tr></table>
+
+
+
+<br />
+
+
+<!-- SEQUENCE DIAGRAM                 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/311/abatePropertyWithContractor/sd01.jpg"><img src="http://austinea.org/arch/311/abatePropertyWithContractor/sd01.jpg" border="0" alt="" width="600"/></a><br />
+<span style="font-weight: bold;">Obtain Chain of Command Approval for Client Proposal<br />Sequence Diagram</span>
+</td></tr></table>
+<br />
+-->  
+
+<!-- INTERFACE TABLE  -->
+<table align="center" id="custom">
+<tr><th width="9%">Req#</th><th width="70%">Type/Interface - Requirement Description</th><th>Performance</th></tr>
+<tr>
+<td rowspan="2">001</td>
+<td style="font-weight: bold; background: lightgray;">Client Management Team/Submit Client Proposal to Chain of Command</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Client Management Team submits the draft, or updated, ClientProposal to the Chain of Command. If a ClientProject's Requirements modified the scope of the approved ClientProposal the Client Management Team updates the ClientProposal and submits for approval.</td>
+</tr>
+<tr>
+<td rowspan="2">002</td>
+<td style="font-weight: bold; background: lightgray;">Chain of Command/Review Client Proposal and Determine Outcome</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Chain of Command reviews the ClientProposal. The Chain of Command review occurs at three levels, depending on complexity of the ClientProposal: Client Relations & Information Services Manager, Customer Service Managers, and Process Manager. Chain of Command review may involve the Client Management Team, other Resources, and Managers as needed. The Chain of Command review results in either: approval, request for modifications, denial, or deferral. If additional resources are required to gather information the Chain of Command sends notification to 311 Work Group SPOC(s) to assist with the ClientProposal.
+</td>
+</tr>
+<tr>
+<td rowspan="2">003</td>
+<td style="font-weight: bold; background: lightgray;">311 Work Group SPOC/Perform Research and Create Feasibility Study</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The 311 Work Group SPOC provides information and performs Research to assist updating the ClientProposal. The 311 Work Group SPOC completes a Feasibility Study for their specific area of expertise and sends the FeasibilityStudy along with their Research to the Client Management Team.</td>
+</tr>
+<tr>
+<td rowspan="2">004</td>
+<td style="font-weight: bold; background: lightgray;">Client Management Team/Modify and Update Client Proposal,and Notify Client Department as Necessary</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Client Management Team modifies and updates the ClientProposal based on feedback from the Chain of Command and 311 Work Groups SPOC(s). If additional Research is performed, or a FeasibilityStudy is created, the information is added to the ClientProposal. If the ClientProposal is deferred or denied, the Client Management Team sends Notification to the Client Department indicating the decision by the Chain of Command. If the ClientProposal is approved, and additional Chain of Command approval is required, the ClientProposal is sent to the next level of the Chain of Command. If the Chain of Command provides final approval, the Client Management Team sends Notification to the Client Department of the approval.</td>
+</tr>
+<tr>
+
+
+
+
+
+</table>
+
+
+<br />
+
+
+
+
+</td></tr></table>
+</td></tr></table></body></html>

@@ -1,0 +1,111 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Administer Refugee Health Needs and Records</title>
+<link rel="Stylesheet" href="http://austinea.org/style/email.css" type="text/css" />
+</head>
+<body bgcolor="#ddd8c2">
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="650" align="center">
+<tr><td style="padding: 0;" height="130" valign="top"><a href="http://austinea.org">
+<img src="http://austinea.org/image/iTHeader.jpg" alt="austinea.org - home..." border="0"></a></td></tr>
+<!-- Text Area -->
+<tr><td>
+
+<p style="text-align: center; font-weight: bold;">Administer Refugee Health Needs and Records<br />
+Use Case Specification</p>
+
+<!-- Image Title -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/hhs/ehr/administerRefugeeHealthNeedsandRecords/UCD.jpg"><img src="http://austinea.org/arch/hhs/ehr/administerRefugeeHealthNeedsandRecords/UCD.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Administer Refugee Health Needs and Records<br />Use Case Model</span>
+</td></tr></table>
+
+<p><b>Scope: </b>A qualified refugee Client reports to the Refugee Health Clinic for screening. On first visit, the Client completes various intake forms to provide consent, medical history, etc. representing the Client Demographics. During clinic visits, the Clinic Staff performs various medical testing such as blood work, vision, vital signs (blood pressure, pulse, etc.), basic hearing test, and take physical vitals (height, weight, etc.). Clinic Staff administer vaccinations based on vaccine history provided by Center for Disease Control (CDC) - sometimes the CDC provides refugee Client information in the form of Electronic Disease Notification (EDN) - could include report from refugee camps supported by International Organization for Migration (IOM) or United Nations High Commissioner for Refugees (UNHCR). Based on this information, the Clinic Staff administers appropriate vaccines or medications. Sometimes Clinic Staff must wait for test results prior to administering some medications or vaccines. Client appointments occur in house for two appointments to make an overall assessment; afterwards, Clinic Staff dispense refugee Clients to civilian health care agencies. Clinic Staff may refer sexually transmitted disease (STD) or Tuberculosis (TB) cases to the Austin STD/TB Clinic. The Clinic Staff maintains a complete refugee Client Medical Record, which requires civilian health care agencies to fax health record information for inclusion in Client Medical Record. In addition, all refugee Clients receive medical education. Clients may receive additional follow up appointment if needed.
+
+<!-- Image Title -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/hhs/ehr/administerRefugeeHealthNeedsandRecords/sd01.jpg"><img src="http://austinea.org/arch/hhs/ehr/administerRefugeeHealthNeedsandRecords/sd01.jpg" border="0" width="600" alt="" /></a><br />
+<span style="font-weight: bold;">Administer Refugee Health Needs and Records<br />Sequence Diagram</span>
+</td></tr></table>
+
+<!-- Table definition -->
+<p style="text-align: center; font-weight: bold;">Table of Interface and Functional Descriptions</p>
+<table align="center" id="custom">
+<tr><th width="9%">Req#</th><th width="70%">Type/Interface - Requirement Description</th><th>Required Response</th></tr>
+
+<tr>
+<td rowspan="2">25</td>
+<td style="font-weight: bold; background: lightgray;">Decrease Communicable Disease Rates/accessClientMedicalRecord</td>
+<td rowspan="2">Explain EHR application's ability for Clients to access their Client Health Record.</td>
+</tr>
+<tr>
+<td>The Client retrieves their Client Medical Record from the system using a Web portal - this provides technology opportunity for Client mobile service application. The system provides an acceptable form of identity management meeting the criteria established by the Health Insurance Portability and Accountability Act (HIPAA). The Client uses the system to update Demographic Information using a Web portal - the Client may also use the system Web portal to review, save and print their Client Medical Record to include shot records, financial transactions, etc. The Web portal provides the Client the ability to complete intake items prior to their scheduled Clinic appointment. The system provides the Client HIPAA guidelines, as well as other immunization forms (consent, vaccine information statement, etc.) through the Web portal. [Note: The Client can only access their Client Medical Record if one already exists. Only the Clinic Staff can create new records because they must adjudicate potential duplicate records - for HIPAA (confidentiality) reasons, this may not be possible via self-service.]</td>
+</tr>
+<tr>
+<td rowspan="2"></td>
+<td style="font-weight: bold; background: lightgray;">Client/reportToReceptionist</td>
+<td rowspan="2">No response required - information provided for contextual purposes.</td>
+</tr>
+<tr>
+<td>Based on a previously scheduled appointment or walk-ins, the Client reports to the designated clinic for review and/or possible treatment. On all visits, as required, the Client completes various intake forms to provide consent, medical history, etc. representing the Client Demographics. Data like Name, address, phone number, date of birth, emergency contact, email, employer, employer phone number, Medicaid number (if applicable ) race, ethnicity, age, sex, U.S citizenship, guardian name, shared living info, incarceration history, person who provided consent for treatment, relationship to client, primary language.</td>
+</tr>
+<tr>
+<td rowspan="2"></td>
+<td style="font-weight: bold; background: lightgray;">Clinic Staff/performTestAndTreatment</td>
+<td rowspan="2">No response required - provided for contextual information.</td>
+</tr>
+<tr>
+<td>Based on vaccine history information, the Clinic Staff administers appropriate vaccines or medications. Sometimes Clinic Staff must wait for test results prior to administering some medications or vaccines. During clinic visits, the Clinic Staff performs various medical testing such as blood work, vision, vital signs (blood pressure, pulse, etc.), basic hearing test, and take physical vitals (height, weight, etc.).</td>
+</tr>
+<tr>
+<td rowspan="2">26</td>
+<td style="font-weight: bold; background: lightgray;">Decrease Communicable Disease Rates/dispensePrescription</td>
+<td rowspan="2">Describe the EHR application's ability to interface with local dispensing pharmacies.</td>
+</tr>
+<tr>
+<td>When required, the Clinic Staff doctor may provide the Client with a prescription until they're able to establish a primary care physician. The Clinic Staff doctor uses the system to enter prescription information and the local dispensing pharmacy. The system stores the prescription information and transmits the prescription to the selected pharmacy. Alternately, the system provides print ready prescription(s) for the Client to take to the pharmacy. The system provides print ready screens for selected provider use, Client guidance and use instructions.</td>
+</tr>
+</table>
+
+
+<!-- Image Title
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/"><img src="http://austinea.org/" border="0" width="600" alt="" /></a><br />
+<span style="font-weight: bold;">Image Title</span>
+</td></tr></table> -->
+
+
+<!-- Table definition
+<table align="center" id="custom">
+<tr><th width="5%">Req#</th><th width="70%">Type/Interface - Requirement Description</th><th width="25%">Required Response</th></tr>
+<tr>
+<td rowspan="2">##</td>
+<td style="font-weight: bold; background: lightgray;">method</td>
+<td rowspan="2">performance</td>
+</tr>
+<tr>
+<td>description</td>
+</tr>
+</table> -->
+
+
+<!-- Table definition
+<table align="center" id="custom">
+<tr><th>Number</th><th>Category</th><th>Description</th><th>Criticality</th></tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table> -->
+
+
+</td></tr></table>
+</td></tr></table></body></html>

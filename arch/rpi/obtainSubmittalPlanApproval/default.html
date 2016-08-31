@@ -1,0 +1,874 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Obtain Submittal Plan Approval</title>
+<link rel="Stylesheet" href="http://austinea.org/style/email.css" type="text/css" />
+<style>
+.contents { line-height: 10.5pt; margin-top: 0in; margin-bottom: 0in; }
+</style>
+</head>
+<body bgcolor="#ddd8c2">
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+
+<!-- EA Motto -->
+<p style="color: gray; font-size: 8pt; text-align: center; font-weight: bold;">Enterprise Architecture <i>- aligning IT services with business needs</i></p>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="650" align="center"><tr><td>
+
+<p style="text-align: center; font-weight: bold;">Solution Architecture: Obtain Submittal Plan Approval
+<p style="text-align: center;">Date: 09/16/2015
+<p style="text-align: center;">Download <a href="http://austinea.org/arch/rpi/obtainSubmittalPlanApproval/Amanda-ProjectDoxSolutionArchitecture150916.docx">printable version</a>
+
+<p><b>Table of Contents</b>
+
+<p class=contents><a href="#ucm">Use Case Model</a>
+<p class=contents><a href="#ldm">Logical Data Model</a>
+<p class=contents><a href="#io">Interaction Overview</a>
+<p class=contents><a href="#1_0">1. Perform Intake</a>
+<p class=contents><a href="#2_0">2. Process Billing</a>
+<p class=contents><a href="#3_0">3. Awaiting Payment</a>
+<p class=contents><a href="#4_0">4. Establish Required Reviewers</a>
+<p class=contents><a href="#5_0">5. Perform Review</a>
+<p class=contents><a href="#6_0">6. Approve Project</a>
+<p class=contents><a href="#apa">Appendix A</a>
+<p class=contents><a href="#apb">Appendix B</a>
+
+<hr />
+
+<p>The following Unified Modeling Language (UML) Use Case Model's purpose is to identify important functional specifications for the interface between AMANDA and ProjectDox. The interfaces are colored green in the following UML sequence diagrams. The specifications shown in the tables following the sequence diagrams discuss design considerations regarding how the city's enterprise service bus (ESB) mitigates these interfaces and the appropriate functional requirements of the producing and consuming entities. Blue labels identify potential project status changes depending where the project is in the process. <span style="background: #B5D297;">Text highlighted in green represent message specifications produced by Amanda</span> - <span style="background: #D8C2D4;">text highlighted in purple represent message specifications produced by ProjectDox.</span>
+
+<h1 id="ucm">Use Case Model</h1>
+
+<!-- Image Title -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/rpi/obtainSubmittalPlanApproval/UCD.jpg"><img src="http://austinea.org/arch/rpi/obtainSubmittalPlanApproval/UCD.jpg" border="0" width="620" alt="" /></a><br />
+<span style="font-weight: bold;">Use Case Diagram: Obtain Submittal Plan Approval</span>
+</td></tr></table>
+
+<p><b>Scope:</b> An Applicant uses an AMANDA provided Web portal to intake ProjectApplication information indicating a ProjectType. AMANDA processes the submission and informs PorjectDox of project vitals necessary to allow Applicant to submit applicable ProjectType documents to ProjectDox. Continuously throughout the process, AMANDA and ProjectDox provide status message information to each other indicating various states in the process such as INTERNET PENDING, AWAITING UPLOAD, etc. Note: See logical data model. Intake Staff review the Project Application to either INTAKE REJECT or INTAKE ACCEPT the Project Application. If fees are required, AMANDA processes Customer Billing, notifies the Applicant and awaits for a FEE PAID indication. If not required or indication of FEE PAID, ProjectDox adds ProjectApplication MasterLocator to the IntakeQueue for the Plan Coordinator to establish the required Reviewers. Once the Plan Coordinator establishes the required Reviewers, ProjectDox informs AMANDA of the required Reviewers from the ReviewerList. AMANDA informs ProjectDox of important dates. If a review is required, the identified Reviewers review and comment on the submitted plan documents and indicate APPROVED, REJECTED, NO REVIEW REQUIRED. Reviewers may add or change selected Reviewers on the ReviewerList. When not approved by all Reviewers, the Plan Coordinator processes the MasterCommentReport and ProjectDox, notifies the Applicant and sets ProjectStaus to AWAITING UPDATE. The Applicant uploads corrected documents and the cycle continues until either APPROVED or ready to move into the next cycle (i.e., PREREQUISITE REVIEW PENDING / CC PENDING / IN E-REVIEW). Once APPROVED AND RELEASED, the Plan Coordinator uses ProjectDox to stamp the project documents and ProjectDox notifies the Applicant of approval and document download instructions.</p>
+
+<h1 id="ldm">Logical Data Model</h1>
+
+<!-- Image Title -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/rpi/obtainSubmittalPlanApproval/LDM.jpg"><img src="http://austinea.org/arch/rpi/obtainSubmittalPlanApproval/LDM.jpg" border="0" alt="" width="620"/></a><br />
+<span style="font-weight: bold;">Logical Data Model</span>
+</td></tr></table>
+
+<br/>
+
+<p style="text-align: center; font-weight: bold;">ESB Transformation Table</p>
+<!-- Table definition -->
+<table align="center" id="custom">
+<tr><th width="25%">AMANDA</th><th width="25%">ESB</th><th width="25%">ProjectDox</th><th width="25%">Notes</th></tr>
+<tr><td>folder.referenceFile + Folder.folderrsn</td><td></td><td>permitNumber</td><td>e.g Permit:2015-123456 GP,FolderRSN :10002010</td></tr>
+<tr><td>Folder.referencefile6</td><td>EMI</td><td></td><td></td></tr>
+<tr><td></td><td>EMI</td><td>Pager</td><td></td></tr>
+<tr><td>folder.folderName </td><td></td><td>permitDescription</td><td></td></tr>
+<tr><td>people.emailAddress</td><td></td><td>submitterEmail</td><td>SubmitterEmail varchar(80)</td></tr>
+<tr><td>people.nameFirst</td><td></td><td>submitterFName</td><td>SubmitterFName varchar(50)</td></tr>
+<tr><td>people.nameLast</td><td></td><td>submitterLName</td><td>SubmitterLName varchar(50)</td></tr>
+<tr><td></td><td>ePlanReview<br />@austintexas.gov (HardCoded)</td><td>ownerEmail</td><td>OwnerEmail varchar(80)</td></tr>
+<tr><td>Wsvalidlookup.lookup4</td><td>Lookup table</td><td>projectTemplateID</td><td>Amanda info fields and sub/work type combination to read lookup project type from table - varchar(50). This combination is stored as a string in the lookup table, which is displayed on portal for application. e.g GP with sub of blah and work of blah maps to Project Type e.g Commercial or Residential Express in lookup4 column of lookup table 99055. AMANDA will send this to ESB. ESB converts this to ProjectDox template ID.</td></tr>
+<tr><td>property.propertyName</td><td></td><td>Location</td><td></td></tr>
+<tr><td></td><td>'default'</td><td>Sitegroupname</td><td>ProjectDox - way to manage a subset of users (no need for Austin currently)</td></tr>
+<tr><td></td><td>FALSE</td><td>notifyOwnerOnFileAdd</td><td></td></tr>
+<tr><td></td><td>''</td><td>gisFeatureValues</td><td>For GIS information</td></tr>
+<tr><td></td><td>'Web'</td><td>ownerFName</td><td>Owner First Name</td></tr>
+<tr><td></td><td>'User'</td><td>ownerLName</td><td>Owner Last Name</td></tr>
+<tr><td>folderprocess.processCode</td><td></td><td>GroupName</td><td>ESB will map GroupName to AMANDA processcode</td></tr>
+<tr><td>folderprocess.assignedUser</td><td></td><td>ReviewerEmail</td><td>Unique identifier is the email ID on ProjectDox.Query AMANDA to get UserID using webservice and email ID and then pass the userID </td></tr>
+<tr><td>folder.statusCode</td><td></td><td>Project.Status</td><td></td></tr>
+<tr><td>folderprocessattempt.<br />resultCode</td><td></td><td>Review.ReviewStatus</td><td>Needs to be decided ASAP  web service exists for passing attempt </td></tr>
+<tr><td>Folderprocess.statuscode</td><td></td><td>Review.ReviewStatus</td><td>Needs to be decided ASAP - webservice already exists for updating process</td></tr>
+<tr><td>folderprocess.<br />scheduledEndDate</td><td></td><td>project.Cellphone </td><td>Avolve will add custom logic (database trigger) to translate project.cellphone to workflow/task due date.</td></tr>
+<tr><td>folder.expirydate</td><td></td><td>Project.EndDate</td><td></td></tr>
+<tr><td>folderprocessattempt.<br />attemptDate</td><td>System date</td><td></td><td>When ProjectDox sends an event of review status change, ESB will send the current date and send it to AMANDA as the attempt date</td></tr>
+<tr><td>attachment.dospath</td><td></td><td>directoryPath File.SourcePath</td><td>Path location to the specified files. To get a file, request using an existing web service and query files in a folder(ProjectDox folder) They are fixed.
+Folders in ProjectDox:<br />
+1. Approved<br />
+&nbsp;&nbsp;a. Drawings<br />
+&nbsp;&nbsp;b. Documents<br />
+2. ChangeMarkReports<br />
+3. Submitted Documents<br />
+Link for test: Eplantest.austintexas.gov - File path required for approved documents and attachments for public query.
+</td></tr>
+</table>
+
+<h1 id="io">Interaction Overview</h1>
+
+<!-- Image Title -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/rpi/obtainSubmittalPlanApproval/AM.jpg"><img src="http://austinea.org/arch/rpi/obtainSubmittalPlanApproval/AM.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Interaction Overview: Obtain Submittal Plan Approval</span>
+</td></tr></table>
+
+<h1 id="1_0">1. Perform Intake</h1>
+
+<!-- Image Title -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/rpi/obtainSubmittalPlanApproval/01SD.jpg"><img src="http://austinea.org/arch/rpi/obtainSubmittalPlanApproval/01SD.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Sequence Diagram: 1. Perform Intake</span>
+</td></tr></table>
+
+<br />
+
+<!-- Table definition
+<table align="center" id="custom">
+<tr><th>Type/Interface - Requirement Description</th></tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">method</td>
+</tr>
+<tr>
+<td>description</td>
+</tr>
+</table> -->
+
+<!-- Table definition -->
+<table align="center" id="custom">
+<tr><th>Type/Interface - Requirement Description</th></tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Amanda/submitNewProjectApplication</td>
+</tr>
+<tr>
+<td>The Applicant logs into the AMANDA Portal (assuming theyre pre registered), and submits a ProjectApplication for electronic plan review. The AMANDA portal uses an online questionnaire the Applicant traverses to aid the system in determining the ProjectType. AMANDA also provides a direct path to the specific ProjectApplication for more experienced Applicants. The system asks the Applicant questions such as: "Is this a telecom project?" (finished if no). "Is This a Capitol Improvement Project?", "Is this a utility line?" (finished if yes), "Does the project cross any Right of Way?", "Is this a Commercial Plan being submitted?", "Is this a Shell?", "Is this multi-family?".  These questions lead Applicant to the correct form - AMANDA uses the form information to establish ProjectDoxApplicationInfo.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Amanda/createTrackingNumber</td>
+</tr>
+<tr>
+<td><span style="background: #B5D297;">The first message AMANDA sends to ESB for ProjectDox is a message to create a new Project in ProjectDox. NewFolderFee Procedure triggers this message, which calls customer procedure COA_ProjectDox_CreateNewProject (argFolderRSN).</span>
+
+<p>AMANDA uses the information from the Web Portal 2 project application to create a case and assign a CaseNumber. AMANDA creates a FolderRSN (Folder.FolderRSN) and while project application is in creation stage, its project status (Folder.FolderStatus) is APPLICATION INCOMPLETE. When createNewApplicationProject is consumed by ProjectDox, the folder status (Folder.FolderStatus) is INTERNET PENDING. Based on the project application, ProjectDox consumes a ProjectType (validlookup.lookup2) designation to determine template required.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">ProjectDox/createNewApplicationProject</td>
+</tr>
+<tr>
+<td>AMANDA provides ProjectDox unique AMANDA Folder RSN (repurpose unused Pager field in ProjectDox) associated with the project, pertinent application data (ProjectDoxApplicationInfo) and returns a unique ProjectDoxID associated with the project. ProjectDox creates a project instance, and establishes a temporary applicant login. Pass prerequisite review flags (245 Eligibility, Health, IW, etc.) here. <span style="color: red;">[Does this actually occur here?]</span>
+
+<p>XML formatted as follows:
+
+<p class=contents style="text-indent: .0in;">&lt;soapenv:Envelope xmlns:soapenv=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:acc=&quot;http://www.austintexas.gov/AcceptAmanda/&quot;&gt;
+	 <p class=contents style="text-indent: .2in;">&lt;soapenv:Header/&gt;
+   <p class=contents style="text-indent: .2in;">&lt;soapenv:Body&gt;
+      <p class=contents style="text-indent: .4in;">&lt;acc:CreateNewProject&gt;
+         <p class=contents style="text-indent: .6in;">&lt;FolderRSN&gt;?&lt;/FolderRSN&gt;
+         <p class=contents style="text-indent: .6in;">&lt;ProjectType&gt;?&lt;/ProjectType&gt;
+         <p class=contents style="text-indent: .6in;">&lt;FolderName&gt;?&lt;/FolderName&gt;
+         <p class=contents style="text-indent: .6in;">&lt;FolderDescription&gt;?&lt;/FolderDescription&gt;
+         <p class=contents style="text-indent: .6in;">&lt;ReferenceFile&gt;?&lt;/ReferenceFile&gt;
+         <p class=contents style="text-indent: .6in;">&lt;NameFirst&gt;?&lt;/NameFirst&gt;
+         <p class=contents style="text-indent: .6in;">&lt;NameLast&gt;?&lt;/NameLast&gt;
+         <p class=contents style="text-indent: .6in;">&lt;EmailAddress&gt;?&lt;/EmailAddress&gt;
+         <p class=contents style="text-indent: .6in;">&lt;PropertyName&gt;?&lt;/PropertyName&gt;
+         <p class=contents style="text-indent: .6in;">&lt;ProjectDoxId&gt;?&lt;/ProjectDoxId&gt;
+         <p class=contents style="text-indent: .6in;">&lt;ProcessCode&gt;?&lt;/ProcessCode&gt;
+         <p class=contents style="text-indent: .6in;">&lt;StatusCode&gt;?&lt;/StatusCode&gt;
+         <p class=contents style="text-indent: .6in;">&lt;ScheduledEndDate&gt;?&lt;/ScheduledEndDate&gt;
+      <p class=contents style="text-indent: .4in;">&lt;/acc:CreateNewProject&gt;
+   <p class=contents style="text-indent: .2in;">&lt;/soapenv:Body&gt;
+<p class=contents style="text-indent: .0in;">&lt;/soapenv:Envelope&gt;
+
+<p>This procedure passes the following data to EAI and then to ESB for ProjectDox. ESB updates ProjectDox and uses &quot;updateFolder&quot; WebService to send ProjectDoxID to AMANDA. The two required elements for the update into AMANDA include: Folder.FolderRSN and Folder.ReferenceFile6.
+
+<table align="center" id="custom">
+<tr><th>AMANDA</th><th>XML Element</th><th>ProjectDox</th></tr>
+<tr>
+<td>Folder.FolderRSN</td>
+<td>FolderRSN</td>
+<td>Populates Pager in ProjectDox</td>
+</tr>
+<tr>
+<td>ValidLookup.LookupString2 WHERE ValidLookup.LookupCode = 99055 and ValidLookup.LookupString = FolderType and ValidLookup.Lookup2 = SubCode and ValidLookup.Lookup3 = WorkCode</td>
+<td>ProjectType</td>
+<td>Populates ProjectType in ProjectDox</td>
+</tr>
+<tr>
+<td>SUBSTR(folder.folderName|| ||Folder.FolderDescription,1,150)</td>
+<td>FolderName + FolderDescription</td>
+<td>Populates PermitDescription in ProjectDox</td>
+</tr>
+<tr>
+<td>Folder.ReferenceFile</td>
+<td>ReferenceFile</td>
+<td>Populates PermitNumber in ProjectDox</td>
+</tr>
+<tr>
+<td>People.NameFirst FROM People WHERE FolderPeople.FolderRSN = Folder.FolderRSN and People.PeopleRSN = FolderPeople.PeopleRSN and FolderPeople.PeopleCode = 3</td>
+<td>NameFirst</td>
+<td>Populate SubmitterFName in ProjectDox</td>
+</tr>
+<tr>
+<td>People.NameLast FROM People WHERE FolderPeople.FolderRSN = Folder.FolderRSN and People.PeopleRSN = FolderPeople.PeopleRSN and FolderPeople.PeopleCode = 3</td>
+<td>NameLast</td>
+<td>Populates SubmitterLName in ProjectDox</td>
+</tr>
+<tr>
+<td>People.EmailAddress FROM People WHERE FolderPeople.FolderRSN = Folder.FolderRSN and People.PeopleRSN = FolderPeople.PeopleRSN and FolderPeople.PeopleCode = 3</td>
+<td>EmailAddress</td>
+<td>Populates SubmitterEmail in ProjectDox</td>
+</tr>
+<tr>
+<td>Property.PropertyName FROM Property WHERE Property.PropertyRSN = Folder.PropertyRSN</td>
+<td>PropertyName</td>
+<td>Populates Location in ProjectDox</td>
+</tr>
+<tr>
+<td>Folder.StatusCode</td>
+<td>StatusCode</td>
+<td>The default status for the new project in ProjectDox is AWAITING UPLOAD</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">ProjectDox/notifyApplicantOfProjectLinks</td>
+</tr>
+<tr>
+<td>Based on values in the AMANDA ProjectDoxApplicationInfo, ProjectDox creates a Notification to the Applicant with the ProjectDoxTrackingNo, Project Name [Folder.FolderName], as well as a URL and temporary login credentials to access ProjectDox. ProjectDox creates an account based on the email address from the ProjectDoxApplicantInfo. If the email address is not already registered, ProjectDox creates a new account. If the email address already exists in the system, ProjectDox adds the new project to the account. ProjectDox uses the ProjectType to establish the routing template (ReviewerList) and the required cycles (i.e., PREREQUISITE REVIEW PENDING / CC PENDING / IN E-REVIEW). There are no failover recovery mechanisms identified.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Amanda/updateProjectInfo</td>
+</tr>
+<tr>
+<td>Updates project attributes and status between AMANDA and ProjectDox. This interface is mitigated by the COA enterprise service bus specifically IBM Integration Bus (IIB). The consuming interface (either AMANDA or PorjectDox) uses internal system attributes and the IIB performs the required attribute transformation. See attribute transformation table.
+<p>Update made by Web Service &quot;updateFolder&quot;. The two required elements for the update into AMANDA include: Folder.FolderRSN and Folder.StatusCode. [AWAITING UPLOAD]</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">ProjectDox/storeProjectDocuments</td>
+</tr>
+<tr>
+<td>The Applicant uses their email address to log into the system using a link provided by ProjectDox and chooses the project to upload documents. Using the system, the Applicant uploads required documents. Once the Applicant has uploaded all of their documents, they select the UPLOAD COMPLETE within the ProjectDox provided Web interface, indicating all documents have been added to the project for review. Otherwise, the system provides a means to continue document uploads until UPLOAD COMPLETE status indicating all documents added for project review.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">ProjectDox/setProjectToPermitTypeCheck</td>
+</tr>
+<tr>
+<td>After the Applicant uploads all required documents and selects UPLOAD COMPLETE, ProjectDox changes status to INTAKE PENDING and triggers task for Intake Staff to review the submitted ProjectApplication.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Amanda/updateProjectInfo</td>
+</tr>
+<tr>
+<td>Updates project attributes and status between AMANDA and ProjectDox. This interface is mitigated by the COA enterprise service bus specifically IBM Integration Bus (IIB). The consuming interface (either AMANDA or PorjectDox) uses internal system attributes and the IIB performs the required attribute transformation. See attribute transformation table.
+<p>Update made by Web Service &quot;updateFolder&quot;. The two required elements for the update into AMANDA include: Folder.FolderRSN and Folder.StatusCode. [INTAKE PENDING]</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Amanda/reviewApplication</td>
+</tr>
+<tr>
+<td>The Intake Staff uses AMANDA to the review ProjectApplication for completeness and accuracy.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">ProjectDox/reviewDocumentation</td>
+</tr>
+<tr>
+<td>The Intake staff uses ProjectDox to examine each uploaded document to verify the presence of documents required for the specific ProjectType. For GPC projects folder status (folder.folderStatus) is INTAKE ACCEPTED. For non GPC projects if accepted, folder status changes to PREREQUISITE REVIEW PENDING / CC PENDING / IN E-REVIEW, as applicable for next phase, depending on template type. If documentation is incomplete, Intake Staff provide ReviewerComments associated with any rejection concerns. If all required documentation is present, INTAKE ACCEPTED ProjectApplication in ProjectDox. If documentation is incomplete, indicate INTAKE REJECTED using ProjectDox.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">ProjectDox/notifyApplicant</td>
+</tr>
+<tr>
+<td>ProjectDox creates a ReviewComments to notify the Applicant with the case number, case name, project name and relevant project information. The ReviewerComments includes comments describing the reason for Application rejection and possible corrective actions.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Amanda/updateProjectInfo</td>
+</tr>
+<tr>
+<td>Updates project attributes and status between AMANDA and ProjectDox. This interface is mitigated by the COA enterprise service bus specifically IBM Integration Bus (IIB). The consuming interface (either AMANDA or PorjectDox) uses internal system attributes and the IIB performs the required attribute transformation. See attribute transformation table.
+<p>Update made by Web Service &quot;updateFolder&quot;. The two required elements for the update into AMANDA include: Folder.FolderRSN and Folder.StatusCode. [INTAKE REJECTED] or [INTAKE ACCEPTED]</td>
+</tr>
+</table>
+
+<p><span style="background: #D8C2D4;">ProjectDox updates AMANDA Folder.FolderStatus based on various steps in the Intake Review. The first message sent from ProjectDox to AMANDA is a folder status change to AWAITING UPLOAD. When the applicant finishes uploading all documentation and drawings for the project, a message from ProjectDox to AMANDA to change the folder status to INTAKE PENDING. If staff reject the information uploaded by the Applicant, ProjectDox sends a message to AMANDA to change the folder status to INTAKE REJECTED. If staff accept the information uploaded by the Applicant, ProjectDox sends a message to AMANDA to change the folder status to INTAKE ACCEPTED. Once INTAKE ACCEPTED, AMANDA enters the Process Billing.</span>
+
+<h1 id="2_0">2. Process Billing</h1>
+
+<!-- Image Title -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/rpi/obtainSubmittalPlanApproval/02SD.jpg"><img src="http://austinea.org/arch/rpi/obtainSubmittalPlanApproval/02SD.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Sequence Diagram: 2. Process Billing</span>
+</td></tr></table>
+<br />
+
+<!-- Table definition -->
+<table align="center" id="custom">
+<tr><th>Type/Interface - Requirement Description</th></tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Amanda/overRideFee</td>
+</tr>
+<tr>
+<td>There may be circumstances where the Plan Coordinator over-rides the system to indicate payment not required when in fact a payment is due. An approved Plan Coordinator may over-ride AMANDA calculated fee and enter a new value or over-ride the AMANDA to indicate FEE PAID when in fact there is still fee pending.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Amanda/processBilling</td>
+</tr>
+<tr>
+<td><span style="background: #B5D297;">When the folder status changes to 'INTAKE ACCEPTED' AMANDA runs a FolderUpdate Trigger procedure through EAI to send a message to ESB regarding any fees due. If there are any fees outstanding based on function F_GetFeeDue(argFolderRSN) then AMANDA changes the folder status to 'AWAITING FEES' and sends a message to ESB to change the status of the project  to 'AWAITING FEES'.  If there are no fees due then AMANDA changes the folder status to 'FEE PAID' and sends a message to ESB to change the status of the project to 'FEE PAID'. Nothing happens in ProjectDox until all fees are paid in AMANDA so if the status is 'AWAITING FEES' no work can be done in ProjectDox.</span>
+
+<p>This procedure passes the following data to ESB for ProjectDox:
+
+<p class=contents style="text-indent: .0in;">&lt;soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:acc="http://www.austintexas.gov/AcceptAmanda/"&gt;
+   <p class=contents style="text-indent: .2in;">&lt;soapenv:Header/&gt;
+   <p class=contents style="text-indent: .2in;">&lt;soapenv:Body&gt;
+      <p class=contents style="text-indent: .4in;">&lt;acc:UpdateProjectStatus&gt;
+         <p class=contents style="text-indent: .6in;">&lt;FolderRSN&gt;?&lt;/FolderRSN&gt;
+         <p class=contents style="text-indent: .6in;">&lt;ProjectType&gt;?&lt;/ProjectType&gt;
+         <p class=contents style="text-indent: .6in;">&lt;FolderName&gt;?&lt;/FolderName&gt;
+         <p class=contents style="text-indent: .6in;">&lt;FolderDescription&gt;?&lt;/FolderDescription&gt;
+         <p class=contents style="text-indent: .6in;">&lt;ReferenceFile&gt;?&lt;/ReferenceFile&gt;
+         <p class=contents style="text-indent: .6in;">&lt;NameFirst&gt;?&lt;/NameFirst&gt;
+         <p class=contents style="text-indent: .6in;">&lt;NameLast&gt;?&lt;/NameLast&gt;
+         <p class=contents style="text-indent: .6in;">&lt;EmailAddress&gt;?&lt;/EmailAddress&gt;
+         <p class=contents style="text-indent: .6in;">&lt;PropertyName&gt;?&lt;/PropertyName&gt;
+         <p class=contents style="text-indent: .6in;">&lt;ProjectDoxId&gt;?&lt;/ProjectDoxId&gt;
+         <p class=contents style="text-indent: .6in;">&lt;ProcessCode&gt;?&lt;/ProcessCode&gt;
+         <p class=contents style="text-indent: .6in;">&lt;StatusCode&gt;?&lt;/StatusCode&gt;
+         <p class=contents style="text-indent: .6in;">&lt;ScheduledEndDate&gt;?&lt;/ScheduledEndDate&gt;
+      <p class=contents style="text-indent: .4in;">&lt;/acc:UpdateProjectStatus&gt;
+   <p class=contents style="text-indent: .2in;">&lt;/soapenv:Body&gt;
+<p class=contents style="text-indent: .0in;">&lt;/soapenv:Envelope&gt;
+
+<p>This procedure creates an XML message with the following XML Elements for use in passing the following data to ESB for ProjectDox:
+
+<table align="center" id="custom">
+<tr><th>AMANDA</th><th>XML&nbsp;Element</th><th>ProjectDox</th></tr>
+<tr>
+<td>Folder.ReferenceFile6</td>
+<td>ProjectDoxID</td>
+<td>This is the ProjectID from ProjectDox to identify the appropriate project to update</td>
+</tr>
+<tr>
+<td>Folder.StatusCode</td>
+<td>StatusCode</td>
+<td>This data populates ProjectStatus in ProjectDox (ESB translates statuscode to textual status for ProjectDox.)</td>
+</tr>
+</table>
+
+<p>For non-GP/T folders, AMANDA determines applicable fees due. If there are outstanding fees, status changed to AWAITING FEE. AMANDA creates a bill by applying fees pursuant to regulations and business rules. AMANDA creates and sends an email to the contact associated with the project notifying them of the outstanding fees. An approved Plan Coordinator may over-ride AMANDA calculated fee and enter a new value or over-ride the AMANDA to indicate FEE PAID when in fact there is still fee pending.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">ProjectDox/updateProjectInfo</td>
+</tr>
+<tr>
+<td>Updates project attributes and status between AMANDA and ProjectDox. This interface is mitigated by the COA enterprise service bus specifically IBM Integration Bus (IIB). The consuming interface (either AMANDA or PorjectDox) uses internal system attributes and the IIB performs the required attribute transformation. See attribute transformation table.</td>
+</tr>
+</table>
+
+
+<h1 id="3_0">3. Awaiting Payment</h1>
+
+<!-- Image Title -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/rpi/obtainSubmittalPlanApproval/03SD.jpg"><img src="http://austinea.org/arch/rpi/obtainSubmittalPlanApproval/03SD.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Sequence Diagram: 3. Awaiting Payment</span>
+</td></tr></table>
+
+<br />
+
+<!-- Table definition -->
+<table align="center" id="custom">
+<tr><th>Type/Interface - Requirement Description</th></tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Amanda/makeApplicationPayment</td>
+</tr>
+<tr>
+<td>The Applicant logs into the AMANDA portal to pay fees using City of Austin approved online electronic payment service. The payment procedure in AMANDA triggers updateProjectInfo.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Amanda/notifyApplicantOfExpiration</td>
+</tr>
+<tr>
+<td>AMANDA evaluates business rules associated with the case number, and creates and sends a notification to the contacts associated with the project indicating the outstanding fees, timing for payment, and the expiration of the project due to lack of timely response.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">ProjectDox/updateProjectInfo</td>
+</tr>
+<tr>
+<td><span style="background: #B5D297;">Custom procedure COA_ProjectDox_AllFeesPaid in the payment procedure (DefaultPayment_GP) for the folders integrated with ProjectDoc when the FolderStatus is 'AWAITING FEES'. This runs for each payment within the folder. If the result is all fees are paid then a message is sent to ESB to change the project status to 'FEE PAID'.</span>
+
+<p class=contents style="text-indent: .0in;">&lt;soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:acc="http://www.austintexas.gov/AcceptAmanda/"&gt;
+   <p class=contents style="text-indent: .2in;">&lt;soapenv:Header/&gt;
+   <p class=contents style="text-indent: .2in;">&lt;soapenv:Body&gt;
+      <p class=contents style="text-indent: .4in;">&lt;acc:UpdateProjectStatus&gt;
+         <p class=contents style="text-indent: .6in;">&lt;FolderRSN&gt;?&lt;/FolderRSN&gt;
+         <p class=contents style="text-indent: .6in;">&lt;ProjectType&gt;?&lt;/ProjectType&gt;
+         <p class=contents style="text-indent: .6in;">&lt;FolderName&gt;?&lt;/FolderName&gt;
+         <p class=contents style="text-indent: .6in;">&lt;FolderDescription&gt;?&lt;/FolderDescription&gt;
+         <p class=contents style="text-indent: .6in;">&lt;ReferenceFile&gt;?&lt;/ReferenceFile&gt;
+         <p class=contents style="text-indent: .6in;">&lt;NameFirst&gt;?&lt;/NameFirst&gt;
+         <p class=contents style="text-indent: .6in;">&lt;NameLast&gt;?&lt;/NameLast&gt;
+         <p class=contents style="text-indent: .6in;">&lt;EmailAddress&gt;?&lt;/EmailAddress&gt;
+         <p class=contents style="text-indent: .6in;">&lt;PropertyName&gt;?&lt;/PropertyName&gt;
+         <p class=contents style="text-indent: .6in;">&lt;ProjectDoxId&gt;?&lt;/ProjectDoxId&gt;
+         <p class=contents style="text-indent: .6in;">&lt;ProcessCode&gt;?&lt;/ProcessCode&gt;
+         <p class=contents style="text-indent: .6in;">&lt;StatusCode&gt;?&lt;/StatusCode&gt;
+         <p class=contents style="text-indent: .6in;">&lt;ScheduledEndDate&gt;?&lt;/ScheduledEndDate&gt;
+      <p class=contents style="text-indent: .4in;">&lt;/acc:UpdateProjectStatus&gt;
+   <p class=contents style="text-indent: .2in;">&lt;/soapenv:Body&gt;
+<p class=contents style="text-indent: .0in;">&lt;/soapenv:Envelope&gt;
+
+<p>This procedure passes the following data to ESB for ProjectDox:
+<table align="center" id="custom">
+<tr><th>AMANDA</th><th>XML&nbsp;Element</th><th>ProjectDox</th></tr>
+<tr>
+<td>Folder.ReferenceFile6</td>
+<td>ProjectDoxID</td>
+<td>This is the ProjectID from ProjectDox to identify the appropriate project to update</td>
+</tr>
+<tr>
+<td>Folder.StatusCode</td>
+<td>StatusCode</td>
+<td>This data populates ProjectStatus in ProjectDox (ESB tranalates statuscode to text status for ProjectDox)</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+
+<p>Once all fees are paid, the Plan Coordinator determines appropriate reviews and assigns to staff.
+
+<h1 id="4_0">4. Establish Required Reviewers</h1>
+
+<!-- Image Title -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/rpi/obtainSubmittalPlanApproval/04SD.jpg"><img src="http://austinea.org/arch/rpi/obtainSubmittalPlanApproval/04SD.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Sequence Diagram: 4. Establish Required Reviewers</span>
+</td></tr></table>
+
+<br />
+
+<!-- Table definition -->
+<table align="center" id="custom">
+<tr><th>Type/Interface - Requirement Description</th></tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">ProjectDox/addProjectToQueue</td>
+</tr>
+<tr>
+<td>ProjectDox uses the AMANDA provided ProjectType to determine the applicable initial ReviewerList, establish Plan Coordinator and add the project to the IntakeQueue of the Plan Coordinator. The Plan Coordinator may use ProjectDox to reassign another Plan Coordinator in the event the initial assignment is incorrect.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">ProjectDox/reviewInitialProjectDocuments</td>
+</tr>
+<tr>
+<td>The Plan Coordinator uses ProjectDox to perform the initial review of the project documents submitted by the Applicant.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">ProjectDox/establishRequiredReviewers</td>
+</tr>
+<tr>
+<td><span style="background: #D8C2D4;">When the Plan Coordinator chooses the required reviews and the reviewers, PorjectDox sends message to update the Project Status to either PREREQUISITE REVIEW PENDING, CC REVIEW PENDING or IN E-REVIEW and to insert processes to correspond to the reviews chosen by the Plan Coordinator. This message passes AssigneUser and the scheduled start date is set to the current date. Scripts determine the ScheduleEndDate to refer to the DefaultProcess timeframes set up for the particular folder type.</span>
+
+<p>Web Services 'updateFolder' and 'addFolderProcess' provide updates. The required elements for the Folder Status update into AMANDA include Folder.FolderRSN and Folder.StatusCode. The required elements for the process insert into AMANDA include Folder.FolderRSN, FolderProcess.ProcessCode and FolderProcess.AssignedUser. Web Service 'addFolderProcessAttempt' provides Process 51120 "Submittal Intake' attempt result 'Complete' (ResultCode = 550000). Existing business logic in the Attempt Procedure automatically populate the required End Dates. The required elements for the addition of FolderProcessAttempts include Folder.FolderRSN, FolderProcess.ProcessCode, and FolderProcessAttempt.ResultCode. 
+
+<p class=contents style="text-indent: .0in;">&lt;soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:acc="http://www.austintexas.gov/AcceptAmanda/"&gt;
+   <p class=contents style="text-indent: .2in;">&lt;soapenv:Header/&gt;
+   <p class=contents style="text-indent: .2in;">&lt;soapenv:Body&gt;
+      <p class=contents style="text-indent: .4in;">&lt;acc:UpdateProjectDate&gt;
+         <p class=contents style="text-indent: .6in;">&lt;FolderRSN&gt;?&lt;/FolderRSN&gt;
+         <p class=contents style="text-indent: .6in;">&lt;ProjectType&gt;?&lt;/ProjectType&gt;
+         <p class=contents style="text-indent: .6in;">&lt;FolderName&gt;?&lt;/FolderName&gt;
+         <p class=contents style="text-indent: .6in;">&lt;FolderDescription&gt;?&lt;/FolderDescription&gt;
+         <p class=contents style="text-indent: .6in;">&lt;ReferenceFile&gt;?&lt;/ReferenceFile&gt;
+         <p class=contents style="text-indent: .6in;">&lt;NameFirst&gt;?&lt;/NameFirst&gt;
+         <p class=contents style="text-indent: .6in;">&lt;NameLast&gt;?&lt;/NameLast&gt;
+         <p class=contents style="text-indent: .6in;">&lt;EmailAddress&gt;?&lt;/EmailAddress&gt;
+         <p class=contents style="text-indent: .6in;">&lt;PropertyName&gt;?&lt;/PropertyName&gt;
+         <p class=contents style="text-indent: .6in;">&lt;ProjectDoxId&gt;?&lt;/ProjectDoxId&gt;
+         <p class=contents style="text-indent: .6in;">&lt;ProcessCode&gt;?&lt;/ProcessCode&gt;
+         <p class=contents style="text-indent: .6in;">&lt;StatusCode&gt;?&lt;/StatusCode&gt;
+         <p class=contents style="text-indent: .6in;">&lt;ScheduledEndDate&gt;?&lt;/ScheduledEndDate&gt;
+      <p class=contents style="text-indent: .4in;">&lt;/acc:UpdateProjectStatusDate&gt;
+   <p class=contents style="text-indent: .2in;">&lt;/soapenv:Body&gt;
+<p class=contents style="text-indent: .0in;">&lt;/soapenv:Envelope&gt;
+
+<p><span style="background: #B5D297;">Currently, there is no place in ProjectDox to store the ScheduleEndDate or Due Date for the process. If or when this becomes available, AMANDA needs to send back to ProjectDox a message to populate each review date in ProjectDox.</span>
+
+<p>If or when this is done, requires the following information to be sent from AMANDA to ProjectDox:
+
+<table align="center" id="custom">
+<tr><th>AMANDA</th><th>XML Element</th><th>ProjectDox</th></tr>
+<tr>
+<td>Folder.ReferenceFile6</td>
+<td>ProjectDoxID</td>
+<td>This is the ProjectID from ProjectDox to identify the appropriate project to be updated</td>
+</tr>
+<tr>
+<td>FolderProcess.ProcessCode</td>
+<td>ProcessCode</td>
+<td>This data identifies which tasks/departments in ProjectDox to update (a table for translation of FolderProcess.ProcessCode to the Departments in ProjectDox will be required by the ESB team for translation of this information)</td>
+</tr>
+<tr>
+<td>FolderProcess.ScheduledEndDate</td>
+<td>ScheduledEndDate</td>
+<td>This is the data ProjectDox does not have a place for and no logic built around enforcing it</td>
+</tr>
+</table>
+<p>The actual reviews continue in ProjectDox and information is sent to AMANDA via ESB based on the results of the reviews.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Amanda/updateProjectInfo</td>
+</tr>
+<tr>
+<td>Updates project attributes and status between AMANDA and ProjectDox. This interface is mitigated by the COA enterprise service bus specifically IBM Integration Bus (IIB). The consuming interface (either AMANDA or PorjectDox) uses internal system attributes and the IIB performs the required attribute transformation. See attribute transformation table.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">ProjectDox/updateProjectInfo</td>
+</tr>
+<tr>
+<td>Updates project attributes and status between AMANDA and ProjectDox. This interface is mitigated by the COA enterprise service bus specifically IBM Integration Bus (IIB). The consuming interface (either AMANDA or PorjectDox) uses internal system attributes and the IIB performs the required attribute transformation. See attribute transformation table.</td>
+</tr>
+</table>
+
+<h1 id="5_0">5. Perform Review</h1>
+
+<p>The diagram for 'Perform Review' is a depiction of what happens for each review within a review phase and a review iteration. There are currently four possible review phases - Prerequisite Reviews, Completeness Check Reviews, Actual E-Reviews or Formal Reviews and possibly an Informal Review (Administrative Hold) to manage final receipt of required certifications. There can be multiple iterations of reviews within each phase. Moving between iterations of reviews or phases of reviews requires a fee check in AMANDA to determine if there are any fees due.
+
+<!-- Image Title -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/rpi/obtainSubmittalPlanApproval/05SD.jpg"><img src="http://austinea.org/arch/rpi/obtainSubmittalPlanApproval/05SD.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Sequence Diagram: 5. Perform Review</span>
+</td></tr></table>
+<br />
+
+<!-- Table definition -->
+<table align="center" id="custom">
+<tr><th>Type/Interface - Requirement Description</th></tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">ProjectDox/determineProjectStatus</td>
+</tr>
+<tr>
+<td>The Plan Coordinator uses ProjectDox to review project comments. The Plan Coordinator uses ProjectDox to indicate the project status and next cycle determination. The Plan Coordinator provides final APPROVED status or the project moves into the next cycle. In addition, the Plan Coordinator can place a project on ADMIN HOLD to clear unresolved issues.
+
+<p>When all reviews have been completed the Plan Coordinator reviews the responses and there are no 'REJECTED' reviews the plan coordinator completes the QA task and ProjectDox changes the project status to 'AWAITING FEE' and ProjectDox sends amessage to AMANDA via ESB to change the folder status so that AMANDA can do a fee check to check for any fees not paid. This update is made by using the Web Service &quot;updateFolder&quot;. The two required elements for the update into AMANDA include Folder.FolderRSN and Folder.StatusCode.
+
+<p><span style="background: #B5D297;">When the folder status changes to 'AWAITING FEES' AMANDA runs a FolderUpdate Trigger procedure through EAI to send a message to ProjectDox via ESB regarding any fees due. If there are any fees outstanding based on function F_GetFeeDue(argFolderRSN) then AMANDA keeps the folder status at 'AWAITING FEES'. If there are no fees due then AMANDA changes the folder status to 'FEE PAID' and sends a message to ProjectDox via ESB to change the status of the project to 'FEE PAID'. Nothing happens in ProjectDox until all fees are paid in AMANDA so if the status is 'AWAITING FEES' no work can be done in ProjectDox.</span>
+
+<p>The following EAI configuration is required:<br />
+EAI URL =<br />
+EAI UserID = <br />
+Password = <br />
+Table Name = Folder<br />
+Action Type = Update<br />
+When to Send = Change In Status<br />
+System = http://www.austintexas.gov/AcceptAmanda/<br />
+Heartbeat Type = Push<br />
+EAI XML = (XML below)<br />
+
+<p class=contents style="text-indent: .0in;">&lt;soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:acc="http://www.austintexas.gov/AcceptAmanda/"&gt;
+   <p class=contents style="text-indent: .2in;">&lt;soapenv:Header/&gt;
+   <p class=contents style="text-indent: .2in;">&lt;soapenv:Body&gt;
+      <p class=contents style="text-indent: .4in;">&lt;acc:UpdateProjectStatus&gt;
+         <p class=contents style="text-indent: .6in;">&lt;FolderRSN&gt;?&lt;/FolderRSN&gt;
+         <p class=contents style="text-indent: .6in;">&lt;ProjectType&gt;?&lt;/ProjectType&gt;
+         <p class=contents style="text-indent: .6in;">&lt;FolderName&gt;?&lt;/FolderName&gt;
+         <p class=contents style="text-indent: .6in;">&lt;FolderDescription&gt;?&lt;/FolderDescription&gt;
+         <p class=contents style="text-indent: .6in;">&lt;ReferenceFile&gt;?&lt;/ReferenceFile&gt;
+         <p class=contents style="text-indent: .6in;">&lt;NameFirst&gt;?&lt;/NameFirst&gt;
+         <p class=contents style="text-indent: .6in;">&lt;NameLast&gt;?&lt;/NameLast&gt;
+         <p class=contents style="text-indent: .6in;">&lt;EmailAddress&gt;?&lt;/EmailAddress&gt;
+         <p class=contents style="text-indent: .6in;">&lt;PropertyName&gt;?&lt;/PropertyName&gt;
+         <p class=contents style="text-indent: .6in;">&lt;ProjectDoxId&gt;?&lt;/ProjectDoxId&gt;
+         <p class=contents style="text-indent: .6in;">&lt;ProcessCode&gt;?&lt;/ProcessCode&gt;
+         <p class=contents style="text-indent: .6in;">&lt;StatusCode&gt;?&lt;/StatusCode&gt;
+         <p class=contents style="text-indent: .6in;">&lt;ScheduledEndDate&gt;?&lt;/ScheduledEndDate&gt;
+      <p class=contents style="text-indent: .4in;">&lt;/acc:UpdateProjectStatus&gt;
+   <p class=contents style="text-indent: .2in;">&lt;/soapenv:Body&gt;
+<p class=contents style="text-indent: .0in;">&lt;/soapenv:Envelope&gt;
+
+<p>This procedure passes the following data to ESB for ProjectDox processing:
+
+<!-- Table definition -->
+<table align="center" id="custom">
+<tr><th>AMANDA</th><th>XML&nbsp;Element</th><th>ProjectDox</th></tr>
+<tr>
+<td>Folder.ReferenceFile6</td>
+<td>ProjectDoxID</td>
+<td>This is the ProjectID from ProjectDox to identify the appropriate project to update</td>
+</tr>
+<tr>
+<td>Folder.StatusCode</td>
+<td>StatusCode</td>
+<td>This data populates ProjectStatus in ProjectDox (ESB translates statuscode to text status for ProjectDox)</td>
+</tr>
+</table></td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">ProjectDox/reviewProjectDocuments</td>
+</tr>
+<tr>
+<td>The Reviewer use ProjectDox to perform a review, markup and comment on project documents submitted by the Applicant in the review queue. <span style="background: #D8C2D4">When each review is completed in ProjectDox, it ends with the Reviewer providing a taskStatus of either APPROVED, REJECTED or REVIEW NOT REQUIRED.</span> These results need to be translated into an attempt result (folderprocessattempt.resultCode) for each corresponding review process in AMANDA <span style="background: #D8C2D4;">and the process or attempt procedure run when the message is sent from ProjectDox to AMANDA.</span> The running of the procedure may result in <span style="background: #B5D297;">an error message from Amanda to ProjectDox requiring the Reviewer to go to AMANDA</span> and add more detail before trying to complete their review in ProjectDox again. <span style="background: #D8C2D4;">When theres a reassigned task in ProjectDox, ProjectDox sends a message to AMANDA to set the AssignedUser of the corresponding process to the new Reviewer.</span></td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Amanda/updateProjectInfo</td>
+</tr>
+<tr>
+<td>Updates project attributes and status between AMANDA and ProjectDox. This interface is mitigated by the COA enterprise service bus specifically IBM Integration Bus (IIB). The consuming interface (either AMANDA or ProjectDox) uses internal system attributes and the IIB performs the required attribute transformation. See attribute transformation table.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Amanda/updateReviewInformation</td>
+</tr>
+<tr>
+<td>Based on returned error message from AMANDA, the Reviewer corrects errors identified by AMANDA.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">ProjectDox/establishRequiredReviewers</td>
+</tr>
+<tr>
+<td>The Plan Coordinator or the Reviewer uses ProjectDox to modify the types of reviews and ReviewList as required.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">ProjectDox/updateTaskList</td>
+</tr>
+<tr>
+<td>ProjectDox adds a new task to Reviewer task list. For reassignment, ProjectDox removes task item from the reassigned Reviewer.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">ProjectDox/createMasterCommentReport</td>
+</tr>
+<tr>
+<td>Once the fees are paid, the Plan Coordinator processes the Combined Comment Report and changes the status to AWAITING UPDATE. ProjectDox sends a copy of the Combined Comment Report to a publicly accessible directory, ProjectDox sends a message to Amanda with the file name and path - Amanda adds a folder attachment row. <span style="background: #D8C2D4;">ProjectDox sends a message to Amanda to change the Folder status to AWAITING UPDATE. ProjectDox provides access to the Combined Comment Report via the Applicant account portal - this report contains comments from all reviewers for the review cycle.</span></td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Amanda/checkFee</td>
+</tr>
+<tr>
+<td>Custom procedure COA_ProjectDox_AllFeesPaid will be called in the payment procedure for the folders integrated with ProjectDoc when the FolderStatus is 'AWAITING FEES'. This will run for each payment within the folder. If the result is that all fees are paid then a message is sent to ProjectDox to change the project status to 'FEE PAID'.
+
+<br /><br />
+
+<p class=contents style="text-indent: .0in;">&lt;soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:acc="http://www.austintexas.gov/AcceptAmanda/"&gt;
+   <p class=contents style="text-indent: .2in;">&lt;soapenv:Header/&gt;
+   <p class=contents style="text-indent: .2in;">&lt;soapenv:Body&gt;
+      <p class=contents style="text-indent: .4in;">&lt;acc:UpdateProjectStatus&gt;
+         <p class=contents style="text-indent: .6in;">&lt;FolderRSN&gt;?&lt;/FolderRSN&gt;
+         <p class=contents style="text-indent: .6in;">&lt;ProjectType&gt;?&lt;/ProjectType&gt;
+         <p class=contents style="text-indent: .6in;">&lt;FolderName&gt;?&lt;/FolderName&gt;
+         <p class=contents style="text-indent: .6in;">&lt;FolderDescription&gt;?&lt;/FolderDescription&gt;
+         <p class=contents style="text-indent: .6in;">&lt;ReferenceFile&gt;?&lt;/ReferenceFile&gt;
+         <p class=contents style="text-indent: .6in;">&lt;NameFirst&gt;?&lt;/NameFirst&gt;
+         <p class=contents style="text-indent: .6in;">&lt;NameLast&gt;?&lt;/NameLast&gt;
+         <p class=contents style="text-indent: .6in;">&lt;EmailAddress&gt;?&lt;/EmailAddress&gt;
+         <p class=contents style="text-indent: .6in;">&lt;PropertyName&gt;?&lt;/PropertyName&gt;
+         <p class=contents style="text-indent: .6in;">&lt;ProjectDoxId&gt;?&lt;/ProjectDoxId&gt;
+         <p class=contents style="text-indent: .6in;">&lt;ProcessCode&gt;?&lt;/ProcessCode&gt;
+         <p class=contents style="text-indent: .6in;">&lt;StatusCode&gt;?&lt;/StatusCode&gt;
+         <p class=contents style="text-indent: .6in;">&lt;ScheduledEndDate&gt;?&lt;/ScheduledEndDate&gt;
+      <p class=contents style="text-indent: .4in;">&lt;/acc:UpdateProjectStatus&gt;
+   <p class=contents style="text-indent: .2in;">&lt;/soapenv:Body&gt;
+<p class=contents style="text-indent: .0in;">&lt;/soapenv:Envelope&gt;
+
+<p>This procedure will create an XML message with the following XML Elements for use in passing the following data to ESB for ProjectDox.
+
+<!-- Table definition -->
+<table align="center" id="custom">
+<tr><th>AMANDA</th><th>XML&nbsp;Element</th><th>ProjectDox</th></tr>
+<tr>
+<td>Folder.ReferenceFile6</td>
+<td>ProjectDoxID</td>
+<td>This is the ProjectID from ProjectDox to identify the appropriate project to update</td>
+</tr>
+<tr>
+<td>Folder.StatusCode</td>
+<td>StatusCode</td>
+<td>This data populates ProjectStatus in ProjectDox (ESB translates statuscode to text status for ProjectDox)</td>
+</tr>
+</table>
+<p>Note: Also used by makeApplicationPayment - part of Awaiting Payment. <span style="background: B5D297;">The payment procedure calls custom procedure COA_ProjectDox_AllFeesPaid for folders integrated with ProjectDoc when the FolderStatus is AWAITING FEES. This runs for each payment within the folder. If the result is that all fees are paid, then Amanda sends a message to ProjectDox to change the project status to FEE PAID.</span></td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Amanda/notifyApplicantOfExpiration</td>
+</tr>
+<tr>
+<td>Three batch routines (DefaultReport_05, DefaultReport_Expire45, and DefaultReport_ExpirePR) run each day to check a folderinfo field to see if the application should be expired. When this happens AMANDA needs to send a message to ProjectDox to change the project status to 'EXPIRED' and close any open review tasks.  This can be done via a FolderUpdate trigger in EAI or through additional scripting added to the batch procedure.
+
+<p class=contents style="text-indent: .0in;">&lt;soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:acc="http://www.austintexas.gov/AcceptAmanda/"&gt;
+   <p class=contents style="text-indent: .2in;">&lt;soapenv:Header/&gt;
+   <p class=contents style="text-indent: .2in;">&lt;soapenv:Body&gt;
+      <p class=contents style="text-indent: .4in;">&lt;acc:UpdateProjectStatus&gt;
+         <p class=contents style="text-indent: .6in;">&lt;FolderRSN&gt;?&lt;/FolderRSN&gt;
+         <p class=contents style="text-indent: .6in;">&lt;ProjectType&gt;?&lt;/ProjectType&gt;
+         <p class=contents style="text-indent: .6in;">&lt;FolderName&gt;?&lt;/FolderName&gt;
+         <p class=contents style="text-indent: .6in;">&lt;FolderDescription&gt;?&lt;/FolderDescription&gt;
+         <p class=contents style="text-indent: .6in;">&lt;ReferenceFile&gt;?&lt;/ReferenceFile&gt;
+         <p class=contents style="text-indent: .6in;">&lt;NameFirst&gt;?&lt;/NameFirst&gt;
+         <p class=contents style="text-indent: .6in;">&lt;NameLast&gt;?&lt;/NameLast&gt;
+         <p class=contents style="text-indent: .6in;">&lt;EmailAddress&gt;?&lt;/EmailAddress&gt;
+         <p class=contents style="text-indent: .6in;">&lt;PropertyName&gt;?&lt;/PropertyName&gt;
+         <p class=contents style="text-indent: .6in;">&lt;ProjectDoxId&gt;?&lt;/ProjectDoxId&gt;
+         <p class=contents style="text-indent: .6in;">&lt;ProcessCode&gt;?&lt;/ProcessCode&gt;
+         <p class=contents style="text-indent: .6in;">&lt;StatusCode&gt;?&lt;/StatusCode&gt;
+         <p class=contents style="text-indent: .6in;">&lt;ScheduledEndDate&gt;?&lt;/ScheduledEndDate&gt;
+      <p class=contents style="text-indent: .4in;">&lt;/acc:UpdateProjectStatus&gt;
+   <p class=contents style="text-indent: .2in;">&lt;/soapenv:Body&gt;
+<p class=contents style="text-indent: .0in;">&lt;/soapenv:Envelope&gt;
+
+<p>This procedure will create an XML message with the following XML Elements for use in passing the following data to ESB for ProjectDox.
+
+<!-- Table definition -->
+<table align="center" id="custom">
+<tr><th>AMANDA</th><th>XML&nbsp;Element</th><th>ProjectDox</th></tr>
+<tr>
+<td>Folder.ReferenceFile6</td>
+<td>ProjectDoxID</td>
+<td>This is the ProjectID from ProjectDox to identify the appropriate project to update</td>
+</tr>
+<tr>
+<td>Folder.StatusCode</td>
+<td>StatusCode</td>
+<td>This data populates ProjectStatus in ProjectDox (ESB translates statuscode to text status for ProjectDox)</td>
+</tr>
+</table>
+
+<p>AMANDA evaluates business rules associated with the case number, and creates and sends a notification to the contacts associated with the project indicating the outstanding fees, timing for payment, and the expiration of the project due to lack of timely response.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">ProjectDox/notifyApplicantOfReviewResults</td>
+</tr>
+<tr>
+<td>Once the fees are paid the Plan Coordinator can either send the Combined Comment Report or change the status to 'AWAITING UPDATE'. A copy of the Combined Comment Report is sent to an accessible directory and a message sent via ESB to AMANDA with the file name and path so that a folder Attachment row can be added to AMANDA where the drawings are viewable. This update is made by using the Web Service &quot;addFolderAttachment&quot;. The four required elements for the update into AMANDA include Folder.FolderRSN, Attachment.AttachmentCode, Attachment.AttachmentDetail, and Attachment.DOSPath. ProjectDox sends email to the Applicant to indicate the completion of review cycle. The Applicant logs into their ProjectDox account to obtain results from the review.
+
+<p>ProjectDox send a message to AMANDA via ESB to change the Folder status to 'AWAITING UPDATE'. This update is made by using the Web Service "updateFolder". The two required elements for the update into AMANDA are: Folder.FolderRSN and FolderStatusCode.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">ProjectDox/storeProjectDocuments</td>
+</tr>
+<tr>
+<td>The Applicant uses their email address to log into the system using a link provided by ProjectDox and chooses the project to upload documents. Using the system, the Applicant uploads required documents. Once the Applicant has uploaded all of their documents, they select the UPLOAD COMPLETE within the ProjectDox provided Web interface, indicating all documents have been added to the project for review. Otherwise, the system provides a means to continue document uploads until UPLOAD COMPLETE status indicating all documents added for project review.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">ProjectDox/reviewProjectDocuments</td>
+</tr>
+<tr>
+<td>The Reviewer use ProjectDox to perform a review, markup and comment on project documents submitted by the Applicant in the review queue. The Reviewer uses ProjectDox to approve, reject, or indicate review not required.</td>
+</tr>
+</table>
+
+<h1 id="6_0">6. Approve Project</h1>
+
+<!-- Image Title -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/rpi/obtainSubmittalPlanApproval/06SD.jpg"><img src="http://austinea.org/arch/rpi/obtainSubmittalPlanApproval/06SD.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Sequence Diagram: 6. Approve Project</span>
+</td></tr></table>
+
+<br />
+
+<!-- Table definition -->
+<table align="center" id="custom">
+<tr><th>Type/Interface - Requirement Description</th></tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">ProjectDox/stampProject</td>
+</tr>
+<tr>
+<td>When all reviews for the project are approved, the Plan Coordinator uses ProjectDox to stamp the drawings and sends a notification to the applicant. A copy of the drawing package is sent to an accessible directory and <span style="background: #D8C2D4">a message sent to AMANDA with the file name and path so that a folder Attachment row can be added to AMANDA so that the drawings are viewable</span>. This update is made by using the Web Service &quot;addFolderAttachment&quot;. The four required elements for the update into AMANDA include Folder.FolderRSN, Attachment.AttachmentCode, Attachment.AttachmentDetail, and Attachment.DOSPath.
+
+<p>A message is also sent from ProjectDox to AMANDA to change the folder status to 'APPROVED AND RELEASED'. This update is made by using the Web Service &quot;updateFolder&quot;. The two required elements for the update into AMANDA include Folder.FolderRSN and Folder.StatusCode.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">ProjectDox/updateProjectInfo</td>
+</tr>
+<tr>
+<td>Updates project attributes and status between AMANDA and ProjectDox. This interface is mitigated by the COA enterprise service bus specifically IBM Integration Bus (IIB). The consuming interface (either AMANDA or PorjectDox) uses internal system attributes and the IIB performs the required attribute transformation. See attribute transformation table.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">ProjectDox/indicateDocumentLocation</td>
+</tr>
+<tr>
+<td>ProjectDox sends a Notification to the Applicant indicating their approved and released documentation is ready for download. The Applicant logs into their account to download official and approved copies containing the city approval stamp. If the Plan Coordinator chooses, these same plans are made available to the AMANDA portal and back office applications for interested party access.</td>
+</tr>
+</table>
+
+<h1 id="apa">Appendix A</h1>
+
+<p>Sample XML structure to be used for all messages sent from AMANDA to ESB:
+
+<p class=contents style="text-indent: .0in;">&lt;soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:acc="http://www.austintexas.gov/AcceptAmanda/"&gt;
+   <p class=contents style="text-indent: .2in;">&lt;soapenv:Header/&gt;
+   <p class=contents style="text-indent: .2in;">&lt;soapenv:Body&gt;
+      <p class=contents style="text-indent: .4in;">&lt;acc:UpdateProjectStatus&gt;
+         <p class=contents style="text-indent: .6in;">&lt;FolderRSN&gt;14&lt;/FolderRSN&gt;
+         <p class=contents style="text-indent: .6in;">&lt;ProjectType&gt;ad&lt;/ProjectType&gt;
+         <p class=contents style="text-indent: .6in;">&lt;FolderName&gt;cc&lt;/FolderName&gt;
+         <p class=contents style="text-indent: .6in;">&lt;FolderDescription&gt;dd&lt;/FolderDescription&gt;
+         <p class=contents style="text-indent: .6in;">&lt;ReferenceFile&gt;fg&lt;/ReferenceFile&gt;
+         <p class=contents style="text-indent: .6in;">&lt;NameFirst&gt;a&lt;/NameFirst&gt;
+         <p class=contents style="text-indent: .6in;">&lt;NameLast&gt;?&lt;/NameLast&gt;
+         <p class=contents style="text-indent: .6in;">&lt;EmailAddress&gt;?&lt;/EmailAddress&gt;
+         <p class=contents style="text-indent: .6in;">&lt;PropertyName&gt;?&lt;/PropertyName&gt;
+         <p class=contents style="text-indent: .6in;">&lt;ProjectDoxId&gt;?&lt;/ProjectDoxId&gt;
+         <p class=contents style="text-indent: .6in;">&lt;ProcessCode&gt;?&lt;/ProcessCode&gt;
+         <p class=contents style="text-indent: .6in;">&lt;StatusCode&gt;?&lt;/StatusCode&gt;
+         <p class=contents style="text-indent: .6in;">&lt;ScheduledEndDate&gt;?&lt;/ScheduledEndDate&gt;
+      <p class=contents style="text-indent: .4in;">&lt;/acc:UpdateProjectStatus&gt;
+   <p class=contents style="text-indent: .2in;">&lt;/soapenv:Body&gt;
+<p class=contents style="text-indent: .0in;">&lt;/soapenv:Envelope&gt;
+
+
+<h1 id="apb">Appendix B</h1>
+
+<p>Sample COA_ProjectDox_CreateNewProject(argFolderRSN) procedure to be called from NewFolderFee Procedure in folder being integrated with ProjectDox.  
+
+<p>Create or Replace procedure COA_ProjectDox_CreateNewProject (argFolderRSN NUMBER) <br />
+IS<br />
+v_pager Folder.FolderRSN%Type;<br />
+v_permitdescription varchar2(150);<br />
+v_permitnumber Folder.FolderName%Type;<br />
+v_location Property.PropertyName%Type;<br />
+v_submitterfname People.NameFirst%Type;<br />
+v_submitterlname People.NameLast%Type;<br />
+v_submitteremail People.EmailAddress%Type;<br />
+v_projecttype varchar2(1000);<br />
+url varchar2(1000); <br />
+xml varchar2(4000);<br />
+
+<p>BEGIN<br />
+SELECT Folder.FolderRSN, SUBSTR(Folder.ReferenceFile||' '||Folder.FolderDescription,1,150), Folder.FolderName, Property.PropertyName, People.NameFirst, People.NameLast, People.emailaddress, nvl(ValidLookup.LookupString2, 'N/A') <br />
+INTO v_pager, v_permitdescription, v_permitnumber, v_location, v_submitterfname, v_submitterlname, v_submitteremail, v_projecttype<br />
+FROM Folder, ValidLookup<br />
+LEFT JOIN Folder.FolderRSN = FolderPeople.FolderRSN<br />
+AND FolderPeople.PeopleRSN ON FolderPeople.PeopleRSN = People.PeopleRSN<br />
+AND FolderPeople.PeopleCode = 3<br />
+LEFT JOIN Folder.PropertyRSN ON Folder.PropertyRSN =  Property.PropertyRSN<br />
+WHERE Folder.FolderRSN = argFolderRSN<br />
+AND  ValidLookup.LookupCode = 99055<br />
+AND ValidLookup.Lookup2 = (SELECT SubCode FROM Folder WHERE FolderRSN = argFolderRSN)<br />
+AND ValidLookup.LookupString = (SELECT Folder.FolderType FROM Folder WHERE FolderRSN = argFolderRSN)<br />
+AND ValidLookup.Lookup3 = (SELECT Folder.WorkCode FROM Folder WHERE FolderRSN = argFolderRSN);<br />
+
+<p>IF v_projecttype &lt;&gt; 'N/A' THEN<br />
+    <p class=contents style="text-indent: .4in;">url := ?;
+
+       <p class=contents style="text-indent: .4in;"> xml := '&lt;AmandaEai&gt;
+      <p class=contents style="text-indent: .4in;">|| '&lt;FromSystem&gt;AMANDA&lt;/FromSystem&gt;'
+      <p class=contents style="text-indent: .4in;">|| '&lt;ToSystem&gt;AUSTIN_ESB&lt;/ToSystem&gt;'
+      <p class=contents style="text-indent: .4in;">|| '&lt;CREATEPROJECT&gt;'
+      <p class=contents style="text-indent: .4in;">|| '&lt;PAGER&gt;v_pager&lt;/PAGER&gt;'
+      <p class=contents style="text-indent: .4in;">|| '&lt;PERMITDESCRIPTION&gt;v_permitdescription&lt;/PERMITDESCRIPTION&gt;'
+      <p class=contents style="text-indent: .4in;">|| '&lt;PERMITNUMBER&gt;v_permitnumber&lt;/PERMITNUMBER&gt;'
+      <p class=contents style="text-indent: .4in;">|| '&lt;LOCATION&gt;v_location&lt;/LOCATION&gt;'
+      <p class=contents style="text-indent: .4in;">|| '&lt;SUBMITTERFNAME&gt;v_submitterfname&lt;/SUBMITTERFNAME&gt;'
+      <p class=contents style="text-indent: .4in;">|| '&lt;SUBMITTERLNAME&gt;v_submitterlname&lt;/SUBMITTERNAME&gt;'
+      <p class=contents style="text-indent: .4in;">|| '&lt;SUBMITTEREMAIL&gt;v_sumitteremail&lt;/SUBMITTEREMAIL&gt;'
+      <p class=contents style="text-indent: .4in;">|| '&lt;PROJECTTYPE&gt;v_projecttype&lt;/PROJECTTYPE&gt;'
+      <p class=contents style="text-indent: .4in;">|| '&lt;STATUS&gt;'AWAITING UPLOAD'&lt;/STATUS&gt;'
+      <p class=contents style="text-indent: .4in;">|| '&lt;/CREATEPROJECT&gt;'
+      <p class=contents style="text-indent: .4in;">|| '&lt;/AmandaEai&gt;';
+    <p class=contents style="text-indent: .2in;">Commit;
+    <p class=contents style="text-indent: .2in;">FIFOCALL(url,xml);
+<p class=contents style="text-indent: .0in;">END COA_ProjectDox_CreateNewProject;
+
+
+</td></tr></table>
+</td></tr></table></body></html>

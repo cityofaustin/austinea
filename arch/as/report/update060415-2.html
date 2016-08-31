@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<title>Animal Services "Manage Responsible Pet Owner Clinic"</title>
+<link rel="StyleSheet" href="http://austinea.org/style/email.css" type="text/css">
+</head>
+<body>
+
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="600" align="center"><tr><td>
+
+<!-- Online reference -->
+<p><class="lbl">Note: This report is also <a href="http://austinea.org/arch/as/report/update060415-2.html" style="font-size: 7pt;">available online</a> by following link.</p>
+
+<div>
+<p>Hi All,</p> 
+</div>
+
+<p>Attached is the information for the updated "Manage Responsible Pet Owner Clinic" use case that was reviewed June 4th, 2015, with the Animal Services Team. Please take a moment to check my work and let me know if there are any changes I can make to improve this, or if this requirement is as discussed!  </p> <p>
+
+Additionally, I wanted to let you know the Online repository of Animal Services Use Cases is now up to date ( http://austinea.org/arch/as/report/index.html )
+<p>
+
+
+<!-- Signature-->
+<table cellpadding="0" cellspacing="0" border="0" width="350" style="border-collapse: collapse;"><tr><td>
+<p>Cheers!</p>
+
+<table cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;" align="right">
+<tr>
+<td>
+<img src="http://austinea.org/image/austinLogo.jpg" border="0" width="100" height="100" alt="Austin Logo" />
+</td>
+</tr>
+</table>
+<p><img src="http://coawss3a.coacd.org/sites/CTM/EA/Shared Documents/Images/ABSIG.JPG" border="0" width="143" height="83" alt="sign" /> </p>
+
+<p><b>Aaron Brown</b> 
+<span style="color: red; font-weight: bold;">|</span> 
+<b>City of Austin</b>
+<a href="http://www.linkedin.com/in/austnaaron"><img src="http://journeycolorado.com/images/linkedin.jpg" border="0" alt="Linkin Logo" /> </a> <br />
+Senior IT Enterprise Architect<br />
+Direct: (512) 974-2960 </p>
+Email: Aaron.Brown2@austintexas.gov </p>
+</td></tr></table>
+
+
+<!-- Use case information below -->
+
+<hr>
+
+<b> Animal Shelter Logical Data Model </b>
+<!-- Image -  Logical Data Model -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="http://austinea.org/arch/as/report/animalShelterLogicalDataModel.jpg"><img src="http://austinea.org/arch/as/report/animalShelterLogicalDataModel.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Animal Shelter Logical Data Model</p>
+</td></tr></table> 
+
+<!--  Requirements Model -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="right">
+<tr>
+<td align="center">
+<span class="lbl">Note: Select to download</span><br />
+<a href="http://austinea.org/arch/as/report/manageResponsiblePetOwnerClassUseCase.jpg"><img src="http://austinea.org/arch/as/report/manageResponsiblePetOwnerClassUseCase.jpg" border="0" width="200" alt="" /></a><br />
+<span style="font-weight: bold;">Manage Responsible Pet Owner Clinic<br />Use Case</span>
+</td></tr></table>
+
+
+
+
+
+<p><b>Use Case Scope</b></p>
+<p>The Citizen comes into the Animal Services or accesses the system from the internet and signs up for a Responsible Pet Owner Class. On the day of the class, the Citizen, shows proof of rabies vaccination and/or court order documents, and pays the fee for the class. For citizens with a citation, the citation compliance date is they date by which they must attend the class. Traditionally, the class size is 10 people. 
+The day of the class, the Outreach Education Team prints out the roster of who will be attending and Print Certificates (pre-printed with all the names of the people on the roster.) The Outreach Education team will setup the computer, check each person’s ID, get each Citizen to sign the attendance roster and teach the presentation. 
+Upon completion the Outreach Education team will hand out certificates to each attendee, and shred the certificates made for Citizens that didn’t attend. 
+Lastly, the Outreach Education Team accesses the system and records the Attendance date and time for each Citizen that attended.   </p>
+
+<!-- Image -  Sequence Diagram -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="http://austinea.org/arch/as/report/manageResponsiblePetOwnerClassSequenceDiagram01.jpg"><img src="http://austinea.org/arch/as/report/manageResponsiblePetOwnerClassSequenceDiagram01.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Manage Responsible Pet Owner Clinic Sequence Diagram</p>
+</td></tr></table> 
+
+
+
+<p style="font-weight: bold; text-align: center;">Manage Responsible Pet Owner Clinic Interface Descriptions</p>
+<!-- Table definition -->
+<table align="center" id="custom">
+<tr><th width="195">Type/Interface</th><th>Description</th></tr>
+<tr>
+<td>Provide Animal Shelter and Rescue/ <br /> registerForRPO</td> <td>The Citizen accesses the Animal Services Website and chooses to register for the next Responsible Pet Owner training class.
+ </td> </tr>
+ 
+<tr>
+<td>Customer Service/ <br /> verifyRabiesCertificateAndTakeFees</td> <td>The Citizen provides proof of rabies Vaccination and/or court order documents, pays the fee for the class and is placed on a schedule. If in response to a citation, the citizen will have a citation compliance date by which they must complete the course. If the Citizen cannot complete a class before the compliance date, the system will warn them of the lack of available classes.  </td> </tr>
+
+<tr>
+<td>Provide Animal Shelter and Rescue/ <br /> printRPOClassRoster</td> <td>The Outreach Education Team accesses the system and prints out a roster of all citizen's registered to attend the next Responsible Pet Owner training class.  </td> </tr>
+
+<tr>
+<td>Outreach Education Team/<br /> createRPOCertificates</td> <td>The Outreach Education team uses the roster of class attendee's and prints graduation certificates for each potential attendee, in preparation for class completion. The certificates include the Citizen name, and the date of Attendance.  </td> </tr>
+
+
+<tr>
+<td>Outreach Education Team/<br />conductRPOClass</td> <td>The Outreach Education team ensures the room for the Responsible Pet training is reserved (normally reserved 3 months in advance). On day of the class, the Outreach Education team will access the room, setup the computer with the current PowerPoint presentation, and then present the material to the Citizens in attendance. The Outreach Education team member checks each citizen's ID, and the Citizen will sign a roster confirming attendance. </td> </tr>
+
+<tr>
+<td>Citizen/<br /> receiveRPOCertificate</td> <td>The Outreach Education team provides a certificate to the Citizen as proof of their completion of the Responsible Pet Ownership Class.  </td> </tr>
+
+
+<tr>
+<td>Provide Animal Shelter and Rescue/<br /> registerClassGraduates</td> <td>The Outreach Education team accesses the system and records the Citizens that completed the class, and the date and time at which they achieved their completion of the Responsible Pet Ownership Class. </td> </tr>
+
+
+<tr>
+<td>Animal Services Dispatcher/<br /> voidCitationForGraduates</td> <td>The Outreach Education team provides a list of Responsible Pet Owner graduates with citations to the Animal Services Dispatcher, to void the outstanding citations (since the Citizens have met their obligation to attend Responsible Pet Owner Training.)  </td> </tr>
+
+
+
+
+
+
+</table>
+
+
+
+<!-- Table definition
+<table align="center" id="custom">
+<tr><th>Number</th><th>Category</th><th>Description</th><th>Criticality</th></tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table> -->
+
+</td></tr></table> 
+
+</td></tr></table>
+</td></tr></table></body></html>

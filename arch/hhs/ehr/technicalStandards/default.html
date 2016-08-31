@@ -1,0 +1,117 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>EHR Technical Standards</title>
+<link rel="Stylesheet" href="http://austinea.org/style/email.css" type="text/css" />
+</head>
+<body bgcolor="#ddd8c2">
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="650" align="center">
+<tr><td style="padding: 0;" height="130" valign="top"><a href="http://austinea.org">
+<img src="http://austinea.org/image/iTHeader.jpg" alt="austinea.org - home..." border="0"></a></td></tr>
+<!-- Text Area -->
+<tr><td>
+<p style="text-align: center; font-weight: bold;">Technical Standards<br />Electronic Health Records
+
+<p style="text-align: center; font-weight: normal;">03/03/2016
+
+<p>Vendor shall review the following technical standards and indicate deviations with explanation. A non-response indicates technical standard agreed compliance.
+
+<p style="text-align: center; font-weight: normal;">Download <a href="http://austinea.org/arch/hhs/ehr/technicalStandards/technicalStandardsEHR.docx">MS Word version</a><br />
+Download <a href="http://austinea.org/arch/hhs/ehr/technicalStandards/technicalStandardsEHR_update.xlsx">MS Excel version</a>
+
+<p><b>SaaS/PaaS</b> - Solutions using Software as a Service (SaaS).<br />
+
+<p>Mandatory - Essential requirement<br />
+Expected - Anticipated or presumed requirement<br />
+
+<!-- Image Title
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/"><img src="http://austinea.org/" border="0" width="600" alt="" /></a><br />
+<span style="font-weight: bold;">Image Title</span>
+</td></tr></table> -->
+
+<br />
+<table align="center" id="custom">
+<tr><th>ID</th><th>Topic</th><th>Description</th><th>SaaS</th></tr>
+<tr><td>1</td><td>Application Architecture</td><td>The application provides Web-enabled components to meet the Rehabilitation Act of 1973 Section 503, W3C and industry standards for graphics and design; speed; reliability; and security for dynamic content and user interaction.</td><td>Mandatory</td></tr>
+<tr><td>2</td><td>Application Architecture</td><td>No requirement to deploy additional application, code or 3rd party plug-in to client workstations (note: If Java Runtime Environment (JRE) is required, please list all supported versions).</td><td>Mandatory</td></tr>
+<tr><td>3</td><td>Application Architecture</td><td>The application provides the ability to automate the deployment of software and updates to user workstations including, but not limited to Web-based deployment tools to push/pull software to the desktop (note: applicable only to run-time environment, like Java). Unless the contractor provides an alternative solution, users do not require administrative privileges.</td><td>Mandatory</td></tr>
+<tr><td>4</td><td>Application Architecture</td><td>The application provides built-in application and system configuration tables accessible by all modules.</td><td>Mandatory</td></tr>
+<tr><td>5</td><td>Application Architecture</td><td>The application provides forms-based data validation (field level validation) and displays error messages when validation fails (i.e., user enters text in a numeric field).</td><td>Mandatory</td></tr>
+<tr><td>6</td><td>Application Architecture</td><td>The application provides copy, cut, paste, and undo functions from all data fields to/from other applications.</td><td>Mandatory</td></tr>
+<tr><td>7</td><td>Application Architecture</td><td>The application provides ability to perform mass changes to a defined group of transactions with appropriate selection criteria. Sometimes item descriptions or nomenclature change, the application provides advanced users of the system the ability to globally replace textual items with identity grouping constraints using SQL (or similar technology) like replacements when necessary. </td><td>Mandatory</td></tr>
+<tr><td>8</td><td>Application Architecture</td><td>The application provides ability to effective date transactions and table updates including, but not limited to future and retroactive changes, based on user-defined criteria.</td><td>Mandatory</td></tr>
+<tr><td>9</td><td>Application Architecture</td><td>The application provides ability to drill down from a transaction view to the supporting source document or record, regardless of the module source.</td><td>Mandatory</td></tr>
+<tr><td>10</td><td>Application Architecture</td><td>The application provides ability to apply upgrades and patches without impact to existing user interface customizations (e.g., user-defined forms/fields, Web interface, etc.).</td><td>Expected</td></tr>
+<tr><td>11</td><td>Application Architecture</td><td>Solution provides a patch management program that includes testing patches prior to implementation. </td><td>Expected</td></tr>
+<tr><td>12</td><td>Data Entry Support and On-Line Help</td><td>The system provides ability to restrict free form entry for structured data types (e.g., require use of drop-down calendar for date field).</td><td>Mandatory</td></tr>
+<tr><td>13</td><td>Data Storage and Archiving</td><td>The solution provides a complete copy of hosted data using comma separated view (CSV) format or other agreed to and usable formats in the event of contract termination with 30 days of the request.</td><td>Mandatory</td></tr>
+<tr><td>14</td><td>Data Storage and Archiving</td><td>The solution supports future releases of the application without rendering the archived data unusable or provides an upgrade script to convert archived data to supported format.</td><td>Mandatory</td></tr>
+<tr><td>15</td><td>Data Storage and Archiving</td><td>The solution provides online access to the current year plus unlimited previous years of all types of data retained in the system, and provides archive capabilities thereafter for inactive historical records. The solution provides a method to retrieve archived records back into active state.</td><td>Expected</td></tr>
+<tr><td>16</td><td>Database Architecture</td><td>The application provides standardized data extraction functions or Application Program Interface (API) to allow import and export of data to/from other systems.</td><td>Mandatory</td></tr>
+<tr><td>17</td><td>Database Architecture</td><td>The application provides ability to encrypt sensitive data - federal or state compliance required (e.g., PII, PCI, HIPAA, etc.).</td><td>Mandatory</td></tr>
+<tr><td>18</td><td>Database Architecture</td><td>The application provides ability to exchange database information using industry accepted standards and formats including JavaScript Object Notation (JSON). The solution uses the same data validation criteria for bulk data loads as it does for manual data entry. The application provides ability to exchange database information using industry accepted standards and formats including Extensible Markup Language (XML).</td><td>Mandatory</td></tr>
+<tr><td>19</td><td>Database Architecture</td><td>The application provides ability to perform database maintenance including, but not limited to, backup and upgrades without requiring system downtime during core business hours.</td><td>Expected</td></tr>
+<tr><td>20</td><td>Database Architecture</td><td>The solution includes a method of purging record data from the database(s) ensuring referential integrity with master/child records.</td><td>Expected</td></tr>
+<tr><td>21</td><td>End-User Interface</td><td>The system meets Web Accessibility standards including, but not limited to, ability to support ADA and compliant with Section 508 of the Federal Rehabilitation Act (see http://www.access-board.gov/sec508/summary.htm). Web based applications must be ADA compliant following the specifications of 508c of the Americans With Disabilities Act. If compliance is not possible, reasonable alternatives may be considered.</td><td>Mandatory</td></tr>
+<tr><td>22</td><td>Information Management</td><td>The system prevents the loss or unauthorized deletion of records before the expiration of their retention period as authorized by an approved records control schedule or with the written permission of the Texas State Library and Archives Commission. Texas Local Government Records Act §202.001(a).</td><td>Mandatory</td></tr>
+<tr><td>23</td><td>Information Management</td><td>The system prevents the unauthorized alteration of records before the expiration of their retention period. The system provides logs or audit trails that document edits and views of records. This is a requirement for records governed by HIPAA; and, depending on the type of record, there may be additional integrity requirements governed by Texas House Bill 300.</td><td>Mandatory</td></tr>
+<tr><td>24</td><td>Information Management</td><td>The system provides systematic deletion of records upon expiration of their retention period as authorized by an approved records control schedule or with the written permission of the Texas State Library and Archives Commission. Texas Local Government Records Act §202.001(a) and §201.003(16), Austin City Code §2-11-11. Sufficient metadata must be present to identify records eligible for disposition based on defined triggering events and dates.</td><td>Mandatory</td></tr>
+<tr><td>25</td><td>Information Management</td><td>Upon expiration of the retention period, the system ensures destruction of all duplicate records to include convenience copies. Texas Rules of Evidence, Rule 1003. The system's back-up strategy ensures retention of backup records doesn't excessively exceed destruction of originals. System procedures must ensure retention rules apply to copies of production data used to develop, test, or train.</td><td>Mandatory</td></tr>
+<tr><td>26</td><td>Information Management</td><td>The system ensures records are retrievable and available until the expiration of their approved retention period. Texas Local Government Records Act §205.008(b). Records stored on contractor, outsourced, cloud, or hosted platforms remain the property and responsibility of the City. When contacted by an authorized City employee or when the contract ends or is terminated, contractors must deliver records, in all requested formats and media, along with all finding aids and metadata, to the City at no cost. Austin City Code §2-11-15.</td><td>Mandatory</td></tr>
+<tr><td>27</td><td>Information Management</td><td>Until expiration of retention period, hardware and software must be available to access records and sufficient metadata must be present to facilitate timely retrieval of records. Contracts with hosted solution providers must specify the contractor's duties with respect to management of records as required by Austin City Code §2-11-15. The system ensures retention of specific records - even if their retention period has expired - if they are the subject of known or reasonably anticipated litigation, public information request, audit or other legal action. Texas Local Government Records Act §202.002, Austin City Code § 2-11-11. The system maintains a log of litigation and other holds allowing release of holds after resolution of litigation, audit, or public information requests.</td><td>Mandatory</td></tr>
+<tr><td>28</td><td>Information Management</td><td>The system creates records/logs of destruction activity. Texas Local Government Records Act §203.046, Austin City Code §2-11-11. Destruction logs must (a) show a minimal set of metadata sufficient to uniquely identify the records purged; (b) show who approved and who executed the destruction, and the dates on which these events took place; (c) reflect compliance with an approved, written standard operating procedure; and (d) be retained permanently.</td><td>Mandatory</td></tr>
+<tr><td>29</td><td>Information Management</td><td>Solution provides a data recovery plan and tested procedures within the last 6 (six) months.</td><td>Mandatory</td></tr>
+<tr><td>30</td><td>Integration Architecture</td><td>If application requires integration with other City data, the application must integrate using industry standards useful to a service-oriented architecture (SOA) and an enterprise service bus (ESB).</td><td>Expected</td></tr>
+<tr><td>31</td><td>Security and Authentication</td><td>The system uses Microsoft Active Directory Federated Services (ADFS) [current version minus 1] for federated identity management. The City is migrating to Microsoft Office 365 (O365) and ultimately migrating to a Microsoft managed Active Directory service. Therefore, the system uses single sign on for application access.</td><td>Expected</td></tr>
+<tr><td>32</td><td>Security and Authentication</td><td>The system allows user registration and de-registration, at a minimum, communicates relevant policies to users and requires signed acknowledgement, checks authorization and minimum level of access necessary prior to granting access, ensures access is appropriate to the business need (consistent with sensitivity/risk and does not violate segregation of duties requirements), addresses termination and transfer, ensures default accounts are removed and/or renamed, removes or blocks critical access rights of users who have changed roles or jobs, and automatically removes or disables inactive accounts.  </td><td>Mandatory</td></tr>
+<tr><td>33</td><td>Security and Authentication</td><td>Conduct an annual security assessment of all tiers of hosting facility, including application servers and network devices. Provide annual summary copies of the security audit reports to the City of Austin. We prefer an annual 3rd party security assessment, which we may require depending on the hosted data.</td><td>Mandatory</td></tr>
+<tr><td>34</td><td>Security and Authentication</td><td>The system provides ability to restrict remote access to the application by client IP address or network address range.</td><td>Expected</td></tr>
+<tr><td>35</td><td>Security and Authentication</td><td>Vendor provides a Health Insurance Portability and Accountability Act (HIPAA) Report on Compliance (HROC) or SSAE 16 SOC 2 Type II validating they are compliant against the Office for Civil Rights (OCR) HIPAA Audit Protocol covering HIPAA Privacy Rule, Security Rule and Breach Notification Rule.</td><td>Mandatory</td></tr>
+<tr><td>36</td><td>Security and Authentication</td><td>Solution provides a process for secure disposal of data when requested by COA.</td><td>Mandatory</td></tr>
+<tr><td>37</td><td>Security and Authentication</td><td>Solution/Application provides SSAE 16 or SAS70 audit covering application controls. </td><td>Expected</td></tr>
+<tr><td>38</td><td>Security and Authentication</td><td>Solution provides regularly engagements with 3rd parties to perform system evaluation. </td><td>Expected</td></tr>
+<tr><td>39</td><td>Security and Authentication</td><td>Solution provides journals and/or procedures to determine compromised assets. Solution provides system vulnerability scans on a regular basis, notifies user staff, and publishes potential issues and risks. </td><td>Mandatory</td></tr>
+<tr><td>40</td><td>Security and Authentication</td><td>Solution utilizes methods to detect and block application level software attacks. </td><td>Mandatory</td></tr>
+<tr><td>41</td><td>Security and Authentication</td><td>The solution performs SAS70, SSAE16, or SOC1 data center audit and a current report is available for review. </td><td>Expected</td></tr>
+<tr><td>42</td><td>Security and Authentication</td><td>Application audit logs record and are regularly reviewed to examine user IDs, dates, and times of log on and log off, log in failures, changes to security parameters, and other security actions. </td><td>Mandatory</td></tr>
+<tr><td>43</td><td>Security and Authentication</td><td>All data encrypted (even at rest) using 256 bit AES encryption or better/similar technology.</td><td>Mandatory</td></tr>
+<tr><td>44</td><td>Security and Authentication</td><td>Solution securely transmits data over public networks. </td><td>Mandatory</td></tr>
+<tr><td>45</td><td>Security and Authentication</td><td>Solution provides emergency access (only) for authorized personnel while maintaining appropriate security controls. </td><td>Mandatory</td></tr>
+<tr><td>46</td><td>System Flexibility</td><td>The system provides the ability to define business rules based on user-defined criteria (e.g., organizational level, account code, bargaining unit, location, program, grant, etc.).</td><td>Expected</td></tr>
+<tr><td>47</td><td>System Flexibility</td><td>The application provides integration with patient survey system.</td><td>Expected</td></tr>
+</table>
+
+<br />
+
+<!-- Table definition
+<p style="text-align: center; font-weight: bold;">Table of Interface and Functional Descriptions</p>
+<table align="center" id="custom">
+<tr><th width="9%">Req#</th><th width="70%">Type/Interface - Requirement Description</th><th>Performance</th></tr>
+<tr>
+<td rowspan="2">SS02</td>
+<td style="font-weight: bold; background: lightgray;">method</td>
+<td rowspan="2">performance</td>
+</tr>
+<tr>
+<td>description</td>
+</tr>
+</table> -->
+
+<!-- Table definition
+<table align="center" id="custom">
+<tr><th>Number</th><th>Category</th><th>Description</th><th>Criticality</th></tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table> -->
+
+</td></tr></table>
+</td></tr></table></body></html>

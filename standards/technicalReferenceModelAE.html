@@ -1,0 +1,2105 @@
+<html>
+
+<head>
+<title>AE Technical Reference Model</title>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Verdana;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	line-height:107%;
+	font-size:10.0pt;
+	font-family:"Verdana",sans-serif;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{mso-style-link:"Header Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Verdana",sans-serif;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{mso-style-link:"Footer Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Verdana",sans-serif;}
+p.MsoNoSpacing, li.MsoNoSpacing, div.MsoNoSpacing
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:10.0pt;
+	font-family:"Verdana",sans-serif;}
+span.HeaderChar
+	{mso-style-name:"Header Char";
+	mso-style-link:Header;
+	font-family:"Verdana",sans-serif;}
+span.FooterChar
+	{mso-style-name:"Footer Char";
+	mso-style-link:Footer;
+	font-family:"Verdana",sans-serif;}
+.MsoPapDefault
+	{margin-bottom:8.0pt;
+	line-height:107%;}
+ /* Page Definitions */
+ @page WordSection1
+	{size:8.5in 11.0in;
+	margin:.75in .75in .75in .75in;}
+div.WordSection1
+	{page:WordSection1;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US bgcolor="#ddd8c2">
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="650" align="center">
+<tr><td style="padding: 0;" height="130" valign="top"><a href="http://austinea.org">
+<img src="http://austinea.org/image/iTHeader.jpg" alt="austinea.org - home..." border="0"></a></td></tr>
+<!-- Text Area -->
+<tr><td>
+
+<div class=WordSection1>
+
+<p class=MsoNormal align=center style='text-align:center'><b><span
+style='font-size:8.0pt;line-height:107%'>Technical Reference Model<br>
+Austin Energy</span></b></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:8.0pt;line-height:107%'>10/01/2015</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:8.0pt;line-height:107%'>Download <a href="http://austinea.org/standards/technicalReferenceModelAE.docx">printable version</a></span></p>
+
+<div align=center>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width=624
+ style='width:6.5in;border-collapse:collapse;border:none'>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap valign=top style='width:2.0in;border:solid maroon 1.0pt;
+  background:maroon;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><b><span style='font-size:8.0pt;color:white'>Area</span></b></p>
+  </td>
+  <td width=192 nowrap valign=top style='width:2.0in;border:solid maroon 1.0pt;
+  border-left:none;background:maroon;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><b><span style='font-size:8.0pt;color:white'>Category</span></b></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border:solid maroon 1.0pt;
+  border-left:none;background:maroon;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><b><span style='font-size:8.0pt;color:white'>Standard</span></b></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap colspan=3 valign=top style='width:2.0in;border:solid maroon 1.0pt;
+  border-top:none;background:#D9D9D9;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><b><span style='font-size:8.0pt;color:black'>Application Technology</span></b></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.95pt'>
+  <td width=192 nowrap rowspan=4 valign=top style='width:2.0in;border:solid maroon 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt;height:12.95pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Application and Web Server
+  Software</span></p>
+  </td>
+  <td width=192 nowrap valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.95pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Application Server Software</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.95pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>WebSphere Application
+  Server (WASND)</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap rowspan=3 valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Web Server Software</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Cold Fusion</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>IBM HTTP Server</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Internet Information
+  Services (IIS)</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap rowspan=7 valign=top style='width:2.0in;border:solid maroon 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Application Testing
+  Software</span></p>
+  </td>
+  <td width=192 nowrap rowspan=3 valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Debugging Test Tools</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Rational Functional Tester</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Rational Performance Tester</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Robot</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Function Testing Tools</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Rational Functional Tester</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Load and Performance
+  Testing Tools</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Rational Performance Tester</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>System Testing Tools</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'></td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Unit Testing Tools</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'></td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap rowspan=10 valign=top style='width:2.0in;border:solid maroon 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Development Tools</span></p>
+  </td>
+  <td width=192 nowrap valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Analysis, Design and
+  Modeling</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Unified Modeling Language
+  (UML) </span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap rowspan=4 valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Application Development
+  Tools</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Cold Fusion</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Java</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Notepad++</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>PL/SQL Developer</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Requirements Management</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Rational Software Architect
+  (RSA)</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap rowspan=2 valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Software Change and
+  Configuration Management Tools</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>CVS</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Subversion</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap rowspan=2 valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Web Authoring Tools</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Dreamweaver CS6</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Websphere Portal</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap rowspan=6 valign=top style='width:2.0in;border:solid maroon 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Integration Software</span></p>
+  </td>
+  <td width=192 nowrap valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Device Integration</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'></td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap rowspan=2 valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Enterprise Service Bus
+  (ESB)</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>DataPower</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>WebSphere Process Server</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Messaging Oriented
+  Middleware (MOM)</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'></td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Service Registry</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'></td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>SOA Governance</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'></td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap rowspan=9 valign=top style='width:2.0in;border:solid maroon 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Software Engines</span></p>
+  </td>
+  <td width=192 nowrap valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Business Process Management
+  Engines</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'></td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Business Rules Engines</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>FileNet BPM</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap rowspan=6 valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Geographic Information
+  System (GIS) Engines</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>ArcGIS for Desktop</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>ArcGIS for Server</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>ArcGIS Online</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>ESRI</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>FME</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Smallworld</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Search Engines</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'></td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap colspan=3 valign=top style='width:2.0in;border:solid maroon 1.0pt;
+  border-top:none;background:#D9D9D9;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><b><span style='font-size:8.0pt;color:black'>Collaboration and
+  Electronic Workplace</span></b></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap rowspan=12 valign=top style='width:2.0in;border:solid maroon 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Collaboration Software</span></p>
+  </td>
+  <td width=192 nowrap valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Computer Based Training
+  (CBT)</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Adobe Connect</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap rowspan=3 valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Content Management</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Sharepoint</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>WebSphere CM</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>WebSphere Portal</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Electronic Messaging</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Microsoft Exchange</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Email and Calendaring</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Microsoft Outlook</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.95pt'>
+  <td width=192 nowrap valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.95pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Process and Schedule Synchronization</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.95pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Mobile Workforce Manager</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap rowspan=3 valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Real Time and Team
+  Collaboration</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Adobe Connect</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>GoToMeeting</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Sharepoint</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Shared Whiteboard</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>SmartBoard</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Unified Messaging</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>SendWordNow</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap rowspan=15 valign=top style='width:2.0in;border:solid maroon 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Productivity Software</span></p>
+  </td>
+  <td width=192 nowrap valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Accounting and Finance</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Advantage</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Case Management</span></p>
+  </td>
+  <td width=240 valign=top style='width:2.5in;border-top:none;border-left:none;
+  border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;padding:
+  0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>ServiceNow</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Desktop Publishing</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'></td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Enterprise Faxing</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'></td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>File Manager and Viewer</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Adobe Acrobat</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Graphics Design Software </span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'></td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Miscellaneous Productivity
+  Tools and Utilities</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Snagit</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Multimedia Software</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'></td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Standard Office Suite</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>MS Office 2010</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Surveys</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Avaya iSurvey</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Surveys</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Form Stack</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap rowspan=4 valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Web Browsers</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Chrome</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>FireFox</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Front Motion</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Internet Explorer</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap colspan=3 valign=top style='width:2.0in;border:solid maroon 1.0pt;
+  border-top:none;background:#D9D9D9;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><b><span style='font-size:8.0pt;color:black'>Enterprise Architecture</span></b></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap rowspan=2 valign=top style='width:2.0in;border:solid maroon 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Employment</span></p>
+  </td>
+  <td width=192 nowrap valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Application</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'></td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Framework</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'></td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap colspan=3 valign=top style='width:2.0in;border:solid maroon 1.0pt;
+  border-top:none;background:#D9D9D9;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><b><span style='font-size:8.0pt;color:black'>Information Management
+  Technologies</span></b></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap rowspan=14 valign=top style='width:2.0in;border:solid maroon 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Business Intelligence and
+  Data Warehouse Platforms</span></p>
+  </td>
+  <td width=192 nowrap valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Business Intelligence
+  Platforms</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'></td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Dashboard/Scorecard Tools</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Witness 360 Suite</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Data Analytics (Statistical
+  Analytics, Prediction, and Modeling)</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>FocalPoint</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Data Mining Tools</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>SQL Navigator</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap rowspan=2 valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Data Warehouses</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Oracle</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>SQL Server</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap rowspan=6 valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Geospatial Tools</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>ArcGIS Desktop</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Go!Sync 10.2</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Milsoft</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>SIAS</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>SmallWorld</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Tree Trimming</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Unstructured Data/Natural
+  Language Processing</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'></td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Web Reporting Tools</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>IBM Digital Analytics</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap rowspan=5 valign=top style='width:2.0in;border:solid maroon 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Data Integration</span></p>
+  </td>
+  <td width=192 nowrap valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Data at Rest</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'></td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Data in Motion (Common
+  Message Terminology and Semantics) </span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'></td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Data Synchronization</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'></td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Database Replication and
+  Clustering</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Oracle Real Applications
+  Cluster (RAC)</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Extract, Transform, Load
+  (ETL)</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>InfoSphere</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap rowspan=9 valign=top style='width:2.0in;border:solid maroon 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Data Management</span></p>
+  </td>
+  <td width=192 nowrap valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Columnar DBMS</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'></td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap rowspan=4 valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Database Connectivity</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>ODBC/OLE DB</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Oracle SQL *Net</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Oracle SQL Developer</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Oracle TNS</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Database Related Management
+  Tools</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Oracle</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Object Oriented DBMS</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'></td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap rowspan=2 valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Relational DBMS</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Oracle</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>SQL Server</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap colspan=3 valign=top style='width:2.0in;border:solid maroon 1.0pt;
+  border-top:none;background:#D9D9D9;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><b><span style='font-size:8.0pt;color:black'>Network and
+  Telecommunications</span></b></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap rowspan=9 valign=top style='width:2.0in;border:solid maroon 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>End User Computer Devices</span></p>
+  </td>
+  <td width=192 nowrap valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Hardened Laptops</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Panasonic</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap rowspan=6 valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Mobile Hardware</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Android</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Blackberry</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>iPad</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>iPhone</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Panasonic</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Surface Pro</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap rowspan=2 valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Personal Computers (PCs)</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Apple Mac/MacBook</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Dell Workstations/Laptops</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap rowspan=3 valign=top style='width:2.0in;border:solid maroon 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Transport</span></p>
+  </td>
+  <td width=192 nowrap valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Cabling</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'></td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Local/Campus Area Network
+  (LAN/CAN)</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Cisco</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Wide Area Network (WAN)</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'></td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap rowspan=9 valign=top style='width:2.0in;border:solid maroon 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Wireless and Mobile
+  Networks</span></p>
+  </td>
+  <td width=192 nowrap valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Aircards</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Verizon</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap rowspan=2 valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Cellular Networks</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>AT&amp;T</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Verizon</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Pagers</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>USA Mobility</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap rowspan=2 valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Public WiFi</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Aruba</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>DeepCoolClear</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Radio</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Motorola</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Satellite</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Gardline Communications</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Secure WiFi</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Cisco WAP</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap colspan=3 valign=top style='width:2.0in;border:solid maroon 1.0pt;
+  border-top:none;background:#D9D9D9;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><b><span style='font-size:8.0pt;color:black'>Platforms and Storage</span></b></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap rowspan=6 valign=top style='width:2.0in;border:solid maroon 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Cloud
+  Services/Virtualization</span></p>
+  </td>
+  <td width=192 nowrap rowspan=2 valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Cloud Technologies</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Talent Mgmt System</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>WatchDog</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap rowspan=4 valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Virtualization Software</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Citrix Xen Server</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>LPAR</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>SVC</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>VMWare</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap rowspan=9 valign=top style='width:2.0in;border:solid maroon 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Operating Systems</span></p>
+  </td>
+  <td width=192 nowrap rowspan=2 valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Desktop/Laptop</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Mac OS X</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Win 7</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Mainframe</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>AIX</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap rowspan=3 valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Mobile Device</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Android</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Blackberry</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>iOS</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap rowspan=3 valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Server</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>AIX</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>SLES</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Windows Server</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.95pt'>
+  <td width=192 nowrap rowspan=5 valign=top style='width:2.0in;border:solid maroon 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt;height:12.95pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Storage</span></p>
+  </td>
+  <td width=192 nowrap valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.95pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Long Term Back-up</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.95pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>NetApp</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Operational Recovery</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'></td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap rowspan=3 valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Production</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>EMC Networker</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Hitachi</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>IBM SVC</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap rowspan=6 valign=top style='width:2.0in;border:solid maroon 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>System Management Tools</span></p>
+  </td>
+  <td width=192 nowrap rowspan=2 valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Logging</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Splunk</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Syslog</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Network Performance
+  Optimization</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Trend</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap rowspan=3 valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Patch Management</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Lumension</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Microsoft SCCM</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>WSUS</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap colspan=3 valign=top style='width:2.0in;border:solid maroon 1.0pt;
+  border-top:none;background:#D9D9D9;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><b><span style='font-size:8.0pt;color:black'>System Management</span></b></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap rowspan=6 valign=top style='width:2.0in;border:solid maroon 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Network Infrastructure</span></p>
+  </td>
+  <td width=192 nowrap valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Load Balancing and Failover</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>A10</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap rowspan=4 valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Network Name and Address</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>IP</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Windows DHCP</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Windows DNS</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'></td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Switching and Routing</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Cisco</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap rowspan=16 valign=top style='width:2.0in;border:solid maroon 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>System Management Tools</span></p>
+  </td>
+  <td width=192 nowrap valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Alert Management</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Hobbit</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Application Management</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'></td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Asset Management and Work
+  Order</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Maximo</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap rowspan=3 valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Data Center Automation
+  Software</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Control-M</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Cronacle</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Flux</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Disaster Recovery</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Sungard LDRPS</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap rowspan=6 valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Monitoring</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Change Auditor</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>SNMP</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Splunk</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Swatch</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Wily/CEM</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Xymon/Hobbit</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap rowspan=2 valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Remote Desktop Management</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Dameware</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>MS RDP</span></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid;height:12.75pt'>
+  <td width=192 nowrap valign=top style='width:2.0in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>System Change and
+  Configuration Management</span></p>
+  </td>
+  <td width=240 nowrap valign=top style='width:2.5in;border-top:none;
+  border-left:none;border-bottom:solid maroon 1.0pt;border-right:solid maroon 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt;height:12.75pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='font-size:8.0pt;color:black'>Microsoft SCCM</span></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<p class=MsoNormal><span style='font-size:8.0pt;line-height:107%'>&nbsp;</span></p>
+
+</div>
+
+</td></tr></table>
+</td></tr></table></body></html>
+

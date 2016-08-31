@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Manage Department-Level Worker Compensation</title>
+<link rel="Stylesheet" href="http://austinea.org/style/hover.css" type="text/css" />
+</head>
+<body bgcolor="#ddd8c2">
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="650" align="center">
+<tr><td style="padding: 0;" height="130" valign="top"><a href="http://austinea.org">
+<img src="http://austinea.org/image/iTHeader.jpg" alt="austinea.org - home..." border="0"></a></td></tr>
+<!-- Text Area -->
+<tr><td>
+
+<p><a href="http://austinea.org/arch/eoss/">EOSS Use Case Summary</a></p>
+
+<p style="text-align: center; font-weight: bold;">Manage Department-Level Worker Compensation<br />Use Case Specification</p>
+
+<!-- Image Title -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/eoss/manageDepartmentLevelWorkerCompensation/UCD.jpg"><img src="http://austinea.org/arch/eoss/manageDepartmentLevelWorkerCompensation/UCD.jpg" border="0" width="600" alt="" /></a><br />
+<span style="font-weight: bold;">Manage Department-Level Worker Compensation<br />Use Case Model</span>
+</td></tr></table>
+
+<p><b>Scope: </b>When an Employee is injured on the job or a change in work status occurs based on a previous injury, the Employee provides the Worker Compensation Representative a completed DWC-73 form. The Worker Compensation Representative uses the system and information on the form to create and/or update a Worker Status. When the Employee gains full work status, the Worker Compensation Representative uses the system to create a WC803 Denial Form for processing by the Human Resources Wage Continuation Coordinator. The Worker Compensation Representative uses Work Status information and Webstract to create a DWC-6 form. For certain claims, the Worker Compensation Representative uses Banner to look up Employee salary information. This information is used by the Worker Compensation Representative to create a DWC-3 form using Webstract. The Worker Compensation Representative sends DWC-73, 6, 3 forms depending on the disposition of the Employee to a Third Party Administrator for claims processing. Using the system, the Worker Compensation Representative scans relevant documentation for inclusion with the Employee Work Status.</p>
+
+<!-- Image Title -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/eoss/manageDepartmentLevelWorkerCompensation/1SD.jpg"><img src="http://austinea.org/arch/eoss/manageDepartmentLevelWorkerCompensation/1SD.jpg" border="0" width="600" alt="" /></a><br />
+<span style="font-weight: bold;">Manage Department-Level Worker Compensation Sequence Diagram</span>
+</td></tr></table>
+<br />
+
+<p style="text-align: center; font-weight: bold;">Interface Descriptions</p>
+
+<!-- Table definition -->
+<table align="center" id="custom">
+<tr><th width="5%">Req#</th><th width="70%">Type/Interface - Requirement Description</th><th width="25%">Required Response</th></tr>
+<tr>
+<td rowspan="2">##</td>
+<td style="font-weight: bold; background: lightgray;">worker Compensation Representative/processCompensationRequest</td>
+<td rowspan="24">If proposing a Software as a Service (SaaS) solution, indicate for each requirement the SaaS solution's ability to provide the needed function or service. If proposing a Platform as a Service (PaaS) solution, indicate past performance examples of similar scope of work and other unique qualifications useful to a successful solution.</td>
+</tr>
+<tr>
+<td>Although most medical organizations use a DWC-73 form to provide release from duty due to medical condition, any medical release from an authorized medical provider on the initial visit can take the place of the DWC-73 form. Employee and Worker Compensation Representative coordinate the proper documentation to include medical restrictions, release to full duty, etc. The system uses the attribute values used by the DWC-73 form.</td>
+</tr>
+<tr>
+<td rowspan="2">##</td>
+<td style="font-weight: bold; background: lightgray;">ensure Employee Safety/enterEmployeeStatus</td>
+
+</tr>
+<tr>
+<td>Based on relevant attributes of the DWC-73 form, the Worker Compensation Representative uses the system to create an Employee Work Status. The Employee Work Status associates to Essential Function Job Activities. The System provides the ability to scan and attach the DWC-73 form to Employee Work Status accessible only by the Worker Compensation Representative. The system provides recognizable Employee association to Incident Event described in Establish Incident Report.</td>
+</tr>
+<tr>
+<td rowspan="2">##</td>
+<td style="font-weight: bold; background: lightgray;">webstract/processDWC</td>
+
+</tr>
+<tr>
+<td>Throughout the process, the Worker Compensation Representative, or the system, uses Webstract to indicate the disposition of the Employee. On initial indication of injury, Worker Compensation Representative submits a DWC-1 (for first report of injury) to Webstract. This may occur on indication of DWC-73 or the Incident Event among other indications. The Worker Compensation Representative uses a DWC-6 to update Employee status (full time, part time, etc.). If initial lost time claim and limited duty, reduced pay or no duty and 7 or more days have elapsed, the Worker Compensation Representative uses a DWC-3.</td>
+</tr>
+<tr>
+<td rowspan="2">##</td>
+<td style="font-weight: bold; background: lightgray;">ensure Employee Safety/generateWorkerCompensationDocuments</td>
+
+</tr>
+<tr>
+<td>The system generates printable workers compensation documents including DWC-1, Wage Continuation Terms and Conditions, Employee Rights and Responsibilities (Workers Compensation Form), and an optional bonafide Offer of Employment (alternate employment with acceptable Essential Function Job Activities). The Worker Compensation Representative reviews the worker compensation documents with the Employee.</td>
+</tr>
+<tr>
+<td rowspan="2">##</td>
+<td style="font-weight: bold; background: lightgray;">ensure Employee Safety/determineWageContinuationEligibility</td>
+
+</tr>
+<tr>
+<td>Based on business rules, the system identifies if Employee is eligible for wage continuation. An employee is eligible for wage continuation if they are a regular employee, reported their injury within 24 hours (or start of the next business day) and have signed an agreement that establishes the terms and conditions and is on a limited duty or lost time status.</td>
+</tr>
+<tr>
+<td rowspan="2">##</td>
+<td style="font-weight: bold; background: lightgray;">wage Continuation Coordinator/reviewLeaveRequest</td>
+
+</tr>
+<tr>
+<td>Based on the Employee Work Status, the system identifies the disposition of the Employee to include necessary attributes of an existing WC801 (Wage Continuation Leave Request Form). The system notifies the Wage Continuation Coordinator that a Wage Continuation Leave Request requires review.</td>
+</tr>
+<tr>
+<td rowspan="2">##</td>
+<td style="font-weight: bold; background: lightgray;">ensure Employee Safety/enterLeaveRequestDisposition</td>
+
+</tr>
+<tr>
+<td>Wage Continuation Coordinator uses the system to review the Wage Continuation Leave Request information and determines whether to wage continuation is merited. If merited the Wage Continuation Coordinator approves or denies the Wage Leave Request.</td>
+</tr>
+<tr>
+<td rowspan="2">##</td>
+<td style="font-weight: bold; background: lightgray;">wage Continuation Coordinator/reviewDenial</td>
+
+</tr>
+<tr>
+<td>Based on the Employee Work Status, the system identifies the disposition of the Employee to include necessary attributes of an existing WC803 Denial Form. The system notifies the Wage Continuation Coordinator that a WC803 Denial Form requires review.</td>
+</tr>
+<tr>
+<td rowspan="2">##</td>
+<td style="font-weight: bold; background: lightgray;">ensure Employee Safety/enterDenialDisposition</td>
+
+</tr>
+<tr>
+<td>The Wage Continuation Coordinator uses the system to review the WC803 (Denial Form) and takes appropriate action with the Human Resources domain. The Wage Continuation Coordinator uses the system to indicate the Disposition of the Denial.</td>
+</tr>
+<tr>
+<td rowspan="2">##</td>
+<td style="font-weight: bold; background: lightgray;">banner/lookUpEmployeeSalaryInfo</td>
+
+</tr>
+<tr>
+<td>If an initial lost time claim and limited duty, reduced pay or no duty and 7 or more days have elapsed, the Worker Compensation Representative uses Banner to look up Employee salary information.</td>
+</tr>
+<tr>
+<td rowspan="2">##</td>
+<td style="font-weight: bold; background: lightgray;">ensure Employee Safety/updateEmployeeStatus</td>
+
+</tr>
+<tr>
+<td>The system provides the Worker Compensation Representative the ability to scan DWC-73 forms or any other relevant documentation to be associated with the Employee Work Status throughout the process. The scanned document images are near quality of the original. The Worker Compensation Representative makes Worker Status updates as needed.</td>
+</tr>
+</table>
+
+<br />
+
+</td></tr></table>
+</td></tr></table></body></html>

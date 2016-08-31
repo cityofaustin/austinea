@@ -1,0 +1,58 @@
+p
+{
+    font-family: Verdana, Geneva, sans-serif; margin-top: 5pt; margin-bottom: 5pt; margin-left: 0; margin-right: 0; font-size: 8pt;
+}
+
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+{
+		margin:0in; margin-bottom:.1pt; font-size:8.0pt;
+}
+
+h1
+{
+    font-family: Verdana, Geneva, sans-serif; margin-top: 5pt; margin-bottom: 5pt; margin-left: 0; margin-right: 0; font-size: 10pt; font-weight: bold;
+}
+
+h2
+{
+    font-family: Verdana, Geneva, sans-serif; margin-top: 5pt; margin-bottom: 5pt; margin-left: 0; margin-right: 0; font-size: 8pt; font-weight: bold;
+}
+
+td, li
+{
+    font-size: 8pt; font-family: Verdana, Geneva, sans-serif; 
+}
+
+.lmargin
+{
+    margin-bottom: 5pt;
+}
+.lbl
+{
+    color: gray; font-size: 7.5pt; font-family: Arial;
+}
+
+#custom
+{
+    font-family: Verdana, Geneva, sans-serif; border-collapse: collapse;
+}
+
+#custom td, #custom th
+{
+    border: 1px solid maroon; padding: 3px; vertical-align: top; font-size: 8pt; text-align: left;
+}
+
+#custom th
+{
+    background-color: maroon; color: white; font-weight: bold;
+}
+
+#custom tr.alt td
+{
+    color: #000000; background-color: lightgray;
+}
+
+#custom td.alt1
+{
+    color: #000000; background-color: #EAF2D3;
+}

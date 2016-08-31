@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html><head>
+<title>Real Estate Report 07/10/13</title>
+<link rel=StyleSheet href="http://austinea.org/style/email.css" type="text/css">
+</head>
+<body>
+<!--Border Background Table-->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse;"  align="center" style="background-color: #F4CA90;">
+<tr><td>
+<!--Main Body-->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" width="600" align="center" style="background-color: #ffffff;">
+<tr><td>
+
+<!-- Online reference -->
+<p style="color: gray; font-size: 7pt;">Note: This report is also <a href="http://austinea.org/arch/realEstate/report/realEstate130710.html" style="font-size: 7pt;">available online</a> by following link.</p>
+
+<!-- Image - Real Estate Capability Area Architecture -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;"  align="right"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view.<br>
+<a href="http://austinea.org/arch/realEstate/report/realEstateVision.jpg"><img src="http://austinea.org/arch/realEstate/report/realEstateVision.jpg" border="0" width="200"></a>
+<p style="text-align: center; font-weight: bold;">Real Estate Capability<br>Area Architecture (CAA)
+</td></tr></table>
+
+<p>Real Estate Architecture Team,
+
+<p>Things are moving along very nicely with our architecture initiative. To begin, let's review our architecture principles to ensure we're on track with our goals. If you select the Capability Area Architecture (CAA) you'll be presented with a larger view. Based on this model and our collaboration, we determined the important goals, which establishes our architecture <a href="http://austinea.org/definition/#principle" target="new_window">principles</a> (i.e., the purpose of the architecture).
+
+<p><b>Architecture Principles</b>
+
+<ul>
+<li>Integrate real estate inventory sources citywide. Requires identity of real estate data sources.
+<li>Create and maintain citywide real estate inventory. Ensures information sources maintain concordance by eliminating or reducing data redundancy.  
+</ul>
+
+<!-- Image - Procure Easements Use Case Model -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;"  align="left"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view.<br>
+<a href="http://austinea.org/arch/realEstate/report/procureEasementsUseCase.jpg"><img src="http://austinea.org/arch/realEstate/report/procureEasementsUseCase.jpg" border="0" width="200"></a>
+<p style="text-align: center; font-weight: bold;">Procure Easements<br>Use Case Model
+</td></tr></table>
+
+<p>Based on these principles, we're still on track. It's important for architects to understand your data in context on how it is used. Our role-based model aids in this understanding because ultimately roles have organizational considerations. For example, Easements are recorded by the County Clerk, which makes the County Clerk an information source for Easement information (and likely others). As we continue our collaboration, we'll frequently refer back to the logical data model to understand the data relationships and this model will guide us toward the use cases we should explore in more detail.
+
+<!-- Image - Logical Data Model -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;"  align="right"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view.<br>
+<a href="http://austinea.org/arch/realEstate/report/logicalDataModel.jpg"><img src="http://austinea.org/arch/realEstate/report/logicalDataModel.jpg" border="0" width="200"></a>
+<p style="text-align: center; font-weight: bold;">Logical Data Model
+</td></tr></table>
+
+<p>As you will observe, the logical data model provides a point of collaboration to guide us toward processes to further identify important roles leading to identity of additional data sources. During the process analysis, we're looking for patterns of information use relevant to our architecture principles discussed earlier. We must remain focused on our architecture principles; otherwise, it's very easy to go down an irrelevant path (rabbit hole) due to people's natural enthusiasm to document important processes - i.e., for now, let's document only those processes relevant to our principles.
+
+<!-- Image - Swin-Lane Acivity Model -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;"  align="left"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view.<br>
+<a href="http://austinea.org/arch/realEstate/report/procureEasements.jpg"><img src="http://austinea.org/arch/realEstate/report/procureEasements.jpg" border="0" width="200"></a>
+<p style="text-align: center; font-weight: bold;">Swim-Lane Activity Model
+</td></tr></table>
+
+<p>For example, during our last activity modeling session we identified two new use cases <b>Perform Appraisal</b> and <b>File for Eminent Domain</b> (see diagram). There's no point (at least at this time) to build out these use cases unless they contain information sources relevant to our architecture principles. Let's explore this diagram further.
+
+<p>The blue, rounded corner rectangles represent process for any given role in the swim-lane. The black arrows show the flow of control between activities (i.e., one activity ends and another begins). The green rectangles represent data (information <a href="http://austinea.org/definition/#object" target="new_window">object</a>). You'll notice they have arrows pointing to input and output <a href="http://austinea.org/definition/#pin" target="new_window">pins</a> that control the object flow through the activity. These objects are either consumed or produced by the activity. You can't have an activity without both an input and an output object or it's not actually an activity. The position of an object (green rectangles) in any given swim-lane is not relevant to the swim-lane; rather, the pin flow is key to any shown object. Using the activity model, I was able to write a complete scope statement for this use case as follow:
+
+<p><i><b>Procure Easements Scope:</b> When a representative from Real Estate Services receives a Request for Real Estate Services form, a Property Agent is assigned and the City Surveyor reviews the Client Department provided Field Notes for approval. Once approved, the Property Agent orders a Title Commitment and sends a Request for Appraisal to the City Appraiser to perform a Fair Market Value appraisal. Once complete, the Property Agent prepares an Offer Package to the Property Owner. Quality Assurance and Control reviews the Offer Package for adherence to current legislation and Senate Bill 18. When Quality Assurance and Control approves the Offer Package, it is sent to the Property Owner to sign the included Contract. If not signed within 45 days, another final offer of the approved Offer Package is sent to the Property Owner. If not signed within 15 days, proceedings to File for Eminent Domain obtains legal possession of the property. Finally, the Easement is signed, the Property Owner paid and the Easement is sent to the County Clerk for recording.</i>
+
+<p>The swim-lane activity model is a useful instrument to communicate process to us architects and as you experienced, they are fairly easy to create. The activity model build allows us to capture your collective knowledge - i.e., the team comes to consensus on what the process looks like by contributing their understanding of the process. The data objects guide the architect to information flow understanding leading to the desired solution and fulfilling the desired architecture principles.
+
+<p>I hope this report wasn't overly geeky and I look forward to our continued collaboration.
+
+<table cellpadding=5 cellspacing=0 border=0 width="400" style="border-collapse: collapse;"><tr><td>
+<p>Respectfully,
+<!-- Austin Logo -->
+<table cellpadding=5 cellspacing=0 border=0 style="border-collapse: collapse;" align="right"><tr><td>
+<img src="http://austinea.org/image/austinLogo.jpg" border="0" width="100">
+</td></tr></table>
+
+<p><img src="http://journeycolorado.com/images/signature.jpg" border="0" width="150">
+<!-- Signature Corporate -->
+<p style="font-size: 8pt;"><b>Rob Byrd</b> <span style="color: red; font-weight: bold;">|</span> <b>City of Austin</b><br>
+Chief Enterprise Architect - Corporate<br>
+Direct: (512) 974-1615 | Mobile: (512) 431-0700
+</td></tr></table>
+
+</td></tr></table>
+</td></tr></table></body></html>

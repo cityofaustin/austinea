@@ -1,0 +1,211 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Manage Deposits</title>
+<link rel="Stylesheet" href="http://austinea.org/style/hover.css" type="text/css" />
+</head>
+<body bgcolor="#ddd8c2">
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="650" align="center">
+<tr><td style="padding: 0;" height="130" valign="top"><a href="http://austinea.org">
+<img src="http://austinea.org/image/iTHeader.jpg" alt="austinea.org - home..." border="0"></a></td></tr>
+<!-- Text Area -->
+<tr><td>
+
+<p style="text-align: center; font-weight: bold;">Manage Deposits<br />Use Case Specification</p>
+<p style="text-align: center;">01/07/16
+
+<!--  IF Printable document option Included  
+<p style="text-align: center;">download <a href="http://austinea.org/arch/as/***.docx">printable version</a>
+-- >
+
+<b> Animal Services Logical Data Model </b>            
+<!-- Image -  Logical Data Model 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="http://austinea.org/arch/as/ldm.jpg"><img src="http://austinea.org/arch/as/ldm.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Animal Services Logical Data Model</p>
+</td></tr></table> -->
+
+<!-- USE CASE IMAGE -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/as/manageDeposits/ucd.jpg"><img src="http://austinea.org/arch/as/manageDeposits/ucd.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Manage Deposits<br />Use Case Model</span>
+</td></tr></table>
+
+<p><b>Scope: </b>If Money has been received in the donation boxes around the site and/or donation checks received in the mail (including community outreach donations) the Admin Personnel takes the money, counts it, and if there are identifiable donations, uses the system to annotate the PersonInfo record (and create a receipt within the system for the donation). Anonymous donations are assigned to a phantom ID within the system. The Admin Personnel also adds memos on the PersonInfo Record indicating important information (for example, indicating when the thank-you letter is sent). 
+On the Spay/Neuter agreement there is a box to "donate deposit." The Admin Personnel generates a "deposit/refund" list that includes the AnimalID number, PersonID number, address, amount, receipt number, adopter name, receipt date, funding code (which is approved by the Deposit Refund Signer). An email is sent to HHS accounts payable to refund the monies. NOTE: HHS accounting uses the AnimalID as a primary key to the transaction, should refunds not occur and research is necessary. 
+If the Customer agrees to donate their deposit to the shelter, the Admin Personnel adds a note to the PersonID record indicating deposit. The Admin Personnel uses a template to construct an email thanking the customer. The Animal Service Director Signs the thank-you letter and it is mailed via US Postal service. 
+Admin Personnel provides the Customer Service Lead the donations and a report summarizing/totaling reports, as well as a deposit form, and prepares a deposit bag, sealing it for the daily armored car pick up. The deposit form is provided to the Customer Service Lead. The Customer Service Lead uses AIMS and assigns monies received to the appropriate funding codes. The Customer Service Lead prints the header page of the AIMS' screen showing the reassignment of funds. The Customer Service Lead hands deposit information and screen print to the Customer Service Supervisor, who signs and files it, and then accesses AIMS to approve the fund relocation. 
+At various times during the month the Admin Personnel researches the AIMS funding codes, and sends an email to the HHS Finance Consultant to reassign funds to the Animal Services General Donation Fund accounts. (refund piece) 
+
+
+
+<!-- IF INTERACTION OVERVIEW IS INCLUDED 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/as/***.jpg"><img src="http://austinea.org/as/code/***.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Interaction Overview</span>
+</td></tr></table>
+-->
+
+
+<br />
+
+
+<!-- SEQUENCE DIAGRAM  -->                 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/as/manageDeposits/sd01.jpg"><img src="http://austinea.org/arch/as/manageDeposits/sd01.jpg" border="0" alt="" width="600"/></a><br />
+<span style="font-weight: bold;">Manage Deposits<br />Sequence Diagram</span>
+</td></tr></table>
+<br />
+
+
+<!-- INTERFACE TABLE  -->
+<table align="center" id="custom">
+<tr><th width="9%">Req#</th><th width="70%">Type/Interface - Requirement Description</th><th>Performance</th></tr>
+<tr>
+<td rowspan="2">001</td>
+<td style="font-weight: bold; background: lightgray;">Admin Personnel/collectAndOrganizeDonations</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Admin Personnel empties the various donation boxes throughout the shelter and extracts money (checks and cash).</td>
+</tr>
+<tr>
+<td rowspan="2">002</td>
+<td style="font-weight: bold; background: lightgray;">Provide Resources for People and Pets/addAndUpdatePersonAndAnimalInfo</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>Customer Service/Foster Coordinator/Other users will access the system and add or update person and animal info. They will include information like owner, owner address, pet name, pet breed, pet sex, pet microchip info, rabies certificate information, as well as other important information. If the animal or person is already in the system, Customer Service uses the system to update the information. In the case of Trappers, add the date they signed the Standards of Conduct and the Standard Operating Procedure. In the event of Volunteer Applicant for Trappers, the Outreach Education Team will access the system and provide information from the TrapperApplication to create a PersonInfo record for the Applicant (including verification date and time for the signing of the Standard of Conduct, and the Standard Operating Procedure), if one does not already exist. If a PersonInfo record exists, the Outreach Education Team will update the information as necessary based on the Applicant’s information. 
+For spay/neuter, the user modifies the sex of the animal from M/F (male/female) to S/N (spay/neuter), and records the date of surgery, date processed, vet clinic ID (the system maintains a list of all vet clinics on record within the area).
+Foster Coordinators/Rescue Coordinators create PersonInfo records for Citizens acting/assisting with foster care, and annotate AnimalInfo Records with information indicating Foster Care Providers who have taken ownership of the animals.</td>
+</tr>
+<tr>
+<td rowspan="2">003</td>
+<td style="font-weight: bold; background: lightgray;">Provide Resources for People and Pets/generateDepositRefundList</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Admin Personnel uses the system to generate a report indicating all persons who donated a check to Animal Services within the date range.</td>
+</tr>
+<tr>
+<td rowspan="2">004</td>
+<td style="font-weight: bold; background: lightgray;">Deposit Refund Signer/approveDepositRefundList</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>Based on the deposit refund report generated listing all people who make deposits for spay/neuter requesting a refund of their deposit, the Deposit Refund Signer signs the report indicating that the Admin Personnel may forward the signed report to HHS accounts payable to refund.</td>
+</tr>
+<tr>
+<td rowspan="2">005</td>
+<td style="font-weight: bold; background: lightgray;">Admin Personnel/createThankYouLetter</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>For all checks donated, including persons whose deposit was donated to the City of Austin Animal Shelter, the Admin Personnel drafts a letter thanking the Citizen.</td>
+</tr>
+<tr>
+<td rowspan="2">006</td>
+<td style="font-weight: bold; background: lightgray;">Animal Services Director/signThankYouLetter</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Animal Services Director signs each thank-you letter to be sent. </td>
+</tr>
+<tr>
+<td rowspan="2">007</td>
+<td style="font-weight: bold; background: lightgray;">Admin Personnel/mailThankYouLetter</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Admin Personnel places signed letters in city envelopes and puts them in the outbound office mail.</td>
+</tr>
+<tr>
+<td rowspan="2">008</td>
+<td style="font-weight: bold; background: lightgray;">Admin Personnel/createEmailToAccountsPayable</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Admin Personnel sends email to accounts payable listing all Citizens who are to be refunded spay/neuter deposits.</td>
+</tr>
+<tr>
+<td rowspan="2">009</td>
+<td style="font-weight: bold; background: lightgray;">Admin Personnel/destroyHardcopyAgreement</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Admin Personnel verifies when animal was altered, who the vet was, and verifies that the original sterilization agreement contract is complete. After which, the Admin Personnel destroys the contract.</td>
+</tr>
+<tr>
+<td rowspan="2">010</td>
+<td style="font-weight: bold; background: lightgray;">Admin Personnel/createDepositBag</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Admin Personnel or Customer Service fills out the bank deposit slip listing currency ($1s, $5s, $10s, $20s, etc.), as well as an itemized list of checks. Additionally, copies are made of all checks received, and then filed at the Animal Services Shelter.</td>
+</tr>
+<tr>
+<td rowspan="2">011</td>
+<td style="font-weight: bold; background: lightgray;">Customer Service Lead/manageDepositForm</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Customer Service Lead verifies the amounts and the counts on the deposit bag, and signs off on the accuracy of the deposit. If mistakes are found, the Admin Personnel is asked to correct the mistake and resubmit the deposit bag.</td>
+</tr>
+<tr>
+<td rowspan="2">012</td>
+<td style="font-weight: bold; background: lightgray;">AIMS/assignMoniesToFundingCode</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Customer Service Lead accesses AIMS and assigns the appropriate funding codes for the monies received. There are multiple funding codes used (i.e., adoption, retail sale, donations, etc.).</td>
+</tr>
+<tr>
+<td rowspan="2">013</td>
+<td style="font-weight: bold; background: lightgray;">Customer Service Lead/createPrintScreenOfAimsTransaction</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>For verification purposes, the Customer Service Lead does a print screen of the final summary page in AIMS.</td>
+</tr>
+<tr>
+<td rowspan="2">014</td>
+<td style="font-weight: bold; background: lightgray;">Customer Service Supervisor/signAndFileDepositInformation</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Customer Service Supervisor signs all paperwork created for the deposit and verifies the AIMS entries.</td>
+</tr>
+<tr>
+<td rowspan="2">015</td>
+<td style="font-weight: bold; background: lightgray;">AIMS/researchMoneyAllocation</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Admin Personnel checks the AIMS system to verify donations have been assigned to Animal Services as indicated.</td>
+</tr>
+<tr>
+<td rowspan="2">016</td>
+<td style="font-weight: bold; background: lightgray;">HHS Financial Consultant/reassignFundsToASGeneralDonationFund</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Admin Personnel sends an email to the HHS Financial team to reassign funds to the Animal Services General DONATION fund. They provide a "to" and "from" funding code.</td>
+</tr>
+
+</table>
+
+
+<br />
+
+
+
+
+</td></tr></table>
+</td></tr></table></body></html>

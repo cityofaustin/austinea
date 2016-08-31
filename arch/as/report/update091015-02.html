@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<title>Animal Services "Onboard Foster Care Provider"</title>
+<link rel="StyleSheet" href="http://austinea.org/style/email.css" type="text/css">
+</head>
+<body>
+
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="600" align="center"><tr><td>
+
+<!-- Online reference -->
+<p><class="lbl">Note: This report is also <a href="http://austinea.org/arch/as/report/update091015-02.html" style="font-size: 7pt;">available online</a> by following link.</p>
+
+<div>
+<p>Hi All,</p> 
+</div>
+
+<p>Attached is the information for the updated "Onboard Foster Care Provider" use case that was reviewed September 10, 2015, with the Animal Services Team. Please take a moment to check my work and let me know if there are any changes I can make to improve this, or if this requirement is as discussed!  </p> <p>
+
+Additionally, I wanted to let you know the Online repository of Animal Services Use Cases is now up to date ( http://austinea.org/arch/as/report/index.html ).
+<p>
+
+
+<!-- Signature-->
+<table cellpadding="0" cellspacing="0" border="0" width="350" style="border-collapse: collapse;"><tr><td>
+<p>Cheers!</p>
+
+<table cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;" align="right">
+<tr>
+<td>
+<img src="http://austinea.org/image/austinLogo.jpg" border="0" width="100" height="100" alt="Austin Logo" />
+</td>
+</tr>
+</table>
+<p><img src="http://coawss3a.coacd.org/sites/CTM/EA/Shared Documents/Images/ABSIG.JPG" border="0" width="143" height="83" alt="sign" /> </p>
+
+<p><b>Aaron Brown</b> 
+<span style="color: red; font-weight: bold;">|</span> 
+<b>City of Austin</b>
+<a href="http://www.linkedin.com/in/austnaaron"><img src="http://journeycolorado.com/images/linkedin.jpg" border="0" alt="Linkin Logo" /> </a> <br />
+Senior IT Enterprise Architect<br />
+Direct: (512) 974-2960 </p>
+Email: Aaron.Brown2@austintexas.gov </p>
+</td></tr></table>
+
+
+<!-- Use case information below -->
+
+<hr>
+
+<b> Animal Shelter Logical Data Model </b>
+<!-- Image -  Logical Data Model -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="http://austinea.org/arch/as/report/animalShelterLogicalDataModel.jpg"><img src="http://austinea.org/arch/as/report/animalShelterLogicalDataModel.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Animal Shelter Logical Data Model</p>
+</td></tr></table> 
+
+<!--  Requirements Model -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="right">
+<tr>
+<td align="center">
+<span class="lbl">Note: Select to download</span><br />
+<a href="http://austinea.org/arch/as/report/onboardFosterCareProviderUseCase.jpg"><img src="http://austinea.org/arch/as/report/onboardFosterCareProviderUseCase.jpg" border="0" width="200" alt="" /></a><br />
+<span style="font-weight: bold;">Onboard Foster Care Provider<br />Use Case</span>
+</td></tr></table>
+
+
+
+
+
+<p><b>Use Case Scope</b></p>
+<p>Recruitment can happen via social media!
+A Citizen requests to be a Foster home. If they contact Customer Service, they are directed to an online form to complete. If on premises, they have an option to fill out a hard-copy application. The Foster Coordinator will transcribe the application, search and create a Person ID for the citizen (or locate their existing Person ID), and will enter the details of the application: name, phone, address, email, DOB, and application questions (household info, hours away, pets in home, types of animal interested in fostering, and previous experience). The information is reviewed. If any red flags are raised, the Foster Coordinator contacts the Citizen to discuss and clarify.
+If/when approved, the Citizen is sent a welcome email, which includes basic info and an attached manual (PDF). The email directs the Citizen to join a Yahoo! Group. (** Thoughts: Perhaps use Givepulse for this in the future.)
+ </p>
+
+<!-- Image -  Sequence Diagram -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="http://austinea.org/arch/as/report/onboardFosterCareProviderSequenceDiagram01.jpg"><img src="http://austinea.org/arch/as/report/onboardFosterCareProviderSequenceDiagram01.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Onboard Foster Care Provider Sequence Diagram</p>
+</td></tr></table> 
+
+
+
+<p style="font-weight: bold; text-align: center;">Onboard Foster Care Provider Interface Descriptions</p>
+<!-- Table definition -->
+<table align="center" id="custom">
+<tr><th width="195">Type/Interface</th><th>Description</th></tr>
+<tr>
+<td>Application Provider/ <br /> provideFosterCareApplicationInfo</td> <td>The Application Provider instructs the Citizen to visit the Austin Animal Center's website (AustinAnimalCenter.org) to complete an online form.  </td> </tr>
+
+<tr> 
+<td>Citizen/ <br /> completeFosterCareApplication</td> <td>The Citizen fills out the online form at AustinAnimalCenter.org (under the FOSTER option). They fill out name, address, email, phone, type of household (apartment, mobile home, condo, duplex or house), rents or owns, and whether the homeowner will allow pets; how many adults are in the home and their contact info; number of children in the home and the age of the children; how many current pets are in the home and those animal names, species, and sex; how long the animal will be left alone in the home each day; how the animal will be housed; how the animal will be isolated from other pets (if needed); if the person has fostered for any other organization, and if so, which one(s); other animal experience they have; and the type of animal they are interested in fostering. The Citizen presses SUBMIT and the system sends an email to the Foster Care Coordinator.  </td> </tr>
+ 
+<tr>
+<td>Foster Coordinator/ <br /> processFostercareApplication</td> <td>The Foster Coordinator uses the system and searches for the Applicant's name to locate a Person ID (PID) for the applying Citizen. They use pets in home, date of birth, etc. Once located, the existing PID will be used; otherwise, the Foster Coordinator will create a new PersonInfo record for the potential foster family, which creates a new PID. The Foster Coordinator creates a FOSTER memo for the PersonInfo record, and documents everything from the application email. If there are concerns, the PersonInfo record is annotated with the concern, notes and additional follow-up needed. </td> </tr>
+
+<tr>
+<td>Provide Animal Rescue and Shelter/<br /> addAndUpdatePersonAndAnimalInfo</td> <td>Customer Service/Foster Coordinator/Other users will access the system and add or update person and animal info. They will include information like owner, owner address, pet name, pet breed, pet sex, pet microchip info, rabies certificate information, as well as other important information. If the animal or person is already in the system, Customer Service uses the system to update the information. In the case of Trappers, add the date they signed the Standards of Conduct and the Standard Operating Procedure. In the event of Volunteer Applicant for Trappers, the Outreach Education Team will access the system and provide information from the Trapper Application to create a person info record for the Applicant (including verification date and time for the signing of the Standard of Conduct and the Standard Operating Procedure), if one does not already exist. If a person info record exists, the Outreach Education Team will update the information as necessary based on the Applicant's information. 
+For Spay/Neuter, the user modifies the sex of the animal from M/F (male/female) to S/N (Spay/Neuter), and records the date of surgery, date processed, and vet clinic ID (the system maintains a list of all vet clinics on record within the area.)
+Foster Coordinators create person info records for Citizens acting/assisting with foster care, and annotate animal info records with information indicating Foster Care Providers who have taken ownership of the animals.  </td> </tr>
+
+<tr>
+<td>Citizen/<br /> provideClarificationForFosterCareApplication</td> <td>The Foster Coordinator contacts the Citizen and requests clarification / discusses concerns with their foster care application. The information is added to the PersonInfo record. </td> </tr>
+
+<tr>
+<td>Foster Coordinator/<br /> sendFosterCareWelcomeEmailToCitizen</td> <td>The Foster Care Coordinator sends the Citizen a welcome email, which includes basic info and a manual for being a Foster Parent (attached as a PDF). It directs the Citizen to join a Yahoo! Group (a URL is provided for the Citizen within the email). (** Thoughts: Perhaps use Givepulse for this in the future.) </td> </tr>
+
+<tr>
+<td>Yahoo Website/<br /> inviteCitizenToFostercareGroup</td> <td>The Foster Coordinator accesses Yahoo! and "invites" the Citizen to join the Yahoo! Foster Group. Yahoo! automatically generates an email and sends it to the Citizen with links to the Group to authorize access. </td> </tr>
+
+<tr>
+<td>Citizen/<br /> joinYahooFosterCareGroup</td> <td>The Citizen joins the Yahoo! Foster Care Group after receiving an email with links sent from the Yahoo! system. </td> </tr>
+
+</table>
+
+
+
+<!-- Table definition
+<table align="center" id="custom">
+<tr><th>Number</th><th>Category</th><th>Description</th><th>Criticality</th></tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table> -->
+
+</td></tr></table> 
+
+</td></tr></table>
+</td></tr></table></body></html>

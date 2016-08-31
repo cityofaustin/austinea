@@ -1,0 +1,41 @@
+h1 { color: black; font-family: Verdana; font-size: 11pt; font-weight: bold; }
+h2 { color: black; font-family: Verdana; font-size: 10pt; font-weight: bold; }
+h3 { color: black; font-family: Verdana; font-size: 10pt; font-weight: bold; }
+p { color: black; font-family: Verdana; font-size: 10pt; font-weight: normal; }
+td { color: black; font-family: Verdana; font-size: 10pt; font-weight: normal; }
+li { color: black; font-family: Verdana; font-size: 10pt; font-weight: normal; line-height: 12pt; }
+caption { font-weight: bold; font-family: Verdana; font-size: 10pt; line-height: 18pt; }
+
+a { text-decoration: normal; }
+a:visited { color: blue; }
+a:active { color: blue; }
+a:hover { text-decoration: underline; }
+a:link { color: blue; }
+
+.nd { text-decoration: none; }
+.center { margin-right: auto; margin-left: auto; } /* centers tables */
+
+#border { border-collapse: collapse; border: 2px solid #0f314c; }
+#border td { padding: 5px; }
+
+#custom { font-family: Verdana; border-collapse: collapse; }
+#custom td, #custom th { border: 2px solid silver; padding: 3px; vertical-align: top; }
+#custom th { font-size: 10pt; text-align: left; background-color: #0f314c; color: white; font-weight: bold; }
+#custom tr.alt0 td { color: white; background-color: white; padding: 0px; border: 0px; }
+#custom tr.alt1 td { color: white; background-color: #0f314c; }
+#custom td.alt2 { color: white; background-color: #0f314c; font-weight: bold; }
+#custom tr.alt3 td { color: white; background-color: #0f314c; font-size: 1pt; border: 0px; }
+
+.image { background: url('http://journeycolorado.com/whitepapers/Organization/Austin.png') no-repeat; } 
+.whitetitle { color: white; font-family: Verdana; font-size: 14pt; font-weight: bold; text-align: left; }
+.actioncaption { color: maroon; font-family: Verdana; font-size: 10pt; font-weight: bold; text-align: center; }
+.underline { text-decoration: underline; }
+.indent { text-indent: .25in; }
+.indent2 { text-indent: .50in; }
+.smallcaps { font-variant: small-caps; }
+.red { color: red; }
+.white { color: white; }
+.smallfont { font-size: 7pt; color: gray; }
+.bold { font-weight: bold; }
+.textBlue { color: blue; }
+.textPurple { color: purple; }

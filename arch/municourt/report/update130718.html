@@ -1,0 +1,137 @@
+<!DOCTYPE HTML>
+<html><head>
+<title>COA Municipal Court New Requirements</title>
+<link rel=StyleSheet href="http://austinea.org/style/email.css" type="text/css">
+</head>
+<body>
+<!--Border Background Table-->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse;"  align="center" style="background-color: #F4CA90;">
+<tr><td>
+<!--Main Body-->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" width="600" align="center" style="background-color: #ffffff;">
+<tr><td>
+<!-- Online reference -->
+<p style="color: gray; font-size: 7pt;">Note: This report is also <a href="http://austinea.org/arch/municourt/report/update130718.html" style="font-size: 7pt;">available online</a> by following link.</p>
+
+<p>Muni Court Architecture Team,
+
+<p>Based on our Use Case work to date, I assembled the following recommended functional requirements for potential submission to CDSC. These functional requirements were developed directly from our Use Case discussions. We can also deliver our Use Case diagrams with the more detailed specifications. The summary, however, provides good context for CDSC to understand the requirement. We'll discuss further during today's session.
+
+<p>Respectfully,
+<!-- Austin Logo -->
+<table cellpadding=5 cellspacing=0 border=0 style="border-collapse: collapse;" align="right"><tr><td>
+<img src="http://austinea.org/image/austinLogo.jpg" border="0" width="100">
+</td></tr></table>
+
+<p><img src="http://journeycolorado.com/images/signature.jpg" border="0" width="150">
+<!-- Signature Corporate -->
+<p style="font-size: 8pt;"><b>Rob Byrd</b> <span style="color: red; font-weight: bold;">|</span> <b>City of Austin</b><br>
+Chief Enterprise Architect - Corporate<br>
+Direct: (512) 974-1615 | Mobile: (512) 431-0700<p>&nbsp;
+
+<p style="text-align: center; font-weight: bold;">Potential Functional Requirements</p>
+<table align="center" id="custom">
+<tr><th>Number</th><th>Category</th><th>Description</th><th>Criticality</th></tr>
+
+<tr>
+<td></td>
+<td>Functional</td>
+<td>Establish Case File Legal Option : Select Legal Option - The system shall provide the ability for a Respondent or Defendant to manage all Case Files identified in the case management system using a Web Presence online. The system shall provide a legally binding form of identification to be persistent throughout the Web session. When a Defendant or Respondent selects a particular Case File of interest from the Web Presence Case File Queue, the system determines the various legal options available to the Defendant or Respondent. The system provides a Municipal Court staff configurable rules engine to allow Court Staff to modify business rules associated with the options provided to the Defendant or Respondent via Web Presence. The rules engine provides a customizable response based on current Case File attributes such as warrant status, age of Defendant or Respondent, attorney assigned to the case, and plea state (just to name a few) leading to the legal options provided to the Defendant or Respondent. Depending on Municipal Court Staff needs, some responses will be non-selectable and grayed out providing indication to Defendant or Respondent why the legal option is not selectable. Because laws frequently change, it's important that the legal options are not hard coded into the case management system; rather, the system should allow the Court Staff to make appropriate legal option changes using customizable rules filter. Once a Legal Option is selected, the system confirms the Legal Option and it's implication to Respondent or Defendant before storing it with the Case File.</td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td>Functional</td>
+<td>Establish Case File Legal Option : Establish Not Guilty Plea - When a Not Guilty Plea is selected as a Legal Option by the Defendant, the system presents Appearance Docket Date and Time for acknowledgment by the Defendant. The system provides information and options regarding Additional Requirements such as disability access, interpreter, etc. The Defendant selects their Additional Requirements needs. The Defendant is then presented with a Waiver of Appearance Docket and may select to waive appearance or do not waive appearance. If waived appearance, the Defendant is provided an option through the Web Presence to select a Docket Type and Docket Schedule followed by a acknowledgment of Jury Waiver. The Docket Schedule and Case File is added to the Complaint Queue for future processing. If the Defendant does not waive appearance, the Web Presence provides the Defendant the ability to select a Docket Schedule for future appearance.</td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td>Functional</td>
+<td>Establish Case File Legal Option : Establish Deferral Request - When the Defendant selects a Deferral Request as their Legal Option, the system automatically determines the Defendant's deferral options and presents the options to the Defendant through the Web Presence interface. The Defendant selects a Deferral Option and stores it with the Case File. When the Deferral Option requires Deferral Documentation, the system provides a means for the Defendant to submit Deferral Documentation through the Web Presence where it's attached to the relevant Case File. When a fee is required, the system provides a means to electronically submit the Remittance through the Web Presence and indicates fee paid acknowledgment with the Case File.</td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td>Functional</td>
+<td>Establish Case File Legal Option : Establish Compliance Dismissal Request - When the Defendant selects to establish a compliance dismissal request, the system automatically determines the authorized methods of compliance. Based on approved Municipal Court staff customizable rules engine, the system determines various methods of compliance based on the type of Case File and Legal Option selection. The rules engine must be customizable by the staff and not hard coded into the system. Once an option is selected, the selection is stored with the relevant Case File. When Compliance Documentation is required, the system provides the ability for the Defendant to upload through Web Presence the required Compliance Documentation and store with the Case File. When additional Compliance Information is required, this information is collected using a Web Presence form and stored with the Case File. When fees are required, the system indicates the Remittance required for the case and provides the ability to pay using an approved Electronic Financial Service - acknowledgment of payment is stored with the Case File.</td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td>Functional</td>
+<td>Establish Case File Legal Option : Complete Case File Activity - The Defendant or Respondent must be able to process multiple Case Files during any persistent identify session and provided the ability to save and return to any given session until completion.</td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td>Functional</td>
+<td>Process Civil Parking Case : Pay Citation Online - When a Respondent wants to pay for a Parking Citation online, the system provides a way to legally identify the Respondent and process the Case File Balance with an Electronic Financial Service. Currently, the Case File paid balance indication is stored in a queue requiring the Deputy Court Clerk to manually close the Case File with paid balance indications. In the future, once remittance is properly acknowledged, the system shall automatically close the Case File.</td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td>Functional</td>
+<td>Process Civil Parking Case : Enter Citation Information - The system shall provide a single automated interface to process Transportation and Police Department vendor provided Citation Information.</td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td>Functional</td>
+<td>Process Civil Parking Case : Make Case Determination - Currently, a Respondent must directly engage (in person or by phone) with a Deputy Court Clerk to have a case reviewed by a Hearing Officer or to submit an Affidavit (see Process Affidavit). In the future, the case management system shall provide a Web Presence to allow the Respondent to schedule a parking violation hearing or process an Affidavit submission. The system shall provide text message and/or email notification to the Respondent when electronic contact information is provided. When scheduling a Case File hearing, the Web Presence presents the Respondent with the Hearing Officer's scheduled opportunities and the Respondent selects the desired schedule. The future system shall include the ability to initiate a video conference session (telepresence) through Web Presence with the Hearing Officer to review the Case File and make a Case Determination.</td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td>Functional</td>
+<td>Process Civil Parking Case : Process Affidavit - The system shall provide a Respondent the ability to use a Web Presence interface to select the legal option to submit an Affidavit. The Web Presence presents an Affidavit form to be completed by the Respondent and attach relevant Affidavit. The Affidavit form information and the Affidavit is stored with the relevant Case File an stored in a queue for review by the Deputy Court Clerk. The system presents the Hearing Officer an Affidavit queue for case File Determination. If the Affidavit is accepted, the Deputy Court Clerk shall be able to close the Case File against the current Respondent and reprocess the Citation Information against new Respondent identification based on the Affidavit. When electronic means of notification is provided (email or text message), the Respondent is notified of the of the Case Determination electronically.</td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td>Functional</td>
+<td>Process Civil Parking Case : Make Case Appeal Determination - When the Respondent selects the legal option to Appeal the Case File through the Web Presence, the system shall present an Appeal Form for completion by the Respondent. Once the form is submitted, the Respondent is presented with a schedule to select the date/time for Hearing Officer review. Once selected, the system provides the report time to the Respondent via electronic means via text message or email depending on option selected by the Respondent. The Hearing Office selects the relevant Case File from the Case File Queue and makes a Case Determination. The system shall provide a similar work flow to include the ability to video teleconference with the Respondent and Hearing Officer for Case Determination. Video conferences in the wait queue are indicated by the Case File Queue to the Hearing Officer. When wait times are lengthy or the Respondent desires to another time to video conference, the system shall provide the option to schedule the video conference at a later time. The system shall electronically notify in the form of a reminder (email or text message) when the video conference is expected to begin and provide a link to quickly and efficiently enter the video conference session.</td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td>Functional</td>
+<td>Process Civil Parking Case : Pay Remittance at Kiosk - The system shall provide a means to allow a Respondent to identify selected Case Files and process remittance at a Kiosk. When successfully paid at a Kiosk, the system automatically closes the Case File.</td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td>Functional</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td>Functional</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td>Functional</td>
+<td></td>
+<td></td>
+</tr>
+
+</table>
+
+</td></tr></table>
+</td></tr></table></body></html>

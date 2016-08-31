@@ -1,0 +1,268 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>Verify Contract Deliverable</title>
+
+
+
+
+
+  
+
+  
+  
+  <link rel="Stylesheet" href="http://austinea.org/style/email.css" type="text/css"></head><body style="background-color: rgb(221, 216, 194);">
+<!-- Border Background Table -->
+<table style="border-collapse: collapse; background-color: rgb(244, 202, 144);" align="center" border="0" cellpadding="4" cellspacing="0">
+
+  <tbody>
+    <tr>
+      <td><!-- Online reference
+
+<p class="lbl" style="text-align: center;">This report is also <a href="http://austinea.org/">available online</a> by following link.</p> --><!-- EA Motto -->
+      <p style="color: gray; font-size: 8pt; text-align: center; font-weight: bold;">Enterprise
+Architecture <i>- aligning IT services with business needs</i></p>
+<!-- Main Body -->
+      <table style="border-collapse: collapse; background-color: rgb(255, 255, 255);" align="center" border="0" cellpadding="5" cellspacing="0" width="650">
+        <tbody>
+          <tr>
+            <td>
+            <p style="text-align: center; font-weight: bold;">Verify
+Contract Deliverable Use Case Specification</p>
+            <p style="text-align: center; font-weight: bold;"><span style="font-weight: normal;">Last Modified: 6/30/2016</span></p>
+            <p style="text-align: center; font-weight: bold;"><span style="font-weight: normal;"><br>
+            </span></p>
+
+<!-- Image Title -->
+            <table style="border-collapse: collapse;" align="center" border="0" cellpadding="5" cellspacing="0">
+              <tbody>
+                <tr>
+                  <td align="center"><span class="lbl">Select to
+enlarge...</span><br>
+                  <a href="createcontractdeliverable_ucd.jpg"><span style="text-decoration: underline;"></span></a><a href="createriskassessment_ucd.jpg"><span style="text-decoration: underline;"></span></a><a href="verifycontractdeliverable_ucd.jpg"><span style="text-decoration: underline;"></span><span style="text-decoration: underline;"><img style="border: 0px solid ; width: 600px; height: 236px;" alt="" src="verifycontractdeliverable_ucd.jpg"></span></a><br>
+                  <span style="font-weight: bold;"><br>
+Verify Contract Deliverable Use
+Case Model</span> </td>
+                </tr>
+              </tbody>
+            </table>
+            <p class="MsoNormal"><b><br>
+            </b></p>
+            
+            
+            
+            <p class="MsoNormal"><b>Scope:</b> The system daily searches for Contract Deliverables past due
+and sends a ContractComplianceNotification to the appropriate Contract
+Compliance Verifier. Notification appears in the form of one email per
+ContractDeliverable, stating a ContractDeliverable is past due and contains an
+attached file. The Contract Compliance Verifier double-clicks the attached file
+and is taken to a screen that displays ContractDeliverableInfo. The Contract
+Compliance Verifier enters ContractDeliverableVerificationInfo and, if needed,
+a VerificationComment.<o:p></o:p></p>
+
+
+            <p class="MsoNormal"><o:p></o:p></p>
+
+
+
+            <p class="MsoNormal"><o:p></o:p></p>
+
+
+
+            <p class="MsoNormal"><span style=""> </span><o:p></o:p></p>
+
+            <p class="MsoNormal"><o:p></o:p></p>
+            <p class="MsoNormal"><br>
+            <o:p></o:p></p>
+<!-- Image Title -->
+            <table style="border-collapse: collapse;" align="center" border="0" cellpadding="5" cellspacing="0">
+              <tbody>
+                <tr>
+                  <td align="center"><span class="lbl">Select to
+enlarge...</span><br>
+                  <a href="createcontractdeliverable_sqd.jpg"><span style="text-decoration: underline;"></span></a><a href="createriskassessment_sqd.jpg"><span style="text-decoration: underline;"></span></a><a href="verifycontractdeliverable_sqd.jpg"><span style="text-decoration: underline;"><img style="border: 0px solid ; width: 591px; height: 453px;" alt="" src="verifycontractdeliverable_sqd.jpg"></span></a><br>
+                  <span style="font-weight: bold;"><br>
+Verify Contract Deliverable Sequence Diagram</span> </td>
+                </tr>
+              </tbody>
+            </table>
+            <p style="text-align: center; font-weight: bold;"><br>
+            </p>
+            <p style="text-align: center; font-weight: bold;">Table of
+Interface Descriptions</p>
+            <p style="text-align: center; font-weight: bold;"><span style="font-weight: normal;"></span><br>
+            </p>
+
+<!-- Table definition -->
+            <table style="text-align: left; margin-left: auto; margin-right: auto;" id="custom">
+              <tbody>
+                <tr>
+                  <th>Type/Interface</th>
+                  <th>Description</th>
+                </tr>
+                <tr>
+                  <td>Provide Functional Conference and Facility Space/<br><span style="font-weight: bold;">notifyContractComplianceVerifier</span><br>
+                  </td>
+                  <td>
+                  <p class="MsoNormal"> </p>
+                  <p class="MsoNormal">
+
+</p>
+                  <p class="MsoNormal">
+
+</p>
+                  <p class="MsoNormal">
+
+</p>
+
+                  <p class="MsoNormal">The system daily searches for ContractDeliverablesDates with
+a VerificationStatus value of 'Pending' or 'Not Received' that are past due.
+Notification is sent to the appropriate Contract Compliance Verifier
+(ApprovingReviewingEntity) via a ContractComplianceNotification, on the
+DateDue, 7 days after the DateDue and 21 days after the DateDue. Notification
+appears in the form of one email per ContractDeliverable, stating the
+ContractDeliverable is past due and includes an attached file with instructions
+to double-click the attachment and be directly taken to ContractDeliverableInfo
+within the system. Notifications are discontinued when a DateDue 21 days past
+the DateDue at which time the Contract Compliance Supervisor engages the
+Contract Compliance Verifier in person to determine the reason why the
+ContractDeliverable has not been Received.<o:p></o:p></p>
+
+
+<p class="MsoNormal"><o:p></o:p></p>
+
+
+
+                  <p class="MsoNormal"><o:p></o:p></p>
+
+
+
+                  <p class="MsoNormal"><o:p></o:p></p>
+
+                  </td>
+                </tr>
+                <tr>
+                  <td>Provide Functional Conference and Facility Space/<br><span style="font-weight: bold;">displayContractDeliverable</span></td>
+                  <td>
+                  
+                  <p class="MsoNormal">
+
+</p>
+
+                  <p class="MsoNormal">
+
+</p>
+                  <p class="MsoNormal">
+
+</p>The Contract Compliance Verifier double-clicks the file attached to
+the ContractComplianceNotification and is taken to a screen within the
+system displaying the following ContractInfo: ContractNumber and
+ContractVendorName. The screen also displays the following
+ContractDeliverableInfo: Title. The screen also displays the following
+ContractDeliverableDateInfo: DateDue, ApprovingReviewingEntity. Note:
+In addition to accessing the the system via the
+ContractComplianceNotification attachment, the Contract Compliance
+Verifier also has read-only access to the system using the same direct
+method used by the Contract Compliance Manager and Contract Compliance
+Supervisor. Using this direct method, only the
+ContractDeliverableVerificationInfo is editable.</td>
+                </tr>
+                <tr>
+                  <td>Provide Functional Conference and Facility Space/<br><span style="font-weight: bold;">storeContractDeliverableVerificationInfo</span> </td>
+                  <td>
+
+                  <p class="MsoNormal">
+
+</p>
+                  <p class="MsoNormal">
+
+</p>
+                  <p class="MsoNormal">
+
+</p>
+                  <p class="MsoNormal">The Contract Compliance
+Verifier enters the following ContractDeliverableVerificationInfo:
+DateReceived (when the product or service was received),
+VerificationStatus (default value of Pending, Received, Not Received).
+When the VerificationStatus of all ContractDelieverableDates for a
+Deliverable have been set to 'Received', the system sets the value of
+the ContractDeliverable:CompletedDate to the current date. Note: A
+system dashboard item of all ContractDeliverables past due with a
+VerificationStatus of Pending or Not Received displays for Contract
+Compliance Supervisor and designee/s.<br>
+<o:p></o:p></p>
+
+
+
+
+
+                  <p class="MsoNormal"><o:p></o:p></p>
+
+
+
+                  <p class="MsoNormal"><o:p></o:p></p>
+
+
+
+</td>
+                </tr>
+                <tr>
+                  <td>Provide Functional Conference and Facility Space/<br><span style="font-weight: bold;">createVerificationComment</span><br>
+                  </td>
+                  <td>
+                  
+                  <p class="MsoNormal">
+
+</p>
+                  <p class="MsoNormal">
+
+</p>
+                  <p class="MsoNormal">
+
+</p>If needed, the Contract Compliance Verifier uses the system to
+create a VerificationComment. VerificationComments are added
+incrementally to an associated list, with the most recent
+VerificationComment appearing at the top of the list.
+VerificationComments are created for the purpose of noting information
+regarding work performed, conversations with the vendor, work completed
+incorrectly, etc. Example: Status has a value of 'Not Received', the
+VerificationComment states reason, such as the ContractDeliverable
+requires a room be painted white and the vendor painted it blue.<p class="MsoNormal"><o:p></o:p></p>
+
+
+
+                  <p class="MsoNormal"><o:p></o:p></p>
+
+
+
+
+                  <p class="MsoNormal"> </p>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="vertical-align: top;">Provide Functional
+Conference and Facility Space/<br><span style="font-weight: bold;">storeVerificationCommentInfo</span><br>
+                  </td>
+                  <td style="vertical-align: top;">
+
+                  <p class="MsoNormal">The
+Contract Compliance Verifier uses the system to store the following
+VerificationCommentInfo: Comment, CommentDate, CommentCreatedBy,
+Outcome (with editable value list of: Called, They're Working On It,
+Emailed, Received Notes).<br>
+<o:p></o:p></p>
+
+
+</td>
+                </tr>
+                
+              </tbody>
+            </table>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+</body></html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<title>Animal Services &quot; Onboard New Volunteer &quot; </title>
+<link rel="StyleSheet" href="http://austinea.org/style/email.css" type="text/css">
+</head>
+<body>
+
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="600" align="center"><tr><td>
+
+<!-- Online reference -->
+<p class="lbl">Note: This report is also <a href="http://austinea.org/arch/as/report/update012215.html" style="font-size: 7pt;">available online</a> by following link.</p>
+
+<div>
+<p>Hi All,</p> 
+</div>
+
+<p>Attached is the information for the "Onboard New Volunteer" use case that was reviewed January 22nd 2015, with the Animal Services Team. Please take a moment to check my work and let me know if there are any changes I can make to improve this, or if this requirement is as discussed! </p>
+
+Additionally, I wanted to let you know the Online repository of Animal Services Use Cases is now up to date ( http://austinea.org/arch/as/report/index.html )
+<p>
+
+
+<!-- Signature-->
+<table cellpadding="0" cellspacing="0" border="0" width="350" style="border-collapse: collapse;"><tr><td>
+<p>Cheers!</p>
+
+<table cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;" align="right">
+<tr>
+<td>
+<img src="http://austinea.org/image/austinLogo.jpg" border="0" width="100" height="100" alt="Austin Logo" />
+</td>
+</tr>
+</table>
+<p><img src="http://coawss3a.coacd.org/sites/CTM/EA/Shared%20Documents/Images/ABSIG.JPG" border="0" width="143" height="83" alt="sign" /> </p>
+
+<p><b>Aaron Brown</b> 
+<span style="color: red; font-weight: bold;">|</span> 
+<b>City of Austin</b>
+<a href="http://www.linkedin.com/in/austnaaron"><img src="http://journeycolorado.com/images/linkedin.jpg" border="0" alt="Linkin Logo" /> </a> <br />
+Senior IT Enterprise Architect<br />
+Direct: (512) 974-2960 <br>
+Email: Aaron.Brown2@austintexas.gov </p> 
+</td></tr></table>
+
+
+<!-- Use case information below -->
+
+<hr>
+
+<b> Animal Shelter Logical Data Model </b>
+<!-- Image -  Logical Data Model -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="http://austinea.org/arch/as/report/animalShelterLogicalDataModel.jpg"><img src="http://austinea.org/arch/as/report/animalShelterLogicalDataModel.jpg" border="0" width="600" alt=""></a>
+<p style="text-align: center; font-weight: bold;">Animal Shelter Logical Data Model</p>
+</td></tr></table> 
+
+<!-- Muni Court Requirements Model -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="right">
+<tr>
+<td align="center">
+<span class="lbl">Note: Select to download</span><br />
+<a href="http://austinea.org/arch/as/report/onboardNewVolunteerUseCase.jpg"><img src="http://austinea.org/arch/as/report/onboardNewVolunteerUseCase.jpg" border="0" width="200" alt="" /></a><br />
+<span style="font-weight: bold;">Onboard New Volunteer<br />Use Case</span>
+</td></tr></table>
+
+
+
+<p><b>Use Case Scope</b></p>
+<p>A new Applicant accesses the Animal Services web site and applies to become a volunteer by filling out an online application. The Applicant provides personal information and is provided a Criminal NAD background check form to print, sign and return to Animal Services. The Applicant can mail or personally deliver the signed background check form to Animal Services. The Volunteer Coordinator accesses the system and checks to see if new Applicants have added applications. Once the signed background check authorization has been provided, the Volunteer Coordinator accesses the Background Check system (CBI) and enters the Applicant's information for validation. 
+If the Applicant has lived outside of Texas anytime in the previous 10 years, they are required to additionally get their fingerprints checked. In this case, the Applicant is provided information about where the Finger Print Agency is, and the process by which the Applicant gets their finger print security check. The results of the fingerprint check are sent to the Department of Public Safety (DPS) and ultimately transferred to the City of Austin Criminal Background Check Database by COA Human resources. If results in the CBI database have not been updated for the Applicant after a week, the Volunteer Coordinator will send email to COA HR in an effort to expedite the request. 
+If the Applicant fails the background check, the Volunteer Coordinator sends a rejection letter to the Applicant, otherwise the Applicant is sent an email inviting them to Orientation. At Orientation the Applicant chooses an initial preference (Dogs or Cats), and they are provided the standard Volunteer Packet. Additionally they are asked to complete and sign a Code of Conduct form, and if the Applicant desires off hours work, they are provided and asked to sign an Access Agreement. The Applicant is taught how to use the GivePulse Time tracking system, and assigned a mentor. The Applicant and Volunteer Coordinator decided the first working day, which is coordinated with the Assigned Mentor (or if none is available, the Volunteer Coordinator.) The Applicant attends their first day of work, and then the Volunteer Coordinator has discuss with the mentor and applicant about their first shift at the Animal Shelter.</p>
+
+<!-- Image -  Sequence Diagram -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="http://austinea.org/arch/as/report/onboardNewVolunteerSequenceDiagram01.jpg"><img src="http://austinea.org/arch/as/report/onboardNewVolunteerSequenceDiagram01.jpg" border="0" width="600" alt=""></a>
+<p style="text-align: center; font-weight: bold;">Onboard New Volunteer Sequence Diagram</p>
+</td></tr></table> 
+
+
+
+<p style="font-weight: bold; text-align: center;">Onboard New Volunteer Interface Descriptions</p>
+<!-- Table definition -->
+<table align="center" id="custom">
+<tr><th width="195">Type/Interface</th><th>Description</th></tr>
+<tr>
+<td>Provide Animal Rescue and Shelter/ <br /> submitNewVolunteerApplication</td> <td>The volunteer accesses the system and enters their name, contact information, date of birth, emergency contact info, previous volunteer experience, bilingual status (Spanish speaker?), and their sex. Additionally they are provided a link to download a criminal background check form which requires signature and must be returned in person as well as a potential injury liability waiver. 
+ </td> </tr>
+ 
+<tr>
+<td>Applicant/ <br /> completeCriminalBackgroundForm</td> <td>The Volunteer signs the liability waiver (potential for injury) and completes the DPS application for Background check. They return the hard copies of these document. if amenable, they provide social security number. Additionally ethnicity, other names used, residency (and whether they've lived out of state in the past 10 years), Criminal history over the past 10 years. The volunteer initials multiple statements on the form (if any are missed, the background check will be rejected and returned.)  </td> </tr>
+
+<tr>
+<td>Provide Animal Rescue and Shelter/ <br />checkForNewApplications</td> <td>The volunteer coordinator checks the system to see if new applications have been entered.  </td> </tr>
+
+<tr>
+<td>Criminal Background Database/<br /> addVolunteerToDatabase</td> <td>The Volunteer Coordinator logs into the Criminal Background database (CBI) and enters the volunteers information including from the background check form: name, date of birth, social security number (if provided), ethnicity, other names used, residency (and whether they've lived out of state in the past 10 years), Criminal history over the past 10 years.</td> </tr>
+
+<tr>
+<td>Volunteer Coordinator/<br /> sendBackgroundCheckFormToHR</td> <td>The Volunteer coordinator uses interoffice mail to send the signed Background NAD form to HRD.  </td> </tr>
+
+
+<tr>
+<td>Volunteer Coordinator/<br /> notifyVolunteerApplicationIsBeingProcessed</td> <td>The Volunteer Coordinator uses email to notify the applicant of their form being sent to HR and that Animal Services is awaiting the results. </td> </tr>
+
+<tr>
+<td>Volunteer Coordinator/<br /> notifyApplicantofFingerprintRequirement</td> <td>If the Applicant indicates living out of Texas in the past 10 years, their notification email includes a requirement for fingerprint. The email includes online web contact and telephone instructions for the applicant to follow to get their fingerprints recorded and check. The email includes HR contact information for questions.  </td> </tr>
+
+<tr>
+<td>Fingerprint Agency/<br /> recordFingerprints</td> <td>The Applicant contacts the Fingerprint Agency (currently Morpho Trust), schedules a time to have their fingerprints captured and then gets their fingerprints checked by the agency. The Applicant is directed to provide a receipt, date and location of fingerprinting once it is completed (normally provided by email to both COA HR and the Volunteer Coordinator). The Applicant is provided a "FastPass" form should they need to be fingerprint checked (by the volunteer coordinator). </td> </tr>
+
+<tr>
+<td>Applicant/<br /> sendEmailwithFingerPrintReceiptToVolunteerCoordinator</td> <td>The Applicant sends email to both the Volunteer Coordinator and the HR Liaison indicating the Fingerprint check "TCN" number provided by the Fingerprint Agency.</td> </tr>
+
+<tr>
+<td>Volunteer Coordinator/<br /> sendHRDFingerprintReceiptNo</td> <td>The Volunteer Coordinator uses the system to send email to the HR Liaison, communicating the Fingerprint check TCN number that has been communicated by the Applicant.  </td> </tr>
+
+<tr>
+<td>DPS Security Site/<br /> recordResultsOfFingerprintCheck</td> <td>The Fingerprint Agency updates the Department of Public Safety (DPS) Security Website with the results of the Applicant fingerprint screen. The information is identified with the Fingerprint Check TNC Number provided to the Applicant during the fingerprint check.   </td> </tr>
+
+
+<tr>
+<td>DPS Security Site/<br /> lookupCBIInfo</td> <td>The HR Liaison uses identifying information from the Criminal Background Check (NAD) Form like Driver's license, Social Security Number, Date of Birth, etc, to lookup and determine the worthiness of an Applicant.</td> </tr>
+
+<tr>
+<td>Criminal Background Database/<br /> updateApplicantCBIResults</td> <td>The HR Liaison uses the Criminal Background Database (CBI) to lookup the record of the Applicant on the system (via identifying information like Date of Birth and Social Security Number) and updates the Criminal Background Database with information taken from the Department of Public Safety Security Site. The information provided may or may not include Fingerprint check results, as they are only required in specific instances. </td> </tr>
+
+
+<tr>
+<td>Criminal Background Database/<br /> lookupVolunteerInDatabase</td> <td>The Volunteer coordinator uses the system to locate and checks the CBI database for results of the background screen (and potentially fingerprint check) from HR.  </td> </tr>
+
+
+<tr>
+<td>Volunteer Coordinator/<br /> requestBackgroundStatusWithHRD</td> <td>The Volunteer coordinator contacts the COA HR Liaison (via email) to inquire to the status of the CBI background check for the applicant.</td> </tr>
+
+<tr>
+<td>DPS Security Site/<br /> lookupCBIAndFingerprintResults</td> <td>The HR Liaison uses identifying information from the Criminal Background Check (NAD) Form like Driver's license, Social Security Number, Date of Birth, Fingerprint check TCN Number, etc, to lookup and determine the worthiness of an Applicant on the Department of Public Safety Security Site. The Liaison specifically seeks background check information as well as fingerprint check results. </td> </tr>
+
+<tr>
+<td>Provide Animal Rescue and Shelter/<br /> updatePersonInfo</td> <td>The User Accesses the system to update the Person info on the system. This information could include personal information (name, date of birth, sex, age, pet preference, Orientation Dates, Signatures Received ( Code of conduct, access agreement). mentor information, first shift information, pet preferences,background check dates, district in which they reside, etc.
+Additionally, for non-employees, completion of the Responsible Pet Owner Training class, owner animal, etc. may also be provided. If the user is the Fleet Manager, they Access the system and look up and assign an employee to a specific fleet vehicle. The system ensures the “isAllowedToUseFleet” attribute of the PersonInfo is set to True or returns an error. Additionally the system insures the date of the last driver’s certification is within three years. </td> </tr>
+
+
+<tr>
+<td>Volunteer Coordinator/<br /> sendStandardRejectionLetter</td> <td>The volunteer Coordinator access the system and send a Volunteer Rejection form letter to the applicant informing them of their rejection. </td> </tr>
+
+
+<tr>
+<td>Volunteer Coordinator/<br />sendLetterInvitingVolunteerToOrientation</td> <td>The volunteer coordinator sends the applicant email inviting them to orientation. Two potential dates are provided to the applicant for orientation. Included in the email is a statement indicating minors must be accompanied by an adult. A form letter is used and modified as appropriate for the Applicant (name and dates.)</td> </tr>
+
+<tr>
+<td>Applicant/<br /> confirmOrientationAttendence</td> <td>The Applicant coordinates with the Volunteer Coordinator to agree upon the actual Orientation Date via email exchange.</td> </tr>
+
+
+<tr>
+<td>Applicant/<br /> attendOrientation</td> <td>The volunteer attends orientation on one of the two dates offered. Part of Orientation is signing the Code of Conduct document.  </td> </tr>
+
+<tr>
+<td>Volunteer Coordinator/<br /> emailProtocolPacket</td> <td>The Volunteer Coordinator emails the protocol packet corresponding to the Applicant specified preference (dog or cat) to the Applicant in preparation for orientation. </td> </tr>
+<tr>
+<td>Applicant/<br /> requestFirstShift</td> <td>The Applicant sends email indicating which of the two dates provided they are choosing as their first shift to work. Note: there is sometimes an exchange of emails if none of the two dates work, and an alternative is necessary. </td> </tr>
+
+<tr>
+<td>GivePulse/<br /> checkCurrentSchedule</td> <td>The Volunteer coordinator accesses GivePulse, providing the first shift start dates specified by the Applicant to locate another volunteer working the same shift to act as a Mentor for the Applicant.  </td> </tr>
+
+<tr>
+<td>Volunteer Coordinator/<br /> trainVolunteerOnGivepulse</td> <td>The Volunteer Coordinator shows the applicant how to log on to GivePlus, discusses usage of calendar, and how hours are tracked in the system. (Givepulse instructions are provided in the New Volunteer Checklist packet) </td> </tr>
+
+
+<tr>
+<td>Applicant/<br />signAndReturnAccessAgreement</td> <td>The Applicant Signs and returns the Access Agreement form indicating a preference for off hours work.  </td> </tr>
+<tr>
+
+<td>Volunteer Mentor/<br /> leadVolunteerFirstDay</td> <td>The assigned Mentor leads the new Applicant (new Volunteer) on their first work day.  </td> </tr>
+
+<tr>
+<td>Volunteer Coordinator/<br /> discussFirstShiftObservationsWithMentorAndApplicant</td> <td>The Volunteer Coordinator meets with both the Mentor and the new Volunteer to discuss next steps, potential issues, and various thoughts.  </td> </tr>
+
+
+</table>
+
+
+
+<!-- Table definition
+<table align="center" id="custom">
+<tr><th>Number</th><th>Category</th><th>Description</th><th>Criticality</th></tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table> 
+
+</td></tr></table> -->
+
+</table>
+</table></body></html>

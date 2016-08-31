@@ -1,0 +1,1451 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>AFD Technical Reference Model</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="Generator" content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+/* Font Definitions */
+@font-face
+{font-family:"Cambria Math";
+panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+{font-family:Calibri;
+panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+{font-family:Verdana;
+panose-1:2 11 6 4 3 5 4 4 2 4;}
+/* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+{margin-top:0in;
+margin-right:0in;
+margin-bottom:8.0pt;
+margin-left:0in;
+line-height:107%;
+font-size:10.0pt;
+font-family:"Verdana",sans-serif;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+{mso-style-link:"Header Char";
+margin:0in;
+margin-bottom:.0001pt;
+font-size:10.0pt;
+font-family:"Verdana",sans-serif;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+{mso-style-link:"Footer Char";
+margin:0in;
+margin-bottom:.0001pt;
+font-size:10.0pt;
+font-family:"Verdana",sans-serif;}
+p.MsoNoSpacing, li.MsoNoSpacing, div.MsoNoSpacing
+{margin:0in;
+margin-bottom:.0001pt;
+font-size:10.0pt;
+font-family:"Verdana",sans-serif;}
+span.HeaderChar
+{mso-style-name:"Header Char";
+mso-style-link:Header;
+font-family:"Verdana",sans-serif;}
+span.FooterChar
+{mso-style-name:"Footer Char";
+mso-style-link:Footer;
+font-family:"Verdana",sans-serif;}
+.MsoPapDefault
+{margin-bottom:8.0pt;
+line-height:107%;}
+/* Page Definitions */
+@page WordSection1
+{size:8.5in 11.0in;
+margin:.75in .75in .75in .75in;}
+div.WordSection1
+{page:WordSection1;}
+-->
+</style></head>
+<body style="background-color: rgb(221, 216, 194);" lang="EN-US">
+<!-- Border Background Table -->
+<table style="border-collapse: collapse; background-color: rgb(244, 202, 144);" align="center" border="0" cellpadding="4" cellspacing="0">
+<tbody>
+<tr>
+<td><!-- Main Body -->
+<table style="border-collapse: collapse; background-color: rgb(255, 255, 255);" align="center" border="0" cellpadding="5" cellspacing="0" width="650">
+<tbody>
+<tr>
+<td style="padding: 0pt;" height="130" valign="top"><a href="http://austinea.org"><img src="iTHeader.jpg" alt="austinea.org - home..." border="0"></a></td>
+</tr>
+<!-- Text Area -->
+<tr>
+<td>
+<div class="WordSection1">
+<p class="MsoNormal" style="text-align: center;" align="center"><b><span style="font-size: 8pt; line-height: 107%;">Technical
+Reference Model<br>
+Austin Fire Department</span></b></p>
+<p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 8pt; line-height: 107%;">08/27/2016</span></p>
+<p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 8pt; line-height: 107%;">Download <a href="http://austinea.org/standards/technicalReferenceModelAFD.docx">printable
+version</a></span></p><div align="center">
+
+<table class="MsoNormalTable" style="border: medium none ; border-collapse: collapse;" border="1" cellpadding="0" cellspacing="0">
+ <thead>
+  <tr style="height: 12.75pt;">
+   <td style="border: 1pt solid maroon; padding: 0in 5.4pt; background: maroon none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; width: 92.9pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="124">
+   <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><b style=""><span style="font-size: 8pt; color: white;">Technology<o:p></o:p></span></b></p>
+   </td>
+   <td style="border-style: solid solid solid none; border-color: maroon maroon maroon -moz-use-text-color; border-width: 1pt 1pt 1pt medium; padding: 0in 5.4pt; background: maroon none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; width: 100.9pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="135">
+   <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><b style=""><span style="font-size: 8pt; color: white;">Area<o:p></o:p></span></b></p>
+   </td>
+   <td style="border-style: solid solid solid none; border-color: maroon maroon maroon -moz-use-text-color; border-width: 1pt 1pt 1pt medium; padding: 0in 5.4pt; background: maroon none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+   <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><b style=""><span style="font-size: 8pt; color: white;">Category<o:p></o:p></span></b></p>
+   </td>
+   <td style="border-style: solid solid solid none; border-color: maroon maroon maroon -moz-use-text-color; border-width: 1pt 1pt 1pt medium; padding: 0in 5.4pt; background: maroon none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+   <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><b style=""><span style="font-size: 8pt; color: white;">AFD<o:p></o:p></span></b></p>
+   </td>
+  </tr>
+ </thead>
+ <tbody><tr style="height: 12.75pt;">
+  <td rowspan="44" style="border-style: none solid solid; border-color: -moz-use-text-color maroon maroon; border-width: medium 1pt 1pt; padding: 0in 5.4pt; width: 92.9pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="124">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Application Technology<o:p></o:p></span></p>
+  </td>
+  <td rowspan="6" style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 100.9pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="135">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Application and Web Server Software<o:p></o:p></span></p>
+  </td>
+  <td rowspan="5" style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Application Server Software<o:p></o:p></span></p>
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;"><o:p>&nbsp;</o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">ColdFusion<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">QlikView<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">PHP<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">FDM RMS<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">TriTech CAD<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Web Server Software<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">IIS (Internet Information Services)<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td rowspan="7" style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 100.9pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="135">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Application Testing Software<o:p></o:p></span></p>
+  </td>
+  <td rowspan="3" style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Debugging Test Tools<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">CF Eclipse<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.95pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.95pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Delphi<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.95pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.95pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">SP Designer<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Function Testing Tools<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;"><o:p>&nbsp;</o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Load and Performance Testing Tools<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;"><o:p>&nbsp;</o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">System Testing Tools<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;"><o:p>&nbsp;</o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Unit Testing Tools<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">CF Eclipse<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td rowspan="22" style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 100.9pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="135">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Development Tools<o:p></o:p></span></p>
+  </td>
+  <td rowspan="7" style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Analysis, Design and Modeling<o:p></o:p></span></p>
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;"><o:p>&nbsp;</o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">DB Workbench<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.95pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.95pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Maestro (Postgre SQL)<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.95pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.95pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">InfoPath<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.95pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.95pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">QlikView Desktop<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Visio/SmartDraw<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">MS Management Studio<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">MS Publisher<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td rowspan="6" style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Application Development Tools<o:p></o:p></span></p>
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;"><o:p>&nbsp;</o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">CF Eclipse<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.95pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.95pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Delphi<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">FDM RMS Win6<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">SP Designer<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Dreamweaver<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Formsite<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td rowspan="2" style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Requirements Management<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">MS Office<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">SharePoint<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td rowspan="4" style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Software Change and Configuration
+  Management Tools<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Beyond Compare<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">WinMerge<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Git<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">VSS (archive only)<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td rowspan="3" style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Web Authoring Tools<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Dreamweaver<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Drupal<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">CF Eclipse<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td rowspan="4" style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 100.9pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="135">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Integration Software<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Device Integration<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;"><o:p>&nbsp;</o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.95pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.95pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Enterprise Service Bus (ESB)<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.95pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;"><o:p>&nbsp;</o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Service Registry<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;"><o:p>&nbsp;</o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">SOA Governance<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;"><o:p>&nbsp;</o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.95pt;">
+  <td rowspan="5" style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 100.9pt; height: 12.95pt;" nowrap="nowrap" valign="top" width="135">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Software Engines<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.95pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Business Process Management Engines<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.95pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;"><o:p>&nbsp;</o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Business Rules Engines<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;"><o:p>&nbsp;</o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Geographic Information System (GIS)
+  Engines<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">ESRI ArcGIS<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td rowspan="2" style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Search Engines<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">SharePoint<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;"><o:p>&nbsp;</o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td rowspan="40" style="border-style: none solid solid; border-color: -moz-use-text-color maroon maroon; border-width: medium 1pt 1pt; padding: 0in 5.4pt; width: 92.9pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="124">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Collaboration and Electronic
+  Workplace<o:p></o:p></span></p>
+  </td>
+  <td rowspan="11" style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 100.9pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="135">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Collaboration Software<o:p></o:p></span></p>
+  </td>
+  <td rowspan="2" style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Computer Based Training (CBT)<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Adobe Connect<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">ACC Blackboard<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Content Management<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">SharePoint<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Electronic Messaging<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Spark<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Email and Calendaring<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Outlook 2013<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Process and Schedule Synchronization<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;"><o:p>&nbsp;</o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td rowspan="3" style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Real Time and Team Collaboration<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">SharePoint<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.95pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.95pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Trello<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">OneNote<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Shared Whiteboard<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;"><o:p>&nbsp;</o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Unified Messaging<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;"><o:p>&nbsp;</o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td rowspan="29" style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 100.9pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="135">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Productivity Software<o:p></o:p></span></p>
+  </td>
+  <td rowspan="2" style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Accounting and Finance<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Excel/VBA<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">QlikView (reporting)<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td rowspan="4" style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Case Management<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">SharePoint<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.95pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.95pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Magic<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">AMANDA<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Salesforce CRM<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td rowspan="3" style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Desktop Publishing<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">MS Publisher<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Adobe Presenter <o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Adobe Creative Suite<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td rowspan="2" style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Enterprise Faxing<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Xerox<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">RightFax<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td rowspan="5" style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">File Manager and Viewer<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">SharePoint<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">FileZilla<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">7Zip<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Adobe Acrobat<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">PowerDMS<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Graphics Design Software <o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Adobe Creative Suite<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td rowspan="4" style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Miscellaneous Productivity Tools and
+  Utilities<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Snagit<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">SmartDraw<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Fences<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Xenu Link Sleuth<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td rowspan="2" style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Multimedia Software<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Camtasia<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Adobe Creative Suite<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Standard Office Suite<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">MS Office 2013<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td rowspan="2" style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Surveys<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Survey Monkey<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.95pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.95pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">PowerDMS<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td rowspan="3" style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Web Browsers<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Internet Explorer<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Google Chrome<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Frontmotion Firefox<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td rowspan="2" style="border-style: none solid solid; border-color: -moz-use-text-color maroon maroon; border-width: medium 1pt 1pt; padding: 0in 5.4pt; width: 92.9pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="124">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Enterprise Architecture<o:p></o:p></span></p>
+  </td>
+  <td rowspan="2" style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 100.9pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="135">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Employment<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Application<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;"><o:p>&nbsp;</o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Framework<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;"><o:p>&nbsp;</o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td rowspan="32" style="border-style: none solid solid; border-color: -moz-use-text-color maroon maroon; border-width: medium 1pt 1pt; padding: 0in 5.4pt; width: 92.9pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="124">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Information Management Technologies<o:p></o:p></span></p>
+  </td>
+  <td rowspan="16" style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 100.9pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="135">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Business Intelligence and <br>
+  Data Warehouse Platforms<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Business Intelligence Platforms<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">QlikView<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Dashboard/Scorecard Tools<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">QlikView<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td rowspan="2" style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Data Analytics (Statistical
+  Analytics, Prediction, and Modeling)<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">SPSS Statistics<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">QlikView<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td rowspan="2" style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Data Mining Tools<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">DB Workbench<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">QlikView<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td rowspan="6" style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Data Warehouses<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">FireBird<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">PostgreSQL<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">SQL Server<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Access<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Excel<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">SharePoint<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td rowspan="2" style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Geospatial Tools<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">QlikMaps<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.95pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.95pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">ArcGIS<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Unstructured Data/Natural Language
+  Processing<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;"><o:p>&nbsp;</o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Web Reporting Tools<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Piwik (future)<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td rowspan="7" style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 100.9pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="135">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Data Integration<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Data at Rest<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;"><o:p>&nbsp;</o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Data in Motion (Common Message
+  Terminology and Semantics)<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;"><o:p>&nbsp;</o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td rowspan="2" style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Data Synchronization<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Excel/VBS<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Delphi<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Database Replication and Clustering<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;"><o:p>&nbsp;</o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td rowspan="2" style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Extract, Transform, Load (ETL)<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">QlikView<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.95pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.95pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Delphi<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td rowspan="9" style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 100.9pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="135">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Data Management<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Columnar DBMS<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;"><o:p>&nbsp;</o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Database Connectivity<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">ODBC Connections<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td rowspan="2" style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Database Related Management Tools<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">DB Workbench<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">MS Management Studio<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Object Oriented DBMS<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;"><o:p>&nbsp;</o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td rowspan="4" style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Relational DBMS<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Firebird<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">MS SQL<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">FDM RMS<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Postgres SQL<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td rowspan="28" style="border-style: none solid solid; border-color: -moz-use-text-color maroon maroon; border-width: medium 1pt 1pt; padding: 0in 5.4pt; width: 92.9pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="124">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Network and Telecommunications<o:p></o:p></span></p>
+  </td>
+  <td rowspan="7" style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 100.9pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="135">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">End User Computer Devices<o:p></o:p></span></p>
+  </td>
+  <td rowspan="2" style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Hardened Laptops<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Panasonic<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Dell<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td rowspan="3" style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Mobile Hardware<o:p></o:p></span></p>
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;"><o:p>&nbsp;</o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">iPad<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">iPhone<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.95pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.95pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Galaxy Tablet<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td rowspan="2" style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Personal Computers (PCs)<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Dell Workstations/Laptops<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">SurfacePro<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td rowspan="7" style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 100.9pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="135">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Transport<o:p></o:p></span></p>
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;"><o:p>&nbsp;</o:p></span></p>
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;"><o:p>&nbsp;</o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Cabling<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">BICSI<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td rowspan="2" style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Local/Campus Area Network (LAN/CAN)<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Cisco/Meraki<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Brocade<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td rowspan="4" style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Wide Area Network (WAN)<o:p></o:p></span></p>
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;"><o:p>&nbsp;</o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Adva-City Owned Fiber<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">AT&amp;T Connections (if FS not on
+  GATTN)<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Avaya Equipment<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">TimeWarner Cable<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td rowspan="14" style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 100.9pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="135">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Wireless and Mobile Networks<o:p></o:p></span></p>
+  </td>
+  <td rowspan="3" style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Aircards<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Sprint<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Verizon<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">AT&amp;T<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td rowspan="4" style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Cellular Networks<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">AT&amp;T (Public Safety)<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.95pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.95pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Verizon (Public Safety)<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">AT&amp;T (AVL-Public Safety)<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Verizon (AVL)<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Pagers<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">USA Mobility<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td rowspan="2" style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Public WiFi<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Cisco WAP<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Meraki WAP<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td rowspan="2" style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Radio<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">P25<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Motorola<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Satellite<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;"><o:p>&nbsp;</o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Secure WiFi<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Cisco WAP<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td rowspan="24" style="border-style: none solid solid; border-color: -moz-use-text-color maroon maroon; border-width: medium 1pt 1pt; padding: 0in 5.4pt; width: 92.9pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="124">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Platforms and Storage<o:p></o:p></span></p>
+  </td>
+  <td rowspan="2" style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 100.9pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="135">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Cloud Services/Virtualization<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Cloud Technologies<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;"><o:p>&nbsp;</o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Virtualization Software<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">VMWare<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td rowspan="5" style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 100.9pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="135">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Operating Systems<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Desktop/Laptop<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Windows 7, 8, 10 LTSB<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Mainframe<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;"><o:p>&nbsp;</o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td rowspan="2" style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Mobile Device<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Android<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">iOS<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Server<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Windows Server<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td rowspan="8" style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 100.9pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="135">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Storage<o:p></o:p></span></p>
+  </td>
+  <td rowspan="3" style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Long Term Back-up<o:p></o:p></span></p>
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;"><o:p>&nbsp;</o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">GBak<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">EMC Networker<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">VEEAM<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td rowspan="3" style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Operational Recovery<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">EMC Networker<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">VEEAM<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Zerto<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td rowspan="2" style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Production<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">EMC Networker<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">VEEAM<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td rowspan="9" style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 100.9pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="135">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">System Management Tools<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Logging<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Splunk<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td rowspan="6" style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Network Performance Optimization<o:p></o:p></span></p>
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;"><o:p>&nbsp;</o:p></span></p>
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;"><o:p>&nbsp;</o:p></span></p>
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;"><o:p>&nbsp;</o:p></span></p>
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;"><o:p>&nbsp;</o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Microsoft SCCM<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Trend Antivirus<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">SolarWinds Suite<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">VMware vRealize Operations<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">VMware vRealize Log Insight<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Arkin<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td rowspan="2" style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Patch Management<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">WSUS<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Mircrosoft SCCM<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.95pt;">
+  <td rowspan="19" style="border-style: none solid solid; border-color: -moz-use-text-color maroon maroon; border-width: medium 1pt 1pt; padding: 0in 5.4pt; width: 92.9pt; height: 12.95pt;" nowrap="nowrap" valign="top" width="124">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">System Management<o:p></o:p></span></p>
+  </td>
+  <td rowspan="6" style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 100.9pt; height: 12.95pt;" nowrap="nowrap" valign="top" width="135">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Network Infrastructure<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.95pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Load Balancing and Failover<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.95pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">F5 Big IP<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td rowspan="2" style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Network Name and Address<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">InfoBlox/Windows DNS<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.95pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.95pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">BIND DNS (Internet Connectivity)<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td rowspan="3" style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Switching and Routing<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Cisco (Data Center)<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.95pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.95pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Brocade (Fire Stations)<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.95pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.95pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">ADVA (COATTN)<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td rowspan="13" style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 100.9pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="135">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">System Management Tools<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Alert Management<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">SolarWinds<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Application Management<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">SolarWinds SAM<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Asset Management and Work Order<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;"><o:p>&nbsp;</o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td rowspan="2" style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Data Center Automation Software<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">VM Ware<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.95pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.95pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">V Realize Automation<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td rowspan="2" style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Disaster Recovery<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">VEEAM<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Zerto<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td rowspan="2" style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Monitoring<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Solar Winds NPM<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.95pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.95pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Solar Winds SAM<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td rowspan="2" style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Remote Desktop Management<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">MS RDP<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.95pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.95pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">MS SCCM Remote Tool<o:p></o:p></span></p>
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">DameWare<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td rowspan="2" style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 161.45pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="215">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">System Change and Configuration
+  Management<o:p></o:p></span></p>
+  </td>
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">MS SCCM<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style="height: 12.75pt;">
+  <td style="border-style: none solid solid none; border-color: -moz-use-text-color maroon maroon -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0in 5.4pt; width: 148.25pt; height: 12.75pt;" nowrap="nowrap" valign="top" width="198">
+  <p class="MsoNormal" style="margin-bottom: 0.0001pt; line-height: normal;"><span style="font-size: 8pt; color: black;">Splunk<o:p></o:p></span></p>
+  </td>
+ </tr>
+</tbody></table>
+
+</div>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+<p class="MsoNormal"><span style="font-size: 8pt; line-height: 107%;">&nbsp;</span></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</body></html>

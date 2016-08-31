@@ -1,0 +1,103 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Inspect Lodging Business</title>
+<link rel="Stylesheet" href="http://austinea.org/style/hover.css" type="text/css" />
+</head>
+<body bgcolor="#ddd8c2">
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="650" align="center">
+<tr><td style="padding: 0;" height="130" valign="top"><a href="http://austinea.org">
+<img src="http://austinea.org/image/iTHeader.jpg" alt="austinea.org - home..." border="0"></a></td></tr>
+<!-- Text Area -->
+<tr><td>
+
+<p style="text-align: center; font-weight: bold;">Inspect Lodging Business<br />Use Case Specification</p>
+<p style="text-align: center;">2/25/2016
+
+<!--  IF Printable document option Included  
+<p style="text-align: center;">download <a href="http://austinea.org/arch/code/***.docx">printable version</a>
+-- >
+
+<b> Austin Code Logical Data Model </b>
+<!-- Image -  Logical Data Model 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="http://austinea.org/arch/code/ldm.jpg"><img src="http://austinea.org/arch/code/ldm.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Austin Code Logical Data Model</p>
+</td></tr></table> -->
+
+<!-- USE CASE IMAGE -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/code/inspectLodgingBusiness/ucd.jpg"><img src="http://austinea.org/arch/code/inspectLodgingBusiness/ucd.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Inspect Lodging Business<br />Use Case Model</span>
+</td></tr></table>
+
+<p><b>Scope: </b> If an Inspection is required after a LodgingLicense was issued, the Austin Code Officer performs a follow-up Inspection of the lodging business and takes Photographs. The Austin Code Officer updates the LodgingLicense in the Case Management System with the results of their Inspection. The Austin Code Officer performs two follow-up Inspections on the lodging business, and provides the lodging business with time to correct Violations. If Violations are not resolved after the second Inspection, the Austin Code Officer begins the Inspect Property Complaint use case. If a mobile home park's LodgingLicense has expired, the Austin Code Program Specialist requests the Austin Code Officer follow up with the LodgingLicense's Owner. The Austin Code Officer follows up with the LodgingLicense Owner to help resolve the expired LodgingLicense. If Violations are identified, the Austin Code Officer begins the Inspect Property Complaint use case.
+<br><br>
+
+
+<!-- IF INTERACTION OVERVIEW IS INCLUDED 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/code/***.jpg"><img src="http://austinea.org/arch/code/***.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Interaction Overview</span>
+</td></tr></table>
+-->
+
+
+<br />
+
+
+<!-- SEQUENCE DIAGRAM  -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/code/inspectLodgingBusiness/sd01.jpg"><img src="http://austinea.org/arch/code/inspectLodgingBusiness/sd01.jpg" border="0" alt="" width="600"/></a><br />
+<span style="font-weight: bold;">Inspect Lodging Business<br />Sequence Diagram</span>
+</td></tr></table>
+<br />
+
+
+<!-- INTERFACE TABLE  -->
+<table align="center" id="custom">
+<tr><th width="9%">Req#</th><th width="70%">Type/Interface - Requirement Description</th><th>Performance</th></tr>
+<tr>
+<td rowspan="2">001</td>
+<td style="font-weight: bold; background: lightgray;">Austin Code Officer/performFollowUpInspection</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>Follow-up Inspection for Lodging License: The Austin Code Officer checks for GFCI outlets, smoke detectors (set off and sound), trip hazards, cracked windows, broken windows, weather stripping, temperature of hot water, pest infestation, secured balcony railing, overhead light inspection outside, loose shower spouts, secured toilet, faucet handles, locks on windows (if three feet up). Ten percent of the total rooms are inspected. Checklist: Structure Maintenance Report. 
+Follow-up inspection for Waste Hauler: A WasteHaulerApplication is turned in, and the Austin Code Officer works with the Austin Code Program Specialist to ensure the WasteHaulerApplication is complete. 
+If Illegal Dumping, the Austin Code Officer ensures property is abated and takes photographs.</td>
+</tr>
+<tr>
+<td rowspan="2">002</td>
+<td style="font-weight: bold; background: lightgray;">Case Management System/updateLodgingLicense</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Officer updates the LodgingLicense in the Case Management System with results of their Inspection and Photographs.</td>
+</tr>
+<tr>
+<td rowspan="2">003</td>
+<td style="font-weight: bold; background: lightgray;">Austin Code Officer/followUpOnLodgingLicenseWithOwner</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Program Specialist requests the Austin Code Officer follow up with the LodgingLicense Owner to discuss their expired LodgingLicense. The Austin Code Officer works with the LodgingLicense Owner to correct Violations, complete the LodgingLicenseApplication, or collect Check for LodgingLicense.</td>
+</tr>
+
+</table>
+
+
+<br />
+
+
+
+
+</td></tr></table>
+</td></tr></table></body></html>

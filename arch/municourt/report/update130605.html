@@ -1,0 +1,163 @@
+<html>
+<head>
+<title>Interface Descriptions</title>
+<link rel=StyleSheet href="http://austinea.org/style/email.css" type="text/css">
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse;" width="602" align="center">
+<tr><td>
+
+<p style="font-weight: bold;">Report on 06/05/2013
+
+<p>We're making great progress - albeit, I know there's much work to do...
+
+<p>Please select image for larger view. We'll discuss these diagrams tomorrow to determine if we properly addressed the telepresence among other topics. I'll also introduce a new concept called interface realization. This is where we begin to recognize reusable interfaces throughout the Municipal Court processes (sort of the lego blocks Aaron Brown was referring to last week). It's also where we begin to define our future state requirements (see table below). As we evolve, we'll identify which of these interfaces represent future state functions and organize them to a future state interface description. In the end, Muni Court will have a complete set of functional requirements to deliver to the AMANDA vendor - the sequence diagrams will provide the necessary operational context - depicted as future state alternate flows.
+
+<p style="color: gray; font-size: 7pt;">*Note: Select image for larger view.
+
+<table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse;" width="602" align="center">
+<tr>
+<td style="text-align=center; font-weight: bold;"><a href="makeCaseDetermination.png"><img src="makeCaseDetermination.png" width="200" border="0"></a><br>Make Case Determination</td>
+<td style="text-align=center; font-weight: bold;"><a href="makeCaseAppealDetermination.png"><img src="makeCaseAppealDetermination.png" width="200" border="0"></a><br>Make Case Appeal Determination</td>
+<td style="text-align=center; font-weight: bold;"><a href="processAffidavit.png"><img src="processAffidavit.png" width="200" border="0"></a><br>Process Affidavit</td>
+</tr>
+
+<tr>
+<td style="text-align=center; font-weight: bold;"><a href="closeCaseFile.png"><img src="closeCaseFile.png" width="200" border="0"></a><br>Close Case File</td>
+<td style="text-align=center; font-weight: bold;"><a href="payCriminalCaseInFull.png"><img src="payCriminalCaseInFull.png" width="200" border="0"></a><br>Pay Criminal Case</td>
+<td style="text-align=center; font-weight: bold;"><a href="payCriminalCaseInFull.png"><img src="payCriminalCaseInFull.png" width="200" border="0"></a><br>Pay Criminal Case In Full</td>
+
+</tr>
+
+<tr>
+<td style="text-align=center; font-weight: bold;"><a href="interfaceRealization.png"><img src="interfaceRealization.png" width="200" border="0"></a><br>Interface Realization</td>
+<td><a href="">&nbsp;</a><br></td>
+<td><a href="">&nbsp;</a><br></td>
+</tr>
+
+</table>
+<p style="text-align=center; font-weight: bold;">List of Figures
+
+<p align="center"><b>Table of Interface Descriptions</b>
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse;" width="600" align="center" id="custom">
+<tr><th width="25%">Type</th><th>Name</th><th>Description</th></tr>
+
+<tr>
+<td>Web Presence</td>
+<td>identifyCaseFile</td>
+<td>Provides secure means of identity for Defendant or Respondent to identify Case File of interest. If there are multiple Case Files, they are presented in a tabular queue for Defendant or Respondent to select Case File of interest.</td>
+</tr>
+
+<tr>
+<td>Manage Court Case</td>
+<td>retrieveCaseFile</td>
+<td>Provides interface for the Web Presence to retrieve a Case File Queue (list of available Case Files) based on approved identity criteria from Web Presence.</td>
+</tr>
+
+<tr>
+<td>Web Presence</td>
+<td>processCaseBalance</td>
+<td>The Defendant selects to pay the Case File balance and is provided methods to make full payment such as credit card, automated clearing house (ACH) or debit card. Once payment is accepted by the Electronic Financial Service provider in the form of Acknowledgment, the Web Presence processes the case balance with the selected Case File.</td>
+</tr>
+
+<tr>
+<td>Electronic Financial Service</td>
+<td>processRemittance</td>
+<td>Electronic Financial Service to process online financial transactions to acknowledge Case File payment. Includes either point of sale (POS) or Web interface to Electronic Financial Service for automated clearing house (ACH), credit or debit card.</td>
+</tr>
+
+<tr>
+<td>Process Criminal Case</td>
+<td>modifyCriminalCaseFile</td>
+<td>Used for multiple purposes depending on the disposition of the Case File. Allows the Deputy Court Clerk to make Case File modifications as needed throughout the case review process. Judgment and Receipt are optional outputs. For payments recorded in full, the Deputy Court Clerk distributes payment into cost codes, a plea of no contest is recorded, a waiver of jury trial is recorded, a Receipt is produced, and a Judgment document is generated.</td>
+</tr>
+
+<tr>
+<td>Process Criminal Case</td>
+<td>addToJudgesQueue</td>
+<td>Once a Case File is modified to indicate Defendant disposition and payment, the system adds the Case File to the Judges Case File queue for review.</td>
+</tr>
+
+<tr>
+<td>Process Criminal Case</td>
+<td>generateDPSReport</td>
+<td>Provides ability to generate Department of Public Safety (DPS) reports on the disposition of criminal cases.</td>
+</tr>
+
+<tr>
+<td>Process Civil Case</td>
+<td>processCitationInformation</td>
+<td>Provides interface for automatic vendor updates from transportation and police department. Includes ability for Deputy Court Clerk to manually enter Citation information. The system automatically generates a Case File for each Citation record.</td>
+</tr>
+
+<tr>
+<td>Web Presence</td>
+<td>scheduleCaseFileDocket</td>
+<td>The Respondent is provided docket schedule to select scheduled opportunity to dicuss Case File with a Hearing Officer.</td>
+</tr>
+
+<tr>
+<td>Manage Court Case</td>
+<td>scheduleCaseFile</td>
+<td>Provides interface to schedule a Case File review with a Hearing Officer or a Judge depending on the disposition of the case. The Case File is automatically added to the appropriate Case File Queue. When the Respondent provides an email address or text message number, the system provides electronic Notification on the time and date to report. Reporting can occur either by showing up in person or via telepresence future capability.</td>
+</tr>
+
+<tr>
+<td>Web Presence</td>
+<td>initiateTelepresence</td>
+<td>Provides Respondent ability to initiate a Telepresence session with either a Judge or a Hearing Officer depending on the disposition of the case. The system provides a Wait Time indication or provides indication of the Court's operating hours and provides Respondent an option to schedule the case review at a later time and/or date.</td>
+</tr>
+
+<tr>
+<td>Web Presence</td>
+<td>connectTelepresence</td>
+<td>The system automatically intitiaties telepresence session when Case File in queue indicates an awaiting telepresence session.</td>
+</tr>
+
+<tr>
+<td>Manage Court Case</td>
+<td>reviewCaseFileQueue</td>
+<td>Provides ability to review either criminal or civil Case File Queue to select ordered Case Files for Case Determination. Case File Queues may include civil or criminal Case Files for review by Hearing Officer, Deputy Court Clerk or Judge.</td>
+</tr>
+
+<tr>
+<td>Manage Court Case</td>
+<td>processCaseDetermination</td>
+<td>After review, the Hearing Officer, Deputy Court Clerk, or Judge enters a Case Determination.</td>
+</tr>
+
+<tr>
+<td>Web Presence</td>
+<td>completeAffidavitForm</td>
+<td>If Respondent decides to submit an Affidavit demonstrating case situation, the Respondent completes a Web Presence Affidavit form and attaches supporting documentation scanned in PDF format. Relevant information from the Case File automatically populates form fields where applicable.</td>
+</tr>
+
+<tr>
+<td>Manage Court Case</td>
+<td>updateCaseFile</td>
+<td>When the Affidavit form is complete to include relevant supporting attachments, the system includes the Affidavit form information and attachments as part of the Case File.</td>
+</tr>
+
+<tr>
+<td>Manage Court Case</td>
+<td>storeInQue</td>
+<td>When Case Files require further review, they are stored in a Case File Queue.</td>
+</tr>
+
+<tr>
+<td>Manage Court Case</td>
+<td>closeCaseFile</td>
+<td>When remittance is received or disposition is favorable based on Affidavit or other convincing argument, the Case File is closed. Note: under certain accepted dispositions, the Remittance is $0. Future capability includes automatic closure of Case Files when proper remittance is received via Web Presence.</td>
+</tr>
+
+<tr>
+<td>Manage Court Case</td>
+<td>updateCaseFile</td>
+<td>Provides updated information to the Case File on Appeal information from Respondent.</td>
+</tr>
+
+</table>
+
+
+</td></tr></table></body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Transmit Amanda Data to ESB</title>
+<link rel="Stylesheet" href="http://austinea.org/style/hover.css" type="text/css" />
+</head>
+<body bgcolor="#ddd8c2">
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="650" align="center">
+<tr><td style="padding: 0;" height="130" valign="top"><a href="http://austinea.org">
+<img src="http://austinea.org/image/iTHeader.jpg" alt="austinea.org - home..." border="0"></a></td></tr>
+<!-- Text Area -->
+<tr><td>
+
+<p style="text-align: center; font-weight: bold;">Transmit Amanda Data to ESB<br />Use Case Specification</p>
+<p style="text-align: center;">04/14/16
+
+<!--  IF Printable document option Included  
+<p style="text-align: center;">download <a href="http://austinea.org/arch/as/***.docx">printable version</a>
+-- >
+
+<b> Animal Services Logical Data Model </b>            
+<!-- Image -  Logical Data Model 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="http://austinea.org/arch/as/ldm.jpg"><img src="http://austinea.org/arch/as/ldm.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Animal Services Logical Data Model</p>
+</td></tr></table> -->
+
+<!-- USE CASE IMAGE -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/311/transmitAmandaDataToESB/ucd.jpg"><img src="http://austinea.org/arch/311/transmitAmandaDataToESB/ucd.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Transmit Amanda Data to ESB<br />Use Case Model</span>
+</td></tr></table>
+
+<p><b>Scope: </b>When a Case's Status is updated, and the Case interfaces with another system, the Transmit Amanda Data to ESB use case is triggered. Status changes occur when a Case is originally created (null to new status), when an Inspector updates the Status of the Case, or if a child Case (CodeViolation, etc.) has its Status updated and the parent Case's Status is updated by Amanda. Alternatively, the Transmit Amanda Data to ESB use case is triggered when a 311Feedback AttemptResult is created.
+The Amanda system creates a COAESBMessage which contains the updates to send to the desired system (CSR). The COAESBMessage contains: assigned Inspector name and phone number, FolderRSN, Status, AttemptResult name, and AttemptResult notes. Once the COAESBMessage is created the Amanda system requests the Enterprise Service Bus update a ServiceRequest. The destination system for the update is defined in he COAESBMessage.  
+
+
+
+<!-- IF INTERACTION OVERVIEW IS INCLUDED 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/as/***.jpg"><img src="http://austinea.org/as/code/***.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Interaction Overview</span>
+</td></tr></table>
+-->
+
+<!-- ACTIVITY DIAGRAM 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/as/***.jpg"><img src="http://austinea.org/as/code/***.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Transmit Amanda Data to ESB<br />Activity Diagram</span>
+</td></tr></table>
+-->
+
+
+<br />
+
+
+<!-- SEQUENCE DIAGRAM  -->                 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/311/transmitAmandaDataToESB/sd01.jpg"><img src="http://austinea.org/arch/311/transmitAmandaDataToESB/sd01.jpg" border="0" alt="" width="600"/></a><br />
+<span style="font-weight: bold;">Transmit Amanda Data to ESB<br />Sequence Diagram</span>
+</td></tr></table>
+<br />
+
+
+<!-- INTERFACE TABLE  -->
+<table align="center" id="custom">
+<tr><th width="9%">Req#</th><th width="70%">Type/Interface - Requirement Description</th><th>Performance</th></tr>
+<tr>
+<td rowspan="2">001</td>
+<td style="font-weight: bold; background: lightgray;">Amanda/updateCase</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>null</td>
+</tr>
+<tr>
+<td rowspan="2">002</td>
+<td style="font-weight: bold; background: lightgray;">Amanda/updateCodeViolationCase</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>null</td>
+</tr>
+<tr>
+<td rowspan="2">003</td>
+<td style="font-weight: bold; background: lightgray;">Amanda/create311FeedbackAttemptResult</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>null</td>
+</tr>
+<tr>
+<td rowspan="2">004</td>
+<td style="font-weight: bold; background: lightgray;">Amanda/createCOAESBMessage</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>null</td>
+</tr>
+<tr>
+<td rowspan="2">005</td>
+<td style="font-weight: bold; background: lightgray;">Enterprise Service Bus/updateServiceRequest</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>null</td>
+</tr>
+<tr>
+
+
+
+
+
+</table>
+
+
+<br />
+
+
+
+
+</td></tr></table>
+</td></tr></table></body></html>

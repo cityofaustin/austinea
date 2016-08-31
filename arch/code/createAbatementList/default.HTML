@@ -1,0 +1,154 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Create Abatement List</title>
+<link rel="Stylesheet" href="http://austinea.org/style/hover.css" type="text/css" />
+</head>
+<body bgcolor="#ddd8c2">
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="650" align="center">
+<tr><td style="padding: 0;" height="130" valign="top"><a href="http://austinea.org">
+<img src="http://austinea.org/image/iTHeader.jpg" alt="austinea.org - home..." border="0"></a></td></tr>
+<!-- Text Area -->
+<tr><td>
+
+<p style="text-align: center; font-weight: bold;">Create Abatement List<br />Use Case Specification</p>
+<p style="text-align: center;">04/15/2016
+
+<!--  IF Printable document option Included  
+<p style="text-align: center;">download <a href="http://austinea.org/arch/code/***.docx">printable version</a>
+-- >
+
+<b> Austin Code Logical Data Model </b>
+<!-- Image -  Logical Data Model 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="http://austinea.org/arch/code/ldm.jpg"><img src="http://austinea.org/arch/code/ldm.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Austin Code Logical Data Model</p>
+</td></tr></table> -->
+
+<!-- USE CASE IMAGE -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/code/createAbatementList/ucd.jpg"><img src="http://austinea.org/arch/code/createAbatementList/ucd.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Create Abatement List<br />Use Case Model</span>
+</td></tr></table>
+
+<p><b>Scope: </b>When a Property requires abatement, the Austin Code Officer requests the abatement. If a Contractor completes the abatement, the Austin Code Officer creates a WorkRequiredList in the Case Management System, and then assembles a WorkRequiredListPacket. The Austin Code Officer submits the WorkRequiredListPacket to the Chain of Command for approval in person. Alternatively, the Chain of Command approves the WorkRequiredList in the Case Management System. The approval process loops until the WorkRequiredList is approved by the Chain of Command. The Austin Code Program Specialist uses the Case Management System to identify abatement cases and creates a CutListPacket for the Contractor. The Contractor picks up the CutListPacket. If the Community Court completes the abatement, the Austin Code Officer creates a CommunityCourtAbatement list, and notifies Community Court of the requested abatement. Once Community Court has been notified, the abatement process is complete.
+
+<!-- IF INTERACTION OVERVIEW IS INCLUDED 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/code/***.jpg"><img src="http://austinea.org/arch/code/***.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Interaction Overview</span>
+</td></tr></table>
+-->
+
+
+<br />
+
+
+<!-- SEQUENCE DIAGRAM  -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/code/createAbatementList/sd01.jpg"><img src="http://austinea.org/arch/code/createAbatementList/sd01.jpg" border="0" alt="" width="600"/></a><br />
+<span style="font-weight: bold;">Create Abatement List<br />Sequence Diagram</span>
+</td></tr></table>
+<br />
+
+
+<!-- INTERFACE TABLE  -->
+<table align="center" id="custom">
+<tr><th width="9%">Req#</th><th width="70%">Type/Interface - Requirement Description</th><th>Performance</th></tr>
+<tr>
+<td rowspan="2">001</td>
+<td style="font-weight: bold; background: lightgray;">Case Management System/createWorkRequiredList</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Officer requests the Case Management System create a WorkRequiredList. The Austin Code Officer provides: type of work, classification (1-4), square footage for mowing, cubic yards for removal of trash debris (over 22,000 square feet is a lower rate, and rates are defined per contract with the Contractor with a $190 minimum charge per square footage), number of tires and size (large or small), special fee (minimum fee of $250 per contract with Contractor includes hand removal instead of machine, bee removal, fill pools with dirt, etc.), notes, and Contact Name and phone number (Austin Code Officer, Officer's Immediate Supervisor and/or Austin Code Admin Manager). The Case Management System calculates the TotalCost based on square footage, admin fee, special fee, number of tires, cubic yards of trash, etc.</td>
+</tr>
+<tr>
+<td rowspan="2">002</td>
+<td style="font-weight: bold; background: lightgray;">Austin Code Officer/createAbatementWorkRequiredListPacket</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Officer creates a WorkRequiredListPacket (WorkRequiredList, Case information, CoverPage, WorkRequiredChecklist). The CoverPage includes: address, TCAD information, map (highlighted by Austin Code Officer for areas to abate/work), photograph of property, photograph of posting, green card (return receipt from mail), if transient camp, if APD is required, CaseNumber, and inspection detail from Case Management System (estimate of work).</td>
+</tr>
+<tr>
+<td rowspan="2">003</td>
+<td style="font-weight: bold; background: lightgray;">Chain of Command/evaluateWorkRequiredList</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Officer submits the WorkRequiredListPacket to the Chain of Command. The Chain of Command evaluates the WorkRequiredListPacket and either approves or denies it. If approved, the Chain of Command completes the WorkRequiredChecklist (initials checklist). If denied, the Chain of Command returns the list to the Austin Code Officer with notes requesting changes. If the WorkRequiredList estimate changes and exceeds $1000, the Austin Code Officer requests the Chain of Command approves the new estimate on the WorkRequiredList.</td>
+</tr>
+<tr>
+<td rowspan="2">004</td>
+<td style="font-weight: bold; background: lightgray;">Case Management System/submitWorkRequiredListToChainOfCommand</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Officer submits the WorkRequiredList to the Chain of Command through the Case Management System. The Case Management System adds the WorkRequiredList to the Chain of Command's queue in the Case Management System.</td>
+</tr>
+<tr>
+<td rowspan="2">005</td>
+<td style="font-weight: bold; background: lightgray;">Case Management System/evaluateWorkRequiredList</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Chain of Command uses the system to evaluate the WorkRequiredList. If approved, the system adds the approved WorkRequiredList to the CutListQueue. If denied, the Case Management System routes the WorkRequiredList back to the Austin Code Officer's queue with notes on changes requested.</td>
+</tr>
+<tr>
+<td rowspan="2">006</td>
+<td style="font-weight: bold; background: lightgray;">Case Management System/identifyPropertyAbatementCases</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Program Specialist uses the Case Management System to identify pending abatement cases (CodeViolationCases, WorkRequiredList).</td>
+</tr>
+<tr>
+<td rowspan="2">007</td>
+<td style="font-weight: bold; background: lightgray;">Austin Code Program Specialist/createCutListPacket</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Program Specialist prints the abatement cases and assembles them into a CutListPacket. The Austin Code Program Specialist contacts the Contractor notifying them that a new CutListPacket is available for pickup. The Contractor picks up the </td>
+</tr>
+<tr>
+<td rowspan="2">008</td>
+<td style="font-weight: bold; background: lightgray;">Contractor/pickUpCutListPacket</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Contractor is notified to pick up the CutListPacket. Alternatively, the Contractor periodically picks up the CutListPacket from the Austin Code Program Specialist.</td>
+</tr>
+<tr>
+<td rowspan="2">009</td>
+<td style="font-weight: bold; background: lightgray;">Austin Code Officer/createCommunityCourtAbatementList</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Officer creates a CommunityCourtAbatement list that contains location, extra notes on location, work requested, date requested, Austin Code Officer's name and number, and the requesting Department (Austin Code Department).</td>
+</tr>
+<tr>
+<td rowspan="2">010</td>
+<td style="font-weight: bold; background: lightgray;">Austin Code Officer/notifyCommunityCourtOfRequestedAbatement</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Officer emails the CommunityCourtAbatement to the Community Court.</td>
+</tr>
+</table>
+
+
+<br />
+
+
+
+
+</td></tr></table>
+</td></tr></table></body></html>

@@ -1,0 +1,388 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Austin Water Utility Mobility Pilot</title>
+<link rel=StyleSheet href="http://austinea.org/style/microsoft.css" type="text/css">
+</head>
+<body bgcolor="#ddd8c2">
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="650" align="center">
+<tr><td style="padding: 0;" height="130" valign="top"><a href="http://austinea.org">
+<img src="http://austinea.org/image/iTHeader.jpg" alt="austinea.org - home..." border="0"></a></td></tr>
+<!-- Text Area -->
+<tr><td>
+
+<p style="text-align: center; font-size: 10pt;"><b>Austin Water Utility Mobility Pilot</b></p>
+
+<p><b>Mobile Interface Realization:</b> Working closely with our field Technicians, Austin Water Utility (AWU) identified interfaces relevant to a mobile device pilot project. The diagrams below (select image for larger, more detailed view) identify the system interface mobile function specification and is further defined in the table <a href="#table">Austin Water Utility Mobility Interface Description</a> below. Mobile platform includes any mobile device such as laptop, smart phone, pad device, etc. Mobile device ruggedness depends on cost and other operating environment considerations. Where appropriate, an enterprise service bus (ESB) solution should be proposed to interface with relevant water utility applications such as Hansen, Infor and Geographical Information System (GIS), etc. Currently, the City of Austin uses an IBM WebSphere Process Server ESB; however, we're exploring other ESB alternatives.</p>
+
+<p>The following descriptions, diagrams and tables identify the relevant interfaces in scope of the <i>AWU Mobility Pilot</i>. They are identified in two categories, Water Treatment Plant and Water Distribution. Water Treatment Plant mobile pilot primarily involve Work Order management and interfaces with AWU's enterprise asset management (EAM) system Infor and operations maintenance and management system (OMMS). Water Distribution primarily involves Service Request processing using AWU's asset management system Hansen. The following paragraphs define the interface requirements in more detail.</p>
+
+<p style="font-weight: bold;">Water Treatment Plant
+<p>In the process of correcting an identified water utility system anomaly, there are three processes important to Water Treatment Plant mobility. They include <a href="createWorkOrder.png" target="new_window">Create Work Order</a>, <a href="respondToAnomaly.png" target="new_window">Respond to Anomaly</a> and <a href="completeWorkOrder.png" target="new_window">Complete Work Order</a>. The sequence diagrams identify the mobile interfaces required. The <a href="mobilityInterfaces.png" target="new_window">Interface Realization</a> diagram provides a summary of the required mobile interfaces for this pilot and described in the table <a href="#table">Austin Water Utility Mobility Interface Description</a>. Their corresponding operational context can be found on the sequence diagram.
+
+<p style="font-weight: bold;">Water Distribution
+<p>There are two processes for Water Distribution involving a mobile solution. These processes vary based on Service Request priority and contain some similarities. They include <a href="completePriority1.png" target="new_window">Complete Priority 1 Service Request</a> and <a href="completePriority3.png" target="new_window">Complete Priority 3 Service Request</a>. Their sequence diagrams identify the relevant mobile interfaces in operational context. The <a href="mobilityInterfaces.png" target="new_window">Interface Realization</a> diagram provides a summary of the pilot required mobile interfaces. 
+
+<p>*Note: Select figure icon for larger view</p>
+<table border="1" cellpadding="0" cellspacing="1" style='border-collapse:collapse;' align="center">
+<tr>
+<!--1-->
+
+<!--2-->
+<td align="center" style="font-family: verdana; font-size: 8pt; font-weight: bold;" valign="top" width="200"><a href="createWorkOrder.png" target="new_window" title="Create Work Order"><img src="createWorkOrder.png" width="200" border="0"></a><br>Create Work Order</td>
+<!--3-->
+<td align="center" style="font-family: verdana; font-size: 8pt; font-weight: bold;" valign="top" width="200"><a href="respondToAnomaly.png" target="new_window" title="Respond to Anomaly"><img src="respondToAnomaly.png" width="200" border="0"></a><br>Respond to Anomaly</td>
+<!--4-->
+<td align="center" style="font-family: verdana; font-size: 8pt; font-weight: bold;" valign="top" width="200"><a href="completeWorkOrder.png" target="new_window" title="Complete Work Order"><img src="completeWorkOrder.png" width="200" border="0"></a><br>Complete Work Order</td>
+</tr>
+<tr>
+<!--1-->
+
+<!--2-->
+<td align="center" style="font-family: verdana; font-size: 8pt; font-weight: bold;" valign="top" width="200"><a href="completePriority1.png" target="new_window" title="Complete Work Order"><img src="completePriority1.png" width="200" border="0"></a><br>Complete Priority 1 Service Request</td>
+<!--3-->
+<td align="center" style="font-family: verdana; font-size: 8pt; font-weight: bold;" valign="top" width="200"><a href="completePriority3.png" target="new_window" title="Mobile Interfaces"><img src="completePriority3.png" width="200" border="0"></a><br>Complete Priority 3 Service Request</td>
+<!--4-->
+<td align="center" style="font-family: verdana; font-size: 8pt; font-weight: bold;" valign="top" width="200"><a href="mobilityInterfaces.png" target="new_window" title="Mobile Interfaces"><img src="mobilityInterfaces.png" width="200" border="0"></a><br>Interface Realization for Both Water Treatment Plant and Water Distribution</td>
+</tr>
+</table>
+<h1 style="font-size: 10pt;">Pilot Use Case Scope</h1>
+
+<p>*Note: See associated use case sequence diagram for each scenario topic.</p>
+
+<p><b>Create Work Order:</b> When the Technician identifies a water utility system anomaly, the Technician creates a Work Order relevant to the Asset. Currently, when the Technician is unable to create a Work Order, a Work Request is generated manually and sent to the Supervisor to create the Work Order using the Enterprise Asset Management (EAM) system Infor. For mobility, the Technician needs mobility to create a Work Request on the EAM.
+
+<p><b>Respond to Anomaly:</b> When there's a high priority response required, the Enterprise Asset Management (EAM) system notifies the Technician. When the Technician identifies an anomaly, the Technician creates a Work Order.</p>
+
+<p><b>Complete Work Order:</b> When a Supervisor assigns a Technician a Work Order, the Technician may identify any relevant job aids, research part availability, or complete a part Requisition. On completion, the Technician updates the Work Order status for Supervisor close out. 
+
+<p><b>Complete Priority One Service Request:</b> Based on a Customer issue, the Call Taker identifies Location History to determine if the request is a repeat call or first time call. Routinely, the Dispatcher identifies priority 1 Service Requests and provides the Service Request notification to a Technician in the vicinity of the location. Technicians use mobile device to identify the details of the Service Request and navigation route to the service location. Technicians use Geographical Information System and Hansen enterprise asset management (EAM) system to identify Water Utility Infrastructure to complete the assigned Service Request. The current workflow requires Technicians to notify the Dispatcher who in return documents the Assessment Results in Hansen. Alternately, the Technician uses mobile device to document Assessment Results.</p>
+
+<p><b>Complete Priority Three Service Request:</b> For Service Requests that come through the Customer Care &amp; Billing system, the Dispatcher identifies unassigned Service Requests and assigns to Supervisors based on meter size. The Supervisor uses Hansen to schedule Service Requests. Routinely, the Technician uses Hansen to identify scheduled Service Requests and accesses information such as issue and location. Using the Geographical Information System (GIS), the Technician identifies Water Utility Infrastructure displayed on a map. Once actual location of infrastructure such as meters are identified, the Technician has an option to update the GIS location information to include photographs (if required) to assist future Technicians in meter location identification. If required, the Technician notifies the Dispatcher to create a Work Order. When a meter requires replacement, the Technician updates the meter values in the system (currently through Dispatcher). The current workflow requires Technicians to notify the Dispatcher who in return documents the Assessment Results in Hansen. Alternately, the Technician uses mobile device to document Assessment Results. </p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse;" align="right"><tr><td valign="top">
+<img src="interfaceDescription.png" border="0" width="400">
+</td></tr></table>
+<h1 style="font-size: 10pt;">Interface Descriptions</h1>
+<p>The following interface descriptions describe the Mobile Function Specification of the relevant interface requiring a mobile solution. The related interface function can be found in context of operational use by examining the related sequence diagram. The data objects involved with the interface are identified on the Interface Realization diagram and the sequence diagrams demonstrate the instance of their use.</p>
+
+<p>Each interface identifies an important object input, output and return by the function (note: output and return objects are similar).
+
+<p align=center style='text-align:center' id="table"><b>Austin Water Utility Mobility Interface Description</b></p>
+
+<div align=center>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=576
+ style='width:6.0in;margin-left:-.75pt;border-collapse:collapse'>
+ <tr style='page-break-inside:avoid'>
+  <td nowrap valign=top style='border:solid windowtext 1.0pt;background:#17365D;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  style='color:white'>Type/Interface (Function)</span></b></p>
+  </td>
+  <td valign=top style='border:solid windowtext 1.0pt;border-left:none;
+  background:#17365D;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  style='color:white'>Description</span></b></p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td nowrap valign=top style='border:solid windowtext 1.0pt;border-top:none;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Hansen Mobility Function Specification/<br>
+  identifyServiceRequestAssignment</p>
+  </td>
+  <td valign=top style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>The field Technician shall be able to identify Service
+  Request assignment based on a current Job Schedule.</p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td nowrap valign=top style='border:solid windowtext 1.0pt;border-top:none;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Hansen Mobility Function Specification/<br>
+  identifyServiceRequestInformation</p>
+  </td>
+  <td valign=top style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>The field Technician shall be able to identify the Issue
+  and Location of any given Service Request along with other pertinent
+  information. The Service Request information shall be retrieved from the
+  Service Request Job Schedule providing a link to the Service Request
+  information on Hansen. The Location object shall provide a link to the
+  Navigational Route application.</p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td nowrap valign=top style='border:solid windowtext 1.0pt;border-top:none;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Hansen Mobility Function Specification/<br>
+  documentAssessmentResults</p>
+  </td>
+  <td valign=top style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>On completion of a Service Request, the Technician shall
+  be able to document work accomplished, hours expended, parts used, etc. and
+  close Service Request if applicable.</p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td nowrap valign=top style='border:solid windowtext 1.0pt;border-top:none;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Hansen Mobility Function Specification/<br>
+  updateMeterInformation</p>
+  </td>
+  <td valign=top style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>When a new meter is installed, the Technician shall be
+  able to enter the new meter values into Hansen.</p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td nowrap valign=top style='border:solid windowtext 1.0pt;border-top:none;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>GIS Mobile Function Specification/<br>
+  identifyInfrastructureInformation</p>
+  </td>
+  <td valign=top style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>The field Technician shall be able to identify Water
+  Utility Infrastructure information identified by Geographic Information
+  System on a Location Map linked from a particular Location object/attribute
+  from the Service Request.</p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td nowrap valign=top style='border:solid windowtext 1.0pt;border-top:none;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>GIS Mobile Function Specification/<br>
+  updateGISInformation</p>
+  </td>
+  <td valign=top style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>The field Technician shall be able to input updated GIS
+  Information regarding Water Utility Infrastructure to correct incorrect
+  location information or other relevant and modifiable GIS attributes.</p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td nowrap valign=top style='border:solid windowtext 1.0pt;border-top:none;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Dispatch Mobile Function Specification/<br>
+  prepareWorkOrder</p>
+  </td>
+  <td valign=top style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>The field Technician shall be able to prepare a Work Order
+  based on a current Service Request and the Service Request Status. Currently,
+  the Dispatcher at the request of the field Technician is accomplishing this
+  activity.</p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td nowrap valign=top style='border:solid windowtext 1.0pt;border-top:none;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Dispatch Mobile Function Specification/<br>
+  documentNewMeterValues</p>
+  </td>
+  <td valign=top style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>The field Technician shall be able to establish new meter
+  readings when required - such as when a meter is replaced. Currently, the new
+  meter value is communicated to the Dispatcher who enters the new meter
+  values.</p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td nowrap valign=top style='border:solid windowtext 1.0pt;border-top:none;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Dispatch Mobile Function Specification/<br>
+  documentAssessmentResults</p>
+  </td>
+  <td valign=top style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>The field Technician shall be able to document assessment
+  results based on open Service Request. Currently, this information is
+  communicated through the Dispatcher who enters the assessment information
+  into Hansen.</p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td nowrap valign=top style='border:solid windowtext 1.0pt;border-top:none;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Dispatch Mobile Function Specification/<br>
+  obtainOneCallAndExcavationPermit</p>
+  </td>
+  <td valign=top style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Currently, the field Technician notifies the Dispatcher
+  who in return prepares a Work Order using Hansen. Using a mobile device, the
+  field Technician shall be able to submit for One Call and Excavation Permits.
+  Objects/attributes contained in the Service Request pertinent to the to One
+  Call and Excavation Permit shall be automatically transferred to the One Call
+  and Excavation Permit submission.</p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td nowrap valign=top style='border:solid windowtext 1.0pt;border-top:none;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Navigation Mobile Function Specification/<br>
+  identifyNavigationalRoute</p>
+  </td>
+  <td valign=top style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>The field Technician shall be able to use Service Request
+  Location information to navigate to the service site.</p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td nowrap valign=top style='border:solid windowtext 1.0pt;border-top:none;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Technician Mobile Function Specification/<br>
+  serviceTheRequest</p>
+  </td>
+  <td valign=top style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>The Dispatcher shall be able to communicate Notification
+  containing Service Request identification to field Technician. An
+  Acknowledgment shall be returned to the Dispatcher indicating receipt of
+  Notification. The Notification shall contain a link to identify Service
+  Request information to include service location on Hansen.</p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td nowrap valign=top style='border:solid windowtext 1.0pt;border-top:none;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Technician Mobile Function Specification/<br>
+  assessWorkToPerform</p>
+  </td>
+  <td valign=top style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Supervisor shall be able to communicate high priority Work
+  Orders to the field Technician. An Acknowledgment shall be returned to the
+  Supervisor indicating field Technician receipt. The Notification shall
+  contain a link to identify Work Order information located on Enterprise Asset
+  Management system.</p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td nowrap valign=top style='border:solid windowtext 1.0pt;border-top:none;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Technician Mobile Function Specification/<br>
+  createWorkRequest</p>
+  </td>
+  <td valign=top style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>The field Technician shall be able to create a Work
+  Request for identified Treatment Plant anomalies.</p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td nowrap valign=top style='border:solid windowtext 1.0pt;border-top:none;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>OMMS Mobile Function Specification/<br>
+  identifyJobAids</p>
+  </td>
+  <td valign=top style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>The Technician shall be able to access job aids on
+  Operations Maintenance and Management System (OMMS) and Microsoft SharePoint.
+  Allows Technician to find procedures, instructions and other job aids.</p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td nowrap valign=top style='border:solid windowtext 1.0pt;border-top:none;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>EAM Mobile Function Specification/<br>
+  researchPartAvailability</p>
+  </td>
+  <td valign=top style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>The Technician shall be able to perform research for parts
+  availability to include part location.</p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td nowrap valign=top style='border:solid windowtext 1.0pt;border-top:none;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>EAM Mobile Function Specification/<br>
+  completeRequisition</p>
+  </td>
+  <td valign=top style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>The Technician shall be able to complete a part
+  requisition.</p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td nowrap valign=top style='border:solid windowtext 1.0pt;border-top:none;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>EAM Mobile Function Specification/<br>
+  completeWorkOrder</p>
+  </td>
+  <td valign=top style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>The field Technician shall be able to close out a work
+  order by modifying current work order status.</p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td nowrap valign=top style='border:solid windowtext 1.0pt;border-top:none;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>EAM Mobile Function Specification/<br>
+  createWorkOrder</p>
+  </td>
+  <td valign=top style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>The field Technician shall be able to create a Work Order
+  to include status of any given Asset.</p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td nowrap valign=top style='border:solid windowtext 1.0pt;border-top:none;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>EAM Mobile Function Specification/<br>
+  enterMeterReading</p>
+  </td>
+  <td valign=top style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>The field Technician shall be able to enter Meter Reading
+  based on scanned bar codes identifying the Asset.</p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td nowrap valign=top style='border:solid windowtext 1.0pt;border-top:none;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>EAM Mobile Function Specification/<br>
+  identifyWorkOrderInformation</p>
+  </td>
+  <td valign=top style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>The field Technician shall be able to select link (Work
+  Order Identification) from Supervisor Notification to retrieve the Work Order
+  from the Enterprise Asset Management system.</p>
+  </td>
+ </tr>
+ <tr style='page-break-inside:avoid'>
+  <td nowrap valign=top style='border:solid windowtext 1.0pt;border-top:none;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Asset Mobile Function Specification/<br>
+  scanBarCode</p>
+  </td>
+  <td valign=top style='border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
+  border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>The mobile device shall be able to identify the Asset
+  based on bar codes affixed to the Asset.</p>
+  </td>
+ </tr>
+</table>
+
+</div>
+</td></tr>
+<tr><td style="padding: 0;" height="50" valign="top"><a href="http://austintexas.gov/information-technology/">
+<img src="http://austinea.org/image/footer.jpg" alt="Austin Information Technology" border="0"></a></table>
+</td></tr></table></body></html>

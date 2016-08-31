@@ -1,0 +1,353 @@
+<!DOCTYPE HTML>
+<html><head>
+<title>COA Municipal Court Establish Case File Legal Option</title>
+<link rel=StyleSheet href="http://austinea.org/style/email.css" type="text/css">
+</head>
+<body>
+<!--Border Background Table-->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse;"  align="center" style="background-color: #F4CA90;">
+<tr><td>
+<!--Main Body-->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" width="600" align="center" style="background-color: #ffffff;">
+<tr><td>
+
+<!-- Image - Set Criminal Case On Docket -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;"  align="right"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view.<br>
+<a href="http://austinea.org/arch/municourt/report/setCriminalCaseOnDocket.jpg"><img src="http://austinea.org/arch/municourt/report/setCriminalCaseOnDocket.jpg" border="0" width="200"></a>
+<p style="text-align: center; font-weight: bold;">Set Criminal Case on Docket<br>Interaction Overview
+</td></tr></table>
+
+<!-- Online reference -->
+<p style="color: gray; font-size: 7pt;">Note: This report is also <a href="http://austinea.org/arch/municourt/report/update130709.html" style="font-size: 7pt;">available online</a> by following link.</p>
+
+<p>Muni Court Team,
+
+<p>After losing some sleep over Matt's challenge to figure out a way to queue remittance and allow for Defendants to process multiple Case Files, I cracked the code. The problem wasn't as challenging as anticipated. To follow my discussion, please select the Set Criminal Case on Docket Interaction Overview (activity model). The Interaction Overview shows how all the sequence diagrams interact or tie together. Using Aaron Brown's business Lego discussion, the Interaction Overview provides a way to show how all the processes fit together. Each activity (blue, round corner rectangles) on the diagram equals a sequence diagram, which can be viewed as a specific activity. Each of the sequence diagrams are depicted later in this report to include their interface descriptions in the table below the diagram.
+
+<p>The Interaction Overview identifies the business rules leading to the sequence of events shown on the sequence diagram. Also note, there are business rules captured on the sequence diagram (i.e., opt, alt, etc.) demonstrating how complex some processes can get - i.e., business rules inside more business rules. This is real life and the power of the Unified Modeling Language (UML) that traditional modeling approaches are unable to depict.
+
+<p>On further inspection, it would appear that this use case is more than <b><i>Set Criminal Case on Docket</i></b>, because only one leg of the flow has anything to do with the Docket (i.e., Establish Not Guilty Plea). Therefore, I'd suggest the use case should be renamed to <b><i>Establish Case File Legal Option</i></b> or something like that. We can discuss during our next meeting.
+
+<p>Cheers!
+<!-- Austin Logo -->
+<table cellpadding=5 cellspacing=0 border=0 style="border-collapse: collapse;" align="right"><tr><td>
+<img src="http://austinea.org/image/austinLogo.jpg" border="0" width="100">
+</td></tr></table>
+
+<p><img src="http://journeycolorado.com/images/signature.jpg" border="0" width="150">
+<!-- Signature Corporate -->
+<p style="font-size: 8pt;"><b>Rob Byrd</b> <span style="color: red; font-weight: bold;">|</span> <b>City of Austin</b><br>
+Chief Enterprise Architect - Corporate<br>
+Direct: (512) 974-1615 | Mobile: (512) 431-0700
+
+<hr>
+
+<!-- Past Reports -->
+<p style="font-weight: bold;">Past Reports
+<p>
+05/17/13 - <a href="http://austinea.org/arch/municourt/report/visionSession.htm">Vision / Mission Development</a><br>
+06/05/13 - <a href="http://austinea.org/arch/municourt/report/update130605.html">Interface Descriptions and Development</a><br>
+06/12/13 - <a href="http://austinea.org/arch/municourt/report/update130612.html">Select Legal Option</a><br>
+06/25/13 - <a href="http://austinea.org/arch/municourt/report/update130625.html">Process Not Guilty Plea</a>
+<hr>
+
+<p style="text-align: center; font-weight: bold;">Use Case Specification<br>Set Criminal Case on Docket
+
+<p><b>Select Legal Option Scope</b>
+
+<p>The Defendant enters relevant legally binding Identity information into the system to access a list of case files and selects the Case File of interest (note: the Case File list could be just one item). Based on the type of Case File, the system provides the Defendant various Legal Options and confirms the Defendant selection.
+
+<!-- Image - Select Legal Option -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;"  align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view.<br>
+<a href="http://austinea.org/arch/municourt/report/selectLegalOption.jpg"><img src="http://austinea.org/arch/municourt/report/selectLegalOption.jpg" border="0" width="200"></a>
+<p style="text-align: center; font-weight: bold;">Select Legal Option<br>Sequence Diagram
+</td></tr></table>
+
+<!-- Table of Interface Descriptions -->
+<p style="text-align: center; font-weight: bold;">Table of Interface Descriptions<br>
+for Select Legal Option</p>
+
+<table align="center" id="custom">
+<tr><th>Type/Interface</th><th>Description</th></tr>
+
+<tr>
+<td>Web Presence/<br>identifyCaseFile</td>
+<td>Provides a legal means of identity for Defendant or Respondent to identify Case File of interest. If there are multiple Case Files, they are presented in a tabular queue for Defendant or Respondent to select Case File of interest.</td>
+</tr>
+
+<tr>
+<td>Manage Court Case/<br>retrieveCaseFile</td>
+<td>The Web Presence interfaces with the system to legally validate Defendant Identity and retrieve selected Case File from a Case File Queue.</td>
+</tr>
+
+<tr>
+<td>Manage Court Case/<br>determineLegalOptions</td>
+<td>When a Defendant or Respondent selects a particular Case File of interest from the Web Presence Case File Queue, the system determines the various legal options available to the Defendant or Respondent. The system provides a Municipal Court staff configurable rules engine to allow Court Staff to modify business rules associated with the options provided to the Defendant or Respondent via Web Presence. The rules engine provides a customizable response based on current Case File attributes such as warrant status, age of Defendant or Respondent, attorney assigned to the case, and plea state (just to name a few) leading to the legal options provided to the Defendant or Respondent. Depending on Municipal Court Staff needs, some responses will be non-selectable and grayed out providing indication to Defendant or Respondent why the legal option is not selectable. Because laws frequently change, it's important that the legal options are not hard coded into the case management system; rather, the system should allow the Court Staff to make appropriate legal option changes using customizable rules filter.</td>
+</tr>
+
+<tr>
+<td>Web Presence/<br>selectLegalOption</td>
+<td>Based on a customizable Legal Option rules engine, the Defendant or Respondent is provided a list of legal options to proceed with the Case File. To reduce confusion, some of the legal options (determined by Court Staff) will be grayed out and non-selectable with an explanation as to why the Legal Option is not available. When selecting the legal option, the user will need to provide confirming the legal option selected.</td>
+</tr>
+
+<tr>
+<td>Web Presence/<br>setLegalOption</td>
+<td>The system sets the Legal Option selected with the associated Case File.</td>
+</tr>
+
+<tr>
+<td>Manage Court Case/<br>confirmLegalSelection</td>
+<td>The Defendant confirms a Legal Selection in the form of an Acknowledgment for selected Case File (under some circumstances the Plea state is null such as when selecting compliance dismissal request) and the system provides a confirmation Acknowledgment. The Defendant may decline the Acknowledgment and return to Select Legal Option. The Acknowledgment statement is based on the Legal Option selected and is modifiable by the Municipal Court staff.</td>
+</tr>
+
+<tr>
+<td>Manage Court Case/<br>setLegalOptionState</td>
+<td>The Web Presence returns an Acknowledgment and if accepted by the Defendant, the system sets the Legal Option state in the system.</td>
+</tr>
+
+</table>
+
+<p><b>Establish Not Guilty Plea Scope</b>
+
+<p>When a not guilty plea is selected as a Legal Option, the Defendant is presented with types of Dockets to select from. When a particular Docket is selected, the system provides a Docket Schedule for the Defendant to select as a preference. An Acknowledgment of Jury Waiver is confirmed and the Docket Schedule selected and Case File is added to the Complaint Queue for future review by Court staff. The system also provides an option to request additional assistance for Defendants requiring special needs access or language interpretation.
+
+<!-- Image - Establish Not Guilty Plea -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;"  align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view.<br>
+<a href="http://austinea.org/arch/municourt/report/establishNotGuiltyPlea.jpg"><img src="http://austinea.org/arch/municourt/report/establishNotGuiltyPlea.jpg" border="0" width="200"></a>
+<p style="text-align: center; font-weight: bold;">Establish Not Guilty<br>Plea Sequence Diagram
+</td></tr></table>
+
+<!-- Table of Interface Descriptions -->
+<p style="text-align: center; font-weight: bold;">Table of Interface Descriptions<br>
+Establish Not Guilty Plea</p>
+
+<table align="center" id="custom">
+<tr><th>Type/Interface</th><th>Description</th></tr>
+
+<tr>
+<td>Web Presence/<br>selectDocketType</td>
+<td>The system provides the Defendant the option to select the Docket Type (Appearance, Bench Trial or Jury Trial) with full explanation of each Docket type.</td>
+</tr>
+
+<tr>
+<td>Manage Court Case/<br>identifyDocketSchedule</td>
+<td>Based on the Docket Type selected, the system returns the date, time, and court room information regarding Docket time(s) available. The system provides a Municipal Court staff a selectable method to return available dockets from which to choose - such as next available, one or more available, all available, etc.</td>
+</tr>
+
+<tr>
+<td>Web Presence/<br>selectDocketSchedule</td>
+<td>The Defendant selects the desired Docket Schedule item from the Docket schedule offerings.</td>
+</tr>
+
+<tr>
+<td>Manage Court Case/<br>setDocketSchedule</td>
+<td>The system stores the selected Docket Schedule.</td>
+</tr>
+
+<tr>
+<td>Web Presence/<br>acknowledgeJuryWaiver</td>
+<td>The Defendant is presented with an Acknowledgment of Jury Waiver, which they must accept to proceed.</td>
+</tr>
+
+<tr>
+<td>Manage Court Case/<br>setJuryWaiver</td>
+<td>The system sets the Jury Waiver Acknowledgment attribute on the Case File.</td>
+</tr>
+
+<tr>
+<td>Manage Court Case/<br>addToComplaintQueue</td>
+<td>The system adds the Docket Schedule and Case File to the Complaint Queue.</td>
+</tr>
+
+<tr>
+<td>Web Presence/<br>requestAdditionalRequirements</td>
+<td>The system provides information and options regarding Additional Requirements such as disability access, interpreter, etc. The Defendant selects their Additional Requirements needs.</td>
+</tr>
+
+<tr>
+<td>Manage Court Case/<br>addToAdditionalRequirementsQueue</td>
+<td>The system adds any Additional Requirements associated with a Case File to the Additional Requirements Queue.</td>
+</tr>
+
+</table>
+
+<p><b>Establish Deferral Request Scope</b>
+
+<p>When a deferral is selected as a Legal Option, the system presents deferral options for selection by the Defendant. When additional deferral documents are required, the system provides a means for the Defendant to upload supporting documentation to the Case File. Once uploaded, the system adds Deferral Documentation to the Deferral Queue for future review by Court staff.
+
+<!-- Image - Establish Deferral Request -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;"  align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view.<br>
+<a href="http://austinea.org/arch/municourt/report/establishDeferralRequest.jpg"><img src="http://austinea.org/arch/municourt/report/establishDeferralRequest.jpg" border="0" width="200"></a>
+<p style="text-align: center; font-weight: bold;">Establish Deferral Request<br>Sequence Diagram
+</td></tr></table>
+
+<!-- Table of Interface Descriptions -->
+<p style="text-align: center; font-weight: bold;">Table of Interface Descriptions<br>
+Establish Deferral Request</p>
+
+<table align="center" id="custom">
+<tr><th>Type/Interface</th><th>Description</th></tr>
+
+<tr>
+<td>Manage Court Case/<br>determineDeferralOptions</td>
+<td>The system uses a Municipal Court staff customizable rules-based engine to present Deferral Options based on attributes of the Case File. The system provides a complete description of what each Deferral Option means to the Defendant.</td>
+</tr>
+
+<tr>
+<td>Web Presence/<br>selectDeferralOption</td>
+<td>The system presents various Deferral Options to the Defendant for review and selection.</td>
+</tr>
+
+<tr>
+<td>Manage Court Case/<br>setDeferralOption</td>
+<td>The system stores the selected Deferral Option with the Case File.</td>
+</tr>
+
+<tr>
+<td>Web Presence/<br>submitDeferralDocumentation</td>
+<td>The system provides a method for the Defendant to upload relevant Deferral Documentation to the system.</td>
+</tr>
+
+<tr>
+<td>Manage Court Case/<br>attachDeferralDocumentation</td>
+<td>The system stores or associates the Deferral Documentation to the relevant Case File.</td>
+</tr>
+
+<tr>
+<td>Manage Court Case/<br>addToDeferralQueue</td>
+<td>The system adds the Deferral Documentation and associated Case File to the Deferral Queue for future review by Municipal Court staff.</td>
+</tr>
+
+</table>
+
+<p><b>Establish Compliance Dismissal Request Scope</b>
+
+<p>When the Defendant requests a Compliance Dismissal, the system provides a list of Method of Compliance for selection. When Compliance Documentation is required, the system provides a means to upload Compliance Documentation. When additional compliance information is required, the system provides a form to gather the additional information from the Defendant. A Compliance Confirmation confirms legal commitment by the Defendant and the system stores the Compliance Documents and/or Compliance Information with the associated Case File in the Compliance Documentation Queue for future review by the Court staff.
+
+<!-- Image - Establish Compliance Dismissal Request -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;"  align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view.<br>
+<a href="http://austinea.org/arch/municourt/report/establishComplianceDismissalRequest.jpg"><img src="http://austinea.org/arch/municourt/report/establishComplianceDismissalRequest.jpg" border="0" width="200"></a>
+<p style="text-align: center; font-weight: bold;">Establish Compliance Dismissal<br>Request Sequence Diagram
+</td></tr></table>
+
+<!-- Table of Interface Descriptions -->
+<p style="text-align: center; font-weight: bold;">Table of Interface Descriptions<br>
+for Establish Compliance Dismissal Request</p>
+
+<table align="center" id="custom">
+<tr><th>Type/Interface</th><th>Description</th></tr>
+
+<tr>
+<td>Manage Court Case/<br>determineMethodOfComplaince</td>
+<td>Based on approved Municipal Court staff customizable rules engine, the system determines various methods of compliance based on the type of Case File and Legal Option selection. The rules engine must be customizable by the staff and not hard coded into the system.</td>
+</tr>
+
+<tr>
+<td>Web Presence/<br>selectMethodOfCompliance</td>
+<td>The system presents the approved Methods of Compliance to the Defendant based on staff customizable rules engine. Each Method of Compliance is clearly defined with thorough explanation of the implications of the Method of Compliance selected. The Defendant selects the desired Method of Compliance.</td>
+</tr>
+
+<tr>
+<td>Manage Court Case/<br>setMethodOfCompliance</td>
+<td>The system stores the selected Method of Compliance with the associated Case File.</td>
+</tr>
+
+<tr>
+<td>Web Presence/<br>submitComplianceDocumentation</td>
+<td>When the selected Method of Compliance rules engine requires Compliance Documentation, the system provides guidance and a method for the Defendant to upload scanned or other personal computer files to the system. Format of acceptable files (PDF, JPG, DOC, etc.) is set by the Municipal Court staff and constrained by the system. The system allows for multiple file uploads until the Defendant is satisfied with the Compliance Documentation submittal.</td>
+</tr>
+
+<tr>
+<td>Manage Court Case/<br>attachComplianceDocumentation</td>
+<td>The system associates and stores the uploaded Compliance Documentation with the relevant Case File.</td>
+</tr>
+
+<tr>
+<td>Web Presence/<br>enterComplianceInformation</td>
+<td>When the selected Method of Compliance rules engine requires Compliance Information, the system presents a form for the Defendant to enter the requested information. The Defendant completes the form and submits it to the system.</td>
+</tr>
+
+<tr>
+<td>Manage Court Case/<br>setComplianceInformation</td>
+<td>The system stores the Compliance Information with the relevant Case File.</td>
+</tr>
+
+<tr>
+<td>Web Presence/<br>confirmCompliance</td>
+<td>Once all Compliance Documentation and/or Compliance Information is entered into the system, the system provides a final Compliance Conformation to the Defendant. The Defendant confirms compliance with the terms identified by the system. If compliance is not complete, the Defendant is given an opportunity to enter further Compliance Documentation or Compliance Information.</td>
+</tr>
+
+<tr>
+<td>Manage Court Case/<br>setConfirmationCompliance</td>
+<td>Once Compliance Confirmation is selected by the Defendant, the system indicates Defendant identified compliance with the Case File.</td>
+</tr>
+
+<tr>
+<td>Manage Court Case/<br>addToComplianceDocumentationQueue</td>
+<td>The system adds Compliance Documentation and/or Compliance Information relevant to any given Case File providing indication on the Compliance Documentation Queue for future review by Municipal Court staff.</td>
+</tr>
+
+<tr>
+<td>Web Presence/<br>processCaseBalance</td>
+<td>If a fee is required, the system provides indication of the Remittance required. The Defendant accepts the remittance balance.</td>
+</tr>
+
+<tr>
+<td>Manage Court Case/<br>setRemittanceQueue</td>
+<td>The system sets the Remittance required relevant to the Case File and stores it in the Remittance Queue for future processing. The Remittance Queue is used to allow Defendants the ability to work on multiple Case Files and process any required Remittance in one payment or to setup a negotiated payment plan.</td>
+</tr>
+
+</table>
+
+<p><b>Complete Case File Activity Scope</b>
+
+<p>On completion of selected Case File Legal Options, the Defendant is presented with the option to review and select another Case File from the Case File Queue, process Case File Remittance balance (if any), or stop the current session.
+
+<!-- Image - Establish Deferral Request -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;"  align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view.<br>
+<a href="http://austinea.org/arch/municourt/report/completeCaseFileActivity.jpg"><img src="http://austinea.org/arch/municourt/report/completeCaseFileActivity.jpg" border="0" width="200"></a>
+<p style="text-align: center; font-weight: bold;">Complete Case File Activity<br>Sequence Diagram
+</td></tr></table>
+
+<!-- Table of Interface Descriptions -->
+<p style="text-align: center; font-weight: bold;">Table of Interface Descriptions<br>
+Complete Case File Activity</p>
+
+<table align="center" id="custom">
+<tr><th>Type/Interface</th><th>Description</th></tr>
+
+<tr>
+<td>Web Presence/<br>selectContinuationOptions</td>
+<td>At the end of a Case File activity, the system presents the Defendant continuation options. These options may include selecting legal options for another Case File, processing Remittance balance, or stop current session. If stop session is selected, the Defendant can begin where they ended for any given Case File selection.</td>
+</tr>
+
+<tr>
+<td>Manage Court Case/<br>retrieveRemittanceQueue</td>
+<td>The system retrieves the Remittance totals for outstanding balances in the Remittance Queue. These balances include fees due from all Case File activity past and present stored in the Remittance Queue. A Defendant may work on multiple Case Files at different time periods and possibly stop any given session prior to paying fees; therefore, the Remittance Queue maintains persistence on the values until receiving Acknowledged Remittance.</td>
+</tr>
+
+<tr>
+<td>Web Presence/<br>processCaseBalance</td>
+<td>The system provides indication of the Remittance required. The Defendant accepts the remittance balance and enters credit, debit, or ACH information.</td>
+</tr>
+
+<tr>
+<td>Electronic Financial Service/<br>processRemittance</td>
+<td>Processes online financial transactions to acknowledge Remittance payment. Includes point of sale (POS) or Web interface to Electronic Financial Service for automated clearing house (ACH), credit or debit card.</td>
+</tr>
+
+<tr>
+<td>Manage Court Case/<br>acknowledgeRemittance</td>
+<td>When successful online financial transaction occurs, the Web Presence notifies the system in the form of an Acknowledgment that a successful transaction occurred.</td>
+</tr>
+
+</table>
+
+</td></tr></table>
+</td></tr></table></body></html>

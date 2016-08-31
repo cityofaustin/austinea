@@ -1,0 +1,261 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<title>Specification for Perform Regulatory Review</title>
+<link rel=StyleSheet href="http://austinea.org/style/email.css" type="text/css">
+</head>
+<body bgcolor="#ddd8c2">
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="650" align="center">
+<tr><td style="padding: 0;" height="130" valign="top"><a href="http://austinea.org">
+<img src="http://austinea.org/image/iTHeader.jpg" alt="austinea.org - home..." border="0"></a></td></tr>
+<!-- Text Area -->
+<tr><td>
+
+<p style="font-weight: bold; text-align: center;">Use Case Specification for Perform Regulatory Review</p>
+<p style="text-align: center;">10/27/2015
+
+<p><b>Precondition:</b> A Submittal Applicant is prepared to create and/or maintain information related to design documentation requiring regulatory review, comment, and approval by identified city staff.</p>  
+
+<!-- Image Perform Regulatory Review -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;"  align="center"><tr><td align="center">
+<p class="lbl">Select to enlarge image<br />
+<a href="http://austinea.org/arch/rpi/performRegulatoryReview/performRegulatoryReviewUC.jpg"><img src="http://austinea.org/arch/rpi/performRegulatoryReview/performRegulatoryReviewUC.jpg" border="0" width="620"></a>
+<p style="text-align: center; font-weight: bold;">Use Case Diagram<br />Perform Regulatory Review
+</td></tr></table>
+
+<!-- Table of Role Definitions -->
+<p style="font-weight: bold; text-align: center;">Table of Role Definitions</p>
+<table align="center" id="custom">
+<tr><th width="30%">Role Name</th><th width="70%">Description</th></tr>
+<tr>
+<td>Submittal Applicant</td>
+<td>Anyone required to electronically communicate project information and/or design related elements to appropriate city staff requiring regulatory review and approval prior to build.</td>
+</tr>
+<tr>
+<td>Quality Reviewer</td>
+<td>Appropriate city staff member identified to quality review Submittal Package information to ensure completeness prior to formal review.</td>
+</tr>
+<tr>
+<td>Submittal Coordinator</td>
+<td>Coordinates the review process to ensure appropriate staff review and provide feedback on Submittal Package elements. Responsible for final approval.</td>
+</tr>
+<tr>
+<td>Reviewer</td>
+<td>Reviews for area of responsibility and comment (i.e., constructability, code compliance, program elements, cost estimate, etc.).</td>
+</tr>
+<tr>
+<td>Electronic Financial Service</td>
+<td>City of Austin's approved financial service provider to process online financial transactions such as credit cards, automated clearing house (ACH), debit card, etc. Currently, Chase Paymentech.</td>
+</tr>
+<tr>
+<td>EDIMS</td>
+<td>City of Austin's enterprise document and imaging management system (EDIMS).</td>
+</tr>
+</table>
+
+<p><b>Use Case Scope:</b> The Submittal Applicant inputs information and documents representing a Submittal Package and processes a Remittance with the city approved Electronic Financial Service provider if required. The Submittal Package is reviewed by a Quality Reviewer for acceptance or rejection for non-compliance and subsequent resubmission. Accepted Submittal Packages are added to a Group Review Queue managed by a Submittal Coordinator. The system provides a means to manage the Group Review Queue and provides feedback to the Submittal Applicant based on Reviewer comments until Submittal Package approval.</p>
+
+<!-- Interaction Overview - Perform Regulatory Review -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p class="lbl">Select to enlarge image<br>
+<a href="http://austinea.org/arch/rpi/performRegulatoryReview/performRegulatoryReviewAD.jpg"><img src="http://austinea.org/arch/rpi/performRegulatoryReview/performRegulatoryReviewAD.jpg" border="0" width="450"></a>
+<p style="text-align: center; font-weight: bold;">Perform Regulatory Review<br />Interaction Overview
+</td></tr></table>
+
+<p style="font-weight: bold;">1. Perform Intake</p>
+
+<p>The Submittal Applicant inputs information and documents that represent a Submittal Package. For certain types of Submittal Packages, there's a fee required. The system provides a method for the Submittal Applicant to research related geographical information. Based on address information entered, the system automatically establishes geographical references. Because a Submittal Applicant might intake more than one submittal during any given session, Remittance (fees) are stored in a Remittance Queue until the Submittal Applicant session ends.</p>
+
+<!-- Image - 1. Perform Intake -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;"  align="center"><tr><td align="center">
+<p class="lbl">Select to enlarge image<br />
+<a href="http://austinea.org/arch/rpi/performRegulatoryReview/1SD.jpg"><img src="http://austinea.org/arch/rpi/performRegulatoryReview/1SD.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Sequence Diagram<br />1. Perform Intake
+</td></tr></table>
+
+<!-- Table of Interface Descriptions -->
+<p style="text-align: center; font-weight: bold;">Table of Interface Descriptions</p>
+
+
+<!-- Table definition -->
+<table align="center" id="custom">
+<tr><th>Type/Interface - Requirement Description</th></tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Ensure Regulatory Compliance/performIntake</td>
+</tr>
+<tr>
+<td>The Submittal Applicant uses the system to complete a Web-based application form to setup Project Information and securely sign submittal. The system guides the Submittal Applicant through a series of questions leading to the correct application to complete - experienced Submittal Applicant may bypass questions to the correct form. For routine, recurring events, the Submittal Applicant uses the system to resurrect a previous submittal for modification, update and submission. The Submittal Applicant can revisit the intake application during multiple sessions before its completion and save each session prior to submittal. In addition, the Submittal Applicant can provide updated Project Information throughout the approval process; however, the system locks Project Information during the review cycle, which can be released (unlocked) at Submittal Coordinator discretion when required to allow for Submittal Applicant updates. The system provides the ability to withdraw a project submittal as well. Based on location values identified on the application form, location-based information automatically populates relevant form elements. The form contains selectable attributes to identify mechanical, electrical, plumbing, building, driveway, sidewalk, special event etc. to predetermine initial permit requirements, which can be adjusted during quality review - when applicable, the application must accommodate multiple structures. The system provides a method to attach relevant design documents and other pertinent Submittal Package items. These required attachments are indicated to the Submittal Applicant on the Web-based form. Each required attached line item provides the ability to browse and upload the file and ensures all required attachments to include approved document format (such as PDF). The required items must be indicated depending on submittal type - required items for any given submittal type must be changeable by approved city staff.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Ensure Regulatory Compliance/researchGeographicInformation</td>
+</tr>
+<tr>
+<td>The system provides the ability to perform geographic information research using city owned Geographic Information System (GIS) information. These features include the ability to overlay plan sheet with one or more GIS layers. The system provides the ability to compare a known list of features in GIS to the Submittal Package plan. These features should include zoning, jurisdiction, watershed, and other relevant planning and review information about adjacent properties. When various fragmented pages are stitched in continuous form providing an overall construction footprint, provide ability to overlay footprint on GIS view for GIS administrators to create GIS polygon overlay. This information helps conduct the review in the context of the permitted/build environment. Referenced sources are not required to be included as markup back to Submittal Applicant.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Ensure Regulatory Compliance/retrieveGeographicInformation</td>
+</tr>
+<tr>
+<td>For certain intake items, the system uses city available Geographic Information System to retrieve and populate Project Information. Can be used to explore and/or research the Geographical Information System.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Ensure Regulatory Compliance/establishGeographicReference</td>
+</tr>
+<tr>
+<td>When geographic information is retrieved from the Geographic Information System, the system creates a Geographic Information Reference and stores it with the Project Information for future reference.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Ensure Regulatory Compliance/updateRemittanceQueue</td>
+</tr>
+<tr>
+<td>Depending on the type of submittal, there may be fees required during intake. The system adds the required fee to a Remittance Queue for close out processing based on the submittal type. City staff must be able to change the submittal type attributes, which automatically changes the associated fee. The associated fees must be configurable by approved city staff.</td>
+</tr>
+</table>
+
+<p style="font-weight: bold;">2. Submit Remittance</p>
+
+<p>The system presents a list of fees (fee breakdown) associated with their related Submittal Package and provides selection to pay Remittance. The system processes the Remittance with a city approved Electronic Financial Service provider.</p>
+
+<!-- Image - 2. Submit Remittance -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;"  align="center"><tr><td align="center">
+<p class="lbl">Select to enlarge image<br>
+<a href="http://austinea.org/arch/rpi/performRegulatoryReview/2SD.jpg"><img src="http://austinea.org/arch/rpi/performRegulatoryReview/2SD.jpg" border="0" width="550"></a>
+<p style="text-align: center; font-weight: bold;">Sequence Diagram<br />2. Submit Remittance
+</td></tr></table>
+
+<!-- Table of Interface Descriptions -->
+<p style="text-align: center; font-weight: bold;">Table of Interface Descriptions</p>
+
+<!-- Table definition -->
+<table align="center" id="custom">
+<tr><th>Type/Interface - Requirement Description</th></tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Submittal Applicant/reviewRemittanceQueue</td>
+</tr>
+<tr>
+<td>When all intake items are complete, the Submittal Applicant is presented with a Remittance Queue listing all Submittal Package(s) ready for submission and the processing fee (completeness check fee) and provides indication of the total fees required and non-refundable fee indication. The system provides accepted indication of review time start. The system provides ability to adjust fee tables and approved staff may over ride table items - the system records staff that made the override and reason for override.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Ensure Regulatory Compliance/processRemittance</td>
+</tr>
+<tr>
+<td>The Submittal Applicant selects to pay required Remittance via electronic form of payment such as credit or debit card. When successfully transacted, the Submittal Applicant receives an Acknowledgment of successful payment.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Electronic Financial Service/processRemittance</td>
+</tr>
+<tr>
+<td>The system provides an interface to city approved financial vendor to process online electronic transactions.</td>
+</tr>
+</table>
+
+<p style="font-weight: bold;">3. Quality Review Submittal Package</p>
+
+<p>The system provides a list of new or updated Submittal Packages for review by the Quality Reviewer. The Quality Reviewer reviews the Submittal Package and either rejects or accepts the Submittal Package. If accepted, the system adds the Submittal Package to a Group Review Queue and includes the Project Information in Issue Permits system for future permit requirements update, requests and issuance. No matter the state of the Submittal Package, the Submittal Applicant is notified of the status of the submittal to include indications why the Submittal Package was rejected for correction and resubmission.</p>
+
+<!-- Image - 3. Quality Review Submittal Package -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;"  align="center"><tr><td align="center">
+<p class="lbl">Select to enlarge image<br>
+<a href="http://austinea.org/arch/rpi/performRegulatoryReview/3SD.jpg"><img src="http://austinea.org/arch/rpi/performRegulatoryReview/3SD.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Sequence Diagram<br />3. Quality Review Submittal Package
+</td></tr></table>
+
+<!-- Table of Interface Descriptions -->
+<p style="text-align: center; font-weight: bold;">Table of Interface Descriptions</p>
+
+<!-- Table definition -->
+<table align="center" id="custom">
+<tr><th>Type/Interface - Requirement Description</th></tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Ensure Regulatory Review/setupSubmittalPackageQueue</td>
+</tr>
+<tr>
+<td>Once Acknowledgment is received by the Electronic Financial Service (if required), the system places the submittal into a Submittal Package Queue for review by the Quality Reviewer.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Ensure Regulatory Compliance/reviewSubmittalPackage</td>
+</tr>
+<tr>
+<td>The system presents a Submittal Package Queue of updated or new Submittal Packages and provides a means for the Quality Reviewer to perform a quality check on the submitted items. The system provides the ability to accept or reject the Submittal Package to include relevant comments for rejection or further information on Submittal Package status. When accepted, the Submittal Package is moved to the Group Review Queue. Based on the submittal type, the system automatically sets up the Group Review Queue. The Quality Reviewer must be able to override automated template queued items in the Group Review Queue to include adding and removing queued groups or individuals.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Ensure Regulatory Compliance/setupGroupReviewQueue</td>
+</tr>
+<tr>
+<td>After the Submittal Package is quality approved by the Quality Reviewer, the system identifies template Group Review Queue depending on the type of submission and provides the ability for the Quality Reviewer to override Group Review Queue assignments. The Group Review Queue is updated when a Submittal Package is approved or requires additional review based on Reviewer lineage (i.e., requires one Reviewer to review before another or certain groups can review simultaneously). The Group Review Queue is based on area of responsibility (i.e., constructability, code compliance, etc.). The Submittal Coordinator or Reviewer may return a Submittal Package to the Group Review Queue indicating further review by selected groups or selected Reviewers during the review cycle to include Submittal Coordinator or Reviewer comments when necessary. Certain Reviewers can be set as required without holding up the review cycle; however, these reviews are still essential for final approval - allows for Submittal Applicant to receive Reviewer Comments prior to final approval.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Ensure Regulatory Compliance/createProjectInformation</td>
+</tr>
+<tr>
+<td>Once a Submittal Package is accepted, the system generates the necessary Project Information compatible with the Issue Permits capability (currently AMANDA). The Project Information intakes all relevant attributes of the Submittal Package to include diagrams, project information, contact information, personal identification number (PIN), contractor, compliance comments and markups, identified permit requirements, etc. to automatically populate the Issue Permits portion of the system.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Ensure Regulatory Compliance/updateProjectFolder</td>
+</tr>
+<tr>
+<td>The system updates (or creates if new) the Project Folder in the case management system (currently Amanda) to include any relevant updates to the Project Information as well as the reference links to documents stored in the enterprise document and imaging management system (EDIMS).</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Ensure Regulatory Compliance/trackTimingToBillingProcess</td>
+</tr>
+<tr>
+<td>The system provides the ability to track time to the billing process, i.e., clock starts once remittance is issued for Submittal Package. The system tracks relevant timing (adjustable by staff) and provides feedback to Submittal Applicant on timing indications (i.e., where in the process). Time lines are automatically setup but adjustable.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Ensure Regulatory Compliance/reviewApplicationNotification</td>
+</tr>
+<tr>
+<td>The system provides an automated email to the Submittal Applicant for accepted and rejected Submittal Packages (with rejection comment - i.e., reason for rejection and recommended guidance for future submissions). For accepted submissions, the system provides a summary of the submission process and estimation of anticipated review time. Once completion of the Reviewer process, the system provides the Submittal Applicant a reviewer completion summary and a link to download markup diagrams and associated Reviewer Comments, links to references and city codes, other general comments, among other indications to effectively communicate to the Submittal Applicant the required changes to Submittal Package items. Once corrected, the Submittal Applicant must address each comment and resubmit relevant portions of their Submittal Package. These notifications may include high-priority out of cycle comments from Reviewers. Throughout the Submittal Package review process, the system provides continuous automatic updates to the Submittal Applicant as it moves through the Group Review Queue. Finally, the Submittal Applicant is provided a means to print any necessary approved documentation. Displayed permits include QR code (or similar technology) for city staff in the field to quickly retrieve details of displayed permit.</td>
+</tr>
+</table>
+
+
+<p id="4" style="font-weight: bold;">4. Review Submittal Package</p>
+
+<p>The system provides a means for a Reviewer to observe the Group Review Queue and select a Submittal Package for review. Once selected for comment, the Group Review Queue is updated to remove the Submittal Package from the review queue to prevent simultaneous reviews from the same group type. The Submittal Applicant is notified of the particular group reviewing the Submittal Package. Throughout the review cycle, a Submittal Coordinator may quality review the Reviewer comment and provide feedback to the Reviewer by returning the Submittal Package back to the Group Review Queue to be addressed. On completion of all areas of responsibility in the Group Review Queue, the Submittal Coordinator approves the Reviewer comments for Submittal Applicant update or approves the Submittal Package to allow for permitting. Relevant Submittal Package documents are stored in the enterprise document and imaging management system (EDIMS) for future retrieval.</p>
+
+<!-- Image - 4. Review Submittal Package -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;"  align="center"><tr><td align="center">
+<p class="lbl">Select to enlarge image<br />
+<a href="http://austinea.org/arch/rpi/performRegulatoryReview/4SD.jpg"><img src="http://austinea.org/arch/rpi/performRegulatoryReview/4SD.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Sequence Diagram<br />4. Review Submittal Package
+</td></tr></table>
+
+<!-- Table of Interface Descriptions -->
+<p style="text-align: center; font-weight: bold;">Table of Interface Descriptions</p>
+
+<!-- Table definition -->
+<table align="center" id="custom">
+<tr><th>Type/Interface - Requirement Description</th></tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Ensure Regulatory Compliance/provideRegulatoryFeedback</td>
+</tr>
+<tr>
+<td>Routinely, the Reviewer in a particular review group (by order of responsibility area setup in the Group Review Queue) checks the Group Review Queue (listed in date/time order) for assigned reviews and submits Submittal Package Reviewer Comments. For complex structures submitted in appropriate format, the system provides a means to view diagrams using layering techniques to show/hide various elements. The system provides automated tools for the Reviewer to markup diagrams (words, pictures, sketches, highlights, etc.) including associated comments, links to references and city codes, administrative/general comments, among other traditional markup indications to effectively communicate to the Submittal Applicant the required changes to Submittal Package items to include ability sort and/or rank comments. The Reviewer needs to dynamically share comments with other Reviewers and view other Reviewer's comments prior to generation reports. The system provides the ability to identify changes (deltas) for resubmitted design plans when submitted using standardized formats such as PDF and engineering computer aided design (CAD) files. The system provides the able to easily calculate volumes, measure areas (to include acreage), distances (via poly-line or path), angles and radii. The system provides the ability for multiple page document submissions to be viewed in continuous, unbroken fashion providing a seamlessly adjoined view of the design plans - within a given plan set, provide ability to navigate between section/sheet dynamically. The system provides a common, frequently used comment library to include images, text, technical specifications, etc. configurable by the Reviewer. All markups indicate the particular Reviewer layer for identification by the Submittal Coordinator and Submittal Applicant. The Submittal Coordinator may review Group Review Queue items and provide feedback to the Reviewer. The system provides reporting of group comments and general administrative comments by topic for each discipline. If no comments, the system allows the Reviewer to approve the submittal by providing a group level or individual secure approval stamp indication on relevant Submittal Package items and the Submittal Coordinator approves the Reviewer Comments or the entire Submittal Package when no comments require updates by the Submittal Applicant. Once a Review Group approves a Submittal Package, the record must be locked preventing any additional changes except by approved city staff.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Ensure Regulatory Compliance/retrieveReviewerComments</td>
+</tr>
+<tr>
+<td>Once all of the Reviewer Comments and markups are complete for the Submittal Package, the Notification provides a link to guide the Submittal Applicant to retrieve the Reviewer Comments and markup diagrams. The Submittal Applicant selects the link and is navigated to a Web page to download Reviewer Comments.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Ensure Regulatory Compliance/generateEDIMSMetadata</td>
+</tr>
+<tr>
+<td>Using attributes of the Submittal Package entered during Perform Intake, the system automatically generates the proper EDIMS (enterprise document and imaging management system) meta-data for inclusion with the relevant Submittal Document stored in EDIMS.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">EDIMS/storeDocument</td>
+</tr>
+<tr>
+<td>The system uses the automatically generated meta-data and stores the Document in the electronic document imaging and management system (EDIMS). [Note: Enterprise Service Bus (ESB) opportunity: A reusable interface on ESB can act as a broker between various applications and EDIMS. If properly built, this interface is used by all applications storing information in EDIMS.]</td>
+</tr>
+</table>
+
+
+</td></tr></table>
+</td></tr></table></body></html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<title>Animal Services "Manage Spay Neuter Outreach Services"</title>
+<link rel="StyleSheet" href="http://austinea.org/style/email.css" type="text/css">
+</head>
+<body>
+
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="600" align="center"><tr><td>
+
+<!-- Online reference -->
+<p><class="lbl">Note: This report is also <a href="http://austinea.org/arch/as/report/update042315.html" style="font-size: 7pt;">available online</a> by following link.</p>
+
+<div>
+<p>Hi All,</p> 
+</div>
+
+<p>Attached is the information for the "Manage Spay Neuter Outreach Services" use case that was reviewed April 23rd, 2015, with the Animal Services Team. Please take a moment to check my work and let me know if there are any changes I can make to improve this, or if this requirement is as discussed! Please remember that this specific flow is not exactly as the current process is done today, but a conceptualization of what we would like a new system to do for Animal Services in the future. </p> <p>
+
+Additionally, I wanted to let you know the Online repository of Animal Services Use Cases is now up to date ( http://austinea.org/arch/as/report/index.html )
+<p>
+
+
+<!-- Signature-->
+<table cellpadding="0" cellspacing="0" border="0" width="350" style="border-collapse: collapse;"><tr><td>
+<p>Cheers!</p>
+
+<table cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;" align="right">
+<tr>
+<td>
+<img src="http://austinea.org/image/austinLogo.jpg" border="0" width="100" height="100" alt="Austin Logo" />
+</td>
+</tr>
+</table>
+<p><img src="http://coawss3a.coacd.org/sites/CTM/EA/Shared Documents/Images/ABSIG.JPG" border="0" width="143" height="83" alt="sign" /> </p>
+
+<p><b>Aaron Brown</b> 
+<span style="color: red; font-weight: bold;">|</span> 
+<b>City of Austin</b>
+<a href="http://www.linkedin.com/in/austnaaron"><img src="http://journeycolorado.com/images/linkedin.jpg" border="0" alt="Linkin Logo" /> </a> <br />
+Senior IT Enterprise Architect<br />
+Direct: (512) 974-2960 </p>
+Email: Aaron.Brown2@austintexas.gov </p>
+</td></tr></table>
+
+
+<!-- Use case information below -->
+
+<hr>
+
+<b> Animal Shelter Logical Data Model </b>
+<!-- Image -  Logical Data Model -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="http://austinea.org/arch/as/report/animalShelterLogicalDataModel.jpg"><img src="http://austinea.org/arch/as/report/animalShelterLogicalDataModel.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Animal Shelter Logical Data Model</p>
+</td></tr></table> 
+
+<!-- Muni Court Requirements Model -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="right">
+<tr>
+<td align="center">
+<span class="lbl">Note: Select to download</span><br />
+<a href="http://austinea.org/arch/as/report/manageSpayNeuterOutreachServicesUseCase.jpg"><img src="http://austinea.org/arch/as/report/manageSpayNeuterOutreachServicesUseCase.jpg" border="0" width="200" alt="" /></a><br />
+<span style="font-weight: bold;">Manage Spay Neuter Outreach Services<br />Use Case</span>
+</td></tr></table>
+
+
+
+
+
+<p><b>Use Case Scope</b></p>
+<p>An animal is identified as needing the Spay, Neuter, Outreach services. This is either from a customer request (animal discovered and they are temporarily caretaking), a mobile unit seeing the animal on the street, a field officer referral, or from a log of previous contact with a customer.) The Outreach Team reaches out to the customer and gets information related to the animal. If the customer can provide their own transportation for the animal, they are referred to a website with detailed information about Emancipet and their services. Otherwise, the Outreach Team creates an Activity on the system for pickup and return of the animal. Once created, they Outreach Team contacts the animal Services Dispatcher to indicate the start of an activity. The Outreach Team then goes to the address received from the Customer and picks up the animal and takes it to Emancipet. Once the surgery is done, if the owner can pick up the animal, they will. Otherwise the Outreach Team will go back to Emanicipet and take the animal back to the customer. Once complete, they Outreach Team contacts Animal Services Dispatch to indicate they have completed the Activity. Once back on site, the Outreach Team accesses the system and updates the salient information about the engagement. </p>
+
+<!-- Image -  Sequence Diagram -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="http://austinea.org/arch/as/report/manageSpayNeuterOutreachServicesSequenceDiagram01.jpg"><img src="http://austinea.org/arch/as/report/manageSpayNeuterOutreachServicesSequenceDiagram01.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Manage Spay Neuter Outreach Services Sequence Diagram</p>
+</td></tr></table> 
+
+
+
+<p style="font-weight: bold; text-align: center;">Manage Spay Neuter Outreach Services Interface Descriptions</p>
+<!-- Table definition -->
+<table align="center" id="custom">
+<tr><th width="195">Type/Interface</th><th>Description</th></tr>
+<tr>
+<td>Customer Service/ <br /> requestOutreachServices</td> <td>The animal owner contacts customer service and is prompted for customer name, address, animal breed, animal age animal size and number of animals. 
+ </td> </tr>
+ 
+<tr>
+<td>Outreach Team/ <br /> provideCustomerContact</td> <td>Customer Service contacts the Outreach Team via email and provides the customer name, litter size, breed, sex, name of animals needing Spay Neuter Services. </td> </tr>
+
+<tr>
+<td>Outreach Team/ <br /> discoverAnimalOwner</td> <td>The Outreach Team patrols the city and see's an animal that needs attention or medical needs.  </td> </tr>
+
+<tr>
+<td>Outreach Team/<br /> investigateAnimalIssue</td> <td>The Animal owner or the field officer contacts the Outreach Team to convey the need for a customer interaction. They convey the address or any other information indicating the need for Outreach Team attention.</td> </tr>
+
+
+<tr>
+<td>Animal Owner/<br /> provideInformation</td> <td>The Outreach Team knocks on doors, or directly contacts the animal owner (if known) and requests additional information such as: Address, animal owner name, pet name, number of pets, spay or neutered, age of animals, sex of animal, size of animal, breed, color, current vaccinations, friendliness with strangers, and Email address. They determine if the Animal Owner can provide their own transportation. If no email is available, the animal owner is provided the dates and locations when services are available on the phone. The Outreach Team will encourage the animal owner to get all animals spayed/neutered. This is to add animal information for the system, for future potential animal/owner matches. Additionally the owner signs release forms authorizing the surgery for the animal, provided documentation about surgery risks, and Emancipet info. </td> </tr>
+
+<tr>
+<td>Outreach Team/<br /> sendAnimalOwnerProgramInfo</td> <td>The customer provides an email address during discovery, and the Outreach Team sends links to online resources that indicate dates, calender locations, Emancipet locations and times, operation details and general instructions before surgery.  </td> </tr>
+
+<tr>
+<td>Provide Animal Shelter and Rescue/<br /> createActivity</td> <td>The Outreach Team accesses the system and indicates the address, owner information, date of pickup, whether the owner will be picking up the animal, or whether the Outreach Team will be returning the animal after surgery. Additionally the Outreach Team sets up an outlook calendar appointment, copying internal staff as well as Emancipet. </td> </tr>
+
+<tr>
+<td>Animal Services Dispatcher/<br /> recordStartOfActivity</td> <td>The Outreach Team contacts dispatch and indicates the address at which they will retrieve the animal. In some instances, if the animal has been discovered, Outreach Team tells dispatcher to create an activity,which will be further details at the end of the engagement. </td> </tr>
+
+<tr>
+<td>Outreach Team/<br /> pickupAnimalFromOwner</td> <td>The Outreach Team arrives at the animal owner location and takes possession of the animal.  </td> </tr>
+
+<tr>
+<td>Emancipet/<br /> provideSNOServices</td> <td>The Outreach Team provides the authorization documents signed by the animal owner, weight of the animal, place animal is kenneled, Kennel number, Temperature (from vet tech), and a paper collar is attached to the animal. They also provide Intake, surgery notes, And medical form. Medical form is attached to the kennel, Surgery notes are delivered to the surgery technician. They indicate who will be picking up the animal, and make a copy of the Intake form (for each animal). </td> </tr>
+
+<tr>
+<td>Animal Services Dispatcher/<br /> indicateArrivalAtEmancipet</td> <td>Outreach Team contacts Dispatch to indicate the animal has been dropped off at Emancipet.  </td> </tr>
+
+
+<tr>
+<td>Emancipet/<br /> provideAnimal</td> <td>Emancipet provides after care instructions, pain medications, an invoice, Microchip and rabies tags to the person picking up the Animal (Outreach Team or Animal Owner).</td> </tr>
+
+<tr>
+<td>Animal Owner/<br /> receiveAnimal</td> <td>The Outreach Team provides the animal to the owner, with after care instructions, pain medications, and an invoice. The animal will have been Micro-chipped and will have current rabies tags.</td> </tr>
+
+<tr>
+<td>Emancipet/<br /> provideAnimal</td> <td>Emancipet provides after care instructions, pain medications, an invoice, Microchip and rabies tags to the person picking up the Animal (Outreach Team or Animal Owner).</td> </tr>
+
+
+<tr>
+<td>Animal Services Dispatcher/<br /> recordEndOfActivity</td> <td>The Outreach Team contacts dispatch and indicates the completion of animal delivery. </td> </tr>
+
+<tr>
+<td>Provide Animal Shelter and Rescue/<br /> updateActivityInformation</td> <td>The Outreach Team accesses the system and records information related the the animal delivery (date, time, final disposition, etc. ) </td> </tr>
+
+
+</table>
+
+
+
+<!-- Table definition
+<table align="center" id="custom">
+<tr><th>Number</th><th>Category</th><th>Description</th><th>Criticality</th></tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table> -->
+
+</td></tr></table> 
+
+</td></tr></table>
+</td></tr></table></body></html>

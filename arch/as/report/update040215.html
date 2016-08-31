@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<title>Animal Services "Manage Volunteer Photography"</title>
+<link rel="StyleSheet" href="http://austinea.org/style/email.css" type="text/css">
+</head>
+<body>
+
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="600" align="center"><tr><td>
+
+<!-- Online reference -->
+<p><class="lbl">Note: This report is also <a href="http://austinea.org/arch/as/report/update040215.html" style="font-size: 7pt;">available online</a> by following link.</p>
+
+<div>
+<p>Hi All,</p> 
+</div>
+
+<p>Attached is the information for the "Manage Volunteer Photography" use case that was reviewed April 2nd, 2015, with the Animal Services Team. Please take a moment to check my work and let me know if there are any changes I can make to improve this, or if this requirement is as discussed! Please remember that this specific flow is not exactly as the current process is done today, but a conceptualization of what we would like a new system to do for Animal Services in the future. </p> <p>
+
+Additionally, I wanted to let you know the Online repository of Animal Services Use Cases is now up to date ( http://austinea.org/arch/as/report/index.html )
+<p>
+
+
+<!-- Signature-->
+<table cellpadding="0" cellspacing="0" border="0" width="350" style="border-collapse: collapse;"><tr><td>
+<p>Cheers!</p>
+
+<table cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;" align="right">
+<tr>
+<td>
+<img src="http://austinea.org/image/austinLogo.jpg" border="0" width="100" height="100" alt="Austin Logo" />
+</td>
+</tr>
+</table>
+<p><img src="http://coawss3a.coacd.org/sites/CTM/EA/Shared Documents/Images/ABSIG.JPG" border="0" width="143" height="83" alt="sign" /> </p>
+
+<p><b>Aaron Brown</b> 
+<span style="color: red; font-weight: bold;">|</span> 
+<b>City of Austin</b>
+<a href="http://www.linkedin.com/in/austnaaron"><img src="http://journeycolorado.com/images/linkedin.jpg" border="0" alt="Linkin Logo" /> </a> <br />
+Senior IT Enterprise Architect<br />
+Direct: (512) 974-2960 </p>
+Email: Aaron.Brown2@austintexas.gov </p>
+</td></tr></table>
+
+
+<!-- Use case information below -->
+
+<hr>
+
+<b> Animal Shelter Logical Data Model </b>
+<!-- Image -  Logical Data Model -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="http://austinea.org/arch/as/report/animalShelterLogicalDataModel.jpg"><img src="http://austinea.org/arch/as/report/animalShelterLogicalDataModel.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Animal Shelter Logical Data Model</p>
+</td></tr></table> 
+
+<!-- Muni Court Requirements Model -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="right">
+<tr>
+<td align="center">
+<span class="lbl">Note: Select to download</span><br />
+<a href="http://austinea.org/arch/as/report/managevolunteerPhotographyUseCase.jpg"><img src="http://austinea.org/arch/as/report/managevolunteerPhotographyUseCase.jpg" border="0" width="200" alt="" /></a><br />
+<span style="font-weight: bold;">Manage Volunteer Photography<br />Use Case</span>
+</td></tr></table>
+
+
+
+
+
+<p><b>Use Case Scope</b></p>
+<p>An new animal arrives in the shelter. The Technician accesses the system and adds the animal's name to a list of animals needing to be photographed, maintained by the system. The Photography team accesses the system and generates a list of all animals to be photographed or videotaped. The List includes the animal ID, the Animal description, whether only a photo, or a photo and video are needed, and whether an additional volunteer is needed for pet handling during image capture (large dogs require a second volunteer.) 
+If a second volunteer is necessary, the Photography teams accesses the GivePulse system and advertises for help. Once a second volunteer is found to help (if a second is needed), the photography team takes the photographs and video requested on the report, and edits the image capture.
+If video is taken, it is uploaded to a web resource for video accessible by the public (typically youTube.) The Photography team gets the URL of the uploaded video, accesses the system and adds the URL for the video to the AnimalInfo Record. 
+The photograph taken is uploaded to the system, and attached to the AnimalInfo Record. Alternatively, the photograph can be uploaded to an online web resource (like Instagram, Dropbox, Amazon Cloud, etc.) and the corresponding ULR created is attached to the AnimalInfo record. Note: the system should accommodate multiple videos and multiple pictures for a single animal. </p>
+
+<!-- Image -  Sequence Diagram -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="http://austinea.org/arch/as/report/managevolunteerPhotographySequenceDiagram01.jpg"><img src="http://austinea.org/arch/as/report/managevolunteerPhotographySequenceDiagram01.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Manage Volunteer Photography Sequence Diagram</p>
+</td></tr></table> 
+
+
+
+<p style="font-weight: bold; text-align: center;">Manage Volunteer Photography Interface Descriptions</p>
+<!-- Table definition -->
+<table align="center" id="custom">
+<tr><th width="195">Type/Interface</th><th>Description</th></tr>
+<tr>
+<td>Provide Animal Shelter and Rescue/ <br /> notifyPhotoTeamOfNewAnimal</td> <td>The Technician accesses the system and indicates the need for photography to be conducted for one of the animals. This request includes the day the animal was brought into Animal Services, the Animal name, Animal ID, and a due date for completion of the photography, if there is one.
+ </td> </tr>
+ 
+<tr>
+<td>Provide Animal Shelter and Rescue/ <br /> RetrieveAnimalPhotoAssignment</td> <td>The Photography Team Member accesses the system to determine if there is a need for photography. They use the Animal ID to look up the animal in the system and determine if there is a need for a second volunteer, to determine whether video will need to be taken, and to determine if there is a due date associated with the photography request.</td> </tr>
+
+<tr>
+<td>GivePulse/ <br /> advertiseForVolunteer</td> <td>The User accesses the GivePulse software and advertises for assistance with Animal Photography. </td> </tr>
+
+<tr>
+<td>GivePulse/<br /> locateSecondVolunteer</td> <td>The Photography Team accesses GivePulse and determines a volunteer has responded to the advertised need for a photography assistant. The Photography team reaches out to the volunteer to coordinate a date and time when the photography will take place. </td> </tr>
+
+
+<tr>
+<td>Photography Team/<br /> videotapeAnimal</td> <td>The Photography Team takes video of an animal for advertising purposes.</td> </tr>
+
+<tr>
+<td>Video Storage/<br /> uploadVideo</td> <td>The Photography team uploads video of an animal to a video storage service like Youtube, and receives a link at which the video resides.  </td> </tr>
+
+<tr>
+<td>Provide Animal Shelter and Rescue/<br /> addVideoLinkToAnimalRecord</td> <td>The Photography team accesses the system, looks up the Animal record using the Animal ID, and updates the Animal Info to include a Video Link of a video of the animal. </td> </tr>
+
+<tr>
+<td>Provide Animal Shelter and Rescue/<br /> photographAnimal</td> <td>The Photography Team takes a photograph of an anima for attachment to the AnimalInfo record within the system. </td> </tr>
+
+<tr>
+<td>Provide Animal Shelter and Rescue/<br /> editPhotographs</td> <td>The Photography team uses their own tools to edit the photograph of the animal to meet the standards or esthetics appropriate for Animal Services.</td> </tr>
+
+<tr>
+<td>Image Storage/<br /> AddPhoto</td> <td>The Photography team uploads their finished photograph to a storage facility or the repository within the system used for photograph storage and retrieval. They receive a URL link pointing to the photograph.</td> </tr>
+
+
+<tr>
+<td>Provide Animal Shelter and Rescue/<br /> addPhotoToAnimalRecord</td> <td>If no photograph of the animal exists on the Animal Info Record, the Customer Contact uses the system to upload and attach a photograph of the animal to the Animal Info Record. The system provides a mechanism for taking and attaching photos to animal info records. An interface with FINDING ROVER is desirable. If the photograph has been uploaded to a third party service provider, the system prompts for a URL at which the photograph is located and stores it as part of the AnimalInfo record. </td> </tr>
+
+</table>
+
+
+
+<!-- Table definition
+<table align="center" id="custom">
+<tr><th>Number</th><th>Category</th><th>Description</th><th>Criticality</th></tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table> -->
+
+</td></tr></table> 
+
+</td></tr></table>
+</td></tr></table></body></html>

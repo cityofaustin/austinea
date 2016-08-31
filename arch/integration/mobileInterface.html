@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Mobile Interface</title>
+<link rel="Stylesheet" href="http://austinea.org/style/hover.css" type="text/css" />
+</head>
+<body bgcolor="#ddd8c2">
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="650" align="center">
+<tr><td style="padding: 0;" height="130" valign="top"><a href="http://austinea.org">
+<img src="http://austinea.org/image/iTHeader.jpg" alt="austinea.org - home..." border="0"></a></td></tr>
+<!-- Text Area -->
+<tr><td>
+
+
+<div>
+<p style="font-size: 10pt; text-align: center; font-weight: bold;">Immergence of Common Mobile Interface</p>
+
+<p>Through our architecture endeavors, it's our role to identify various recognizable patterns of emerging business user needs. We've identified an important mobile interface worthy of discussion - i.e., the Inspection Queue &laquo;interface&raquo;. From the specification below, we've identified a need for a geographic information system (GIS) mobile device interface to identify location of various scheduled inspections and the ability to link referenced documentation from the inspection pin on the geographical map.</p>
+
+<p>The interface is initially planned to be deployed as part of the Planning and Development Review Amanda upgrade and is largely part of <a href="http://austinea.org/arch/pdr/obtainFinalInspection/obtainFinalInspection.html">Obtain Final Inspection</a>. However, this interface has &quot;much&quot; broader application citywide to include <a href="http://austinea.org/arch/awu/mobility/">Austin Water Utility Mobility Pilot</a>, Environmental Health Services, <a href="http://austinea.org/arch/ehs/report/performFacilityHealthReview.html">Perform Facility Health Review</a> and others - we should meet to discuss...</p>
+</div>
+
+<!-- Image Title -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/integration/mobileInterface.jpg"><img src="http://austinea.org/arch/integration/mobileInterface.jpg" border="0" width="630" alt="" /></a><br />
+<span style="font-weight: bold;">Mobile Interface Description</span>
+</td></tr></table>
+
+<br />
+
+<!-- Table definition -->
+<table align="center" id="custom">
+<tr><th>Type/Interface</th><th>Description</th></tr>
+<tr>
+<td>EHS Inspection Queue<br />updateInspectionQueue</td>
+<td>Once the Facility Health Application is approved and a facility inspection is requested or required, the system adds certain application attributes needed by the Health Inspector to the Inspection Queue. Inspection Queue items are stored in date/time order to ensure fair inspection order and expedited inspection requests are given priority in the Inspection Queue. The system automatically updates the Inspection Queue by assigning Inspectors based on area of responsibility or jurisdiction - this is determined by the Geographic Information retrieved during Facility Health Application submission. The Inspection Queue includes inspection items relevant to Health Inspector identified on the by PDR use case Obtain Final Inspection for new facility or remodeled facility. The Inspection Queue manages re-occurring inspection needs such as initial 30 day inspection for new or remodeled facilities and other routine re-occurring inspections requiring Health Inspector.</td>
+</tr>
+<tr>
+<td>EHS Inspection Queue<br />reassignInspectionInformation</td>
+<td>The system provides a Health Inspector Supervisor the ability to modify the Inspection Queue to include Health Inspector assignment, priority order, and inspection timing. The Health Inspector Supervisor may also perform a quality review of Inspection Requests. The system provides adjustable alerts such as an Inspector with too many assigned inspections, Health Inspector not logged in during specified inspection hours, location indication is provided by communicating the mobile device location, customer service indications of inspection times based on nominal, historic results etc. The system alerts the Health Inspector if departing the site without entering some form of inspection result.</td>
+</tr>
+<tr>
+<td>EHS Inspection Queue<br />reviewInspectionQueue</td>
+<td>The system provides the Health Inspector with a geographical map with inspection item pins indicating inspection locations and indication of order of inspection. As items are rescheduled by the Applicant or Health Inspector, the system automatically updates the geographical map information. The Health Inspector can use the map to navigate to the inspection location. When a map pin is selected, a pop-up balloon provides selectable details regarding the inspection such as special access information (i.e., codes to gate, on site person to contact, and other relevant information regarding the inspection location). [Note: This information was previously entered as an attribute value on the Inspection Request Application.]</td>
+</tr>
+<tr>
+<td>EHS Inspection Queue<br />rescheduleInspection</td>
+<td>The Applicant use the Web portal to view their scheduled inspection and reschedule the inspection if required. The system provides a selectable calendar of available inspection opportunities. This can also be used by the Inspectors to reschedule inspections when verbal communications occurs between the Applicant and the Inspector. The Notification message provides a link to the rescheduling Web portal for Applicant access when required. The Web portal provides guidance and constraints on any rescheduling limitations.</td>
+</tr>
+<tr>
+<td>PDR Inspection Queue<br />updateInspectionQueue</td>
+<td>Once an Inspection Request is submitted, the system updates the Inspection Queue by assigning an Inspector based on the area of responsibility. The system updates the Inspection Request Geographic Information Systems (GIS) database with pertinent information related to the Inspection Request (ex., design documents from intake Submittal Package, relevant Project Information, location, site access information, point of contact information, etc.). For special inspections based on city rules for selected registered contractors performing routine single purpose trade permits, the system randomly adds one inspection for every five single purpose permits requested.</td>
+</tr>
+<tr>
+<td>PDR Inspection Queue<br />reassignInspectionInformation</td>
+<td>The system provides an Inspection Supervisor the ability to modify the Inspection Queue to include Inspector assignment, priority order, and inspection timing. The Inspection Supervisor may also perform a quality review of Inspection Requests. The system provides adjustable alerts such as an Inspector with too many assigned inspections, Inspector not logged in during specified inspection hours, location indication is provided by communicating the mobile device location (cost savings because AVL is no longer required), customer service indications of inspection times based on nominal, historic results etc. The system alerts the Inspector if departing the site without entering some form of inspection result.</td>
+</tr>
+<tr>
+<td>PDR Inspection Queue<br />identifyInspectionItem</td>
+<td>The system provides the Inspector a Geographic Information System (GIS) map with priority ordered (numbered) indication of inspection locations. The Inspector must be able to quickly and easily modify the priority order (i.e., Inspector might wish to change order based on proximity location to inspection location) and ability to annotate why priority order was modified. When an inspection location icon is selected, the Inspector selects location navigation to navigate to the GPS location or to obtain additional inspection information such as permit Inspection Request, relevant design documentation from intake of the Submittal Package, code and compliance details (searchable), coordination details (i.e., codes to access site), etc. The Inspector must be able to override and reassign individual inspections and inspection assignments (ability to reassign an inspection to another Inspector when specialized expertise is required).</td>
+</tr>
+</table>
+<br />
+<!-- Contact
+<table cellpadding="0" cellspacing="0" border="0" width="450" style="border-collapse: collapse;"><tr><td>
+<p>Respectfully,</p>
+<table cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;" align="right"><tr><td>
+<img src="http://austinea.org/image/austinLogo.jpg" border="0" width="100" height="100" alt="Austin Logo" />
+</td></tr></table> -->
+<!-- Signature
+<p><img src="http://journeycolorado.com/images/Signature.jpg" border="0" width="143" height="83" alt="sign" /></p>
+<p><b>Rob Byrd</b> <span style="color: red; font-weight: bold;">|</span> <b>City of Austin</b>
+<a href="http://www.linkedin.com/in/robbyrd"><img src="http://journeycolorado.com/images/linkedin.jpg" border="0" alt="LinkedIn Logo" /></a><br />
+Chief Enterprise Architect - Corporate<br />
+Direct: (512) 974-1615 | Mobile: (512) 431-0700<br />
+Visit us at <a href="http://austinea.org">http://austinea.org</a></p>
+</td></tr></table> -->
+
+</td></tr>
+<tr><td style="padding: 0;" height="50" valign="top"><a href="http://austintexas.gov/information-technology/">
+<img src="http://austinea.org/image/footer.jpg" alt="Austin Information Technology" border="0"></a></table>
+</td></tr></table></body></html>

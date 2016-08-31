@@ -1,0 +1,264 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>Create Contract Deliverable</title>
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  <link rel="Stylesheet" href="http://austinea.org/style/email.css" type="text/css"></head>
+<body style="background-color: rgb(221, 216, 194);">
+<!-- Border Background Table -->
+<table style="border-collapse: collapse; background-color: rgb(244, 202, 144);" align="center" border="0" cellpadding="4" cellspacing="0">
+
+  <tbody>
+    <tr>
+      <td><!-- Online reference
+
+<p class="lbl" style="text-align: center;">This report is also <a href="http://austinea.org/">available online</a> by following link.</p> -->
+<!-- EA Motto -->
+      <p style="color: gray; font-size: 8pt; text-align: center; font-weight: bold;">Enterprise
+Architecture <i>- aligning IT services with business needs</i></p>
+<!-- Main Body -->
+      <table style="border-collapse: collapse; background-color: rgb(255, 255, 255);" align="center" border="0" cellpadding="5" cellspacing="0" width="650">
+        <tbody>
+          <tr>
+            <td>
+            <p style="text-align: center; font-weight: bold;">Create
+Contract Item Use Case Specification</p>
+            <p style="text-align: center; font-weight: bold;"><span style="color: rgb(0, 0, 0); font-family: Verdana,Geneva,sans-serif; font-size: 10.6667px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-align: center; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none; background-color: rgb(255, 255, 255);">Last Modified: 7/5/2016</span></p>
+
+<!-- Image Title -->
+            <table style="border-collapse: collapse;" align="center" border="0" cellpadding="5" cellspacing="0">
+              <tbody>
+                <tr>
+                  <td align="center"><span class="lbl">Select to
+enlarge...</span><br>
+                  <a href="createcontractdeliverable_ucd.jpg"><span style="text-decoration: underline;"></span></a><a href="createcontractitem_ucd.jpg"><img style="border: 0px solid ; width: 600px; height: 280px;" alt="" src="createcontractitem_ucd.jpg"></a><br>
+                  <span style="font-weight: bold;"><br>
+Create Contract Deliverable Use
+Case Model<br>
+                  <br>
+</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            
+            
+            
+            <p class="MsoNormal"><b>Scope: </b></p>
+The Contract Item Creator uses the Contract Manager system to display a
+Contract by searching for the ContractVendorName or the ContractNumber
+and creates a ContractItem, entering ContractItemType (Deliverable or
+Term &amp; Condition) and entering either ContractDeliverableInfo or
+ContractTermConditionInfo. If applicable, the Contract Item Creator
+next stores ContractDeliverableFrequencyInfo and clicks a button to
+generate one or more ContractDeliverableDates.&nbsp;<p class="MsoNormal"><br>
+<o:p></o:p></p>
+
+
+
+<!-- Image Title -->
+            <table style="border-collapse: collapse;" align="center" border="0" cellpadding="5" cellspacing="0">
+              <tbody>
+                <tr>
+                  <td align="center"><span class="lbl">Select to
+enlarge...</span><br>
+                  <br>
+                  <a href="createcontractitem_sqd.jpg"><img style="border: 0px solid ; width: 547px; height: 982px;" alt="" src="createcontractitem_sqd.jpg"></a><br>
+                  <br>
+<a href="createcontractdeliverable_sqd.jpg"><span style="text-decoration: underline;"></span></a><br>
+                  <span style="font-weight: bold;">Create Contract Deliverable Sequence Diagram</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <p style="text-align: center; font-weight: bold;"><br>
+</p>
+            <p style="text-align: center; font-weight: bold;">Table of
+Interface Descriptions</p>
+
+<!-- Table definition -->
+            <table style="text-align: left; margin-left: auto; margin-right: auto;" id="custom">
+              <tbody>
+                <tr>
+                  <th>Type/Interface</th>
+                  <th>Description</th>
+                </tr>
+                <tr>
+                  <td>Provide Functional Conference and Facility Space/<br><span style="font-weight: bold;">
+displayContract</span><br>
+</td>
+                  <td>
+
+                  <p class="MsoNormal">
+
+                  </p>
+                  <p class="MsoNormal">The user uses the Contract Manager system to locate and
+display a Contract by searching for the Contract Vendor Name or the Contract
+Number.<o:p></o:p></p>
+
+
+
+
+</td>
+                </tr>
+                <tr>
+                  <td>Provide Functional Conference and Facility Space/<br><span style="font-weight: bold;">
+
+createContractItem</span></td>
+                  <td>The
+Contract Item Creator uses the system to create a ContractItem,
+resulting in a new ContractItemID. Items of ContractType 'Deliverable'
+may be deleted and recreated, as long as they do not have a
+CompletedDate value. Items of ContractType 'Term &amp; Condition' may
+be deleted and recreated at any time.<br>
+</td>
+                </tr>
+                <tr>
+                  <td style="vertical-align: top;">Provide Functional Conference and Facility Space/<br>
+                  <span style="font-weight: bold;">storeContractItemType</span></td>
+                  <td style="vertical-align: top;">The Contract Item Creator uses the system to store the ContractItemType of either Term &amp; Condition or Deliverable.<br>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="vertical-align: top;">Provide Functional Conference and Facility Space/<br>
+                  <span style="font-weight: bold;">storeContractTermConditionInfo</span></td>
+                  <td style="vertical-align: top;">If the ContractItem
+is of ContractItemType 'Term &amp; Condition', the Contract Item
+Creator uses the system to store the following
+ContractTermConditionInfo: Order, Section, TermAndOrCondition,
+SectionType, Type, Description, Comments.<br>
+                  </td>
+                </tr>
+<tr>
+                  <td>Provide Functional Conference and Facility Space/<br><span style="font-weight: bold;">
+storeContractDeliverableInfo</span><br>
+</td>
+                  <td>
+
+                  <p class="MsoNormal">
+
+</p>
+                  <p class="MsoNormal">
+
+</p>
+                  <p class="MsoNormal">If the ContractItem is of
+ContractItemType 'Deliverable', the Contract Item Creator uses the
+system to store the following ContractDeliverableInfo: ContractID,
+SectionTitle (eg. Rights &amp; Obligations. An editable value list),
+SectionTitleOrder, Section (eg: 1, 1.2, 1a, 2b), OrderNumber (to order
+the deliverables visually), DeliverableType (Approval, Notice, Report,
+Remedy, Agree, Renegotiate, etc from an editable value list), From
+(company from which the deliverable comes), To (ACCD), Title (a shorter
+version of the Description with character limitation 128), Description,
+Comments. From and To function interchangeably. Ex: Levy to ACCD or
+vice versa. Note: Have a screen where deliverable Title and Description
+are searchable. <br>
+<o:p></o:p></p>
+
+
+
+
+
+
+
+
+</td>
+                </tr>
+                <tr>
+                  <td>Provide Functional Conference and Facility Space/<br><span style="font-weight: bold;">
+
+storeFrequencyInfo</span></td>
+                  <td>
+
+                  <p class="MsoNormal">
+
+</p><p class="MsoNormal">
+                  </p>
+
+
+
+The Contract Item Creator uses the system to store the
+ContractDeliverableFrequencyInfo: StartDate, EndDate, Frequency (once,
+bi-weekly, monthly, quarterly, biannually, annually),
+ApprovingReviewingEntity (an editable value list),
+ApprovingReviewingEntityEmailAddress (a lookup based upon the chosen
+entity). The ContractDeliverableFrequencyInfo is not required. A
+ContractDeliverable may have a single DueDate, multiple DueDates or no
+DueDate at all. The Contract Item Creator has the ability to change
+from one DueDate to multiple DueDates or vice versa, so long as
+ContractDeliverableDate VerificationStatus is Pending. <br>
+</td>
+                </tr><tr>
+                  <td style="vertical-align: top;">Provide Functional Conference and Facility Space/<br><span style="font-weight: bold;">
+createDeliverableFrequencyDate</span></td>
+                  <td style="vertical-align: top;">
+
+                  <p class="MsoNormal">
+
+</p>
+                  <p class="MsoNormal">
+
+</p>
+                  <p class="MsoNormal">
+
+</p>When all ContractDeliverableFrequencyInfo has been entered, the
+Contract Item Creator clicks a button to generate one or more
+ContractDeliverableDates. Each Contract DeliverableDate (DateDue) also
+has an associated DateReceived, VerificationStatus (set by default to a
+value of 'Pending'), an ApprovingReviewingEntityName. The next
+chronological DateDue displays as the value of the NextDueDate in the
+ContractDeliverableInfo. The ApprovingReviewingEntity is the employee
+responsible for indicating that the ContractItem has been received. The
+ApprovingReviewingEntityEmail is used by the system to send an email
+notification. The Contract Item Creator has the ability to add an
+individual ContractDeliverableDate after a series of dates has been
+created. The Contract Item Creator may delete an individual
+ContractDeliverableDate, so long as the VerificationStatus is
+'Pending'. The Contract Item Creator has the ability to click a button
+to delete all ContractDeliverableDates at once, but only those that
+have a VerificationStatus of 'Pending'. The Contract Item Creator has
+the ability to regenerate ContractDeliverableDates and these are added
+to the existing list of ContractDeliverableDates, if one already
+exists. The system does not automatically remove
+ContractDeliverableDates outside of the range of the newly created
+ContractDeliverableDates, neither does it remove duplicates. In such a
+case, the Contract Deliverable Create will manually/individually remove
+unneeded ContractDeliverableDates.<p class="MsoNormal"><o:p></o:p></p>
+
+
+
+                  </td>
+                </tr>
+
+                
+                
+                
+                
+                
+                
+                
+                
+                
+              </tbody>
+            </table>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+</body></html>

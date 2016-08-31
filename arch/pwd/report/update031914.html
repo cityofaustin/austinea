@@ -1,0 +1,192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<title>Public Works "Submit Pay Application Contract Payment</title>
+<link rel="StyleSheet" href="http://austinea.org/style/email.css" type="text/css">
+</head>
+<body>
+
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="600" align="center"><tr><td>
+
+<!-- Online reference -->
+<p><class="lbl">Note: This report is also <a href="http://austinea.org/arch/pwd/report/update031914.html" style="font-size: 7pt;">available online</a> by following link.</p>
+
+<div>
+<p>Hi All,</p> 
+</div>
+
+<p>Attached is the information for the "Submit Pay Application Contract Payment" use case that was reviewed last week with the Public Works Team. Please take a moment to check my work and let me know if there are any changes I can make to improve this, or if this requirement is as discussed! 
+<p>
+
+
+<!-- Signature-->
+<table cellpadding="0" cellspacing="0" border="0" width="350" style="border-collapse: collapse;"><tr><td>
+<p>Cheers!</p>
+
+<table cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;" align="right">
+<tr>
+<td>
+<img src="http://austinea.org/image/austinLogo.jpg" border="0" width="100" height="100" alt="Austin Logo" />
+</td>
+</tr>
+</table>
+<p><img src="http://coawss3a.coacd.org/sites/CTM/EA/Shared Documents/Images/ABSIG.JPG" border="0" width="143" height="83" alt="sign" /> </p>
+
+<p><b>Aaron Brown</b> 
+<span style="color: red; font-weight: bold;">|</span> 
+<b>City of Austin</b>
+<a href="http://www.linkedin.com/in/austnaaron"><img src="http://journeycolorado.com/images/linkedin.jpg" border="0" alt="Linkin Logo" /> </a> <br />
+Senior IT Enterprise Architect<br />
+Direct: (512) 974-2960 </p>
+Email: Aaron.Brown2@austintexas.gov </p>
+</td></tr></table>
+
+
+<!-- Use case information below -->
+
+<hr>
+
+<!--  Requirements Model -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="right">
+<tr>
+<td align="center">
+<span class="lbl">Note: Select to download</span><br />
+<a href="http://austinea.org/arch/pwd/report/SubmitPayApplicationContractPaymentUseCase.jpg"><img src="http://austinea.org/arch/pwd/report/SubmitPayApplicationContractPaymentUseCase.jpg" border="0" width="200" alt="" /></a><br />
+<span style="font-weight: bold;">Submit Pay Application Contract Payment<br />Use Case</span>
+</td></tr></table>
+
+
+<p><b>Use Case Scope</b></p>
+<p>The Contractor submits a draft Pay Application for requesting payment. The Inspector reviews the Pay application and compares it to the Quantity Book. Materials on Hand, Statement of Deductions, Contract Time Statement, and Recapitulation Sheet are supporting documents required with the Pay Application. 
+</p> <p>
+If there are discrepancies, the Draft Pay Application is returned to the Contractor for modification/correction and resubmission. When the Inspector approves the Pay Application, the Inspection Supervisor reviews and compares it to the Quantity Book and approves it. The Project Manager reviews (such as Progress Schedule or other pertentant items) and approves. Contract Management handles the Subcontractor Compliance Report (SubK) for compliance metrics (Small Minority Business Resources SMBR). The Pay Application is reviewed by Accounts Payable for submittal to Controller for payment.</p>
+
+
+<!-- Image - Logical Data Model -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="http://austinea.org/arch/pwd/report/PWDLogicalDataModel2.jpg"><img src="http://austinea.org/arch/pwd/report/PWDLogicalDataModel2.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">CIP Logical Data Model</p>
+</td></tr></table> 
+
+<hr>
+
+<!-- Image - File For Motion Sequence Diagram -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="http://austinea.org/arch/pwd/report/SubmitPayApplicationContractPaymentSequenceDiagram02X.jpg"><img src="http://austinea.org/arch/pwd/report/SubmitPayApplicationContractPaymentSequenceDiagram02X.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Submit Pay Application Contract Payment Sequence Diagram</p>
+</td></tr></table> 
+
+
+
+<p style="font-weight: bold; text-align: center;">Submit Pay Application Contract Payment Interface Descriptions</p>
+<!-- Table definition -->
+<table align="center" id="custom">
+<tr><th width="195">Type/Interface</th><th>Description</th></tr>
+<tr>
+<td>Inspect Construction/ <br /> submitPayApplication</td> <td>The Contractor logs into the system, and chooses the project for the pay application. They must do this at least 10 calendar days before the prompt payment due date. 
+The contractor then uploads listed attachments (photos, schedule, Verification of 'as built' ,Subcontractor Expenditure report[sub k] ) (These are contractually required and submitted with every pay application.)
+The System automatically fills in names, contractor, CIP ID Number, CT Number, Date, estimate number. The contractor then completes a draft pay application 'body document' comprising of:
+bid item no., Description, Unit, Contract Quantity, Change order delta (increase/decrease), adjusted contract quantity, unit price, Adjusted contract amount,  Units this period, Amount this period, Units complete, Amount to date, Percent complete.The system also generates a "cover page" comprised of: Project Name, department, FDU(s), Contractor name, Contractor address, TK No. (Task order number),CIP ID number (eCAPRIS no.), CT Number (contract number.... from AIMS?), Date, Estimate number, Original Contract Price, Change order total, Adjusted contract price, Estimate Period (from/to), Total due for work done, $ Allowed for materials on hand (from Materials on hand form), Less 5% retained (can be 10%, contractually determined), Less cumulative deductions, amount due to date, Less previous payments, Amount due this estimate, Signatures of: [Prepared by, Construction inspector, Certification, Contractor, inspection supervisor, project manager], % earned to date, % time to date. This is segmented by each Funding code (FDU) associated with the project. The Contractor also reviews :
+Recapitulation Sheet comprising of: Project Name, Department, FDU, Contractor name, Contractor Address, Estimate number, CIP ID number, Date, Construction Inspector, and a detail section with Each FDU number along top, each row listing:total encumbrances available, total due for work done, amount allowed for materials on hand, Less % retained, Less Cumulative deductions. Amount due to date. Less previous payments. Amount due this estimate. Each row and column contain sub totals. The system automatically populates as much "Cover sheet" info as possible (all contractor and contract information is auto populated on all of the following forms). Included also is the 
+'material on hand' document comprising of: Project name, Department, FDU, Contractor name, Contractor address, CT number, CIP ID Number, Estimate number, Date, FDU Invoice no. with an embedded table with a Payout Number for each item listed by row, each column is (A)$ value materials stored for this period, (B)$ value of materials stored at the beginning of the period, (C)$ value of materials installed this period, (A+B-C)total $ value of material now stored. The bottom has a total. and disclaimer. and signatures. Additionally there is a Statement of deduction comprising of:Project name, CT number, Date, Estimate number, Reason for deduction and amount, Total Deductions to date, Statement of time, Statement period (from / to), Project name, FDU(s), Contractor name, Contractor address, Estimate number,Date, accumulative days charged, daily inspection hours, reason for credit day, Number of days
+balance to be forwarded, Footer , no. contract working days (could be Calendar days as well, this is a specification - applies to all values on all forms...this is contractually specified), substantial/final,  date / time charges started, No. days overrun, Liquidated damages this period, No. days used. , date work substantially complete liquidated damages per day, accumulative liquidated damages, signature: (prepared by, contractor, inspector)
+The System summaries all charges by FDU. The contractor submits the Pay Application for consideration. 
+NOTE: Pay Application is the Master packet, included as a Composite of the all items listed above. Some items are only submitted as part of the final Payment Application. <a href="http://austinea.org/arch/pwd/report/PWDLogicalDataModel3.jpg">See Logical Data Model for items described above</a>
+</td> </tr>
+<tr>
+<td>Inspector/ <br /> reviewPayApplication</td> <td>The Inspector accesses the system and compares the project Quantity book to the body of the Pay application being submitted and verifies the information. The Inspector ensures required attachments are present. Reviews the 'Material on Hand' and Time Statements and signs off on their accuracy. They check the 'statement of deductions', confirms all head information is correct, and approves or rejects as appropriate. </td> </tr>
+<tr>
+<td>Inspect Construction/<br /> returnToContractorWithComments</td> <td>The inspector discovers issues with the Pay application or one of its elements. The System prompts the inspector for detailed description of the issues. The system marks the date, time, inspector and comments, and formats an Email notification back to the Contractor with the provided comments.  </td> </tr>
+
+<tr>
+<td>Inspector/<br /> approvePayApplication</td> <td>The Project Manager, Inspector, or Inspector Supervisor use the System to record the date time of the approval, and indicates the Pay Application is ready for the next level of review. </td> </tr>
+
+<tr>
+<td>Inspection Supervisor/ <br /> reviewPayApplication</td> <td>The System sends Email to the Inspection Supervisor indicating the Inspector has approved the submission of the Pay Application by the Contractor, and requests the Inspection supervisor review. The Inspection Supervisor evaluates the Pay application, and determines if the Pay Application can be forwarded to the Project Manager.</td> </tr>
+
+<tr>
+<td>Inspect Construction/<br /> returnPayApplicationToInspector</td> <td>The Supervisor discovers an issue with the Pay application or one of it's elements. The System prompts the Supervisor for detailed description of the issues. The System marks the date, time, Supervisor and comments, and formats an Email notification back to the Inspector with the provided comments. </td> </tr>
+
+
+<tr>
+<td>Project Manager/ <br /> reviewPayApplication</td> <td>The Project Manager uses their check list to verify various elements of the Pay Application. The Project Manager checks eCapris and the project files for claims against the City or the Contractor. Additionally the CT Number is checked to confirm its accuracy. The monthly sub contractor report is verified, ensuring the listed firms are listed in the approved compliance plan, and checks for Are-firms-listed-working-on appropriate-scopes for this Pay Application, verified. If either of these need correction a request is sent to the Contractor to provide a request for change of compliance plan.They ensure the vendor name and address are the same as within AIMS. Ensure signatures are original or acceptable format. They Verify funding sources on the pay app with distribution amount shown per line item where there are multiple funding sources (recapitulation sheet vs AIMS/eCapris.) Ensure pay app shows both prime contractor as well as endorsee (if applicable). For ROCIP (Rolling Owner Controlled Insurance Program) ensure ROCIP payment form is attached. Ensure funding for all change orders has been encumbered.If this is final payment, the Project Manager checks MBE/WBE (Minority Business/Women owned Business) closeout form is signed by contractor and SMBR (Small and minority Business Resources) department (and attached).Check General Section 700 items: consent of surety (Bond number,amount, name of Surety, Surety Address) (with power of attorney), certificate of insurance (policy Dates, insurance company, effective dates, amount covered) through warranty period , affidavit of all bills paid. "Nonuse of Asbestos after contract" document. Operational Manuals. As Builts (record documents, Contractor, foreman, Start date and End date). Documentation of Notice to Claimants. If there are Liquidated Damages (LD - reimbursement of additional costs due to over schedule), they are deducted from the "statement of deductions" sheet of the pay application. Note: All LD credits are allocated among the FDU's as appropriate. In this case, the System sends email to the Project manager reminding them to send a certified letter to the contractor and Surety company. Construction phase consultant performance evaluation form is filled out and provided.Last step is to send Project Management Division Manager an email notifying them of final payment approval.
+</td> </tr>
+<tr>
+
+<td>eCAPRIS/ <br /> checkForClaims</td> <td>The Project Manager examines the contract, and determines if there is a formal legal Lien against the project. The Claim will provide Claimant, Claim date, Status (open or closed), description, and Amount. </td> </tr>
+
+<tr>
+<td>Contract Management/<br /> recordClaim</td> <td>The Contract Manager records the Claim on eCapris for reference after evaluating it and determining it's applicable to this project.</td> </tr>
+
+<tr>
+<td>Contractor/ <br /> checkContractClaim</td> <td>The Contractor receives an email from the Project Manager indicating the Claim on the contract, specifying Amount to be withheld from the Pay Application, Claim Date, Claimant.</td> </tr>
+
+
+<tr>
+<td>Inspect Construction/ <br /> recordDeductionUnwarranted</td> <td>The Project Manager indicates the deduction related to the claim is unwarranted, provides the reasoning for this decision, and the System records this information.</td> </tr>
+
+
+
+<tr>
+<td>Project Manager/ <br /> recordSuretyConsent</td> <td>The Contractor provides the Project manager with consent of Surety Form.</td> </tr>
+
+
+
+<tr>
+<td>Inspect Construction/ <br />recordProofOfSurety</td> <td>The Project Manager is prompted to scan the Consent of Surety form (Surety Company, Contractor, bonding amount, bond number), and records the document with the project id, and project name, and date and time. The System emails the members of the Inspection Staff (inspector, inspection supervisor, and field office admin) making them aware of the consent.</td> </tr>
+
+
+
+<tr>
+<td>Project Manager/ <br /> recordProofOfReleaseOfLienAndProofOfPayment</td> <td>The Contractor sends the Project Manager the Proof of Release of Lien, and the Proof of Payment associated with a specific claim. They indicate project name and number as part of this communication.</td> </tr>
+
+
+
+<tr>
+<td>Inspect Construction/ <br /> recordProofOfPaymentToClaimantAndReleaseOfLien</td> <td>The project manager receives the Proof of Release of Lien, and the Proof of Payment from the contractor. The System prompts them to scan the documents and attaches the documents to the project id and the project name indicated by the contractor. The System records the Date and time, and Amount. The System emails the members of the Inspection Staff (inspector, inspection supervisor, and field office admin) making them aware of the situation.</td> </tr>
+
+
+
+<tr>
+<td>Project Manager/ <br /> requestJointCheckForClaimResolution</td> <td>The contractor requests a Joint Check from the Project Manager, providing a letter of explanation indicating why this is the only option available to them. </td> </tr>
+
+
+
+<tr>
+<td>Inspect Construction/ <br /> processRequestForJointCheck</td> <td>The project manager receives request from contractor in writing for a joint check, and prepares a memo requesting a joint check from Accounts Payable. The Project Manager enters the request in association with a Project ID and Project Name. The System prompts for the Joint Check Request to be scanned, and emails notification to the (Accounts Payable, Legal, Capital Project Delivery, Business Process Systems, Contract Management) for further vetting. Once the Joint Check is drafted, an Email is sent to the contractor. Once it is executed, a copy is scanned into the system and attached to the appropriate project. </td> </tr>
+
+
+
+<tr>
+<td>Inspect Construction/ <br /> returnPayApplicationToContractorWithInspectionNotification</td> <td>The Contractor is sent an email indicating the issues associated with processing their Pay Application.</td> </tr>
+
+
+<tr>
+<td>Inspect Construction/ <br /> notifyContractManagementOfPayApplicationApproval</td> <td>The Pay Application has been approved by Project Management. An email is sent to Contract Management to indicate the Pay Application is ready to be sent to Accounts Payable.</td> </tr>
+
+
+<tr>
+
+</table>
+
+
+
+<!-- Table definition
+<table align="center" id="custom">
+<tr><th>Number</th><th>Category</th><th>Description</th><th>Criticality</th></tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table> -->
+
+</td></tr></table> 
+
+</td></tr></table>
+</td></tr></table></body></html>

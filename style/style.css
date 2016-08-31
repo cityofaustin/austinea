@@ -1,0 +1,32 @@
+h1 { color: black; font-family: Verdana; font-size: 14pt; font-weight: bold; }
+h2 { color: black; font-family: Verdana; font-size: 9pt; font-weight: bold; }
+h3 { color: black; font-family: Verdana; font-size: 8pt; font-weight: bold; }
+p { color: black; font-family: Verdana; font-size: 9pt; font-weight: normal; }
+td { color: black; font-family: Verdana; font-size: 9pt; font-weight: normal; }
+li { color: black; font-family: Verdana; font-size: 9pt; font-weight: normal; line-height: 12pt; }
+#custom { font-family: Verdana; border-collapse: collapse; }
+#custom td, #custom th { border: 1px solid #98bf21; padding: 5px; font-size: 9pt; }
+#custom th { font-size: 9pt; text-align: left; padding: 3px; background-color: #A7C942; color: #ffffff; }
+#custom tr.alt td { color:#000000; background-color:#EAF2D3; }
+#caption { font-family: Verdana; border-collapse: collapse; width: 185px; margin: 7px; }
+#caption td, #caption th { border: 2px solid maroon; padding: 5px; font-size: 11pt; font-weight: bold; text-align: center; }
+#caption th { font-size: 8pt; text-align:left; padding:3px; background-color:#A7C942; color:#ffffff; }
+#caption tr.alt td { color:maroon; background-color:#EAF2D3; }
+#title { font-family: Verdana; border-collapse:collapse; width: 705px; margin: 0px; }
+#title td { border: 3px solid; padding: 4px;  }
+.image { background: url('http://journeycolorado.com/whitepapers/Organization/Austin.png') no-repeat; } 
+.whitetitle { color: white; font-family: Verdana; font-size: 14pt; font-weight: bold; text-align: left; }
+.table2 { background-color: #CBECDE; }
+.caption { color: maroon; font-family: Verdana; font-size: 10pt; font-weight: bold; text-align: center; }
+.center { text-align: center; }
+.underline { text-decoration: underline; }
+.indent { text-indent: .25in; }
+.indent2 { text-indent: .50in; }
+.smallcaps { font-variant: small-caps; }
+.red { color: red; }
+.white { color: white; }
+.smallfont { font-size: 7pt; color: gray; }
+.bold { font-weight: bold; }
+.textBlue { color: blue; }
+.textOrange { color: orange; }
+

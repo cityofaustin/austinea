@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<title>Convention Center "Create Work Order Assignment</title>
+<link rel="StyleSheet" href="http://austinea.org/style/email.css" type="text/css">
+</head>
+<body>
+
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="600" align="center"><tr><td>
+
+<!-- Online reference -->
+<p><class="lbl">Note: This report is also <a href="http://austinea.org/arch/acc/report/update022614.html" style="font-size: 7pt;">available online</a> by following link.</p>
+
+<div>
+<p>Hi All,</p> 
+</div>
+
+<p>Attached is the information for the "Create Work Order Assignment" use case that was reviewed last week with the Convention Center Team. Please take a moment to check my work and let me know if there are any changes I can make to improve this, or if this requirement is as discussed! 
+<p>
+
+
+<!-- Signature-->
+<table cellpadding="0" cellspacing="0" border="0" width="350" style="border-collapse: collapse;"><tr><td>
+<p>Cheers!</p>
+
+<table cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;" align="right">
+<tr>
+<td>
+<img src="http://austinea.org/image/austinLogo.jpg" border="0" width="100" height="100" alt="Austin Logo" />
+</td>
+</tr>
+</table>
+<p><img src="http://coawss3a.coacd.org/sites/CTM/EA/Shared Documents/Images/ABSIG.JPG" border="0" width="143" height="83" alt="sign" /> </p>
+
+<p><b>Aaron Brown</b> 
+<span style="color: red; font-weight: bold;">|</span> 
+<b>City of Austin</b>
+<a href="http://www.linkedin.com/in/austnaaron"><img src="http://journeycolorado.com/images/linkedin.jpg" border="0" alt="Linkin Logo" /> </a> <br />
+Senior IT Enterprise Architect<br />
+Direct: (512) 974-2960 </p>
+Email: Aaron.Brown2@austintexas.gov </p>
+</td></tr></table>
+
+
+<!-- Use case information below -->
+
+<hr>
+
+<!-- Muni Court Requirements Model -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="right">
+<tr>
+<td align="center">
+<span class="lbl">Note: Select to download</span><br />
+<a href="http://austinea.org/arch/acc/report/createWorkOrderAssignmentUseCase.jpg"><img src="http://austinea.org/arch/acc/report/createWorkOrderAssignmentUseCase.jpg" border="0" width="200" alt="" /></a><br />
+<span style="font-weight: bold;">Create Work Order Assignment<br />Use Case</span>
+</td></tr></table>
+
+
+<p><b>Use Case Scope</b></p>
+<p>The Maintenance Supervisor reviews the Work Order priorities, schedules, and location of where the work will be accomplished, and uses the System to determine space availability. The System reserves projected space needs in the Event Booking System. Based upon the work to be accomplished, the Maintenance Supervisor fills in the information that might be missing (equipment numbers, etc), reviews Maintenance Plans, Codes, City Requirements, determines the skill/trade level, estimates the amount of man hours it will take to complete the work and employs a Service Contractor to assist if necessary. If a Service Contractor is engaged,  there is collaboration with the Contract Manager, to determine if equipment will be needed (lifts, ladders), to determine parts & materials needed, to use the system to check parts available and to order items if needed, to discuss elevated needs with the Maintenance Manager if needed, and to review sustainability information with the Sustainability Coordinator. If the Work Order has been created with suggested Work Order Assignments (Preventative Maintenance Items automatically created) and with potential Service Contractors,  the Maintenance Supervisor reviews the suggestions and modifies them as needed. When selecting Assignments, the System limits the available employees based upon their trade skill set and the trade skill set required for the Work Order. Once all information has been approved, the assignments are made and the Work Order is routed to the appropriate Maintenance Worker. </p>
+
+<!-- Image - File For Motion Sequence Diagram -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="http://austinea.org/arch/acc/report/createWorkOrderAssignmentSequenceDiagram01.jpg"><img src="http://austinea.org/arch/acc/report/createWorkOrderAssignmentSequenceDiagram01.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Create Work Order Assignment Sequence Diagram</p>
+</td></tr></table> 
+
+
+
+<p style="font-weight: bold; text-align: center;">Create Work Order Assignment Interface Descriptions</p>
+<!-- Table definition -->
+<table align="center" id="custom">
+<tr><th width="195">Type/Interface</th><th>Description</th></tr>
+<tr>
+<td>Provide Functional Conference and Facility Space/ <br /> selectUnassignedWorkOrder</td> <td>The Maintenance Supervisor uses the System to review the Work Order for accuracy. They review Location, Equipment numbers, Description of work. They decide the skills associated with the work to be done. They determine the estimate of Man hours for the time to complete the task. They determine the parts and equipment needed for the Work Order provisioning. Additionally they determine the priority for the task (which has scheduling implications.)</td> </tr>
+<tr>
+<td>Provide Functional Conference and Facility Space/ <br /> determineAffectedAreas</td> <td>The System assesses the Work Order to determine availability of impacted space (ie. Air Handler systems may indicate area(s) served and/or location availability) and provides a calendar of usage opportunities.</td> </tr>
+<tr>
+<td>Provide Functional Conference and Facility Space/<br /> selectAvailableDateRange</td> <td>The Maintenance Supervisor reviews the available work dates and schedules availability for work to be completed.</td> </tr>
+
+<tr>
+<td>Event Booking/<br /> reserveLocation</td> <td>The System reserves the selected item space and indicates associated with a Work Order. Additionally, it indicates if a third party has been contracted for work at that time. </td> </tr>
+
+<tr>
+<td>Provide Functional Conference and Facility Space/ <br /> reviewAndUpdateWorkOrder</td> <td>The Maintenance Supervisor uses the System to evaluate the estimated completion date, and modifies it as appropriate. They also evaluate the Correct Personnel, Availability of Personnel, the proper equipment, equipment warranty, Assess safety requirements, and availability of parts.</td> </tr>
+
+<tr>
+<td>Contract Manager/<br /> determineContractStatus</td> <td>The Contract Manager accesses the Contract Management System to determine Contract Status, type of work that contract allows, determining contracted funding limits / balance. They review Location, Equipment numbers, Description of work. Decide the skills associated with the work to be done. Determine the estimate of Man hours for the time to complete. Determine the priority for the task (which has scheduling implications.)  </td> </tr>
+
+
+<tr>
+<td>Provide Functional Conference and Facility Space/ <br /> indicateContractStatus</td> <td>The Contract Manager uses the System to identify the contractor(s), and the estimated schedule for completion. If a DO (Direct Order) is required, a Purchase Order has to be created. The system has the ability to use a Master DO which is applied to many work orders on an as-needed basis.</td> </tr>
+<tr>
+
+<td>Provide Functional Conference and Facility Space/ <br /> determinePartsAvailability</td> <td>The Maintenance Supervisor accesses the inventory management system to determine if needed parts are available. If the parts are available, the parts are reserved for the work order. If parts are not available, a purchase request is created to purchase the necessary parts (the status of the WorkOrder is changed to "pending parts" or "on Hold"). </td> </tr>
+
+<tr>
+<td>Materials Planner/<br /> orderMaterials</td> <td>The System Notifies the Materials planner that parts are needed. The Planner opens a purchase request for the materials needed within the work order, fill out/verify the information necessary for the purchase request (part numbers, manufacturer, sustainability information, funding, vendor, quote, and date needed.) The materials planner may coordinate a vendor inspection for clarification of the specification.  </td> </tr>
+
+
+<td>Provide Functional Conference and Facility Space/ <br /> modifyReservedLocation</td> <td>The Maintenance Supervisor accesses the System and evaluates the locations and space(s) needed, and modifies the target reserved locations to align with vendor contracts, parts delivery, and appropriate Maintenance personnel schedules. etc.</td> </tr>
+<tr>
+
+</table>
+
+
+
+<!-- Table definition
+<table align="center" id="custom">
+<tr><th>Number</th><th>Category</th><th>Description</th><th>Criticality</th></tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table> -->
+
+</td></tr></table> 
+
+</td></tr></table>
+</td></tr></table></body></html>

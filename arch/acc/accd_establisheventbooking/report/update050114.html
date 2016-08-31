@@ -1,0 +1,188 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<title>Convention Center "Cancel Event"</title>
+<link rel="StyleSheet" href="http://austinea.org/style/email.css" type="text/css">
+</head>
+<body>
+
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="600" align="center"><tr><td>
+
+<!-- Online reference -->
+<p><class="lbl">Note: This report is also <a href="http://austinea.org/arch/acc/report/update050114.html" style="font-size: 7pt;">available online</a> by following link.</p>
+
+<div>
+<p>Hi All,</p> 
+</div>
+
+<p>Attached is the information for the "Cancel Event" use case that was reviewed May 1st, 2014, with the Convention Center Team. Please take a moment to check my work and let me know if there are any changes I can make to improve this, or if this requirement is as discussed! 
+<p>
+
+
+<!-- Signature-->
+<table cellpadding="0" cellspacing="0" border="0" width="350" style="border-collapse: collapse;"><tr><td>
+<p>Cheers!</p>
+
+<table cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;" align="right">
+<tr>
+<td>
+<img src="http://austinea.org/image/austinLogo.jpg" border="0" width="100" height="100" alt="Austin Logo" />
+</td>
+</tr>
+</table>
+<p><img src="http://coawss3a.coacd.org/sites/CTM/EA/Shared Documents/Images/ABSIG.JPG" border="0" width="143" height="83" alt="sign" /> </p>
+
+<p><b>Aaron Brown</b> 
+<span style="color: red; font-weight: bold;">|</span> 
+<b>City of Austin</b>
+<a href="http://www.linkedin.com/in/austnaaron"><img src="http://journeycolorado.com/images/linkedin.jpg" border="0" alt="Linkin Logo" /> </a> <br />
+Senior IT Enterprise Architect<br />
+Direct: (512) 974-2960 </p>
+Email: Aaron.Brown2@austintexas.gov </p>
+</td></tr></table>
+
+
+<!-- Use case information below -->
+
+<hr>
+
+<!-- Muni Court Requirements Model -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="right">
+<tr>
+<td align="center">
+<span class="lbl">Note: Select to download</span><br />
+<a href="http://austinea.org/arch/acc/report/cancelEventUseCase.jpg"><img src="http://austinea.org/arch/acc/report/cancelEventUseCase.jpg" border="0" width="200" alt="" /></a><br />
+<span style="font-weight: bold;">Cancel Event<br />Use Case</span>
+</td></tr></table>
+
+
+<p><b>Use Case Scope</b></p>
+<p>The Event Representative can, at any time in the booking process Cancel their event. The Sales Manager may also need to cancel an event. The Sales Manager Accesses the system and the associated customer record, to annotate the reason for the cancellation. If the EVENT is set to PROSPECT, the Sales Manager can change the status to CANCELLED. </p>
+
+<p>If it's in a TENTATIVE state, the Sales Manager schedules an Activity (trace) with the contract Administrator to release space, Cancel the event in system, and all related documents /calendar entries, etc are marked as CANCELLED. Notifications are sent internally to the all Staff (including accounting) already involved in the event planning. The Sales Manager chooses whether the system should automatically generate a "Cancellation" notice, which is sent to the Event Representative (sometimes the Sales Manager will manually construct their own personalized message.)</p> 
+
+<p>If it's in a DEFINITE state (contract executed), the Sales Manager schedules an Activity (trace) with contract Administrator to release space, Cancel the event in system, and all related documents /calendar entries, etc are marked as CANCELLED. Notifications are sent internally to the all Staff already involved in the event planning. Contract Administration will Notify Accounting whether deposits received should be returned. The Contract Administrator will ask the Sales Manager to check if a RESALE clause is in the contract and the financial implications. The Sales Manager chooses whether the system should automatically generate a "Cancellation" notice, which is sent to the Event Representative (sometimes the Sales Manager will manually construct their own personalized message.) </p>
+
+<!-- Image - File For Motion Sequence Diagram -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="http://austinea.org/arch/acc/report/cancelEventSequenceDiagram01.jpg"><img src="http://austinea.org/arch/acc/report/cancelEventSequenceDiagram01.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Cancel Event Sequence Diagram</p>
+</td></tr></table> 
+
+
+
+<p style="font-weight: bold; text-align: center;">Cancel Event Interface Descriptions</p>
+<!-- Table definition -->
+<table align="center" id="custom">
+<tr><th width="195">Type/Interface</th><th>Description</th></tr>
+<tr>
+<td>Establish Event Booking/ <br /> cancelEvent</td> <td>The Sales Manager requests that the System cancels the Event. Sales Manager provides the System with event name, dates, reason for cancellation, lost to (if applicable). 
+Possible reasons for cancellation (customizable list in the System):(Lost to another facility, Event cancelled, Event postponed due to budgetary reasons, Flights (airfare). Also the system provides a mechanism for recording to whom the event was lost: Lost to {customizable list in the System of other facilities, customizable by system users} San Antonio, Forth Worth etc.
+ </td> </tr>
+ 
+<tr>
+<td>Sales Manager/ <br /> cancelEvent</td> <td>The Event Representative notifies the Sales Manager to cancel event. Event name and date must be provided by Event Representative. Notification must be sent in writing (email) and must be from Customer instead of a third party. </td> </tr>
+
+<tr>
+<td>Establish Event Booking/<br /> requestReleaseOfSpace</td> <td>The Sales Manager requests the System notify the Contract Administrator to release the space reserved for a previously entered Event.</td> </tr>
+
+<tr>
+<td>Establish Event Booking/<br /> releaseSpace</td> <td>The Contract Administrator requests the System releases the space for the event. The Contract Administrator provides the System with the event name and dates. The System cancels the activities associated to the event.  </td> </tr>
+
+<tr>
+<td>Establish Event Booking/ <br /> scheduleActivitiesForInternalStaff</td> <td>They system generates numerous traces (activities/reminders). This is customizable/configurable and role-based. Traces (Activities/reminders) for Sales and Operations.</td> </tr>
+
+<tr>
+<td>Establish Event Booking/<br /> createCancellationNotice</td> <td>The Sales Manager requests that the System generates a cancellation confirmation notification to the Event Representative. The notification is created from a template which includes the event name, dates, and contract ID. </td> </tr>
+
+
+<tr>
+<td>Sales Manager/ <br /> reviewContractTerms</td> <td>The Contract Administrator verifies that Sales Manager has reviewed the terms of the contract relative to a deposit.</td> </tr>
+<tr>
+
+<td>Sales Manager/ <br /> discussPotentialFundReturnOwedKeptWithEventRepresentative</td> <td>The Sales Manager determines the potential return of deposited funds. Sales Manager confers with Finance. If resale occurs then trigger is required to review at date of event to return deposit. </td> </tr>
+
+<tr>
+<td>Establish Event Booking/<br /> createReminderForAccountingToReviewResale</td> <td>The Sales Managers requests the System create a reminder for the Accounts Receivable to review the resale clause for Event at date of Event. </td> </tr>
+
+<tr>
+<td>Contract Administration/ <br /> engageAccountsReceivableForFinalContractMonies</td> <td>The Sales Manager requests the Contract Administrator engage Accounts Receivable to finalize actions required: return money, bill Event Representative for money owed, or keep money.</td> </tr>
+
+
+<tr>
+<td>Establish Event Booking/ <br /> issueReturn</td> <td>The Contract Administrator uses the System to request issue of return to Event Representative. Contract ID and amount are included to process return.</td> </tr>
+
+
+
+<tr>
+<td>Establish Event Booking/ <br /> requestApprovalOfReturnBySalesDirector</td> <td>The System sends a notification to the Sales Director requesting approval of return. Request includes Contract ID and amount of return. </td> </tr>
+
+
+
+<tr>
+<td>Establish Event Booking/ <br /> approveReturn</td> <td>The Sales Director uses the System to approve the return amount for the specified Contract ID.  </td> </tr>
+
+
+
+<tr>
+<td>Accounts Receivable/ <br /> issueReturn</td> <td>The System requests that Accounts Receivable issues a return to Event Representative. The contract ID, customer, amount, and address are required to complete a return. </td> </tr>
+
+
+
+<tr>
+<td>Establish Event Booking/ <br /> recordMoniesSent</td> <td>Accounts Receivable uses the System to record amount of monies returned to the Event Representative noting Contract ID.</td> </tr>
+
+
+
+<tr>
+<td>Establish Event Booking/ <br /> requestBillForEventRepresentative</td> <td>The Contract Administrator uses the System to request a Bill for the Event Representative noting Contract ID, amount due, and reason for bill.</td> </tr>
+
+
+
+<tr>
+<td>Establish Event Booking/ <br /> requestAccountsReceivableCreateBill</td> <td>The System sends a notification to Accounts Receivable with a request to create a bill containing Contract ID and amount due.</td> </tr>
+
+
+
+<tr>
+<td>Establish Event Booking/ <br /> createBillForEventRepresentative</td> <td>Accounts Receivable uses the System to create a bill for the Event Representative using the Contract ID, amount due, and reason for bill. </td> </tr>
+
+
+<tr>
+<td>Establish Event Booking/ <br /> deliverBillToEventRepresentative</td> <td>The System sends the Event Representative a bill containing Contract ID, event name, amount due, due date, and reason for bill. The System allows the Contracts Administrator and Sales Manager to evaluate the status of the bill (unpaid, paid), collection notices, and other actions taken on bill.</td> </tr>
+
+
+<tr>
+<td>Establish Event Booking/ <br /> notifyAccountsReceivableOfMoniesRetained</td> <td>The Contract Adminstrator accesses the System and indicates the deposits for the cancelled event are retained. </td> </tr>
+
+
+<tr>
+<td>Establish Event Booking/ <br /> notifyAccountsReceivableAboutMoniesRetained</td> <td>The System sends an internal notification to Accounts Receivable team indicating monies received prior to the Cancellation of Event should be retained.</td> </tr>
+
+<tr>
+<td>Provide Functional Conference and Facility Space/ <br /> documentMoniesReceived</td> <td>The Accounts Receivable team accesses the system and annotates monies received due to Cancellation. </td> </tr>
+
+
+
+</table>
+
+
+
+<!-- Table definition
+<table align="center" id="custom">
+<tr><th>Number</th><th>Category</th><th>Description</th><th>Criticality</th></tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table> -->
+
+</td></tr></table> 
+
+</td></tr></table>
+</td></tr></table></body></html>

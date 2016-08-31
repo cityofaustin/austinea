@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<title>Convention Center "Manage Maintenance Plan</title>
+<link rel="StyleSheet" href="http://austinea.org/style/email.css" type="text/css">
+</head>
+<body>
+
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="600" align="center"><tr><td>
+
+<!-- Online reference -->
+<p><class="lbl">Note: This report is also <a href="http://austinea.org/arch/acc/report/update032614-2.html" style="font-size: 7pt;">available online</a> by following link.</p>
+
+<div>
+<p>Hi All,</p> 
+</div>
+
+<p>Attached is the information for the "Manage Maintenance Plan" use case that was reviewed last week with the Convention Center Team. Please take a moment to check my work and let me know if there are any changes I can make to improve this, or if this requirement is as discussed! 
+<p>
+
+
+<!-- Signature-->
+<table cellpadding="0" cellspacing="0" border="0" width="350" style="border-collapse: collapse;"><tr><td>
+<p>Cheers!</p>
+
+<table cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;" align="right">
+<tr>
+<td>
+<img src="http://austinea.org/image/austinLogo.jpg" border="0" width="100" height="100" alt="Austin Logo" />
+</td>
+</tr>
+</table>
+<p><img src="http://coawss3a.coacd.org/sites/CTM/EA/Shared Documents/Images/ABSIG.JPG" border="0" width="143" height="83" alt="sign" /> </p>
+
+<p><b>Aaron Brown</b> 
+<span style="color: red; font-weight: bold;">|</span> 
+<b>City of Austin</b>
+<a href="http://www.linkedin.com/in/austnaaron"><img src="http://journeycolorado.com/images/linkedin.jpg" border="0" alt="Linkin Logo" /> </a> <br />
+Senior IT Enterprise Architect<br />
+Direct: (512) 974-2960 </p>
+Email: Aaron.Brown2@austintexas.gov </p>
+</td></tr></table>
+
+
+<!-- Use case information below -->
+
+<hr>
+
+<!-- Muni Court Requirements Model -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="right">
+<tr>
+<td align="center">
+<span class="lbl">Note: Select to download</span><br />
+<a href="http://austinea.org/arch/acc/report/ManageMaintenancePlanUseCase.jpg"><img src="http://austinea.org/arch/acc/report/ManageMaintenancePlanUseCase.jpg" border="0" width="200" alt="" /></a><br />
+<span style="font-weight: bold;">Manage Maintenance Plan<br />Use Case</span>
+</td></tr></table>
+
+
+<p><b>Use Case Scope</b></p>
+<p>The Maintenance Manager uses the system to determine trends, usage and end of life information related to convention center assets. The Maintenence manager uses the system to communicate with the Facility Manager for resource needs. A new asset is entered into the system, and the Maintenance Manager specifies life cycle information (cost, replacement projection, maintenance schedule, vendor information, contract information, location, space served, warranty information, specifications, RFID, etc. ) The Maintenance Supervisor accesses work orders and updates the Maintenance Plan. The System generates a purchase request based on Maintenance plan.
+The Materials Planner uses the system to review Maintenance Plans and requested new/replacement assets and creates purchase requests as necessary. </p>
+
+<!-- Image - File For Motion Sequence Diagram -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="http://austinea.org/arch/acc/report/ManageMaintenancePlanSequenceDiagram01.jpg"><img src="http://austinea.org/arch/acc/report/ManageMaintenancePlanSequenceDiagram01.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Manage Maintenance Plan Sequence Diagram</p>
+</td></tr></table> 
+
+
+
+<p style="font-weight: bold; text-align: center;">Manage Maintenance Plan Interface Descriptions</p>
+<!-- Table definition -->
+<table align="center" id="custom">
+<tr><th width="195">Type/Interface</th><th>Description</th></tr>
+<tr>
+<td>Provide Functional Conference and Facility Space/ <br /> addOrLocateAssetToInventory</td> <td>The Materials Planner accesses the System and specifies an Asset ID to retrieve an Inventory Record, or adds a new part to the Inventory if none is found. They populate Vendor, Warranty information, Location, What it Serves, Part No, Model No. , Serial No., Asset Tag information (if one has been supplied by Accounts Payable.) Green considerations (categorize, etc) </td> </tr>
+<tr>
+<td>Provide Functional Conference and Facility Space/ <br /> notifyOfNewInventoryItem</td> <td>The System sends Email to the Maintenence Supervisor indicating a new Asset has been added to inventory by the Material Planner. The Email indicates the date, time, part no, and Location if it was created with this information. </td> </tr>
+<tr>
+<td>Provide Functional Conference and Facility Space/<br /> addScheduleRepairPartsLocationToInventoryItem</td> <td>The Maintenence Supervisor accesses the System, locates the Asset record in question, and provides the following additional information: The life expectancy of this equipment, Schedule prevent and predictive maintenence accordingly. Hours of Usage, Maintenence Elements, Parts Required, Skill Sets needed for Maintenence, Location Information, Special Tools Needed, PPE (personal protection equipment) requirements. Sustainability considerations. 
+Note: The system will automatically generate Work orders based on the schedule for preventative and predicative maintenence. Sometimes this is based on run hours used verses calendar considerations. The system should be able to communicate with centralized HVAC systems and other maintenence software to get run hours on a regular basis when possible. </td> </tr>
+
+
+</table>
+
+
+
+<!-- Table definition
+<table align="center" id="custom">
+<tr><th>Number</th><th>Category</th><th>Description</th><th>Criticality</th></tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table> -->
+
+</td></tr></table> 
+
+</td></tr></table>
+</td></tr></table></body></html>

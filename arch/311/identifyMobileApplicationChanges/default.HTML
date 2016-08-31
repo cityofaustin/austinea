@@ -1,0 +1,121 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Identify Mobile Application Changes</title>
+<link rel="Stylesheet" href="http://austinea.org/style/hover.css" type="text/css" />
+</head>
+<body bgcolor="#ddd8c2">
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="650" align="center">
+<tr><td style="padding: 0;" height="130" valign="top"><a href="http://austinea.org">
+<img src="http://austinea.org/image/iTHeader.jpg" alt="austinea.org - home..." border="0"></a></td></tr>
+<!-- Text Area -->
+<tr><td>
+
+<p style="text-align: center; font-weight: bold;">Identify Mobile Application Changes<br />Use Case Specification</p>
+<p style="text-align: center;">03/24/16
+
+<!--  IF Printable document option Included  
+<p style="text-align: center;">download <a href="http://austinea.org/arch/as/***.docx">printable version</a>
+-- >
+
+<b> Animal Services Logical Data Model </b>            
+<!-- Image -  Logical Data Model 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="http://austinea.org/arch/as/ldm.jpg"><img src="http://austinea.org/arch/as/ldm.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Animal Services Logical Data Model</p>
+</td></tr></table> -->
+
+<!-- USE CASE IMAGE -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/311/identifyMobileApplicationChanges/ucd.jpg"><img src="http://austinea.org/arch/311/identifyMobileApplicationChanges/ucd.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Identify Mobile Application Changes<br />Use Case Model</span>
+</td></tr></table>
+
+<p><b>Scope: </b>A Client Department identifies a MobileAppRequest for the 311MobileApplication. MobileAppRequests include adding/modifying/remove ServiceRequestTypes from the mobile application, enhancements, etc. After identifying the MobileAppRequest the Client Department notifies their Business Process Specialist. Alternatively, a Business Process Specialist identifies a MobileAppRequest based on their research of Client Departments, input from other groups, Feedback, etc. When the Business Process Specialist identifies a MobileAppRequest they determine if the impacted Client Department is an existing mobile application customer. If not, the Business Process Specialist coordinates a meeting with the Client Department to review the MobileAppCapabilities and determine feasibility for the MobileAppRequest to work on the mobile application. If the Client Department is an existing mobile application customer the Business Process Specialist determines feasibility for the mobile application. If a MobileAppRequest is not feasible the Business Process Specialist notifies the Client Department and the process ends. If the MobileAppRequest is feasible the Business Process Specialist notifies the Client Department and then creates a MobileAppChangeRequest.  
+
+
+
+<!-- IF INTERACTION OVERVIEW IS INCLUDED 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/as/***.jpg"><img src="http://austinea.org/as/code/***.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Interaction Overview</span>
+</td></tr></table>
+-->
+
+<!-- ACTIVITY DIAGRAM -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/311/identifyMobileApplicationChanges/ad01.jpg"><img src="http://austinea.org/arch/311/identifyMobileApplicationChanges/ad01.jpg" border="0" alt="" width="600"/></a><br />
+<span style="font-weight: bold;">Identify Mobile Application Changes<br />Activity Diagram</span>
+</td></tr></table>
+
+
+
+<br />
+
+
+<!-- SEQUENCE DIAGRAM                   
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/311/abatePropertyWithContractor/sd01.jpg"><img src="http://austinea.org/arch/311/abatePropertyWithContractor/sd01.jpg" border="0" alt="" width="600"/></a><br />
+<span style="font-weight: bold;">Identify Mobile Application Changes<br />Sequence Diagram</span>
+</td></tr></table>
+<br />
+-->
+
+<!-- INTERFACE TABLE  -->
+<table align="center" id="custom">
+<tr><th width="9%">Req#</th><th width="70%">Type/Interface - Requirement Description</th><th>Performance</th></tr>
+<tr>
+<td rowspan="2">001</td>
+<td style="font-weight: bold; background: lightgray;">Client Department/Identify Mobile App Change and Notify Business Process Specialist</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>A Client Department identifies a MobileAppRequest and notifies their assigned Business Process Specialist detailing their request.</td>
+</tr>
+<tr>
+<td rowspan="2">002</td>
+<td style="font-weight: bold; background: lightgray;">Business Process Specialist/Identify Mobile App Change and Determine Response Required</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Business Process Specialist identifies a MobileAppRequest based on research on Client Departments. Alternatively, a Client Department notifies the Business Process Specialist of a MobileAppRequest. The Business Process Specialist reviews the MobileAppRequest and determines if the Client Department for the request is new or an existing mobile app client. If an existing mobile app client, the Business Process Specialist reviews the MobileAppRequest and determines if the MobileAppRequest is feasible. If not feasible, the Business Process Specialist notifies the Client Department, the update process stops, the Client Department must amend their MobileAppRequest, and restart the process. If the MobileAppRequest is feasible the Business Process Specialist continues the update process.</td>
+</tr>
+<tr>
+<td rowspan="2">003</td>
+<td style="font-weight: bold; background: lightgray;">Business Process Specialist/Present Mobile Applicatdion Capabilities to Client Department</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Business Process Specialist updates the MobileAppPresentation to fit the Client Department and the requested MobileAppRequest. The Business Process Specialist presents the MobileAppCapabilities to the Client Department along with the MobileAppPresentation. Additionally, the Business Process Specialist reviews the MobileAppRequest with the Client Department and determines if the MobileAppRequest is feasible. If not feasible, the Business Process Specialist notifies the Client Department, the update process stops, the Client Department must amend their MobileAppRequest, and restart the process. If the MobileAppRequest is feasible the Business Process Specialist continues the update process.</td>
+</tr>
+<tr>
+<td rowspan="2">004</td>
+<td style="font-weight: bold; background: lightgray;">Business Process Specialist/Create Mobile App Change Request</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Business Process Specialist creates a new MobileAppChangeRequest based on the MobileAppRequest. The Business Process Specialist provides the following information: [need information from group]. If any information is missing the Business Process Specialist notifies the appropriate staff or Client Department to complete the MobileAppChangeRequest. The Business Process Specialist sends Notification to the Client Department their MobileAppRequest is feasible, and provide context on next steps for the process.</td>
+</tr>
+<tr>
+
+
+
+
+</table>
+
+
+<br />
+
+
+
+
+</td></tr></table>
+</td></tr></table></body></html>

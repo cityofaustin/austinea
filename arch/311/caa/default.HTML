@@ -1,0 +1,131 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Customer Relationship Management Capability Area Architecture</title>
+<link rel="Stylesheet" href="http://austinea.org/style/hover.css" type="text/css" />
+</head>
+<body bgcolor="#ddd8c2">
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="650" align="center">
+<tr><td style="padding: 0;" height="130" valign="top"><a href="http://austinea.org">
+<img src="http://austinea.org/image/iTHeader.jpg" alt="austinea.org - home..." border="0"></a></td></tr>
+<!-- Text Area -->
+<tr><td>
+
+<p style="text-align: center; font-weight: bold;">Customer Relationship Management Capability Area Architecture<br /></p>
+<p style="text-align: center;">03/22/16
+
+<!--  IF Printable document option Included  
+<p style="text-align: center;">download <a href="http://austinea.org/arch/as/***.docx">printable version</a>
+-- >
+
+<b> Animal Services Logical Data Model </b>            
+<!-- Image -  Logical Data Model 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="http://austinea.org/arch/as/ldm.jpg"><img src="http://austinea.org/arch/as/ldm.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Animal Services Logical Data Model</p>
+</td></tr></table> -->
+
+<!-- USE CASE IMAGE -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/311/caa/crmcaa.jpg"><img src="http://austinea.org/arch/311/caa/crmcaa.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Customer Relationship Management Capability Area Architecture<br /></span>
+</td></tr></table>
+
+<p><b>Scope: </b>  
+
+
+
+<!-- IF INTERACTION OVERVIEW IS INCLUDED 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/as/***.jpg"><img src="http://austinea.org/as/code/***.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Interaction Overview</span>
+</td></tr></table>
+-->
+
+
+<br />
+
+
+<!-- SEQUENCE DIAGRAM                 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/311/abatePropertyWithContractor/sd01.jpg"><img src="http://austinea.org/arch/311/abatePropertyWithContractor/sd01.jpg" border="0" alt="" width="600"/></a><br />
+<span style="font-weight: bold;">Customer Relationship Management Capability Area Architecture<br />Sequence Diagram</span>
+</td></tr></table>
+<br />
+-->  
+
+
+<!-- INTERFACE TABLE  -->
+<table align="center" id="custom">
+<tr><th width="9%">Req#</th><th width="70%">Capability Description</th><th>Performance</th></tr>
+<tr>
+<td rowspan="2">001</td>
+<td style="font-weight: bold; background: lightgray;">Provide Customer Relationship Management</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>CRM system provides customer relationship management through service request intake and business intelligence metrics. CRM users are provided a variety of tools to perform intake with different devices and gather information specific to individual service requests. Request intake is disposition to identify origin of contact and end result, while also tracking contact length. Mapping capabilities are provided to show request locations and issues by area. Business intelligence metrics are gathered for all information submitted and configured in CRM system and custom reporting is available. Notifications are configurable and are sent to recipients based on various criteria including service request type, information required, and time of day/week.The CRM system provides a development/training environment. Development/training environment provides the same functionality as production environment. System provides promotion capability across instances. The CRM system provides a workforce the ability to work remotely or mobile from their department.
+The CRM system interfaces with external systems through outbound messaging and industry standards including web services. CRM system is configurable to allow for interfaces that originate with CRM system service requests, or external system origination. CRM service requests are updateable by external systems and may be locked to prevent edits from CRM system.
+The CRM system provides customizable security permissions based on roles and access permissions. The CRM Manager creates roles, adds desired security permissions, and assigns roles to resources (users). Multiple roles may be added to a resource based on functionality required.
+The CRM system sends notifications to customizable recipients. Recipients may be defined through a service request, user profile, or group profile. Additionally, message contents are customizable by CRM manager including using variables to populate message with content from service requests, profiles, etc. Notifications are triggered by service requests individually, on set schedules, or manually by users. Notifications may contain attachments including reports, files, pictures, etc. The CRM system sends notification for system alerts, errors, or problems as needed based on triggers defined by the CRM manager.
+The CRM system sends system alerts and notifications based on criteria defined by the CRM Manager. CRM Manager defines messages and recipients (email, pop up, etc.) for system alerts triggered by errors, etc. CRM Manager writes custom messages for each alert. Types of alerts: system down, system response time, maintenance alerts, index failure, module (website, interfaces, mobile app, email), record lockup, broken link, ping timeout, geo locator, message failures, email returns/bad email addresses, system health (table space, resources, etc.), failure to backup system (including individual modules/sections), completion of system functions (index, maintenance, archival, bulk update, upload completion, any type of backend processing, etc.), license usage, stop-dated users' pending work, account usage (aging), ServiceRequestConfiguration update, etc. If required, the system updates the CRM User's (CRM Manager, Editor, etc.) WorkQueue with the alert for review. The system saves alerts for historical records. 
+Resources are managed by CRM users and CRM Managers. Users are capable of creating resources and associating resources to service requests. Additionally, resources are stored in the CRM database to develop resource history. Resources may have attributes associated to them to allow for additional differentiation. CRM Managers create resources to provide access to the CRM system (users). CRM Manager creates, modifies, and terminates resources as needed.
+The CRM system provides business intelligence metrics for all service requests submitted to the CRM system. Individual components of service requests are available for use in reports. Reports may be scheduled to run on recurring schedules and sent to external parties automatically. Reporting capability allows CRM users to run reports based on their respective security permissions. The CRM system presents dashboards to users based on their security permissions, and users customize dashboards as desired. The CRM system provides maps to display service request information and various map types are configurable including point maps, heat maps, etc. The CRM system allows users to track staff performance by measuring work completed on service requests. Individual work is tracked through activities and includes date activity created, date assigned, date completed, outcome, and text notes.
+Acknowledge CRM Change: The system tracks changes to components and tracks whether CRM Users have acknowledged the change in the system.
+Configure Report: The CRM system allows a Reports Manager to configure custom business intelligence reports through reporting software. The CRM system provides a data model of database and tools necessary to build reports using simplified configuration tools, and then schedule Reports for delivery to desired recipients.
+Manage CRM Data Retention: The system allows a manager to control information that is archived, deleted, or exported to external systems/data warehouses. 
+Manage Knowledge Base Item: CRM system provides a Knowledge Base for information relevant to CRM processes. Knowledge Base is managed by a Knowledge Base Manager who creates, updates, removes, and sets access permissions to Knowledge Base items, including files. CRM system allows information to be searched by keywords identified by Knowledge Base Manager or based on word frequency within Knowledge Base items/files. Knowledge Base items are configured with security permissions by the Knowledge Base Manager and a public share option is available for each Knowledge Base item. The system allows for: Document management, change control, version control. Link to Service Requests and Websites. Batch Exporting files. Batch Importing files. Transfer between instances. Keyword searches, manage keyword priority. Alerts for issues. Dashboard. Multiple search options. Filtering. Spelling. Reporting on knowledge base use (keyword use). CRM system provides a file repository for use in Knowledge Base. Files are uploaded by Knowledge Base manager and stored in CRM system for use by authorized users based on security permissions. CRM system provides version control for uploaded files along with an audit history for each file.
+Send Public Notification: The CRM system provides the ability to send information to the public through a dedicated marquee. Additionally, citizens can access the Knowledge Base to retrieve information identified for public consumption. Social Media feed, RSS updates.
+</td>
+</tr>
+<tr>
+<td rowspan="2">002</td>
+<td style="font-weight: bold; background: lightgray;">Manage Service Request Intake and Resolution</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>CRM users and citizens submit service requests through a variety of intake methods including mobile applications, CRM system, external interfaces, email, chat, social media, intake websites, etc. The CRM system provides mobile intake for citizens and users to submit requests for service through a mobile device. Mobile intake allows for customized service requests to account for mobile device constraints. Mobile intake service requests map to service requests in the primary CRM system, and mobile intake service requests may map to different requests. I.e. mobile intake request may map to multiple requests in CRM system, or multiple mobile intake requests map to a single request in CRM system. CRM system provides citizens and users capability to view mobile intake requests from other users, attach images, and map requests. Additionally, CRM system allows CRM manager to blacklist requests, throttle connections, blacklist submitters, and configure mobile intake requests.
+Complete Assigned Work: Department work processes are reproduced in the CRM system to allow departments to follow their traditional process in the CRM system. CRM work processes can include activities and outcomes unique to department, and branching work paths are configurable based on set criteria.
+Configure Service Request Type: The CRM Manager creates service request types for intake by CRM users. CRM Manager configures location settings, GIS layers, duplicate processing, external interfaces, flex notes, activities, resources, and outcomes. Additionally, CRM Manager can define if/then conditional processing to allow for more complex service request configuration. Messages are configurable, can be attached to activities or other triggers, and replacement variables used to replace message text with service request specific information per saved service request. CRM Manager configures access to service request either through group assignment or individual assignment.
+Create Service Request at Interfaced System: The CRM system interfaces with external systems through outbound messaging and industry standards including web services. CRM system is configurable to allow for interfaces that originate with CRM system service requests, or external system origination. CRM service requests are updateable by external systems and may be locked to prevent edits from CRM system.
+Disposition CRM User: Incoming contacts are dispositioned. A timer allows for contact length to be tracked. The CRM system automatically identifies actions completed by CRM user including Knowledge Base searches and service requests submitted. Each disposition allows the CRM User to identify the department the contact was intended for and add notes. When the call timer is stopped the disposition is completed.
+Intake Requests for Service: Service requests are also submitted individually, in bulk, and for present/future work or past work already completed. Different service request types are available for intake and are customizable by CRM Managers. Information gathered for each request changes dynamically based on question answers. Locations are submitted for some requests, configured by CRM Managers, and the CRM system performs address validation against GIS layers, determines duplicate or related service requests. Additionally, business work processes are modified based on question answers. Service requests are assigned to work groups based on their configuration and service requests are assigned to multiple work groups simultaneously per service request configuration/disposition. Resources are assignable as submitters of service requests and as staff to complete request. Functions completed at the department are available when mobile including completing activities, querying service requests, and mapping requests.
+Manage CRM Data Retention: The CRM system provides data retention capabilities to manage how long data is retained. Retention policy is set by the CRM manager including time to retain data, data that applies to retention policy. Additionally, CRM Manager develops different retention schedules for data. Retention schedules either purge records from the CRM system or archive records while retaining a set of high level meta data about the data. Fields retained in archive are defined by the CRM Manager. Service request data is exported by the CRM system for multiple purposes including reporting warehouses and interfacing with external systems.
+Publish Service Request Data to Socrata: The CRM system automatically publishes Service Request data to an Open Data Platform (e.g. Socrata) on a defined interval. Information included in Open Data publish is customized by CRM Manager per Service Request type. CSR system converts state plane X|Y coordinates to latitude|longitude values when publishing to Open Data Platform. CRM system also provides an Open Data API for developers to query Service Request data. CRM system throttles Developer requests for Open Data to prevent system performance impacts. CRM manage customizes information available through Open Data API to protect sensitive information.
+</td>
+</tr>
+<tr>
+<td rowspan="2">003</td>
+<td style="font-weight: bold; background: lightgray;">Manage GIS Configuration and Validation</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>Service request location is used by the CRM system to validate GIS jurisdictions for individual service requests. Service request jurisdiction is customizable by CRM manager for request type and unique GIS layers may be used to determine jurisdiction. Additionally, jurisdiction can be set to a subset of a GIS layer by CRM manager. Locations outside of request jurisdiction are rejected by the CRM system and customizable notifications may be written by CRM manager to provide more information on jurisdiction rejection. The CRM system provides GIS services to identify addresses within separate GIS layers. GIS layers are uploaded by the CRM manager and added to individual service requests, or interfaces with external GIS. CRM system allows CRM users to create maps of service requests based on varied criteria. The system accommodates multiple shape files (polygon, line, point), saturation mapping, etc.
+The CRM system identifies duplicate requests for service based on criteria set by the CRM Manager (location proximity, service request type, date submitted, etc.). Duplicate Service Requests are linked to the original Service Request for tracking, but do not generate additional work for users. When the original Service Request is closed all associated duplicate Service Requests are closed as well.
+Lookup GIS Information: The system provides lookup capability to identify relevant GIS information for a Location provided by a CRM User, interface, etc. 
+Manage GIS Information: The system provides management capability to a GIS Manager to upload GISLayers for use throughout the system in ServiceRequests and GISMaps.
+</td>
+</tr>
+<tr>
+
+
+
+
+
+</table>
+
+
+<br />
+
+
+
+
+</td></tr></table>
+</td></tr></table></body></html>

@@ -1,0 +1,129 @@
+<!DOCTYPE HTML>
+<html><head>
+<title>COA Municipal Court Interface Description Development</title>
+<link rel=StyleSheet href="http://austinea.org/style/email.css" type="text/css">
+</head>
+<body>
+<!--Border Background Table-->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse;"  align="center" style="background-color: #F4CA90;">
+<tr><td>
+<!--Main Body-->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" width="600" align="center" style="background-color: #ffffff;">
+<tr><td>
+
+<!-- Online reference -->
+<p style="color: gray; font-size: 7pt;">Note: This report is also <a href="http://austinea.org/arch/municourt/report/update130625.html">available online</a> by following link.</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse;"  align="center"><tr><td>
+
+<!-- Process Civil Parking Case -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;"  align="right"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view.<br>
+<a href="http://austinea.org/arch/municourt/report/processCivilParkingCase.png"><img src="http://austinea.org/arch/municourt/report/processCivilParkingCase.png" border="0" width="200"></a>
+<p style="text-align: center; font-weight: bold;">Process Civil Parking Case<br>Business Rules Model
+</td></tr></table>
+
+<p>Muni Court Team,
+
+<p>We're now moving at full steam in our locomotive and things are moving along very well. When I asked for feedback last week, it was suggested that the architecture process was taking longer than anticipated. However, look through all our past reports and observe how much we've accomplished in just 16 hours! Think about it - just two days of work and we've modeled many future capabilities with unambiguous detail. The models and interface specifications provide great understanding to the vendor on Municipal Court's specific needs. In addition, we've created a reusable framework to develop and evolve interface specifications with reuse potential throughout the process. The reuse identification will reduce your overall costs on a firm-fixed price contract by reducing vendor implementation risk and you'll end up with a better product.
+
+<!-- Past Reports -->
+<p style="font-weight: bold;">Past Reports
+<p><a href="http://austinea.org/arch/municourt/report/visionSession.htm">Vision / Mission Development</a><br>
+06/05/13 - <a href="http://austinea.org/arch/municourt/report/update130605.html">Interface Descriptions and Development</a><br>
+06/12/13 - <a href="http://austinea.org/arch/municourt/report/update130612.html">Select Legal Option</a>
+
+<p>Previously, we discussed how a Web Presence could provide the ability for a Defendant to select their legal option. Last week we pursued the legal option of &quot;Not Guilty&quot;. The following sequence diagram is the triggering process we created a couple of weeks ago to <b><i>Process Not Guilty Plea</i></b> discussed below. During our next meeting, we'll examine other Defendant Plea processes triggered by <b><i>Select Web Presence Legal Option</i></b>.
+</td></tr></table>
+
+<!-- Select Web Presence Legal Option -->
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse;"  align="center"><tr><td><br>
+<img src="http://austinea.org/arch/municourt/report/selectWebPresenceLegalOption.png" border="0" width="600">
+</td></tr></table>
+
+<p>The following sequence diagram depicts the Web interface of the Not Guilty Plea and the table below provides the interface descriptions.
+
+<!-- Process Not Guilty Plea -->
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse;"  align="center"><tr><td>
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view.<br>
+<a href="http://austinea.org/arch/municourt/report/processNotGuiltyPlea.png"><img src="http://austinea.org/arch/municourt/report/processNotGuiltyPlea.png" border="0" width="350"></a>
+<p style="text-align: center; font-weight: bold;">Process Not Guilty Plea
+</td></tr></table>
+
+<p style="font-size: 7pt;">Precondition: The Defendant identifies the selected Case File Plea of not guilty from Select Web Presence Legal Option.
+<!-- Table of Interface Descriptions -->
+<p style="text-align: center; font-weight: bold;">Table of Interface Descriptions</p>
+
+<table align="center" id="custom">
+<tr><th>Type/Interface</th><th>Description</th></tr>
+
+<tr>
+<td>Web Presence/<br>confirmPlea</td>
+<td>The Defendant confirms a Plea state of not guilty for selected Case File and the system provides a confirmation Acknowledgment of the not guilty Plea. The selected Case File is updated to include the not guilty Plea state.</td>
+</tr>
+
+<tr>
+<td>Manage Court Case/<br>setPleaState</td>
+<td>The Web Presence interfaces with the system and sets the not guilty Plea state on the Case File and returns an Acknowledgment allowing the Defendant an opportunity to change their Plea. If a Plea change is selected, the Defendant is returned to the Legal Options view.</td>
+</tr>
+
+<tr>
+<td>Web Presence/<br>selectDocketType</td>
+<td>The system provides the Defendant the option to select the Docket type (Appearance, Bench Trial or Jury Trial) with full explanation of each Docket type. When a Docket Type is selected, the system returns the Docket Schedule based on the Docket type selected.</td>
+</tr>
+
+<tr>
+<td>Manage Court Case/<br>identifyDocketSchedule</td>
+<td>Based on the Docket type selected, the system returns the date, time, and court room information regarding Docket time(s) available. The system provides the Court Staff selectable method to return available dockets from which to choose - such as next available, one or more available, all available. The Defendant selects the specific Docket based on the system offerings.</td>
+</tr>
+
+<tr>
+<td>Web Presence/<br>selectDocketSchedule</td>
+<td>The Defendant selects the desired Docket Schedule item from the schedule offerings.</td>
+</tr>
+
+<tr>
+<td>Manage Court Case/<br>setDocketSchedule</td>
+<td>Interface from Web Presence to system that establishes the selected Docket Schedule.</td>
+</tr>
+
+<tr>
+<td>Manage Court Case/<br>addToComplaintQueue</td>
+<td>The system adds the Docket Schedule Case File to the Complaint Queue.</td>
+</tr>
+
+<tr>
+<td>Web Presence/<br>acknowledgeJuryWaiver</td>
+<td>If Defendant selects bench trial, the system requires an Acknowledgement of a Jury Waiver stored in the Case File.</td>
+</tr>
+
+<tr>
+<td>Web Presence/<br>requestAdditionalRequirements</td>
+<td>When the Defendant requires special needs (i.e., interpreter, handicap access, etc.), the system provides special needs options for selection by the Defendant.</td>
+</tr>
+
+<tr>
+<td>Manage Court Case/<br>addToAdditionalRequirementsQueue</td>
+<td>Interface to store special needs request into the system Case File.</td>
+</tr>
+
+</table>
+
+<p>Please feel free to reach out with any questions or concerns.
+
+<p>Cheers!
+<!-- Austin Logo -->
+<table cellpadding=5 cellspacing=0 border=0 style="border-collapse: collapse;" align="right"><tr><td>
+<img src="http://austinea.org/image/austinLogo.jpg" border="0" width="100">
+</td></tr></table>
+
+<p><img src="http://journeycolorado.com/images/signature.jpg" border="0" width="150">
+<!-- Signature Corporate -->
+<p><b>Rob Byrd</b> <span style="color: red; font-weight: bold;">|</span> <b>City of Austin</b><br>
+Chief Enterprise Architect - Corporate<br>
+Direct: (512) 974-1615 | Mobile: (512) 431-0700
+<hr>
+
+
+</td></tr></table>
+</td></tr></table></body></html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Obtain Permits</title>
+<link rel="Stylesheet" href="http://austinea.org/style/email.css" type="text/css" />
+</head>
+<body bgcolor="silver">
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+
+<!-- EA Motto -->
+<p style="color: gray; font-size: 8pt; text-align: center; font-weight: bold;">Enterprise Architecture <i>- preparing for the future</i></p>
+
+<!-- Online reference
+<p class="lbl" style="text-align: center;">Note: This report is also <a href="http://austinea.org/arch/pdr/report/manageEngineering130821.html">available online</a> by following link.</p> -->
+
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="650" align="center"><tr><td>
+
+<p>Here's the updated use case specification from our last session. Let me know if you have any questions.</p>
+
+<!-- Signature -->
+<table cellpadding="0" cellspacing="0" border="0" width="450" style="border-collapse: collapse;"><tr><td>
+<p>Respectfully,</p>
+<table cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;" align="right"><tr><td>
+<img src="http://austinea.org/image/austinLogo.jpg" border="0" width="100" height="100" alt="Austin Logo" />
+</td></tr></table>
+<p><img src="http://journeycolorado.com/images/Signature.jpg" border="0" width="143" height="83" alt="sign" /></p>
+<p><b>Rob Byrd</b> <span style="color: red; font-weight: bold;">|</span> <b>City of Austin</b>
+<a href="http://www.linkedin.com/in/robbyrd"><img src="http://journeycolorado.com/images/linkedin.jpg" border="0" alt="LinkedIn Logo" /></a><br />
+Chief Enterprise Architect - Corporate<br />
+Direct: (512) 974-1615 | Mobile: (512) 431-0700</p>
+</td></tr></table>
+
+<hr />
+
+<p style="text-align: center; font-weight: bold;">Use Case Specification for Obtain Permits</p>
+
+<p><b>Use Case Scope:</b> Permit Applicant obtains single purpose trade permits or manages permits relevant to a Submittal Package/Project Information. The system provides Web interface application forms relevant to the permit requested, calculates required remittance and adds permit application to a Review Queue for Reviewer review and comment when required. Permit Applicants may also transfer Building Permits to prescribed contractors, cancel Trade Permits, and/or reactivate Expired Permits.</p>
+
+<!-- Obtain Permits -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select for larger view</span><br />
+<a href="http://austinea.org/arch/pdr/report/obtainPermits.jpg"><img src="http://austinea.org/arch/pdr/report/obtainPermits.jpg" border="0" width="450" alt="Obtain Permits" /></a><br />
+<span style="font-weight: bold;">Sequence Diagram Obtain Permits</span>
+</td></tr></table>
+
+
+<p style="text-align: center; font-weight: bold;">Table of Interface Descriptions</p>
+<!-- Table definition -->
+<table align="center" id="custom">
+<tr><th>Category/Interface</th><th>Description</th></tr>
+<tr>
+<td>Issue Permit/<br />issueSinglePurposePermit</td>
+<td>The Permit Applicant selects the desired trade permit (or mobile home building permit) for the system to issue. This function is limited to only the alternate flow to request a permit and designated for selected trade contractors performing routine day-to-day activities requiring permits. When a mobile home is involved, this requires issuance of a building permit to associate relevant trade permits to the project. This type of building permit can be issued as a single purpose permit.</td>
+</tr>
+<tr>
+<td>Issue Permit/<br />obtainPermit</td>
+<td>During the final review and approval of a Submittal Package, the review Notification provides a link (URL) with Project Information encoded in the link containing information that directs the Submittal Applicant to the correct location to obtain required permits. This message directs the Submittal Applicant to the proper URL where the system looks up relevant permit information.</td>
+</tr>
+<tr>
+<td>Issue Permit/<br />lookUpPermitStatus</td>
+<td>The system looks up the Project Information encoded from the obtainPermit URL and presents the Submittal Applicant with options to submit for selected permits previously identified during the Perform Regulatory Review process. The Submittal Applicant owner (owner is defined as residing one calendar year with homestead exemption) is provided options to request a permit, transfer a building permit, cancel a trade permit, or reactivate an expired permit.</td>
+</tr>
+<tr>
+<td>Issue Permit/<br />selectPermitOption</td>
+<td>The Permit Applicant selects from the permitting options available depending on the Permit Status of the project. The applicant may request a permit, transfer a building permit, cancel a trade permit, or reactivate an expired permit.</td>
+</tr>
+<tr>
+<td>Issue Permit/<br />completePermitApplication</td>
+<td>Based on the Permit Applicant selected permit request, the system provides the appropriate permit application form for the Permit Applicant to compete and submit. Permit Applicant attribute values known by the system automatically populate relevant values on the form.</td>
+</tr>
+<tr>
+<td>Issue Permit/<br />determineRemittance</td>
+<td>Based on the permit selected, the system automatically determines the Remittance required and presents the Remittance information to the Submittal Applicant with indication of selected form of payment (i.e., credit card, ACH, etc.). The Remittance amounts must be modifiable by identified city staff and not hard coded into the system.</td>
+</tr>
+<tr>
+<td>Issue Permit/<br />payRemittance</td>
+<td>Using traditional online Electronic Financial Services approved by the city, the Submittal Applicant pays the required Remittance and receives Acknowledgment of payment.</td>
+</tr>
+<tr>
+<td>Issue Permit/<br />addToReviewQueue</td>
+<td>The system provides a modifiable rules engine that places certain permit requests into a review queue for Reviewer to ensure completeness and relevance to the request. Common trade permits by established contractors may not require review.</td>
+</tr>
+<tr>
+<td>Issue Permit/<br />reviewPermitApplication</td>
+<td>The Reviewer selects the Permit Application from the Review Queue and reviews for completeness and accuracy. If approved, the Permit Applicant is provided a URL encoded link to select to acknowledge inspection responsibility and permit issuance. If declined, the Notification provides indication of the deficiencies of the Permit Application and provides a URL encoded with information to redirect the Permit Applicant to the application to correct and resubmit.</td>
+</tr>
+<tr>
+<td>Issue Permit/<br />acknowledgeInspectionResponsibility</td>
+<td>Once a permit is prepared by the system, the system indicates to the Permit Applicant responsibility for proper inspection and provides selected indication that this responsibility is accepted in the form of an Acknowledgment before a printable permit is issued by the system.</td>
+</tr>
+<tr>
+<td>Issue Permit/<br />issuePermit</td>
+<td>When the system receives the proper Acknowledgment of inspection responsibility, the system prepares the selected permit in a printable form (i.e., PDF, etc.).</td>
+</tr>
+<tr>
+<td>Permit Applicant/<br />printPermitAsRequired</td>
+<td>Once the Permit Applicant acknowledges inspection responsibility, the system provides a printable permit to display on construction site if required.</td>
+</tr>
+<tr>
+<td>Issue Permit/<br />transferBuildingPermit</td>
+<td>There are circumstances when the permit owner (Permit Applicant) may wish to transfer a building permit to a prescribed contractor. The Permit Applicant enters relevant information into the system that clearly identifies the contractor receiving the transferred building permit and stores it into the system. Once transferred, the contractor plays the role of Permit Applicant to obtain future permits relevant to the Project Information associated with the case file building permit.</td>
+</tr>
+<tr>
+<td>Issue Permit/<br />cancelTradePermit</td>
+<td>The Submittal Applicant (owner) can cancel trade permits already issued. Owner is defined as residing one calendar year with homestead exemption. If an inspection already occurred at the time of cancellation, there is no refund of Remittance; otherwise, a percentage of the Remittance is returned to Electronic Financial Service account. If a refund is issued, a new contractor must pay 100% of the required Remittance. If no refund issued, the contractor must pay 50% of the required Remittance to reissue the permit.</td>
+</tr>
+<tr>
+<td>Issue Permit/<br />determineExpiredPermits</td>
+<td>The system determines the relevant expired permit(s) associated with the Submittal Package Project Information and presents to the Permit Applicant for selection to reactivate.</td>
+</tr>
+<tr>
+<td>Issue Permit/<br />reactivateExpiredPermit</td>
+<td>The Permit Applicant uses the system to reactivate an expired permit. This requires a form to enter pertinent information (such as reason for reactivation) prior to reactivation.</td>
+</tr>
+</table>
+
+</td></tr></table>
+</td></tr></table></body></html>

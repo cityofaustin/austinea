@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<title>Animal Services &quot; Perform Veterinary Services &quot; </title>
+<link rel="StyleSheet" href="http://austinea.org/style/email.css" type="text/css">
+</head>
+<body>
+
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="600" align="center"><tr><td>
+
+<!-- Online reference -->
+<p class="lbl">Note: This report is also <a href="http://austinea.org/arch/as/report/update010815.html" style="font-size: 7pt;">available online</a> by following link.</p>
+
+<div>
+<p>Hi All,</p> 
+</div>
+
+<p>Attached is the information for the "Perform Veterinary Services" use case that was reviewed January 8th, 2015, with the Animal Services Team. Please take a moment to check my work and let me know if there are any changes I can make to improve this, or if this requirement is as discussed! </p>
+
+Additionally, I wanted to let you know the Online repository of Animal Services Use Cases is now up to date ( http://austinea.org/arch/as/report/index.html )
+<p>
+
+
+<!-- Signature-->
+<table cellpadding="0" cellspacing="0" border="0" width="350" style="border-collapse: collapse;"><tr><td>
+<p>Cheers!</p>
+
+<table cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;" align="right">
+<tr>
+<td>
+<img src="http://austinea.org/image/austinLogo.jpg" border="0" width="100" height="100" alt="Austin Logo" />
+</td>
+</tr>
+</table>
+<p><img src="http://coawss3a.coacd.org/sites/CTM/EA/Shared%20Documents/Images/ABSIG.JPG" border="0" width="143" height="83" alt="sign" /> </p>
+
+<p><b>Aaron Brown</b> 
+<span style="color: red; font-weight: bold;">|</span> 
+<b>City of Austin</b>
+<a href="http://www.linkedin.com/in/austnaaron"><img src="http://journeycolorado.com/images/linkedin.jpg" border="0" alt="Linkin Logo" /> </a> <br />
+Senior IT Enterprise Architect<br />
+Direct: (512) 974-2960 <br>
+Email: Aaron.Brown2@austintexas.gov </p> 
+</td></tr></table>
+
+
+<!-- Use case information below -->
+
+<hr>
+
+<b> Animal Shelter Logical Data Model </b>
+<!-- Image -  Logical Data Model -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="http://austinea.org/arch/as/report/animalShelterLogicalDataModel.jpg"><img src="http://austinea.org/arch/as/report/animalShelterLogicalDataModel.jpg" border="0" width="600" alt=""></a>
+<p style="text-align: center; font-weight: bold;">Animal Shelter Logical Data Model</p>
+</td></tr></table> 
+
+<!-- Muni Court Requirements Model -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="right">
+<tr>
+<td align="center">
+<span class="lbl">Note: Select to download</span><br />
+<a href="http://austinea.org/arch/as/report/performVeterinaryServicesUseCase.jpg"><img src="http://austinea.org/arch/as/report/performVeterinaryServicesUseCase.jpg" border="0" width="200" alt="" /></a><br />
+<span style="font-weight: bold;">Perform Veterinary Services<br />Use Case</span>
+</td></tr></table>
+
+
+
+<p><b>Use Case Scope</b></p>
+<p>Upon arrive the arriving animal is given a cursory examination by the technician and a decision is made about the animal. It is either in healthy condition, needs attention (but not an emergency), or needs immediate attention. 
+Healthy Animals and non-emergency animals are examined by the Intake vaccinator, who will administer required vaccines and update the animal information in the system. 
+In Emergency situations, the veterinarian is paged via the overhead paging system and the Vet performs an examination. In parallel, the Floating Technician examines the animal, searches for microchip, and updates animal information. Additionally the Floating Technician performs requested diagnostics and administers treatments as dictated by the vet. Then the Vet examines and evaluates the animal's condition for a period of time until they are well enough to be moved to general care.
+The technician then schedules for an animal to be moved... sometimes to general kennels, sometimes to rabies or worm quarantine areas. The Animal information is once again updated in the system to indicate the location of the animal.  
+If the veterinarian has a scheduled appointment for animal evaluation, they will examine the animal, and a floating technician will perform any diagnostics required. If treatments are needed, the Veterinary will schedule them in the system.</p>
+
+<!-- Image -  Sequence Diagram -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="http://austinea.org/arch/as/report/performVeterinaryServicesSequenceDiagram01.jpg"><img src="http://austinea.org/arch/as/report/performVeterinaryServicesSequenceDiagram01.jpg" border="0" width="600" alt=""></a>
+<p style="text-align: center; font-weight: bold;">Perform Veterinary Services Sequence Diagram</p>
+</td></tr></table> 
+
+
+
+<p style="font-weight: bold; text-align: center;">Perform Veterinary Services Interface Descriptions</p>
+<!-- Table definition -->
+<table align="center" id="custom">
+<tr><th width="195">Type/Interface</th><th>Description</th></tr>
+<tr>
+<td>Technician/ <br /> performInitialEvaluation</td> <td>The Technician performs an initial cursory examination of the the animal to determine the appropriate care to administer to the animal. 
+ </td> </tr>
+ 
+<tr>
+<td>Intake Vaccinator/ <br /> examineAndManagePetIntake</td> <td>The Intake vaccinator records and confirms breed, age, sex, color, body condition score, weight, tattoos, spay scars, scan for microchip, behavior, look for signs of illness or injury, temperature (if needed), tags, collar, harness.   </td> </tr>
+
+<tr>
+<td>Intake Vaccinator/ <br /> administerVaccine</td> <td>The Intake Vaccinator administers the vaccines and dewormers deemed appropriate. Based on intake type and age, additional lab work may be performed.   </td> </tr>
+
+<tr>
+<td>Provide Animal Shelter and Rescue/<br /> updateAnimalInfo</td> <td>The User uses the system to update information on the Animal info record. This includes specifying Memo's, and providing delivery information, and recording any fees incurred with animal delivery and care. Enter all medical, behavior and preventive care administered to the animal. </td> </tr>
+
+<tr>
+<td>Provide Animal Shelter and Rescue/<br /> scheduleVetExam</td> <td>The user documents the problem or reason for Vet attention, documents their findings, includes the weight and temperature. The System adds the needed evaluation to the vet work Queue. </td> </tr>
+
+
+<tr>
+<td>Provide Animal Shelter and Rescue/<br /> pageVet</td> <td>The Technician uses PA or Phone to audibly summon an available Vet currently in the building.</td> </tr>
+
+<tr>
+<td>Vet/<br /> performVetExamine</td> <td>The Vet performs a physical examination of the animal, considers its history and to determines whihc diagnostics and treatments are needed. If needed, they will perform procedure/Surgery.   </td> </tr>
+
+<tr>
+<td>Float Technician/<br /> examineAndManagePetIntake</td> <td>The Floating Technician records and confirms breed, age, sex, color, body condition score, weight, tattoos, spay scars, scan for microchip, behavior, look for signs of illness or injury, temperature (if needed), tags, collar, harness. </td> </tr>
+
+<tr>
+<td>Provide Animal Shelter and Rescue/<br /> scheduleAnimalMove</td> <td>The user accesses the system and schedules the animal to be moved. The User specifies, the date and time for the animal relocation. The User indicates whether to quarantine the animal (due to rabies, etc.) or move to public population, non-public, or isolation.</td> </tr>
+
+<tr>
+<td>Float Technician/<br /> performDiagnostics</td> <td>The Float technician performs laboratory/Diagnostic tests ordered by the veterinarian.  </td> </tr>
+
+<tr>
+<td>Float Technician/<br /> administerTreatments</td> <td>The Float technician administers treatments ordered by the veterinarian.   </td> </tr>
+
+
+<tr>
+<td>Vet/<br /> evaluateAnimalCondition</td> <td>The Vet rechecks the animal to determine status of treatments and to update the animals condition, diagnosis, etc.</td> </tr>
+
+<tr>
+<td>Provide Animal Shelter and Rescue/<br /> scheduleAnimalTreatment</td> <td>The Vet Schedules future treatments (drugs, frequency, and amounts, duration, etc). </td> </tr>
+
+
+
+
+</table>
+
+
+
+<!-- Table definition
+<table align="center" id="custom">
+<tr><th>Number</th><th>Category</th><th>Description</th><th>Criticality</th></tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table> 
+
+</td></tr></table> -->
+
+</table>
+</table></body></html>

@@ -1,0 +1,235 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Respond to Public Information Request</title>
+<link rel="Stylesheet" href="http://austinea.org/style/hover.css" type="text/css" />
+</head>
+<body bgcolor="#ddd8c2">
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="650" align="center">
+<tr><td style="padding: 0;" height="130" valign="top"><a href="http://austinea.org">
+<img src="http://austinea.org/image/iTHeader.jpg" alt="austinea.org - home..." border="0"></a></td></tr>
+<!-- Text Area -->
+<tr><td>
+
+<p style="text-align: center; font-weight: bold;">Respond to Public Information Request<br />Use Case Specification</p>
+<p style="text-align: center;">09/16/2015
+
+<p style="text-align: center;">download <a href="http://austinea.org/arch/pir/RespondtoPublicInformationRequest.docx">printable version</a>
+
+<!-- Image Title -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/pir/ucm.jpg"><img src="http://austinea.org/arch/pir/ucm.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Respond to Public Information Request<br />Use Case Model</span>
+</td></tr></table>
+
+<p><b>Scope: </b>Intake Staff review Requester Information Request for clarity and completeness. Requester may submit for information using multiple methods to include email, letter or using the city's Web portal. Submissions enter into a queue for review. Intake Staff may notify Requester for clarity of request. The Intake Staff assign PIR Responders from various departments to collect information. The PIR Responder use the system to determine fee or fee estimate for complex Information Requests. Requester submits a fee to cover expense for accepted and approved information requests. Simple information requests do not require a fee. Once adjudication of fee occurs (if required), The PIR Responders assemble the Information Request. After review of the material for completeness, the system delivers requested information to the Requester.
+
+<!-- Image Title -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/pir/io.jpg"><img src="http://austinea.org/arch/pir/io.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Interaction Overview</span>
+</td></tr></table>
+<br />
+<!-- Image Title -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/pir/sd01.jpg"><img src="http://austinea.org/arch/pir/sd01.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">1. Intake Information Request<br />Sequence Diagram</span>
+</td></tr></table>
+<br />
+<!-- Table definition -->
+<table align="center" id="custom">
+<tr><th width="9%">Req#</th><th width="70%">Type/Interface - Requirement Description</th><th>Performance</th></tr>
+<tr>
+<td rowspan="2" id="001">001</td>
+<td style="font-weight: bold; background: lightgray;">Ensure Freedom of Information/performIntake</td>
+<td rowspan="2">3.1.6 Ability to develop an online and knowledgebase that will provide requester's the ability to submit requests directly into the system.</td>
+</tr>
+<tr>
+<td>When a Requester makes an Information Request using the city's Web portal, the Requester completes the entry form to include name, address, email address and phone number. The system allows for incomplete entries (ex., organizational affiliation, business, name, address, phone, etc. are not required) for the Information Request. When using the Web portal, however, the system requires a valid email address for an anonymous submission. The system validates Requester email by sending a confirmation code to the Requester email address - the Requester must use the system to validate email ownership. The system provides ability to attach additional documents with the Information Request. The Requester uses the Web portal to make an Information Request and indicate preferred delivery method (ex., Web portal, hard copy, or other media such as compact disc). The system defaults to deliver Information Request items electronically through the Web portal or emailed with attachments depending on the requested item. The volume of some Information Request items necessitate electronic delivery such a video files. The system provides the Requester the ability to indicate pickup method such as Web portal, physical pickup, mail to postal service address, or email. For non-Web submission such as written letter, other paper submission or email, the Intake Staff uses the system to complete the entry form on behalf of the Requester. Intake Staff use the system for all Intake Request items no matter the source. Intake Staff enters all the text information into the system, scans or converts the submission (ex., email) to Portable Document Format (PDF) and uses the system to attach the PDF document to the Information Request entry. To manage Requester expectation, the system provides conformation using a system generated email or letter summarizing city contact information, anticipated process and/or any associated costs.</td>
+</tr>
+<tr>
+<td rowspan="2">002</td>
+<td style="font-weight: bold; background: lightgray;">Ensure Freedom of Information/storeInQueue</td>
+<td rowspan="2">3.2.4 Unique identifier for each request processed (identification numbers).</td>
+</tr>
+<tr>
+<td>Once complete, the Requester uses the Web portal to submit the Information Request. The system assigns a unique identifier and stores the Information Request in a queue for completeness check review by the Intake Staff.</td>
+</tr>
+<tr>
+<td rowspan="2">003</td>
+<td style="font-weight: bold; background: lightgray;">Ensure Freedom of Information/lookUpExistingRecord</td>
+<td rowspan="2">3.2.6 Search functionality to find documents, issues, and user data.</td>
+</tr>
+<tr>
+<td>The Intake Staff use the system to identify if existing Requester demographic record exists in the system using identification information provided by the Information Request. The system assists the Intake Staff in merging duplicative Requester records while maintaining the integrity of associated historic Information Request items.</td>
+</tr>
+<tr>
+<td rowspan="2">004</td>
+<td style="font-weight: bold; background: lightgray;">Ensure Freedom of Information/reviewInfoRequest</td>
+<td rowspan="2">3.3.10 Ability for internal and external requesters to communicate within the system.</td>
+</tr>
+<tr>
+<td>The Intake Staff use the system to review the Information Request for completeness and clarity. When required, the Intake Staff use the system to request additional information from the Requester. The Intake Staff enters the clarity description into the system - depending on the Requester communication preference, the system generates an email or paper letter requesting clarity from the Requester.</td>
+</tr>
+<tr>
+<td rowspan="2">005</td>
+<td style="font-weight: bold; background: lightgray;">Ensure Freedom of Information/notifyRequester</td>
+<td rowspan="2">3.3.10 Ability for internal and external requesters to communicate within the system.<br />
+3.2.8 Unlimited number of customizable rules for automated routing of requests and notifications.<br />
+3.2.3 Tracking and logging features of actions taken within the system.
+</td>
+</tr>
+<tr>
+<td>For Web portal submissions, the system generates an email containing the Information Clarity Request. Within the email, the system provides a URL link to direct the Requester to a form to add clarity description associated with the original request. The Web link expires after set period adjustable by approved city staff. At some adjustable set period, the system sends a secondary notice to the Requester prior to link expiration. The original Web submission remains intact while the added submission acts as an additional submission (addendum to the request). The system provides the Requester an option to include document attachments to the Clarity Request. There are no limits to the number of additional Clarity Requests by the system. Clarity requests may occur anytime during the PIR Responder activity. At any phase in the Information Request process, the PIR Responder may request additional clarity. The system identifies and stores with the Information Request the identity of the requesting city staff. Clarity descriptions are visible to all PIR Responders and Intake Staff assigned to the Information Request task. The Requester may respond in writing or by email to a clarity request - in this situation, the Intake Staff enters the clarity response into the system and attaches a PDF version of the original. Approved staff members use the system to observe the historic dialog between Requester, Intake Staff and other PIR Staff clarity dialog. The system provides Intake Staff and PIR Responder the ability to enter viewable notes shared among the task participants, but not viewable or released to the Requester. The Notification informs Requester of a required fee and informs Requester when Information Request is ready for pickup or delivery.</td>
+</tr>
+</table>
+<br />
+<!-- Image Title -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/pir/sd02.jpg"><img src="http://austinea.org/arch/pir/sd02.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">2. Assign Department<br />Sequence Diagram</span>
+</td></tr></table>
+<br />
+<!-- Table definition -->
+<table align="center" id="custom">
+<tr><th width="9%">Req#</th><th width="70%">Type/Interface - Requirement Description</th><th>Performance</th></tr>
+<tr>
+<td rowspan="2">006</td>
+<td style="font-weight: bold; background: lightgray;">Ensure Freedom of Information/setProfile</td>
+<td rowspan="2">3.1.4 Automated receipt and routing of requests and notifications, as well as customizable rules for those automated features.<br />
+3.3.5 Automated status-update notification to users (email).
+</td>
+</tr>
+<tr>
+<td>The PIR Responder and Intake Staff use the system to set desired notification elements such as (but not limited to) update to Requester Clarity Request, Intake Staff or PIR Responder Information Request comment, flagged interest in a particular Information Request not currently assigned, etc. All Notifications are by email. Intake Staff control some profile items.</td>
+</tr>
+<tr>
+<td rowspan="2">007</td>
+<td style="font-weight: bold; background: lightgray;">Ensure Freedom of Information/assignResponder</td>
+<td rowspan="2">3.1.4 Automated receipt and routing of requests and notifications, as well as customizable rules for those automated features.<br />
+3.3.2 Ability to align certain users with specific departments and offices.<br />
+3.3.8 Tiered administrative settings for top-level users.<br />
+3.2.3 Tracking and logging features of actions taken within the system.
+</td>
+</tr>
+<tr>
+<td>The Intake Staff use the system to assign department PIR Responder(s) to an Information Request. Only authorized Intake Staff may add or remove department PIR Responder reviews. The system tracks Information Request activities using a log or similar method to indicate Information Request activity throughout the lifecycle of the request. Information log include activities, dates/time and responsible staff details, etc. The system provides commonly used PIR Responder templates modifiable by approved city staff. The system provides summary guidance for the Intake Staff to select the appropriate template based on the type and scope of the Information Request. The Intake Staff use the system to add or remove department PIR Respondent on selected templates as needed. Once satisfied with the PIR Responder list, the Intake Staff use the system to submit PIR Responder tasks. The system log file activity tracking actions by department PIR Responder provides Intake Staff status to the parent Information Request.</td>
+</tr>
+<tr>
+<td rowspan="2">008</td>
+<td style="font-weight: bold; background: lightgray;">Ensure Freedom of Information/notifyResponder</td>
+<td rowspan="2">3.2.8 Unlimited number of customizable rules for automated routing of requests and notifications.<br />
+3.3.4 Automated notification to users when requests are assigned.<br />
+3.3.12 Workflow integration.
+</td>
+</tr>
+<tr>
+<td>The system sends an email to the PIR Responder, which contains a URL link to the assigned Information Request. The PIR Responder selects the system provided URL to load and observe the Information Request. The system provides email notification to the assigned PIR Responder for any change or clarification to a request or other selectable profile items. The system logs all timing associated with notification, response or other Intake Staff or PIR Respondent activities. The system provides continuous metering of time of submission and anticipated completion date.</td>
+</tr>
+<tr>
+<td rowspan="2">009</td>
+<td style="font-weight: bold; background: lightgray;">Ensure Freedom of Information/determineFee</td>
+<td rowspan="2">3.1.2 The ability to calculate, assess, and track fees and staff time associated with requests.</td>
+</tr>
+<tr>
+<td>Some information requests require fees to pay for supplies and labor to assemble the requested information. The PIR Responder use the system to calculate fee estimates and to manage fees associated with routine or frequent Information Requests. The system stores historical Information Request fees for use in future cost estimates. Requester must submit fees or initial fee estimate prior to Information Request activities. For some complex, labor-intensive requests, there may be additional charges prior to receiving the information requested.</td>
+</tr>
+</table>
+<br />
+<!-- Image Title -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/pir/sd03.jpg"><img src="http://austinea.org/arch/pir/sd03.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">3. Process Fee<br />Sequence Diagram</span>
+</td></tr></table>
+<br />
+<!-- Table definition -->
+<table align="center" id="custom">
+<tr><th width="9%">Req#</th><th width="70%">Type/Interface - Requirement Description</th><th>Performance</th></tr>
+<tr>
+<td rowspan="2" id="010">010</td>
+<td style="font-weight: bold; background: lightgray;">Ensure Freedom of Information/submitFee</td>
+<td rowspan="2">No requirement specified.</td>
+</tr>
+<tr>
+<td>The Requester uses the Web portal to submit required fee.</td>
+</tr>
+<tr>
+<td rowspan="2">011</td>
+<td style="font-weight: bold; background: lightgray;">Ensure Freedom of Information/processFee</td>
+<td rowspan="2">No requirement specified.</td>
+</tr>
+<tr>
+<td>Interface to the city's online financial credit card, debit card, and automated clearinghouse (ACH) service provider.</td>
+</tr>
+</table>
+<br />
+<!-- Image Title -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/pir/sd04.jpg"><img src="http://austinea.org/arch/pir/sd04.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">4. Collect and Disseminate Requested Information<br />Sequence Diagram</span>
+</td></tr></table>
+<br />
+<!-- Table definition -->
+<table align="center" id="custom">
+<tr><th width="9%">Req#</th><th width="70%">Type/Interface - Requirement Description</th><th>Performance</th></tr>
+<tr>
+<td rowspan="2" id="012">012</td>
+<td style="font-weight: bold; background: lightgray;">Ensure Freedom of Information/assembleRequest</td>
+<td rowspan="2">3.2.2 Capable of retaining large amounts of data within the system.<br />
+3.3.2 Ability to align certain users with specific departments and offices.<br />
+3.2.6 Search functionality to find documents, issues, and user data.<br />
+3.3.12 Workflow integration.
+</td>
+</tr>
+<tr>
+<td>Departments gather information based on the Information Request and clarity response in various formats. The system aids in delivering common formats viewable by the Requester without specialized applications - good examples include Portable Document Format (PDF). In some circumstances, Intake Staff and/or PIR Responder print hardcopy or copy media to CD ROM for Requester pickup. The PIR Responder uses the system to attach the information requested to the assigned information request task (by unique identifier). The system allows for links (i.e., Uniform Resource Locator - URL) for information sources visible and accessible to the Requester when released. The system ensures all Information Request tasks are associated and reported in consistent form using a unique identification relationship to include status of department assignments. PIR Requester gathered information is visible to the unique identification Information Request while maintaining visible relationship with other department PIR Requester responses. The system provides overview of all Information Request task assignment status and information collected. The system provides Intake Staff continuous status indication throughout the Information Request lifecycle. Assembly is where material is reviewed for releasability, personal identification information, and confidentiality, etc. - for sensitive material, the system tracks approving official when indicated or non-releasable material. The system provides tools to redact select information.</td>
+</tr>
+<tr>
+<td rowspan="2">013</td>
+<td style="font-weight: bold; background: lightgray;">Ensure Freedom of Information/deliverInformation</td>
+<td rowspan="2">3.3.12 Workflow integration.<br />
+4.4.1 The solution should enable data storage and retrieval from archived data in a manner which is constant with production data.
+</td>
+</tr>
+<tr>
+<td>Guided by a URL link in a Notification, the system provides the Requester a URL link to a Web portal containing additional URL(s) referencing the information requested. Similar to a Clarity Request, the Notification of delivery times out after a prescribed period. The time out period is adjustable by approved city staff. In addition, the system sends additional Notification at a set period reminding Requester of expiration date. The system provides Intake Staff the ability to override and/or reset expiration. The system allows Intake Staff to include multiple instances of Requester. The system does not expose multiple instances to other requesters. At any time, the Intake Staff may use the system to resurrect a closed Information Request reassign to one more instances of additional requesters. For hand delivery option, the Intake Staff use the system to create paper copies of the Information Request or digital copies on Requester desired media. The Intake Staff use the system to close the Information Request when warranted or the closure occurs during period end.</td>
+</tr>
+</table>
+<br />
+
+<!-- Table definition
+<table align="center" id="custom">
+<tr><th width="9%">Req#</th><th width="70%">Type/Interface - Requirement Description</th><th>Performance</th></tr>
+<tr>
+<td rowspan="2">SS02</td>
+<td style="font-weight: bold; background: lightgray;">method</td>
+<td rowspan="2">performance</td>
+</tr>
+<tr>
+<td>description</td>
+</tr>
+</table> -->
+
+
+<!-- Table definition
+<table align="center" id="custom">
+<tr><th>Number</th><th>Category</th><th>Description</th><th>Criticality</th></tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table> -->
+
+</td></tr></table>
+</td></tr></table></body></html>

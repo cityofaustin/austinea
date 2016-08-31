@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Obtain Final Inspection</title>
+<link rel="Stylesheet" href="http://austinea.org/style/email.css" type="text/css" />
+</head>
+<body bgcolor="silver">
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+
+<!-- EA Motto -->
+<p style="color: gray; font-size: 8pt; text-align: center; font-weight: bold;">Enterprise Architecture <i>- preparing for the future</i></p>
+<!-- Online reference
+<p class="lbl" style="text-align: center;">This report is also <a href="http://austinea.org/arch/pdr/report/manageEngineering130909.html">available online</a> by following link.</p> -->
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="650" align="center"><tr><td>
+
+<div>
+<p>Here's the draft use case specification from our last meeting. Please review and provide feedback. You can follow the links to previously completed use case specifications to understand the complete picture.</p>
+
+<ul>
+<li><a href="http://austinea.org/arch/pdr/report/manageEngineering130724.html">Perform Regulatory Review</a></li>
+<li><a href="http://austinea.org/arch/pdr/report/manageEngineering130821.html">Obtain Permits</a></li>
+<li>Obtain Final Inspection (included below)</li>
+</ul>
+
+<!-- Signature -->
+<table cellpadding="0" cellspacing="0" border="0" width="450" style="border-collapse: collapse;"><tr><td>
+<p>Respectfully,</p>
+<table cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;" align="right"><tr><td>
+<img src="http://austinea.org/image/austinLogo.jpg" border="0" width="100" height="100" alt="Austin Logo" />
+</td></tr></table>
+<p><img src="http://journeycolorado.com/images/Signature.jpg" border="0" width="143" height="83" alt="sign" /></p>
+<p><b>Rob Byrd</b> <span style="color: red; font-weight: bold;">|</span> <b>City of Austin</b>
+<a href="http://www.linkedin.com/in/robbyrd"><img src="http://journeycolorado.com/images/linkedin.jpg" border="0" alt="LinkedIn Logo" /></a><br />
+Chief Enterprise Architect - Corporate<br />
+Direct: (512) 974-1615 | Mobile: (512) 431-0700</p>
+</td></tr></table>
+</div>
+
+<hr/>
+
+<p style="text-align: center; font-weight: bold;">Use Case Specification for Obtain Final Inspection
+
+<!-- Image Title -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="right"><tr><td align="center">
+<span class="lbl">Select to view larger</span><br />
+<a href="http://austinea.org/arch/pdr/report/useCaseObtainFinalInspection.jpg"><img src="http://austinea.org/arch/pdr/report/useCaseObtainFinalInspection.jpg" border="0" width="400" alt="" /></a><br />
+<span style="font-weight: bold;">Use Case<br />Obtain Final Inspection</span>
+</td></tr></table>
+
+<div>
+<p><b>Use Case Scope:</b> A Permit Applicant uses a Web interface to submit an Inspection Request (and/or supporting inspection documentation). When entered properly and quality checked by the system, the system adds the Inspection Request to an Inspection Queue and provides the Permit Applicant details relevant to the request such as anticipated inspection timing, city point of contact (POC), etc. The Inspector Manager may review the Inspection Queue, override system automated selections by reassigning inspector assignments or make adjustments to the inspection information. When changes are made to the Inspection Queue relevant to the Permit Applicant, a notification is sent to the Permit Applicant informing them on changes and/or updates to the Inspection Request. The system provides the Inspector a geographic information system (GIS) map with priority ordered (overlay) indication of inspection locations. The Inspector may use the map to navigate to the inspection location or retrieve relevant information regarding the inspection. Once inspected, the system provides the Inspector the ability to record their inspection results, which automatically updates the Inspection Queue. If the Inspection Request is a building final inspection, the system provides the ability for the Permit Applicant to retrieve and print Certificate of Occupancy or Certificate of Compliance.</p>
+</div>
+
+<!-- Image Title -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to view larger</span><br />
+<a href="http://austinea.org/arch/pdr/report/obtainFinalInspection.jpg"><img src="http://austinea.org/arch/pdr/report/obtainFinalInspection.jpg" border="0" width="500" alt="" /></a><br />
+<span style="font-weight: bold;">Sequence Diagram<br />Obtain Final Inspection</span>
+</td></tr></table>
+
+<!-- Table of Interface Descriptions -->
+<p style="text-align: center; font-weight: bold;">Table of Interface Descriptions<br />
+Obtain Final Inspection</p>
+
+<table align="center" id="custom">
+<tr><th>Type/Interface</th><th>Description</th></tr>
+
+<tr>
+<td>Issue Permits/<br />requestInspection</td>
+<td>The system provides the Permit Applicant the ability to review Project Information with a list of permits issued and select the desired permit issuance for inspection. Alternately, the system provides a method to request inspection for single purpose permits for selected trade contractors performing routine day-to-day activities requiring permits. For selected permits requiring additional documentation, the system provides a method for the Permit Applicant to browse and upload additional documentation requirements associated with the issued permit - this may be a result of a previous inspection identified by the Inspector. The system assigns an Inspector and provides appropriate contact information for inspection timing and coordination (Inspection Queue). Inspections typically occur 24 - 48 hours from the request. The Permit Applicant can also see administrative hold on a permit - i.e., revision required, inspection resulted in work out of scope of the permit. etc. Finally, the system provides for special approved program inspections that provide a means for the Permit Applicant to schedule an inspection for a specific date and time.</td>
+</tr>
+
+<tr>
+<td>Issue Permits/<br />updateInspectionQueue</td>
+<td>Once an Inspection Request is submitted, the system updates the Inspection Queue by assigning an Inspector based on the area of responsibility. The system updates the Inspection Request Geographic Information Systems (GIS) database with pertinent information related to the Inspection Request (ex., design documents from intake Submittal Package, relevant Project Information, location, site access information, point of contact information, etc.). For special inspections based on city rules for selected registered contractors performing routine single purpose trade permits, the system randomly adds one inspection for every five single purpose permits requested.</td>
+</tr>
+
+<tr>
+<td>Issue Permits/<br />reassignInspectionInformation</td>
+<td>The system provides the ability for an Inspection Manager to modify the Inspection Queue to include Inspector assignment, priority order, and inspection timing. The Inspection Manager may also perform a quality review of Inspection Requests.</td>
+</tr>
+
+<tr>
+<td>Permit Applicant/<br />reviewInspectionNotification</td>
+<td>As updates occur in the Inspection Queue, the system calculates new anticipated inspection times and automatically notifies the Permit Applicant on the new anticipated inspection time. Message also includes inspection results.</td>
+</tr>
+
+<tr>
+<td>Issue Permits/<br />identifyInspectionItem</td>
+<td>The system provides the Inspector a geographic information system (GIS) map with priority ordered (overlay) indication of inspection locations. The Inspector must be able to quickly and easily modify the priority order based on proximity location to inspection location and ability to annotate why priority order was modified. When an inspection location icon is selected, the Inspector selects location navigation to navigate to the GPS location or to obtain additional inspection information such as permit Inspection Request, relevant design documentation from intake of the Submittal Package, code and compliance details, coordination details (i.e., codes to access site), etc. The Inspector must be able to override and reassign individual inspections and inspection assignments.</td>
+</tr>
+
+<tr>
+<td>Issue Permits/<br />recordInspectionResults</td>
+<td>The system provides the ability for the Inspector to record inspection results. The system provides an Inspector modifiable pick-list of inspection results for routine inspections. The selected pick-list items must be able to be edited for relevant inspection results.</td>
+</tr>
+
+<tr>
+<td>Issue Permits/<br />retrieveCertificate</td>
+<td>Once a final building inspection is approved, the Review Inspection Notification message provides a link that the Permit Applicant uses to retrieve and print the Certificate of Occupancy or Certificate of Compliance depending on the inspection type.</td>
+</tr>
+
+</table>
+
+<!-- Image Title
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="right"><tr><td align="center">
+<span class="lbl">Note: Select to download</span><br />
+<a href="http://austinea.org/"><img src="http://austinea.org/" border="0" width="200" alt="" /></a><br />
+<span style="font-weight: bold;">Image Title</span>
+</td></tr></table> -->
+
+<!-- Table definition
+<table align="center" id="custom">
+<tr><th>Number</th><th>Category</th><th>Description</th><th>Criticality</th></tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table> -->
+
+</td></tr></table>
+</td></tr></table></body></html>

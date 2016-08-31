@@ -1,0 +1,182 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Lookup GIS Information</title>
+<link rel="Stylesheet" href="http://austinea.org/style/hover.css" type="text/css" />
+</head>
+<body bgcolor="#ddd8c2">
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="650" align="center">
+<tr><td style="padding: 0;" height="130" valign="top"><a href="http://austinea.org">
+<img src="http://austinea.org/image/iTHeader.jpg" alt="austinea.org - home..." border="0"></a></td></tr>
+<!-- Text Area -->
+<tr><td>
+
+<p style="text-align: center; font-weight: bold;">Lookup GIS Information<br />Use Case Specification</p>
+<p style="text-align: center;">03/22/16
+
+<!--  IF Printable document option Included  
+<p style="text-align: center;">download <a href="http://austinea.org/arch/as/***.docx">printable version</a>
+-- >
+
+<b> Animal Services Logical Data Model </b>            
+<!-- Image -  Logical Data Model 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="http://austinea.org/arch/as/ldm.jpg"><img src="http://austinea.org/arch/as/ldm.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Animal Services Logical Data Model</p>
+</td></tr></table> -->
+
+<!-- USE CASE IMAGE -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/311/lookupGISInformation/ucd.jpg"><img src="http://austinea.org/arch/311/lookupGISInformation/ucd.jpg" border="0" alt="" width="620"/></a><br />
+<span style="font-weight: bold;">Lookup GIS Information<br />Use Case Model</span>
+</td></tr></table>
+
+<p><b>Scope: </b>The system looks up a Location based on the DisplayAddress provided (also includes intersections, map point selections, common locations, etc.). If an external GIS system is available the system performs the Location lookup in the external GIS system. If an exact match for the DisplayAddress is not identified the system suggests nearest matches for the Location to the CRM User. The CRM User selects the Location from the available suggestions. If the Location provided is for a ServiceRequest the system reviews the Location, ServiceRequestType, and determines the appropriate response. The system then performs one of several actions based on the provided Location:
+If the Location is invalid the system notifies the CRM User of the invalid Location.
+If the Location is outside the jurisdiction for the ServiceRequest the system notifies the CRM User.
+If the Location is valid the system performs a GIS data lookup. Alternatively, the system performs the GIS lookup with an external GIS system. If the CRM User requests additional GIS data for the Location the system displays the relevant information. If LocationAlerts are identified for the Location the system notifies the CRM User of the LocationAlert.
+If the Location and ServiceRequest identify the ServiceRequest as a duplicate the system updates the ServiceRequest as a duplicate.  
+
+
+
+<!-- IF INTERACTION OVERVIEW IS INCLUDED 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/as/***.jpg"><img src="http://austinea.org/as/code/***.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Interaction Overview</span>
+</td></tr></table>
+-->
+
+
+<br />
+
+
+<!-- SEQUENCE DIAGRAM  -->                 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/311/lookupGISInformation/sd01.jpg"><img src="http://austinea.org/arch/311/lookupGISInformation/sd01.jpg" border="0" alt="" width="600"/></a><br />
+<span style="font-weight: bold;">Lookup GIS Information<br />Sequence Diagram</span>
+</td></tr></table>
+<br />
+
+
+<!-- INTERFACE TABLE  -->
+<table align="center" id="custom">
+<tr><th width="9%">Req#</th><th width="70%">Type/Interface - Requirement Description</th><th>Performance</th></tr>
+<tr>
+<td rowspan="2">001</td>
+<td style="font-weight: bold; background: lightgray;">Provide Customer Relationship Management/lookupLocation</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>A CRM User provides an DisplayAddress to the system (street address, intersection, map point, building name, etc.). The system looks up the Location based on the DisplayAddress and identifies the nearest closest Location (address point, street address) in the City's Addressing. </td>
+</tr>
+<tr>
+<td rowspan="2">002</td>
+<td style="font-weight: bold; background: lightgray;">GIS/lookupLocation</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The system requests a Location lookup from a GIS system (City of Austin, ArcGISOnline, Google, Apple, etc.). The GIS system returns the nearest valid Location based on the address provided.</td>
+</tr>
+<tr>
+<td rowspan="2">003</td>
+<td style="font-weight: bold; background: lightgray;">Provide Customer Relationship Management/suggestLocation</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The system provides a list of suggested Locations to the CRM User based on percentage match with the provided DisplayAddress. The percentage is managed by the GIS Manager. </td>
+</tr>
+<tr>
+<td rowspan="2">004</td>
+<td style="font-weight: bold; background: lightgray;">Provide Customer Relationship Management/selectLocation</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The CRM User uses the system and selects a Location from the suggested Locations. </td>
+</tr>
+<tr>
+<td rowspan="2">005</td>
+<td style="font-weight: bold; background: lightgray;">Provide Customer Relationship Management/reviewLocationForServiceRequest</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The system reviews the provided Location and the ServiceRequestType's LocationSettings to determine if the Location is invalid, outside of jurisdiction, or valid.</td>
+</tr>
+<tr>
+<td rowspan="2">006</td>
+<td style="font-weight: bold; background: lightgray;">Provide Customer Relationship Management/notifyCRMUserOfInvalidLocation</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The system notifies the CRM User of an invalid Location. Notification message is customizable by GIS Manager.</td>
+</tr>
+<tr>
+<td rowspan="2">007</td>
+<td style="font-weight: bold; background: lightgray;">Provide Customer Relationship Management/notifyCRMUserOfOutOfJurisdictionLocation</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The system notifies the CRM User the Location is out of jurisdiction. Notification message is customizable by GIS Manager.</td>
+</tr>
+<tr>
+<td rowspan="2">008</td>
+<td style="font-weight: bold; background: lightgray;">Provide Customer Relationship Management/lookupGISData</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The system looks up relevant GISLayers for the Location.</td>
+</tr>
+<tr>
+<td rowspan="2">009</td>
+<td style="font-weight: bold; background: lightgray;">GIS/lookupGISData</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The system requests GIS looks up GISLayers for the Location.</td>
+</tr>
+<tr>
+<td rowspan="2">010</td>
+<td style="font-weight: bold; background: lightgray;">Provide Customer Relationship Management/lookupGISDrillDownData</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The CRM User requests the system looks up additional drill down GISLayer information for the Location. The CRM User provides a CRMSearch to the system to identify the specific drill down GIS information (GISLayers, GISMaps, etc.)</td>
+</tr>
+<tr>
+<td rowspan="2">011</td>
+<td style="font-weight: bold; background: lightgray;">Provide Customer Relationship Management/displayLocatoinAlert</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The system displays a LocationAlert, a customized message configured by a Service Request Manager, GIS Manager, to the CRM User associated to the Location.</td>
+</tr>
+<tr>
+<td rowspan="2">012</td>
+<td style="font-weight: bold; background: lightgray;">Provide Customer Relationship Management/updateServiceRequestAsDuplicate</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The system notifies the CRM User of duplicate ServiceRequests found. Duplicate check includes: proximity, date range, street address [building, suite, unit], status, question/answers, activities/outcomes based on ServiceRequestType configuration by Service Request Manager. The system links the two ServiceRequests and the second ServiceRequest is modified: removal of Activities, resolution specific Questions, updated Status indicating duplicate Status. When the original ServiceRequest is completed the duplicate ServiceRequest(s) are closed automatically by the system. CRM Users have the option to break the duplicate link to treat the new ServiceRequest as a unique instance of an issue. </td>
+</tr>
+<tr>
+
+
+
+
+
+</table>
+
+
+<br />
+
+
+
+
+</td></tr></table>
+</td></tr></table></body></html>

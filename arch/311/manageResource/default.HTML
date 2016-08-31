@@ -1,0 +1,182 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Manage Resource</title>
+<link rel="Stylesheet" href="http://austinea.org/style/hover.css" type="text/css" />
+</head>
+<body bgcolor="#ddd8c2">
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="650" align="center">
+<tr><td style="padding: 0;" height="130" valign="top"><a href="http://austinea.org">
+<img src="http://austinea.org/image/iTHeader.jpg" alt="austinea.org - home..." border="0"></a></td></tr>
+<!-- Text Area -->
+<tr><td>
+
+<p style="text-align: center; font-weight: bold;">Manage Resource<br />Use Case Specification</p>
+<p style="text-align: center;">03/22/16
+
+<!--  IF Printable document option Included  
+<p style="text-align: center;">download <a href="http://austinea.org/arch/as/***.docx">printable version</a>
+-- >
+
+<b> Animal Services Logical Data Model </b>            
+<!-- Image -  Logical Data Model 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="http://austinea.org/arch/as/ldm.jpg"><img src="http://austinea.org/arch/as/ldm.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Animal Services Logical Data Model</p>
+</td></tr></table> -->
+
+<!-- USE CASE IMAGE -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/311/manageResource/ucd.jpg"><img src="http://austinea.org/arch/311/manageResource/ucd.jpg" border="0" alt="" width="620"/></a><br />
+<span style="font-weight: bold;">Manage Resource<br />Use Case Model</span>
+</td></tr></table>
+
+<p><b>Scope: </b>A CRM Manager accesses the system and requests the system creates or updates a Resource. The CRM Manager requests the system publishes the Resource to the desired CRM system. If training is required during the Resource creation the system sends Notification to the identified group and updates their WorkQueue in the system. Alternatively, Resources are managed by bulk creation/update. The CRM Manager uploads an Attachment to the system and the system performs a loop to create/update the Resource, publish the Resource, send Notification, and update WorkQueues for each item in the Attachment.
+If a ResourceInventory requires a refresh and the system interfaces with an external resource system the CRM User requests a ResourceInventory refresh, the system creates a COAESBMessage and then requests the Enterprise Service Bus request a ResourceInventory refresh from the destination system.
+If additional ResourceItems are required the CRM User requests the additional ResourceItems, the system creates a COAESBMessage and then requests the Enterprise Service Bus request additional ResourceItems from the destination system.
+If the ResourceInventory needs to be updated based on work completed the CRM User accesses the system and updates the ResourceInventory. If the ResourceInventory interfaces with an external resource system the system creates a COAESBMessage and requests the Enterprise Service Bus update the ResourceInventory in the destination system.  
+
+
+
+<!-- IF INTERACTION OVERVIEW IS INCLUDED 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/as/***.jpg"><img src="http://austinea.org/as/code/***.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Interaction Overview</span>
+</td></tr></table>
+-->
+
+
+<br />
+
+
+<!-- SEQUENCE DIAGRAM  -->                 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/311/manageResource/sd01.jpg"><img src="http://austinea.org/arch/311/manageResource/sd01.jpg" border="0" alt="" width="600"/></a><br />
+<span style="font-weight: bold;">Manage Resource<br />Sequence Diagram</span>
+</td></tr></table>
+<br />
+
+
+<!-- INTERFACE TABLE  -->
+<table align="center" id="custom">
+<tr><th width="9%">Req#</th><th width="70%">Type/Interface - Requirement Description</th><th>Performance</th></tr>
+<tr>
+<td rowspan="2">001</td>
+<td style="font-weight: bold; background: lightgray;">Provide Customer Relationship Management/createUpdateResource</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>A CRM User, or the system per a bulk update, accesses the system and creates or updates a Resource. The CRM Manager provides: display name, username, role, groups, email address, phone number, if training is required, training group, any associated questions to further define the resource, interface system, interface system name (name of resource in resource system).</td>
+</tr>
+<tr>
+<td rowspan="2">002</td>
+<td style="font-weight: bold; background: lightgray;">Provide Customer Relationship Management/publishResource</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The CRM Manager, or the system, accesses the system and publishes the Resource to the desired CRM system.</td>
+</tr>
+<tr>
+<td rowspan="2">003</td>
+<td style="font-weight: bold; background: lightgray;">Provide Customer Relationship Management/sendNotification</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The system sends a Notification (email, text, etc.) to the recipient. Notification includes Attachments as relevant. If a response from a Citizen is requested the system provides either a URL to respond, generates a subject line for response to the system so the system recognizes the response, etc. The system saves a copy of the Notification after transmission for archival purposes (copy of message, recipients, transmission date/time, schedule, etc.). For public notifications the system sends the Notification per the schedule defined by the Public Information Manager. For ServiceRequest Notifications the system attaches a copy of the Notification with the ServiceRequest for archival purposes. CRM Users resend/cancel Notifications as desired. Notifications are sent ad hoc and also scheduled based on configuration by a CRM Manager. If a delivery receipt is configured the system tracks delivery status of the Notification. For GISLayer updates the system notifies the GISManager identified for the GISLayer. The system includes the number of changes to the GISLayers, date/time of retrieval from GIS, and GISLayer name. For InterfaceServiceRequests, if the system receives an EnterpriseServiceBusStatus back that is not success then the system notifies the CRM Manager. If a KnowledgeBaseItem fails to index the system notifies the KnowledgeBaseItem's Editor with the KnowledgeBaseItem's title and date of failed index.</td>
+</tr>
+<tr>
+<td rowspan="2">004</td>
+<td style="font-weight: bold; background: lightgray;">Provide Customer Relationship Management/updateWorkQueue</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The system updates the CRM User's WorkQueue to include the KnowledgeBaseItem's requirement for acknowledgment. CRM User accesses the system and updates the WorkQueue to identify acknowledgment of KnowledgeBaseItem. After completed the CRM User's WorkQueue removes the KnowledgeBaseItem from the WorkQueue. The system updates the CRM User's WorkQueue indicating a KnowledgeBaseItem did not index properly, and requires CRM User review. The system updates the Editor's (CRM User) WorkQueue indicating a KnowledgeBaseItem received a Comment and requires CRM User review.</td>
+</tr>
+<tr>
+<td rowspan="2">005</td>
+<td style="font-weight: bold; background: lightgray;">Provide Customer Relationship Management/createUpdateBulkResource</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The CRM Manager uploads an Attachment to the system with Resources to create/update. The Attachment contains for each Resource: display name, username, role, groups, email address, phone number, if training is required, training group, any associated questions to further define the resource, interface system, interface system name (name of resource in resource system).</td>
+</tr>
+<tr>
+<td rowspan="2">006</td>
+<td style="font-weight: bold; background: lightgray;">Provide Customer Relationship Management/refreshResourceInventory</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The CRM User requests the system refreshes the ResourceInventory for a Resource.</td>
+</tr>
+<tr>
+<td rowspan="2">007</td>
+<td style="font-weight: bold; background: lightgray;">Provide Customer Relationship Management/createCOAESBMessage</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The system creates a COAESBMessage. The system creates a COAESBMessageHeader and adds the InterfaceServiceRequest, CRMDisposition, Resource, etc. to the message body.</td>
+</tr>
+<tr>
+<td rowspan="2">008</td>
+<td style="font-weight: bold; background: lightgray;">Enterprise Service Bus/refreshResourceInventory</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The system requests the Enterprise Service Bus refresh the ResourceInventory. The system provides a COAESBMessage with the Resource in the body, and the Resource's interfaced system name included.</td>
+</tr>
+<tr>
+<td rowspan="2">009</td>
+<td style="font-weight: bold; background: lightgray;">Provide Customer Relationship Management/requestAdditionalResourceItems</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The CRM User requests the system request additional ResourceItems for the Resource's ResourceInventory. The CRM User provides the Resource and the requested ResourceItem needed.</td>
+</tr>
+<tr>
+<td rowspan="2">010</td>
+<td style="font-weight: bold; background: lightgray;">Enterprise Service Bus/requestAdditionalResourceItems</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The system requests the Enterprise Service Bus request additional ResourceItems. The system provides a COAESBMessage with the Resource in the body, and the Resource's interfaced system name included.</td>
+</tr>
+<tr>
+<td rowspan="2">011</td>
+<td style="font-weight: bold; background: lightgray;">Provide Customer Relationship Management/updateResourceInventory</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The CRM User requests the system update the ResourceInventory with ResourceItems used. The CRM User provides the Resource and the ResourceItems to update.</td>
+</tr>
+<tr>
+<td rowspan="2">012</td>
+<td style="font-weight: bold; background: lightgray;">Enterprise Service Bus/updateResourceInventory</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The system requests the Enterprise Service Bus update the ResourceInventory in the destination system. The system provides a COAESBMessage with the Resource in the body, and the Resource's interfaced system name included.</td>
+</tr>
+<tr>
+
+
+
+
+
+
+</table>
+
+
+<br />
+
+
+
+
+</td></tr></table>
+</td></tr></table></body></html>

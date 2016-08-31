@@ -1,0 +1,95 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Schedule Appointment</title>
+<link rel="Stylesheet" href="http://austinea.org/style/email.css" type="text/css" />
+</head>
+<body bgcolor="#ddd8c2">
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="650" align="center">
+<tr><td style="padding: 0;" height="130" valign="top"><a href="http://austinea.org">
+<img src="http://austinea.org/image/iTHeader.jpg" alt="austinea.org - home..." border="0"></a></td></tr>
+<!-- Text Area -->
+<tr><td>
+
+<p style="text-align: center; font-weight: bold;">Schedule Appointment<br />Use Case Specification
+
+<!-- Image Title -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/hhs/ehr/scheduleAppointment/ucd.jpg"><img src="http://austinea.org/arch/hhs/ehr/scheduleAppointment/ucd.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Schedule Appointment<br />Use Case Model</span>
+</td></tr></table>
+
+<p><b>Scope: </b>The Client can either setup an appointment using a Web enabled interface or call the hotline to schedule an appointment with an Appointment Scheduler. A call management system dashboard provides leadership indication of Appointment Scheduler performance as well as indication of current and anticipated call volume metrics. A geographic depiction of clinic locations is provided to assist in optimal location identification to the Client and Appointment Schedulers to assist in appointment location. The Client is provided automated notifications either by text message or automated voice indication to confirm, remind, or indicate appointment status. Appointment Schedulers manage schedulable resources as required.
+
+<!-- Image Title -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/hhs/ehr/scheduleAppointment/sd01.jpg"><img src="http://austinea.org/arch/hhs/ehr/scheduleAppointment/sd01.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Schedule Appointment<br />Sequence Diagram</span>
+</td></tr></table>
+
+<br />
+
+<!-- Table definition -->
+<p style="text-align: center; font-weight: bold;">Table of Interface and Functional Descriptions</p>
+<table align="center" id="custom">
+<tr><th width="9%">Req#</th><th width="70%">Type/Interface - Requirement Description</th><th>Required Response</th></tr>
+<tr>
+<td rowspan="2">27</td>
+<td style="font-weight: bold; background: lightgray;">Schedule Appointment/scheduleAppointment</td>
+<td rowspan="2">Explain system's scheduling abilities based on this specification.</td>
+</tr>
+<tr>
+<td>The Client calls a provided help line to schedule or reschedule an appointment - Client may be guardian of child and act on behalf. The system provides the ability to support multiple languages and provides the ability to perform call center management such as (but not limited to) number of calls in the wait queue, current average wait time, average calls per hour, anticipated call volume and individual Appointment Scheduler performance metrics. The system provides a visual, at a glance dashboard for display in the call center and accessible to staff leadership on their desktop computer. The dashboard also provides metric information related to Web interface schedule usage. Alternately, the system provides a Web enabled interface to allow the Client to schedule or reschedule an Appointment. During the appointment scheduling session, either the Web interface or the Appointment Scheduler provides the Client the appointment requirements such as (but not limited to) insurance provider, proof of income, identification needs, proof of residency, consent form, etc. along with a summary of the benefits. If the Client is using the Web interface, the system provides a means for the Client to upload PDF versions of the required documents as well as the necessary forms to enter relevant Client Information. The same Web interface completes required documentation needs when initial appointment requirements are incomplete. The system provides online chat feature to gain assistance from a skilled staff member. [Note: Immunization doesn't require proof of residency or proof income.] The system provides group scheduling to allow flexible schedule of multiple individuals for any given time period. The system allows for multiple bookings at the same time when needed. The system provides appointment period to adjust to available Clinic Staff resource adjustable by the approved Clinic Staff.</td>
+</tr>
+<tr>
+<td rowspan="2">28</td>
+<td style="font-weight: bold; background: lightgray;">Schedule Appointment/determineAppointmentLocation</td>
+<td rowspan="2">Explain system's scheduling abilities based on this specification.</td>
+</tr>
+<tr>
+<td>For use of scheduler, a first appointment must occur before online account is established to setup Client demographics - will consider other options. When either a Client is scheduling an appointment using the Web enabled interface or the Appointment Scheduler is assisting on the telephone, a geographical map is presented based on health service need (ex., WIC, Immunization, TB, etc.). When appropriate, Client Demographics such as home address and/or work address provides geographical map of available clinic locations to schedule an appointment depending on the type of appointment (i.e., WIC, immunization, Tuberculosis, sexually transmitted disease, etc.) When selecting a location, the system presents the schedule appointment interface for the selected facility to either the Client or the Appointment Scheduler to schedule an appointment depending on the use. For some appointments (e.g., required by grant agencies), the system provides a means to document selectable reason why a Participant can't schedule within selected time windows.</td>
+</tr>
+<tr>
+<td rowspan="2">29</td>
+<td style="font-weight: bold; background: lightgray;">Client/acknowledgeAppointment</td>
+<td rowspan="2">Explain system's scheduling abilities based on this specification.</td>
+</tr>
+<tr>
+<td>When the Client indicates mobile device messaging option in their profile, the system (either by text message or email) provides information or by automated voice indication. The appointment Notification provides a means to Acknowledge the appointment by following a provided link or by selectable response indication - negative notification response automatically cancels the appointment from the system. This message also acknowledges appointment the day before the scheduled activity. A message indication provides missed appointment information (ex., requesting the WIC Participant to reschedule) and a reminder of policy regarding missed appointments. The system provides a means to identify selected Clients to send out information regarding availability or general clinic inform such as closures, etc.</td>
+</tr>
+<tr>
+<td rowspan="2">30</td>
+<td style="font-weight: bold; background: lightgray;">Schedule Appointment/checkAppointmentStatus</td>
+<td rowspan="2">Explain system's scheduling abilities based on this specification.</td>
+</tr>
+<tr>
+<td>The system provides selected Appointment Scheduler the ability to review and report on the status of appointments, appointment history to include missed and cancelled appointments. Depending on the selected method of scheduling (i.e., Web interface or scheduled by phone), the Appointment Scheduler ensures follow up indication to the Client regarding their missed appointment or follow up for additional treatment and the need to reschedule.</td>
+</tr>
+<tr>
+<td rowspan="2">31</td>
+<td style="font-weight: bold; background: lightgray;">Schedule Appointment/reassignSchedulableResources</td>
+<td rowspan="2">Explain system's scheduling abilities based on this specification.</td>
+</tr>
+<tr>
+<td>The system provides the ability for selected Appointment Schedulers to manage and modify Scheduled Resources. The system provides the ability to manage group, sweeping changes rather than individual changes currently experienced by the existing scheduling system. The system provides the Clinic Staff the ability to change and manage resource allocation real time (ex., time-period, location, and specialty need).</td>
+</tr>
+</table>
+
+<!-- Table definition
+<table align="center" id="custom">
+<tr><th>Number</th><th>Category</th><th>Description</th><th>Criticality</th></tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table> -->
+
+</td></tr></table>
+</td></tr></table></body></html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Integrate EDIMS with Residential Review Process</title>
+<link rel="Stylesheet" href="http://austinea.org/style/email.css" type="text/css" />
+</head>
+<body bgcolor="#ddd8c2">
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Online reference
+<p class="lbl" style="text-align: center;">This report is also <a href="http://austinea.org/arch/pdr/report/integrateEDIMS.html">available online</a> by following link.</p> -->
+<!-- EA Motto -->
+<p style="color: gray; font-size: 8pt; text-align: center; font-weight: bold;">Enterprise Architecture <i>- preparing for the future</i></p>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="650" align="center"><tr><td>
+
+<div>
+<p>Bob,</p>
+
+<p>This discussion is best followed by viewing the <a href="http://austinea.org/arch/pdr/report/integrateEDIMS.html">online version</a>. Per our discussion, I'd like to meet and discuss the integration of EDIMS with PDR's electronic review of residential submissions. The following Use Case Specifications (list below), represent the Residential Review Architecture from the Planning &amp; Development Review (PDR) operational team. These specifications are visionary in nature (they're not constrained by limitations of the current operational processes). They describe a future capability employing current information technology tools and methods. Because of the interface nature of this architecture, it's fairly strait forward to integrate EDIMS into the process. I took a first cut at the integration points and discuss below.</p>
+
+<ul>
+<li><a href="http://austinea.org/arch/pdr/report/performRegulatoryReview.html" target="new_window">Perform Regulatory Review</a></li>
+<li><a href="http://austinea.org/arch/pdr/report/obtainPermits.html" target="new_window">Obtain Permits</a></li>
+<li><a href="http://austinea.org/arch/pdr/report/obtainFinalInspection.html" target="new_window">Obtain Final Inspection</a></li>
+</ul>
+</div>
+
+<p>Of the three use cases developed by PDR to take a Submittal Package from intake to final inspection, two (Perform Regulatory Review and Obtain Final Inspection) involve EDIMS. If you open the diagrams, I inserted <span style="color: red;">red [EDIMS insert point]</span> indicating where EDIMS interfaces would go. The new interface descriptions are highlighted in yellow on the EDIMS interface diagrams.</p>
+
+<p class="lbl" style="text-align: center;">Select image for larger view</p>
+
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center">
+<tr>
+<td valign="top" style="font-weight: bold; text-align: center;"><a href="http://austinea.org/arch/pdr/report/reviewSubmittalPackage.jpg" target="new_window"><img src="http://austinea.org/arch/pdr/report/reviewSubmittalPackage.jpg" alt="" width="300" border="0"></a><br />
+Review Submittal Package<br />Part of Perform Regulatory Review</td>
+<td valign="top" style="font-weight: bold; text-align: center;"><a href="http://austinea.org/arch/pdr/report/obtainFinalInspection.jpg" target="new_window"><img src="http://austinea.org/arch/pdr/report/obtainFinalInspection.jpg" alt="" width="300" border="0"></a><br />
+Obtain Final Inspection</td>
+</tr></table>
+
+<p>At these insertion points, the following diagrams indicate the additional interface needs in order for the EDIMS function to store and retrieve relevant Submittal Documents. In the future, the City's Enterprise Service Bus (ESB) provides a reusable interface point greatly simplifying other City applications using similar interface to EDIMS.</p>
+
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center">
+<tr>
+<td valign="top" style="font-weight: bold; text-align: center;"><a href="http://austinea.org/arch/pdr/report/reviewSubmittalPackageEDIMS.jpg" target="new_window"><img src="http://austinea.org/arch/pdr/report/reviewSubmittalPackageEDIMS.jpg" alt="" width="300" border="0"></a><br />
+Review Submittal Package with EDIMS Interfaces</td>
+<td valign="top" style="font-weight: bold; text-align: center;"><a href="http://austinea.org/arch/pdr/report/obtainFinalInspectionEDIMS.jpg" target="new_window"><img src="http://austinea.org/arch/pdr/report/obtainFinalInspectionEDIMS.jpg" alt="" width="300" border="0"></a><br />
+Obtain Final Inspection with EDIMS Interfaces</td>
+</tr></table>
+
+<p>The specifications (text in table below), describe the function of each interface.</p>
+
+<!-- Image Title
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="right"><tr><td align="center">
+<span class="lbl">Note: Select to download</span><br />
+<a href="http://austinea.org/"><img src="http://austinea.org/" border="0" width="200" alt="" /></a><br />
+<span style="font-weight: bold;">Image Title</span>
+</td></tr></table> -->
+
+<p style="font-weight: bold; text-align: center;">Review Submittal Package with EDIMS</p>
+<!-- Table definition -->
+<table align="center" id="custom">
+<tr><th>Type/Interface</th><th>Description</th></tr>
+<tr>
+<td>Perform Design Review/<br />generateEDIMSMetadata</td>
+<td>Using attributes of the Submittal Package entered during Perform Intake (see <a href="http://austinea.org/arch/pdr/report/performRegulatoryReview.html#intake" target="new_window">performIntake</a> interface description), the system automatically generates the proper EDIMS (electronic document information management system) meta-data for inclusion with the relevant Submittal Document stored in EDIMS.</td>
+</tr>
+<tr>
+<td>EDIMS/<br />storeSubmittalPackageDocuments</td>
+<td>The system uses the automatically generated meta-data and stores the Submittal Document in EDIMS (electronic document information management system). [Enterprise Service Bus (ESB) opportunity: A reusable interface on ESB can act as a broker between various applications and EDIMS. If properly built, this interface is used by all applications storing information in EDIMS.]</td>
+</tr>
+</table>
+
+<p style="font-weight: bold; text-align: center;">Obtain Final Inspection with EDIMS</p>
+<!-- Table definition -->
+<table align="center" id="custom">
+<tr><th>Type/Interface</th><th>Description</th></tr>
+<tr>
+<td>Inspect Construction/<br />retrieveSubmittalDocument</td>
+<td>When the Inspector selects to view relevant Submittal Package Documents to review approved design submission, the system automatically retrieves the selected Submittal Document from the system.</td>
+</tr>
+<tr>
+<td>Inspect Construction/<br />generateEDIMSMetadata</td>
+<td>When the Inspector selects the Submittal Document to review, the system uses attributes of the Inspection Request to automatically generate the necessary EDIMS meta-data to retrieve the Submittal Document from EDIMS.</td>
+</tr>
+<tr>
+<td>EDIMS/<br />retrieveSubmittalDocument</td>
+<td>Using the meta-data generated by system, the system retrieves the associated Submittal Document. [Enterprise Service Bus (ESB) opportunity: A single ESB interface can act as a broker to automatically retrieve documents associated with the entered meta-data.]</td>
+</tr>
+</table>
+
+<p>I know this could all be a bit overwhelming, so when we meet, I'll walk you through my thinking.</p>
+
+<!-- Contact -->
+<table cellpadding="0" cellspacing="0" border="0" width="450" style="border-collapse: collapse;"><tr><td>
+<p>Respectfully,</p>
+<table cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;" align="right"><tr><td>
+<img src="http://austinea.org/image/austinLogo.jpg" border="0" width="100" height="100" alt="Austin Logo" />
+</td></tr></table>
+<!-- Signature -->
+<p><img src="http://journeycolorado.com/images/Signature.jpg" border="0" width="143" height="83" alt="sign" /></p>
+<p><b>Rob Byrd</b> <span style="color: red; font-weight: bold;">|</span> <b>City of Austin</b>
+<a href="http://www.linkedin.com/in/robbyrd"><img src="http://journeycolorado.com/images/linkedin.jpg" border="0" alt="LinkedIn Logo" /></a><br />
+Chief Enterprise Architect - Corporate<br />
+Direct: (512) 974-1615 | Mobile: (512) 431-0700</p>
+</td></tr></table>
+
+</td></tr></table>
+</td></tr></table></body></html>

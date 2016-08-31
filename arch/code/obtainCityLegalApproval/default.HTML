@@ -1,0 +1,110 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Obtain City Legal Approval</title>
+<link rel="Stylesheet" href="http://austinea.org/style/hover.css" type="text/css" />
+</head>
+<body bgcolor="#ddd8c2">
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="650" align="center">
+<tr><td style="padding: 0;" height="130" valign="top"><a href="http://austinea.org">
+<img src="http://austinea.org/image/iTHeader.jpg" alt="austinea.org - home..." border="0"></a></td></tr>
+<!-- Text Area -->
+<tr><td>
+
+<p style="text-align: center; font-weight: bold;"><br />Obtain City Legal Approval
+<p style="text-align: center; font-weight: bold;">Use Case Specification</p>
+<p style="text-align: center;">04/01/2016
+
+<!--  IF Printable document option Included  
+<p style="text-align: center;">download <a href="http://austinea.org/arch/code/***.docx">printable version</a>
+-- >
+
+<b> Austin Code Logical Data Model </b>
+<!-- Image -  Logical Data Model 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="http://austinea.org/arch/code/ldm.jpg"><img src="http://austinea.org/arch/code/ldm.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Austin Code Logical Data Model</p>
+</td></tr></table> -->
+
+<!-- USE CASE IMAGE -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/code/obtainCityLegalApproval/ucd.jpg"><img src="http://austinea.org/arch/code/obtainCityLegalApproval/ucd.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Obtain City Legal Approval<br />Use Case Model</span>
+</td></tr></table>
+
+<p><b>Scope: </b>The Austin Code Officer creates an Affidavit, and then a SearchWarrant using the Affidavit's information. The Austin Code Officer submits the Affidavit and SearchWarrant to the Chain of Command for approval. The Chain of Command reviews the Affidavit and SearchWarrant, and either approves the documents or requests changes. If changes are required, the Austin Code Officer updates the Affidavit/SearchWarrant, and resubmits for approval. The submission process continues until the Chain of Command approves both the Affidavit and SearchWarrant. After approval from the Chain of Command, the Austin Code Officer submits the Affidavit and SearchWarrant to the City Legal Department for review. The City Legal Department reviews the documents and either approves or rejects the documents. If rejected, the use case is restarted with the Austin Code Officer creating the Affidavit and SearchWarrant.
+
+
+<!-- IF INTERACTION OVERVIEW IS INCLUDED 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/code/***.jpg"><img src="http://austinea.org/arch/code/***.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Interaction Overview</span>
+</td></tr></table>
+-->
+
+
+<br />
+
+
+<!-- SEQUENCE DIAGRAM  -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/code/obtainCityLegalApproval/sd01.jpg"><img src="http://austinea.org/arch/code/obtainCityLegalApproval/sd01.jpg" border="0" alt="" width="600"/></a><br />
+<span style="font-weight: bold;">Obtain City Legal Approval<br />Sequence Diagram</span>
+</td></tr></table>
+<br />
+
+
+<!-- INTERFACE TABLE  -->
+<table align="center" id="custom">
+<tr><th width="9%">Req#</th><th width="70%">Type/Interface - Requirement Description</th><th>Performance</th></tr>
+<tr>
+<td rowspan="2">001</td>
+<td style="font-weight: bold; background: lightgray;">Austin Code Officer/createAffidavit</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Officer creates an Affidavit, either search warrant, or event/probable cause, using CodeCase information.</td>
+</tr>
+<tr>
+<td rowspan="2">002</td>
+<td style="font-weight: bold; background: lightgray;">Austin Code Officer/createSearchWarrant</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Officer creates a SearchWarrant. SearchWarrant contains the summary of the Affidavit along with the same information on the Affidavit.</td>
+</tr>
+<tr>
+<td rowspan="2">003</td>
+<td style="font-weight: bold; background: lightgray;">Chain of Command/reviewAffidavitAndSearchWarrant</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Officer requests the Chain of Command reviews the Affidavit and Search Warrant. The Austin Code Officer delivers a print out of the Affidavit and Search Warrant. The Chain of Command either approves the documents or requests changes. If approved, the Chain of Command returns the Documents.</tr>
+<tr>
+<td rowspan="2">004</td>
+<td style="font-weight: bold; background: lightgray;">City Legal Department/reviewAffidavitAndSearchWarrant</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Officer requests the City Legal Department review the Affidavit and SearchWarrant (either hand-delivered or through email). City Legal Department reviews document to ensure probable cause is met. If probable cause is met the documents are approved.</td>
+</tr>
+
+
+
+</table>
+
+
+<br/>
+
+
+
+
+</td></tr></table>
+</td></tr></table></body></html>

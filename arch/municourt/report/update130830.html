@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<title>Muni Court "Manage Community Service Plan' Requirements</title>
+<link rel="StyleSheet" href="http://austinea.org/style/email.css" type="text/css">
+</head>
+<body>
+
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="600" align="center"><tr><td>
+
+<!-- Online reference -->
+<p><class="lbl">Note: This report is also <a href="http://austinea.org/arch/municourt/report/update130830.html" style="font-size: 7pt;">available online</a> by following link.</p>
+
+<div>
+<p>Muni Court Architecture Team,</p> 
+</div>
+
+<p>Attached is the information for the "Manage Community Service Plan" use case that was reviewed last week with the team. Please take a moment to check my work and let me know if there are any changes I can make to improve this, or if this requirement is as discussed! 
+<p>
+
+
+<!-- Signature-->
+<table cellpadding="0" cellspacing="0" border="0" width="350" style="border-collapse: collapse;"><tr><td>
+<p>Respectfully,</p>
+
+<table cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;" align="right">
+<tr>
+<td>
+<img src="http://austinea.org/image/austinLogo.jpg" border="0" width="100" height="100" alt="Austin Logo" />
+</td>
+</tr>
+</table>
+<p><img src="http://coawss3a.coacd.org/sites/CTM/EA/Shared Documents/Images/ABSIG.JPG" border="0" width="143" height="83" alt="sign" /> </p>
+
+<p><b>Aaron Brown</b> 
+<span style="color: red; font-weight: bold;">|</span> 
+<b>City of Austin</b>
+<a href="http://www.linkedin.com/in/austnaaron"><img src="http://journeycolorado.com/images/linkedin.jpg" border="0" alt="Linkin Logo" /> </a> <br />
+Senior IT Enterprise Architect<br />
+Direct: (512) 974-2960 </p>
+Email: Aaron.Brown2@austintexas.gov </p>
+</td></tr></table>
+
+
+<!-- Use case information below -->
+
+<hr>
+
+<!-- Muni Court Requirements Model -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="right">
+<tr>
+<td align="center">
+<span class="lbl">Note: Select to download</span><br />
+<a href="http://austinea.org/arch/municourt/report/ManageCommunityServicePlanUseCase.png"><img src="http://austinea.org/arch/municourt/report/ManageCommunityServicePlanUseCase.png" border="0" width="200" alt="" /></a><br />
+<span style="font-weight: bold;">Manage Community Service Plan<br />Use Case</span>
+</td></tr></table>
+
+
+<p><b>Use Case Scope</b></p>
+<p>The Judge makes a ruling assigning a fine and/or community service hour requirement on a case(s) (in lieu of the fine.) Either the Judge or the Deputy Court Clerk will assign the requirement to the case file. 
+The "Community Service Plan Manager" uses the PID associated with the Defendant to Search for an existing Community Service Plan. If none exists, a list of cases associated with the PID is presented. 
+The Community Service Plan Manager can add a completely new Community Service Plan, Modify the specifics of a plan (reorder the payoff order of cases, change completion dates, or close out a plan), add unassigned cases to an existing plan, remove cases from a plan, or delete a Community Service Plan altogether. 
+If a Community Service Plan exists, it will be presented, indicating the cases associated with the plan and the payoff order of the cases, as well as a list of unassigned cases belonging to the Defendant. 
+If Multiple Community Service Plans exist for the PID, then each will be displayed with their associated cases, as well as a list of unassigned cases belonging to the Defendant. 
+If adding cases to a Community Service Plan, the Community Service Plan Manager selects the cases to be included in the plan, and assigns hours per the Judge's order, as well as the order in which the cases will be credited. The system places the cases in the payoff order of oldest filed first, however the system allows the Community Service Plan Manager to reorder the cases if required. Included in the plan creation are the following attributes: start date, end date, weekly amount required, monthly amount required, BiWeekly amount required, and Daily Amount Required.
+Each time a plan is modified, it is stored for retrieval and attached to each affected case.
+The system allows for the assignment of community hours across multiple cases, as well as individual cases. The system will calculate the hourly rate by considering total balance due, against community hours assigned. An hourly rate will be calculated and tracked by case. The plan can be modified to include additional cases, at which time each will receive its own rate, or a new rate calculated for all cases against the defendant. </p>
+
+<!-- Image - File For Motion Sequence Diagram -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="http://austinea.org/arch/municourt/report/ManageCommunityServicePlanSequenceDiagram01.png"><img src="http://austinea.org/arch/municourt/report/ManageCommunityServicePlanSequenceDiagram01.png" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Manage Community Service Plan Sequence Diagram</p>
+</td></tr></table> 
+
+
+
+<p style="font-weight: bold; text-align: center;">Manage Community Service Plan Interface Descriptions</p>
+<!-- Table definition -->
+<table align="center" id="custom">
+<tr><th width="195">Type/Interface</th><th>Description</th></tr>
+<tr>
+<td>Manage Court Case/ <br /> locatePID</td> <td>The User is presented a list of fields to provide information for the system to locate the Person ID (PID) for a defendant. The fields used for the PID search include, but are not limited to, Partial First name, Partial Last Name, First Name, Last Name, Address, Driver's License Number, Vehicle Plate Number, Date of Birth, and Social Security Number. The System conducts a search and provides a list of matching Defendants from which the User can choose. </td> </tr>
+<tr>
+<td>Manage Court Case/<br /> locateCommunityServicePlanByDefendant</td> <td>The User specifies the Personal ID (PID) for the Defendant, or selects the name of a Defendant which provides the PID to be used for subsequent actions. The system returns a designator indicating the number of Community Service Case plans the Defendant has. If at least one exists, the system returns a list of plans established. The list of Plans also includes a list of the associated cases for each plan. Additionally the system returns a list of ALL cases associate with the PID not currently assigned to a Community Service Plan.</td> </tr>
+<tr>
+<td>Manage Court Case/<br /> createCommunityServicePlan</td> <td>A list of cases associated with the PID is presented to the User. The User selects the cases to be included in the plan, and assigns hours per the Judge's order, as well as the order in which the cases will be credited on the plan. The system places the cases in the order of oldest filed case, first, by default; however the system allows the user to reorder the cases if required. Included in the plan creation are the following attributes: start date, end date, weekly amount required, monthly amount required, BiWeekly amount required, and Daily amount required. Upon completion, the system will calculate the Rate per Hour for each case in the plan, using the hours and fine assigned by the judge to determine the Community Service Hourly rate by Case. The system maintains a separate rate for each case included in a Community Service plan. This is required, as additional cases may be added at a later date affecting the overall rate. Additionally the system tracks the original rates and any changes to rates for a Community Plan for audit purposes. Each Community Service Plan is identified by a unique ID, which is subsequently used by the system to track which cases belong to the specific Community Service Plan. </td> </tr>
+<tr>
+<td>Manage Court Case/ <br /> addCommunityServicePlanToCase</td> <td>The User specifies the Community Service plan to be modified by selecting it from a list provided by the system. The system then presents a list cases currently not belonging to a Community Service Plan, and the User indicates the case(s) to be added to the Community Service Plan. The User selects the new cases to be included in the plan, and assigns hours per the Judge's order. The User can reorder the sequence in which the cases will be credited on the plan. The system places the cases in the order of oldest filed case, first, by default, however the system allows the user to reorder the cases if required. Included in the plan modification are the following attributes: start date, end date, weekly amount required, monthly amount required, BiWeekly amount required, and Daily amount required. Upon completion, the system will calculate the Rate/Hour for each case in the plan, using the hours and fine assigned by the judge to determine the Community service Hourly rate by Case. </td> </tr>
+<tr>
+<td>Manage Court Case/ <br /> removeCaseFromCommunityServicePlan</td> <td>The User designates a case to be removed from the selected Community Service Plan. The system prompts the user to confirm the change being made. The system will log the removal of the case for auditing purposes, and will recalculate the hourly rate by case for each case remaining in the plan.</td> </tr>
+<tr>
+<td>Manage Court Case/ <br /> removeCommunityServicePlanForDefendant</td> <td>The User selects the Community Service plan to be deleted. The system removes the community Service plan associated with the specific Community Service Plan ID. The user is prompted for confirmation of the action, and the system creates an audit trail as appropriate. </td> </tr>
+</table>
+
+
+
+<!-- Table definition
+<table align="center" id="custom">
+<tr><th>Number</th><th>Category</th><th>Description</th><th>Criticality</th></tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table> -->
+
+</td></tr></table> 
+
+</td></tr></table>
+</td></tr></table></body></html>

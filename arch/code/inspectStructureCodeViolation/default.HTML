@@ -1,0 +1,187 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Inspect Structure Code Violation</title>
+<link rel="Stylesheet" href="http://austinea.org/style/hover.css" type="text/css" />
+</head>
+<body bgcolor="#ddd8c2">
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="650" align="center">
+<tr><td style="padding: 0;" height="130" valign="top"><a href="http://austinea.org">
+<img src="http://austinea.org/image/iTHeader.jpg" alt="austinea.org - home..." border="0"></a></td></tr>
+<!-- Text Area -->
+<tr><td>
+
+<p style="text-align: center; font-weight: bold;"><br />Inspect Structure Code Violation
+<p style="text-align: center; font-weight: bold;">Use Case Specification</p>
+<p style="text-align: center;">04/01/2016
+
+<!--  IF Printable document option Included  
+<p style="text-align: center;">download <a href="http://austinea.org/arch/code/***.docx">printable version</a>
+-- >
+
+<b> Austin Code Logical Data Model </b>
+<!-- Image -  Logical Data Model 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="http://austinea.org/arch/code/ldm.jpg"><img src="http://austinea.org/arch/code/ldm.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Austin Code Logical Data Model</p>
+</td></tr></table> -->
+
+<!-- USE CASE IMAGE -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/code/inspectStructureCodeViolation/ucd.jpg"><img src="http://austinea.org/arch/code/inspectStructureCodeViolation/ucd.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Inspect Structure Code Violation<br />Use Case Model</span>
+</td></tr></table>
+
+<p><b>Scope: </b>Depending on the structure code violation, the Austin Code Officer contacts different service providers as needed.
+If a StructureWasteWater, the Austin Code Officer contacts Austin Spill Response by phone to report the Violation and request assistance. The Austin Code Officer also contacts Watershed Protection and reports the Violation.
+If a StructureElectrical, the Austin Code Officer contacts the Electrical service provider by phone to report the Violation.
+If a StructuralGas, the Austin Code Officer contacts the Gas service provider by phone to report the Violation.
+If a StructureWater, the Austin Code Officer contacts the Water service provider by phone to report the Violation.
+If an unsecured Violation, the Austin Code Officer begins the Board and Secure Premise use case.
+If eminent danger or uninhabitable, the Austin Code Officer determines if assistance services are required.  If required, the Austin Code Officer begins the Provide Assistance Services process.  The Austin Code Officer places temporary caution barriers, and performs an inspection. The Austin Code Officer notifies the Owner to fence and board the Property. The Austin Code Officer waits until the ComplianceTime has passed or the Property is secured by the Owner. If the Owner does not fence or board the Property properly, or immediate fencing is required, the Austin Code Officer begins the Board and Secure Premise use case. The Austin Code Officer updates the CodeViolationCase with action taken for the Structure Violation(s).
+
+
+<!-- IF INTERACTION OVERVIEW IS INCLUDED 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/code/***.jpg"><img src="http://austinea.org/arch/code/***.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Interaction Overview</span>
+</td></tr></table>
+-->
+
+
+<br />
+
+
+<!-- SEQUENCE DIAGRAM  -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/code/inspectStructureCodeViolation/sd01.jpg"><img src="http://austinea.org/arch/code/inspectStructureCodeViolation/sd01.jpg" border="0" alt="" width="600"/></a><br />
+<span style="font-weight: bold;">Inspect Structure Code Violation<br />Sequence Diagram</span>
+</td></tr></table>
+<br />
+
+
+<!-- INTERFACE TABLE  -->
+<table align="center" id="custom">
+<tr><th width="9%">Req#</th><th width="70%">Type/Interface - Requirement Description</th><th>Performance</th></tr>
+<tr>
+<td rowspan="2">001</td>
+<td style="font-weight: bold; background: lightgray;">Austin Code Officer/notifyAustinSpillResponse</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Officer contacts Austin Spill Response (Emergency Hotline: 512-974-2550). The Austin Code Officer provides the location, issue and severity. The Austin Code Officer provides additional information per Austin Spill Response's request.</td>
+</tr>
+<tr>
+<td rowspan="2">002</td>
+<td style="font-weight: bold; background: lightgray;">Austin Code Officer/notifyWatershedProtection</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Officer notifies Watershed Protection by phone call (phone number). The Austin Code Officer provides the location, issue and severity. The Austin Code Officer provides additional information per Watershed Protection's request.</td>
+</tr>
+<tr>
+<td rowspan="2">003</td>
+<td style="font-weight: bold; background: lightgray;">Austin Code Officer/notifyTravisCountyDistrictAttorney</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Officer notifies the Travis County District Attorney by phone call. The Austin Code Officer provides the Location, Issue, and Severity to Travis CountyDistrict Attorney. The Austin Code Officer provides additional information per Travis County District Attorney request.</tr>
+<tr>
+<td rowspan="2">004</td>
+<td style="font-weight: bold; background: lightgray;">Austin Code Officer/notifyTexasCommisionForEnvionrmentalQuality</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Officer notifies the Texas Commission for Environmental Quality by phone call. The Austin Code Officer provides the Location, Issue, and Severity to Texas Commission for Environmental Quality. The Austin Code Officer provides additional information per Texas Commission for Environmental Quality request.</td>
+</tr>
+<tr>
+<td rowspan="2">005</td>
+<td style="font-weight: bold; background: lightgray;">Austin Code Officer/notifyElectricalServiceProvider</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>he Austin Code Officer determines the Electric Service Provider, either Austin Energy or other provider. The Austin Code Officer contacts the Electric Service Provider (Austin Energy: 512-494-9400, or call other provider). The Austin Code Officer provides the location, issue and severity. The Austin Code Officer provides additional information per Electric Service Provider's request.</td>
+</tr>
+<tr>
+<td rowspan="2">006</td>
+<td style="font-weight: bold; background: lightgray;">Austin Code Officer/notifyAustinFireDepartmentForGas</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Officer determines the Gas Service Provider by checking the gas meter, and contacting Austin 311 or Austin Fire Department. The Austin Code Officer contacts the Austin Fire Department (phone call to 911). The Austin Code Officer provides the location, issue and severity. The Austin Code Officer provides additional information per Austin Fire Department's request.</td>
+</tr>
+<tr>
+<td rowspan="2">007</td>
+<td style="font-weight: bold; background: lightgray;">Austin Code Officer/notifyWaterServiceProvider</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Officer determines the Water Service Provider by checking Water Service Provider site or contacting Austin 311. The Austin Code Officer contacts the Water Service Provider (Austin Water: 512-972-1000, or call other provider). The Austin Code Officer provides the location, issue and severity, and whether the water needs to be turned off. The Austin Code Officer provides additional information per Water Service Provider's request. If a major leak of water occurs, the Austin Code Officer requests the water be turned off. Water Violations include sewage that does not impact the environment.</td>
+</tr>
+<tr>
+<td rowspan="2">008</td>
+<td style="font-weight: bold; background: lightgray;">Austin Code Officer/determineIfAssistanceServicesRequired</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>Relocation Services apply to any non-Owner-occupied Property. The Austin Code Officer inspects the Property, and if the Property condition and/or Structural Conditions are substandard (no hot water) or dangerous to the habitability (e.g., collapse hazard, insufficient stabilization, sanitation, etc.), then relocation services are deemed necessary. The Inspector contacts the Owner/Property Manager (preferably in person or by phone) and identifies whether the Owner is capable of providing relocation services. If relocation is required, the Austin Code Officer notifies the Owner and Tenant(s).</td>
+</tr>
+<tr>
+<td rowspan="2">009</td>
+<td style="font-weight: bold; background: lightgray;">Austin Code Officer/placeTemporaryCautionBarrier</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Officer places temporary CautionBarriers (caution tape, physical barriers, placards, etc.) around the Property. A placard is always placed at the Property. The Austin Code Officer takes photographs of the placed temporary CautionBarriers (including placards).</td>
+</tr>
+<tr>
+<td rowspan="2">010</td>
+<td style="font-weight: bold; background: lightgray;">Austin Code Officer/performInspection</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>If the violation concerns hazardous conditions, the Austin Code Officer applies Personal Protective Equipment (PPE). The Austin Code Officer inspects the Property. The Austin Code Officer inspects from the exterior (initially from the right of way) to the interior (if the interior is accessible and permission has been granted by legally interested party or someone in Care/Control of Property). The Austin Code Officer takes photographs and measurements as needed (hot water temperature, air quality, interior temperature, light meter, ground-fault circuit interrupter, gas meter, carbon monoxide, smoke detector, fences, grass height, driveway and walkways, checks impervious cover, etc.). As needed, the Austin Code Officer performs research to identify the Property Owner, offense, ViolationType, OwnerInformation, and relevant PropertyInformation (GIS system, ARR Site, annexation information, AMANDA permit history, site plan, TCAD/WCAD for OwnerHistory and DeedHistory, CC&B, ZoningHistory, CodeOfOrdinances, etc.). The Austin Code Officer interviews relevant parties. For Waste Hauler Inspection: The Austin Code Officer makes contact with driver, visually inspects vehicle for decals on door, asks driver about awareness requirement for waste hauler license, ensures driver is operating within City of Austin (outside of city is exempt), double checks the Waste Hauler license, checks for safety-equipment violations, driver's license of driver, and takes photos of truck (including both doors and front license plate). If a short-term rental complaint, the Austin Code Officer responds more quickly than other complaints. On Fridays and Saturdays, the Austin Code Officer performs inspection during day, ands from 6:00 p.m. - 2:00 a.m. On Sundays, inspections occur from 8:00 a.m. - 12:00 p.m.</td>
+</tr>
+<tr>
+<td rowspan="2">011</td>
+<td style="font-weight: bold; background: lightgray;">Austin Code Officer/notifyOwnerToFenceBoardProperty</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Officer notifies the Owner by phone of the need to board and secure Property within a specified compliance time. The compliance time for the deficiency depends on the deficiency's severity. </td>
+</tr>
+<tr>
+<td rowspan="2">012</td>
+<td style="font-weight: bold; background: lightgray;">Case Management System/updateCodeViolationCase</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The user updates the CodeViolationCase with relevant information to the case. If the CodeViolationCase generated a StopWorkOrder, the StopWorkOrder is attached to the CodeViolationCase.
+The user attaches a copy of the DiagramOfWorkRequired. If a board and secure occurs, a BoardAndSecureBill is attached to the CodeViolationCase by Austin Code Admin. If a sign was removed, the Austin Code Officer adds the sign and information to the CodeViolationCase. Additionally, if CautionBarriers were placed, information on the CautionBarriers is added to the CodeViolationCase. If property information was updated, the Case Management System includes updated property information.
+The user updates the CodeViolationCase with information relevant to the change. This includes, but is not limited to, BoardAndSecureBill, PropertyAbatementBill, FollowUpNotes, photographs (boarded, non-boarded, posted notifications, placards), emails, PhoneCallSummary, other relevant information and inter-department communications. If a ServiceCase is created, the Public Information Office Admin adds notes to the CodeViolationCase including the CitizenNeed and ServicesRecommended for ServiceCase. If CorrectiveResources are identified, the user updates the CodeViolationCase with a list of CorrectiveResources provided (three resources) and notes of contact with Owner/Tenant. HardshipReason is added to the CodeViolationCase.
+If new violations are identified, the user adds the new violation to the Case Management System and the violation is attached to the original CodeComplaintCase. If a TitleSearch is completed, the TitleSearch is added to the CodeViolationCase. If additional LegallyInterestedParties are identified, and the parties are added to the CodeViolationCase. If a NoticeOfViolation is generated, the NoticeOfViolation is added to the CodeViolationCase. If posted at the property, photographs are attached to the CodeViolationCase. If the NoticeOfViolation is delivered and a certified mail receipt is received, the receipt is added to the CodeViolationCase.
+If a citation is created, the Case Management System attaches the citation to the CodeViolationCase. Additionally, the user scans and uploads a copy of the physical citation to the Case Management System. If an AdministrativeHearingWarning is issued, the user updates the CodeViolationCase with information on the issued AdministrativeHearingWarning.
+If an AdministrativeHearingCitation is issued, the user updates the CodeViolationCase with the AdministrativeHearingCitation, and a LegalCase is created. The user scans and uploads returned liens to the CodeViolationCase. If a lien is filed for the property, the TRVNumber is added to the CodeViolationCase.
+The Austin Code Officer updates the CodeViolationCase with information concerning Violation extensions, written request, reason for approval/denial, etc.
+If there is a payment, then the CodeViolationCase is updated by the user to include the payment.
+</td>
+</tr>
+
+
+</table>
+
+
+<br/>
+
+
+
+
+</td></tr></table>
+</td></tr></table></body></html>

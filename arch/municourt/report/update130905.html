@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<title>Muni Court "Accounting For Community Service Time" Requirements</title>
+<link rel="StyleSheet" href="http://austinea.org/style/email.css" type="text/css">
+</head>
+<body>
+
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="600" align="center"><tr><td>
+
+<!-- Online reference -->
+<p><class="lbl">Note: This report is also <a href="http://austinea.org/arch/municourt/report/update130905.html" style="font-size: 7pt;">available online</a> by following link.</p>
+
+<div>
+<p>Muni Court Architecture Team,</p> 
+</div>
+
+<p>Attached is the information for the "Accounting For Community Service Time" use case that was reviewed last Thursday with the team. Please take a moment to check my work and let me know if there are any changes I can make to improve this, or if this requirement is as discussed! 
+<p>
+
+
+<!-- Signature-->
+<table cellpadding="0" cellspacing="0" border="0" width="350" style="border-collapse: collapse;"><tr><td>
+<p>Respectfully,</p>
+
+<table cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;" align="right">
+<tr>
+<td>
+<img src="http://austinea.org/image/austinLogo.jpg" border="0" width="100" height="100" alt="Austin Logo" />
+</td>
+</tr>
+</table>
+<p><img src="http://coawss3a.coacd.org/sites/CTM/EA/Shared Documents/Images/ABSIG.JPG" border="0" width="143" height="83" alt="sign" /> </p>
+
+<p><b>Aaron Brown</b> 
+<span style="color: red; font-weight: bold;">|</span> 
+<b>City of Austin</b>
+<a href="http://www.linkedin.com/in/austnaaron"><img src="http://journeycolorado.com/images/linkedin.jpg" border="0" alt="Linkin Logo" /> </a> <br />
+Senior Enterprise Architect<br />
+Direct: (512) 974-2960 </p>
+Email: Aaron.Brown2@austintexas.gov </p>
+</td></tr></table>
+
+
+<!-- Use case information below -->
+
+<hr>
+
+<!-- Muni Court Requirements Model -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="right">
+<tr>
+<td align="center">
+<span class="lbl">Note: Select to download</span><br />
+<a href="http://austinea.org/arch/municourt/report/AccountingForCommunityServiceTimeUseCase.png"><img src="http://austinea.org/arch/municourt/report/AccountingForCommunityServiceTimeUseCase.png" border="0" width="200" alt="" /></a><br />
+<span style="font-weight: bold;">Accounting For Community Service Time<br />Use Case</span>
+</td></tr></table>
+
+
+<p><b>Use Case Scope</b></p>
+<p>The Defendant submits proof of Community Service hours. The Clerk locates the Community Service Plan, and applies the hours reported to the Community Service Plan. The Clerk attaches the Community Service document to the Community Service Plan. The upload creates a unique reference number for tracking the "Receipt" document. The System offers the clerk the option to either print or email the Receipt to the Defendant/Attorney/etc., and attaches a Receipt to the Community Service Plan and associated credited case, for future printing. The System updates each case affected with a case specific credit for the associated Community Service and records the associated reference document number of the Scanned Community Service hours. Both Dollar and Hour totals are reflected at the Case level. The system adjusts the balances against the plan, and generates a receipt for the Defendant. The Community Service Plan update is added to the Clerk queue for later confirmation. The Clerk contacts the Community Service Provider to verify the hours submitted. </p>
+
+<!-- Image - File For Motion Sequence Diagram -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="http://austinea.org/arch/municourt/report/AccountingForCommunityServiceTimeSequenceDiagram01.png"><img src="http://austinea.org/arch/municourt/report/AccountingForCommunityServiceTimeSequenceDiagram01.png" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Accounting For Community Service Time Sequence Diagram</p>
+</td></tr></table> 
+
+
+<p style="font-weight: bold; text-align: center;">Accept Case File Document Interface Descriptions</p>
+<!-- Table definition -->
+<table align="center" id="custom">
+<tr><th width="195">Type/Interface</th><th>Description</th></tr>
+<tr>
+<td>Manage Court Case/ <br /> locatePID</td> <td>The User is presented a list of fields to provide information for the system to locate the Person ID (PID) for a defendant. The fields used for the PID search include, but are not limited to, Partial First name, Partial Last Name, First Name, Last Name, Address, Driver's License Number, Plate Number, Date of Birth, Telephone number. The System conducts a search and provides a list of matching Defendants from which the User can choose. </td> </tr>
+<tr>
+<td>Manage Court Case/ <br /> locateCommunityServicePlanByDefendant</td> <td>The User specifies the Personal ID (PID) for the defendant, or selects the name of a defendant which provides the PID to be used for subsequent actions. The system returns a designator indicating the number of Community Service Case plans the Defendant has. If at least one exists, the system returns a list of plans established. The list of Plans also includes a list of the associated cases for each plan. Additionally the system returns a list of ALL cases associate with the PID not currently assigned to a Community Service Plan.</td> </tr>
+<tr>
+<td>Manage Court Case/<br /> applyHoursToCommunityServicePlan</td> <td>The Clerk selects the Community Plan listed which is associated with the case whose hours are to be credited. The System prompts the Clerk to provide documentation/proof to be scanned. Once the document is scanned, the Clerk verifies the scan is acceptable,and is offered the opportunity to rescan the document should the image not be satisfactory. Once acceptable, the system generates a Receipt which should be stored and printable. The Receipt is locatable and printable by both the case and the community service plan to which the case belongs. </td> </tr>
+<tr>
+<td>Manage Court Case/ <br /> specifyReceiptOptions</td> <td>The System provides a selection for managing Receipts associated with a Case or Community Service Plan. The Clerk can either print or email a receipt. </td> </tr>
+<tr>
+<td>Manage Court Case/ <br /> sendEmail</td> <td>The Clerk has requested that a Receipt for Community Service Hours be emailed to an address. The Clerk specifies the email Address destination, or references a person associated with the case (Defendant or Attorney) whose email is registered and verified with the system. The Clerk is given the opportunity to add multiple recipients if desired.</td> </tr>
+<tr>
+<td>Manage Court Case/ <br /> printReceipt</td> <td>The Clerk has requested that a Receipt for Community Service Hours be Printed. The Clerk specifies the printer at which the Community Service Receipt will be printed. The Clerk is given the opportunity to print multiple copies if desired.</td> </tr>
+<tr>
+<td>Manage Court Case/ <br /> addCommunityPlanUpdateToClerkQueue</td> <td>A Community Service Plan has been updated in some fashion (hours applied, new cases added to the plan, cases removed from the plan, or plan deleted). The Community Service plan is added to the Clerk Queue for referential integrity checks; the Clerk will reach out to each community service provider the Defendant has listed, to verify the hours worked (credited) at a later date.</td> </tr>
+
+</tr>
+</table>
+
+
+
+<!-- Table definition
+<table align="center" id="custom">
+<tr><th>Number</th><th>Category</th><th>Description</th><th>Criticality</th></tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table> -->
+
+</td></tr></table> 
+
+</td></tr></table>
+</td></tr></table></body></html>

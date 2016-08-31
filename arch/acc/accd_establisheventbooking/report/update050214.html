@@ -1,0 +1,204 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<title>Convention Center "Create Event Utility Packet"</title>
+<link rel="StyleSheet" href="http://austinea.org/style/email.css" type="text/css">
+</head>
+<body>
+
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="600" align="center"><tr><td>
+
+<!-- Online reference -->
+<p><class="lbl">Note: This report is also <a href="http://austinea.org/arch/acc/report/update050214.html" style="font-size: 7pt;">available online</a> by following link.</p>
+
+<div>
+<p>Hi All,</p> 
+</div>
+
+<p>Attached is the information for the "Create Event Utility Packet" use case that was reviewed May 2st, 2014, with the Convention Center Team. Please take a moment to check my work and let me know if there are any changes I can make to improve this, or if this requirement is as discussed! 
+<p>
+
+
+<!-- Signature-->
+<table cellpadding="0" cellspacing="0" border="0" width="350" style="border-collapse: collapse;"><tr><td>
+<p>Cheers!</p>
+
+<table cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;" align="right">
+<tr>
+<td>
+<img src="http://austinea.org/image/austinLogo.jpg" border="0" width="100" height="100" alt="Austin Logo" />
+</td>
+</tr>
+</table>
+<p><img src="http://coawss3a.coacd.org/sites/CTM/EA/Shared Documents/Images/ABSIG.JPG" border="0" width="143" height="83" alt="sign" /> </p>
+
+<p><b>Aaron Brown</b> 
+<span style="color: red; font-weight: bold;">|</span> 
+<b>City of Austin</b>
+<a href="http://www.linkedin.com/in/austnaaron"><img src="http://journeycolorado.com/images/linkedin.jpg" border="0" alt="Linkin Logo" /> </a> <br />
+Senior IT Enterprise Architect<br />
+Direct: (512) 974-2960 </p>
+Email: Aaron.Brown2@austintexas.gov </p>
+</td></tr></table>
+
+
+<!-- Use case information below -->
+
+<hr>
+
+<!-- Muni Court Requirements Model -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="right">
+<tr>
+<td align="center">
+<span class="lbl">Note: Select to download</span><br />
+<a href="http://austinea.org/arch/acc/report/createEventUtilityPacketUseCase.jpg"><img src="http://austinea.org/arch/acc/report/createEventUtilityPacketUseCase.jpg" border="0" width="200" alt="" /></a><br />
+<span style="font-weight: bold;">Create Event Utility Packet<br />Use Case</span>
+</td></tr></table>
+
+
+<p><b>Use Case Scope</b></p>
+<p>The Utility Services Coordinator receives a Trace/Notification from the System 3-6 months prior to the Event with a reminder to use the Utility Services Manager (USM) System to create an Event and associated Client Packet and Exhibitor Packet with a Cover Letter as a PDF document and email it to the Client. The Utility Services Coordinator uses the System to examine Event Specifics and notes the Contract ID for the Event. The Client Packet has a select amount of Utility Services that are not included on the Exhibitor Packet and vice versa. The Utility Services Coordinator uses the system to enable the Event for Online Ordering. Online Ordering is a web-based portal allowing the Event Representative to order and pay for their desired Utility Services for a specific Event. Both Client and Exhibit Packets include Utility Services with three pricing levels: Incentive, Standard and Floor Rate. The Incentive Rate applies to Utility Services ordered by the Incentive Deadline Date. Standard Rate is the standard price for the Utility Services. Floor Rate charged for Utility Services ordered during the Event.
+The Utility Services Coordinator communicates directly with the Event Representative regarding their needs, answering questions, etc. Within 30 days, the Utility Services Coordinator sends the Client an Estimate for their requested Utility Services. Within 7 days of the Event, the Utility Services Coordinator creates a Utility Pre-Plan. Floor Diagrams with desired Electrical and Technical Services indicated with exact locations, are received from the Client, AV Contractor and Decorator Contractor, Catering Operations Manager and are included in the Utility Pre-Plan. The Event Services Coordinator emails the Utility Pre-Plan to Maintenance and IT. 
+The System provides a web portal by which external partners ( AV Contractor and Decorator Contractor, Parking, and Catering Operations Manager ) can examine details associated with the event and can provide feedback to the Event Coordinator at any time. This provides a more global view of resources required for multiple events.</p>
+
+<!-- Image - File For Motion Sequence Diagram -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="http://austinea.org/arch/acc/report/createEventUtilityPacketSequenceDiagram01.jpg"><img src="http://austinea.org/arch/acc/report/createEventUtilityPacketSequenceDiagram01.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Create Event Utility Packet</p>
+</td></tr></table> 
+
+
+
+<p style="font-weight: bold; text-align: center;">Create Event Utility Packet Interface Descriptions</p>
+<!-- Table definition -->
+<table align="center" id="custom">
+<tr><th width="195">Type/Interface</th><th>Description</th></tr>
+<tr>
+<td>Establish Event Booking/ <br /> requestUtilityServicesCoordinatorCreateEventPackets</td> <td>3-6 months prior to the Event the System sends a notification to the Utility Services Coordinator instructing them to create Event Packets for the Client and the Exhibitor, providing the Contract ID, Event Name, Space, Notes from Sales, etc. The System also requests Utility Services Coordinator to verify auto-reassigned traces (reminders). 
+ </td> </tr>
+ 
+<tr>
+<td>Establish Event Booking/ <br /> reviewCustomerAccount</td> <td>The Utility Services Coordinator accesses the system and reviews the type of event, dates, space, booking notes, and contract clauses for accuracy. The System allows the Utility Services Coordinator to make changes as necessary, recording who made the change, the date the change was made and by whom.   </td> </tr>
+
+<tr>
+<td>Establish Event Booking/<br /> createClientAndExhibitorPackets</td> <td>The Utility Services Coordinator uses the System to create the Client and Exhibitor Packets based upon current templates. Packets include the following:
+Cover Letter (Client Name, Contract ID, Event Name, Show Dates, Move In/Out Dates, Discount Rate Deadlines, Standard Rate Deadlines, Floor Rate Applicable Date, Contact Information for Austin Convention Center, name and contact information of Utility Services Coordinator). Table of Contents. List of all products and services unique to client and exhibitor (telephone, electrical, technology). To include standard pricing incentive and floor pricing.
+Exhibitor Booth Diagram. Order Form. Installation Notice. Wifi Guidelines. Policies and Procedures for Electrical. Service Yard and Entry Rules. Fire Regulations. Booth Security Services and Procedures. Booth Security Order Form. Catering Menu (Booth Catering Order Form. Guideline for Sample Food and Beverage).</td> </tr>
+
+<tr>
+<td>Establish Event Booking/<br /> generateIntroductionLetter</td> <td>The Utility Services Coordinator uses the System to draft an Introduction Letter from an introduction template. The letter welcomes the client to the Austin Convention Center or Palmer Event Center (note: the system provides a mechanism for different templates allowing alternate letters based on situation). The letter lists the Utility Services Coordinator's name, the Event name and dates, deadline information, details relative to event (person referred, first event, if repeat event letter contains information on previous event services), and link to online ordering. 
+Attached to the Introduction Letter are previous invoices for past events, Client and Exhibitor Packets. </td> </tr>
+
+<tr>
+<td>Establish Event Booking/ <br /> deliverEventPacketsToEventRepresentative</td> <td>The System sends the Introduction Letter, Event Packet, and Attachments to the Event Representative via email.</td> </tr>
+
+<tr>
+<td>Establish Event Booking/<br /> enableOnlineOrdering</td> <td>The Utility Services Coordinator uses the System to enable online ordering for the Event. Online ordering allows Clients and Exhibitors the ability to choose from a reduced list of services via a web order form and process credit card payment for that order. </td> </tr>
+
+
+<tr>
+<td>Establish Event Booking/ <br /> createOrder</td> <td>The Event Representative uses the online order feature of the System to create their event services order (or can return packet with requested requirements.) 
+If using the online order the Event Representative picks the Event Name. The Event Representative enters their name, company name, address, booth number, telephone numbers, email address, services they wish to order, and attaches a scanned booth diagram with annotations. If the Event Representative returns the Packet the Utility Services Coordinator uses the System to create the order and enters the Event Representative name, company name, address, booth number, telephone numbers, email address, services they wish to order, and attaches a scanned booth diagram with annotations. </td> </tr>
+<tr>
+
+<td>Utility Services Coordinator/ <br /> acknowledgeAndVerifyOrderEstimate</td> <td>The Event Representative notifies the Utility Services Coordinator via email of their receipt and verification of services listed on Estimate or Event Order. If the Event Representative does not verify services on Estimate they include a list of proposed changes or deletions of services. If the Event Representative verifies the services on Estimate they sign Estimate.</td> </tr>
+
+<tr>
+<td>Establish Event Booking/<br /> sendNotificationOfPaymentReadyToEventRepresentative</td> <td>The System sends the Event Representative an email notification informing them their order is ready for payment. The email includes a copy of the order, total, and a link to a payment gateway. </td> </tr>
+
+<tr>
+<td>Payment Gateway/ <br /> processPayment</td> <td>The Event Representative reviews their order, enters their credit card information (credit card number, expiration date, name as shown on card, card type, security code, zip code), and processes the payment for their order. </td> </tr>
+
+
+<tr>
+<td>Payment Gateway/ <br /> notifyEventRepresentativeAndUtilityServicesCoordinatorOfPayment</td> <td>The Payment Gateway sends the Event Representative and Utility Services Coordinator an email notification of processed payment which includes contract ID, event name, payment total, last 4-digits of card.</td> </tr>
+
+
+
+<tr>
+<td>Catering Operations Manager/ <br /> provideCateringConsulting</td> <td>The Utility Services Coordinator requests Catering Operations Manager to provide utilities (electrical, telephone, technical, water) catering requirements for concessions and catering functions for event, and exhibit booth orders.</td> </tr>
+
+
+
+<tr>
+<td>Establish Event Booking/ <br /> updateCateringRequirements</td> <td>The Utility Services Coordinator uses the System to update catering requirements for Event.   </td> </tr>
+
+
+
+<tr>
+<td>Maintenance Supervisor/ <br /> provideMaintenanceConsulting</td> <td>The Utility Services Coordinator requests Maintenance Manager to provide consulting regarding utilities (electrical, telephone, water) requirements. </td> </tr>
+
+
+
+<tr>
+<td>Establish Event Booking/ <br />updateMaintenanceRequirements</td> <td>The Utility Services Coordinator uses the System to update the event with electricity requirements from Maintenance Supervisor.</td> </tr>
+
+
+
+<tr>
+<td>Decorator Consultant/ <br /> provideDecoratorConsulting</td> <td>The Utility Services Coordinator requests Decorator Consultant to provide utilities (electrical, telephone, technical, water) requirements for event.</td> </tr>
+
+
+
+<tr>
+<td>Establish Event Booking/ <br /> updateDecoratorRequirements</td> <td>The Utility Services Coordinator uses the System to update event with decorating requirements from Decorating Consultant.</td> </tr>
+
+
+
+<tr>
+<td>Audio Visual Consultant/ <br /> provideAudioVisualConsulting</td> <td>The Utility Services Coordinator requests Audio Visual Consultant to provide utilities (electrical, telephone, technical) requirements. </td> </tr>
+
+
+<tr>
+<td>Establish Event Booking/ <br /> updateAudioVisualRequirements</td> <td>The Utility Services Coordinator uses the System to update event with Audio Visual Requirements from AV Consultant.</td> </tr>
+
+
+<tr>
+<td>IT Business Systems Analyst/ <br /> provideITConsulting</td> <td>The Utilities Services Coordinator requests that the IT Business Systems Analyst provides consulting on utilities (telephone, technical) requirements for event.</td> </tr>
+
+
+<tr>
+<td>Establish Event Booking/ <br /> updateITRequirements</td> <td>The Utilities Services Coordinator uses the System to update IT requirements for the event from IT Business System Analyst. </td> </tr>
+
+<tr>
+<td>Establish Event Booking/ <br /> createEstimate</td> <td>The Utilities Service Coordinator uses the System to create an estimate based upon the event order. The estimate contains all details procured from internal and external operations experts, all needed utility services (electrical, technical, water, telephone), pricing schedules, the amount due, and lines for signatures.</td> </tr>
+
+
+<tr>
+<td>Establish Event Booking/ <br /> sendEstimateToEventRepresentative</td> <td>The System sends an email notification to the Event Representative. The estimate is attached to the email. Email requests approval of estimate.</td> </tr>
+
+<tr>
+<td>Establish Event Booking/ <br /> updateOrder</td> <td>The Utility Services Coordinator uses the System to update the requirements on the Estimate. If no changes are required Utility Services Coordinator uses the System to update Estimate as approved.</td> </tr>
+
+<tr>
+<td>Establish Event Booking/ <br /> generatePrePlan</td> <td>The Utilities Service Coordinator uses the System to create a Utility Preplan based upon the event order 7 days prior to the Event. The Utility Preplan contains:
+All details procured from event representative and internal & external operations experts, All needed utility services (electrical, technical, water, telephone), Move in dates, Move out dates, Diagrams, Event name, Show dates, All client information, Utility coordinator & schedule for utility coordinators, service desk, Exhibitors with booth numbers, requirements, and diagram.  Labels. Locations of services</td> </tr>
+
+
+
+
+
+
+
+</table>
+
+
+
+<!-- Table definition
+<table align="center" id="custom">
+<tr><th>Number</th><th>Category</th><th>Description</th><th>Criticality</th></tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table> -->
+
+</td></tr></table> 
+
+</td></tr></table>
+</td></tr></table></body></html>

@@ -1,0 +1,138 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Test Mobile App Changes</title>
+<link rel="Stylesheet" href="http://austinea.org/style/hover.css" type="text/css" />
+</head>
+<body bgcolor="#ddd8c2">
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="650" align="center">
+<tr><td style="padding: 0;" height="130" valign="top"><a href="http://austinea.org">
+<img src="http://austinea.org/image/iTHeader.jpg" alt="austinea.org - home..." border="0"></a></td></tr>
+<!-- Text Area -->
+<tr><td>
+
+<p style="text-align: center; font-weight: bold;">Test Mobile App Changes<br />Use Case Specification</p>
+<p style="text-align: center;">03/24/16
+
+<!--  IF Printable document option Included  
+<p style="text-align: center;">download <a href="http://austinea.org/arch/as/***.docx">printable version</a>
+-- >
+
+<b> Animal Services Logical Data Model </b>            
+<!-- Image -  Logical Data Model 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="http://austinea.org/arch/as/ldm.jpg"><img src="http://austinea.org/arch/as/ldm.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Animal Services Logical Data Model</p>
+</td></tr></table> -->
+
+<!-- USE CASE IMAGE -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/311/testMobileAppChanges/ucd.jpg"><img src="http://austinea.org/arch/311/testMobileAppChanges/ucd.jpg" border="0" alt="" width="620"/></a><br />
+<span style="font-weight: bold;">Test Mobile App Changes<br />Use Case Model</span>
+</td></tr></table>
+
+<p><b>Scope: </b>Once the Mobile App Lead receives the updated mobile application they distribute the MobileAppTestPlan to Testers. Each Tester completes their assigned test and sends their results to the Mobile App Lead, along with any MobileAppIssues they encountered. The Mobile App Lead collects all test results, creates a IssueLog for the MobileAppIssues, and sends Notification to stakeholders on the testing progress. The Mobile App Lead also determines if additional testing is required. If so, the Mobile App Lead creates a revised MoblieAppTestPlan for redistribution to the Testers and another round of testing. If testing is complete (either passed or failed) the Mobile App Lead notifies the Chain of Command, and includes the IssueLog. A test is considered a failure if the mobile application requires additional configuration to resolve MobileAppIssues. The Chain of Command notifies the Vendor of the test results. If a failure the process returns to preparing the mobile application update. If testing was completed for the test instance of the mobile application no MobileAppAcceptanceCertificate is required, and the process returns to preparing the mobile application updates, but for the production version of the application. If testing was completed for the production application and passed the Vendor sends a MobileAppAcceptanceCertificate to the Chain of Command for a signature. The Chain of Command signs the MobileAppAcceptanceCertificate and returns to the Vendor. Some MobileAppIssues may not result in a test failure, but requires a final update from the Vendor to correct; these issues are resolved through the same mobile app preparation process, but occur on an accelerated timeline.  
+
+
+
+<!-- IF INTERACTION OVERVIEW IS INCLUDED 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/as/***.jpg"><img src="http://austinea.org/as/code/***.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Interaction Overview</span>
+</td></tr></table>
+-->
+
+<!-- ACTIVITY DIAGRAM -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/311/testMobileAppChanges/ad01.jpg"><img src="http://austinea.org/arch/311/testMobileAppChanges/ad01.jpg" border="0" alt="" width="600"/></a><br />
+<span style="font-weight: bold;">Test Mobile App Changes<br />Activity Diagram</span>
+</td></tr></table>
+
+
+
+<br />
+
+
+<!-- SEQUENCE DIAGRAM                 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/311/abatePropertyWithContractor/sd01.jpg"><img src="http://austinea.org/arch/311/abatePropertyWithContractor/sd01.jpg" border="0" alt="" width="600"/></a><br />
+<span style="font-weight: bold;">Test Mobile App Changes<br />Sequence Diagram</span>
+</td></tr></table>
+<br />
+-->  
+
+<!-- INTERFACE TABLE  -->
+<table align="center" id="custom">
+<tr><th width="9%">Req#</th><th width="70%">Type/Interface - Requirement Description</th><th>Performance</th></tr>
+<tr>
+<td rowspan="2">001</td>
+<td style="font-weight: bold; background: lightgray;">Mobile App Lead/Distribute Test Plan to Testers</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>When the Mobile App Lead receives The Mobile App Lead distributes the updated MobileAppTestPlans to the testers. Testers are varied and include members of the CSR team, Client Relations & Information Services, Client Departments, Developers, etc.</td>
+</tr>
+<tr>
+<td rowspan="2">002</td>
+<td style="font-weight: bold; background: lightgray;">Tester/Test Mobile Application Changes and Send Results to Mobile App Lead</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Testers complete their MobileAppTestPlans. If a Tester encounters a MobileAppIssue the Tester sends the MobileAppIssue to the Mobile App Lead. Testers return their tested MobileAppTestPlan to the Mobile App Lead.</td>
+</tr>
+<tr>
+<td rowspan="2">003</td>
+<td style="font-weight: bold; background: lightgray;">Mobile App Lead/Collect Test Results, Update Issues Log and Test Plans, and Notify Stakeholders of Testing Progress</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Mobile App Lead collects the tested MobileAppTestPlan, and MobileAppIssues. The Mobile App Lead updates the IssuesLog, and determines if additional testing is required. If so, the Mobile App Lead revises the MobileAppTestPlan. If additional testing isn't required the Mobile App Lead Notifies the Chain of Command testing is completed. If IssueLog requires Vendor changes the Mobile App Lead sends IssueLog to Chain of Command. The Mobile App Lead sends Notification to stakeholders of testing progress.</td>
+</tr>
+<tr>
+<td rowspan="2">004</td>
+<td style="font-weight: bold; background: lightgray;">Chain of Command/Notify Vendor of Testing Result</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Chain of Command notifies the Vendor of the test results. If a failure the process returns to preparing the mobile application update. If testing was completed for the test instance of the mobile application no MobileAppAcceptanceCertificate is required, and the process returns to preparing the mobile application updates, but for the production version of the application.</td>
+</tr>
+<tr>
+<td rowspan="2">005</td>
+<td style="font-weight: bold; background: lightgray;">Vendor/Send Acceptance Certificate to Austin 311</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Vendor sends a MobileAppAcceptanceCertificate to the Chain of Command for a signature.</td>
+</tr>
+<tr>
+<td rowspan="2">006</td>
+<td style="font-weight: bold; background: lightgray;">Chain of Command/Sign Acceptance Certificate and Return to Vendor</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Chain of Command signs the MobileAppAcceptanceCertificate and returns to the Vendor.</td>
+</tr>
+<tr>
+
+
+
+
+
+</table>
+
+
+<br />
+
+
+
+
+</td></tr></table>
+</td></tr></table></body></html>

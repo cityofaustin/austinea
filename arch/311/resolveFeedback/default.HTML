@@ -1,0 +1,140 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Resolve Feedback</title>
+<link rel="Stylesheet" href="http://austinea.org/style/hover.css" type="text/css" />
+</head>
+<body bgcolor="#ddd8c2">
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="650" align="center">
+<tr><td style="padding: 0;" height="130" valign="top"><a href="http://austinea.org">
+<img src="http://austinea.org/image/iTHeader.jpg" alt="austinea.org - home..." border="0"></a></td></tr>
+<!-- Text Area -->
+<tr><td>
+
+<p style="text-align: center; font-weight: bold;">Resolve Feedback<br />Use Case Specification</p>
+<p style="text-align: center;">03/21/16
+
+<!--  IF Printable document option Included  
+<p style="text-align: center;">download <a href="http://austinea.org/arch/as/***.docx">printable version</a>
+-- >
+
+<b> Animal Services Logical Data Model </b>            
+<!-- Image -  Logical Data Model 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="http://austinea.org/arch/as/ldm.jpg"><img src="http://austinea.org/arch/as/ldm.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Animal Services Logical Data Model</p>
+</td></tr></table> -->
+
+<!-- USE CASE IMAGE -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/311/resolveFeedback/ucd.jpg"><img src="http://austinea.org/arch/311/resolveFeedback/ucd.jpg" border="0" alt="" width="620"/></a><br />
+<span style="font-weight: bold;">Resolve Feedback<br />Use Case Model</span>
+</td></tr></table>
+
+<p><b>Scope: </b>The Feedback Responder receives a ServiceRequest311Feedback.
+If the Feedback is resolvable by the workgroup the Feedback Responder resolves the Feedback including requesting services from as many 311 work groups as necessary. Sometimes Feedback resolution requires multiple work groups to resolve.
+If the Feedback is invalid no services are requested to resolve the Feedback.
+The Feedback Responder contacts the Feedback Submitter to notify them of the Feedback result. The Feedback Responder then updates the ServiceRequest311Feedback with notes on their results and either closes the ServiceRequest, if no other work groups are working the Feedback, or completes their activity on the ServiceRequest while it remains open until all work is completed by each work group.  
+
+
+
+<!-- IF INTERACTION OVERVIEW IS INCLUDED 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/as/***.jpg"><img src="http://austinea.org/as/code/***.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Interaction Overview</span>
+</td></tr></table>
+-->
+
+<!-- ACTIVITY DIAGRAM -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/311/resolveFeedback/ad01.jpg"><img src="http://austinea.org/arch/311/resolveFeedback/ad01.jpg" border="0" alt="" width="600"/></a><br />
+<span style="font-weight: bold;">Resolve Feedback<br />Activity Diagram</span>
+</td></tr></table>
+
+
+
+<br />
+
+
+<!-- SEQUENCE DIAGRAM                  
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/311/abatePropertyWithContractor/sd01.jpg"><img src="http://austinea.org/arch/311/abatePropertyWithContractor/sd01.jpg" border="0" alt="" width="600"/></a><br />
+<span style="font-weight: bold;">Resolve Feedback<br />Sequence Diagram</span>
+</td></tr></table>
+<br />
+-->
+
+<!-- INTERFACE TABLE  -->
+<table align="center" id="custom">
+<tr><th width="9%">Req#</th><th width="70%">Type/Interface - Requirement Description</th><th>Performance</th></tr>
+<tr>
+<td rowspan="2">001</td>
+<td style="font-weight: bold; background: lightgray;">Feedback Responder/Resolve Feedback and Request Services from 311 Work Groups</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>A Feedback Responder reviews the assigned ServiceRequest311Feedbacks each day and resolves the Feedback as appropriate, or requests the services required to resolve the Feedback (See Use Case diagram for extension points).
+If staff Feedback, but not 311 Agent Feedback: the Feedback Responder (Chain of Command) coaches staff on the Feedback.
+If Client Relations & Information Services Feedback:
+If Feedback concerning external department: The Feedback Responder reviews CalltRecordings, KnowledgeBase, and other research material as needed; primarily to ensure Austin 311 followed process appropriately. The Feedback Responder notifies the External Department of the Feedback through a notification (what's stated by citizen, actions taken, 311 request for action).
+If Feedback concerning community outreach: Feedback Responder notifies appropriate staff through Notifications (internal website, email) for positive feedback. If Feedback includes a request for attendance at a future Event, The Feedback Responder updates the EventList (NameOfEvent, Month, ContactName, ContactNumber, ContactEmail) with the future Event. If Feedback is negative the Feedback Responder coordinates review with the Chain of Command, and Client Relations & Information Services team, as needed, and updates the appropriate CommunityOutreachPlan (and/or CommunityOutreachMaterials).
+If Feedback concerning 311 marketing: The Feedback Responder notifies appropriate staff through Notifications (internal website, email) for positive feedback. If Feedback is negative the Feedback Responder coordinates review with the Chain of Command, and Client Relations & Information Services team, as needed, and updates the appropriate MarketingPlan (and/or MarketingMaterials).
+If Feedback concerning EmergencyResponsePlan: The Feedback Responder notifies appropriate staff through Notifications (internal website, email) for positive feedback. If Feedback is negative the Feedback Responder coordinates review with the Chain of Command, and Client Relations & Information Services team, as needed, and updates the appropriate EmergencyResponsePlan (and/or EmergencyResponseMaterials).
+If Feedback concerning a client service: the Feedback Responder initiates the Identify Client Need use case.
+If Feedback concerning a ServiceRequest: the Feedback Responder initiates the Update Service Request Type use case.
+If Feedback concerning a KnowledgeBaseItem: the Feedback Responder initiates the Update Knowledge Base use case.
+If Feedback concerning a 311Website: the Feedback Responder initiates the Update 311 Website use case.
+If System Operations Feedback:
+If Feedback concerning staff schedule or workforce management: the Feedback Responder starts the Adjust Staff Schedule use case.
+If Feedback concerning call routing: the Feedback Responder starts the Update Call Routing use case.
+If Feedback concerning 311 Agent phone skill: the Feedback Responder starts the Modify Agent Phone Skill use case.
+If Feedback concerning 311 hardware or software (excluding CSR): the Feedback Responder starts the Update 311 Technology use case.
+If Feedback concerning 311 Agent seating: the Feedback Responder starts the Update Floor Plan Chart use case.
+If Feedback concerning 311 Agent Scorecard: the Feedback Responder adds the Feedback to the Scorecard for next revision.
+If Training Feedback:
+If Feedback concerning TrainingMaterials: the Feedback Responder updates the TrainingMaterial.
+If Feedback requires staff to be trained: the Feedback Responder starts the Train 311 Staff use case.
+If Staff Development Feedback:
+The Feedback Responder starts the Resolve Staff Development Feedback use case.
+</td>
+</tr>
+<tr>
+<td rowspan="2">00X</td>
+<td style="font-weight: bold; background: lightgray;">Feedback Responder/Notify Feedback Submitter of Feedback Result</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Feedback Responder notifies the Feedback Submitter of the results of the Feedback (services requested, etc.)</td>
+</tr>
+<tr>
+<td rowspan="2">003</td>
+<td style="font-weight: bold; background: lightgray;">Feedback Responder/Update Feedback with Results</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Feedback Responder updates the ServiceRequest311Feedback with notes on the services requested, Notification to the Feedback Submitter, and either closes the ServiceRequest (if no additional response is required), or completes their assigned activity (if additional responses are outstanding).</td>
+</tr>
+<tr>
+
+
+
+
+
+</table>
+
+
+<br />
+
+
+
+
+</td></tr></table>
+</td></tr></table></body></html>

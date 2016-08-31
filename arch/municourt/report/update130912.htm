@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<title>Muni Court "Create User Account" Requirements</title>
+<link rel="StyleSheet" href="http://austinea.org/style/email.css" type="text/css">
+</head>
+<body>
+
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="600" align="center"><tr><td>
+
+<!-- Online reference -->
+<p><class="lbl">Note: This report is also <a href="http://austinea.org/arch/municourt/report/update130912.htm" style="font-size: 7pt;">available online</a> by following link.</p>
+
+<div>
+<p>Muni Court Architecture Team,</p> 
+</div>
+
+<p>Attached is the information for the "Create User Account" use case that was reviewed last Thursday afternoon with the team. Please take a moment to check my work and let me know if there are any changes I can make to improve this, or if this requirement is as discussed! 
+<p>
+
+
+<!-- Signature-->
+<table cellpadding="0" cellspacing="0" border="0" width="350" style="border-collapse: collapse;"><tr><td>
+<p>Respectfully,</p>
+
+<table cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;" align="right">
+<tr>
+<td>
+<img src="http://austinea.org/image/austinLogo.jpg" border="0" width="100" height="100" alt="Austin Logo" />
+</td>
+</tr>
+</table>
+<p><img src="http://coawss3a.coacd.org/sites/CTM/EA/Shared Documents/Images/ABSIG.JPG" border="0" width="143" height="83" alt="sign" /> </p>
+
+<p><b>Aaron Brown</b> 
+<span style="color: red; font-weight: bold;"></span> 
+<b>City of Austin</b>
+<a href="http://www.linkedin.com/in/austnaaron"><img src="http://journeycolorado.com/images/linkedin.jpg" border="0" alt="Linkin Logo" /> </a> <br />
+Senior Enterprise Architect<br />
+Direct: (512) 974-2960 </p>
+Email: Aaron.Brown2@austintexas.gov </p>
+</td></tr></table>
+
+
+<!-- Use case information below -->
+
+<hr>
+
+<!-- Muni Court Requirements Model -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="right">
+<tr>
+<td align="center">
+<span class="lbl">Note: Select to download</span><br />
+<a href="http://austinea.org/arch/municourt/report/createUserAccountUseCase.png"><img src="http://austinea.org/arch/municourt/report/createUserAccountUseCase.png" border="0" width="200" alt="" /></a><br />
+<span style="font-weight: bold;">Create User Account<br />Use Case</span>
+</td></tr></table>
+
+
+<p><b>Use Case Scope</b></p>
+<p>The Defendant accesses the web presence and uses their Citation to locate their case. The system determines the available options associated with the case. The Defendant chooses an option requiring them to log onto the system. Logins are in the form of last name and a security code. If the Defendant does not have a security code already registered with their PID record, the system prompts the Defendant which method they prefer to use for notification; Voice messaging or Text message. Text messaging will only be offered if a mobile phone number is on the current PID record, otherwise the system will use voice messaging, and not offer the Defendant a choice of verification method. The System notifies the Defendant of the last 4 digits of the phone number associated with the citation being used for the verification. 
+If the phone of record is a mobile phone, and text messaging has been specified as the preferential verification method, a text message is sent to the mobile phone. If the phone is a home number, an automated voice message will be used to send a recorded voice with the security code information. This security code is valid for 24 hours (the amount of time the security code is valid is configurable.) 
+Once the Verification has been sent, the system associates the security code with the PID.  </p>
+
+<!-- Image - File For Motion Sequence Diagram -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="http://austinea.org/arch/municourt/report/createUserAccountSequenceDiagram01.png"><img src="http://austinea.org/arch/municourt/report/createUserAccountSequenceDiagram01.png" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Create User Account Sequence Diagram</p>
+</td></tr></table> 
+
+
+<p style="font-weight: bold; text-align: center;">Create User Account</p>
+<!-- Table definition -->
+<table align="center" id="custom">
+<tr><th width="195">Type/Interface</th><th>Description</th></tr>
+<tr>
+<td>Web Presence/ <br /> identifyCaseFile</td> <td>Provides a legal means of identity for Defendant or Respondent to identify Case File of interest. If there are multiple Case Files, they are presented in a tabular queue for Defendant or Respondent to select Case File of interest.</td> </tr>
+<tr>
+<td>Manage Court Case/ <br /> retrieveCaseFileByCaseNumber</td> <td>The Web Presence interfaces with the system to retrieve a Case File based on a case number provided. </td> </tr>
+<tr>
+<td>Manage Court Case/ <br /> determineOption</td> <td>When a user selects a particular Case File of interest from the Web Presence, the system determines the various options available to the User. The system provides a Municipal Court staff configurable rules engine to allow Court Staff to modify business rules associated with the options provided to the User. The rules engine provides a customizable response based on current Case File attributes such as warrant status, age of Defendant or Respondent, attorney assigned to the case, and plea state (just to name a few) leading to the options provided to the User. Depending on Municipal Court Staff needs, some responses are non-selectable and grayed out providing indication to the User why the legal option is not selectable. Because laws frequently change, it's important the options are not hard coded into the case management system; rather, the system allows the Court Staff to make appropriate option changes using customizable rules filter. </td> </tr>
+<tr>
+<td>Web Presence/ <br /> selectOption</td> <td>Based on a customizable Option rules engine, the User is provided a list of options to proceed with the Case File. To reduce confusion, some of the options (determined by Court Staff) are grayed out and non-selectable with an explanation as to why the Option is not available. When selecting the option, the user is provided a confirmation of the legal option selected. </td> </tr>
+<tr>
+<td>Manage Court Case/ <br /> setOption</td> <td>The User is offered a set of options and makes a selection. The Case management system is notified of the option selected.</td> </tr>
+<tr>
+<td>Web Presence/ <br /> provideUsernameAndPassword</td> <td>A request or condition has occurred which requires identification of the User. The Web Presence prompts the user for their Last name and their Security Code. If the defendant does not have a Security code, they are offered the option to establish one.</td> </tr>
+
+<td>Web Presence/ <br /> provideVerificationPreference</td> <td>The system displays a message indicating a security code will be sent within "x number of minutes" (configurable) to the user. The system additionally lists the last 4 digits of the phone number associated with the case, to which the message will be sent. If the contact number is a mobile phone, the system requests a preference for code delivery. The user selects text message or voice system communication (IVR). If the contact number is a not a mobile phone, the system sets the verification preference to voice system communication by default. </td> </tr>
+<tr>
+<td>Manage Court Case/ <br /> sendSecurityCode</td> <td>Based on the preference of verification, the system generates a random security code and sends it to the phone number of record for the case using the verification preference specified by the user. The user can specify either a text message or automated voice communicated message (IVR) as their preference. </td> </tr>
+<td>Manage Court Case/ <br /> updateSecurityCodeOnPID</td> <td>A new security code has been created for a user. The system updates the PID record of the associated defendant, with the new Security code specified. </td> </tr>
+
+
+</tr>
+</table>
+
+
+
+<!-- Table definition
+<table align="center" id="custom">
+<tr><th>Number</th><th>Category</th><th>Description</th><th>Criticality</th></tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table> -->
+
+</td></tr></table> 
+
+</td></tr></table>
+</td></tr></table></body></html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<title>Convention Center "Create Work Order Requirements</title>
+<link rel="StyleSheet" href="http://austinea.org/style/email.css" type="text/css">
+</head>
+<body>
+
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="600" align="center"><tr><td>
+
+<!-- Online reference -->
+<p><class="lbl">Note: This report is also <a href="http://austinea.org/arch/acc/report/update020514.html" style="font-size: 7pt;">available online</a> by following link.</p>
+
+<div>
+<p>Hi All,</p> 
+</div>
+
+<p>Attached is the information for the "Create Work Order" use case that was reviewed last week with the Convention Center Team. Please take a moment to check my work and let me know if there are any changes I can make to improve this, or if this requirement is as discussed! 
+<p>
+
+
+<!-- Signature-->
+<table cellpadding="0" cellspacing="0" border="0" width="350" style="border-collapse: collapse;"><tr><td>
+<p>Cheers!</p>
+
+<table cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;" align="right">
+<tr>
+<td>
+<img src="http://austinea.org/image/austinLogo.jpg" border="0" width="100" height="100" alt="Austin Logo" />
+</td>
+</tr>
+</table>
+<p><img src="http://coawss3a.coacd.org/sites/CTM/EA/Shared Documents/Images/ABSIG.JPG" border="0" width="143" height="83" alt="sign" /> </p>
+
+<p><b>Aaron Brown</b> 
+<span style="color: red; font-weight: bold;"></span> 
+<b>City of Austin</b>
+<a href="http://www.linkedin.com/in/austnaaron"><img src="http://journeycolorado.com/images/linkedin.jpg" border="0" alt="Linkin Logo" /> </a> <br />
+Senior IT Enterprise Architect<br />
+Direct: (512) 974-2960 </p>
+Email: Aaron.Brown2@austintexas.gov </p>
+</td></tr></table>
+
+
+<!-- Use case information below -->
+
+<hr>
+
+<!-- Muni Court Requirements Model -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="right">
+<tr>
+<td align="center">
+<span class="lbl">Note: Select to download</span><br />
+<a href="http://austinea.org/arch/acc/report/createWorkOrderUseCase.jpg"><img src="http://austinea.org/arch/acc/report/createWorkOrderUseCase.jpg" border="0" width="200" alt="" /></a><br />
+<span style="font-weight: bold;">Create Work Order<br />Use Case</span>
+</td></tr></table>
+
+
+<p><b>Use Case Scope</b></p>
+<p>A Work Order Requester accesses the system through a web portal. They Requester enters a request. The Materials Planner quality reviews the Work Order Request and creates a work order if one is needed. The system pre-populates the information from the work order request to the work order. 
+If the Materials Planner needs more information, the Materials Planner provides comments on the request and the Requester is notified additional information is needed. 
+If the Materials Planner determines the request is a duplicate or an inappropriate request, the Materials Planner provides comments on the request and the Requester is notified the order request has been declined. 
+The system can automatically create a work order from a predefined preventative maintenence schedule. 
+The Requestor can be a Caterer, Tenants, or Staff. </p>
+
+<!-- Image - File For Motion Sequence Diagram -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="http://austinea.org/arch/acc/report/createWorkOrderSequenceDiagram01.jpg"><img src="http://austinea.org/arch/acc/report/createWorkOrderSequenceDiagram01.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Create Work Order Sequence Diagram</p>
+</td></tr></table> 
+
+
+
+<p style="font-weight: bold; text-align: center;">Create Work Order Interface Descriptions</p>
+<!-- Table definition -->
+<table align="center" id="custom">
+<tr><th width="195">Type/Interface</th><th>Description</th></tr>
+<tr>
+<td>Provide Functional Conference and Facility Space/ <br /> submitWorkOrderRequest</td> <td>The Work Order Requester access a web portal and enters the Work Order Request information. They system provides the ability to store and retrieve Work Order Request information for future edits and resubmission. The Work Order Requester may begin a Work Order Request session and save the session for future submissions. The Work Order Requester can only edit the Work Order Request before it has been submitted. If the Work Order Request is returned for additional information, the Work Order Request is once again editable until resubmission. The System pre-populates the name, phone number, supervisor name, area/building, title, etc on the Work Order Request of the Requester based on login account information.</td> </tr>
+<tr>
+<td>Provide Functional Conference and Facility Space/ <br /> provideFeedbackAndRequestAdditionalInformation</td> <td>The Materials Planner for a Work Order Request that requires additional information, annotates the Work Order Request indicating additional information needed/clarification, etc. Defers the request back to the Work Order Requestor. The Materials Planner can decline the Work Order Request, with comment.</td> </tr>
+<tr>
+<td>Provide Functional Conference and Facility Space/<br /> requestSupervisorApproval</td> <td>The Materials Planner has received a request that requires the Supervisor of the Work Order Requester's Approval. A message is delivered to the Requester Supervisor seeking the necessary approval.</td> </tr>
+<tr>
+<td>Provide Functional Conference and Facility Space/ <br /> approveWorkOrderRequest</td> <td>The Requester Supervisor uses the system to respond to the Material Planner's request for additional information and approval. This may include providing funding codes, the scope of work, whether a purchased item is an asset, purchase request information, etc. The Requester Supervisor may also decline the Requested Order. </td> </tr>
+<tr>
+<td>Provide Functional Conference and Facility Space/ <br /> createWorkOrder</td> <td>The Materials Planner uses the System to create a Work Order from the Work Order Request. The System uses relevant information from the Work Order Request to pre-populate Work Order Information. The Material Planner uses the System to tie the asset (Air Handler, Meeting room, bathroom, light fixture) and Location to the Work Order. The System allows the Material's Planner to modify elements of the Work Order to include pre-populate Work Order Information.</td> </tr>
+<tr>
+<td>Materials Planner/ <br /> qualityReviewWorkOrderRequest</td> <td>The Material Planner Reviews the Work Order Request and determines if the order is valid, or if it needs more information. </td> </tr>
+<tr>
+<td>Materials Planner/ <br /> reviewWorkOrderRequestApprovalIndication</td> <td>The Materials Planner reviews the Approval received from the Work Order Requester's Supervisor, and proceeds to the next step of creating a Work Order.</td> </tr>
+<tr>
+<td>Requester Supervisor/ <br /> approveWorkOrderRequest</td> <td>The System requests approval of a Work Order Request which the Materials Planner indicates needing further approval. The Supervisor views the Work Order Request and provides a digital signature (or declines) the approval as appropriate to the situation. The Requester Supervisor's response is delivered to the Materials Planner if it has been approved. </td> </tr>
+<tr>
+<td>Work Order Requester/<br /> reviewIndicatedComments</td> <td>The Materials Planner has reviewed Work Order Request and has outstanding questions for the Work Order Requester. The System notifies the Work Order Requester of the additional information needed and/or any comments the Materials Planner communicates with this requested review. </td> </tr>
+
+</table>
+
+
+
+<!-- Table definition
+<table align="center" id="custom">
+<tr><th>Number</th><th>Category</th><th>Description</th><th>Criticality</th></tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table> -->
+
+</td></tr></table> 
+
+</td></tr></table>
+</td></tr></table></body></html>

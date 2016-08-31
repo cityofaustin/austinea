@@ -1,0 +1,183 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<title>Convention Center "Establish Prospect</title>
+<link rel="StyleSheet" href="http://austinea.org/style/email.css" type="text/css">
+</head>
+<body>
+
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="600" align="center"><tr><td>
+
+<!-- Online reference -->
+<p><class="lbl">Note: This report is also <a href="http://austinea.org/arch/acc/report/update030714.html" style="font-size: 7pt;">available online</a> by following link.</p>
+
+<div>
+<p>Hi All,</p> 
+</div>
+
+<p>Attached is the information for the "Establish Prospect" use case that was reviewed last week with the Convention Center Team. Please take a moment to check my work and let me know if there are any changes I can make to improve this, or if this requirement is as discussed! 
+<p>
+
+
+<!-- Signature-->
+<table cellpadding="0" cellspacing="0" border="0" width="350" style="border-collapse: collapse;"><tr><td>
+<p>Cheers!</p>
+
+<table cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;" align="right">
+<tr>
+<td>
+<img src="http://austinea.org/image/austinLogo.jpg" border="0" width="100" height="100" alt="Austin Logo" />
+</td>
+</tr>
+</table>
+<p><img src="http://coawss3a.coacd.org/sites/CTM/EA/Shared Documents/Images/ABSIG.JPG" border="0" width="143" height="83" alt="sign" /> </p>
+
+<p><b>Aaron Brown</b> 
+<span style="color: red; font-weight: bold;">|</span> 
+<b>City of Austin</b>
+<a href="http://www.linkedin.com/in/austnaaron"><img src="http://journeycolorado.com/images/linkedin.jpg" border="0" alt="Linkin Logo" /> </a> <br />
+Senior IT Enterprise Architect<br />
+Direct: (512) 974-2960 </p>
+Email: Aaron.Brown2@austintexas.gov </p>
+</td></tr></table>
+
+
+<!-- Use case information below -->
+
+<hr>
+
+<!-- Muni Court Requirements Model -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="right">
+<tr>
+<td align="center">
+<span class="lbl">Note: Select to download</span><br />
+<a href="http://austinea.org/arch/acc/report/establishProspectUseCase.jpg"><img src="http://austinea.org/arch/acc/report/establishProspectUseCase.jpg" border="0" width="200" alt="" /></a><br />
+<span style="font-weight: bold;">Establish Prospect<br />Use Case</span>
+</td></tr></table>
+
+
+<p><b>Use Case Scope</b></p>
+<p>The Event Representative, who could be the actual Customer or a third Party, contacts the Austin Convention Center for information about a potential event. The Sales Manager will determine if the customer is viable based on a number of factors and if promising, will establish a Customer Account (or use existing customer account.) The Sales manager will then check Availability (space people etc, allowing for overlaps), will check conflicts between Types of groups, discuss group needs with the client (IT,Security,Catering, vendor etc), will coordinate potential dates with the Visitor's Bureau and various hotels, and in appropriate cases, will prepare a bid, Reserve Space, Create pricing, Submit an initial bid to customer (includes options), Negotiate / Revise event space / Revise Bid, and followup within set specific time frames.</p>
+<p>
+Note: If the desired space is on hold for a group, the system allows a "second option" designation in case the space becomes available. When the space becomes available, the sales Manager is notified by the system of the new availability. </p>
+
+<!-- Image - File For Motion Sequence Diagram -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="http://austinea.org/arch/acc/report/establishProspectSequenceDiagram01.jpg"><img src="http://austinea.org/arch/acc/report/establishProspectSequenceDiagram01.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Establish Prospect Sequence Diagram</p>
+</td></tr></table> 
+
+
+
+<p style="font-weight: bold; text-align: center;">Establish Prospect Interface Descriptions</p>
+<!-- Table definition -->
+<table align="center" id="custom">
+<tr><th width="195">Type/Interface</th><th>Description</th></tr>
+<tr>
+<td>Sales Manager/ <br /> provideInformationAboutPotentialEvent</td> <td>The Sale Manager obtains the name of Event, type of event, Industry demographic, space requirements, history (past event locations) , type of organization, attendee, Load-in time, setup requirements, Food and Beverage needs for the event, Operational Requirements (security, IT, Parking, etc), How many Hotel rooms needed- Day pattern (weekends, holidays, their flexibility).
+An inquiry can come from customer, the convention visitors bureaus. phone, email, another third party (conference direct/ AMEX, travel, etc.) Interoffice. UT. Chamber of Commerce. </td> </tr>
+<tr>
+<td>Establish Event Booking/ <br /> lookupOrEstablishCustomerAccount</td> <td>Using the company name/Legal Name/Acronym the Sales Manager searches the system to determine if there is an existing Customer account. If there is not an existing Customer Account, and the inquiry is a viable lead, the Sale Manager creates a customer Account using company name/legal description/Acronym, Industry demographic, type of organization, Contact names, lead source, address, if there is a third party relationship.
+Sometimes more than one account is created to describe a hierarchy (parent/child) relationships. ie. 1 account for UT and 1 for the math department. </td> </tr>
+<tr>
+<td>Establish Event Booking/<br /> checkAvailabilityOfSpace</td> <td>Once the customer meeting requirements are received, the Sales Manager pulls up an Event Diary which displays a grid indicating who is in what room, when, which status the groups are in (current system color codes - contracted groups are displayed in one color, definite groups are in another - the system allows for the displayed colors to be configured), and what's currently available. 
+The Grid allows the Sales Manager to drill down to see other options offered to other potential groups. When a customer negotiates for business, they may be provided several dates and space option(s) and the each options is specified in the Event Diary. The Sales Manager can change the reserve space options to have what's shown indicate different offerings and the available space. </td> </tr>
+
+<tr>
+<td>Establish Event Booking/<br /> checkForConflictsThatEffectAvailability</td> <td>The Sales manager looks at simultaneous bookings within the building to ensure there are no conflicts from opposing groups (competing organizations, attendee volumes, opposing functions, Operational limitations, Holidays, etc.) The System provides feedback about groups within the same Demographic that fall within a period of time. The Sales Manager can inquire to the System to discover specific demographic groups scheduled within a date time range.</td> </tr>
+
+<tr>
+<td>Internal Operations Expert/ <br /> provideOperationalConsulting</td> <td>The Sales Manager determines the customer needs input from one of the Convention Center Operational experts. This can be for various disciplines like ( Security, IT, utilities, food and beverage.) The Expert will contact the customer and provide needed information, price negotiations, etc. </td> </tr>
+
+<tr>
+<td>Visitor Bureau/Hotels/<br /> coordinateBidProposal</td> <td>Convention center Sales Manager works with hotels and Convention Center to coordinate mutually available dates.  </td> </tr>
+
+
+<tr>
+<td>Sales Manager/ <br /> provideFeedbackAboutBid</td> <td>The Sales Manager takes the provided feedback about the event and annotates the System and updates Traces (scheduled activities) for followup.</td> </tr>
+<tr>
+
+<td>Establish Event Booking/ <br /> updateDraftBidInformation</td> <td>The Sales Manager updates the Customer Account to Reflect needed changes if needed (dates, location of events, etc.) </td> </tr>
+
+<tr>
+<td>Establish Event Booking/<br /> reserveProspectiveSpace</td> <td>The Sales Manager matches the space requested to what's available, and reserves the space indicating the Event dates, notes, user defined fields, abbreviation,type of event, booking name, number of room nights, peak rooms, deadline date, rental cost, anticipated credits, Source group, Lead Sources, number of rooms on Sunday, contract Id, Move in and Move out dates for the event. The space reservations default from 6am to midnight blocks.  Note: Most leases are full day, even though an event may only use a specific time window. </td> </tr>
+
+<tr>
+<td>Establish Event Booking/ <br /> createInitialProposal</td> <td>The Sales Manager accesses the System to Generate a Proposal that outlines dates available and pricing, this proposal includes links to Operations manuals online and other information, Sometimes the proposal will outline multiple space configurations/dates, sometimes only one is provided. Credits are calculated and provided as well. 
+The Director of Sales Approves the proposal prior to sending to the customer.</td> </tr>
+
+
+<tr>
+<td>Sales Director/ <br /> approveInitialProposal</td> <td>Examine the elements of the event and the price/credit quotes and indicates the Proposal is ready for delivery to the customer.</td> </tr>
+
+
+
+<tr>
+<td>Establish Event Booking/ <br /> createInitialProposal</td> <td>The Sales Manager accesses the System to Generate a Proposal that outlines dates available and pricing, this proposal includes links to Operations manuals online and other information, Sometimes the proposal will outline multiple space configurations/dates, sometimes only one is provided. Credits are calculated and provided as well. 
+The Director of Sales Approves the proposal prior to sending to the customer.</td> </tr>
+
+
+
+<tr>
+<td>Establish Event Booking/ <br /> approveInitialProposal</td> <td>The Sales Director Uses the system to indicate acceptance of the initial proposal. The Date, time and electronic signature is stored with the Contract ID.</td> </tr>
+
+
+
+<tr>
+<td>Event Representative/ <br /> reviewBid</td> <td>The Event Representative evaluates the bid proposal.</td> </tr>
+
+
+
+<tr>
+<td>Sales Manager/ <br /> provideFeedbackAboutBid</td> <td>The Sales Manager takes the provided feedback about the event and annotates the System and updates Traces (scheduled activities) for followup.</td> </tr>
+
+
+
+<tr>
+<td>Establish Event Booking/ <br /> applyChangesToBid</td> <td>The Sales Manager uses the feedback and the System to draft another bid proposal for the Event representative. </td> </tr>
+
+
+
+<tr>
+<td>Establish Event Booking/ <br /> logReasonForCancellation</td> <td>The Sales Manager, once cancellation has been registered with the system for a specific Customer Account Booking Event, the System automatically releases all space reservations associated with the Cancelled Event. They System stores the planned space reservation information, for use/retrieval later. </td> </tr>
+
+
+
+<tr>
+<td>Establish Event Booking/ <br /> releaseReservedSpace</td> <td>The Sales Manager accesses the System to Generate a Proposal that outlines dates available and pricing, this proposal includes links to Operations manuals online and other information, Sometimes the proposal will outline multiple space configurations/dates, sometimes only one is provided. Credits are calculated and provided as well. 
+The Director of Sales Approves the proposal prior to sending to the customer.</td> </tr>
+
+
+<tr>
+<td>Establish Event Booking/ <br /> updateSpaceReservation</td> <td>If any changes are needed to the Event, the Sales manager uses the System to make modifications.</td> </tr>
+
+
+<tr>
+<td>Establish Event Booking/ <br /> scheduleFollowupReminders</td> <td>The Sales Manager uses the system to schedule various traces (activities) such as site visits. Note: Scheduling a Site Visit is another use case.</td> </tr>
+
+
+
+<tr>
+
+</table>
+
+
+
+<!-- Table definition
+<table align="center" id="custom">
+<tr><th>Number</th><th>Category</th><th>Description</th><th>Criticality</th></tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table> -->
+
+</td></tr></table> 
+
+</td></tr></table>
+</td></tr></table></body></html>

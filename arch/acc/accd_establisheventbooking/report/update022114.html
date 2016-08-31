@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<title>Convention Center "Create Event Invoice Requirements</title>
+<link rel="StyleSheet" href="http://austinea.org/style/email.css" type="text/css">
+</head>
+<body>
+
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="600" align="center"><tr><td>
+
+<!-- Online reference -->
+<p><class="lbl">Note: This report is also <a href="http://austinea.org/arch/acc/report/update022114.html" style="font-size: 7pt;">available online</a> by following link.</p>
+
+<div>
+<p>Hi All,</p> 
+</div>
+
+<p>Attached is the information for the "Create Event Invoice" use case that was reviewed 2/21/14 with the Convention Center Team. During subsequent meetings an additional operator was added as the final step. The associated diagrams and interface descriptions have been modified to reflect the change. Please take a moment to check my work and let me know if there are any changes I can make to improve this, or if this requirement is as discussed! 
+<p>
+
+
+<!-- Signature-->
+<table cellpadding="0" cellspacing="0" border="0" width="350" style="border-collapse: collapse;"><tr><td>
+<p>Cheers!</p>
+
+<table cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;" align="right">
+<tr>
+<td>
+<img src="http://austinea.org/image/austinLogo.jpg" border="0" width="100" height="100" alt="Austin Logo" />
+</td>
+</tr>
+</table>
+<p><img src="http://coawss3a.coacd.org/sites/CTM/EA/Shared Documents/Images/ABSIG.JPG" border="0" width="143" height="83" alt="sign" /> </p>
+
+<p><b>Aaron Brown</b> 
+<span style="color: red; font-weight: bold;">|</span> 
+<b>City of Austin</b>
+<a href="http://www.linkedin.com/in/austnaaron"><img src="http://journeycolorado.com/images/linkedin.jpg" border="0" alt="Linkin Logo" /> </a> <br />
+Senior IT Enterprise Architect<br />
+Direct: (512) 974-2960 </p>
+Email: Aaron.Brown2@austintexas.gov </p>
+</td></tr></table>
+
+
+<!-- Use case information below -->
+
+<hr>
+
+<!-- Muni Court Requirements Model -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="right">
+<tr>
+<td align="center">
+<span class="lbl">Note: Select to download</span><br />
+<a href="http://austinea.org/arch/acc/report/createEventInvoiceUseCase.jpg"><img src="http://austinea.org/arch/acc/report/createEventInvoiceUseCase.jpg" border="0" width="200" alt="" /></a><br />
+<span style="font-weight: bold;">Create Event Invoice<br />Use Case</span>
+</td></tr></table>
+
+
+<p><b>Use Case Scope</b></p>
+<p>At the end of the event the Event Coordinator inputs all the charges to be billed to the client. The Work Order Reviewer verifies and approves the work orders. Accounts Receivable retrieves charges input by Event coordinator,applies discounts (room night credits, Booking credits, Food and Beverage credits), factors in Deposits, adds Utility client invoice, verifies all information, and uses the System to create a final Invoice.
+
+A hard copy of the final invoice is mailed to the client, and a copy of the final invoice is made for the Event Coordinator. Once the invoice is received, the customer can contact the Event coordinator to discuss perceived issues with the Invoice. The Event Coordinator will make a judgment call and either change charges associated with the Work Order (triggering the creation of a new Invoice), or indicate to the customer the Invoice is as delivered. </p>
+
+<!-- Image - File For Motion Sequence Diagram -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="http://austinea.org/arch/acc/report/createEventInvoiceSequenceDiagram01.jpg"><img src="http://austinea.org/arch/acc/report/createEventInvoiceSequenceDiagram01.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Create Event Invoice Sequence Diagram</p>
+</td></tr></table> 
+
+
+
+<p style="font-weight: bold; text-align: center;">Create Work Order Interface Descriptions</p>
+<!-- Table definition -->
+<table align="center" id="custom">
+<tr><th width="195">Type/Interface</th><th>Description</th></tr>
+<tr>
+<td>Event Coordinator/ <br /> enterClientCharges</td> <td>The Event Coordinator accesses the system and enters equipment charges, labor charges, security charges, parking charges (when applicable), discounts, facility rentals, damages, and other misc charges. And indicate the Customer is ready to be billed.</td> </tr>
+<tr>
+<td>Workorder Reviewer/ <br /> approveWorkorderCharges</td> <td>Work order Reviewer is sent a notification (email/text) that work order items are ready for approval. The Workorder Reviewer examines the contract, and compares it with the charges entered for the Workorder. If errors are found, they contact the appropriate coordinator(s) and manipulate/change the Workorder until it is complete and ready for Invoicing. The Workorder Reviewer indicates the Workorder is ready for invoicing and a notification is sent to Accounts receivable to create the final invoice.</td> </tr>
+<tr>
+<td>Manage Event Revenue/<br /> requestCustomerInvoiceCreation</td> <td>The System notifies the Account Receivable Team all elements for a Work Order are entered and it is time to create a customer invoice.</td> </tr>
+<tr>
+<td>Manage Event Revenue/ <br /> createInvoice</td> <td>Accounts receivable reviews the Workorder items, ensuring the client information (address, contact name, etc. are correct) and marks the terms of NET 30 for payment due. The invoice includes a preformed address label/Payment coupon to the Accounts Receivable. Accounts Receivable inputs the date the invoice is mailed. Creates a PDF version of the invoice, and dispatches a copy of the invoice to the Event Coordinator. If the client is okay with soft copy the invoice is emailed to the client contact, otherwise a hard copy is mailed. </td> </tr>
+<tr>
+<td>Customer/ <br /> payInvoice</td> <td>The Customer receives the event invoice in the form desired (email or us postal service delivery), and evaluates the charges compared to the contract and determines if there are issues. If there are issues, they notify the event coordinator of the issues, possibly triggering a revised invoice creation. Note: Having the Customer be able to view Workorder items online via a web portal, is desirable. Not all customer issues result in invoice modification.</td> </tr>
+<tr>
+<td>Event Coordinator/ <br /> adjustInvoiceCharges</td> <td>The Event coordinator receives notification from the customer about invoice specifics. The Event coordinator reviews the contract, the online Workorder and attempts to resolve the concern. Should changes be necessary, the Event coordinator makes adjustments to the Workorder and begins the "create Event Invoice" process again. </td> </tr>
+
+<tr>
+<td>Manage Event Revenue/ <br /> createInvoiceChangeMemo</td> <td>The Event Coordinator determines adjustments (credits or debits) are necessary for Invoice. The Event Coordinator fills out the adjustment indicating Work Order Item indicating debit or credit amount, the justification for the change, the Contract ID for which this applies, and any supporting documentation.  </td> </tr>
+
+</table>
+
+
+
+<!-- Table definition
+<table align="center" id="custom">
+<tr><th>Number</th><th>Category</th><th>Description</th><th>Criticality</th></tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table> -->
+
+</td></tr></table> 
+
+</td></tr></table>
+</td></tr></table></body></html>

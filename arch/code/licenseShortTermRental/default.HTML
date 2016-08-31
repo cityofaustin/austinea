@@ -1,0 +1,270 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>License Short-Term Rental</title>
+<link rel="Stylesheet" href="http://austinea.org/style/hover.css" type="text/css" />
+</head>
+<body bgcolor="#ddd8c2">
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="650" align="center">
+<tr><td style="padding: 0;" height="130" valign="top"><a href="http://austinea.org">
+<img src="http://austinea.org/image/iTHeader.jpg" alt="austinea.org - home..." border="0"></a></td></tr>
+<!-- Text Area -->
+<tr><td>
+
+<p style="text-align: center; font-weight: bold;">License Short-Term Rental<br />Use Case Specification</p>
+<p style="text-align: center;">12/07/2015
+
+<!--  IF Printable document option Included  
+<p style="text-align: center;">download <a href="http://austinea.org/arch/code/***.docx">printable version</a>
+-- >
+
+<b> Austin Code Logical Data Model </b>
+<!-- Image -  Logical Data Model 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="http://austinea.org/arch/code/ldm.jpg"><img src="http://austinea.org/arch/code/ldm.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Austin Code Logical Data Model</p>
+</td></tr></table> -->
+
+<!-- USE CASE IMAGE -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/code/licenseShortTermRental/ucd.jpg"><img src="http://austinea.org/arch/code/licenseShortTermRental/ucd.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">License Short-Term Rental<br />Use Case Model</span>
+</td></tr></table>
+
+<p><b>Scope: </b>A Short-Term Rental Applicant (Citizen or an Authorized Agent) completes a ShortTermRentalApplication. The Short-Term Rental Applicant either submits their ShortTermRentalApplication by mail or in person. If the ShortTermRentalApplication is submitted by mail, Austin Code Finance processes the ShortTermRentalApplication, initiates the Process Payment use case, and forwards the ShortTermRentalApplication to the Austin Code Program Specialist for further processing. If the ShortTermRentalApplication is submitted in person, the Austin Code Program Specialist reviews the ShortTermRentalApplication for completeness, and if incomplete, the Austin Code Program Specialist returns the application to the Short-Term Rental Applicant. The Austin Code Program Specialist processes the check for the ShortTermRentalApplication, and returns a receipt to the Short-Term Rental Applicant. The Austin Code Program Specialist then requests Austin Code Finance to start the Process Payment use case.
+After the ShortTermRentalApplication has been accepted, the Austin Code Program Specialist uses TCAD to verify Owner information, as well as verifies property information in the ARR Profile Viewer, and looks up property history in the Case Management System. If the ShortTermRentalApplication is for a type-2 ShortTermRental, the Austin Code Program Specialist uses the Tract Access Database to verify ShortTermRentalLicense availability. If the ShortTermRentalApplication is to renew a ShortTermRentalLicense, the Austin Code Program Specialist looks up the ShortTermRentalLicense. Then the Austin Code Program Specialist determines the ShortTermRentalApplication status: incomplete, CodeComplaints exist for the property, tract is percentage capped, rejected, or complete and accepted. If the ShortTermRentalApplication is incomplete, the Austin Code Program Specialist requests the Short-Term Rental Applicant complete the ShortTermRentalApplication. If no progress is made by the Short-Term Rental Applicant to complete the ShortTermRentalApplication, then the use case ends and must be restarted. If the Property has CodeComplaints, the Austin Code Program Specialist sends the ShortTermRentalApplication to the Division Manager for review. The Division Manager then decides whether to accept the ShortTermRentalApplication or if the STR Review Committee needs to make a decision. If the STR Review Committee is required, the Austin Code Program Specialist sends them the ShortTermRentalApplication, and the STR Review Committee determines whether to accept or reject the ShortTermRentalApplication. If the tract is percentage capped, the Austin Code Program Specialist notifies the Short-Term Rental Applicant and asks if they would like to be added to the waiting list. If the Short-Term Rental Applicant chooses to be placed on the waiting list, they sign the WaitingListAgreement. If a check was previously cashed for the ShortTermRentalApplication, the Austin Code Program Specialist requests Austin Code Finance issue a refund, and Austin Code Finance starts the Pay Invoice use case to issue the refund. If the ShortTermRentalApplication is complete and accepted, the Austin Code Program Specialist performs a final review of the ShortTermRentalApplication, looks up businesses associated with the property (if any businesses identified on the ShortTermRentalApplication), and then creates the ShortTermRentalLicense in the Case Management System. The Austin Code Program Specialist requests the Division Manager activate the ShortTermRentalLicense. The Division Manager activates the ShortTermRentalLicense in the Case Management System.
+After the ShortTermRentalLicense is activated, the Austin Code Program Specialist mails the ShortTermRentalLicense to the Short-Term Rental Applicant. The Austin Code Program Specialist updates the ShortTermRentalLicense in the Case Management System with the ShortTermRentalApplication and other documents. At the start of the month, the Austin Code Program Specialist sends a report of new ShortTermRentalLicenses to the City Controller.
+
+
+<!-- IF INTERACTION OVERVIEW IS INCLUDED 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/code/***.jpg"><img src="http://austinea.org/arch/code/***.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Interaction Overview</span>
+</td></tr></table>
+-->
+
+
+<br />
+
+
+<!-- SEQUENCE DIAGRAM  -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/code/licenseShortTermRental/sd01.jpg"><img src="http://austinea.org/arch/code/licenseShortTermRental/sd01.jpg" border="0" alt="" width="600"/></a><br />
+<span style="font-weight: bold;">License Short-Term Rental<br />Sequence Diagram</span>
+</td></tr></table>
+<br />
+
+
+<!-- INTERFACE TABLE  -->
+<table align="center" id="custom">
+<tr><th width="9%">Req#</th><th width="70%">Type/Interface - Requirement Description</th><th>Performance</th></tr>
+<tr>
+<td rowspan="2">001</td>
+<td style="font-weight: bold; background: lightgray;">Short-Term Rental Applicant/completeShortTermRentalApplication</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Short-Term Rental Applicant, either an Owner or an Authorized Agent, completes a ShortTermRentalApplication indicating date opens, number bedrooms, number people, contact person, estimated charge per night, Owner, insurance information, and signatures (must be original signatures). Additionally, the Short-Term Rental Applicant provides supporting documentation such as declarations' page for homeowner's insurance, certificate of occupancy, or third-party inspection (has to be completed using Austin Code's Third-Party Inspection Form). If an Authorized Agent, a notarized authorization from Owner for Authorized Agent to submit application is required. There are three types of ShortTermRentalApplications: Type 1: Must have homestead exemption included, Type 2: Must have homestead exemption removed, and Type 3: Official Property description including number of buildings on property and units per building. If a Corporation owns Property, FormationDocuments with original signatures from managing partners, along with notarized authorization from Owner. If renewing a ShortTermRentalApplication, requires updated insurance, most recent city tax report (hotel occupancy tax), front and back of cancelled check, and a check for the renewal fee. If the Short-Term Rental Application is incomplete, the Austin Code Program Specialist contacts the Short-Term Rental Applicant to submit the required additional documentation.</td>
+</tr>
+<tr>
+<td rowspan="2">002</td>
+<td style="font-weight: bold; background: lightgray;">Austin Code Finance/processShortTermRentalApplication</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Short-Term Rental Applicant submits the ShortTermRentalApplication by mail to Austin Code Finance. Austin Code Finance cashes the check from the Application. Type-2 applications are not processed by Austin Code Finance. Austin Code Finance returns the application to the Short-Term Rental Applicant.</td>
+</tr>
+<tr>
+<td rowspan="2">003</td>
+<td style="font-weight: bold; background: lightgray;">Austin Code Program Specialist/processShortTermRentalApplication</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>If ShortTermRentalApplication was submitted by mail, Austin Code Finance submits the ShortTermRentalApplication to the Austin Code Program Specialist (in person). If a mailed-in application, the Austin Code Program Specialist contacts the Short-Term Rental Applicant for any missing supporting documentation. 
+The Austin Code Program Specialist processes the ShortTermRentalApplication. If a check was provided in person, the Austin Code Program Specialist processes the payment, returns a receipt, and requests Austin Code Finance record the Payment.</td>
+</tr>
+<tr>
+<td rowspan="2">004</td>
+<td style="font-weight: bold; background: lightgray;">Austin Code Program Specialist/processPayment</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Program Specialist receives a check and deposits it with Austin Code Finance. The Austin Code Program Specialist returns a receipt to the Short-Term Rental Applicant for the check.</td>
+</tr>
+<tr>
+<td rowspan="2">005</td>
+<td style="font-weight: bold; background: lightgray;">TCAD/verifyOwnerInformation</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Program Specialist researches Owner information in TCAD, such as who's Owner, type of building (duplex, condo, fourplex, garage apartments), legal dwelling unit, and homestead exemption.</td>
+</tr>
+<tr>
+<td rowspan="2">006</td>
+<td style="font-weight: bold; background: lightgray;">ARR Profile Viewer/verifyPropertyInformation</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Program Specialist uses the ARR Profile Viewer to verify property information, such as zoning, census tract, jurisdiction (ETJ or full purpose), etc.</td>
+</tr>
+<tr>
+<td rowspan="2">007</td>
+<td style="font-weight: bold; background: lightgray;">Case Management System/lookupPropertyHistory</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Program Specialist performs research in the Case Management System: Owner, property's CodeComplaints, violations, and trade permit issues. If a Type-3 application, the Austin Code Program Specialist checks for the number of Short-Term Rentals for the property.</td>
+</tr>
+<tr>
+<td rowspan="2">008</td>
+<td style="font-weight: bold; background: lightgray;">Tract Access Database/verifyShortTermRentalAvailability</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Program Specialist researches if the Census Tract in which the property is located hasn't reached the cap (only applies to Type-2 ShortTermRentals).</td>
+</tr>
+<tr>
+<td rowspan="2">009</td>
+<td style="font-weight: bold; background: lightgray;">Case Management System/lookupShortTermRentalLicense</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Program Specialist looks up the ShortTermRental in the Case Management System, including expiration date and operating license number.</td>
+</tr>
+<tr>
+<td rowspan="2">010</td>
+<td style="font-weight: bold; background: lightgray;">Austin Code Program Specialist/determineShortTermRentalApplicationStatus</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Program Specialist determines the ShortTermRentalApplicationStatus: If the application is missing documentation, or trade permit issues, the Short-Term Rental Applicant is advised of the issues to resolve and must provide documentation before review commences. If needed, the Austin Code Program Specialist provides copies of expired trade permits from the Case Management System. If the property has CodeComplaints, the Application is sent to the Short-Term Rental Review Committee. If the property has violations, the violations must be resolved before license is issued. If violation type is work without permit or too many in occupancy, then the application is forwarded to the Division Manager for review. The Division Manager either approves, approves conditionally, or forwards to the STR Review Committee.</td>
+</tr>
+<tr>
+<td rowspan="2">011</td>
+<td style="font-weight: bold; background: lightgray;">Division Manager/reviewShortTermRentalApplication</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Program Specialist requests the Division Manager review the ShortTermRentalApplication. The Division Manager reviews the application, property history of CodeComplaintCases, and violations, and then determines whether to accept the application, accept conditionally, or forward to the STR Review Committee. The Division Manager notifies the Austin Code Program Specialist of their decision.</td>
+</tr>
+<tr>
+<td rowspan="2">012</td>
+<td style="font-weight: bold; background: lightgray;">STR Review Committee/reviewShortTermRentalApplication</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The STR Review Committee reviews the ShortTermRentalApplication and determines whether to accept, accept conditionally, or reject the ShortTermRentalApplication.</td>
+</tr>
+<tr>
+<td rowspan="2">013</td>
+<td style="font-weight: bold; background: lightgray;">Short-Term Rental Applicant/signWaitingListAgreement</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Program Specialist contacts the Short-Term Rental Applicant and provides a WaitingListAgreement for the applicant to sign, if they choose to be placed on the WaitingList for ShortTermRentals. The applicant may sign or choose to not be placed on the WaitingList.</td>
+</tr>
+<tr>
+<td rowspan="2">014</td>
+<td style="font-weight: bold; background: lightgray;">Austin Code Program Specialist/addShortTermRentalApplicantToWaitingList</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Program Specialist adds the Short-Term Rental Applicant to the ShortTermRentalWaitingList.</td>
+</tr>
+<tr>
+<td rowspan="2">015</td>
+<td style="font-weight: bold; background: lightgray;">Austin Code Finance/issueRefund</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Program Specialist requests Austin Code Finance to issue a refund for a cashed check.</td>
+</tr>
+<tr>
+<td rowspan="2">016</td>
+<td style="font-weight: bold; background: lightgray;">Austin Code Program Specialist/sendRejectionNotification</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Program Specialist sends a Notice of Denial Notification via regular mail to the Short-Term Rental Applicant. The Short-Term Rental Applicant has the option to appeal to the Building and Standard Commission if desired.</td>
+</tr>
+<tr>
+<td rowspan="2">017</td>
+<td style="font-weight: bold; background: lightgray;">Austin Code Program Specialist/reviewShortTermRentalApplication</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Program Specialist reviews the ShortTermRentalApplication. The Austin Code Program Specialist reviews all documentation for the application, including that the signatures are original, and that the licenses are not capped within that Census Tract. This is a final check before the ShortTermRentalLicense is issued. If a business is associated with the property, the Austin Code Program Specialist verifies the business information with the Secretary of State.</td>
+</tr>
+<tr>
+<td rowspan="2">018</td>
+<td style="font-weight: bold; background: lightgray;">Secretary of State/verifyShortTermRentalInformation</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Program Specialist verifies LLC, trust, or corporation information through the Secretary of State system.</td>
+</tr>
+<tr>
+<td rowspan="2">019</td>
+<td style="font-weight: bold; background: lightgray;">Case Management System/createShortTermRentalLicense</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Program Specialist creates the ShortTermRentalLicense in the Case Management System. The license includes Owner name, property address, name of short-term rental, number of bedrooms, contact information, issuance date, expiration date, OperatingLicenseNumber, and ShortTermRentalTypeDesignation (type 1, 2, 3, etc.).</td>
+</tr>
+<tr>
+<td rowspan="2">020</td>
+<td style="font-weight: bold; background: lightgray;">Division Manager/activateShortTermRentalLicense</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Program Specialist requests the Division Manager to activate the Short-Term Rental License (typically delivered in person). The Division Manager does the final review for the Short-Term Rental License before it's sent out.</td>
+</tr>
+<tr>
+<td rowspan="2">021</td>
+<td style="font-weight: bold; background: lightgray;">Case Management System/activateShortTermRentalLicense</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Division Manager activates the ShortTermRentalLicense in the Case Management System (for both new and renewal licenses).</td>
+</tr>
+<tr>
+<td rowspan="2">022</td>
+<td style="font-weight: bold; background: lightgray;">Austin Code Program Specialist/mailShortTermRentalLicenseToOwner</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Program Specialist mails the Short-Term Rental License to the Short-Term Rental Applicant via regular mail.</td>
+</tr>
+<tr>
+<td rowspan="2">023</td>
+<td style="font-weight: bold; background: lightgray;">Case Management System/updateShortTermRentalLicense</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Program Specialist scans and attaches all ShortTermRentalApplication documents to the ShortTermRentalLicense in the Case Management System. The Austin Code Program Specialist notes any changes to Owner information, etc.</td>
+</tr>
+<tr>
+<td rowspan="2">024</td>
+<td style="font-weight: bold; background: lightgray;">Austin Code Program Specialist/sendNewShortTermRentalsToCityController</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Program Specialist sends a report monthly (typically at the beginning of the month) that lists the new ShortTermRentals for the previous month to the City Controller.</td>
+</tr>
+</table>
+
+
+<br />
+
+
+
+
+</td></tr></table>
+</td></tr></table></body></html>

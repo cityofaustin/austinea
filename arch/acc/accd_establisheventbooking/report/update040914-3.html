@@ -1,0 +1,199 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<title>Convention Center "Prepare Contract and/or Addendum"</title>
+<link rel="StyleSheet" href="http://austinea.org/style/email.css" type="text/css">
+</head>
+<body>
+
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="600" align="center"><tr><td>
+
+<!-- Online reference -->
+<p><class="lbl">Note: This report is also <a href="http://austinea.org/arch/acc/report/update040914-3.html" style="font-size: 7pt;">available online</a> by following link.</p>
+
+<div>
+<p>Hi All,</p> 
+</div>
+
+<p>Attached is the information for the "Prepare Contract and/or Addendum" use case that was reviewed last week with the Convention Center Team. Please take a moment to check my work and let me know if there are any changes I can make to improve this, or if this requirement is as discussed! 
+<p>
+
+
+<!-- Signature-->
+<table cellpadding="0" cellspacing="0" border="0" width="350" style="border-collapse: collapse;"><tr><td>
+<p>Cheers!</p>
+
+<table cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;" align="right">
+<tr>
+<td>
+<img src="http://austinea.org/image/austinLogo.jpg" border="0" width="100" height="100" alt="Austin Logo" />
+</td>
+</tr>
+</table>
+<p><img src="http://coawss3a.coacd.org/sites/CTM/EA/Shared Documents/Images/ABSIG.JPG" border="0" width="143" height="83" alt="sign" /> </p>
+
+<p><b>Aaron Brown</b> 
+<span style="color: red; font-weight: bold;">|</span> 
+<b>City of Austin</b>
+<a href="http://www.linkedin.com/in/austnaaron"><img src="http://journeycolorado.com/images/linkedin.jpg" border="0" alt="Linkin Logo" /> </a> <br />
+Senior IT Enterprise Architect<br />
+Direct: (512) 974-2960 </p>
+Email: Aaron.Brown2@austintexas.gov </p>
+</td></tr></table>
+
+
+<!-- Use case information below -->
+
+<hr>
+
+<!-- use case  -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="right">
+<tr>
+<td align="center">
+<span class="lbl">Note: Select to download</span><br />
+<a href="http://austinea.org/arch/acc/report/prepareContractAndOrAddendumUseCase.jpg"><img src="http://austinea.org/arch/acc/report/prepareContractAndOrAddendumUseCase.jpg" border="0" width="200" alt="" /></a><br />
+<span style="font-weight: bold;">Prepare Contract and/or Addendum<br />Use Case</span>
+</td></tr></table>
+
+<!-- Use Case Scope  -->
+
+<p><b>Use Case Scope</b></p>
+<p>The Event Representative contacts the Sales Manager and indicates they are ready to sign a contract to lock in an event/date/etc.
+The Sales Manager requests the Contract Administrator prepares an initial contract, and to change the status of the Booking to "Tentative" . The Contract Administrator prepares the deposit schedule, enters the contract into EVT CONTRACT system (providing address, contract ID, contractor, description, contacts, date, show date, Texas association designation, estimated attendance, Ledger ID, event classification, published in calendar designation.) 
+The Contract Administrator prepares the contract documents (The Contract Administrator then uses the EVT Invoices system to create an Event Invoice). The Contract Administrator uses the System to modify and reassign Activities to the Sales Manager and/or the Contract Administrator. They Print the contract, take the Contract Documents to the Sales Manager for Approval. The Sales Manager provides feedback (applies any changes needed). The Sales Manager takes the document(s) to the Sales Director for an approval. Once approved, the Sales Manager or Contract Administrator (the Contract approver) (depending upon the Facility Location) scans the document and emails a PDF of the initial contract, including Cover Letter and Initial Invoice per request to the Event Representative. 
+The Event Representative reviews the Contract and associated documents and will ask questions, request changes, etc. Depending upon the request, City Legal is engaged, or the Contract Approver, or an Internal Expert for business decisions. If necessary the contract is re-drafted, and re-approved by the Contract Approver, and sent back to the customer for reconsideration. The process continues to repeat until the Event Representative and the Convention Center have mutually agreed upon terms. For every modification needed, a new Contract is drafted, including Calendar Letter, Cover Letter and other associated Documents. The Contract Administrator uses the System to modify internal Traces/Activities.
+The Event representative returns the contract with an authorized signature including all Associated Documents (Photo Authorization Form and Credit Card Authorization Form). The Contract Administrator reviews the signed Contract to determine if there are further modifications made to the Contract. If there are further changes, the Contract is returned to the Sales Manager or Contract Administrator (depending upon Facility Location) and the modification process continues until a 'Clean Copy' or Contract with signature and no further modifications has been received.
+The Contract is not submitted to the Department Director for signature until deposit monies as required by the Contract are received, processed and verified using either the Payment Gateway or Accounts Receivable. The monies due for deposit are contingent on the terms agreed upon within the contract (0% [government, grand-fathered, special interest group] -100%). Once the Contract Deposit terms are met and the Payment has been confirmed as received, the Contract is routed to the Department Director for final signature.
+The Certificate of Insurance, and each Deposit has a due date and if the associated due dates are missed, the system will send emails to the Sales Director, and a configurable team, to indicate action is required with the customer. 
+Once the Department Director has signed the contract, The Contract Administrator changes the status of the event from TENTATIVE to DEFINITE. The Contract Administrator modifies or re-assigns Activities/Traces to the Sales Manager or Contract Administrator.
+Other documents (certificate of insurance, Calendar Letter, Photo Release, Credit Card Authorization Form) are provided by the event representative.
+The Contract Administrator will not prepare a contract without the following initialed documents. Note, no signatures are provided until the last step of the process. 
+The System tracks changes to contracts.</p>
+
+<!-- Sequence Diagram -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="http://austinea.org/arch/acc/report/prepareContractAndOrAddendumSequenceDiagram01.jpg"><img src="http://austinea.org/arch/acc/report/prepareContractAndOrAddendumSequenceDiagram01.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Prepare Contract and/or Addendum</p>
+</td></tr></table> 
+
+
+
+<p style="font-weight: bold; text-align: center;">Prepare Contract and/or Addendum</p>
+<!-- Table definition -->
+<table align="center" id="custom">
+<tr><th width="195">Type/Interface</th><th>Description</th></tr>
+
+<tr>
+<td>Sales Manager/ <br /> requestContract</td> <td>The Event Representative contacts the Sales manager and requests a contract. </td> </tr>
+
+<tr>
+<td>Internal Operations Expert/ <br /> provideOperationalConsulting</td> <td>The Sales Manager determines the customer needs input from one of the Convention Center Operational experts. This can be for various disciplines like (Security, IT, Utilities, Food and Beverage.) The Sales Manager will communicate with the Internal Operations Expert to obtain needed information, price information, etc. If necessary, the Internal Operations Expert may contact the Event Representative directly and communicates any necessary changes to the Sales Manager. </td> </tr>
+
+<tr>
+<td>Establish Event Booking/<br /> addPricingDepositAndConcessionToEventContract</td> <td>The Sales manager Accesses the system and provides Pricing, concessions ( Credit information, Room night Credit, etc ) and specifies details to be included for the event's contract. </td> </tr>
+
+<tr>
+<td>Establish Event Booking/ <br /> prepareInitialContract</td> <td>The Sales Manager Schedules an Activity (trace) for the Contract Administrator to create the initial Contract. This sends a notification to the Contract Administrator of the new activity.</td> </tr>
+
+
+
+<tr>
+<td>Establish Event Booking/<br /> enterContractDetails</td> <td>The Contractor Administrator accesses the system, They confirm/change the dates and space. They change the space planning grid from "Requested" to "Contract" for the event, during the time frames for the event. Additionally they reserve/annotate pre-function, dock space, common space, necessary to operate the meeting. 
+They make sure the event has been assigned (sourced) to Convention Center or Palmer. They enter user defined customizable fields that track various metrics to be reported upon (first show date, last show date, currency, accuracy measure, Is First time event, Is First time Client, contract exists, they are hosting, is Internal Meeting (coa) ) If necessary, they enter the deposit schedule for Event. They Change the "decision date" to match "First Deposit Date". Lastly they generate an initial draft of the contract. </td> </tr>
+
+<tr>
+<td>Establish Event Booking/ <br /> createInitialInvoice</td> <td>The Contractor Administrator accesses the system, and generates an initial invoice for the event for the finance team. This is always done with the contract. The system merges/imports: client name, event representative, point of contact, client, client address, contract ID number, If requested by the event representative, the Contract Administrator also provides an initial invoice/Deposit Statement which includes the following information: deposit number (first, second, third) and amount of deposit and date its due, event dates. This is not always included with the contract (Some government Entities, and COA events don't get them.) </td> </tr>
+
+<tr>
+<td>Establish Event Booking/<br /> notifySalesManagerOfContractReadiness</td> <td>The System sends notification to the Sales Manager that the initial contract is ready for review.</td> </tr>
+
+<tr>
+<td>Establish Event Booking/ <br /> evaluateContract</td> <td>The Sales Manager Schedules an Activity (trace) for the Contract Administrator to create the initial Contract. This sends a notification to the Contract Administrator of the new activity.</td> </tr>
+
+<tr>
+<td>Establish Event Booking/<br /> requestChangesToContract</td> <td>The Sales Manager uses the System to update or modify the Contract, if necessary. </td> </tr>
+
+<tr>
+<td>Establish Event Booking/ <br /> reviseContract</td> <td>The Contract Administrator uses the System to revise the Contract, based upon input from the Contract Approver.</td> </tr>
+
+
+
+
+<tr>
+<td>Establish Event Booking/ <br /> printContractAndPreparePDF</td> <td>The Contract Administrator uses the system to print a contract. Additionally, the system prompts for a location and file name for the contract to be output in PDF format.</td> </tr>
+
+<tr>
+<td>Establish Event Booking/<br /> approveContract</td> <td>The Contract Approver uses the System to Approve the Contract and/or prints and Initials a copy of the physical Contract. </td> </tr>
+
+<tr>
+<td>Establish Event Booking/ <br /> scheduleActivitiesForInternalStaff</td> <td>They system generates numerous traces (activities). This is customizable/configurable and role-based. Traces for Sales and Operations.</td> </tr>
+
+<tr>
+<td>Event Representative/ <br /> signContract</td> <td>The Contract Administrator sends the printed Contract to the Event Representative with a request to sign.</td> </tr>
+
+<tr>
+<td>Sales Manager/<br /> requestEventCancellationInWriting</td> <td>The Sales Manager receives written notification from the Event Representative to cancel a scheduled event.</td> </tr>
+
+<tr>
+<td>Establish Event Booking/ <br /> logReasonForCancellation</td> <td>The Sales Manager locates the Customer Account and the specific booking on the System and annotates the reasons provided by the Event Representative as to why the Event is not occurring at the Convention Center. The System provides a customizable list of reasons for cancellation. If lost to another city, the Sales Manager records where the event ultimately went. The system provides the functionality to modify the Cancellation details at any time. </td> </tr>
+
+
+
+<tr>
+<td>City Legal/ <br /> provideLegalCouncil</td> <td>If necessary, the Sales Manager contacts (by email or telephone) the City Legal department to discuss requested changes to the terms of the Contract.</td> </tr>
+
+<tr>
+<td>Contract Administrator/<br /> provideLegalCounselInContract</td> <td>The City Legal department will include Legal Counsel regarding Language, Terms and Risk Mitigation</td> </tr>
+
+<tr>
+<td>Establish Event Booking/ <br /> updateContract</td> <td>The Contract Administrator uses the System to update the Contract. The System captures changes and stores versions while allowing the Contract Administrator to annotate differences between versions.</td> </tr>
+
+<tr>
+<td>Risk Management/ <br /> evaluteRisk</td> <td>The Sales Manager contacts Risk Management (by phone or email) to obtain clarification and approval regarding requested Contract changes by the Event Representative.</td> </tr>
+
+<tr>
+<td>Contract Administrator/<br /> includeRiskManagementFeedback</td> <td>The Risk Management department provides clarification and/or approval (by phone or email) of Contract changes requested by the Event Representative.</td> </tr>
+
+<tr>
+<td>Internal Operations Expert/ <br /> provideOperationalConsulting</td> <td>The Sales Manager determines the customer needs input from one of the Convention Center Operational experts. This can be for various disciplines like (Security, IT, Utilities, Food and Beverage.) The Sales Manager will communicate with the Internal Operations Expert to obtain needed information, price information, etc. If necessary, the Internal Operations Expert may contact the Event Representative directly and communicates any necessary changes to the Sales Manager.</td> </tr>
+
+
+<tr>
+<td>Event Representative/ <br /> signContract</td> <td>The Contract Administrator sends the printed Contract to the Event Representative with a request to sign.</td> </tr>
+
+
+
+<tr>
+<td>Contract Administrator/<br /> processSignedContractAndPayment</td> <td>The Contract Administrator receives a signed contract and payment from the Event Representative for a scheduled event. </td> </tr>
+
+<tr>
+<td>Establish Event Booking/ <br /> recordPaymentReceivedForContract</td> <td>The Contract Administrator accesses the system and records the check no, and other pertinent information related to receiving a signed contract and payment for a scheduled event.</td> </tr>
+
+<tr>
+<td>Department Director/ <br /> signContractHardCopy</td> <td>The Contract Administrator takes the contract with the Customer Signature, and after verifying all elements, provides to the Department Director to sign the contract as well. </td> </tr>
+
+<tr>
+<td>Establish Event Booking/<br /> modifyBookingStatusToDefinite</td> <td>The Contract Administrator accesses the system and updates the Customers event to DEFINITE status.</td> </tr>
+
+</table>
+
+
+
+<!-- Table definition
+<table align="center" id="custom">
+<tr><th>Number</th><th>Category</th><th>Description</th><th>Criticality</th></tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table> -->
+
+</td></tr></table> 
+
+</td></tr></table>
+</td></tr></table></body></html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<title>Animal Services "Conduct Drug Inventory"</title>
+<link rel="StyleSheet" href="http://austinea.org/style/email.css" type="text/css">
+</head>
+<body>
+
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="600" align="center"><tr><td>
+
+<!-- Online reference -->
+<p><class="lbl">Note: This report is also <a href="http://austinea.org/arch/as/report/update071615.html" style="font-size: 7pt;">available online</a> by following link.</p>
+
+<div>
+<p>Hi All,</p> 
+</div>
+
+<p>Attached is the information for the updated "Conduct Drug Inventory" use case that was reviewed July 16th, 2015, with the Animal Services Team. Please take a moment to check my work and let me know if there are any changes I can make to improve this, or if this requirement is as discussed!  </p> <p>
+
+Additionally, I wanted to let you know the Online repository of Animal Services Use Cases is now up to date ( http://austinea.org/arch/as/report/index.html )
+<p>
+
+
+<!-- Signature-->
+<table cellpadding="0" cellspacing="0" border="0" width="350" style="border-collapse: collapse;"><tr><td>
+<p>Cheers!</p>
+
+<table cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;" align="right">
+<tr>
+<td>
+<img src="http://austinea.org/image/austinLogo.jpg" border="0" width="100" height="100" alt="Austin Logo" />
+</td>
+</tr>
+</table>
+<p><img src="http://coawss3a.coacd.org/sites/CTM/EA/Shared Documents/Images/ABSIG.JPG" border="0" width="143" height="83" alt="sign" /> </p>
+
+<p><b>Aaron Brown</b> 
+<span style="color: red; font-weight: bold;">|</span> 
+<b>City of Austin</b>
+<a href="http://www.linkedin.com/in/austnaaron"><img src="http://journeycolorado.com/images/linkedin.jpg" border="0" alt="Linkin Logo" /> </a> <br />
+Senior IT Enterprise Architect<br />
+Direct: (512) 974-2960 </p>
+Email: Aaron.Brown2@austintexas.gov </p>
+</td></tr></table>
+
+
+<!-- Use case information below -->
+
+<hr>
+
+<b> Animal Shelter Logical Data Model </b>
+<!-- Image -  Logical Data Model -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="http://austinea.org/arch/as/report/animalShelterLogicalDataModel.jpg"><img src="http://austinea.org/arch/as/report/animalShelterLogicalDataModel.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Animal Shelter Logical Data Model</p>
+</td></tr></table> 
+
+<!--  Requirements Model -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="right">
+<tr>
+<td align="center">
+<span class="lbl">Note: Select to download</span><br />
+<a href="http://austinea.org/arch/as/report/conductDrugInventoryUseCase.jpg"><img src="http://austinea.org/arch/as/report/conductDrugInventoryUseCase.jpg" border="0" width="200" alt="" /></a><br />
+<span style="font-weight: bold;">Conduct Drug Inventory<br />Use Case</span>
+</td></tr></table>
+
+
+
+
+
+<p><b>Use Case Scope</b></p>
+<p>Weekly and monthly Animal Services places orders for drugs. Inventory Technicians use the system to generate a current inventory list. A purchase list is constructed and recorded on the system. The System notifies the appropriate chain of command that a purchase is going to happen, and provides the purchase list that was created. If a non-standard item is being ordered or a controlled substance, the Veterinarian approves the purchase. Otherwise the Technician Supervisor approves the purchase list. Once the approval is completed, the Inventory Technician orders the drugs and records purchase information on the system. In the situation of schedule 2 drugs, the Veterinarian uses the system to create the inventory report, complete the required DEA controlled substance document (schedule 222 form), and record all relevant information on the system. Once completed, the inventory technician sends the controlled substance documentation via FEDEX to the manufacturer and then uses the system to record the tracking number, date and time the order was sent.  </p>
+
+<!-- Image -  Sequence Diagram -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="http://austinea.org/arch/as/report/conductDrugInventorySequenceDiagram01.jpg"><img src="http://austinea.org/arch/as/report/conductDrugInventorySequenceDiagram01.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Conduct Drug Inventory Sequence Diagram</p>
+</td></tr></table> 
+
+
+
+<p style="font-weight: bold; text-align: center;">Conduct Drug Inventory Interface Descriptions</p>
+<!-- Table definition -->
+<table align="center" id="custom">
+<tr><th width="195">Type/Interface</th><th>Description</th></tr>
+<tr>
+<td>Provide Animal Rescue and Shelter/ <br /> checkAndAnnotateExpiredDrugsInInventory</td> <td>The System scans and marks all expired inventory for removal, as well as records the need to reorder the expired inventory. </td> </tr>
+
+<tr> 
+<td>Provide Animal Rescue and Shelter/ <br /> createInventoryList</td> <td>The User uses the system and creates an Inventory List providing Drug Name, Manufacturer, Minimum Inventory Count, Maximum Inventory Count, Current Inventory Count, last amount ordered, last cost, last date/time ordered, manufacturer from which the drug is ordered, and contact information for the manufacturer. Additionally the List includes Expired Drugs which need to be removed from inventory and reordered. </td> </tr>
+ 
+<tr>
+<td>Provide Animal Rescue and Shelter/ <br /> recordInventoryPurchaseInfo</td> <td>The Inventory Technician uses the system to record the drugs for which they have created orders, the quantity ordered, from where it was ordered, the City Purchase Order to which the order is associated, and the cost. </td> </tr>
+
+<tr>
+<td>Provide Animal Rescue and Shelter/ <br /> notifyChainOfCommandOfDrugPurchase</td> <td>The Inventory Technician uses the system to notify the Technician Supervisor and/or the Vet of a pending drug order awaiting approval on the System. </td> </tr>
+
+<tr>
+<td>Provide Animal Rescue and Shelter/<br /> approveDrugOrder</td> <td>A member of the approved Chain of Command (Vet, Technician Supervisor) uses the system and provides feedback (approval or rejection) of the drug order pending with the Inventory Technician. The System sends the approval status via notification (system message, email, etc.) to the Inventory Technician. </td> </tr>
+
+<tr>
+<td>Inventory Technician/<br /> orderDrugs</td> <td>The Inventory Technician goes to the website(s) for the manufacturers of the drugs being provided and orders them. They are provided a confirmation number (online). They gather order number, order cost, date order placed, etc. </td> </tr>
+
+<tr>
+<td>Provide Animal Rescue and Shelter/<br /> recordPurchaseInfo</td> <td>The Inventory Technician uses the system to record all details associated with the drug order. This includes the online confirmation information, manufacturer, items ordered, individual costs, total invoice cost, date order placed, and by whom the order was placed. </td> </tr>
+
+
+<tr>
+<td>Vet/<br /> completeControlledSubstanceDrugForm</td> <td>The Vet fills out the DEA form 222 for schedule drugs; it is a triplicate form. One copy is maintained in a folder (hard copy is required by law). The "DEA approved" ordering person signs the document, and dates it, and includes the other two sheets with the order. 
+NOTE: DEA provides an automated online system for this activity. The long-term goal is for the replacement software to provide automated access to and from the DEA automated system. </td> </tr>
+
+<tr>
+<td>Provide Animal Rescue and Shelter/<br /> recordControlledSubstanceFormInfo</td> <td>The Vet uses the system to record the scheduled drug order, the date it was prepared, and the date it was signed. The Inventory Technician uses the system to record the FEDEX tracking information as well as "signs" the order, indicating they have seen and processed the request. </td> </tr>
+
+<tr>
+<td>Inventory Technician/ <br /> sendFedExWithControlledSubstancePurchase</td> <td>The Inventory Technician initials/signs DEA schedule 222, and the controlled substance purchase is sent to the manufacturer using FEDEX. The FEDEX tracking number is provided to the Inventory Technician for tracking purposes. </td> </tr>
+
+</table>
+
+
+
+<!-- Table definition
+<table align="center" id="custom">
+<tr><th>Number</th><th>Category</th><th>Description</th><th>Criticality</th></tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table> -->
+
+</td></tr></table> 
+
+</td></tr></table>
+</td></tr></table></body></html>

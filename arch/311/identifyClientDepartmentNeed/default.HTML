@@ -1,0 +1,114 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Identify Client Department Need</title>
+<link rel="Stylesheet" href="http://austinea.org/style/hover.css" type="text/css" />
+</head>
+<body bgcolor="#ddd8c2">
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="650" align="center">
+<tr><td style="padding: 0;" height="130" valign="top"><a href="http://austinea.org">
+<img src="http://austinea.org/image/iTHeader.jpg" alt="austinea.org - home..." border="0"></a></td></tr>
+<!-- Text Area -->
+<tr><td>
+
+<p style="text-align: center; font-weight: bold;">Identify Client Department Need<br />Use Case Specification</p>
+<p style="text-align: center;">05/27/16
+
+<!--  IF Printable document option Included  
+<p style="text-align: center;">download <a href="http://austinea.org/arch/as/***.docx">printable version</a>
+-- >
+
+<b> Animal Services Logical Data Model </b>            
+<!-- Image -  Logical Data Model 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="http://austinea.org/arch/as/ldm.jpg"><img src="http://austinea.org/arch/as/ldm.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Animal Services Logical Data Model</p>
+</td></tr></table> -->
+
+<!-- USE CASE IMAGE -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/311/identifyClientDepartmentNeed/ucd.jpg"><img src="http://austinea.org/arch/311/identifyClientDepartmentNeed/ucd.jpg" border="0" alt="" width="620"/></a><br />
+<span style="font-weight: bold;">Identify Client Department Need<br />Use Case Model</span>
+</td></tr></table>
+
+<p><b>Scope: </b>A Client Department notifies the Chain of Command (Client Relations & Information Services Manager) of a ClientNeed (request for a new service, or modification to an existing service Austin 311 provides). The Chain of Command reviews the ClientNeed and assigns a Business Process Specialist. Alternatively, if the Client Department already has a Business Process Specialist assigned, the Client Department sends their ClientNeed to the Business Process Specialist directly. The Business Process Specialist reviews the ClientNeed and determines the response required. If the ClientNeed doesn't necessitate a change the Business Process Specialist notifies the Client Department and provides information as to why the change isn't necessary. If the ClientNeed requires a change the Business Process Specialist and CSR Administrator, as the Client Management Team, meet with the Client Department to identify the scope of the change and create a draft ClientProposal.  
+
+
+
+<!-- IF INTERACTION OVERVIEW IS INCLUDED 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/as/***.jpg"><img src="http://austinea.org/as/code/***.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Interaction Overview</span>
+</td></tr></table>
+-->
+
+<!-- ACTIVITY DIAGRAM -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/311/identifyClientDepartmentNeed/ad01.jpg"><img src="http://austinea.org/arch/311/identifyClientDepartmentNeed/ad01.jpg" border="0" alt="" width="600"/></a><br />
+<span style="font-weight: bold;">Identify Client Department Need<br />Activity Diagram</span>
+</td></tr></table>
+
+
+
+<br />
+
+
+<!-- SEQUENCE DIAGRAM              
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="http://austinea.org/arch/311/abatePropertyWithContractor/sd01.jpg"><img src="http://austinea.org/arch/311/abatePropertyWithContractor/sd01.jpg" border="0" alt="" width="600"/></a><br />
+<span style="font-weight: bold;">Identify Client Department Need<br />Sequence Diagram</span>
+</td></tr></table>
+<br />
+-->     
+
+<!-- INTERFACE TABLE  -->
+<table align="center" id="custom">
+<tr><th width="9%">Req#</th><th width="70%">Type/Interface - Requirement Description</th><th>Performance</th></tr>
+<tr>
+<td rowspan="2">001</td>
+<td style="font-weight: bold; background: lightgray;">CRIS:Chain of Command/Review Client Need and Assign Business Process Specialist</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Chain of Command reviews the ClientNeed and identifies a BusinessProcessSpecialist to assign to the Client Department. The Chain of Command reviews the number of Client Departments assigned, projects being worked on, work load, and complexity of ClientNeed to select Business Process Specialist. </td>
+</tr>
+<tr>
+<td rowspan="2">002</td>
+<td style="font-weight: bold; background: lightgray;">Business Process Specialist/Review Client Need and Determine Response</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>A Business Process Specialist reviews the ClientNeed and determines the appropriate response: ClientNeed doesn't necessitate change to service or ClientNeed requires a service change. Business Process Specialist uses existing ServiceLevelAgreement for Client Department as research material.</td>
+</tr>
+<tr>
+<td rowspan="2">003</td>
+<td style="font-weight: bold; background: lightgray;">Client Management Team/Meet with Client to Identify Scope and Develop Client Proposal</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Client Management Team performs research (existing information Austin 311 has in Knowledge Base, city website, solicit advice from internal resources, ServiceLevelAgreement, and existing services provided service requests, reports, etc.). The Client Management Team schedules a meeting (in person) with the Client Department to discuss the ClientNeed further and provide information on 311 services as needed (system capability, example services, resource availability, time line expectation, priority, etc.). If a conflict exists between an existing 311 service and the ClientNeed the Client Management Team reviews the conflict with Client Department. Based on the meeting results and information the Client Management Team creates a draft ClientProposal, and determines the response required: Chain of Command approval required, Chain of Command approval not required.</td>
+</tr>
+<tr>
+
+
+
+
+
+</table>
+
+
+<br />
+
+
+
+
+</td></tr></table>
+</td></tr></table></body></html>

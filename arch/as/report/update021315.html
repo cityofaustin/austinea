@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<title>Animal Services &quot; Manage Volunteer Group One Time Visit &quot; </title>
+<link rel="StyleSheet" href="http://austinea.org/style/email.css" type="text/css">
+</head>
+<body>
+
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="600" align="center"><tr><td>
+
+<!-- Online reference -->
+<p class="lbl">Note: This report is also <a href="http://austinea.org/arch/as/report/update0221315.html" style="font-size: 7pt;">available online</a> by following link.</p>
+
+<div>
+<p>Hi All,</p> 
+</div>
+
+<p>Attached is the information for the "Manage Volunteer Group One Time Visit" use case that was reviewed February 13th 2015, with the Animal Services Team. Please take a moment to check my work and let me know if there are any changes I can make to improve this, or if this requirement is as discussed! </p>
+
+Additionally, I wanted to let you know the Online repository of Animal Services Use Cases is now up to date ( http://austinea.org/arch/as/report/index.html )
+<p>
+
+
+<!-- Signature-->
+<table cellpadding="0" cellspacing="0" border="0" width="350" style="border-collapse: collapse;"><tr><td>
+<p>Cheers!</p>
+
+<table cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;" align="right">
+<tr>
+<td>
+<img src="http://austinea.org/image/austinLogo.jpg" border="0" width="100" height="100" alt="Austin Logo" />
+</td>
+</tr>
+</table>
+<p><img src="http://coawss3a.coacd.org/sites/CTM/EA/Shared%20Documents/Images/ABSIG.JPG" border="0" width="143" height="83" alt="sign" /> </p>
+
+<p><b>Aaron Brown</b> 
+<span style="color: red; font-weight: bold;">|</span> 
+<b>City of Austin</b>
+<a href="http://www.linkedin.com/in/austnaaron"><img src="http://journeycolorado.com/images/linkedin.jpg" border="0" alt="Linkin Logo" /> </a> <br />
+Senior IT Enterprise Architect<br />
+Direct: (512) 974-2960 <br>
+Email: Aaron.Brown2@austintexas.gov </p> 
+</td></tr></table>
+
+
+<!-- Use case information below -->
+
+<hr>
+
+<b> Animal Shelter Logical Data Model </b>
+<!-- Image -  Logical Data Model -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="http://austinea.org/arch/as/report/animalShelterLogicalDataModel.jpg"><img src="http://austinea.org/arch/as/report/animalShelterLogicalDataModel.jpg" border="0" width="600" alt=""></a>
+<p style="text-align: center; font-weight: bold;">Animal Shelter Logical Data Model</p>
+</td></tr></table> 
+
+<!-- Muni Court Requirements Model -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="right">
+<tr>
+<td align="center">
+<span class="lbl">Note: Select to download</span><br />
+<a href="http://austinea.org/arch/as/report/manageVolunteerGroupOneTimeVisitUseCase.jpg"><img src="http://austinea.org/arch/as/report/manageVolunteerGroupOneTimeVisitUseCase.jpg" border="0" width="200" alt="" /></a><br />
+<span style="font-weight: bold;">Manage Volunteer Group One Time Visit<br />Use Case</span>
+</td></tr></table>
+
+
+
+<p><b>Use Case Scope</b></p>
+<p>The Volunteer Group Contact accesses the Animal services Website and fills out a request for a one time volunteer group visit. The volunteer coordinator accesses the system and determines if this group has visited before. If they have, the new proposed dates are added to their record, otherwise a new record is created for the group. The Volunteer coordinator accesses GivePulse and posts a request for a "mentor" for the date(s) specified as potential dates of the visit by the Volunteer Group Contact. Once a Mentor is found, the Volunteer Coordinator sends email verifying the date chosen and updates the Volunteer Group's information on the system to reflect the agreed upon visit date.  The Volunteer Group attends orientation and is led by the mentor through their visit. The Volunteer Coordinator will take a photograph of the group, attach it to their record in the system, as well as (later) post the picture to the City Of Austin's Animal Services Facebook Page. Lastly the Volunteer coordinator hands out Volunteer Applications to the group attendee's interested in pursuing volunteer engagements with Animal Services. The Volunteer Coordinator will send email after the group departs, thanking them for visiting.</p>
+
+<!-- Image -  Sequence Diagram -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="http://austinea.org/arch/as/report/manageVolunteerGroupOneTimeVisitSequenceDiagram01.jpg"><img src="http://austinea.org/arch/as/report/manageVolunteerGroupOneTimeVisitSequenceDiagram01.jpg" border="0" width="600" alt=""></a>
+<p style="text-align: center; font-weight: bold;">Manage Volunteer Group One Time Visit Sequence Diagram</p>
+</td></tr></table> 
+
+
+
+<p style="font-weight: bold; text-align: center;">Manage Volunteer Group One Time Visit Interface Descriptions</p>
+<!-- Table definition -->
+<table align="center" id="custom">
+<tr><th width="195">Type/Interface</th><th>Description</th></tr>
+<tr>
+<td>Volunteer Group Coordinator/ <br /> submitNewGroupVolunteerApplication</td> <td>The One time Volunteer Group Contact accesses the internet and fills out an application to do a one-time visit with Animal services. The website shows a calendar of available dates and allows the volunteer group coordinator to pick three choices for dates for the visit. In addition to the three dates, the request includes the company/organization, contact name, contact phone number, contact email and the size of the visiting group. Once submitted, the system sends an automatic email to the volunteer coordinators letting them know a one-time group is interested in visiting. The system also sends email to the volunteer group coordinator confirming their request, and letting them know the Animal Services Volunteer Coordinator will be getting back with them to confirm the actual date the visit will take place. 
+ </td> </tr>
+ 
+<tr>
+<td>Provide Animal Rescue and Shelter/ <br /> checkForNewApplications</td> <td>The volunteer coordinator checks the system to see if new applications have been entered. The application could be for a single volunteer, or a single visit group of volunteers (like visiting veterinary students, etc.)</td> </tr>
+
+<tr>
+<td>Provide Animal Rescue and Shelter/ <br />updatePersonInfo</td> <td>If no PersonInfo record exists for the Animal Source (or volunteer), the User gathers information associated with the Animal Source to create a Person Info record. The Person info record has fields like (name, address, phone, Date of birth, Sex, Companions Name, Drivers License Number and email address.) 
+If a PersonInfo record exists, the User Accesses the system to update the Person info on the system. This information could include personal information (name, date of birth, sex, age, pet preference, Orientation Dates, Signatures Received ( Code of conduct, access agreement), mentor information, first shift information, pet preferences,background check dates, district in which they reside, whether they are a part of a volunteer group, preferred visit dates, links to pictures of the person or group, etc. Depending on whether the person is a pet owner, volunteer, or staff member. 
+Additionally, for non-employees, completion of the Responsible Pet Owner Training class, owner animal, etc. may also be provided.
+If the user is the Fleet Manager, they Access the system and look up and assign an employee to a specific fleet vehicle. The system ensures the “isAllowedToUseFleet” attribute of the PersonInfo is set to True or returns an error. Additionally the system insures the date of the last driver’s certification is within three years.
+The System provides mechanisms to search for a Person Info record by drivers license, phone, animal info, email, name, and/or address. </td> </tr>
+
+<tr>
+<td>GivePulse/<br />requestVolunteerForGroup</td> <td>The Volunteer Coordinator accesses GivePulse, and makes an entry into the "Dog" group seeking a mentor to lead a one time volunteer group. </td> </tr>
+
+<tr>
+<td>Volunteer Group Coordinator/<br /> requestNewVisitDates</td> <td>The Volunteer Coordinator sends email to the Volunteer Group Contact to coordinate new dates for a one time visit. </td> </tr>
+
+
+<tr>
+<td>GivePulse/<br /> signupToAssistForGroup</td> <td>A Volunteer Mentor accesses the Givepulse system, sees the Event request in the DOG section, and signs up to lead the one time volunteer group. Their log in provides all of the contact and identifying information. </td> </tr>
+
+<tr>
+<td>Volunteer Coordinator/<br /> sendLetterConfirmingDateOfGroupVolunteerEvent</td> <td>The Volunteer Coordinator sends an email to the Volunteer group Coordinator confirming a mentor, and the date the visit will occur.   </td> </tr>
+
+<tr>
+<td>Volunteer Coordinator/<br /> confirmAttendenceWithVolunteerGroupCoordinator</td> <td>The Volunteer Coordinator will call the volunteer Group Coordinator to confirm the group will still be attending on the date arranged. </td> </tr>
+
+<tr>
+<td>Volunteer Group Coordinator/<br /> attendGroupOrientation</td> <td>The Volunteer Group comes to the lobby of City of Austin Animal Services on the agreed upon date where they are met by the Mentor. </td> </tr>
+
+<tr>
+<td>Volunteer Mentor/<br /> leadVolunteerGroup</td> <td>The Mentor gathers all supplies needed by the group, lets the group into the lobby, once everyone arrives, conducts training on safety, they will sign liability waivers. The mentor leads the volunteers on a tour and sets expectations, and pairs up two volunteers and a dog. If all goes well, then the pairs can split and get their own dog. Max size of group - 16.   </td> </tr>
+
+<tr>
+<td>Volunteer Coordinator/<br /> takeGroupPhoto</td> <td>The Volunteer Coordinator takes a digital photograph of the group. </td> </tr>
+
+
+<tr>
+<td>Volunteer Coordinator/<br /> showMysteryMovie</td> <td>The Volunteer Coordinator leads the Volunteer Group to the main conference hall where clips from movies like "Up", "Lassie", "Bambi", "The Black Stallion", "Dr Doolittle", and "A Dolphins Tale" are shown, in preparation for discussions about the treatment of animals in today's society.  </td> </tr>
+
+<tr>
+<td>Provide Animal Rescue and Shelter/<br /> addPhotoToPersonInfo</td> <td>The volunteer coordinator uploads the photograph of a person or volunteer group and attaches it to the person info within the system. </td> </tr>
+
+<tr>
+<td>Volunteer Coordinator/<br /> handoutVolunteerApplications</td> <td>The Volunteer Coordinator hands out a nondisclosure application form, and the general volunteer application.</td> </tr>
+
+
+<tr>
+<td>Volunteer Coordinator/<br /> sendFollowupEmailToGroup</td> <td>The Volunteer Coordinator sends email thanking the group for their participation in the one day volunteer group.</td> </tr>
+
+
+<tr>
+<td>Volunteer Coordinator/<br /> postGroupPhotoToFacebook</td> <td>The Volunteer COordinator accesses Facebook, and uploads the Volunteer Group Photo taken during a one time volunteer Group.</td> </tr>
+
+
+
+</table>
+
+
+
+<!-- Table definition
+<table align="center" id="custom">
+<tr><th>Number</th><th>Category</th><th>Description</th><th>Criticality</th></tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table> 
+
+</td></tr></table> -->
+
+</table>
+</table></body></html>
