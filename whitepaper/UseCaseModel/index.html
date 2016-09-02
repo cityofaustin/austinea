@@ -1,0 +1,135 @@
+<!doctype html public "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Anatomy of the Use Case</title>
+<link rel=StyleSheet href="/style/hover.css" type="text/css">
+
+<script type="text/javascript">
+<!--
+var newwindow;
+function stepview(url)
+{
+	newwindow=window.open(url,"name","height=525, width=735");
+	if (window.focus) {newwindow.focus()}
+}
+//-->
+</script>
+</head>
+<body bgcolor="#ddd8c2">
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="650" align="center">
+<tr><td style="padding: 0;" height="130" valign="top"><a href="">
+<img src="/image/iTHeader.jpg" alt="austinea.org - home..." border="0"></a></td></tr>
+<!-- Text Area -->
+<tr><td>
+<p style="text-align: center; font-weight: bold; font-size: 11pt;">Anatomy of the Use Case</p>
+
+<p>This white paper is intended for anyone who wishes to learn about the anatomy of the Unified Modeling Language (UML) Use Case and the guiding principles used in its development. This paper discusses the parts of the use case, introduces terminology, definitions and relationships between the parts. UML is a standardized general-purpose modeling language in the field of object-oriented software engineering. The standard was created and is managed by the <a href="http://www.omg.org" target="definitions">Object Management Group</a>. It was first added to the list of OMG adopted technologies in 1997, and has since become the industry standard for modeling software-intensive systems.
+			<table border="0" cellpadding="0" cellspacing="0" align="left">
+				<tr>
+					<td>
+<p><img border="0" alt="" align="left" src="CapabilityRole.png" width="108" height="89">
+					</td>
+				</tr>
+			</table>
+Over the past decade, the UML has emerged as a popular approach to modeling information technology (IT) intensive enterprises - leading to the recognized need for Enterprise Architecture (EA). EA is the process of translating business vision and strategy into effective enterprise change by creating, communicating, and improving the key requirements, principles, and models that describe the enterprise’'s future state and enable its evolution and transformation. The transformation process entails the analysis and design of an enterprise in its current and future states from a strategic, organizational, and technological perspective. The goals of EA are to improve the organizational efficiency, effectiveness, and agility by delivering business-aligned enterprise systems.
+
+<p>The Use Case Model provides an approach for defining a process that delivers <a href="../../definition/index.html#result_of_value" target="definitions">result of value</a> (ROV) and is the foundational instrument of a skilled Enterprise Architect. Using an  <a href="http://en.wikipedia.org/wiki/Object-oriented_analysis_and_design" target="definitions">object-oriented analysis and design (OOAD)</a> <a class="smallfont" href="#1">[1]</a> method, the architect analyzes the required interacting objects referred to as Capability Roles. <a href="../../definition/index.html#role" target="definitions">Roles</a> are shown as green actors with an oval in left corner (Figure 1) and represent the functional responsibility of people or systems (i.e., objects). Each <a href="http://en.wikipedia.org/wiki/Object_(computer_science)" target="definitions">object</a> represents a role of interest of the subject modeled by the Use Case. Object-oriented analysis applies object-modeling techniques to analyze the functional responsibilities and interface requirements for a system; therefore, the Use Case Model represents the requirements of the capability being modeled - ex., <b>Citizen Engagement</b>. This approach eliminates the need for alternative requirements management tooling used to define system functional requirements.</p>
+
+	<table id="caption" style="float: right; width: 200px;">
+		<tr class="alt">
+			<td>Note: With proven architecture proficiency, the Apprentice Architect can be reclassified as city IT Enterprise Architect per recommendation from the City's Chief Enterprise Architect
+			</td>
+		</tr>
+	</table>
+
+<p>The use case diagram (Figure 1) is used during collaboration sessions with subject matter experts (SMEs) to develop the scope of the use case, define participating objects, identify important triggers and define outcomes. Similar to a traditional system engineering context diagram, the use case diagram is useful in guiding stakeholders through scope and concept development. The following is an example Use Case Model developed to collect functional requirements to <b>Perform On-line Credit Card Pay for Service</b> a city-wide initiative to provide citizens the ability to pay for city services using Web enabled methods. It has been suggested that a non-technical person may not be able to grasp the use case development process; however, a skilled enterprise architect can guide a team through the process with no prior knowledge or experience. In fact, the <a href="http://en.wikipedia.org/wiki/Unified_Modeling_Language" target="definitions">Unified Modeling Language</a> <a class="smallfont" href="#1">[1]</a> was created  for the purpose of eliciting functional needs from non-technical stakeholders. The following sample was built through the expert consultation of the City's Controller Office SMEs with little to no modeling background.</p>
+
+	<table align="left" id="caption" width="200">
+		<tr class="alt">
+			<td>Note: The Use Case result of value (ROV) should be easily discernible when reading the scope statement - never start scope statements with "this use case." The fact that it's a use case is understood
+			</td>
+		</tr>
+	</table>
+
+<p>The first step in the use case development process is to develop a paragraph that defines the scope - sometimes it's useful to develop <a href="../../definition/index.html#mission" target="definitions">mission</a> and <a href="../../definition/index.html#vision" target="definitions">vision</a> statements as well depending on the complexity and <a href="../../definition/index.html#scope" target="definitions">scope</a> of the subject requiring more than one use case. The scope statement is useful in focusing the subject matter team on a common understanding of the boundaries of the use case and its ROV. In our example, one might presume the value (outcome) of our use case is a successful online transaction from the point of view of the Internet User. In actuality, the outcome is a balanced general ledger of which the Internet User takes part - hence the usefulness of a scope statement. This process formulates the operational (business) concept and aids in discovery of participating roles to be used as objects in future views of the model.
+
+<p><b>Scope:</b> Provides credit card transaction services to allow Internet Users to pay for City of Austin services and fees. Performs daily deposits, reconciles against department billing systems and updates the City's general ledger.
+
+<p style="text-align: center; font-weight: bold;"><img src="UseCaseModel.png" width="630" alt="" border="0"><br>
+Figure 1: Use Case Diagram</p>
+
+	<table align="right" id="caption" width="200">
+		<tr class="alt">
+			<td>Note: A table of <a href="../../definition/index.html" target="definitions">terms and defintions</a> can be found by following the link
+			</td>
+		</tr>
+	</table>
+
+<p>Through enterprise architect led collaborations, the SMEs mature the Use Case Diagram. Once mature, the architects and SMEs analyze the processes and interactions (dialog between objects - i.e., capability roles on use case diagram) using an iterative approach to develop an <b>Interaction Overview</b> (Figure 3) in the form of a UML Activity Model. The iterative approach begins with a single UML Sequence Digram (Figure 2) and matures to a selected set of interactions each represented by their individual sequence diagram (or sometimes a swim-lane activity model - discussed later). In this example, we determined 5 interactions - i.e., 5 sequence diagrams (e.g., 5 activities on Interaction Overview). The overall business rules (i.e., <a href="../../definition/index.html#decision_node" target="definitions">decision node</a>, parallel [synchronized] activities, <a href="../../definition/index.html#guard_condition" target="definitions">guard conditions</a>, etc.) are captured on the Interaction Overview.
+
+<p>An object-oriented interaction is composed of <a href="http://en.wikipedia.org/wiki/Object_(computer_science)" target="definitions">objects</a> <a class="smallfont" href="#1">[1]</a> - objects can be either an instance of a <a href="../../definition/index.html#role" target="definitions">capability role</a> on a <a href="../../definition/index.html#sequence_diagram" target="definitions">sequence diagram</a> or <a href="../../definition/index.html#instance" target="definitions">instance</a> of an <a href="../../definition/index.html#information_element" target="definitions">information element</a> on an activity model. Hence the term object-oriented because the model is oriented toward the object rather than oriented toward the process (used by more traditional modeling methods). Each activity on the <a href="../../definition/index.html#interaction_overview" onclick="stepview('activitymodel.png')" target="definitions">Interaction Overview</a> in the model presents input object(s) that trigger the activity and the resulting object(s) from the collaboration of objects on the sequence diagram. Collaboration between objects involves each sending messages to each other. Sending a message differs from calling a function in that when a target object receives a message, it decides what function to carry out to service that message. The same message may be implemented by many different functions, the one selected depending on the state of the target object and the guard condition set on the relevant Combined Fragment. The sequence diagram uses <b>Combined Fragments</b> to define loops, alternate or optional flows based on the business rule [guard condition] - this is a new feature introduced by UML version 2.0 to simplify business rule capture at various stages of the modeling process. The sequence diagram below uses both <b>loop</b> and <b>opt</b>(ional) <a href="../../definition/index.html#combined_fragment" target="definitions">combined fragments</a> to define continuous loop functions as well as optional sequence events based on condition in [brackets]. The green rectangles (Figure 3) represent the <b>Information Elements</b> used by <a href="../../definition/index.html#message" target="definitions">messages</a>; and therefore, represent the Interaction Overview as they travel through the activity's UML <a href="../../definition/index.html#pin" target="definitions">pins</a> - object interactions are shown on the sequence diagram. Their state is captured by naming an instance of the information element on the activity diagram. On the surface this all seems a bit complicated; however, with a some practical use it becomes quite intuitive. The value of the UML over more traditional methods of modeling is in it's ability capture complex processes and accurately represent design system interaction (developers call system <a href="../../definition/index.html#behavior" target="definitions">behavior</a>). In the end, the Use Case Model accurately captures business needs useful for future integration and evolution of the capability over time. 
+
+<h2>Sequence Diagram for Step 1. Process Credit Card Transaction</h2>
+
+<p>Note: This example presents only one sample sequence diagram. For the use case model to be complete, requires <a href="SequenceSteps.html" target="definitions">steps 2, 3, 4 and 5 sequence diagrams</a> shown by following the link. The overview of the interactions of the sequence diagrams are shown on Figure 3, Use Case Activity Model.
+
+<p style="text-align: center; font-weight: bold;"><img src="SequenceDiagram.png" width="620" alt="" border="0"><br>
+Figure 2: UML Sequence Diagram for Interaction Overview<br />Step 1. Process Credit Card Transaction
+
+<p>The <a href="../../definition/index.html#sequence_diagram" target="definitions">sequence diagram</a> is the most important architectural artifact in a UML model. Its mastery by the enterprise architect is essential and the most difficult diagram to learn. The sequence diagram identifies the information elements being passed to the various Capability Roles (objects) and assigns functional responsibility of the object identified on the use case diagram. Many architects mistake the direction of the arrow as meaning the direction of information flow, but the message does not necessarily represent information flow. Rather, the direction of the arrow points to the object with functional responsibility. The servicing end of the arrow (opposite end of arrow) is the object making the service request. Sometimes we use <a href="../../definition/index.html#reflexive" target="definitions">reflexive</a> messages when an object makes a request on itself to transform information elements. An example is when the Online Payment Service generates a <b>CreditCardTransaction</b> using both the <b>TransactionItem</b> and <b>CreditCardInformation</b> (reference Figure 2). Not unlike the interaction overview, the guard conditions on the combined fragments further define the business rules of the Use Case Model. The interaction overview means exactly as it states - an overview of the interactions of the sequence diagrams. It establishes the business rules and decision points guided by the selected instance of the use case. For example, one instance of the use case may batch process the billing system and another instance may reconcile accounts. This approach maximizes the reusable nature of the business process and reduces implementation complexity.
+
+<h2><a name="activity_model">Activity Model - Interaction Overview</a></h2>
+
+<!-- Image map -->
+<table align="center" cellpadding="0" cellspacing="0" border="0"><tr><td>
+<div style="text-align:center; width:630px; margin-left:auto; margin-right:auto; ">
+<img id="Image-Maps_7201209061459239" src="activitymodel.png" usemap="#Image-Maps_7201209061459239" border="0" width="630" alt="" />
+<map id="_Image-Maps_7201209061459239" name="Image-Maps_7201209061459239">
+<area shape="rect" coords="236,72,410,103" onclick="stepview('sequencediagram.png')" alt="" title="Step 1" target="stepview"   />
+<area shape="rect" coords="20,211,166,244" onclick="stepview('step2.png')" alt="" title="Step 2" target="stepview"  />
+<area shape="rect" coords="192,209,323,242" onclick="stepview('step3.png')" alt="" title="Step 3" target="stepview"   />
+<area shape="rect" coords="332,209,465,242" onclick="stepview('step4.png')" alt="" title="Step 4" target="stepview"   />
+<area shape="rect" coords="479,231,654,274" onclick="stepview('step5.png')" alt="" title="Step 5" target="stepview"   />
+<area shape="rect" coords="689,394,691,396" href="http://www.image-maps.com/index.php?aff=mapped_users_7201209061459239" alt="Image Map" title="Image Map" />
+</map>
+<!-- Image map text links - End - --><br />
+<b>Figure 3: Use Case Activity Model - Interaction Overview</b>
+</div>
+</td></tr></table>
+
+<p>Each activity (blue round corner rectangles) on the interaction overview (Figure 3) is linked to its defined sequence diagram providing a description of the dialog between the objects (messages on the UML sequence diagram). Using the activity diagram above, select (it's clickable) an activity to see its related sequence diagram view. Select Step 2 and study the related sequence diagram and observe its information elements on the activity diagram until you understand what's going on. Each message on the sequence diagram contains an information element in the signature [ex., seqeunceMessage( :Signture ) : ReturnObject] of the message with functional responsibility assigned to the object by the direction of the arrow. For example on <a href="#activity_model"  onclick="stepview('sequencediagram.png')">Figure 2, the sequence diagram</a> begins when the Internet User makes a request on the Department Internet System to processTransactionItemForPayment using the TransactionItem information element as its signature. The Department Internet System then passes the same function to the Online Payment Service; therefore, capturing the system functional need for the Internet System to pass credit card transaction requests to the Online Payment Service. To further understand the relationships or dependencies of information elements, the architect develops a class diagram.
+
+<p><a href="../../definition/index.html#class_diagram" target="definitions">Class Diagrams</a> (Figure 4) capture the association (dependencies) of the information elements and represent the <a href="../../definition/index.html#logical_data_model" target="definitions">logical data model</a> of the use case. Database administrators use the logical data model to develop relational databases to implement the object flow defined by the use case. In the future, the logical data model guides the Enterprise Database layer of the ISO model. Another value of the UML is in its ability to put information elements in context of its use better guiding capability realization by applications developers or to evaluating commercial-off-the-shelf-software (COTS) for its ability to implement the business process when certain information elements provide important outcomes.  
+
+<h2>Logical Data Model</h2>
+
+<p style="text-align: center; font-weight: bold;"><img border="0" alt="" src="ClassDiagram.png" width="630"><br>
+Figure 4: UML Class Diagram Defines Relationships of Information Elements</p>
+
+	<table align="right" id="caption" width="200">
+		<tr class="alt">
+			<td>Note: Object knowledge rather than functional understanding is comparable to an <a href="http://en.wikipedia.org/wiki/Autostereogram" target="definitions">autostereogram</a>. To the untrained eye, all the observer sees is a random jumble of dots resembling abstract art. Whereas, the trained eye is able to observe a 3D scene which can be "seen" with proper viewing knowledge
+			</td>
+		</tr>
+	</table>
+
+<p>It's important to understand that use case model development is an "iterative" approach to modeling until all the interactions and business rules are thoroughly defined. For example, the team may discover new capability roles when modeling the sequence of events requiring updates to the use case diagram or possibly a modification of the scope of the use case. Some simple Use Case Models may not require an Interaction Overview - this occurs when the Use Case Model consists of just one sequence diagram. Although not a preferred approach, activity swim-lane models can substitute for sequence diagrams. This alternative is useful when business process analysis is the major consideration and the stakeholder community better understand swim-lane models. Much caution must be exercised, however, when using swim-lane models. Coined by Aaron Brown, "the architect can easily fall into the <b>function trap</b> when using swim-lane activity models." The function trap occurs when the architect places too much emphasis on the process (function) and less on the object (capability roles and information elements). In OOAD, objects are used to derive process verses the function trap where process derives objects. On the surface this notion does not appear very profound. From my experience, however, it's fun to observe the new architect when this apparently subtle concept is fully understood - this frequently generates an emotional response! This understanding is a significant differentiator between the Enterprise Architect and Senior Enterprise Architect and some architects are unable to cross this mental shift in thinking. I recommend modeling the sequence diagram because information elements are foremost and needed in the signature of the message requiring greater object-oriented discipline. Swim-lane activity models frequently lead to traditional methods of process modeling without object consideration and quickly lead to the function trap of a traditional modeling method producing significantly less useful architectural results.
+
+<p>If, however, swim-lane models are deemed useful, it is highly encouraged the new architect develop the sequence diagram first, then manually convert the sequenced model to a swim-lane activity model. In addition, the activity model is difficult to develop during collaboration sessions and requires a great deal of experience. A highly skilled architect with good object-oriented experience can learn to develop swim-lane activity models directly, but not until they obtain the natural skill to recognize the importance of behavior when developing the activity viewpoint. The RSA activity design tool is clunky compared to its sequence diagram design element. This is a result of the UML community generally not seeing much value in the activity model because they have no architectural significance.
+
+<p class="smallfont"><b>References:</b><br>
+<a name="1">1.</a> <a href="http://www.wikipedia.org/" target="definitions">Wikipedia</a> - the online, open source encyclopedia<br>
+2. <a href="../../definition/index.html" target="definitions">Enterprise Architecture Terms and Definitions</a>
+
+<p><b>Rob Byrd</b> <b class="red">|</b> <b>City of Austin</b><br>
+Chief Enterprise Architect - Corporate<br>
+Direct: (512) 974-1615<br>
+<a href="mailto: rob.byrd@austintexas.gov">rob.byrd@austintexas.gov</a>
+
+</td></tr>
+<tr><td style="padding: 0;" height="50" valign="top"><a href="http://austintexas.gov/information-technology/">
+<img src="/image/footer.jpg" alt="Austin Information Technology" border="0"></a></table>
+</td></tr></table></body></html>

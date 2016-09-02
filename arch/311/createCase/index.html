@@ -1,0 +1,152 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Create Case</title>
+<link rel="Stylesheet" href="/style/hover.css" type="text/css" />
+</head>
+<body bgcolor="#ddd8c2">
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="650" align="center">
+<tr><td style="padding: 0;" height="130" valign="top"><a href="">
+<img src="/image/iTHeader.jpg" alt="austinea.org - home..." border="0"></a></td></tr>
+<!-- Text Area -->
+<tr><td>
+
+<p style="text-align: center; font-weight: bold;">Create Case<br />Use Case Specification</p>
+<p style="text-align: center;">04/14/16
+
+<!--  IF Printable document option Included  
+<p style="text-align: center;">download <a href="/arch/as/***.docx">printable version</a>
+-- >
+
+<b> Animal Services Logical Data Model </b>            
+<!-- Image -  Logical Data Model 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="/arch/as/ldm.jpg"><img src="/arch/as/ldm.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Animal Services Logical Data Model</p>
+</td></tr></table> -->
+
+<!-- USE CASE IMAGE -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/arch/311/createCase/ucd.jpg"><img src="/arch/311/createCase/ucd.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Create Case<br />Use Case Model</span>
+</td></tr></table>
+
+<p><b>Scope: </b>The Enterprise Service Bus requests the Amanda system create a Case (complaint, short term rental license, etc. based on disposition of the message). The Amanda system creates the Case. During the Case creation process the Amanda system updates the Info Tab's fields with information from the original message.
+<br>
+<br>The PropertyRSN is then looked up:
+<br><li>If an interface to GIS is available the Amanda system requests GIS lookup the PropertyRSN. The lookup is performed at the lowest level first (unit number). The Amanda system performs multiple lookups to GIS at progressively less granular levels (building, then street address) until a PropertyRSN is returned.
+<br><li>If the Amanda system looks up the PropertyRSN, the Amanda system performs the lookup at the lowest level first (unit number). The Amanda system performs multiple lookups at progressively less granular levels (building, then street address) until a PropertyRSN is returned.
+<br><li>If the PropertyRSN is not returned the Amanda system assigns the Case to an Inspector based on the Zoning and District located in the message from the Enterprise Service Bus. If an Inspector can not be determined based on the Zoning and District, the Amanda system assigns the Case to the ARR Customer Service team to triage. ARR Customer Service reviews the Case and assigns the appropriate Inspector.
+<br>
+<br>After the Case is created the Transmit Amanda Data to ESB use case is triggered as the case Status is changed to new.  
+
+
+
+<!-- IF INTERACTION OVERVIEW IS INCLUDED 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/arch/as/***.jpg"><img src="/as/code/***.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Interaction Overview</span>
+</td></tr></table>
+-->
+
+<!-- ACTIVITY DIAGRAM 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/arch/as/***.jpg"><img src="/as/code/***.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Create Case<br />Activity Diagram</span>
+</td></tr></table>
+-->
+
+
+<br />
+
+
+<!-- SEQUENCE DIAGRAM  -->                 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/arch/311/createCase/sd01.jpg"><img src="/arch/311/createCase/sd01.jpg" border="0" alt="" width="600"/></a><br />
+<span style="font-weight: bold;">Create Case<br />Sequence Diagram</span>
+</td></tr></table>
+<br />
+
+
+<!-- INTERFACE TABLE  -->
+<table align="center" id="custom">
+<tr><th width="9%">Req#</th><th width="70%">Type/Interface - Requirement Description</th><th>Performance</th></tr>
+<tr>
+<td rowspan="2">001</td>
+<td style="font-weight: bold; background: lightgray;">Amanda/createCase</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>null</td>
+</tr>
+<tr>
+<td rowspan="2">002</td>
+<td style="font-weight: bold; background: lightgray;">Amanda/updateInfoTab</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>null</td>
+</tr>
+<tr>
+<td rowspan="2">003</td>
+<td style="font-weight: bold; background: lightgray;">GIS/lookupPropertyRSN</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>null</td>
+</tr>
+<tr>
+<td rowspan="2">004</td>
+<td style="font-weight: bold; background: lightgray;">Amanda/lookupPropertyRSN</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>null</td>
+</tr>
+<tr>
+<td rowspan="2">005</td>
+<td style="font-weight: bold; background: lightgray;">Amanda/lookupAssignedInspectorByLocation</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>null</td>
+</tr>
+<tr>
+<td rowspan="2">006</td>
+<td style="font-weight: bold; background: lightgray;">Amanda/assignInspectorToCase</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>null</td>
+</tr>
+<tr><td rowspan="2">007</td>
+<td style="font-weight: bold; background: lightgray;">Amanda/assignCaseToTriageTeam</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>null</td>
+</tr>
+<tr>
+
+
+
+
+
+</table>
+
+
+<br />
+
+
+
+
+</td></tr></table>
+</td></tr></table></body></html>

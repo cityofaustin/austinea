@@ -1,0 +1,371 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Initiate Court Action</title>
+
+<link rel="Stylesheet" href="/style/hover.css" type="text/css">
+</head>
+<body style="background-color: rgb(221, 216, 194);">
+<!-- Border Background Table -->
+<table style="border-collapse: collapse; background-color: rgb(244, 202, 144);" align="center" border="0" cellpadding="4" cellspacing="0">
+<tbody>
+<tr>
+<td><!-- Main Body -->
+<table style="border-collapse: collapse; background-color: rgb(255, 255, 255);" align="center" border="0" cellpadding="5" cellspacing="0" width="650">
+<tbody>
+<tr>
+<td style="padding: 0pt;" height="130" valign="top"><a href=""><img src="/image/iTHeader.jpg" alt="austinea.org - home..." border="0"></a></td>
+</tr>
+<!-- Text Area -->
+<tr>
+<td> <p style="text-align: center; font-weight: bold;"><br>
+Initiate Court Action</p>
+
+<p style="text-align: center; font-weight: bold;">Use Case Specification</p>
+<p style="text-align: center;">08/24/2016
+<!-- IF Printable document option Included <p style="text-align: center;">download <a href="/arch/code/***.docx">printable version</a> -- > <b> Austin Code Logical Data Model </b> <!-- Image - Logical Data Model <table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center"> <p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br> <a href="/arch/code/ldm.jpg"><img src="/arch/code/ldm.jpg" border="0" width="600"></a> <p style="text-align: center; font-weight: bold;">Austin Code Logical Data Model</p> </td></tr></table> --><!-- USE CASE IMAGE -->
+<table style="border-collapse: collapse;" align="center" border="0" cellpadding="5" cellspacing="0">
+<tbody>
+<tr>
+<td align="center"><span class="lbl">Select
+to enlarge...</span><br>
+<a href="/arch/code/initiateCourtAction/ucd.jpg"><img src="/arch/code/initiateCourtAction/ucd.jpg" alt="" border="0"></a><br>
+<span style="font-weight: bold;">Initiate
+Court Action<br>
+Use Case Model</span>
+</td>
+</tr>
+</tbody>
+</table>
+</p>
+<p><b>Scope:</b><br>
+A CodeCase (e.g. CodeViolationCase, LegalCase, RepeatOffenderCase)
+requires court action. The Create Court Packet use case is started. An
+Austin Code Officer creates an Affidavit, CourtPacket, and LegalCase.
+The CourtPacket is approved by the Chain of Command, and the Affidavit
+notarized.
+&nbsp;</p>
+<p>The Process Court Packet use case is then started.
+The Austin Code Officer submits the CourtPacket to the Austin Code
+Legal Coordinator for processing. If the CourtPacket requires changes
+the Austin Code Legal Coordinator returns the CourtPacket to the Austin
+Code Officer for updates. The Austin Code Legal Coordinator submits the
+CourtPacket to the Court (either District or Municipal). If the case is
+dismissed the LegalCase is closed and the Initiate Court Action use
+case ends. If a Municipal Court case is created a CourtCase and
+CauseNumber are generated in the JEMS system. The Austin Code Legal
+Coordinator identifies the CauseNumber and Docket either through JEMS,
+or the Case Management System. If a District Court case is created the
+Austin Code Legal Coordinator requests the Docket and CauseNumber from
+the District Court.&nbsp;</p>
+<p>If the case is processed by the Court, the Review
+Court Case use case starts. The Austin Code Legal Coordinator sends
+Notification to Austin Code Officers with CourtCases on the Docket, and
+the Austin Code Officer performs an Inspection. The Austin Code Legal
+Coordinator then creates a Deferral for each CourtCase. The Austin Code
+Legal Coordinator provides support to the Court during the case. The
+Austin Code Legal Coordinator then receives an update on the CourtCase
+either through JEMS directly, or by contacting a Legal Advisor for an
+update. The LegalCase is updated, along with the CodeViolationCase with
+the CourtCase outcome. The LegalCase is closed only after the Defendant
+pays the fine.&nbsp;</p>
+<p>If the Court doesn't make a decision on the
+CourtCase, the Review Court Case use case loops with the Austin Code
+Legal Coordinator performing a review until a decision is reached.
+</p>
+<p></p>
+<p><b> Click on Any of the Blue Use Case Boxes
+below, to be taken to the corresponding Use Case Report</b>
+<!-- IF INTERACTION OVERVIEW IS INCLUDED <table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center"> <span class="lbl">Select to enlarge...</span><br /> <a href="/arch/code/***.jpg"><img src="/arch/code/***.jpg" border="0" alt="" /></a><br /> <span style="font-weight: bold;">Interaction Overview</span> </td></tr></table> --><br>
+<!-- SEQUENCE DIAGRAM -->
+<table style="border-collapse: collapse;" align="center" border="0" cellpadding="5" cellspacing="0">
+<tbody>
+<tr>
+<td align="center"><span class="lbl">Select
+to enlarge...</span><br>
+<a href="/arch/code/initiateCourtAction/io01.jpg"><img src="/arch/code/initiateCourtAction/io01.jpg" alt="" usemap="#image-map" border="0" width="600"></a><br>
+<span style="font-weight: bold;">Initiate
+Court Action<br>
+Interaction Overview Diagram</span>
+</td>
+</tr>
+</tbody>
+</table>
+<br>
+<!-- Image Map Generated by http://www.image-map.net/ -->
+<map name="image-map"><area target="" alt="Create Court Packet" title="Create Court Packet" href="/arch/code/createCourtPacket/index.html" coords="257,120,431,188" shape="rect"><area target="" alt="Process Court Packet" title="Process Court Packet" href="/arch/code/processCourtPacket/index.html" coords="261,254,432,324" shape="rect"><area target="" alt="Review Court Case" title="Review Court Case" href="/arch/code/reviewCourtCase/index.html" coords="258,527,439,611" shape="rect"></map>
+<!-- INTERFACE TABLE <table id="custom" align="center">
+<tbody>
+<tr>
+<th width="9%">Req#</th>
+<th width="70%">Type/Interface -
+Requirement Description</th>
+<th>Performance</th>
+</tr>
+<tr>
+<td rowspan="2">001</td>
+<td
+style="background: lightgray none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; font-weight: bold;">Austin
+Code Legal Coordinator/updateBSCAgenda</td>
+<td rowspan="2"> </td>
+</tr>
+<tr>
+<td>The Austin Code Legal Coordinator creates
+the agenda for the BSC meeting. This is a roster of cases to be
+presented that month. The BSCAgenda is emailed to the members of the
+BSC and the City Clerk. The City Clerk uploads the BSCAgenda 72 hours
+before the BSC meeting.</td>
+</tr>
+<tr>
+<td rowspan="2">002</td>
+<td
+style="background: lightgray none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; font-weight: bold;">Chain
+of Command/sendPreBSCMeetingNotification</td>
+<td rowspan="2"> </td>
+</tr>
+<tr>
+<td>The Austin Code Legal Chain of Command
+sends an emailed Notification of prospective BSC cases to the relevant
+Austin Code Officer and their Chain of Command. Notification is
+typically sent the first business day of the month.</td>
+</tr>
+<tr>
+<td rowspan="2">003</td>
+<td
+style="background: lightgray none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; font-weight: bold;">Austin
+Code Legal Coordinator/developBSCPresentation</td>
+<td rowspan="2"> </td>
+</tr>
+<tr>
+<td>The Austin Code Legal Coordinator prepares
+the BSCPresentation that includes all documentation (case history,
+postings, pictures, recommended order for the property, maps, TCAD/WCAD
+information, registered agents information [if applicable],
+NoticeOfViolation, notice hearings, postings of NOV and hearing, and
+newspaper posting).</td>
+</tr>
+<tr>
+<td rowspan="2">004</td>
+<td
+style="background: lightgray none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; font-weight: bold;">Austin
+Code Legal Coordinator/conductPreBSCMeeting</td>
+<td rowspan="2"> </td>
+</tr>
+<tr>
+<td>The Austin Code Legal Coordinator conducts
+the pre-BSC meeting to review all BSC cases for the upcoming month and
+walks through cases with the Austin Code Officer and Chain of Command.
+Two weeks in advance of the BSC meeting, a pre-BSC meeting is
+conducted, and is held at the same location and time each month.</td>
+</tr>
+<tr>
+<td rowspan="2">005</td>
+<td
+style="background: lightgray none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; font-weight: bold;">Austin
+Code Legal Coordinator/sendBSCNoticeToLegallyInterestedParties</td>
+<td rowspan="2"> </td>
+</tr>
+<tr>
+<td>The Austin Code Legal Coordinator sends
+BSCNotice to legally interested parties (Owner, Tenant, etc.) for the
+upcoming BSC cases.</td>
+</tr>
+<tr>
+<td rowspan="2">006</td>
+<td
+style="background: lightgray none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; font-weight: bold;">Building
+and Standard Commission/evaluateBSCCase</td>
+<td rowspan="2"> </td>
+</tr>
+<tr>
+<td>The Austin Code Officer, Austin Code Legal
+Coordinator, Austin Code Legal Admin and Chain of Command (Code Officer
+and Austin Code Legal) present the case to the Building and Standards
+Commission. Additionally, witnesses may provide information during BSC
+hearing. The Building and Standards Commission determines whether to
+issue an Order, accept and modify an Order, or defer a ruling (to allow
+Property to come into compliance, future BSC review, additional
+information required, property owner unavailable, etc.). The BSC
+Meeting is recorded for future transcription of meeting minutes.</td>
+</tr>
+<tr>
+<td rowspan="2">007</td>
+<td
+style="background: lightgray none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; font-weight: bold;">Building
+and Standard Commission/alterBSCCaseRecommendationAsAppropriate</td>
+<td rowspan="2"> </td>
+</tr>
+<tr>
+<td>The Building and Standards Commission
+modifies the BSC case recommendations during the meeting.</td>
+</tr>
+<tr>
+<td rowspan="2">008</td>
+<td
+style="background: lightgray none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; font-weight: bold;">Austin
+Code Legal Coordinator/createOrder</td>
+<td rowspan="2"> </td>
+</tr>
+<tr>
+<td>The Austin Code Legal Coordinator creates
+the Order based on the BSC disposition. The Order includes timeframe,
+penalties, whether the Order is for repairs or demolition, details of
+repairs, permits pulled, engineer's report, plan to resolve,
+milestones, additional inspections and final inspections. A CoverLetter
+identifies meeting date, what decision was made and that Order will be
+filed at County Clerk's office. The Austin Code Legal Coordinator has
+the Order notarized and signed by the BSC Chair.</td>
+</tr>
+<tr>
+<td rowspan="2">009</td>
+<td
+style="background: lightgray none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; font-weight: bold;">Case
+Management System/updateLegalCase</td>
+<td rowspan="2"> </td>
+</tr>
+<tr>
+<td>The Austin Code Legal Coordinator accesses
+the system and updates the relevant case with updates or follow-ups
+from the BSC hearing (BSCDetermination, Order, etc.). The Austin Code
+Legal Coordinator updates the LegalCase to include the CauseNumber and
+final ruling of the case. The Austin Code Administrative Hearing
+Coordinator updates the LegalCase with the date of the hearing, outcome
+of hearing, penalty, if ComplianceHearingNeeded, if penalty was paid,
+if penalty needs to be billed, and if the Violator came into compliance.</td>
+</tr>
+<tr>
+<td rowspan="2">010</td>
+<td
+style="background: lightgray none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; font-weight: bold;">Austin
+Code Legal Coordinator/sendIssuedOrderNotification</td>
+<td rowspan="2"> </td>
+</tr>
+<tr>
+<td>The Austin Code Legal Coordinator drafts a
+letter indicating the BCS Order, and files it with the County Clerk's
+office (Travis, Williamson or Hays) and the City Clerk's office. The
+Order is sent to the Owner/Representative/Responsible Party by
+certified mail, regular mail and posted at the Property by an Austin
+Code Officer or Legal Officer.</td>
+</tr>
+<tr>
+<td rowspan="2">011</td>
+<td
+style="background: lightgray none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; font-weight: bold;">Contractor/transcribeBSCMinutes</td>
+<td rowspan="2"> </td>
+</tr>
+<tr>
+<td>The Austin Code Legal Coordinator requests
+a Contractor to transcribe the BSCMeetingRecording into
+BSCMeetingMinutes. A vendor contract exists already for meeting
+transcription.</td>
+</tr>
+<tr>
+<td rowspan="2">012</td>
+<td
+style="background: lightgray none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; font-weight: bold;">Austin
+Code Legal Coordinator/uploadBSCMeetingMinutes</td>
+<td rowspan="2"> </td>
+</tr>
+<tr>
+<td>The Austin Code Legal Coordinator reviews
+the minutes and archives them on a network location. BSCMeetingMinutes
+are uploaded to the City of Austin's City Clerk's Office's website
+after the next BSC meeting. Additionally, the BSCMeetingMinutes are
+attached to the LegalCases in the Case Management System.</td>
+</tr>
+<tr>
+<td rowspan="2">013</td>
+<td
+style="background: lightgray none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; font-weight: bold;">Public
+Works/coordinateDemolitionBid</td>
+<td rowspan="2"> </td>
+</tr>
+<tr>
+<td>The Austin Code Legal Coordinator requests
+Public Works to coordinate a bid with Contractors to demolish the
+Property. The Austin Code Legal Coordinator provides the Order.</td>
+</tr>
+<tr>
+<td rowspan="2">014</td>
+<td
+style="background: lightgray none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; font-weight: bold;">Austin
+Code Legal Coordinator/notifyUtilitiesToDisconnectService</td>
+<td rowspan="2"> </td>
+</tr>
+<tr>
+<td>The Austin Code Legal Coordinator notifies
+Utilities to disconnect service to the Property based on the Order.</td>
+</tr>
+<tr>
+<td rowspan="2">015</td>
+<td
+style="background: lightgray none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; font-weight: bold;">Austin
+Code Officer/performInspection</td>
+<td rowspan="2"> </td>
+</tr>
+<tr>
+<td>If the violation concerns hazardous
+conditions, the Austin Code Officer applies Personal Protective
+Equipment (PPE). The Austin Code Officer inspects the Property. The
+Austin Code Officer inspects from the exterior (initially from the
+right of way) to the interior (if the interior is accessible and
+permission has been granted by legally interested party or someone in
+Care/Control of Property). The Austin Code Officer takes photographs
+and measurements as needed (hot water temperature, air quality,
+interior temperature, light meter, ground-fault circuit interrupter,
+gas meter, carbon monoxide, smoke detector, fences, grass height,
+driveway and walkways, checks impervious cover, etc.). As needed, the
+Austin Code Officer performs research to identify the Property Owner,
+offense, ViolationType, OwnerInformation, and relevant
+PropertyInformation (GIS system, ARR Site, annexation information,
+AMANDA permit history, site plan, TCAD/WCAD for OwnerHistory and
+DeedHistory, CC&amp;B, ZoningHistory, CodeOfOrdinances, etc.). The
+Austin Code Officer interviews relevant parties. For Waste Hauler
+Inspection: The Austin Code Officer makes contact with driver, visually
+inspects vehicle for decals on door, asks driver about awareness
+requirement for waste hauler license, ensures driver is operating
+within City of Austin (outside of city is exempt), double checks the
+Waste Hauler license, checks for safety-equipment violations, driver's
+license of driver, and takes photos of truck (including both doors and
+front license plate). If a short-term rental complaint, the Austin Code
+Officer responds more quickly than other complaints. On Fridays and
+Saturdays, the Austin Code Officer performs inspection during day, and
+from 6:00 p.m. - 2:00 a.m. On Sundays, inspections occur from 8:00 a.m.
+- 12:00 p.m.</td>
+</tr>
+<tr>
+<td rowspan="2">016</td>
+<td
+style="background: lightgray none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; font-weight: bold;">Case
+Management System/closeCodeViolationCase</td>
+<td rowspan="2"> </td>
+</tr>
+<tr>
+<td>Once all Violations have been resolved, the
+CodeViolationCase is closed by a user or the system.</td>
+</tr>
+<tr>
+<td rowspan="2">017</td>
+<td
+style="background: lightgray none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; font-weight: bold;">Case
+Management System/closeLegalCase</td>
+<td rowspan="2"> </td>
+</tr>
+<tr>
+<td>The user uses the system to close the
+LegalCase. LegalCases are only closed once the Penalty has been paid
+for the LegalCase, or if the case was dismissed.</td>
+</tr>
+</tbody>
+</table>
+-->
+<br>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</body></html>

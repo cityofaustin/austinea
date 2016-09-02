@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>Create Event Invoice</title>
+
+
+
+<link rel="Stylesheet" href="/style/email.css" type="text/css"></head><body bgcolor="#ddd8c2">
+<!-- Border Background Table -->
+<table style="border-collapse: collapse; background-color: rgb(244, 202, 144);" align="center" border="0" cellpadding="4" cellspacing="0"><tbody><tr><td>
+<!-- Online reference
+<p class="lbl" style="text-align: center;">This report is also <a href="/">available online</a> by following link.</p> -->
+<!-- EA Motto -->
+<p style="color: gray; font-size: 8pt; text-align: center; font-weight: bold;">Enterprise Architecture <i>- aligning IT services with business needs</i></p>
+<!-- Main Body -->
+<table style="border-collapse: collapse; background-color: rgb(255, 255, 255);" align="center" border="0" cellpadding="5" cellspacing="0" width="650"><tbody><tr><td>
+
+<p style="text-align: center; font-weight: bold;">Create Event Invoice Use Case Specification</p>
+
+<!-- Image Title -->
+<table style="border-collapse: collapse;" align="center" border="0" cellpadding="5" cellspacing="0"><tbody><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br>
+<a href="createEventInvoiceUCD.jpg"><img style="border: 0px solid ; width: 550px; height: 342px;" src="createEventInvoiceUCD.jpg" alt=""></a><br>
+<span style="font-weight: bold;">Create Event Invoice Use Case Model</span>
+</td></tr></tbody></table>
+
+<p><b>Scope: </b>At the end of the event, the Event Coordinator uses
+the system to input all client billable charges. The Work Order
+Reviewer uses the system to verify and approve the Work Orders.
+Accounts Receivable use the system to retrieve charges input by Event
+Coordinator, apply discounts (room night credits, booking credits, food
+and beverage credits), factors in deposits, add utility client invoice,
+verifies all information, and creates an final Invoice. Account
+Receivable mails a hard copy of the final invoice to the client and the
+Event Coordinator receives a final invoice copy. If there are issues,
+the Event Coordinator uses the system to create an Invoice Change Memo
+documenting the concern and corrective action.</p>
+
+<!-- Image Title -->
+<table style="border-collapse: collapse;" align="center" border="0" cellpadding="5" cellspacing="0"><tbody><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br>
+<a href="1SD.jpg"><img style="border: 0px solid ; width: 600px; height: 390px;" src="1SD.jpg" alt=""></a><br>
+<span style="font-weight: bold;">Create Event Invoice Sequence Diagram</span>
+</td></tr></tbody></table>
+
+<p style="text-align: center; font-weight: bold;">Table of Interface Descriptions</p>
+<!-- Table definition -->
+<table id="custom" align="center">
+<tbody><tr><th>Type/Interface</th><th>Description</th></tr>
+<tr>
+<td>FS013<br>Establish Event Booking/<br>enterClientCharges</td>
+<td>The Event Coordinator uses the system to enter equipment charges,
+labor charges, security charges, parking charges (when applicable),
+discounts, facility rentals, damages, and other miscellaneous charges.
+The Event Coordinator uses the system to indicate the Customer is ready
+to be billed.</td>
+</tr>
+<tr>
+<td>Work Order Reviewer/<br>approveWorkorderCharges</td>
+<td>The Work Order Reviewer is sent a notification (email/text) that
+the Work Order items are ready for approval. The Work Order Reviewer
+examines the contract, and compares it with the charges entered for the
+Work Order. If errors are found, they contact the appropriate
+coordinator(s) and manipulate/change the Work Order until it is
+complete and ready for Invoicing. The Work Order Reviewer indicates the
+Work Order is ready for invoicing and a notification is sent to
+Accounts receivable to create the final invoice.</td>
+</tr>
+<tr>
+<td>FS014<br>Establish Event Booking/<br>requestCustomerInvoice</td>
+<td>The Work Order Reviewer uses the system to indicate elements of the
+Work Orders are complete. The system notifies Accounts Receivable that
+all elements for a Work Order are entered and it is time to create a
+customer invoice.</td>
+</tr>
+<tr>
+<td>FS015<br>Establish Event Booking/<br>createInvoice</td>
+<td>Accounts Receivable reviews the Work Order items ensuring the
+client information (address, contact name, etc. are correct) and marks
+the terms of net 30 for payment due. The invoice includes a preformed
+address label/payment coupon to the Accounts Receivable. Accounts
+Receivable uses the system to enter the date the invoice is mailed,
+creates a PDF version of the invoice, and dispatches a copy of the
+invoice to the Event Coordinator. If the client only requires soft
+copy, the invoice is emailed to the client contact - otherwise a hard
+copy is mailed.</td>
+</tr>
+<tr>
+<td>Customer/<br>payInvoice</td>
+<td>The Customer receives the event invoice in the form desired (email
+or us postal service delivery), and evaluates the charges compared to
+the contract and determines if there are issues. If there are issues,
+they notify the event coordinator of the issues, possibly triggering a
+revised invoice creation. [Technology opportunity: The system provides
+the Customer the ability to view Work Order items online via a Web
+portal, is desirable. Not all customer issues result in invoice
+modification.]</td>
+</tr>
+<tr>
+<td>Event Coordinator/<br>adjustInvoiceCharges</td>
+<td>The Event Coordinator receives notification from the customer about
+invoice specifics. The Event coordinator reviews the contract,
+associated Work Order and attempts to resolve the concern. Should
+changes be necessary, the Event Coordinator makes adjustments to the
+Work Order and begins the Create Event Invoice process again by
+entering client charges.</td>
+</tr>
+<tr>
+<td>FS016<br>Establish Event Booking/<br>createInvoiceChangeMemo</td>
+<td>The Event Coordinator determines adjustments (credits or debits)
+are necessary for the Invoice. The Event Coordinator uses the system to
+document adjusted Work Order items indicating debit or credit amount,
+the justification for the change, the Contract ID for which this
+applies, and any supporting documentation.</td>
+</tr>
+</tbody></table>
+
+</td></tr></tbody></table>
+</td></tr></tbody></table></body></html>

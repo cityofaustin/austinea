@@ -1,0 +1,119 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Conduct Claim Appeal Process</title>
+<link rel="Stylesheet" href="/style/email.css" type="text/css" />
+</head>
+<body bgcolor="#ddd8c2">
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="650" align="center">
+<tr><td style="padding: 0;" height="130" valign="top"><a href="">
+<img src="/image/iTHeader.jpg" alt="austinea.org - home..." border="0"></a></td></tr>
+<!-- Text Area -->
+<tr><td>
+
+<p style="text-align: center; font-weight: bold;">Conduct Claim Appeal Process<br />Use Case Specification
+
+<!-- Image Title -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/arch/hhs/ehr/conductClaimAppealProcess/ucd.jpg"><img src="/arch/hhs/ehr/conductClaimAppealProcess/ucd.jpg" border="0" width="600" alt="" /></a><br />
+<span style="font-weight: bold;">Conduct Claim Appeal Process<br />Use Case Model</span>
+</td></tr></table>
+
+<p><b>Scope: </b>The Billing staff use the system to manage unpaid or partially paid claims. Currently, the Billing Staff uses TMHP and TWICES to verifying and reconciling the details associated with a medical insurance claim. If the health plan in question requires additional documentation, the Billing Staff prepares the required letters to the Health Plan Provider, including copies of records showing the claims and treatments provided. If the Health Plan Provider offers a Website for claims, the Billing Staff uses the Website to submit the appeal; otherwise, the Billing Staff creates a CMS1500 form and resubmit the claim with the most current information. The Billing Staff then updates the Medicaid conversion database and an Excel tracking log used to track claim submissions. As the last step, plan providers file CMS1500 claim submissions.
+
+<p style="text-align: center; font-weight: bold;">Role Definitions</p>
+<table align="center" id="custom">
+<tr><th>Role Name</th><th>Description</th></tr>
+<tr>
+<td>Healthplan Website</td>
+<td>Website from different health insurance plans that provides information about patient Medicaid eligibility, claims status, payments, claims denied and allow staff to obtain reports.</td>
+</tr>
+<tr>
+<td>ExcelTrackingLog</td>
+<td>Excel application to record information about all activity and billing for COA Health and Human Services.</td>
+</tr>
+</table>
+
+<br />
+
+<!-- Image Title -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/arch/hhs/ehr/conductClaimAppealProcess/sd01.jpg"><img src="/arch/hhs/ehr/conductClaimAppealProcess/sd01.jpg" border="0" width="600" alt="" /></a><br />
+<span style="font-weight: bold;">Conduct Claim Appeal Process<br />Sequence Diagram</span>
+</td></tr></table>
+
+<!-- Table definition -->
+<p style="text-align: center; font-weight: bold;">Table of Interface and Functional Descriptions</p>
+<table align="center" id="custom">
+<tr><th width="9%">Req#</th><th width="70%">Type/Interface - Requirement Description</th><th>Required Response</th></tr>
+<tr>
+<td rowspan="22">46</td>
+<td style="font-weight: bold; background: lightgray;">TMHP/verifyPatientActiveForDateOrService</td>
+<td rowspan="22">The Billing Staff use various systems such as TMHP and TWICES to verify and confirm Client (patient) information and activity. The Billing Staff appeals through CMS1500 using a highly manual process. Propose how the system assists the Billing Staff to automate and track the appeals process.</td>
+</tr>
+<tr>
+<td>The Billing Staff uses the TMHP Website to look up Client information. This is done by providing date of service, name, date of birth, and Medicaid ID number (if available). The Website provides health plan, effective dates, benefit plan, medical coverage, date at which approved, known address, county, eligibility through date, and gender.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">TWICES/confirmTreatmentDetailsAndMedicaidNo</td>
+</tr>
+<tr>
+<td>The Billing Staff looks up the client in TWICES to verify the treatment, date of service, vaccine CPT codes, and customer’s address, legal name and responsible person.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Billing Staff/copyRemittanceReportForClientClaim</td>
+</tr>
+<tr>
+<td>The Billing Staff researches the correct remittance reports and makes copies of the page on which the patient’s treatment appears and used with the paper appeal documentation.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Billing Staff/prepareAppealDocumentationLetter</td>
+</tr>
+<tr>
+<td>Some health plans request written documentation (a letter with additional information regarding the appeal), copies of CMS1500, remittance reports, additional forms as required by specific provider.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Healthplan Website/submitAppealThroughWebPortal</td>
+</tr>
+<tr>
+<td>The Billing Staff uses the TMHP or Superior Websites to submit an appeal for a specific claim. Access is granted normally with the NPI number for the provider group and a password. Once online, the Billing Staff looks up the specific client (by Medicaid number/name, date of service and date of birth). The information provided is: CPT codes, amounts, vaccine, date of service, client information and diagnosis code.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">MEDCLAIM/createCMS1500Form</td>
+</tr>
+<tr>
+<td>The Billing Staff uses MEDCLAIM software to specify claim information. A file is created per claim and per page (some claims are multi-page). This file is proprietary, reprints require loading the saved file to print. The software writes a disk file that is backed up for future reference. The MEDCLAIM software prints the standard CMS1500 form on pre-formatted paper. Note: If CBS did not bill or place the claim on hold, and the patient is Medicaid eligible, the Billing Staff will manually create a CMS1500 form.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Billing Staff/constructAppealClaimPacketAndMail</td>
+</tr>
+<tr>
+<td>The Billing Staff prepares the CMS1500 form (the original) plus a copy of the remittance report and any attachment letter needed, and sends to each health plan. The documentation is sent certified via US Postal Mail. The Billing Staff includes the certification receipt, along with a copy of the postal bill when filing bills.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Medicaid Conversion Database (MCDB)/updateClaimInfo</td>
+</tr>
+<tr>
+<td>The Billing Staff uses remittance reports to look up and update information within the Medicaid Conversion Database. The information updated includes status (payment summary), amount paid, amount denied, payment action date, health plan and notes (if necessary).</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">ExcelTrackingLog/updateClaimInfo</td>
+</tr>
+<tr>
+<td>The Billing Staff uses Excel to record information about all activity and billing for COA Health and Human Services. This spreadsheet carries all relevant information such as billing information, payment information, claims postdates status of billing and with whom the billing occurred, as well as tracking of the paid status of claims. Note: It is desirable for a visual cue to be available to identify claims and their payment status. For Medicare and large events billing contains information such as patient first, middle and last name, date of birth, TWICES #, Medicaid #, Medicare #, address, date of service, location, type of vaccine, if patient donated or not, eligibility verification date, health plan, date claim submitted, if claim submitted electronically or manual, amount billed, status (paid or denied), amount paid or denied, date of payment or denial, comments. For refunds, the tracking logs include clinic (location), patient name, TWICES ID number, Medicaid ID number, date of service, date on which cashier looked up receipt, date receipt received at billing office, date approved refund, date request sent to accounting, date notification sent to patient, name of payee, address, phone and comments. Sometimes date CC refunds are issued at the clinic is also tracked. For checks returned, the tracking log includes check number, payee name, date alternate address was requested, clinic (location), patient name, Medicaid ID number, new address found, date new address provided to City Accounting, payee phone number and comments (includes notes indicating whether the check refund is unclaimed property).</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Billing Staff/fileClaimAppealByPlan</td>
+</tr>
+<tr>
+<td>The Billing Staff files a copy of the CMS1500 form, and additional letters/forms of the appeal. This is filed by health plan and appeal date. Additionally, the Billing Staff includes the certification receipt, along with a copy of the postal bill.</td>
+</tr>
+</table>
+
+</td></tr></table>
+</td></tr></table></body></html>

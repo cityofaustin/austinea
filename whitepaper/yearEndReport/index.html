@@ -1,0 +1,255 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>2014 EA Year End Report</title>
+<link rel="Stylesheet" href="/style/hover.css" type="text/css" />
+<style>
+.contents { line-height: 10.5pt; margin-top: 0in; margin-bottom: 0in; }
+</style>
+</head>
+<body bgcolor="#ddd8c2">
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="650" align="center">
+<tr><td style="padding: 0;" height="130" valign="top"><a href="">
+<img src="/image/iTHeader.jpg" alt="austinea.org - home..." border="0"></a></td></tr>
+<!-- Text Area -->
+<tr><td>
+
+<p style="text-align: center; font-weight: bold;">"D R A F T"
+
+<p style="text-align: center; font-weight: bold;">City of Austin<br>Enterprise Architecture</br>
+Year End Report
+<p style="text-align: center;">POC: Rob Byrd, Chief Enterprise Architect<br>
+01/14/2015
+
+<p style="text-align: center;">Download <a href="/whitepaper/yearEndReport/yearEndReport.pdf">printable version</a>
+
+<p style="font-weight: bold;">Table of Contents
+<p class=contents><a href="#1.0">1.0 Executive Summary</a>
+<p class=contents><a href="#2.0">2.0 Purpose of Enterprise Architecture</a>
+<p class=contents><a href="#3.0">3.0 Enterprise Architecture Analysis</a>
+<p class=contents style="text-indent: .2in;"><a href="#3.1">3.1 Provide Business Intelligence</a>
+<p class=contents style="text-indent: .2in;"><a href="#3.2">3.2 Provide Geographical Information</a>
+<p class=contents style="text-indent: .2in;"><a href="#3.3">3.3 Manage Assets</a>
+<p class=contents style="text-indent: .2in;"><a href="#3.4">3.4 Mobilize the Work Force</a>
+<p class=contents style="text-indent: .2in;"><a href="#3.5">3.5 Manage Case Files</a>
+<p class=contents style="text-indent: .4in;"><a href="#3.5.1">3.5.1 Cloud Computing</a>
+<p class=contents style="text-indent: .4in;"><a href="#3.5.2">3.5.2 Identity Management</a>
+<p class=contents style="text-indent: .4in;"><a href="#3.5.3">3.5.3 Active Directory</a>
+<p class=contents style="text-indent: .4in;"><a href="#3.5.4">3.5.4 Microsoft Exchange</a>
+<p class=contents style="text-indent: .4in;"><a href="#3.5.5">3.5.5 Social Media</a>
+<p class=contents style="text-indent: .2in;"><a href="#3.6">3.6 Manage Official Documents</a>
+<p class=contents><a href="#4.0">4.0 Enterprise Architecture Training</a>
+<p class=contents><a href="#5.0">5.0 Enterprise Architecture Accomplishments
+<p class=contents><a href="#6.0">6.0 Summary</a>
+<hr>
+<!-- Image Title -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="right"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/whitepaper/yearEndReport/stack.jpg"><img src="/whitepaper/yearEndReport/stack.jpg" border="0" width="300" alt="" /></a><br />
+<span style="font-weight: bold;">Figure 1: EA Purpose -<br>Align IT to Business 
+</span>
+</td></tr></table>
+
+<p style="font-weight: bold;" id="1.0">1.0 Executive Summary
+
+<p>Enterprise Architecture (EA) is the process of translating business vision and strategy into effective enterprise change by creating, communicating, and improving the key requirements, principles, and models that describe the City of Austin's future state and enable its evolution and transformation. This transformation process entails the analysis and design of our enterprise in its current and future states from a strategic, organizational, and technological perspective. The goals of EA are to improve the organizational efficiency, effectiveness, and agility by delivering business-aligned enterprise information systems. Our City's vision is to be the best-managed city in the country. We can develop effective leadership leading to best-managed citizen perceptions; however, information technology provides leadership with insight, knowledge, efficient paperless workflows, and effective coordination to make informed decisions truly delivering best-managed principles.
+
+<p>This paper summarizes Enterprise Architectures findings, associated risks, and recommendations for the City of Austin's information technology business and infrastructure services. As shown in Figure 1, the purpose of Enterprise Architecture is to align the strategies, projects, principles and standards leading to effective business capabilities delivering the desired goods and services considered best managed.
+
+<!-- Image Title -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="left"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/whitepaper/yearEndReport/eASOverview.jpg"><img src="/whitepaper/yearEndReport/eASOverview.jpg" border="0" width="300" alt="" /></a><br />
+<span style="font-weight: bold;">Figure 2: Business and IT Goal Alignment</span>
+</td></tr></table>
+
+<p style="font-weight: bold;" id="2.0">2.0 Purpose of Enterprise Architecture
+
+<p>Enterprise Architecture aligns information technology (IT) services to the business needs of the City. Largely, this process involves understanding the business goals relevant to the business capabilities that produce important stakeholder outcomes. In general, the enterprise architect identifies business goal patterns (i.e., shared goals) relevant to IT needs. These patterns immerge as application service needs - i.e., the "kinds of" software business services needed to accomplish the business mission. Once understood, the enterprise architect works closely with IT departments to ensure IT service goals align to the enterprise application services needed to accomplish the required business goals (see Figure 2). The figure represents only a sample of city departments; however, a model of business goals of similar function has historically proven to reveal similar business service patterns. As our EA matures, we'll reveal additional results; however, the current metrics reveal some useful insight.
+
+<p>Through analysis, the architect determines the number (count) between IT business goals and their relationship to important business capabilities (i.e., analogous to business outcomes). For the example shown on Figure 4, the bar graph reveals some interesting results. First, it's evident that providing business intelligence delivers the largest contribution to business outcomes compared to the business goals. This reveals that business intelligence is the single most important IT business service for our enterprise (at least from the sample-set analyzed). Although business intelligence is the most important application service, we must still address each of the other enterprise &laquo;Application Service&raquo; patterns. This report addresses each application service by discussing its relevance to various technologies, risks and recommended architectural guidance.
+
+<p style="font-weight: bold;" id="3.0">3.0 Enterprise Architecture Analysis
+
+<p>The business analysis reveals the following important enterprise &laquo;Application Service&raquo; required to accomplish the business goals and improve the associated business capability. The business &laquo;Application Service&raquo; needs include the following:
+
+<!-- Image Title -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="right"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/whitepaper/yearEndReport/eAS.jpg"><img src="/whitepaper/yearEndReport/eAS.jpg" border="0" width="350" alt="" /></a><br />
+<span style="font-weight: bold;">Figure 3: Aligning IT Service Goals to<br />Business Goals</span>
+</td></tr></table>
+
+<ul>
+<li>Mobilize the Work Force
+<li>Manage Assets
+<li>Provide Business Intelligence
+<li>Provide Geographical Information
+<li>Manage Case Files
+<li>Manage Official Documents
+</ul>
+
+<p>Historically, we've enacted these elements through governance as Essential IT Capabilities. However, they're not actually capabilities. We should be referring to them as Essential Business Application Services instead - they're a "kind of" application not an application in itself and represent the second horizontal layer of Figure&nbsp;1. Capability by definition is the people, processes and technology delivering value for a specific purpose. It's the quality of being capable; to have the capacity or ability to do something, achieve specific outcomes, effects or declared goals and objectives. Capability is, therefore, a business outcome, not the business application service that enables the outcome. A business application is a technology; and therefore, "part of" a capability - represented by the top horizontal layer of Figure 1. Using this architecturally derived understanding allows us to make some important strategic decisions discussed in this report.
+
+<p>EA analysis revealed six essential business application services. Using these six application services as the baseline, EA worked with Communications and Technology Management's Business Application Services group to identify the IT services (i.e., analogous to IT capability or important IT outcome) needed to efficiently deliver the needed business application services. The following table identifies the derived IT business service (capability) need:
+
+<p style="font-weight: bold; text-align: center;">Table 1: IT Business Service Descriptions
+<!-- Table definition -->
+<table align="center" id="custom">
+<tr><th width="30%">Service</th><th width="70%">Description</th></tr>
+<tr>
+<td>Perform Solutions Analysis</td>
+<td>Based on the business goals identified by Enterprise Architecture among other business needs, perform a solution analysis to identify optimal IT solutions.</td>
+</tr>
+<tr>
+<td>Provide Enterprise Solution Support Services</td>
+<td>Support enterprise business needs using common enterprise solutions and development tools for deploying solutions applicable to the city enterprise. The solution is intended to solve enterprise-wide problems not just individual departmental problems. Enterprise level solution aims to improve the enterprise's productivity and efficiency by providing business logic support functionality. Enterprise solutions are about the display, manipulation, and storage of large amounts of complex data and the support or automation of business processes with that data. Enterprise solutions perform business functions such as order processing, procurement, production scheduling, customer information management, energy management, and accounting. It is typically hosted on servers and provides simultaneous services to a large number of users, typically over a computer network - may include Software as a Service (SaaS) and other cloud solutions. This is in contrast to a single-user application that is executed on a user's personal computer and serves only one user at a time, or a departmental level application serving the needs of just one department.</td>
+</tr>
+<tr>
+<td>Broker IT Solutions</td>
+<td>For non-enterprise department needs, provide the expertise to empower departments to manage their own technology. Highly knowledgeable IT staff coordinates proper technology solution (i.e., contracting, security, integration standards, etc.). Provides consulting and advisor service for small to medium size solutions requiring software as a service (SaaS), IT contract management support, integration analysis, risk management and standardization when appropriate.</td>
+</tr>
+<tr>
+<td>Provide Data Services</td>
+<td>Provides management of redundant, structured and unstructured data, data modeling and analysis, data integration, master data management (MDM) and open public data. Includes data security, data marts and data warehouses.</td>
+</tr>
+<tr>
+<td>Provide Enterprise Geospatial Services</td>
+<td>Provide enterprise geospatial solutions, data creation and management, Web services and applications, Geographic Information System (GIS) integration, technical consulting and support, enterprise license management and infrastructure software services.</td>
+</tr>
+</table>
+
+<p>After service delivery model maturity (reference Figure 3), the analysis team used our current state of affairs and established a comprehensive set of goals to improve service delivery focused on the business derived application services. Observe these goals on Figure 3. In addition to service goal identification, we identified goal dependencies useful in developing a planning roadmap. Because these service goals directly increase the efficiency and capacity for CTM's Business Application Services to deliver &laquo;Application Service&raquo; business needs (e.g., business goals), they directly influence the needed business outcome. Therefore, it's in the best interest of our business partners to invest in the IT service goals to enhance IT service delivery. Refer to the graph, Figure 4, for the remainder of the architecture discussion where we'll discuss important business application services from an enterprise perspective.
+
+<!-- Image Title -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="left"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/whitepaper/yearEndReport/goalCapability.jpg"><img src="/whitepaper/yearEndReport/goalCapability.jpg" border="0" width="400" alt="" /></a><br />
+<span style="font-weight: bold;">Figure 4: Goal and Capability Analysis</span>
+</td></tr></table>
+
+<p style="font-weight: bold;" id="3.1">3.1 Provide Business Intelligence
+
+<p>The analysis supports a significant need for business intelligence (10 goals influencing 33 capabilities). An effective business intelligence (BI) service is likely the largest contributing element to the City's best-managed vision because business intelligence provides leadership insight and knowledge for effective decision-making. However, as we pursue business intelligence solutions, IT leadership must focus on important business goals and understand the relevance to the business outcomes supported. We can't just do business intelligence for business intelligence sake; we must understand and prioritize our business intelligence engagements with business stakeholders. Business intelligence reporting requirements typically shape data warehousing schemes - IT professionals then use extract, transform and load (ETL) tooling to create and maintain these reportable data schemes. However, we must prepare ourselves for inevitable authoritative data sourcing issues likely to immerge. In addition, business intelligence needs are likely to expose flaws in our business application services requiring modifications to maintain serviceable data. Therefore, identified application anomalies must have out-of-cycle corrective action priority to keep our business intelligence work on track. According to some business goals, some BI reporting requires geospatial presentation.
+
+<p style="font-weight: bold;" id="3.2">3.2 Provide Geographical Information
+
+<p>Second in priority, geographic information business services are clearly an important need. Business users need the ability to geospatially monitor and track assets. However, a reoccurring business goal is to integrate case and asset management with emphasis on geographic information system (GIS). This implies emphasis on the use of our enterprise service bus (ESB) for GIS services. In addition, some GIS business goals where shared with business intelligence, in that, some business intelligence reports require geographic presentation. As a result, we require a GIS ESB strategy. Recommend a comprehensive GIS analysis to determine geographic information services best employed using ESB. Largely, a general rule should apply - all application-to-application interfaces use our ESB. Reusable GIS services via our ESB promote future opportunity to improve management of our assets.
+
+<p style="font-weight: bold;" id="3.3">3.3 Manage Assets
+
+<p>Assets are a critical city management element - as good stewards of taxpayer money, we're responsible to track and monitor city managed assets to ensure proper accountability, care, maintenance, and upkeep. Currently, we're using IBM Maximo as our enterprise asset management system. The City of Austin manages infrastructure such as pumps, pipes, benches, signs, poles, etc. using IBM Maximo; however, Maximo is not well suited for real estate properties and their lifecycle needs. There's an additional IBM component to Maximo called <a href="http://www-03.ibm.com/software/products/en/ibmtrir">TRIRIGA</a> - we should explore this product or something similar for our real estate needs. It is likely to provide badly needed real property lifecycle management capabilities - see <a href="/arch/realEstate/au12125.pdf">Real Estate Asset Management Audit</a>. In addition, applications for asset management and case management drive the largest need for a mobile work force.
+
+<p style="font-weight: bold;" id="3.4">3.4 Mobilize the Work Force
+
+<p>Mobilizing our work force, albeit identified as a significant business need and hence an application service need, mobility is actually a function of technology selection. Today we use tools such as Citrix, Go to My PC, virtual private network (VPN) connections, etc. However, these technology approaches are sometimes clunky and don't work well using today's lightweight mobile devices based on Droid and iOS. They're also device specific, in that, a solution might work on a laptop, but not on a Droid or iPad and vise-versa. Lightweight, PC pads are immerging such as the MS Surface Pro, which solves the lightweight, portability issue, but it's still a Windows PC solution. Device independence is very important - our target technology solution should include computing anywhere, any time, on any device. Real opportunity for device independent mobility solutions exist with Cloud computing discussed later.
+
+<p style="font-weight: bold;" id="3.5">3.5 Manage Case Files
+
+<p>Considered a case, case management is the coordination of services on behalf of an individual person. Case management is a significant enterprise application service need. Permit management, municipal court, law enforcement, 311, code compliance and many other business processes require some form of case management to ensure proper coordination of various workflows throughout the city. We are likely to provide multiple solutions for case management because one size doesn't fit all. From an enterprise viewpoint, Amanda is our enterprise case management tool. Although a very capable tool, Amanda requires significant knowledge of PL/SQL (Procedural Language/Structured Query Language) an Oracle Corporation procedural language. With limited PL/SQL support (people with the knowledge, skills and abilities), business need for case management solutions are exceeding ITs' ability to deliver. Ideally, our case management technology solution provides business people with the ability to create business application solutions without sophisticated technology knowledge such as PL/SQL. Therefore, we require alternative solutions to keep pace with demand, and Cloud computing offers real potential to solve both case management and mobile work force business needs.
+
+<p style="font-weight: bold;" id="3.5.1">3.5.1 Cloud Computing
+
+<p><a href="http://en.wikipedia.org/wiki/Cloud_computing#Services">Cloud computing</a> is a terminology or metaphor referring to the utility and consumption of shared computing resources. Cloud computing involves deploying groups of remote networked servers and software that allow centralized data storage and online access to computer services or resources. Cloud computing is a complete paradigm shift from traditional computing concepts. Instead of running expensive data centers with privately managed servers and other information technology infrastructure, Cloud provides economy of scale by sharing IT infrastructure with other consumers with similar need. Over time, Cloud computing offers significant cost savings as we gradually outsource (public Cloud) or share (private Cloud) IT infrastructure services - or likely a hybrid of the two. Cloud causes concern for many IT employees as they view this change as a threat to their jobs. However, employing Cloud computing services takes many years allowing reduction through attrition or retraining to focus on important business outcomes rather than back end IT services. Security is another concern, because you don't have apparent control of your data - in that, it's in the trust of a third party. Industry is demonstrating, however, that the benefits outweigh the risks. To demonstrate the potential for Cloud computing, we piloted a model driven architecture (MDA) with <a href="https://www.salesforce.com/">Salesforce.com</a>. The operational results were much better than expected, but we encountered misunderstandings and financial challenges.
+
+<p>Enterprise Architecture demonstrated that business models could deliver software specifications with enough specificity (detail) that a solution provider can deliver an effective solution with little to no business engagement (outside of specification development). Therefore, working closely with business stakeholders, EA developed <a href="/arch/arr/">Employee Safety Database Use Case Specifications</a> using our MDA approach. Once approved by the business stakeholder, EA delivered the use case specifications to Salesforce.com and they developed a fully functional application (including mobile work force features) in just 48 hours. The only interaction with the solution provider involved a 20-minute discussion regarding forms used in the process and the modeled data objects relevant to the forms. The business user was elated with the results. One would think we would move forward, but misunderstandings and funding issues created challenging barriers.
+
+<p>Working together with Austin Resource Recovery, Fire Department, and Code Compliance, EA ensured a larger citywide viewpoint by observing cross-department viewpoints. The activity was a great team effort resulting in a comprehensive architecture. Unfortunately, the Human Resources Department (HRD) viewed the employee safety activity as competing with their requirements for a human capital management system and felt the activity was sidestepping our governance process, for which, HRD wasn't represented. In reality, the requirements do not involve an HRD system at all - see Gartner sanctioned <a href="/hrsa/">Human Capital Management Capability Model</a> - note there's no reference to an employee safety capability. One use case named <a href="/arch/arr/manageWorkerCompensation/">Manage Worker Compensation</a> possibly thought to be <a href="/hrsa/CoreHumanResourcesManagementSystems/PersonnelAdministration/ChangeWorkersCompensationWorkStatus/changeWorkersCompensationWorkStatus.html">Change Workers Compensation Work Status</a>, part of the Personnel Administration capability, left HRD with the perception that these were HR system requirements. However, the architecture anticipates the future HRD system. The employee safety architecture only provides minimal department level automation features to track employee compensation status. We're not intending to blame HRD for defending their system requirements - they should. Rather, our position is the City's EA is the official source for all future system requirements - it's in the EA where we define these integration boundaries. We need to eliminate these kinds of innovation barriers and misunderstandings by pursuing EA acceptance as part of our governance process. In fact, it's an EA responsibility to analyze, coordinate, document, and vet our enterprise IT governance process. If EA can clearly document processes leading to a successful application deployment, one can easily imagine what EA can do for our IT governance process, which is much less complex. These unfortunate misunderstandings delay architecture projects for our business stakeholders while demonstrating misinterpretation of EA's integration role. Funding is another challenge.
+
+<p>In order for a Cloud computing solution to be economically viable requires a reasonable level of participation. Cloud computing typically operates on a cost per user per year model and the cost per user gets smaller as the number of users increases. For example, ARR cannot afford the Salesforce solution on their own - should additional city departments participate, the solution is affordable. However, other departments didn't budget for the employee safety services because they likely view their existing employee safety process adequate compared to other business needs.
+
+<p>Although EA views the employee safety as a valuable business service, EA is more interested in exploring the Cloud computing as a potential Platform as a Service (PaaS) technology while simultaneously delivering business value. We selected the employee safety problem because it provided a representative technology, e.g., mobility, business reporting, case management, etc. useful to evaluate the technology's potential. The solution also didn't require a high degree of interfaces to internal city data sources reducing project complexity and risk. The pilot provides better understanding of the technology for future venues and opportunities. For example, the Salesforce model could provide HRD a relatively low cost interim solution to replace the MS Access databases currently used to manage employee information, which is currently a high-risk technology item. The Salesforce model also provides opportunity to replace and retire many outdated, but operationally important legacy applications. Finally, cloud computing introduces other risk factors to include identity management requiring further maturation.
+
+<p style="font-weight: bold;" id="3.5.2">3.5.2 Identity Management
+
+<p>Those annoying passwords - yet passwords are an important part of a secure IT environment. If we wish to employ Cloud computing as a future success strategy, we must employ some form of federated identity. <a href="http://en.wikipedia.org/wiki/Federated_identity">Federated identity</a> is a means of linking a person's electronic identity and attributes, stored across multiple distinct identity management systems. Related to federated identity is single sign-on (SSO), in which a user's single authentication ticket, or token, is trusted across multiple IT systems. SSO is a subset of federated identity management, as it relates only to authentication on the level of technical interoperability. Most of us know the challenges associated with multiple passwords - as a result, there's a tendency to reuse passwords across application domains, which causes added security risk. Not to mention the operational problems associated with forgotten passwords, requiring system administrator assistance to make password resets. The password problem can get quite complex for large organizations with many password access points. SSO helps to solve this problem; however, implementation brings on new challenges to include Microsoft Active Directory.
+
+<p style="font-weight: bold;" id="3.5.3">3.5.3 Active Directory
+
+<p><a href="http://en.wikipedia.org/wiki/Active_Directory">Active Directory</a> (AD) is a directory service that Microsoft developed for Windows domain networks and included in Windows server operating systems as a set of processes and services. An AD domain controller authenticates and authorizes all users and computers in a Windows domain type network - assigning and enforcing security policies for all computers and installing or updating software. For example, when a user logs into a computer that is part of a Windows domain, Active Directory checks the submitted password and determines whether the user is a system administrator or normal user. Active Directory makes use of Lightweight Directory Access Protocol (LDAP), Microsoft's version of Kerberos and Domain Name Services (DNS). Due to our enterprise's organic growth, we currently operate seven AD forests (as they're referred) - ideally, we should operate just one. In addition, there are no standards to ensure AD information is consistent across AD forests, which complicates future AD management. As an example, employing self-service for password resets is much easier with one AD. There are commercial tools to emulate, for identity management purposes, a unified LDAP environment for SSO; however, this is a technology Band-Aid and complicates a more unified enterprise solution. AD contains important employee information as well; as such, AD should synchronize with HRD employee managed information - this is another potential ESB exploitation. AD is also an integral identity element of MS Exchange.
+
+<p style="font-weight: bold;" id="3.5.4">3.5.4 Microsoft Exchange
+
+<p>Currently, the City of Austin operates seven email forests (includes 35 instances of Exchange server), which is an inefficient use of City resources. There's a direct relationship between AD and MS Exchange. As a strategy, recommend consolidating our AD and Exchange email services to a singular forest. This approach greatly simplifies our future SSO strategy and positions us to better exploit Cloud computing opportunities such as MS Office 365, Microsoft's Cloud offering for MS Office. Email today is an important part of our business; however, in the future this may not be the situation.
+
+<p style="font-weight: bold;" id="3.5.5">3.5.5 Social Media
+
+<p><a href="http://en.wikipedia.org/wiki/Social_media">Social media</a> is proving an alternative to email as a means to collaborate and follow important business items of interest. I don't know about you, but my family and I use Facebook and I've noticed a dramatic reduction in my personal email as a result - my email is almost all spam these days except for a few security notifications from my Web applications. I've been using LinkedIn for quite some time and my enterprise architecture network followers provide worldwide collaboration on architecture discussions - again, no email. Social media may not completely replace email; however, it substantially reduces email use along with the large email attachments dramatically reducing storage cost.
+
+<p>Social media are computer-mediated tools that allow people to create, share or exchange information and ideas in virtual communities and networks. Social media is a group of Internet-based applications that build on the ideological and technological foundations that allow the creation and exchange of user-generated content. Furthermore, social media depend on mobile and web-based technologies to create highly interactive platforms through which individuals and communities share, co-create, discuss, and modify user-generated content. Social media introduce substantial and pervasive changes to communication between organizations, communities, and individuals. These changes are the focus of the emerging field of <a href="http://en.wikipedia.org/wiki/Technoself">technoself</a> studies. However, for social media to be successful it must be accessible via personal devises and mobile solutions.
+
+<p>Yammer, Inc. is an enterprise social networking service purchased by Microsoft in 2012 and Microsoft incorporated <a href="http://www.cmswire.com/cms/social-business/integrating-yammer-with-sharepoint-2013-navigating-the-options-025302.php#null">Yammer into SharePoint version 2013</a>. From an IT viewpoint, collaboration with business is essential in order to increase customer satisfaction and improve customer relationships. Therefore, we should pursue Yammer as a collaborative instrument to increase communication with important business stakeholders, which brings us back to Cloud computing and our ability to mobilize our workforce. The inherent nature of Cloud computing includes mobility and device independence. In order for our business social media to be successful, it must be at our fingertips and in direct reach of our mobile and personal devices. The architecture to do this already exists; we just need to pursue it.
+
+<p style="font-weight: bold;" id="3.6">3.6 Manage Official Documents
+
+<p>Also referred to as <a href="http://en.wikipedia.org/wiki/Information_management">information management</a> (IM) is the collection and management of information from one or more sources and the distribution of that information to one or more audiences. This sometimes involves those who have a stake in, or a right to that information. Management means the organization of and control over the planning, structure and organization, controlling, processing, evaluating and reporting of information activities in order to meet client objectives and to enable corporate functions in the delivery of information. The City of Austin uses multiple sources for official information - each serving its own purpose. The most common include Enterprise Document Imaging and Management System (EDIMS) and MS SharePoint. SharePoint is the less formal of the two while EDIMS typically contains well controlled, meta-data standard official city documents. Currently, EDIMS integrates with Windows Explorer; however, meta-data must be hand entered for each managed item. In the future, however, we can use our enterprise service bus (ESB) to create a standard interface to both store and retrieve EDIMS documents using standardized XML meta-data. These technologies allow for our enterprise applications such as Maximo or Amanda (among others) to automatically store and retrieve official documents in EDIMS. SharePoint is our challenge - I believe we are not effectively using SharePoint as an information management technology - not to mention its tight coupling with Yammer social media. Recommend pursuing professional outside assistance to successfully employ our SharePoint and Yammer environment from an enterprise perspective.
+
+<p style="font-weight: bold;" id="4.0">4.0 Enterprise Architecture Training
+
+<p>Many believe you can attend an EA training class and you're instantly an enterprise architect. If this were the situation, there would be an ample supply of skilled enterprise architects. However, market studies demonstrate that skilled enterprise architects are difficult to find; and if found, come at a premium price. From my experience, it's best to grow your own enterprise architects - of course, there's always the risk they'll take their newly developed skill and find employment elsewhere. In order to become a successful enterprise architect, the candidate must have an extensive information technology, system engineering, business process reengineering background and the ability to think abstractly with exemplary communications and writing skills. To demonstrate the challenge, to date, we have a 67% graduation rate and only 17% have reached certification; although, others are pursuing certification through our mentoring program, which could boost certification to 33%. The current training model creates a difficult challenge for EA.
+
+<p>As we train department enterprise architects, we must exercise caution to prevent silo architecture initiatives. Depending on where you define the boundaries of the enterprise, enterprise architecture can quickly turn into department architecture losing the enterprise principle. Obtaining department approval to mentor newly trained architects using architecture initiatives outside their assigned departments is challenging - even though there may not be a current EA engagement with the particular department. We must recognize, however, that EA training is perishable - if you don't immediately exercise the skill, the training is lost extending the mentoring period leading to EA certification. Recommend City Management Office (CMO) officially sponsor an enterprise architecture career path to enhance our ability to perform business system analysis and integrate our city using standardized EA methods. To assist the general population in reading and understanding EA views, we developed a course called <i>Reading Enterprise Architecture Artifacts</i>.
+
+<p>EA diagrams appear at first glance as challenging and difficult to read, but they're actually quite simple. To assist our community, we developed a fundamentals training course that explains how to read our architectures views. The course enables increased mutual understanding leading to successful results. The course also helps to demystify the purpose and value of EA.
+
+<p style="font-weight: bold;" id="5.0">5.0 Enterprise Architecture Accomplishments
+
+<p style="font-weight: bold;">5.1 Enterprise Service Bus
+
+<p>Working closely with the Project Management Office and Business Application Services, Enterprise Architecture (EA) successfully deployed an enterprise service bus (ESB) for general-purpose use by City of Austin information technologists. An ESB is a software architecture model used for designing and implementing communication between mutually interacting software applications in a service-oriented architecture (SOA). As an architectural model for distributed computing, it promotes agility and flexibility with regard to communication between business applications. Its primary purpose is in enterprise integration of complex IT environments. Our first ESB implementation demonstrated effective communications between 311's Customer Service Request and Water Shed's Maximo Asset Management application - previously, communications required manual data processing - now fully automated.
+
+<p style="font-weight: bold;">5.2 RFP Requirements Development
+
+<p>EA successfully employed architecture processes and methods leading to quality functional requirements used as request for proposal (RFP) submissions for two major projects to include the Convention Center's Event Booking System and Planning and Development Review's Electronic Plan Review. In addition, EA demonstrated the usefulness of a Technical Reference Model (TRM) as a means to communicate the city's information technology environment needed for quality vendor responses. Working closely with the Project Management Office, we turned system functional requirements into an RFP in just four hours. Purchasing indicated a significant quality improvement to the RFP submission. Both RFPs yielded quality vendor responses satisfying critical business needs.
+
+<p style="font-weight: bold;">5.3 Business Information Understanding
+
+<p>Working closely with business users, EA created three logical data models supporting Real Estate Office, Public Works and Animal Protection Services. Logical data models represent the abstract structure of a business domain. The logical data model (LDM) captures important business information and shows how information relates to each other. Once approved by the business domain, the LDM is useful to develop the physical data model and inform the design of the database. Public Works, for example, used LDM information elements to develop process flows to enhance and update construction project tracking - including needed data requirements to reflect construction phase of projects. The LDM was instrumental in this move forward.
+
+
+<p style="font-weight: bold;" id="6.0">6.0 Summary
+
+<p>The root to our architecture problem is our fragmented Active Directories - we should consolidate to one AD. This is an important architecture item worthy of doing right... In turn, consolidate our email Exchange services. Once this environment is healthy and stable, migrate to MS Office 365 Cloud computing and exploit Yammer (social media) with a well thought through SharePoint environment. Establish single sign-on and exploit Cloud computing services. These technologies inherently provide a mobile workforce, business intelligence, and case management infrastructure. The following technology recommendations either directly or indirectly support business customer outcomes to include:
+
+<ul>
+<li>Understand and prioritize our business intelligence engagements with business established priorities
+<li>Emphasize use of ESB for GIS services
+<li>Explore TRIRIGA for real estate asset management
+<li>Pilot Cloud computing enterprise solution as potential case management alternative
+<li>Consolidate Active Directory and Exchange email services
+<li>Employ Cloud compatible federated identity management
+<li>Move to Office 365
+<li>Employ SharePoint and Yammer from an enterprise perspective
+<li>Develop and exploit ESB interface with EDIMS
+<li>Normalize PMO processes when using EA products
+<li>Develop EA career path
+</ul>
+
+<p>Due to the nature of EA engagements, architects frequently stumble on innovative business improvement opportunities not otherwise exposed. A good example is the employee safety capability. No one ever imagined its potential business impact until the architecture exposed the capability to others - including solution providers. One way of overcoming many of these challenges is to give priority to projects with a business vetted and approved architectures. With a good architecture, it's much easier to perform a total cost of ownership among other important project scoping activities such as risk mitigation. Another side benefit includes the encouraging factor motivating business to pursue an architecture prior to acquiring IT solutions. This approach inherently garners standardized solutions by proving architects insight to business needs across our enterprise. Additional architecture motivational factors may be solved by provide EA funding resources (say $500K per year) to exploit architectural solutions at EA's discretion based on architecture maturity.
+
+<p>Performing enterprise architecture is a radical change to our current culture and frequently its potential is misunderstood. For the City of Austin, EA is a classic case of <a href="http://en.wikipedia.org/wiki/Who_Moved_My_Cheese%3F">Who Moved My Cheese?</a> In order for our EA practice to succeed, this requires leadership support as well as knowledge and trust for what EA can do for our enterprise.
+
+<!-- Image Title
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="right"><tr><td align="center">
+<span class="lbl">Note: Select to download</span><br />
+<a href="/"><img src="/" border="0" width="200" alt="" /></a><br />
+<span style="font-weight: bold;">Image Title</span>
+</td></tr></table> -->
+
+<!-- Table definition
+<table align="center" id="custom">
+<tr><th>Number</th><th>Category</th><th>Description</th><th>Criticality</th></tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table> -->
+
+
+</td></tr></table>
+</td></tr></table></body></html>

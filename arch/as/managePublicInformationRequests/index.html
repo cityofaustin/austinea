@@ -1,0 +1,182 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Manage Public Information Requests</title>
+<link rel="Stylesheet" href="/style/hover.css" type="text/css" />
+</head>
+<body bgcolor="#ddd8c2">
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="650" align="center">
+<tr><td style="padding: 0;" height="130" valign="top"><a href="">
+<img src="/image/iTHeader.jpg" alt="austinea.org - home..." border="0"></a></td></tr>
+<!-- Text Area -->
+<tr><td>
+
+<p style="text-align: center; font-weight: bold;">Manage Public Information Requests<br />Use Case Specification</p>
+<p style="text-align: center;">01/07/16
+
+<!--  IF Printable document option Included  
+<p style="text-align: center;">download <a href="/arch/as/***.docx">printable version</a>
+-- >
+
+<b> Animal Services Logical Data Model </b>            
+<!-- Image -  Logical Data Model 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="/arch/as/ldm.jpg"><img src="/arch/as/ldm.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Animal Services Logical Data Model</p>
+</td></tr></table> -->
+
+<!-- USE CASE IMAGE -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/arch/as/managePublicInformationRequests/ucd.jpg"><img src="/arch/as/managePublicInformationRequests/ucd.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Manage Public Information Requests<br />Use Case Model</span>
+</td></tr></table>
+
+<p><b>Scope: </b>A Citizen contacts the Public Information Office (PIO) and requests information from/about Animal Services. The PIO enters the request into the IQ System, and contacts the Admin Personnel to let them know the information requested. The Admin Personnel runs reports and checks resources to determine what's required to fulfill the request. The labor requirements for the provisioning of the information is determined by the Admin Personnel and entered into the IQ System. The Admin Personnel then contacts the Citizen to determine if they are willing to pay whatever fees are necessary for the data production. If the Citizen wants to proceed, the Admin Personnel will either produce the data requested or engage CTM for fulfillment of the request. Once completed, the Admin Personnel emails the results to the Citizen. As a last step, the Admin Personnel will convert the reported information into a PDF file, and attach the PDF to the request record within the IQ System.  
+
+
+
+<!-- IF INTERACTION OVERVIEW IS INCLUDED 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/arch/as/***.jpg"><img src="/as/code/***.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Interaction Overview</span>
+</td></tr></table>
+-->
+
+
+<br />
+
+
+<!-- SEQUENCE DIAGRAM  -->                 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/arch/as/managePublicInformationRequests/sd01.jpg"><img src="/arch/as/managePublicInformationRequests/sd01.jpg" border="0" alt="" width="600"/></a><br />
+<span style="font-weight: bold;">Manage Public Information Requests<br />Sequence Diagram</span>
+</td></tr></table>
+<br />
+
+
+<!-- INTERFACE TABLE  -->
+<table align="center" id="custom">
+<tr><th width="9%">Req#</th><th width="70%">Type/Interface - Requirement Description</th><th>Performance</th></tr>
+<tr>
+<td rowspan="2">001</td>
+<td style="font-weight: bold; background: lightgray;">Public Information Office/requestInformation</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>A Citizen contacts the Public Information Office and requests information from Animal Services.</td>
+</tr>
+<tr>
+<td rowspan="2">002</td>
+<td style="font-weight: bold; background: lightgray;">IQ System/createNewRequest</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Public Information Office uses the IQ System to create a new request.</td>
+</tr>
+<tr>
+<td rowspan="2">003</td>
+<td style="font-weight: bold; background: lightgray;">Admin Personnel/requestInformation</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Public Information Office contacts the Animal Service Admin Personnel and requests the Citizen-requested information be provided.</td>
+</tr>
+<tr>
+<td rowspan="2">004</td>
+<td style="font-weight: bold; background: lightgray;">Provide Resources for People and Pets/generateReport</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Admin Personnel uses the Animal Services system to run reports and analyze/gather information about the feasibility of providing the information requested by the Citizen.</td>
+</tr>
+<tr>
+<td rowspan="2">005</td>
+<td style="font-weight: bold; background: lightgray;">Admin Personnel/determineFulfillmentResourceRequirements</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Admin Personnel evaluates the amount of time and effort providing the Citizen-requested information will take, and determines the necessary resource requirements for the data extraction and preparation. The Admin Personnel may consult others within the organization to come up with this estimate.</td>
+</tr>
+<tr>
+<td rowspan="2">006</td>
+<td style="font-weight: bold; background: lightgray;">IQ System/addRequestLaborRequirements</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Admin Personnel looks up the request in the IQ system, and annotates the amount of time and effort required to fulfill the Citizen request.</td>
+</tr>
+<tr>
+<td rowspan="2">007</td>
+<td style="font-weight: bold; background: lightgray;">Citizen/determineDesiredNextStep</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Admin Personnel contacts the Citizen and requests of the Citizen a "go/no go" determination as to whether Animal Services should proceed with the data extraction, given the resource requirements and the cost associated with the request.</td>
+</tr>
+<tr>
+<td rowspan="2">008</td>
+<td style="font-weight: bold; background: lightgray;">CTM/provideDatabaseExtract</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Admin Personnel communicates with CTM and requests that they provision the data requested by the Citizen.</td>
+</tr>
+<tr>
+<td rowspan="2">009</td>
+<td style="font-weight: bold; background: lightgray;">Admin Personnel/verifyExtract</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Admin Personnel examines the extracted data provided by CTM, verifies it is what was requested and if it looks appropriate.</td>
+</tr>
+<tr>
+<td rowspan="2">010</td>
+<td style="font-weight: bold; background: lightgray;">Admin Personnel/prepareCustomerData</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Admin Personnel uses the system and references whatever means necessary (Excel, Word Documents, hard-copy paper, etc.) to construct the information requested by the Citizen.</td>
+</tr>
+<tr>
+<td rowspan="2">011</td>
+<td style="font-weight: bold; background: lightgray;">Admin Personnel/emailResultsToCustomer</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Admin Personnel emails the Citizen the requested information.</td>
+</tr>
+<tr>
+<td rowspan="2">012</td>
+<td style="font-weight: bold; background: lightgray;">Admin Personnel/convertResultsToPDF</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>If possible, the Admin Personnel converts the data to PDF form in preparation for attachment to the IQ System.</td>
+</tr>
+<tr>
+<td rowspan="2">013</td>
+<td style="font-weight: bold; background: lightgray;">IQ System/addPDFToPIRRequest</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Admin Personnel uses the IQ System and uploads the PDF version of the data provided to the Citizen to the IQ request record, and marks it as complete.</td>
+</tr>
+
+
+</table>
+
+
+<br />
+
+
+
+
+</td></tr></table>
+</td></tr></table></body></html>

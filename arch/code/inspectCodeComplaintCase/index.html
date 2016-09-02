@@ -1,0 +1,191 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Inspect Code Complaint Case</title>
+<link rel="Stylesheet" href="/style/hover.css" type="text/css" />
+</head>
+<body bgcolor="#ddd8c2">
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="650" align="center">
+<tr><td style="padding: 0;" height="130" valign="top"><a href="">
+<img src="/image/iTHeader.jpg" alt="austinea.org - home..." border="0"></a></td></tr>
+<!-- Text Area -->
+<tr><td>
+
+<p style="text-align: center; font-weight: bold;">Inspect Code Complaint Case<br />Use Case Specification</p>
+<p style="text-align: center;">04/01/2016
+
+<!--  IF Printable document option Included  
+<p style="text-align: center;">download <a href="/arch/code/***.docx">printable version</a>
+-- >
+
+<b> Austin Code Logical Data Model </b>
+<!-- Image -  Logical Data Model
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="/arch/code/ldm.jpg"><img src="/arch/code/ldm.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Austin Code Logical Data Model</p>
+</td></tr></table> -->
+
+<!-- USE CASE IMAGE -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/arch/code/inspectCodeComplaintCase/ucd.jpg"><img src="/arch/code/inspectCodeComplaintCase/ucd.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Inspect Code Complaint Case<br />Use Case Model</span>
+</td></tr></table>
+
+<p><b>Scope: </b>Daily, the Austin Code Officer queries the Case Management System for their ToDoQueue identifying CodeCases they need to inspect. The Case Management System returns CodeCases including CodeComplaintCases. The Austin Code Officer develops an InspectionRoute using primarily online services. Alternatively, the Austin Code Officer uses the Case Management System to create the InspectionRoute. If the CodeComplaintCase contains Complainant information, the Austin Code Officer contacts the Complainant and updates the CodeComplaintCase. The Austin Code Officer performs an initial Inspection of the Property.
+If no Violations are found, the Austin Code Officer updates the CodeComplaintCase with their findings and then closes the CodeComplaintCase in the Case Management System. The Austin Code Officer contacts the Complainant to relay their findings, and the Inspect Code Complaint use case ends. If the Austin Code Officer is unable to contact the Owner or Tenant, the Austin Code Officer leaves a DoorHanger and takes photographs as proof the DoorHanger was left. If contact with internal or external government entities is required, the Austin Code Officer contacts the appropriate groups. Contact may be to inform group, request information, or research.
+The Austin Code Officer updates the CodeComplaintCase with notes on the work completed. The Austin Code Officer then determines if Complainant assistance is required to validate the case. The Austin Code Officer attempts to contact the Complainant for additional information. If the Complainant provides extra information, the Austin Code Officer updates the CodeComplaintCase. The Austin Code Officer attempts to contact the Complainant multiple times based on the severity of the issue reported. If the complaint can't be substantiated by the Complainant, the Austin Code Officer updates the CodeComplaintCase and closes the case. The Austin Code Officer performs additional Inspections until the case is substantiated. As part of the subsequent Inspections, the Austin Code Officer verifies PropertyInformation, performs Property land history research, inspects the Property, and then updates the CodeComplaintCase.
+
+
+<!-- IF INTERACTION OVERVIEW IS INCLUDED 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/arch/code/***.jpg"><img src="/arch/code/***.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Interaction Overview</span>
+</td></tr></table>
+-->
+
+
+<br />
+
+
+<!-- SEQUENCE DIAGRAM  -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/arch/code/inspectCodeComplaintCase/sd01.jpg"><img src="/arch/code/inspectCodeComplaintCase/sd01.jpg" border="0" alt="" width="600"/></a><br />
+<span style="font-weight: bold;">Inspect Code Complaint Case<br />Sequence Diagram</span>
+</td></tr></table>
+<br />
+
+
+<!-- INTERFACE TABLE  -->
+<table align="center" id="custom">
+<tr><th width="9%">Req#</th><th width="70%">Type/Interface - Requirement Description</th><th>Performance</th></tr>
+<tr>
+<td rowspan="2">001</td>
+<td style="font-weight: bold; background: lightgray;">Case Management System/queryToDoQueue</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>At the beginning of the day and periodically throughout the day, the Austin Code Officer accesses the system and retrieves a ToDoQueue containing CodeCases. The Austin Code Officer prioritizes dangerous cases first.</td>
+</tr>
+<tr>
+<td rowspan="2">002</td>
+<td style="font-weight: bold; background: lightgray;">Austin Code Officer/developCaseInspectionRoute</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Officer develops a CaseInspectionRoute (currently manual, some officers use an online service).</td>
+</tr>
+<tr>
+<td rowspan="2">003</td>
+<td style="font-weight: bold; background: lightgray;">Case Management System/developCaseInspectionRoute</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The user uses the system to create an InspectionRoute for a CodeCase.
+</tr>
+<tr>
+<td rowspan="2">004</td>
+<td style="font-weight: bold; background: lightgray;">Complainant/provideInformationOnCodeComplaint</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Officer attempts to contact the Complainant (primarily by phone, but may include email) and requests the Complainant provide information within 48 hours. The Complainant provides information on the Complaint to the Austin Code Officer.</td>
+</tr>
+<tr>
+<td rowspan="2">005</td>
+<td style="font-weight: bold; background: lightgray;">Case Management System/updateCodeComplaintCase</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The user updates the CodeComplaintCase with information on the Complaint. If there's additional information provided by Complainant, it's added to CodeComplaintCase. The Austin Code Officer adds Inspection results to CodeComplaintCase including measurements and photographs. If a DoorHanger was placed on the Property, the Austin Code Officer adds notes for the DoorHanger. If other government agencies are contacted, the Austin Code Officer adds notes about agency contacted and services requested.</td>
+</tr>
+<tr>
+<td rowspan="2">006</td>
+<td style="font-weight: bold; background: lightgray;">Austin Code Officer/performInspection</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>If the violation concerns hazardous conditions, the Austin Code Officer applies Personal Protective Equipment (PPE). The Austin Code Officer inspects the Property. The Austin Code Officer inspects from the exterior (initially from the right of way) to the interior (if the interior is accessible and permission has been granted by legally interested party or someone in Care/Control of Property). The Austin Code Officer takes photographs and measurements as needed (hot water temperature, air quality, interior temperature, light meter, ground-fault circuit interrupter, gas meter, carbon monoxide, smoke detector, fences, grass height, driveway and walkways, checks impervious cover, etc.). As needed, the Austin Code Officer performs research to identify the Property Owner, offense, ViolationType, OwnerInformation, and relevant PropertyInformation (GIS system, ARR Site, annexation information, AMANDA permit history, site plan, TCAD/WCAD for OwnerHistory and DeedHistory, CC&B, ZoningHistory, CodeOfOrdinances, etc.). The Austin Code Officer interviews relevant parties. For Waste Hauler Inspection: The Austin Code Officer makes contact with driver, visually inspects vehicle for decals on door, asks driver about awareness requirement for waste hauler license, ensures driver is operating within City of Austin (outside of city is exempt), double checks the Waste Hauler license, checks for safety-equipment violations, driver's license of driver, and takes photos of truck (including both doors and front license plate). If a short-term rental complaint, the Austin Code Officer responds more quickly than other complaints. On Fridays and Saturdays, the Austin Code Officer performs inspection during day, ands from 6:00 p.m. - 2:00 a.m. On Sundays, inspections occur from 8:00 a.m. - 12:00 p.m.</td>
+</tr>
+<tr>
+<td rowspan="2">007</td>
+<td style="font-weight: bold; background: lightgray;">Case Management System/closeCodeComplaintCase</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Case Management System updates the CodeComplaintCase’s status to closed.</td>
+</tr>
+<tr>
+<td rowspan="2">008</td>
+<td style="font-weight: bold; background: lightgray;">Austin Code Officer/contactComplainantWithFindings</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Officer contacts the Complainant (method of contact varies based on available contact information) to notify of whether a violation was found or not. The Austin Code Officer provides an overview of the code process and expected actions, along with the expected resolution time. If contact information is available, three attempts to contact are performed, with at least one attempt being in person.</td>
+</tr>
+<tr>
+<td rowspan="2">009</td>
+<td style="font-weight: bold; background: lightgray;">Austin Code Officer/placeDoorHanger</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Officer places a DoorHanger on the Property. The DoorHanger either identifies if the violation was seen, or if additional contact is required. The Austin Code Officer takes two photographs of the DoorHanger placement (up close and a perspective shot).</td>
+</tr>
+<tr>
+<td rowspan="2">010</td>
+<td style="font-weight: bold; background: lightgray;">Austin Code Officer/contactInternalExternalGovernmentEntities</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>Based on the results of the inspection, the Austin Code Officer contacts internal or external government agencies. Agencies may include TABC, Comptrollers, PDR, etc. The Austin Code Officer requests the agency complete their service as needed (i.e., for research, additional resources, assisting the investigation, questions about permits, assistance to serve warrant, or to refer case to another agency).</td>
+</tr>
+<tr>
+<td rowspan="2">011</td>
+<td style="font-weight: bold; background: lightgray;">Austin Code Officer/determineIfComplainantAssistanceRequired</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Officer determines the response required for the CodeComplaintCase: Is Complainant assistance required to proceed with the investigation or is it not?</td>
+</tr>
+<tr>
+<td rowspan="2">012</td>
+<td style="font-weight: bold; background: lightgray;">Complainant/provideInformationOnCodeComplaint</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Officer attempts to contact the Complainant (primarily by phone, but may include email) and requests information on the Complaint within 48 hours. The Complainant provides information on the Complaint to the Austin Code Officer.</td>
+</tr>
+<tr>
+<td rowspan="2">013</td>
+<td style="font-weight: bold; background: lightgray;">Case Management System/identifyPropertyInformation</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Officer requests the Case Management System to look up certificate of occupancy, site plan, building permits, electrical permits, plumbing permits, mechanical permits, other permits, change of use, plan review, variances, neighborhood plans, conditional overlays, licensing, and CaseHistory. </td>
+</tr>
+<tr>
+<td rowspan="2">014</td>
+<td style="font-weight: bold; background: lightgray;">Austin Code Officer/performAdditionalLandHistoryResearch</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Officer performs research using the following systems from the CodeResourceList: TCAD, WCAD, ARR GIS Maps, CC&B, GIS Development Map (maps and neighborhood plans), Secretary of State (SOS), Travis County Public Records, Lexis Nexus, Department of Motor Vehicles, Department of Public Safety (DPS), title search, Case Management System, Austin History Center, Google Earth, physical file review (at the OTC), and historic aerial photographs. 
+If a ShortTermRental violation, the Austin Code Officer performs research on short-term rental websites (vacation rental research, Airbnb, BBRO, etc.). If the Property is located on a short-term rental website, a NoticeOfViolation is sent without requiring an on-site inspection.</td>
+</tr>
+
+</table>
+
+
+<br/>
+
+
+
+
+</td></tr></table>
+</td></tr></table></body></html>

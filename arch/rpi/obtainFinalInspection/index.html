@@ -1,0 +1,224 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Obtain Final Inspection</title>
+<link rel="Stylesheet" href="/style/hover.css" type="text/css" />
+</head>
+<body bgcolor="#ddd8c2">
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="650" align="center">
+<tr><td style="padding: 0;" height="130" valign="top"><a href="">
+<img src="/image/iTHeader.jpg" alt="austinea.org - home..." border="0"></a></td></tr>
+<!-- Text Area -->
+<tr><td>
+
+<p style="text-align: center; font-weight: bold;">Use Case Specification for Obtain Final Inspection
+<p style="text-align: center;">Last update: 11/18/2015
+
+<!-- Image Title -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/arch/rpi/obtainFinalInspection/obtainFinalInspectionUC.jpg"><img src="/arch/rpi/obtainFinalInspection/obtainFinalInspectionUC.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Obtain Final Inspection<br />Use Case Model</span>
+</td></tr></table>
+
+
+<p><b>Scope: </b>An Authorized Permit Person uses a Web interface to submit an Inspection Request (and/or supporting inspection documentation). When entered properly and quality checked by the system, the system adds the Inspection Request to an Inspection Queue and provides the Authorized Permit Person details relevant to the request such as anticipated inspection timing, city point of contact (POC), etc. The Inspector Manager may review the Inspection Queue, override system automated selections by reassigning inspector assignments or make adjustments to the inspection information. When changes are made to the Inspection Queue relevant to the Authorized Permit Person, a notification is sent to the Authorized Permit Person informing them on changes and or updates to the Inspection Request. The system provides the Inspector a geographic information system (GIS) map with priority ordered (overlay) indication of inspection locations. The Inspector may use the map to navigate to the inspection location or retrieve relevant information regarding the inspection. Once inspected, the system provides the Inspector the ability to record their inspection results, which automatically updates the Inspection Queue. If the Inspection Request is a building final inspection, the system provides the ability for the Authorized Permit Person to retrieve and print Certificate of Occupancy or Certificate of Compliance.</p>
+
+<!-- Image Title -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/arch/rpi/obtainFinalInspection/obtainFinalInspection.jpg"><img src="/arch/rpi/obtainFinalInspection/obtainFinalInspection.jpg" border="0" width="600" alt="" /></a><br />
+<span style="font-weight: bold;">Obtain Final Inspection<br />Sequence Diagram</span>
+</td></tr></table>
+
+<!-- Image Title
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="right"><tr><td align="center">
+<span class="lbl">Note: Select to download</span><br />
+<a href="/"><img src="/" border="0" width="200" alt="" /></a><br />
+<span style="font-weight: bold;">Image Title</span>
+</td></tr></table> -->
+
+
+<!-- Table definition -->
+<table align="center" id="custom">
+<tr><th width="9%">Req#</th><th width="70%">Type/Interface - Requirement Description</th><th>Performance</th></tr>
+<tr>
+<td rowspan="2">##</td>
+<td style="font-weight: bold; background: lightgray;">ensure Regulatory Compliance/requestInspection</td>
+<td rowspan="2"></td>
+</tr>
+<tr>
+<td>The system provides a list of permits issued to the Authorized Permit Person and provides the ability to select the desired issued permit for inspection. Alternately, the system provides a method to request inspection for single purpose permits for selected Authorized Permit Person (typically trade contractors) performing routine day-to-day activities requiring permits. The Permit Applicant can also see administrative hold on a permit – i.e., revision required, inspection resulted in work out of scope of the permit. etc. Finally, the system provides for special approved program inspections that provide a means for the Permit Applicant to schedule an inspection for a specific date and time. In addition, the system provides the Permit Applicant the ability to review and/or update Project Information. The system ensures proper order of inspection types prior to authorizing inspection request (i.e., some inspection require a particular order). </td>
+</tr>
+<tr>
+<td rowspan="2">##</td>
+<td style="font-weight: bold; background: lightgray;">ensure Regulatory Compliance/intakeDocument</td>
+<td rowspan="2"></td>
+</tr>
+<tr>
+<td>For selected permits requiring additional documentation, the system provides a method for the Permit Applicant to browse and upload additional documentation requirements associated with the issued permit - this may be a result of a previous inspection identified by the Inspector.</td>
+</tr>
+<tr>
+<td rowspan="2">##</td>
+<td style="font-weight: bold; background: lightgray;">ensure Regulatory Compliance/updateInspectionQueue</td>
+<td rowspan="2"></td>
+</tr>
+<tr>
+<td>Once an Inspection Request is submitted, the system updates the Inspection Queue by assigning an Inspector based on the area of responsibility. The system updates the Inspection Request Geographic Information Systems (GIS) database with pertinent information related to the Inspection Request (ex., design documents from intake Submittal Package, relevant Project Information, location, site access information, point of contact information, etc.). For special inspections based on city rules for selected registered contractors performing routine single purpose trade permits, the system randomly adds one inspection for every five single purpose permits requested.</td>
+</tr>
+<tr>
+<td rowspan="2">##</td>
+<td style="font-weight: bold; background: lightgray;">authorized Permit Person/reviewInspectionNotification</td>
+<td rowspan="2"></td>
+</tr>
+<tr>
+<td>Once an inspection request is indicated, the system assigns an Inspector and provides appropriate contact information for inspection timing and coordination matching the Inspection Queue. Inspections typically occur 24 - 48 hours from the request. As updates occur in the Inspection Queue, the system calculates new anticipated inspection times and automatically notifies the Authorized Permit Person on the new anticipated inspection time window (anticipated time window of inspection). Message may also include inspection results in the form of a Web link directing the Authorized Permit Person to the details of the inspection.</td>
+</tr>
+<tr>
+<td rowspan="2">##</td>
+<td style="font-weight: bold; background: lightgray;">ensure Regulatory Compliance/reassignInspectionInformation</td>
+<td rowspan="2"></td>
+</tr>
+<tr>
+<td>The system provides an Inspection Supervisor the ability to modify the Inspection Queue to include Inspector assignment, priority order, and inspection timing. The Inspection Supervisor may also perform a quality review of Inspection Requests. The system provides adjustable alerts such as an Inspector with too many assigned inspections, Inspector not logged in during specified inspection hours, location indication is provided by communicating the mobile device location (cost savings because AVL is no longer required), customer service indications of inspection times based on nominal, historic results etc. The system alerts the Inspector if departing the site without entering some form of inspection result.</td>
+</tr>
+<tr>
+<td rowspan="2">##</td>
+<td style="font-weight: bold; background: lightgray;">ensure Regulatory Compliance/updateInspectionQueue</td>
+<td rowspan="2"></td>
+</tr>
+<tr>
+<td>Once an Inspection Request is submitted, the system updates the Inspection Queue by assigning an Inspector based on the area of responsibility. The system updates the Inspection Request Geographic Information Systems (GIS) database with pertinent information related to the Inspection Request (ex., design documents from intake Submittal Package, relevant Project Information, location, site access information, point of contact information, etc.). For special inspections based on city rules for selected registered contractors performing routine single purpose trade permits, the system randomly adds one inspection for every five single purpose permits requested.</td>
+</tr>
+<tr>
+<td rowspan="2">##</td>
+<td style="font-weight: bold; background: lightgray;">authorized Permit Person/reviewInspectionNotification</td>
+<td rowspan="2"></td>
+</tr>
+<tr>
+<td>Once an inspection request is indicated, the system assigns an Inspector and provides appropriate contact information for inspection timing and coordination matching the Inspection Queue. Inspections typically occur 24 - 48 hours from the request. As updates occur in the Inspection Queue, the system calculates new anticipated inspection times and automatically notifies the Authorized Permit Person on the new anticipated inspection time window (anticipated time window of inspection). Message may also include inspection results in the form of a Web link directing the Authorized Permit Person to the details of the inspection.</td>
+</tr>
+<tr>
+<td rowspan="2">##</td>
+<td style="font-weight: bold; background: lightgray;">ensure Regulatory Compliance/identifyInspectionItem</td>
+<td rowspan="2"></td>
+</tr>
+<tr>
+<td>The system provides the Inspector a Geographic Information System (GIS) map with priority ordered (numbered) indication of inspection locations. The Inspector must be able to quickly and easily modify the priority order (i.e., Inspector might wish to change order based on proximity location to inspection location) and ability to annotate why priority order was modified. When an inspection location icon is selected, the Inspector selects location navigation to navigate to the GPS location or to obtain additional inspection information such as permit Inspection Request, relevant design documentation from intake of the Submittal Package, code and compliance details (searchable), coordination details (i.e., codes to access site), etc. The Inspector must be able to override and reassign individual inspections and inspection assignments (ability to reassign an inspection to another Inspector when specialized expertise is required).</td>
+</tr>
+<tr>
+<td rowspan="2">##</td>
+<td style="font-weight: bold; background: lightgray;">ensure Regulatory Compliance/retrieveSubmittalDocument</td>
+<td rowspan="2"></td>
+</tr>
+<tr>
+<td>When the Inspector uses the mobile device to select an inspection item on the GPS map, the system provides links for relevant Submittal Package Documents to retrieve and review the approved design submission. The system provides the Inspector the ability to annotate notes on selected diagrams and save for future retrieval.</td>
+</tr>
+<tr>
+<td rowspan="2">##</td>
+<td style="font-weight: bold; background: lightgray;">eDIMS/retrieveDocument</td>
+<td rowspan="2"></td>
+</tr>
+<tr>
+<td>The system generates the necessary enterprise document imaging and management system (EDIMS) meta-data needed for Document retrieval and retrieves the associated Document.</td>
+</tr>
+<tr>
+<td rowspan="2">##</td>
+<td style="font-weight: bold; background: lightgray;">inspector/performInspection</td>
+<td rowspan="2"></td>
+</tr>
+<tr>
+<td>The Inspector performs procedural inspection of permitted item.</td>
+</tr>
+<tr>
+<td rowspan="2">##</td>
+<td style="font-weight: bold; background: lightgray;">ensure Regulatory Compliance/recordInspectionResults</td>
+<td rowspan="2"></td>
+</tr>
+<tr>
+<td>The system provides the ability for the Inspector to use a mobile device to record inspection results. The system provides the Inspector a modifiable pick-list of Inspection Results for routine inspections. The selected pick-list items must be able to be edited to represent relevant inspection results. The system provides the ability to use the mobile device to photograph items to include the ability to annotate the photograph and attach to the Inspection Results. The system provides the Inspector the ability to approve on the spot changes to include annotations to the design plans stored with the Inspection Results.</td>
+</tr>
+<tr>
+<td rowspan="2">##</td>
+<td style="font-weight: bold; background: lightgray;">ensure Regulatory Compliance/updateInspectionQueue</td>
+<td rowspan="2"></td>
+</tr>
+<tr>
+<td>Once an Inspection Request is submitted, the system updates the Inspection Queue by assigning an Inspector based on the area of responsibility. The system updates the Inspection Request Geographic Information Systems (GIS) database with pertinent information related to the Inspection Request (ex., design documents from intake Submittal Package, relevant Project Information, location, site access information, point of contact information, etc.). For special inspections based on city rules for selected registered contractors performing routine single purpose trade permits, the system randomly adds one inspection for every five single purpose permits requested.</td>
+</tr>
+<tr>
+<td rowspan="2">##</td>
+<td style="font-weight: bold; background: lightgray;">authorized Permit Person/reviewInspectionNotification</td>
+<td rowspan="2"></td>
+</tr>
+<tr>
+<td>Once an inspection request is indicated, the system assigns an Inspector and provides appropriate contact information for inspection timing and coordination matching the Inspection Queue. Inspections typically occur 24 - 48 hours from the request. As updates occur in the Inspection Queue, the system calculates new anticipated inspection times and automatically notifies the Authorized Permit Person on the new anticipated inspection time window (anticipated time window of inspection). Message may also include inspection results in the form of a Web link directing the Authorized Permit Person to the details of the inspection.</td>
+</tr>
+<tr>
+<td rowspan="2">##</td>
+<td style="font-weight: bold; background: lightgray;">ensure Regulatory Compliance/obtainInspectionResults</td>
+<td rowspan="2"></td>
+</tr>
+<tr>
+<td>When an Authorized Permit Person selects a provided link in the Review Inspection Notification, the link presents the results of the inspection and/or any additional guidance for follow up inspections.</td>
+</tr>
+<tr>
+<td rowspan="2">##</td>
+<td style="font-weight: bold; background: lightgray;">ensure Regulatory Compliance/generateCertificate</td>
+<td rowspan="2"></td>
+</tr>
+<tr>
+<td>The system uses selected attributes of the Inspection Request to automatically generate a Certificate of Occupancy or Certificate of Compliance.</td>
+</tr>
+<tr>
+<td rowspan="2">##</td>
+<td style="font-weight: bold; background: lightgray;">ensure Regulatory Compliance/generateEDIMSMetadata</td>
+<td rowspan="2"></td>
+</tr>
+<tr>
+<td>The system uses relevant attributes of the Inspection Request to automatically generate meta-data necessary for header information when storing documents in the enterprise document imaging and management system (EDIMS).</td>
+</tr>
+<tr>
+<td rowspan="2">##</td>
+<td style="font-weight: bold; background: lightgray;">eDIMS/storeDocument</td>
+<td rowspan="2"></td>
+</tr>
+<tr>
+<td>Using the system generated meta-data, the system stores the Document and its meta-data in the enterprise document imaging and management system (EDIMS).</td>
+</tr>
+<tr>
+<td rowspan="2">##</td>
+<td style="font-weight: bold; background: lightgray;">ensure Regulatory Compliance/retrieveCertificate</td>
+<td rowspan="2"></td>
+</tr>
+<tr>
+<td>Once a final building inspection is approved, the Review Inspection Notification message provides a link that the Authorized Permit Person uses to retrieve and print the Certificate of Occupancy or Certificate of Compliance depending on the inspection type. [For commercial consider fee for certificate of occupancy and compliance - the purpose of the fee is to establish a specialized inspection group to manage changes to occupant - leading to a safer city.]</td>
+</tr>
+<tr>
+<td rowspan="2">##</td>
+<td style="font-weight: bold; background: lightgray;">eDIMS/retrieveDocument</td>
+<td rowspan="2"></td>
+</tr>
+<tr>
+<td>The system generates the necessary enterprise document imaging and management system (EDIMS) meta-data needed for Document retrieval and retrieves the associated Document.</td>
+</tr>
+</table>
+<br />
+
+<!-- Table definition
+<table align="center" id="custom">
+<tr><th>Number</th><th>Category</th><th>Description</th><th>Criticality</th></tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table> -->
+
+</td></tr>
+</table>
+</td></tr></table></body></html>

@@ -1,0 +1,418 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>Provide Client Survey</title>
+
+
+
+  
+
+  
+  
+  <link rel="Stylesheet" href="/style/email.css" type="text/css"></head><body style="background-color: rgb(221, 216, 194);">
+<!-- Border Background Table -->
+<table style="border-collapse: collapse; background-color: rgb(244, 202, 144);" align="center" border="0" cellpadding="4" cellspacing="0">
+
+  <tbody>
+    <tr>
+      <td><!-- Online reference
+
+<p class="lbl" style="text-align: center;">This report is also <a href="/">available online</a> by following link.</p> --><!-- EA Motto -->
+      <p style="color: gray; font-size: 8pt; text-align: center; font-weight: bold;">Enterprise
+Architecture <i>- aligning IT services with business needs</i></p>
+<!-- Main Body -->
+      <table style="border-collapse: collapse; background-color: rgb(255, 255, 255);" align="center" border="0" cellpadding="5" cellspacing="0" width="650">
+        <tbody>
+          <tr>
+            <td>
+            <p style="text-align: center; font-weight: bold;">Provide
+Client Survey Use Case Specification</p>
+<!-- Image Title -->
+            <table style="border-collapse: collapse;" align="center" border="0" cellpadding="5" cellspacing="0">
+              <tbody>
+                <tr>
+                  <td align="center"><span class="lbl">Select to
+enlarge...</span><br>
+                  <a href="createcontractdeliverable_ucd.jpg"><span style="text-decoration: underline;"></span></a><a href="provideclientsurvey_ucd.jpg"><span style="text-decoration: underline;"><img style="border: 0px solid ; width: 581px; height: 402px;" alt="" src="provideclientsurvey_ucd.jpg"></span></a><br>
+                  <span style="font-weight: bold;"><br>
+Provide Client Survey Use
+Case Model<br>
+                  <br>
+                  <br>
+                  </span> </td>
+                </tr>
+              </tbody>
+            </table>
+            
+            
+            <p class="MsoNormal"><b>Scope:</b>&nbsp; The Event Coordinator uses the system to prepare the Survey
+for an Event.&nbsp; Using a SurveyTemplate (initially configured in cooperation
+with a User Experience Professional), the Event Coordinator generates the new
+Survey, includes EventInformation, a SurveyCloseDate and indicates the approved
+SurveyContactList is ready for import. At an interval predefined during system
+configuration, the system imports the approved SurveyContactList and the Survey
+is made ready. On the specified SurveyIssuanceDate, the system sends a
+notification to each SurveyRespondent on the SurveyContactList, using the
+designated NotificationMethod (Email, Text, Both). The SurveyNotification
+greets the SurveyRespondent by their Name and invites them to participate in
+the Survey for a specified Event and states the SurveyCloseDate. The
+SurveyRespondent selects a Uniform Resource Locator (URL) contained within the
+SurveyNotification and is asked whether they grant permission for their
+responses to be published for marketing purposes. The Survey then asks which
+services the SurveyRespondent utilized during the Event. Based upon these
+selections, the Survey expands or contracts to only show relevant questions to
+the SurveyRespondent and the estimated minutes to complete the Survey are
+adjusted. The Survey is wizard-driven and as the SurveyRespondent moves from
+one screen to another the system stores their SurveyAnswers. If the
+SurveyRespondent leaves the Survey prior to completing it, they are presented
+with an option to set a number of SurveyReminderDays in which to be reminded to
+complete the survey. At specified intervals, the system runs a scheduled task
+upon itself to search for IncompleteSurveys. For every IncompleteSurvey, the
+system sends a SurveyNotification to the SurveyRespondent. The
+SurveyNotification includes a message, greeting the SurveyRespondent by their
+Name and reminding them to complete the Survey for a specific Event, states the
+SurveyCloseDate and contains a Uniform Resource Locator (URL) unique to the
+SurveyRespondent. When the SurveyRespondent has answered all of the
+SurveyQuestions to their level of satisfaction, the SurveyRespondent clicks a
+button to complete the Survey and submit all SurveyAnswers to the system. The
+system presents a message to the SurveyRespondent, stating the Survey has been
+completed and thanks them for their feedback.<o:p></o:p></p>
+
+
+            <p class="MsoNormal"><o:p></o:p></p>
+
+
+
+            <p class="MsoNormal">
+            </p>
+
+            <br>
+            <p class="MsoNormal"><br>
+            </p>
+            <p class="MsoNormal"><b> </b> <o:p></o:p></p>
+            <p class="MsoNormal"><br>
+            <o:p></o:p></p>
+<!-- Image Title -->
+            <table style="border-collapse: collapse;" align="center" border="0" cellpadding="5" cellspacing="0">
+              <tbody>
+                <tr>
+                  <td align="center"><span class="lbl">Select to
+enlarge...<br>
+                  <br>
+</span>
+                  <a href="createcontractdeliverable_sqd.jpg"><span style="text-decoration: underline;"></span></a><a href="provideclientsurvey_sqd.jpg"><span style="text-decoration: underline;"><img style="border: 0px solid ; width: 600px; height: 656px;" alt="" src="provideclientsurvey_sqd.jpg"></span></a><br>
+                  <br>
+                  <span style="font-weight: bold;">Provide Client
+Survey Sequence Diagram</span> </td>
+                </tr>
+              </tbody>
+            </table>
+            <br>
+            <p style="text-align: center; font-weight: bold;"><br>
+            </p>
+            <p style="text-align: center; font-weight: bold;"><br>
+            </p>
+            <p style="text-align: center; font-weight: bold;">Table of
+Interface Descriptions</p>
+            <br>
+            <table style="text-align: left; margin-left: auto; margin-right: auto;" id="custom">
+              <tbody>
+                <tr>
+                  <td style="vertical-align: top; background-color: rgb(153, 0, 0);"><span style="color: white; font-weight: bold;">FS#</span> &nbsp;  <br>
+                  </td>
+<th style="background-color: rgb(153, 0, 0);">Type/Interface</th>
+                  <th style="background-color: rgb(153, 0, 0);">Description</th>
+                </tr>
+                <tr>
+                  <td style="vertical-align: top;">FS001 <br>
+                  </td>
+<td>Establish Event Booking/<br>
+                  <span style="font-weight: bold;">prepareSurvey</span><br>
+                  </td>
+                  <td>
+                  <p class="MsoNormal"> </p>
+                  
+                  <p class="MsoNormal">
+
+</p>
+                  <p class="MsoNormal">
+
+</p>
+                  <p class="MsoNormal">The Event Coordinator uses the system to prepare the Survey
+for an Event. SurveyTemplates are initially configured in advance and the
+SurveyTemplates are designed in cooperation with User Experience (UX)
+Consultant. Using the SurveyTemplate, the Event Coordinator generates a new
+Survey, includes EventInformation (Event ContractID, EventName, Move-InDate and
+Move-OutDate, etc.), enters a SurveyCloseDate (the date on which the Survey will
+close and restrict participation) and indicates the approved SurveyContactList
+is ready for import from the Event Booking System Web Service. The
+SurveyContactList includes (but is not limited to) the following information:
+SurveyIssuanceDate, Name, EmailAddress, CellPhoneNumber and NotificationMethod
+(Email, Text, Both). At an interval predefined during system configuration, the
+system imports the approved SurveyContactList and the Survey is made ready.<o:p></o:p></p>
+
+
+                  <p class="MsoNormal"><o:p></o:p></p>
+
+
+
+                  <p class="MsoNormal"><o:p></o:p></p>
+
+                  <p class="MsoNormal"><o:p></o:p></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="vertical-align: top;">FS002<br>
+                  </td>
+<td>Establish Event Booking/<br>
+                  <span style="font-weight: bold;">identifyPendingSurveys</span></td>
+                  <td>
+                  
+                  <p class="MsoNormal">
+
+</p>
+                  <p class="MsoNormal">At an interval predefined during system configuration, the
+system runs a scheduled task upon itself to search for PendingSurveys by
+searching for the SurveyStatus of 'Pending'. The system provides the option of
+configuring one or more interval triggers. (eg. Every 14 Days, twice annually)<o:p></o:p></p>
+
+
+
+                  <p class="MsoNormal"><o:p></o:p></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="vertical-align: top;">FS003<br>
+                  </td>
+<td>Establish Event Booking/<br>
+                  <span style="font-weight: bold;">notifySurveyRespondent</span><span style="font-weight: bold;"></span> </td>
+                  <td>
+                  
+                  
+                  <p class="MsoNormal">
+
+                  </p>
+                  <p class="MsoNormal">If PendingSurveys are found by the system and the current
+date is on or after the SurveyIssuanceDate, the system sends a
+SurveyNotification to all SurveyRespondents on the SurveyContact List. (NOTE:
+The SurveyIssuanceDate is predetermined by a setting in the Event Booking
+System of a number of days following the Move-OutDate of the Event.) The
+SurveyNotification states how many questions are contained within the survey as
+well as the amount of EstimatedCompletionMinutes. If IncompleteSurveys are
+found, the system sends a SurveyNotification to the SurveyRespondent reminding
+them to complete the Survey for a specific Event and states the number of
+SurveyQuestionsUnanswered with EstimatedCompletionMinutes. The system sends a
+SurveyNotification to the SurveyRespondent using the desired NotificationMethod
+(Email, Text, Both). Email notifications are of a responsive format viewable
+from mobile devices and desktop computers. The SurveyNotification greets the
+SurveyRespondent by name and invites the SurveyRespondent to participate in the
+Survey for a specific Event (using the EventName and Move-InDate). The
+SurveyNotification includes the SurveyCloseDate, the date on which the Survey
+will be closed and participation will be blocked. The SurveyNotification may
+contain an optional statement telling the SurveyRespondent they will receive a
+gift card for completing the Survey. Finally, the notification contains a
+Uniform Resource Locator (URL) unique to the SurveyRespondent. <br>
+                  </p>
+
+
+                  <p class="MsoNormal">&nbsp;<o:p></o:p></p>
+
+                  <p class="MsoNormal"><o:p></o:p></p>
+                  </td>
+                </tr><tr>
+                  <td style="vertical-align: top;">FS004<br>
+                  </td>
+<td style="vertical-align: top;">Establish Event Booking/<br>
+
+                  <span style="font-weight: bold;">storeSurveyAnswers</span></td>
+                  <td style="vertical-align: top;">
+
+                  <p class="MsoNormal">The SurveyRespondent selects the Uniform Resource Locator
+(URL) contained within the SurveyNotification and is asked whether they grant
+permission for their responses to be published for marketing purposes (eg.
+comments may be used in whole or part on the Austin Convention Center website
+or other marketing materials: 'Best conference i ever had! - John Doe'). The
+Survey next asks what EventServices were utilized by the SurveyRespondent.
+Based upon the selection of EventServices, the Survey expands or contracts to
+only show relevant SurveyQuestions, the EstimatedCompletionMinutes value is
+adjusted accordingly and the SurveyStatus is change from Pending to Started.
+The Survey allows for bridging and skipping, based upon answers chosen (eg.
+answering one question indicates that the SurveyRespondent may skip over the
+next block of questions). The Survey contains one or more SurveySections. Each
+SurveySection contains one or more SurveyQuestions. The SurveyQuestions have
+the option of being multiple choice questions along with fields for the
+SurveyRespondent to provide feedback in their own words. Multiple choice
+question types include (but are not limited to): Choose all that apply, Choose
+one, Choose one from a scale (eg. 1-5). The SurveyRespondent provides
+SurveyAnswers. The Survey is wizard-driven and as the SurveyRespondent moves
+from one page to another the system stores their SurveyAnswers. Each screen of
+the Survey contains a progress bar, indicating to the SurveyRespondent where
+they are in the process of completing the Survey. The SurveyRespondent has the
+ability to move forward or backward in the Survey at any time. If the
+SurveyRespondent leaves the Survey prior to completing it, they are presented
+with an option to set a number of SurveyReminderDays in which to be reminded to
+complete the survey. (eg. Send me a notification in X days with a reminder to
+complete the survey). The SurveyRespondent may continue taking the survey at a
+later time from any device.<o:p></o:p></p>
+
+
+                  </td>
+                </tr>
+                <tr>
+                  <td style="vertical-align: top;">FS005<br>
+                  </td>
+<td style="vertical-align: top;">Establish Event Booking/<br>
+
+
+                  <span style="font-weight: bold;">identifyIncompleteSurveys</span></td>
+                  <td style="vertical-align: top;">
+
+                  <p class="MsoNormal">At an interval predefined during system configuration, the
+system runs a scheduled task upon itself to search for IncompleteSurveys by
+searching for the SurveyStatus of 'Started.' The system provides the option of
+configuring one or more interval triggers. (eg. Every 14 Days, twice annually)<o:p></o:p></p>
+
+
+                  </td>
+                </tr>
+                <tr>
+<td style="vertical-align: top;">FS006<br>
+</td>
+<td>Establish Event Booking/<br>
+                  <span style="font-weight: bold;">notifySurveyRespondent</span><span style="font-weight: bold;"></span> </td><td>
+                  
+                  
+                  <p class="MsoNormal">
+
+                  </p>
+                  <p class="MsoNormal">If PendingSurveys are found by the system and the current
+date is on or after the SurveyIssuanceDate, the system sends a
+SurveyNotification to all SurveyRespondents on the SurveyContact List. (NOTE:
+The SurveyIssuanceDate is predetermined by a setting in the Event Booking
+System of a number of days following the Move-OutDate of the Event.) The
+SurveyNotification states how many questions are contained within the survey as
+well as the amount of EstimatedCompletionMinutes. If IncompleteSurveys are
+found, the system sends a SurveyNotification to the SurveyRespondent reminding
+them to complete the Survey for a specific Event and states the number of
+SurveyQuestionsUnanswered with EstimatedCompletionMinutes. The system sends a
+SurveyNotification to the SurveyRespondent using the desired NotificationMethod
+(Email, Text, Both). Email notifications are of a responsive format viewable
+from mobile devices and desktop computers. The SurveyNotification greets the
+SurveyRespondent by name and invites the SurveyRespondent to participate in the
+Survey for a specific Event (using the EventName and Move-InDate). The
+SurveyNotification includes the SurveyCloseDate, the date on which the Survey
+will be closed and participation will be blocked. The SurveyNotification may
+contain an optional statement telling the SurveyRespondent they will receive a
+gift card for completing the Survey. Finally, the notification contains a
+Uniform Resource Locator (URL) unique to the SurveyRespondent.<br>
+                  </p>
+
+
+                  
+
+                  
+                  </td></tr>
+<tr>
+                  <td style="vertical-align: top;">FS007<br>
+                  </td>
+<td style="vertical-align: top;">Establish Event Booking/<br>
+
+
+
+                  <span style="font-weight: bold;">completeSurveyAnswers</span></td>
+                  <td style="vertical-align: top;">
+
+                  <p class="MsoNormal">When the SurveyRespondent has answered all of the
+SurveyQuestions to their level of satisfaction, the SurveyRespondent clicks a
+button to complete the Survey and submit all answers to the system. The system
+presents a StatusCompleteConfirmation message to the SurveyRespondent and
+thanks them for their feedback. If the SurveyRespondent is to receive a gift
+card for providing their feedback, the message may also include a statement of
+when the gift card may be expected. Once the SurveyStatus has been changed to
+Complete, the SurveyRespondent may no longer edit the SurveyAnswers. The system
+has the option to enable an email notification to designated recipients when a
+Survey is completed by a SurveyRespondent. This notification has the option to
+occur individually on demand or at a designated interval containing a batched
+list of Surveys that were completed the previous day.<o:p></o:p></p>
+
+
+                  </td>
+                </tr>
+                
+
+              </tbody>
+            </table>
+            <br>
+<br>
+            <p style="text-align: center; font-weight: bold;">Table of Supplemental Specifications</p><br>
+            <table style="text-align: left; margin-left: auto; margin-right: auto;" id="custom">
+
+              <tbody>
+                <tr>
+                  <td style="vertical-align: top; background-color: rgb(153, 0, 0);"><span style="color: white; font-weight: bold;">SS#&nbsp;&nbsp;</span>  <br>
+                  </td>
+<th style="background-color: rgb(153, 0, 0);">Type/Interface</th>
+                  <th style="background-color: rgb(153, 0, 0);">Description</th>
+                </tr>
+                
+                
+                
+                
+                
+                <tr>
+                  <td style="vertical-align: top;">SS001</td>
+<td style="vertical-align: top;">Establish Event Booking/<br>
+
+
+
+
+                  <span style="font-weight: bold;">provideReporting</span></td>
+                  <td style="vertical-align: top;">
+
+                  <p class="MsoNormal">
+
+</p>
+                  <p class="MsoNormal">The system provides access to SurveyResults by means of
+customizable reports. Users of the system have the ongoing ability to create
+reports using a point-and-click method and include or exclude information of
+any type (eg. irrelevant or inappropriate comments). Reports have the option of
+being stored for subsequent execution. The system contains one or more reports
+(created initially in cooperation with the vendor) inclusive of all data for a
+particular survey. These reports are established for purposes of auditing and
+are also stored for subsequent execution; however, may not be modified by any
+user, to ensure the integrity of audits are protected.<o:p></o:p></p>
+
+
+
+
+
+                  </td>
+                </tr>
+
+              </tbody>
+            
+            </table>
+            <br>
+            <p style="text-align: center; font-weight: bold;"><br>
+            </p>
+            <p style="text-align: center; font-weight: bold;"><br>
+            </p>
+<div style="text-align: center;"><span style="font-weight: bold;">Provide Client Survey Logical Data Model<br>
+            <br>
+            <br>
+            </span><span class="lbl">Select to
+enlarge...</span><br>
+            <span style="font-weight: bold;"> <span style="text-decoration: underline;"><br>
+            <a href="provideclientsurvey_ldm.jpg"><img style="border: 0px solid ; width: 600px; height: 366px;" alt="" src="provideclientsurvey_ldm.jpg"></a><br>
+            </span>
+            </span></div>
+            <p style="text-align: center; font-weight: bold;"><br>
+            </p>
+<!-- Table definition --></td>
+          </tr>
+        </tbody>
+      </table>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+</body></html>

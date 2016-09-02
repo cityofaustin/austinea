@@ -1,0 +1,132 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Engage Emergency Response</title>
+<link rel="Stylesheet" href="/style/hover.css" type="text/css" />
+</head>
+<body bgcolor="#ddd8c2">
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="650" align="center">
+<tr><td style="padding: 0;" height="130" valign="top"><a href="">
+<img src="/image/iTHeader.jpg" alt="austinea.org - home..." border="0"></a></td></tr>
+<!-- Text Area -->
+<tr><td>
+
+<p style="text-align: center; font-weight: bold;">Engage Emergency Response<br />Use Case Specification</p>
+<p style="text-align: center;">11/05/2015
+
+<!--  IF Printable document option Included  
+<p style="text-align: center;">download <a href="/arch/code/***.docx">printable version</a>
+-- >
+
+<b> Austin Code Logical Data Model </b>
+<!-- Image -  Logical Data Model  
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="/arch/code/ldm.jpg"><img src="/arch/code/ldm.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Austin Code Logical Data Model</p>
+</td></tr></table> 
+-->
+
+<!-- USE CASE IMAGE -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/arch/code/engageEmergencyResponse/ucd.jpg"><img src="/arch/code/engageEmergencyResponse/ucd.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Engage Emergency Response<br />Use Case Model</span>
+</td></tr></table>
+
+<p><b>Scope: </b>If a fire, dangerous structure, or natural disaster has occurred, the Austin Code Officer waits for the Property to be released for investigation. Once the Property has been released, the Austin Code Officer determines if assistance services are required. If assistance services are required, the Austin Code Officer starts the Provide Assistance Services use case. If a natural disaster occurred, the Austin code Officer performs an assessment of the damage and notifies the appropriate parties of the assessment. Assessment guidelines and damage classification are provided by FEMA. The Austin Code Officer places temporary caution barriers at the Property, performs an Inspection, and then notifies the Owner to fence and board the property. The Austin Code Officer provides the Owner time to fend and board the Property. If the Owner doesn't fence and board the Property, the Austin Code Officer then starts the Notify Contractor to Board and Secure use case. If APD is required to clear dangers from the Property, the Austin Code Officer contacts APD to clear dangers.
+
+
+
+
+<!-- IF INTERACTION OVERVIEW IS INCLUDED 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/arch/code/***.jpg"><img src="/arch/code/***.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Interaction Overview</span>
+</td></tr></table>
+-->
+
+
+<br />
+
+
+<!-- SEQUENCE DIAGRAM  -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/arch/code/engageEmergencyResponse/sd01.jpg"><img src="/arch/code/engageEmergencyResponse/sd01.jpg" border="0" alt="" width="600"/></a><br />
+<span style="font-weight: bold;">Engage Emergency Response<br />Sequence Diagram</span>
+</td></tr></table>
+<br />
+
+
+<!-- INTERFACE TABLE  -->
+<table align="center" id="custom">
+<tr><th width="9%">Req#</th><th width="70%">Type/Interface - Requirement Description</th><th>Performance</th></tr>
+<tr>
+<td rowspan="2">001</td>
+<td style="font-weight: bold; background: lightgray;">Austin Code Officer/determineIfAssistanceServicesRequired</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>Relocation Services apply to any non-Owner-occupied Property. The Austin Code Officer inspects the Property, and if the Property condition and/or Structural Conditions are substandard (no hot water) or dangerous to the habitability (e.g., collapse hazard, insufficient stabilization, sanitation, etc.), then relocation services are deemed necessary. The Inspector contacts the Owner/Property Manager (preferably in person or by phone) and identifies whether the Owner is capable of providing relocation services. If relocation is required, the Austin Code Officer notifies the Owner and Tenant(s).</td>
+</tr>
+<tr>
+<td rowspan="2">002</td>
+<td style="font-weight: bold; background: lightgray;">Austin Code Officer/performAssessment</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Officer performs a disaster assessment (DisasterAssessment) and determines the level of damage (not affected, minor, major, or destroyed). Water level is also considered when identifying damage scale. FEMA scale and guidelines are used to complete the assessment.</td>
+</tr>
+<tr>
+<td rowspan="2">003</td>
+<td style="font-weight: bold; background: lightgray;">Austin Code Officer/notifyPartiesOfAssessment</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Officer notifies parties of the DisasterAssessment.</td>
+</tr>
+<tr>
+<td rowspan="2">004</td>
+<td style="font-weight: bold; background: lightgray;">Austin Code Officer/placeTemporaryCautionBarrier</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Officer places temporary CautionBarriers (caution tape, physical barriers, Placards) around the Property. A Placard is always placed at the Property. The Austin Code Officer takes photographs of the temporary CautionBarriers placed (including Placards).</td>
+</tr>
+<tr>
+<td rowspan="2">005</td>
+<td style="font-weight: bold; background: lightgray;">Austin Code Officer/performInspection</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>If the violation concerns hazardous conditions, the Austin Code Officer applies Personal Protective Equipment (PPE). The Austin Code Officer inspects the Property. The Austin Code Officer inspects from the exterior (initially from the Right of Way) to the interior (if the interior is accessible and permission has been granted by legally interested party or someone in Care/Control of Property). The Austin Code Officer take Photographs and Measurements (hot water temperature, air quality, interior temperature, light meter, ground-fault circuit interrupter, gas meter, carbon monoxide, smoke detector, fences, grass height, driveway and walkways, check impervious cover, etc.) as needed. As needed, the Austin Code Officer performs research to identify the Property Owner, Offense, ViolationType, OwnerInformation, and relevant PropertyInformation (GIS system, ARR Site, Annexation Information, Amanda Permit History, Site Plan, TCAD/WCAD for OwnerHistory and DeedHistory, CC&B, ZoningHistory, CodeOfOrdinances, etc.). The Austin Code Officer interviews relevant parties. For Waste Hauler Inspection: The Austin Code Officer makes contact with driver, visually inspects vehicle for decals on door, asks driver about awareness requirement for waste hauler license, ensures driver is operating within City of Austin (outside of city exempt), double check the Waste Hauler license, check for safety equipment violations, driver's license of driver, and take photos of truck (including both doors and front license plate). If a short-term rental complaint, the Austin Code Officer responds at a faster time than other complaints. On Fridays and Saturdays, the Austin Code Officer performs inspection during day, ands from 6:00 P.M. - 2:00 A.M. On Sundays, inspections occur from 8:00 A.M. - 12:00 P.M.</td></tr>
+<tr>
+<td rowspan="2">006</td>
+<td style="font-weight: bold; background: lightgray;">Austin Code Officer/notifyOwnerToFenceBoardProperty</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Officer notifies the Owner by phone of the need to Board and Secure Property within a specified compliance time. The compliance time for the Deficiency depends on the severity of the Deficiency.</td></tr>
+<tr>
+<td rowspan="2">007</td>
+<td style="font-weight: bold; background: lightgray;">Austin Code Officer/requestAPDClearDangers</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Officer requests APD to secure the scene (remove violent persons, remove dangers, etc.).</td></tr>
+
+</table>
+
+
+<br />
+
+
+
+
+</td></tr></table>
+</td></tr></table></body></html>

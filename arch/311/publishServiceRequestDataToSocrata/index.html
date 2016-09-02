@@ -1,0 +1,123 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Publish Service Request Data to Socrata</title>
+<link rel="Stylesheet" href="/style/hover.css" type="text/css" />
+</head>
+<body bgcolor="#ddd8c2">
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="650" align="center">
+<tr><td style="padding: 0;" height="130" valign="top"><a href="">
+<img src="/image/iTHeader.jpg" alt="austinea.org - home..." border="0"></a></td></tr>
+<!-- Text Area -->
+<tr><td>
+
+<p style="text-align: center; font-weight: bold;">Publish Service Request Data to Socrata<br />Use Case Specification</p>
+<p style="text-align: center;">03/22/16
+
+<!--  IF Printable document option Included  
+<p style="text-align: center;">download <a href="/arch/as/***.docx">printable version</a>
+-- >
+
+<b> Animal Services Logical Data Model </b>            
+<!-- Image -  Logical Data Model 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="/arch/as/ldm.jpg"><img src="/arch/as/ldm.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Animal Services Logical Data Model</p>
+</td></tr></table> -->
+
+<!-- USE CASE IMAGE -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/arch/311/publishServiceRequestDataToSocrata/ucd.jpg"><img src="/arch/311/publishServiceRequestDataToSocrata/ucd.jpg" border="0" alt="" width="620"/></a><br />
+<span style="font-weight: bold;">Publish Service Request Data to Socrata<br />Use Case Model</span>
+</td></tr></table>
+
+<p><b>Scope: </b>A Socrata Manager creates/updates a SocrataSchedule.  The system, at the scheduled start for each SocrataSchedule, identifies SocrataServiceRequests.  The system aggregates SocrataServiceRequests into a SocrataDatasetUpload and then performs a query to Socrata for each SocrataServiceRequest.  Socrata returns whether the SocrataServiceRequest is in the dataset or not.  If the SocrataServiceRequest is not in the dataset the system requests Socrata appends the SocrataServiceRequest to the dataset.  If the SocrataServiceRequest is in the dataset the system requests Socrata updates the dataset for the SocrataServiceRequest.  The system performs this sequence of query and append/update for each SocrataServiceRequest in the SocrataDatasetUpload.  
+
+
+
+<!-- IF INTERACTION OVERVIEW IS INCLUDED 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/arch/as/***.jpg"><img src="/as/code/***.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Interaction Overview</span>
+</td></tr></table>
+-->
+
+
+<br />
+
+
+<!-- SEQUENCE DIAGRAM  -->                 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/arch/311/publishServiceRequestDataToSocrata/sd01.jpg"><img src="/arch/311/publishServiceRequestDataToSocrata/sd01.jpg" border="0" alt="" width="600"/></a><br />
+<span style="font-weight: bold;">Publish Service Request Data to Socrata<br />Sequence Diagram</span>
+</td></tr></table>
+<br />
+
+
+<!-- INTERFACE TABLE  -->
+<table align="center" id="custom">
+<tr><th width="9%">Req#</th><th width="70%">Type/Interface - Requirement Description</th><th>Performance</th></tr>
+<tr>
+<td rowspan="2">001</td>
+<td style="font-weight: bold; background: lightgray;">Provide Customer Relationship Management/createUpdateSocrataSchedule</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Socrata Manager requests the system creates/updates a SocrataSchedule. The Socrata Manager provides the CRMSearch used to identify SocrataServiceRequests, start date, stop date, recurrence, settings for individual aspects of the ServiceRequest (question, activity, participant, location) to publish to Socrata, column names, SocrataAPIKey, SocrataDatasetUniqueID, publish URL, Socrata username and password.</td>
+</tr>
+<tr>
+<td rowspan="2">002</td>
+<td style="font-weight: bold; background: lightgray;">Provide Customer Relationship Management/identifySocrataServiceRequests</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>At the start of each schedule for Socrata the system identifies SocrataServiceRequests, either newly created or updated, since the last schedule run. The system collects all SocrataServiceRequests and creates a SocrataDatasetUpload containing the updates for Socrata.</td>
+</tr>
+<tr>
+<td rowspan="2">003</td>
+<td style="font-weight: bold; background: lightgray;">Socrata/queryDatasetForServiceRequest</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The system requests Socrata and queries for the ServiceRequest. The system provides the SocrataDatasetID and SocrataDatasetUniqueID, which is equal to the ServiceRequestNumber. Socrata returns a SocrataQueryResult (data found or no data found). Based on the return value the system submits a request to Socrata to either append data (no data found) or update data (data found).</td>
+</tr>
+<tr>
+<td rowspan="2">004</td>
+<td style="font-weight: bold; background: lightgray;">Socrata/appendDataToDataset</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The system requests Socrata perform an append to the SocrataDataset. The system provides from the SocrataSetting (apiKey, publishURL, datasetID), SocrataDatasetUpload, and SocrataQueryResult. Socrata updates the SocrataDataset with the requested information.</td>
+</tr>
+<tr>
+<td rowspan="2">005</td>
+<td style="font-weight: bold; background: lightgray;">Socrata/updateDataInDataset</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The system requests Socrata perform an update to the SocrataDataset. The system provides from the SocrataSetting (apiKey, publishURL, datasetID), SocrataDatasetUpload, and SocrataQueryResult. Socrata updates the SocrataDataset with the requested information.</td>
+</tr>
+<tr>
+
+
+
+
+
+
+</table>
+
+
+<br />
+
+
+
+
+</td></tr></table>
+</td></tr></table></body></html>

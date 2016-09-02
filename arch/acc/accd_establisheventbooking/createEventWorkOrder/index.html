@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>Create Event Work Order</title>
+
+
+
+<link rel="Stylesheet" href="/style/email.css" type="text/css"></head><body bgcolor="#ddd8c2">
+<!-- Border Background Table -->
+<table style="border-collapse: collapse; background-color: rgb(244, 202, 144);" align="center" border="0" cellpadding="4" cellspacing="0"><tbody><tr><td>
+<!-- Online reference
+<p class="lbl" style="text-align: center;">This report is also <a href="/">available online</a> by following link.</p> -->
+<!-- EA Motto -->
+<p style="color: gray; font-size: 8pt; text-align: center; font-weight: bold;">Enterprise Architecture <i>- aligning IT services with business needs</i></p>
+<!-- Main Body -->
+<table style="border-collapse: collapse; background-color: rgb(255, 255, 255);" align="center" border="0" cellpadding="5" cellspacing="0" width="650"><tbody><tr><td>
+
+<p style="text-align: center; font-weight: bold;">Create Event Work Order Use Case Specification</p>
+
+<!-- Image Title -->
+<table style="border-collapse: collapse;" align="center" border="0" cellpadding="5" cellspacing="0"><tbody><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br>
+<a href="createEventWorkOrderUCD.jpg"><img style="border: 0px solid ; width: 468px; height: 319px;" src="createEventWorkOrderUCD.jpg" alt=""></a><br>
+<span style="font-weight: bold;">Create Event Work Order Use Case Model</span>
+</td></tr></tbody></table>
+
+<p><b>Scope: </b>The Event Coordinator uses the system to retrieve
+event Booking Information to include the ability to provide a Customer
+Planning Documents. The Event Coordinator, Crew Lead, Security
+Coordinator, and Event Supervisor use the system to update Event Items
+such as Planning Documents, Booking Information, Crew Information,
+Security Information and Timelines. Once the Event Coordinator uses the
+system to indicate Event Items are ready for Event Supervisor approval.
+The Event Supervisor uses the system to request changes or approve Work
+Order items for a specific Contract ID. Finally, the Event Coordinator
+uses the system to construct a Charge List used in Create Event
+Invoice. The Pre-Plan and indicates charges assigned to the specific
+event and at what cost and is the basis for the Charge List.</p>
+
+<!-- Image Title -->
+<table style="border-collapse: collapse;" align="center" border="0" cellpadding="5" cellspacing="0"><tbody><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br>
+<a href="1SD.jpg"><img style="border: 0px solid ; width: 600px; height: 494px;" src="1SD.jpg" alt=""></a><br>
+<span style="font-weight: bold;">Create Event Work Order Use Case Model</span>
+</td></tr></tbody></table>
+
+<p style="text-align: center; font-weight: bold;">Table of Interface Descriptions</p>
+<!-- Table definition -->
+<table id="custom" align="center">
+<tbody><tr><th>Type/Interface</th><th>Description</th></tr>
+<tr>
+<td>FS028<br>Establish Event Booking/<br>retrieveBookingInformation</td>
+<td>Event Coordinator uses the system to open the client account and
+examines the Booking Information to determine the needs for the day,
+analyze everything about account that Sales has provided. The Event
+Coordinator takes planning information from the Client and inputs the
+information into the system using convention center standards and
+conventions.</td>
+</tr>
+<tr>
+<td>Customer/<br>providePlanningDocuments</td>
+<td>The Event coordinator reaches out to the client via phone, meeting,
+site tours, and emails and gathers client event information. As part of
+this effort, the Event Coordinator provides the customer with a
+Planning Document, which they fill out and return to the Event
+Coordinator.</td>
+</tr>
+<tr>
+<td>FS029<br>Establish Event Booking/<br>updateEventItem</td>
+<td>The Event Coordinator, Crew Lead, Security Coordinator and Event
+Supervisor use the system to make changes to the Event Work Order(s)
+associated with a Contract ID. Updates include booking information,
+Planning Documents, security information, crew information, or any of
+the free form text items added manually to the Event Work Order. The
+Event Coordinator, Crew Lead, Security Coordinator and Event Supervisor
+use the system to create Timelines by adding a new Event Line. This
+could be one of many items to include event name, time and location
+(unlock doors at 6 AM, general session 10 AM, etc.) prefunction space,
+dock space, security details, timing for setup and teardown by both
+internal employees and vendor, move-in/move-out days/times,
+registration, book signings, breakfast/lunch/dinner food functions,
+plated versus buffet meals, breakouts and meetings, bag stuffing, trade
+show open, client staff show offices, computer labs, poster sessions,
+food and beverage, room changeovers, room refresh. Each are outlined as
+part of the Timeline. The timeline may include meeting room schedule
+details (location, start date/time, end Date/time, meeting title,
+speaker name, private or public), added by the Event Coordinator or the
+event Representative via a Web portal. The results of this timeline may
+be used to populate digital signs.</td>
+</tr>
+<tr>
+<td>FS030<br>Establish Event Booking/<br>requestSupervisorApproval</td>
+<td>Using the system, the Event Coordinator indicates the Event Work
+Order is ready for the Event Supervisor to approve the invoice items.
+The system notifies the Supervisor (email, text or creates an activity
+for the supervisor) that input is required.</td>
+</tr>
+<tr>
+<td>Event Supervisor/<br>reviewEventWorkOrder</td>
+<td>The Event Supervisor uses the system to review the charges against
+the contract for accuracy, charges against itemized invoices from the
+other units (crew, security, parking, catering), ensures applicable
+discounts are applied, and verifies account and billing information. If
+the Supervisor signs off on the Work Order, the Event is ready to be
+invoiced. If the supervisor has issues with the charges, they contact
+the Event Coordinator and request review of the portions in question.</td>
+</tr>
+<tr>
+<td>FS031<br>Establish Event Booking/<br>resolveWorkOrderCharges</td>
+<td>If the supervisor has issues with the charges listed on the Event
+work Order, they contact the Event Coordinator and request they review
+the portions in question. The system sends a notification to the Event
+Coordinator (email, text, activity scheduled) indicating the work order
+is not yet ready for invoicing. </td>
+</tr>
+<tr>
+<td>FS032<br>Establish Event Booking/<br>approveEventWorkOrder</td>
+<td>The Event Supervisor signs off on the event Work Order, indicating
+the Contract ID is ready to be invoiced. The system sends notification
+to the Accounting Department notifying of the completion of the Event
+Work Order creation.</td>
+</tr>
+<tr>
+<td>FS033<br>Establish Event Booking/<br>createChargeList</td>
+<td>The Event Coordinator uses the system to construct a Charge List
+used in Create Event Invoice. The Charge List is based on the Pre-Plan
+and indicates the charges assigned to the specific event and at what
+cost.</td>
+</tr>
+</tbody></table>
+
+</td></tr></tbody></table>
+</td></tr></tbody></table></body></html>

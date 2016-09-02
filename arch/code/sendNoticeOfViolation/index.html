@@ -1,0 +1,137 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Send Notice of Violation</title>
+<link rel="Stylesheet" href="/style/hover.css" type="text/css" />
+</head>
+<body bgcolor="#ddd8c2">
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="650" align="center">
+<tr><td style="padding: 0;" height="130" valign="top"><a href="">
+<img src="/image/iTHeader.jpg" alt="austinea.org - home..." border="0"></a></td></tr>
+<!-- Text Area -->
+<tr><td>
+
+<p style="text-align: center; font-weight: bold;">Send Notice of Violation<br />Use Case Specification</p>
+<p style="text-align: center;">9/17/2015
+
+<!--  IF Printable document option Included  
+<p style="text-align: center;">download <a href="/arch/code/***.docx">printable version</a>
+-- >
+
+<b> Austin Code Logical Data Model </b>
+<!-- Image -  Logical Data Model 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="/arch/code/ldm.jpg"><img src="/arch/code/ldm.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Austin Code Logical Data Model</p>
+</td></tr></table> -->
+
+<!-- USE CASE IMAGE -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/arch/code/sendNoticeOfViolation/ucd.jpg"><img src="/arch/code/sendNoticeOfViolation/ucd.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Send Notice of Violation<br />Use Case Model</span>
+</td></tr></table>
+
+<p><b>Scope: </b>The Austin Code Officer uses the Case Management System to look up case information to verify the Owner. The Austin Code Officer performs additional land history research using TCAD and other systems to verify property information. The Austin Code Officer uses the Case Management System to create a NoticeOfViolation. The Case Management System attaches the NoticeOfViolation to the CodeViolationCase. The Austin Code Officer reviews the NoticeOfViolation, and if approves, the Case Management System routes the NoticeOfViolation to the Austin Code Program Specialist. The Austin Code Program Specialist reviews and updates the NoticeOfViolation with the dateOfNotice (equals date sent in mail) and the CertifiedMailNumber. The Austin Code Program Specialist sends the NoticeOfViolation via regular mail and certified mail. The Austin Code Program Specialist scans and uploads the NoticeOfViolation to the Case Management System for the CodeViolationCase. If the NoticeOfViolation is returned or isn't received by the Owner and the CodeViolationCase is still active or in non-compliance, the Austin Code Officer posts the NoticeOfViolation at the property. The Austin Code Officer takes photographs of the posting and updates the Case Management System. Austin Code Officer may also hand deliver the NoticeOfViolation, which may not always be complete but photographs are always required. The Austin Code Program Specialist scans and uploads confirmation of returned or delivered NoticeOfViolation.
+
+
+<!-- IF INTERACTION OVERVIEW IS INCLUDED 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/arch/code/***.jpg"><img src="/arch/code/***.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Interaction Overview</span>
+</td></tr></table>
+-->
+
+
+<br />
+
+
+<!-- SEQUENCE DIAGRAM  -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/arch/code/sendNoticeOfViolation/sd01.jpg"><img src="/arch/code/sendNoticeOfViolation/sd01.jpg" border="0" alt="" width="600"/></a><br />
+<span style="font-weight: bold;">Send Notice of Violation<br />Sequence Diagram</span>
+</td></tr></table>
+<br />
+
+
+<!-- INTERFACE TABLE  -->
+<table align="center" id="custom">
+<tr><th width="9%">Req#</th><th width="70%">Type/Interface - Requirement Description</th><th>Performance</th></tr>
+<tr>
+<td rowspan="2">001</td>
+<td style="font-weight: bold; background: lightgray;">Case Management System/lookupAndVerifyCaseInformation</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Officer requests the Case Management System to verify that the case information is accurate (i.e., Owner, Tenant, billing, etc.).</td>
+</tr>
+<tr>
+<td rowspan="2">002</td>
+<td style="font-weight: bold; background: lightgray;">Austin Code Officer/performAdditionalLandHistoryResearch</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Officer performs research using the following systems from the CodeResourceList: TCAD, WCAD, ARR GIS Maps, CC&B, GIS Development Map (maps and neighborhood plans), Secretary of State (SOS), Travis County Public Records, Lexis Nexus, Department of Motor Vehicles, Department of Public Safety (DPS), title search, Case Management System, Austin History Center, Google Earth, physical file review (at the OTC), and historic aerial photographs.</td>
+</tr>
+<tr>
+<td rowspan="2">003</td>
+<td style="font-weight: bold; background: lightgray;">Case Management System/createNoticeOfViolation</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Officer requests the Case Management System to create a NoticeOfViolation. The Austin Code Officer provides OwnerInformation and Deficiencies (including complianceTime and requiredResolution). If OwnerInformation is not available, the Austin Code Program Specialist updates the CodeViolationCase.</td>
+</tr>
+<tr>
+<td rowspan="2">004</td>
+<td style="font-weight: bold; background: lightgray;">Case Management System/updateCodeViolationCase</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The user updates the CodeViolationCase with relevant information to the case. If the CodeViolationCase generated a StopWorkOrder, the StopWorkOrder is attached to the CodeViolationCase. 
+The user attaches a copy of the DiagramOfWorkRequired. If a board and secure occurs, a BoardAndSecureBill is attached to the CodeViolationCase by Austin Code Admin. If a sign was removed, the Austin Code Officer adds the sign and information to the CodeViolationCase. Additionally, if CautionBarriers were placed, information on the CautionBarriers is added to the CodeViolationCase. If property information was updated, the Case Management System includes updated property information.
+The user updates the CodeViolationCase with information relevant to the change. This includes, but is not limited to, BoardAndSecureBill, PropertyAbatementBill, FollowUpNotes, photographs (boarded, non-boarded, posted notifications, placards), emails, PhoneCallSummary, other relevant information and inter-department communications. If a ServiceCase is created, the Public Information Office Admin adds notes to the CodeViolationCase including the CitizenNeed and ServicesRecommended for ServiceCase. If CorrectiveResources are identified, the user updates the CodeViolationCase with a list of CorrectiveResources provided (three resources) and notes of contact with Owner/Tenant. HardshipReason is added to the CodeViolationCase.
+If new violations are identified, the user adds the new violation to the Case Management System and the violation is attached to the original CodeComplaintCase. If a TitleSearch is completed, the TitleSearch is added to the CodeViolationCase. If additional LegallyInterestedParties are identified, the parties are added to the CodeViolationCase. If a NoticeOfViolation is generated, the NoticeOfViolation is added to the CodeViolationCase. If posted at the property, photographs are attached to the CodeViolationCase. If the NoticeOfViolation is delivered and a certified mail receipt is received, the receipt is added to the CodeViolationCase. 
+If a citation is created, the Case Management System attaches the citation to the CodeViolationCase. Additionally, the user scans and uploads a copy of the physical citation to the Case Management System. If an AdministrativeHearingWarning is issued, the user updates the CodeViolationCase with information on the issued AdministrativeHearingWarning. 
+If an AdministrativeHearingCitation is issued, the user updates the CodeViolationCase with the AdministrativeHearingCitation, and a LegalCase is created. The user scans and uploads returned liens to the CodeViolationCase. If a lien is filed for the property, the TRVNumber is added to the CodeViolationCase.</td>
+</tr>
+<tr>
+<td rowspan="2">005</td>
+<td style="font-weight: bold; background: lightgray;">Case Management System/updateNoticeOfViolation</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Program Specialist updates the NoticeOfViolation by update the formatting, DateOfNotice and CertifiedMailNumber.</td>
+</tr>
+<tr>
+<td rowspan="2">006</td>
+<td style="font-weight: bold; background: lightgray;">Austin Code Program Specialist/sendNoticeOfViolation</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Program Specialist sends the NoticeOfViolation through regular and certified mail. Certified mail receives a CertifiedMailNumber.</td>
+</tr>
+<tr>
+<td rowspan="2">007</td>
+<td style="font-weight: bold; background: lightgray;">Austin Code Officer/postNoticeOfViolation</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Program Specialist requests the Austin Code Officer to post the NoticeOfViolation at the property by attaching to structure or on a stake. The Austin Code Officer takes photographs of the posting at the property. Photographs may include Owner receiving NoticeOfViolation. Photographs must identify date from NoticeOfViolation and location of posting.</td>
+</tr>
+
+</table>
+
+
+<br />
+
+
+
+
+</td></tr></table>
+</td></tr></table></body></html>

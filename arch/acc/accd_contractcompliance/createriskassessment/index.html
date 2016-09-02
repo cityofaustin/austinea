@@ -1,0 +1,347 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>Create Risk Assessment</title>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  <link rel="Stylesheet" href="/style/email.css" type="text/css"></head><body style="background-color: rgb(221, 216, 194);">
+<!-- Border Background Table -->
+<table style="border-collapse: collapse; background-color: rgb(244, 202, 144);" align="center" border="0" cellpadding="4" cellspacing="0">
+
+  <tbody>
+    <tr>
+      <td><!-- Online reference
+
+<p class="lbl" style="text-align: center;">This report is also <a href="/">available online</a> by following link.</p> --><!-- EA Motto -->
+      <p style="color: gray; font-size: 8pt; text-align: center; font-weight: bold;">Enterprise
+Architecture <i>- aligning IT services with business needs</i></p>
+<!-- Main Body -->
+      <table style="border-collapse: collapse; background-color: rgb(255, 255, 255);" align="center" border="0" cellpadding="5" cellspacing="0" width="650">
+        <tbody>
+          <tr>
+            <td>
+            <p style="text-align: center; font-weight: bold;">Create
+Risk Assessment Use Case Specification</p>
+            <p style="text-align: center; font-weight: bold;"><span style="font-weight: normal;">Last Modified: 6/30/2016</span></p>
+            <p style="text-align: center; font-weight: bold;"><span style="font-weight: normal;"><br>
+            </span></p>
+
+<!-- Image Title -->
+            <table style="border-collapse: collapse;" align="center" border="0" cellpadding="5" cellspacing="0">
+              <tbody>
+                <tr>
+                  <td align="center"><span class="lbl">Select to
+enlarge...</span><br>
+                  <a href="createcontractdeliverable_ucd.jpg"><span style="text-decoration: underline;"></span></a><a href="createriskassessment_ucd.jpg"><span style="text-decoration: underline;"></span></a><a href="createriskassessment_ucd.jpg"><img style="border: 0px solid ; width: 600px; height: 311px;" alt="" src="createriskassessment_ucd.jpg"></a><br>
+                  <span style="font-weight: bold;"><br><br>
+Create Risk
+Assessment Use
+Case Model<br>
+                  <br>
+</span> </td>
+                </tr>
+              </tbody>
+            </table>
+            
+            
+            
+            <p class="MsoNormal"><b>Scope:</b>&nbsp; The Contract Compliance Supervisor uses the system to
+display a Contract in need of a Risk AssessmentAssignment. The
+RiskAssessmentAssignment could be needed because of discernment on the part of
+the Contract Compliance Supervisor or because the system created an
+AssignmentRequest, based upon the Ranking of a previous RiskAssessment. The
+Contract Compliance Supervisor uses the system to display the Contract and
+stores RiskAssessmentAssignmentInfo. The system automatically creates the Risk
+Assessment, entering a default RiskAssessmentStatus of 'Assigned.' On a daily
+basis, the system sends a notification to the Risk Assessment Creator,
+instructing them to begin work on a Risk Assessment for a specific Contract.
+The Risk Assessment Creator uses the system to display the Contract and locate
+the assigned Risk Assessment and change the RiskAssessmentStatus to 'In
+Progress.' The Risk Assessment Creator store RiskAssessmentInformation that
+includes (but is not limited to) Categories, Numbers, Questions, MaxPoints,
+Scores and Comments. The Risk Assessment Creator provides all Answers and
+enters corresponding Scores, using their skills and knowledge. Comparing the
+TotalScore to the MaxPoints allowed, the system provides a Ranking of Low Risk,
+Medium Risk or High Risk. Based upon whether the Ranking is High or Medium, the
+system automatically creates an AssignmentRequest for the Contract Compliance
+Supervisor. Finally, the Risk Assessment Creator changes the
+RiskAssessmentStatus to 'In Review'.<o:p></o:p></p>
+
+
+            <p class="MsoNormal"><o:p></o:p></p>
+
+
+
+            <p class="MsoNormal"><o:p></o:p></p>
+
+
+
+            <p class="MsoNormal"><o:p></o:p></p>
+
+            <p class="MsoNormal"><br>
+            <o:p></o:p></p>
+<!-- Image Title -->
+            <table style="border-collapse: collapse;" align="center" border="0" cellpadding="5" cellspacing="0">
+              <tbody>
+                <tr>
+                  <td align="center"><span class="lbl">Select to
+enlarge...</span><br>
+                  <a href="createcontractdeliverable_sqd.jpg"><span style="text-decoration: underline;"></span></a><a href="createriskassessment_sqd.jpg"><span style="text-decoration: underline;"></span></a><br>
+                  <a href="createriskassessment_sqd.jpg"><span style="text-decoration: underline;"><img style="border: 0px solid ; width: 600px; height: 720px;" alt="" src="createriskassessment_sqd.jpg"></span></a><br>
+<br>
+                  <span style="font-weight: bold;">Create Risk
+Assessment Sequence Diagram</span> </td>
+                </tr>
+              </tbody>
+            </table>
+            <p style="text-align: center; font-weight: bold;"><br>
+            </p>
+            <p style="text-align: center; font-weight: bold;">Table of
+Interface Descriptions</p>
+<!-- Table definition -->
+            <table style="text-align: left; margin-left: auto; margin-right: auto;" id="custom">
+              <tbody>
+                <tr>
+                  <th>Type/Interface</th>
+                  <th>Description</th>
+                </tr>
+                <tr>
+                  <td>Provide Functional Conference and Facility Space/<br><span style="font-weight: bold;">
+displayContract</span><br>
+                  </td>
+                  <td>
+                  <p class="MsoNormal"> </p>
+                  <p class="MsoNormal">The user uses the Contract
+Manager system to locate and
+display a Contract by searching for the Contract Vendor Name or the
+Contract
+Number.<o:p></o:p></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="vertical-align: top;">Provide Functional Conference and Facility Space/<br>
+
+                  <span style="font-weight: bold;">
+createRiskAssessmentAssignment</span></td>
+                  <td style="vertical-align: top;">The Contract Compliance Supervisor uses the system to create a Risk Assessment Assignment.<br>
+                  </td>
+                </tr>
+                <tr>
+<td>Provide Functional Conference and Facility Space/<br><span style="font-weight: bold;">
+storeRiskAssessmentAssignmentInfo</span></td><td>The
+Contract Compliance Supervisor uses the system to store the following
+RiskAssessmentAssignmentInfo for a specific Contract: Next Risk
+Assessment Date and Risk Assessment Creator, Assignment Type (the
+system auto-fills with 'Risk Assessment').<br>
+</td></tr>
+<tr>
+                  <td style="vertical-align: top;">Provide Functional Conference and Facility Space/<br>
+                  <span style="font-weight: bold;">
+createRiskAssessment</span></td>
+                  <td style="vertical-align: top;">
+
+                  <p class="MsoNormal">The system creates a new Contract Risk Assessment, entering
+a ContractID and a Risk Assessment Status (defaulting to Assigned) and
+receiving a new ContractRiskAssessmentID in return.<o:p></o:p></p>
+
+
+
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>Provide Functional Conference and Facility Space/<br><span style="font-weight: bold;">
+notifyRiskAssessmentCreator</span>
+                  </td>
+                  <td>
+                  
+                  <p class="MsoNormal">
+
+</p>
+                  <p class="MsoNormal">
+
+</p>The system daily searches for Contract Risk Assessment Assignments
+to begin within 60 days, 30 days, 5 days and notifies the appropriate
+Risk Assessment Creator assigned to the task. Notification appears in
+the form of a dashboard item displaying all Contract Risk Assessments
+due for a Risk Assessment Creator along with their Next Risk Assessment
+Date. Notification also includes Status (Assigned, In Progress, On
+Hold, In Review). Dashboard does not include Risk Assessments with a
+Status of Published. Dashboard displays Risk Assessments that have a
+Status of 'In Review' in their own portal. Dashboard displays Risk
+Assessments that are past due in their own portal.<p class="MsoNormal"><o:p></o:p></p>
+
+
+
+                  <p class="MsoNormal"><o:p></o:p></p>
+
+                  </td>
+                </tr>
+                
+                <tr>
+                  <td style="vertical-align: top;">Provide Functional
+Conference and Facility Space/<br><span style="font-weight: bold;">
+storeRiskAssessmentInfo</span><br>
+                  </td>
+                  <td style="vertical-align: top;">
+                  <p class="MsoNormal">
+
+</p>
+                  <p class="MsoNormal">
+
+</p>
+                  <p class="MsoNormal">The Risk Assessment
+Creator stores the following ContractRiskAssessmentInfo:
+RiskAssessmentStatus, DateStart, DateEnd. Each RiskAssessment also
+contains multiple questions, contained within the
+ContractRiskAssessmentInfo and each have individual values for:
+Categories (eg. contract specific factors), Numbers, Questions,
+MaxPoints (predetermined), Scores, Comments. The Risk Assessment
+Creator provides all Scores using their skills and knowledge. Other
+information included on a ContractRiskAssessment are TotalMaxPoints
+(the total of all MaxPoints values), as well as a TotalScore (the total
+of all Score values). Both totals are calculated by the system and not
+modifiable. Based upon the TotalScore, a Ranking (Low Risk, Medium
+Risk, High Risk) is automatically calculated by the system: 1-199 =
+Low, 200-399 = Medium, &gt;400 = High. RiskAssessmentStatus equals one
+of the following values: Assigned, In Progress, On Hold, In Review,
+Published. The RiskAssessmentStatus will default on creation to
+'Assigned.' The Risk Assessment Creator changes the
+RiskAssessmentStatus from 'Assigned' to 'In Progress' as they initially
+store the data. Risk Assessments that experience extenuating
+circumstance may be given a RiskAssessmentStatus of 'On Hold.' Risk
+Assessments no longer 'In Progress' (ie. all questions answered) are
+ready for review and are given a RiskAssessmentStatus of 'In Review' by
+the Risk Assessment Creator and now appear in a systemwide dashboard
+item entitled 'In Review', sorted in ascending order by
+NextRiskAssessmentDateDue. Risk Assessments having a completed review
+have their status changed to 'Published', a change made only by the
+Contract Compliance Supervisor (or designee). The amount of time spent
+making changes to a RiskAssessment are automatically stored by the
+system in the AuditTimeLog. The system tracks the Timestamps of when
+the Risk Assessment Creator begins and ends work on a Risk Assessment
+as well as a count of responses edited.The AuditTimeLog stores the
+EditStartTimestamp, EditEndTimestamp, EditDetail (a count of responses
+edited). Additionally, any modifications made to the
+RiskAssessmentStatus are stored in the AuditStatusLog. The
+AuditStatusLog stores the following information: IsRiskAssessment,
+StatusChangedTo, CreationTimestamp. Risk Assessments with a status of
+Published may no longer be modified. Users of the system have the
+capability of running a Risk Assessment Report to see when each Risk
+Assessment was last modified and by whom. The Risk Assessment is
+printable in its entirety by clicking a 'Print Risk Assessment' button.<br>
+<o:p></o:p></p>
+
+
+                  <p class="MsoNormal"><o:p></o:p></p>
+
+
+
+                  <p class="MsoNormal"><o:p></o:p></p>
+
+                  </td>
+                </tr>
+                <tr>
+                  <td style="vertical-align: top;">Provide Functional
+Conference and Facility Space/<br><span style="font-weight: bold;">
+createRiskAssessmentAssignmentRequest</span><br>
+                  </td>
+                  <td style="vertical-align: top;">
+                  <p class="MsoNormal">
+
+</p>
+                  <p class="MsoNormal">
+
+</p>If a Risk Assessment Ranking value is 'Low Risk' the system creates
+an AssignmentRequest and enters the following information: ContractID,
+AssignmentType (Risk Assessment), DateDue (due two years from the
+DatePublished), RequestStatus (Pending). If a Risk Assessment Ranking
+value is 'Medium Risk' the system creates an AssignmentRequest and
+enters the following information: ContractID, AssignmentType (Risk
+Assessment), DateDue (due one year from the DatePublished),
+RequestStatus (Pending). If a Risk Assessment Ranking value is 'High
+Risk' the system creates an AssignmentRequest and enters the following
+information: ContractID, AssignmentType (Risk Assessment), DateDue (due
+six months from the DatePublished), RequestStatus (Pending).<p class="MsoNormal"><o:p></o:p></p>
+
+
+
+                  <p class="MsoNormal"><o:p></o:p></p>
+
+                  </td>
+                </tr>
+                <tr>
+                  <td style="vertical-align: top;">Provide Functional
+Conference and Facility Space/<br><span style="font-weight: bold;">
+createContractReviewAssignmentRequest</span><br>
+                  </td>
+                  <td style="vertical-align: top;">
+                  <p class="MsoNormal">
+
+</p>
+                  <p class="MsoNormal">
+
+</p>
+                  <p class="MsoNormal">If a Risk Assessment
+Ranking value is 'Medium Risk' the system creates an AssignmentRequest
+and enters the following information: ContractID, AssignmentType
+(ContractReview), DateDue (due six months from the DatePublished),
+RequestStatus (Pending). If a Risk Assessment Ranking value is 'High
+Risk' the system creates an AssignmentRequest and enters the following
+information: ContractID, AssignmentType (ContractReview), DateDue (due
+three months from the DatePublished), RequestStatus (Pending).<br>
+<o:p></o:p></p>
+
+
+                  <p class="MsoNormal"><o:p></o:p></p>
+
+
+
+                  <p class="MsoNormal"><o:p></o:p></p>
+
+                  </td>
+                </tr>
+                <tr>
+                  <td style="vertical-align: top;">Provide Functional
+Conference and Facility Space/<br>
+                  <span style="font-weight: bold;">notifyContractComplianceSupervisor</span><br>
+</td>
+                  <td style="vertical-align: top;">
+                  <p class="MsoNormal">
+
+</p>
+
+                  <p class="MsoNormal">The system provides a
+notification to the Contract Compliance Supervisor in the form of a
+dashboard item displaying all AssignmentRequests with a RequestStatus
+value of 'Pending', sorted in ascending order by the DateDue.<br>
+<o:p></o:p></p>
+
+
+
+
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+</body></html>

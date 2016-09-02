@@ -1,0 +1,143 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Update 311 Mobile Application</title>
+<link rel="Stylesheet" href="/style/hover.css" type="text/css" />
+</head>
+<body bgcolor="#ddd8c2">
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="650" align="center">
+<tr><td style="padding: 0;" height="130" valign="top"><a href="">
+<img src="/image/iTHeader.jpg" alt="austinea.org - home..." border="0"></a></td></tr>
+<!-- Text Area -->
+<tr><td>
+
+<p style="text-align: center; font-weight: bold;">Update 311 Mobile Application<br />Use Case Specification</p>
+<p style="text-align: center;">03/24/16
+
+<!--  IF Printable document option Included  
+<p style="text-align: center;">download <a href="/arch/as/***.docx">printable version</a>
+-- >
+
+<b> Animal Services Logical Data Model </b>            
+<!-- Image -  Logical Data Model 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="/arch/as/ldm.jpg"><img src="/arch/as/ldm.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Animal Services Logical Data Model</p>
+</td></tr></table> -->
+
+<!-- USE CASE IMAGE -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/arch/311/update311MobileApplication/ucd.jpg"><img src="/arch/311/update311MobileApplication/ucd.jpg" border="0" alt="" width="620"/></a><br />
+<span style="font-weight: bold;">Update 311 Mobile Application<br />Use Case Model</span>
+</td></tr></table>
+
+<p><b>Scope: </b>MobileApplicationChanges are identified by Business Process Specialists or Client Departments. After review by the Business Process Specialist the MobileApplicationChange is determined to be feasible or not. If not feasible, the update process stops.
+If feasible, the Business Process Specialist creates a MobileAppChangeRequest and the MobileAppChangeRequest is reviewed by the Chain of Command. The Chain of Command reviews MobileAppChangeRequests until 6- days before the go-live date. Once less than 60 days remain till go-live any reviewed MobileAppChangeRequests are automatically deferred to the next update cycle. The Chain of Command determines if the MobileAppChangeRequest is approved, denied, or deferred for a later time. If denied, the update process stops. If deferred, and there are more than 60 days till go-live, the MobileAppChangeRequest is reviewed again by the Chain of Command. If approved, requirements gathering begins. If approved, and the MobileAppChangeRequest is an enhancement (new functionality, improve functionality, not ServiceRequest related) then the MobileAppChangeRequest skips the requirements gathering phase.
+The Business Process Specialist and the Mobile App Lead coordinate gathering Requirements for the MobileAppChangeRequest. As Requirements are gathered the Mobile App Lead determines if the Requirements are sufficient. If the Requirements gathered modify the scope of the approved MobileAppChangeRequest, then the Chain of Command must approve the modified MobileAppChangeRequest per the Review Mobile Application Changes use case. If the Requirements do not modify the scope, and all Requirements are gathered, the Mobile App Lead sends the Requirements to the Vendor. A MobileAppAcceptanceCertificate is sent back to the Chain of Command for signature. Once signed, the requirements gathering phase ends.
+After the MobileAppAcceptanceCertificate is signed the Business Process Specialist, Chain of Command, Mobile App Lead, and Vendor begin preparing for mobile application testing. During the preparation phase the Vendor updates the mobile application (either Test or Production), the Mobile App Lead requests services from the appropriate work groups at Austin 311, and the Business Process Specialists complete the requested services.
+When the Vendor completes the mobile application updates and returns the mobile application to the Mobile App Lead testing begins. The Mobile App Lead sends MobileAppTestPlans to Testers who complete the test plans. The Mobile App Lead then reviews the tests to determine if additional testing is required, the tests failed, or tests passed. If additional testing is required, the Mobile App Lead modifies the MobileAppTestPlans and resends to the Testers. If failed, the Chain of Command notifies the Vendor and the preparation/testing cycle continues until the tests pass. If passed, the Vendor sends a MobileAppAcceptanceCertificate. The Chain of Command signs the MobileAppAcceptanceCertificate and returns to the Vendor. The preparation/testing cycle continues at least twice, for the Test and Production mobile application. A third cycle occurs if post go-live changes are required (usually reserved for minor changes that do not impact pass/failure of a test). Once the Production tests are complete, passed, and the MobileAppAcceptanceCertificate is signed and returned to the Vendor, post go-live tasks begin.
+Post go-live tasks include the Business Process Specialist gathering Feedback from Client Department, the Mobile App Lead conducting a lessons learned meeting to gather Feedback. If any Feedback is identified the Respond to 311 Feedback use case is initiated. The Chain of Command then negotiates the next go-live date for the mobile application update, and the process restarts with identifying MobileAppChanges.  
+
+
+
+<!-- IF INTERACTION OVERVIEW IS INCLUDED -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/arch/311/update311MobileApplication/io1.jpg"><img src="/arch/311/update311MobileApplication/io1.jpg" border="0" alt="" width="600"/></a><br />
+<span style="font-weight: bold;">Interaction Overview</span>
+</td></tr></table>
+
+
+<!-- ACTIVITY DIAGRAM 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/arch/as/***.jpg"><img src="/as/code/***.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Update 311 Mobile Application<br />Activity Diagram</span>
+</td></tr></table>
+-->
+
+
+<br />
+
+
+<!-- SEQUENCE DIAGRAM                  
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/arch/311/abatePropertyWithContractor/sd01.jpg"><img src="/arch/311/abatePropertyWithContractor/sd01.jpg" border="0" alt="" width="600"/></a><br />
+<span style="font-weight: bold;">Update 311 Mobile Application<br />Sequence Diagram</span>
+</td></tr></table>
+<br />
+--> 
+
+<!-- INTERFACE TABLE  -->
+<table align="center" id="custom">
+<tr><th width="9%">Req#</th><th width="70%">Type/Interface - Requirement Description</th><th>Performance</th></tr>
+<tr>
+<td rowspan="2">001</td>
+<td style="font-weight: bold; background: lightgray;">Identify Mobile Application Changes</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td><a href="/arch/311/identifyMobileApplicationChanges/index.html" target="usecase"> Click to view use case </a></td>
+</tr>
+<tr>
+<td rowspan="2">002</td>
+<td style="font-weight: bold; background: lightgray;">Review Mobile Application Change Requests</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td><a href="/arch/311/reviewMobileApplicationChangeRequests/index.html" target="usecase"> Click to view use case </a></td>
+</tr>
+<tr>
+<td rowspan="2">003</td>
+<td style="font-weight: bold; background: lightgray;">Gather Mobile Service Request Requirements</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td><a href="/arch/311/gatherMobileServiceRequestRequirements/index.html" target="usecase"> Click to view use case </a></td>
+</tr>
+<tr>
+<td rowspan="2">004</td>
+<td style="font-weight: bold; background: lightgray;">Prepare for Mobile App Testing</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td><a href="/arch/311/prepareForMobileAppTesting/index.html" target="usecase"> Click to view use case </a></td>
+</tr>
+<tr>
+<td rowspan="2">005</td>
+<td style="font-weight: bold; background: lightgray;">Test Mobile App Changes</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td><a href="/arch/311/testMobileAppChanges/index.html" target="usecase"> Click to view use case </a></td>
+</tr>
+<tr>
+<td rowspan="2">006</td>
+<td style="font-weight: bold; background: lightgray;">Conduct Mobile App Post Go-Live Tasks</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td><a href="/arch/311/conductMobileAppPostGoLiveTasks/index.html" target="usecase"> Click to view use case </a></td>
+</tr>
+<tr>
+
+
+
+
+
+</table>
+
+
+<br />
+
+
+
+
+</td></tr></table>
+</td></tr></table></body></html>

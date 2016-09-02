@@ -1,0 +1,140 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Identify Corrective Action and Improvement</title>
+<link rel="Stylesheet" href="/style/hover.css" type="text/css" />
+</head>
+<body bgcolor="#ddd8c2">
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="650" align="center">
+<tr><td style="padding: 0;" height="130" valign="top"><a href="">
+<img src="/image/iTHeader.jpg" alt="austinea.org - home..." border="0"></a></td></tr>
+<!-- Text Area -->
+<tr><td>
+
+<p style="text-align: center; font-weight: bold;">Identify Corrective Action and Improvement <br />Use Case Specification</p>
+<p style="text-align: center;">05/17/16
+
+<!--  IF Printable document option Included  
+<p style="text-align: center;">download <a href="/arch/as/***.docx">printable version</a>
+-- >
+
+<b> Animal Services Logical Data Model </b>            
+<!-- Image -  Logical Data Model 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="/arch/as/ldm.jpg"><img src="/arch/as/ldm.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Animal Services Logical Data Model</p>
+</td></tr></table> -->
+
+<!-- USE CASE IMAGE -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/arch/311/identifyCorrectiveActionAndImprovement/ucd.jpg"><img src="/arch/311/identifyCorrectiveActionAndImprovement/ucd.jpg" border="0" alt="" width="600"/></a><br />
+<span style="font-weight: bold;">Identify Corrective Action and Improvement<br />Use Case Model</span>
+</td></tr></table>
+
+<p><b>Scope: </b>An NCCAPAI Case Submitter identifies an NCCAPAICorrectiveAction and creates an NCCAPAICase. NCCAPAICorrectiveActions are identified continuously by Auditors (external or internal), or from customer Feedback that becomes customer impacting. After the NCCAPAICase is created the system routes the NCCAPAICase to the NCCAPAI Owner. TheNCCAPAI Owner reviews the NCCAPAICase, identifies ActionItem(s) to correct the issue, and then assigns the ActionItem(s) to NCCAPAI Action Item Owner(s). The NCCAPAI Action Item Owners complete their ActionItems, attaches Evidence, and completes the ActionItem with their notes and completed date. The system routes the NCCAPAICase back to the NCCAPAI Owner who reviews the NCCAPAICase for completeness, provides their notes, and then routes the NCCAPAICase. If additional work is required for an ActionItem the NCCAPAI Owner assigns the incomplete ActionItem to the NCCAPAI Action Item Owner.
+<br><br>The NCCAPAI Supervisor performs a final review of the NCCAPAICase. If the NCCAPAICase was submitted by an Auditor the NCCAPAICase is forwarded to the Auditor for final review. If the NCCAPAICase was not submitted by an Auditor the NCCAPAICase is closed by the NCCAPAI Supervisor.
+<br><br>The Auditor reviews the NCCAPAICase and determines if the provided Evidence and ActionItems fulfill the requirement for the NCCAPAICase. If not, the Auditor routes the NCCAPAICase to the NCCAPAI Owner for additional work. If the case is complete, the Auditor closes the NCCAPAICase.
+
+
+<!-- IF INTERACTION OVERVIEW IS INCLUDED 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/arch/as/***.jpg"><img src="/as/code/***.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Interaction Overview</span>
+</td></tr></table>
+-->
+
+<!-- ACTIVITY DIAGRAM -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/arch/311/identifyCorrectiveActionAndImprovement/ad01.jpg"><img src="/arch/311/identifyCorrectiveActionAndImprovement/ad01.jpg" border="0" alt="" width="620"/></a><br />
+<span style="font-weight: bold;">Identify Corrective Action and Improvement<br />Activity Diagram</span>
+</td></tr></table>
+
+
+
+<br />
+
+
+<!-- SEQUENCE DIAGRAM              
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/arch/311/abatePropertyWithContractor/sd01.jpg"><img src="/arch/311/abatePropertyWithContractor/sd01.jpg" border="0" alt="" width="600"/></a><br />
+<span style="font-weight: bold;">Identify Corrective Action and Improvement<br />Sequence Diagram</span>
+</td></tr></table>
+<br />
+-->     
+
+<!-- INTERFACE TABLE  -->
+<table align="center" id="custom">
+<tr><th width="9%">Req#</th><th width="70%">Type/Interface - Requirement Description</th><th>Performance</th></tr>
+<tr>
+<td rowspan="2">001</td>
+<td style="font-weight: bold; background: lightgray;">NCCAPAI Case Submitter/Identify NCCAPAI Corrective Action and Create NCCAPAI Case</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The NCCAPAI Case Submitter identifies a CorrectiveAction and creates a NCCAPAICase. The NCCAPAI Case Submitter provides all information for NCCAPAICase. The NCCAPAICase routes to the NCCAPAI Owner. The system notifies the NCCAPAI Supervisor of a new NCCAPAICase. </td>
+</tr>
+<tr>
+<td rowspan="2">002</td>
+<td style="font-weight: bold; background: lightgray;">NCCAPAI Owner/Review Case, Identify Actions Required, Create Actions Items, and Assign to Action Item Owners</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The system routes the NCCAPAICase to the NCCAPAI Owner. The NCCAPAI Owner assigns DueDates for the NCCAPAI and ActionItems, and then assigns the ActionItems to the NCCAPAI Action Item Owners. The system notifies the NCCAPAIAction Item Owners of their assigned ActionItems. If a RootCauseAnalysis is required, the NCCAPAI Owner assigns an ActionItem to complete the RootCauseAnalysis. </td>
+</tr>
+<tr>
+<td rowspan="2">003</td>
+<td style="font-weight: bold; background: lightgray;">NCCAPAI Action Item Owner/Complete Action Item and Update with Notes on Work and Evidence</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The NCCAPAI Action Item Owner completes the ActionItem and includes Notes and Evidence, as necessary. The system notifies the NCCAPAI Owner of the completed ActionItem.
+If a RootCauseAnalysis is required, and assigned to the NCCAPAI Action Item Owner, the NCCAPAI Action Item Owner completes the RootCauseAnalysis.</td>
+</tr>
+<tr>
+<td rowspan="2">004</td>
+<td style="font-weight: bold; background: lightgray;">NCCAPAI Owner/Review Case for Completeness, Update Case, and Assign to Staff</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The NCCAPAI Owner reviews the NCCAPAICase for completeness: all ActionItems completed with necessary relevant Evidence and Notes. If additional work is required on the ActionItems, or new ActionItems are needed, the NCCAPAI Owner routes the NCCAPAICase to the NCCAPAI Action Item Owner(s). </td>
+</tr>
+<tr>
+<td rowspan="2">005</td>
+<td style="font-weight: bold; background: lightgray;">NCCAPAI Supervisor/Review Case, Determine if Case Complete, and if Auditor Review is Needed</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The NCCAPAI Supervisor reviews the NCCAPAICase for completeness and Evidence is attached. If the NCCAPAICase was submitted by an Auditor the NCCAPAICase is sent to the Auditor for final review. If the NCCAPAICase was not submitted by an Auditor the NCCAPAI Supervisor closes the NCCAPAICase.</td>
+</tr>
+<tr>
+<td rowspan="2">006</td>
+<td style="font-weight: bold; background: lightgray;">Auditor/Review Case, Determine if Case Satisfies Audit, and Close Case if Complete</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Auditor reviews the NCCAPAICase for completeness, Evidence is attached, and determines if the ActionItems fulfill the NCCAPAICase's creation reason. If not, the Auditor returns the NCCAPAICase to the NCCAPAI Owner for additional work. If the NCCAPAICase is complete the Auditor closes the NCCAPAICase.</td>
+</tr>
+<tr>
+
+
+
+
+
+</table>
+
+
+<br />
+
+
+
+
+</td></tr></table>
+</td></tr></table></body></html>

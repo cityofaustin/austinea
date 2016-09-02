@@ -1,0 +1,203 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Pay Contractor and Bill Owner</title>
+<link rel="Stylesheet" href="/style/hover.css" type="text/css" />
+</head>
+<body bgcolor="#ddd8c2">
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="650" align="center">
+<tr><td style="padding: 0;" height="130" valign="top"><a href="">
+<img src="/image/iTHeader.jpg" alt="austinea.org - home..." border="0"></a></td></tr>
+<!-- Text Area -->
+<tr><td>
+
+<p style="text-align: center; font-weight: bold;">Pay Contractor and Bill Owner<br />Use Case Specification</p>
+<p style="text-align: center;">09/17/2015
+
+<!--  IF Printable document option Included  
+<p style="text-align: center;">download <a href="/arch/code/***.docx">printable version</a>
+-- >
+
+<b> Austin Code Logical Data Model </b>
+<!-- Image -  Logical Data Model
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="/arch/code/ldm.jpg"><img src="/arch/code/ldm.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Austin Code Logical Data Model</p>
+</td></tr></table>  -->
+
+<!-- USE CASE IMAGE -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/arch/code/payContractorAndBillOwner/ucd.jpg"><img src="/arch/code/payContractorAndBillOwner/ucd.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Pay Contractor and Bill Owner<br />Use Case Model</span>
+</td></tr></table>
+
+<p><b>Scope: </b>A Contractor provides an Austin Code Program Specialist with an invoice detailing the work completed. The Austin Code Program Specialist updates the CodeViolationCase with information on the invoice, and then evaluates the invoice to ensure it aligns with the work requested. If the Contractor is Texas Industries for the Blind and Handicapped (TIBH) (Easter Seals is a subcontractor), and changes in the field create a change to the invoice amount, the Austin Code Program Specialist uses the Case Management System to look up and verify case information. The Austin Code Program Specialist then requests the Austin Code Officer verify that the invoice matches the work completed for the property. If the Austin Code Officer doesn't approve the new amount, the Austin Code Officer requests the Austin Code Program Specialist to request an invoice change from the Contractor. The Austin Code Program Specialist sends the invoice-change request, and the Contractor submits a revised invoice. The Austin Code Program Specialist updates the CodeViolationCase with additional invoice information or revised invoice(s). If an emergency board and secure occurred, the Austin Code Program Specialist requests the Austin Code Officer to approve the invoice and signs as "OK to pay." The Austin Code Program Specialist requests the Austin Code Admin Manager to review and approve the invoice. If approved, the Austin Code Admin Manager sends an InvoiceApprovalMemo to Austin Code Finance and requests payment to the Contractor. Austin Code Finance initiates the Pay Invoice use case. If the property work completed was private, the Austin Code Program Specialist uses the Case Management System to create a BillNotice. If the bill is over $1000 and there isn't a homestead exemption for the property, then a lien is placed on the property (Place Lien on Property use case). The Austin Code Program Specialist requests Austin Code Finance to create a receivable. The Austin Code Finance then issues the bill to the Owner via regular mail.
+
+
+
+<!-- IF INTERACTION OVERVIEW IS INCLUDED 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/arch/code/***.jpg"><img src="/arch/code/***.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Interaction Overview</span>
+</td></tr></table>
+-->
+
+
+<br />
+
+
+<!-- SEQUENCE DIAGRAM  -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/arch/code/payContractorAndBillOwner/sd01.jpg"><img src="/arch/code/payContractorAndBillOwner/sd01.jpg" border="0" alt="" width="600"/></a><br />
+<span style="font-weight: bold;">Pay Contractor and Bill Owner<br />Sequence Diagram</span>
+</td></tr></table>
+<br />
+
+
+<!-- INTERFACE TABLE  -->
+<table align="center" id="custom">
+<tr><th width="9%">Req#</th><th width="70%">Type/Interface - Requirement Description</th><th>Performance</th></tr>
+<tr>
+<td rowspan="2">001</td>
+<td style="font-weight: bold; background: lightgray;">Austin Code Program Specialist/payBill</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>A Contractor delivers a bill to Austin Code via email, post, other departments, etc. for work done on behalf of Austin Code. This might include lawn mowing, securing property, equipment rental, moving, cable, sound proofing, floor channels, etc. The bill will potentially include photos of the work and copies of dump tickets (verifying cubic yards dumped).</td>
+</tr>
+<tr>
+<td rowspan="2">002</td>
+<td style="font-weight: bold; background: lightgray;">Case Management System/updateCodeViolationCase</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The user updates the CodeViolationCase with relevant information to the case. If the CodeViolationCase generated a StopWorkOrder, the StopWorkOrder is attached to the CodeViolationCase.
+The user attaches a copy of the DiagramOfWorkRequired. If a board and secure occurs, a BoardAndSecureBill is attached to the CodeViolationCase by Austin Code Admin. If a sign was removed, the Austin Code Officer adds the sign and information to the CodeViolationCase. Additionally, if CautionBarriers were placed, information on the CautionBarriers is added to the CodeViolationCase. If property information was updated, the Case Management System includes updated property information.
+The user updates the CodeViolationCase with information relevant to the change. This includes, but is not limited to, BoardAndSecureBill, PropertyAbatementBill, FollowUpNotes, photographs (boarded, non-boarded, posted notifications, placards), emails, PhoneCallSummary, other relevant information and inter-department communications. If a ServiceCase is created, the Public Information Office Admin adds notes to the CodeViolationCase including the CitizenNeed and ServicesRecommended for ServiceCase. If CorrectiveResources are identified, the user updates the CodeViolationCase with a list of CorrectiveResources provided (three resources) and notes of contact with Owner/Tenant. HardshipReason is added to the CodeViolationCase.
+If new violations are identified, the user adds the new violation to the Case Management System and the violation is attached to the original CodeComplaintCase. If a TitleSearch is completed, the TitleSearch is added to the CodeViolationCase. If additional LegallyInterestedParties are identified, the parties are added to the CodeViolationCase. If a NoticeOfViolation is generated, the NoticeOfViolation is added to the CodeViolationCase. If posted at the property, photographs are attached to the CodeViolationCase. If the NoticeOfViolation is delivered and a certified mail receipt is received, the receipt is added to the CodeViolationCase.
+If a citation is created, the Case Management System attaches the citation to the CodeViolationCase. Additionally, the user scans and uploads a copy of the physical citation to the Case Management System. If an AdministrativeHearingWarning is issued, the user updates the CodeViolationCase with information on the issued AdministrativeHearingWarning.
+If an AdministrativeHearingCitation is issued, the user updates the CodeViolationCase with the AdministrativeHearingCitation, and a LegalCase is created. The user scans and uploads returned liens to the CodeViolationCase. If a lien is filed for the property, the TRVNumber is added to the CodeViolationCase.
+The Austin Code Officer updates the CodeViolationCase with information concerning Violation extensions, written request, reason for approval/denial, etc.
+If there is a payment then the CodeViolationCase is updated by the user to include the payment.</td>
+</tr>
+<tr>
+<td rowspan="2">003</td>
+<td style="font-weight: bold; background: lightgray;">Austin Code Program Specialist/evaluateBill</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Program Specialist examines the bill to ensure it aligns with the requested work to be performed (DiagramOfWorkRequired and NoticeOfViolation).</td>
+</tr>
+<tr>
+<td rowspan="2">004</td>
+<td style="font-weight: bold; background: lightgray;">Case Management System/lookupAndVerifyCaseInformation</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Officer requests the Case Management System to verify that the case information is accurate (i.e., Owner, Tenant, billing, etc.). CC&B is used to lookup Tenant information and verify property information.</td>
+</tr>
+<tr>
+<td rowspan="2">005</td>
+<td style="font-weight: bold; background: lightgray;">Austin Code Officer/verifyBillDetails</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Officer verifies the bill details such as address, Owner, amount billed, services rendered, cubic yards abated, square footage cut, number of tires removed, sheets of plywood used, sheets of plywood painted, linear feet of fence, emergency response charges, fence renewal, cable charges, etc.</td>
+</tr>
+<tr>
+<td rowspan="2">006</td>
+<td style="font-weight: bold; background: lightgray;">Austin Code Program Specialist/requestContractorChangeInvoice</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Officer requests the Austin Code Program Specialist to contact the Contractor to indicate the bill is faulty.</td>
+</tr>
+<tr>
+<td rowspan="2">007</td>
+<td style="font-weight: bold; background: lightgray;">Contractor/requestContractorChangeInvoice</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>Given the details provided by the Austin Code Officer, the Austin Code Program Specialist explains the perceived issues with the bill and requests a new bill be drafted.</td>
+</tr>
+<tr>
+<td rowspan="2">008</td>
+<td style="font-weight: bold; background: lightgray;">Austin Code Program Specialist/processRevisedBill</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Contractor changes the bill and sends the amended invoice to the Austin Code Program Specialist.</td>
+</tr>
+<tr>
+<td rowspan="2">009</td>
+<td style="font-weight: bold; background: lightgray;">Case Management System/updateCodeViolationCase</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The user updates the CodeViolationCase with relevant information to the case. If the CodeViolationCase generated a StopWorkOrder, the StopWorkOrder is attached to the CodeViolationCase.
+The user attaches a copy of the DiagramOfWorkRequired. If a board and secure occurs, a BoardAndSecureBill is attached to the CodeViolationCase by Austin Code Admin. If a sign was removed, the Austin Code Officer adds the sign and information to the CodeViolationCase. Additionally, if CautionBarriers were placed, information on the CautionBarriers is added to the CodeViolationCase. If property information was updated, the Case Management System includes updated property information.
+The user updates the CodeViolationCase with information relevant to the change. This includes, but is not limited to, BoardAndSecureBill, PropertyAbatementBill, FollowUpNotes, photographs (boarded, non-boarded, posted notifications, placards), emails, PhoneCallSummary, other relevant information and inter-department communications. If a ServiceCase is created, the Public Information Office Admin adds notes to the CodeViolationCase including the CitizenNeed and ServicesRecommended for ServiceCase. If CorrectiveResources are identified, the user updates the CodeViolationCase with a list of CorrectiveResources provided (three resources) and notes of contact with Owner/Tenant. HardshipReason is added to the CodeViolationCase.
+If new violations are identified, the user adds the new violation to the Case Management System and the violation is attached to the original CodeComplaintCase. If a TitleSearch is completed, the TitleSearch is added to the CodeViolationCase. If additional LegallyInterestedParties are identified, the parties are added to the CodeViolationCase. If a NoticeOfViolation is generated, the NoticeOfViolation is added to the CodeViolationCase. If posted at the property, photographs are attached to the CodeViolationCase. If the NoticeOfViolation is delivered and a certified mail receipt is received, the receipt is added to the CodeViolationCase.
+If a citation is created, the Case Management System attaches the citation to the CodeViolationCase. Additionally, the user scans and uploads a copy of the physical citation to the Case Management System. If an AdministrativeHearingWarning is issued, the user updates the CodeViolationCase with information on the issued AdministrativeHearingWarning.
+If an AdministrativeHearingCitation is issued, the user updates the CodeViolationCase with the AdministrativeHearingCitation, and a LegalCase is created. The user scans and uploads returned liens to the CodeViolationCase. If a lien is filed for the property, the TRVNumber is added to the CodeViolationCase.
+The Austin Code Officer updates the CodeViolationCase with information concerning Violation extensions, written request, reason for approval/denial, etc.
+If there is a payment then the CodeViolationCase is updated by the user to include the payment.
+</td>
+</tr>
+<tr>
+<td rowspan="2">010</td>
+<td style="font-weight: bold; background: lightgray;">Austin Code Officer/approveInvoice</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Program Specialist requests the Austin Code Officer to verify the bill received by the Contractor and signs it as "OK to pay."</td>
+</tr>
+<tr>
+<td rowspan="2">011</td>
+<td style="font-weight: bold; background: lightgray;">Austin Code Admin Manager/reviewAndApproveBill</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Program Specialist requests the Austin Code Admin Manager to review and approve processing the payment from the Contractor by verifying that the invoice matches the contract pricing and that the FDU (funding number) matches. If all is correct, the Austin Code Admin Manager signs the invoice approval memo indicating that payment is okay.</td>
+</tr>
+<tr>
+<td rowspan="2">012</td>
+<td style="font-weight: bold; background: lightgray;">Austin Code Finance/payContractor</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Admin Manager forwards the bill and the approval memo to Austin Code Finance.</td>
+</tr>
+<tr>
+<td rowspan="2">013</td>
+<td style="font-weight: bold; background: lightgray;">Case Management System/createBill</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Finance requests the Case Management System create a bill. The BillNotice contains the Contractor, when work done, admin fees, interest charge scale, payment due date, and additional legal actions taken if bill is not paid.</td>
+</tr>
+<tr>
+<td rowspan="2">014</td>
+<td style="font-weight: bold; background: lightgray;">Austin Code Finance/issueBillToOwner</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>Austin Code Finance collects BillInformation, which includes the BillNotice and receivable. The bill is mailed via regular mail to the Property Owner.</td>
+</tr>
+</table>
+
+
+<br />
+
+
+
+
+</td></tr></table>
+</td></tr></table></body></html>

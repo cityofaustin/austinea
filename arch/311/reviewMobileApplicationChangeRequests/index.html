@@ -1,0 +1,131 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Review Mobile Application Change Requests</title>
+<link rel="Stylesheet" href="/style/hover.css" type="text/css" />
+</head>
+<body bgcolor="#ddd8c2">
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="650" align="center">
+<tr><td style="padding: 0;" height="130" valign="top"><a href="">
+<img src="/image/iTHeader.jpg" alt="austinea.org - home..." border="0"></a></td></tr>
+<!-- Text Area -->
+<tr><td>
+
+<p style="text-align: center; font-weight: bold;">Review Mobile Application Change Requests<br />Use Case Specification</p>
+<p style="text-align: center;">03/24/16
+
+<!--  IF Printable document option Included  
+<p style="text-align: center;">download <a href="/arch/as/***.docx">printable version</a>
+-- >
+
+<b> Animal Services Logical Data Model </b>            
+<!-- Image -  Logical Data Model 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="/arch/as/ldm.jpg"><img src="/arch/as/ldm.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Animal Services Logical Data Model</p>
+</td></tr></table> -->
+
+<!-- USE CASE IMAGE -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/arch/311/reviewMobileApplicationChangeRequests/ucd.jpg"><img src="/arch/311/reviewMobileApplicationChangeRequests/ucd.jpg" border="0" alt="" width="620"/></a><br />
+<span style="font-weight: bold;">Review Mobile Application Change Requests<br />Use Case Model</span>
+</td></tr></table>
+
+<p><b>Scope: </b>The Mobile App Lead queries for new, or review pending, MobileAppChangeRequests each week and prepares a MobileAppReviewAgenda for the Chain of Command. The Chain of Command reviews the MobileAppChangeRequests along with the MobileAppGuidelines and ServiceRequestDocumentation to determine how to proceed with the MobileAppChangeRequest. The Chain of Command defers the decision short-term, requires additional information, approves the request, denies the request, or defers the decision long-term. If the decision is deferred short-term the Chain of Command reviews the MobileAppChangeRequest at the next meeting. If more information is required the Chain of Command requests the Business Process Specialist gather more information. The Business Process Specialist meets with the Client Department and gathers extra information. The Business Process Specialist notifies the Mobile App Lead with the new information. If the request is denied the Business Process Specialist sends a denial Notification to the Client Department. If the request is approved the Business Process Specialist sends an approval Notification to the Client Department. If the request is deferred long-term (deferral to next update cycle) the Business Process Specialist sends a deferral Notification to the Client Department. The Mobile App Lead updates the MobileAppChangeRequests with the decision by the Chain of Command, actions taken by the Business Process Specialist, and any new information. If the Chain of Command deferred the request, or required more information, the MobileAppChangeRequest enters a review pending status for review later. If the MobileAppRequest was denied the MobileAppChangeRequest is closed. If approved, the MobileAppChangeRequest moves on to the requirements gathering phase. The review process recurs weekly until 60 calendar days before the last negotiated MobileAppGoLiveDate. Once less than 60 calendar days remain till MobileAppGoLiveDate the review process ends and any new MobileAppRequests will automatically be deferred to the next update cycle. If the MobileAppRequest is for a mobile application enhancement, not ServiceRequestType related, requirements gathering with the Client Department is not required.  
+
+
+
+<!-- IF INTERACTION OVERVIEW IS INCLUDED 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/arch/as/***.jpg"><img src="/as/code/***.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Interaction Overview</span>
+</td></tr></table>
+-->
+
+<!-- ACTIVITY DIAGRAM -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/arch/311/reviewMobileApplicationChangeRequests/ad01.jpg"><img src="/arch/311/reviewMobileApplicationChangeRequests/ad01.jpg" border="0" alt="" width="600"/></a><br />
+<span style="font-weight: bold;">Review Mobile Application Change Requests<br />Activity Diagram</span>
+</td></tr></table>
+
+
+
+<br />
+
+
+<!-- SEQUENCE DIAGRAM                   
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/arch/311/abatePropertyWithContractor/sd01.jpg"><img src="/arch/311/abatePropertyWithContractor/sd01.jpg" border="0" alt="" width="600"/></a><br />
+<span style="font-weight: bold;">Review Mobile Application Change Requests<br />Sequence Diagram</span>
+</td></tr></table>
+<br />
+-->
+
+<!-- INTERFACE TABLE  -->
+<table align="center" id="custom">
+<tr><th width="9%">Req#</th><th width="70%">Type/Interface - Requirement Description</th><th>Performance</th></tr>
+<tr>
+<td rowspan="2">001</td>
+<td style="font-weight: bold; background: lightgray;">Mobile App Lead/Query For Open Mobile Application Change Requests and Prepare for Chain of Command Review</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Project Lead queries for any new, deferred decision, or more information required MobileAppChangeRequest(s), gathers the SRs, prepares the SRs for review by the Chain of Command, and creates a MobileAppReviewAgenda. If necessary, the Project Lead contacts the Business Process Specialist for additional requirements necessary to begin the Chain of Command review. The Project Lead completes task each week in preparation for a weekly Chain of Command review.</td>
+</tr>
+<tr>
+<td rowspan="2">002</td>
+<td style="font-weight: bold; background: lightgray;">Chain of Command/Review Pending Decision Mobile Application Change Requests and Determine Response</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Chain of Command (Process Manager, Client Relations & Information Services Manager, Project Manager, Operations Manager, etc. as required) meets every week and reviews the MobileApplicationChangeRequests per the Agenda created by the Project Lead. The Chain of Command uses MobileAppChangeRequests, MobileAppGuidelines, MobileAppCapabilities, ServiceRequestDocumentation (SR Process Flow, SR Supplemental Specifications). The Chain of Command decides on each pending MobileApplicationChangeRequest: more information required, approved, denied, or deferred: If more information is required, the Chain of Command requests the Business Process Specialist meet with the Client Department, or Stakeholder, to gather additional information for the MobileApplicationChangeRequestSR. If approved, the Chain of Command requests the Business Process Specialist creates/sends an ApprovalMemo to the Client Department and impacted Stakeholders. If denied, the Chain of Command requests the Business Process Specialist creates/sends a DenialMemo to the Client Department and impacted Stakeholders. If deferred, the Chain of Command reviews the MobileApplicationChangeRequest at the next meeting.
+</td>
+</tr>
+<tr>
+<td rowspan="2">003</td>
+<td style="font-weight: bold; background: lightgray;">Business Process Specialist/Meet with Client and Gather Requirements on Mobile Application Change Request</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Business Process Specialist meets with the Client Department, and necessary stakeholders, to gather additional information on the MobileApplicationChangeRequest. The Business Process Specialist invites necessary resources (CSR Configuration Manager, etc.) to assist with gathering information. Once research has been gathered the Business Process Specialist sends the new information to the Project Lead to update the MobileAppChangeRequest.</td>
+</tr>
+<tr>
+<td rowspan="2">004</td>
+<td style="font-weight: bold; background: lightgray;">Business Process Specialist/Create Memo and Distribute to End User Department Regarding Outcome</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Business Process Specialist creates a Notification and distributes to the Client Department and necessary Stakeholders (Chain of Command). The Notification identifies if the MobileAppRequest was approved, denied, or deferred long-term.</td>
+</tr>
+<tr>
+<td rowspan="2">005</td>
+<td style="font-weight: bold; background: lightgray;">Mobile App Lead/Update Mobile Application Change Request With Requirements and Chain of Command Decision</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Mobile App Lead updates the MobileAppChangeRequest(s) with the decision by the Chain of Command. The Mobile App Lead updates the MobileAppChangeRequest with extra information the Business Process Specialist gathered from the Client Department. If the MobileAppChangeRequest required additional information, or was deferred, the Mobile App Lead updates the MobileAppChangeRequest to a review pending status for review at a later date.</td>
+</tr>
+<tr>
+
+
+
+
+
+</table>
+
+
+<br />
+
+
+
+
+</td></tr></table>
+</td></tr></table></body></html>

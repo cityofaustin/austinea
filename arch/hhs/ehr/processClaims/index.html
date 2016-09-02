@@ -1,0 +1,586 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Process Claims</title>
+<link rel="Stylesheet" href="/style/email.css" type="text/css" />
+</head>
+<body bgcolor="#ddd8c2">
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="650" align="center">
+<tr><td style="padding: 0;" height="130" valign="top"><a href="">
+<img src="/image/iTHeader.jpg" alt="austinea.org - home..." border="0"></a></td></tr>
+<!-- Text Area -->
+<tr><td>
+
+<p style="text-align: center; font-weight: bold;">Process Claims<br />Use Case Specification
+
+<!-- Image Title -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/arch/hhs/ehr/processClaims/ucd.jpg"><img src="/arch/hhs/ehr/processClaims/ucd.jpg" border="0" width="600" alt="" /></a><br />
+<span style="font-weight: bold;">Process Claims<br />Use Case Model</span>
+</td></tr></table>
+
+<p><b>Scope: </b>Collects fee for service, posts services for billing, bills Medicaid, bills for large immunization event, bills Medicare immunization, and manually bills outstanding claims. Used to receive payments, update claim status and manage exceptions to include unresolved claims.
+
+<!-- Image Title -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/arch/hhs/ehr/processClaims/io.jpg"><img src="/arch/hhs/ehr/processClaims/io.jpg" border="0" width="600" alt="" /></a><br />
+<span style="font-weight: bold;">Process Claims<br />Interaction Overview</span>
+</td></tr></table>
+
+<br />
+
+<p style="text-align: center; font-weight: bold;">Table of Role Definitions</p>
+<!-- Table definition -->
+<table align="center" id="custom">
+<tr><th>Role</th><th>Description</th></tr>
+<tr>
+<td>MEDREC</td>
+<td>Software application used by STD/TB program to store information about payments collected from public that received services.</td>
+</tr>
+<tr>
+<td>AIMS</td>
+<td>Austin Integrated Management System (AIMS). COA financial system largely using Advantage software to account for collection and revenues for each program or unit.</td>
+</tr>
+<tr>
+<td>TWICES</td>
+<td>Texas-Wide Integrated Client Encounter System (TWICES), this system is used as an electronic medical record for immunization patients and as a vaccine inventory system. Cashier and Clinic Staff records all vaccines received and given to patients served. The system provides reports and detailed information used to bill for Medicaid patients.</td>
+</tr>
+<tr>
+<td>Centralized Billing System (CBS)</td>
+<td>Centralized Billing System (CBS), Unit at the Department of Texas State Health Services (DSHS) that provides clearing house services to Immunization Program.</td>
+</tr>
+<tr>
+<td>Billing System</td>
+<td>The Billing system might be internally managed, or managed by a third party. Currently this is not being done with the current processes.</td>
+</tr>
+<tr>
+<td>DSHS</td>
+<td>Texas Department of State Health Services (DSHS) ftp secure site that provides a file with immunization claims detailed information that COA Health Department IT staff upload into the Medicaid conversion database. </td>
+</tr>
+<tr>
+<td>Medicaid Conversion Database (MCDB)</td>
+<td>MS Access database used to store all immunization claims submitted to health plans and its status.</td>
+</tr>
+<tr>
+<td>Novitasphere Portal</td>
+<td>Medicare web-based portal that allows to verify patient eligibility, claim information and retrieve remittance reports from claims submitted.</td>
+</tr>
+<tr>
+<td>PC-ACE Pro32</td>
+<td>Medicare electronic claim submission and management software.</td>
+</tr>
+<tr>
+<td>MEDCLAIM</td>
+<td>Software application that contains CMS1500 form templates. The immunization staff use it to create manual/paper claims.</td>
+</tr>
+<tr>
+<td>TMHP</td>
+<td>Texas Medicaid Healthcare Partnership (TMHP) - system supports staff in verifying if a patient is Medicaid active or eligible for a particular date of service. Also, the system allow staff to submit claims, appeals and retrieve remittance reports.</td>
+</tr>
+<tr>
+<td>PaySpan Website</td>
+<td>Website used to retrieve remittance reports from billed Medicaid Superior Health Plan patients. The website also sends email notifications to immunization staff when remittance reports are available.</td>
+</tr>
+<tr>
+<td>COA Controller's Website</td>
+<td>Website contains information about deposits into COA accounts that were received and cleared by the bank.</td>
+</tr>
+</table>
+<br />
+
+<!-- Image Title -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/arch/hhs/ehr/processClaims/sd01a.jpg"><img src="/arch/hhs/ehr/processClaims/sd01a.jpg" border="0" width="600" alt="" /></a><br />
+<span style="font-weight: bold;">1 A. Collect Fee for Service <br />Sequence Diagram</span>
+</td></tr></table>
+
+<br />
+
+<!-- Table definition -->
+<p style="text-align: center; font-weight: bold;">Table of Interface and Functional Descriptions</p>
+<table align="center" id="custom">
+<tr><th width="9%">Req#</th><th width="70%">Type/Interface - Requirement Description</th><th>Required Response</th></tr>
+<tr>
+<td rowspan="8">36</td>
+<td style="font-weight: bold; background: lightgray;">Cashier/collectFeeAndProvideReceipt</td>
+<td rowspan="8">Indicate how or if the system aids in process.</td>
+</tr>
+<tr>
+<td>The Cashier collects a fee and provides a receipt for treatment to the customer. The receipt includes type of services, date of service, patient name, clinic, number of doses, type of payment, amount, last four of CC (if CC), check number (if check), cardholder name and phone number.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">MEDREC/recordPayment</td>
+</tr>
+<tr>
+<td>The Cashier uses MEDREC to record payment of the treatment received by the customer. Information includes amount collected, date of service, name of Client, and type of transaction (cash, check, CC).</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Cashier/allocatePaymentToFundingCode</td>
+</tr>
+<tr>
+<td>The Cashier uses AIMS and allocates funds deposited to the funding code for the department that performed the services.</td>
+</tr>
+</table>
+
+<br />
+
+<!-- Image Title -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/arch/hhs/ehr/processClaims/sd01b.jpg"><img src="/arch/hhs/ehr/processClaims/sd01b.jpg" border="0" width="600" alt="" /></a><br />
+<span style="font-weight: bold;">1 B. Post Services for Billing<br />Sequence Diagram</span>
+</td></tr></table>
+
+<br />
+
+<!-- Table definition -->
+<p style="text-align: center; font-weight: bold;">Table of Interface and Functional Descriptions</p>
+<table align="center" id="custom">
+<tr><th width="9%">Req#</th><th width="70%">Type/Interface - Requirement Description</th><th>Required Response</th></tr>
+<tr>
+<td rowspan="8">37</td>
+<td style="font-weight: bold; background: lightgray;">Centralized Billing System (CBS)/attemptToBillMedicaidPlan</td>
+<td rowspan="8">Explain how the billing system operates relevant to TWICES, CBS and TMHP.</td>
+</tr>
+<tr>
+<td>Weekly TWICES sends CBS the claims for for services provided. Eligibility for the patient is verified with TMHP at this time.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Centralized Billing System (CBS)/billMedicaidHealthPlan</td>
+</tr>
+<tr>
+<td>CBS electronically submits Superior Healthplan and TMHP (all non-Superior claims).</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">decrease Communicable Disease Rates/createClaim</td>
+</tr>
+<tr>
+<td>The system uses the treatment and Client information to create an insurance claim.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Billing System/submitClaimForPayment</td>
+</tr>
+<tr>
+<td>The system communicates with the Billing System to submit the insurance claim.</td>
+</tr>
+</table>
+
+<br />
+
+<!-- Image Title -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/arch/hhs/ehr/processClaims/sd01c.jpg"><img src="/arch/hhs/ehr/processClaims/sd01c.jpg" border="0" width="600" alt="" /></a><br />
+<span style="font-weight: bold;">1 C. Bill Medicaid<br />Sequence Diagram</span>
+</td></tr></table>
+
+<br />
+
+<!-- Table definition -->
+<p style="text-align: center; font-weight: bold;">Table of Interface and Functional Descriptions</p>
+<table align="center" id="custom">
+<tr><th width="9%">Req#</th><th width="70%">Type/Interface - Requirement Description</th><th>Required Response</th></tr>
+<tr>
+<td rowspan="8">38</td>
+<td style="font-weight: bold; background: lightgray;">DSHS/provideReconciliationFile</td>
+<td rowspan="8">Explain how the system aids in Medicaid billing done by CBS.</td>
+</tr>
+<tr>
+<td>The IT Staff accesses DSHS FTP site and downloads a reconciliation file (with all claims that had changes). Additionally, the IT Staff cleans up the data (modifies errors in data).</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Medicaid Conversion Database (MCDB)/storeClaimInfo</td>
+</tr>
+<tr>
+<td>The IT Staff extracts Medicaid claims from the reconciliation file, and using SQL inserts table entries for each (or modifies the existing entries). The information included in the table population is Medicaid number, patient name, TWICES number, provider, site, date of claim, summary of payment set to: PENDING. The Billing staff create and store the claim information by populating the following fields: Medicaid number, patient name, TWICES number, provider, site, date of claim, Summary of payment set to: PENDING. In cases where the patient information is missing but a remittance report indicates payment, the Billing Staff will manually create the MCDB record for the patient treatment.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Centralized Billing System (CBS)/sendCBSReports</td>
+</tr>
+<tr>
+<td>Approximately every two weeks, Central Billing System sends hard-copy CBS reports.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">ExcelTrackingLog/storeCBSReportInfo</td>
+</tr>
+<tr>
+<td>The Billing Staff takes the CBS reports and populates the Excel tracking spreadsheet with the CBS claims billed to their plan and claims forwarded by TMHP to Managed Care.</td>
+</tr>
+</table>
+
+<br />
+
+<p style="font-weight: bold;">1 D. Bill Plans
+<!-- Table definition -->
+<table align="center" id="custom">
+<tr><th width="9%">Req#</th><th width="70%">Type/Interface - Requirement Description</th><th>Performance</th></tr>
+<tr>
+<td rowspan="2">39</td>
+<td style="font-weight: bold; background: lightgray;">No Use Case Provided/1 D. Bill Plans</td>
+<td rowspan="2">Explain how the system aids in billing commercial healthcare plans.</td>
+</tr>
+<tr>
+<td>The City of Austin does not currently bill commercial healthcare plans for Health and Human Services; however, in the future, we wish to bill commercial healthcare plans.</td>
+</tr>
+</table>
+
+<br />
+
+<!-- Image Title -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/arch/hhs/ehr/processClaims/sd01e.jpg"><img src="/arch/hhs/ehr/processClaims/sd01e.jpg" border="0" width="600" alt="" /></a><br />
+<span style="font-weight: bold;">1 E. Bill for Large Immunization Event<br />Sequence Diagram</span>
+</td></tr></table>
+
+<br />
+
+<!-- Table definition -->
+<p style="text-align: center; font-weight: bold;">Table of Interface and Functional Descriptions</p>
+<table align="center" id="custom">
+<tr><th width="9%">Req#</th><th width="70%">Type/Interface - Requirement Description</th><th>Required Response</th></tr>
+<tr>
+<td rowspan="22">40</td>
+<td style="font-weight: bold; background: lightgray;">reviewPatientConsentAndDemographics</td>
+<td rowspan="22">Explain how the system manages billing for a large immunization events while interfacing with the important state systems such as TMHP among others discussed in the specification.</td>
+</tr>
+<tr>
+<td>The Billing Staff receives the immunization form, which contains insurance number, Medicare number, TWICES number, last, first and middle name, date of birth, sex, address, county, authorization signature, site location, date of service, vaccines received, vaccine lot number, site of injection, and signature of vaccine administrator.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">ExcelTrackingLog/updateClaimInfo</td>
+</tr>
+<tr>
+<td>The Billing Staff uses Excel to record information about all activity and billing for COA Health and Human Services. This spreadsheet carries all relevant information such as billing information, payment information, claims postdates status of billing and with whom the billing occurred, as well as tracking of the paid status of claims. Note: It is desirable for a visual cue to be available to identify claims and their payment status. For Medicare and large events billing contains information such as patient first, middle and last name, date of birth, TWICES #, Medicaid #, Medicare #, address, date of service, location, type of vaccine, if patient donated or not, eligibility verification date, health plan, date claim submitted, if claim submitted electronically or manual, amount billed, status (paid or denied), amount paid or denied, date of payment or denial, comments. For refunds, the tracking logs include clinic (location), patient name, TWICES ID number, Medicaid ID number, date of service, date on which cashier looked up receipt, date receipt received at billing office, date approved refund, date request sent to accounting, date notification sent to patient, name of payee, address, phone and comments. Sometimes date CC refunds are issued at the clinic is also tracked. For checks returned, the tracking log includes check number, payee name, date alternate address was requested, clinic (location), patient name, Medicaid ID number, new address found, date new address provided to City Accounting, payee phone number and comments (includes notes indicating whether the check refund is unclaimed property).</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Novitasphere Portal/verifyPatientActiveForDateOrService</td>
+</tr>
+<tr>
+<td>The Billing Staff uses the TMHP Website to look up Client information. This is done by providing date of service, name, date of birth, and Medicaid ID number (if available). The Website provides health plan, effective dates, benefit plan, medical coverage, date at which approved, known address, county, eligibility through date, and gender.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">PC-ACE Pro32/createRosterSheet</td>
+</tr>
+<tr>
+<td>The Billing Staff uses the PC-ACE Pro32 interface to construct a listing of Clients to be billed to Medicare (Novitas is the current Medicare clearinghouse). The information provided: payerID, providerID, ServiceDate, PointOfService, Type, HCPCS (Healthcare Common Procedure Coding System), VaccineCharge, AdministrationCharge, InsuredID, patient name, sex, birth date, and address. PC-ACE Pro32 provides a confirmation number (assuring transmission). This information is verified by Novitas, and the Novitasphere Portal will indicate information has been verified via the portal.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">PC-ACE Pro32/recordClaimInfo</td>
+</tr>
+<tr>
+<td>PC-ACE Pro32 creates claims for Novitas (the current Medicare clearinghouse).</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Novitasphere Portal/submitClaim</td>
+</tr>
+<tr>
+<td>The Billing staff goes to the NovitasSphere Portal, provides their NPI Number, username, and password. The staff uses the date and time submitted to locate the batch of claims to process. The Billing staff highlights the batch and "submits" the claims.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">MEDCLAIM/createCMS1500Form</td>
+</tr>
+<tr>
+<td>The Billing Staff uses MEDCLAIM software to specify claim information. A file is created per claim and per page (some claims are multi-page). This file is proprietary, reprints require loading the saved file to print. The software writes a disk file that is backed up for future reference. The MEDCLAIM software prints the standard CMS1500 form on pre-formatted paper. If CBS did not bill or placed the claim on hold, and the patient is Medicaid eligible, the Billing Staff will manually create a CMS1500 form.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Billing Staff/mailBillToAppropriateHealthPlan</td>
+</tr>
+<tr>
+<td>The Billing Staff receives signatures from the Medical Director, files a copy of the CMS1500 form, and mails the original to the appropriate health-plan provider. Note: There is a desire to use digital signatures. Today all forms are manually stamped. </td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">TMHP/verifyPatientActiveForDateOrService</td>
+</tr>
+<tr>
+<td>The Billing Staff uses the TMHP Website to look up Client information. This is done by providing date of service, name, date of birth, and Medicaid ID number (if available). The Website provides health plan, effective dates, benefit plan, medical coverage, date at which approved, known address, county, eligibility through date, and gender.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">TMHP/billInitialSubmissionOfTreatment</td>
+</tr>
+<tr>
+<td>The Billing Staff uses TMHP Website and the TEXMEDCONNECT tool, populates claim information with Medicaid ID number, CPT codes, date of service, diagnosis codes, dollar amount per vaccine, the location, provider, and the number of injections (unit). Once claim is successfully submitted, a confirmation screen is printed and filed with the immunization form. Note: It is desired for the system to automatically store images, and attach them to the correct client based on Medicaid number.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Superior Health/billInitialSubmissionOfTreatment</td>
+</tr>
+<tr>
+<td>The Billing Staff uses the Superior Website, populates claim information with Medicaid ID number, CPT codes, date of service, diagnosis codes, dollar amount per vaccine, the location, provider, the number of injections (unit). Once claim is successfully submitted, a confirmation screen is printed and filed with the immunization form. Note: It is desired for the system to automatically store images, and attach them to the correct client based on Medicaid number.</td>
+</tr>
+</table>
+
+<br />
+
+<!-- Image Title -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/arch/hhs/ehr/processClaims/sd01f.jpg"><img src="/arch/hhs/ehr/processClaims/sd01f.jpg" border="0" width="600" alt="" /></a><br />
+<span style="font-weight: bold;">1 F. Bill Medicare Immunization<br />Sequence Diagram</span>
+</td></tr></table>
+
+<br />
+<p class-"lbl">Note: For brevity, we left off previously defined interface descriptions.
+<!-- Table definition -->
+<p style="text-align: center; font-weight: bold;">Table of Interface and Functional Descriptions</p>
+<table align="center" id="custom">
+<tr><th width="9%">Req#</th><th width="70%">Type/Interface - Requirement Description</th><th>Required Response</th></tr>
+<tr>
+<td rowspan="6">41</td>
+<td style="font-weight: bold; background: lightgray;">Billing Staff/reviewPatientConsentAndDemographics</td>
+<td rowspan="6">Explain how the system bills Medicare for Immunization.</td>
+</tr>
+<tr>
+<td>The Billing Staff receives the immunization form, which contains insurance number, Medicare number, TWICES number, last, first and middle name, date of birth, sex, address, county, authorization signature, site location, date of service, vaccines received, vaccine lot number, site of injection, and signature of vaccine administrator.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Novitasphere Portal/verifyEligibilityAndRetrievePatientInformation</td>
+</tr>
+<tr>
+<td>The Billing Staff uses Novitasphere to verify benefits and eligibility of a client. They provide the full name, date of birth, date of service, and if available, Social Security number (which is often the Medicare number).</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Billing Staff/mailPatient</td>
+</tr>
+<tr>
+<td>The Billing Staff uses Word template to format a letter to the specified address provided by the Client requesting their Medicare number. The letter allows for the Client to either reply via hard-copy mail or phone. This can be in either English or Spanish.</td>
+</tr>
+</table>
+
+<br />
+
+<!-- Image Title -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/arch/hhs/ehr/processClaims/sd02.jpg"><img src="/arch/hhs/ehr/processClaims/sd02.jpg" border="0" width="600" alt="" /></a><br />
+<span style="font-weight: bold;">2. Manually Bill Outstanding Claims<br />Sequence Diagram</span>
+</td></tr></table>
+
+<br />
+
+<!-- Table definition -->
+<p style="text-align: center; font-weight: bold;">Table of Interface and Functional Descriptions</p>
+<table align="center" id="custom">
+<tr><th width="9%">Req#</th><th width="70%">Type/Interface - Requirement Description</th><th>Required Response</th></tr>
+<tr>
+<td rowspan="8">42</td>
+<td style="font-weight: bold; background: lightgray;">TMHP/verifyPatientActiveForDateOrService</td>
+<td rowspan="8">If relevant, explain how the system aids in this process.</td>
+</tr>
+<tr>
+<td>The Billing Staff uses the TMHP Website to look up Client information. This is done by providing date of service, name, date of birth, and Medicaid ID number (if available). The Website provides health plan, effective dates, benefit plan, medical coverage, date at which approved, known address, county, eligibility through date, and gender.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">TWICES/confirmTreatmentDetailsAndMedicaidNo</td>
+</tr>
+<tr>
+<td>The Billing Staff looks up the client in TWICES to verify the treatment, date of service, vaccine CPT codes, and customer’s address, legal name and responsible person.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Superior Health/billInitialSubmissionOfTreatment</td>
+</tr>
+<tr>
+<td>The Billing Staff uses the Superior Website, populates claim information with Medicaid ID number, CPT codes, date of service, diagnosis codes, dollar amount per vaccine, the location, provider, the number of injections (unit). Once claim is successfully submitted, a confirmation screen is printed and filed with the immunization form. Note: It is desired for the system to automatically store images, and attach them to the correct client based on Medicaid number.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">TMHP/billInitialSubmissionOfTreatment</td>
+</tr>
+<tr>
+<td>The Billing Staff uses TMHP Website and the TEXMEDCONNECT tool, populates claim information with Medicaid ID number, CPT codes, date of service, diagnosis codes, dollar amount per vaccine, the location, provider, and the number of injections (unit). Once claim is successfully submitted, a confirmation screen is printed and filed with the immunization form. Note: It is desired for the system to automatically store images, and attach them to the correct client based on Medicaid number.</td>
+</tr>
+</table>
+
+<br />
+
+<!-- Image Title -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/arch/hhs/ehr/processClaims/sd03.jpg"><img src="/arch/hhs/ehr/processClaims/sd03.jpg" border="0" width="600" alt="" /></a><br />
+<span style="font-weight: bold;">3. Receive Payments<br />Sequence Diagram</span>
+</td></tr></table>
+
+<br />
+
+<!-- Table definition -->
+<p style="text-align: center; font-weight: bold;">Table of Interface and Functional Descriptions</p>
+<table align="center" id="custom">
+<tr><th width="9%">Req#</th><th width="70%">Type/Interface - Requirement Description</th><th>Required Response</th></tr>
+<tr>
+<td rowspan="14">43</td>
+<td style="font-weight: bold; background: lightgray;">Billing Staff/depositChecksReceived</td>
+<td rowspan="14">Explain how the system aids in our process to receive payments.</td>
+</tr>
+<tr>
+<td>The Billing Staff receives checks in the mail that are accompanied by Remittance Statements (R&amp;S statements/Reports). The Billing Staff makes two copies of the checks—one to track deposits and the other to attach to the report. All the checks received that day are combined into a single deposit, and placed into a secure bank bag. The bag has a deposit slip that includes amount, date, and location (site). The bag has a detachable bag number that is numbered, and the amount and bag number are entered into a two-log file.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Billing Staff/receiveNoticeOfRemittenceReport</td>
+</tr>
+<tr>
+<td>The Billing Staff receives an email from Superior notifying there are payments or denials of payment.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">PaySpan Website/verifyPaymentOfClaims</td>
+</tr>
+<tr>
+<td>The Billing Staff accesses the PaySpan website once or twice a week, and retrieves information-related claims filed with Superior. EOB/payment information can be returned. The Billing Staff makes a copy of the report, and updates a log tracking all remittances.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">TMHP/verifyPaymentOfClaims</td>
+</tr>
+<tr>
+<td>The Billing Staff uses TMHP Website once a week to retrieve information-related claims filed with TMHP. EOB/payment information can be returned. The Billing Staff makes a copy of the report, and updates a log tracking all remittances.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">COA Controller's Website/verifyMoniesRecieved</td>
+</tr>
+<tr>
+<td>The Billing Staff uses the COA Controller's website to verify deposits 24-48 hours after the deposit has been made. They make screen prints of the actual amounts listed.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">AIMS/generateCashReceipt</td>
+</tr>
+<tr>
+<td>The Billing Staff uses the AIMS Website and creates a cash receipt. The Billing Staff provides funding codes, amounts, fiscal year, deposit date, date recorded, and identifies which monies are included in the receipt (EFT/Check number), whether it is Medicaid or Medicare, EFT number, bank transit number, and TMHP remittance number.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">AIMS/approveTransaction</td>
+</tr>
+<tr>
+<td>Authorized Billing Staff verifies the information provided for remittance and deposits and approves the transaction.</td>
+</tr>
+</table>
+
+<br />
+
+<!-- Image Title -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/arch/hhs/ehr/processClaims/sd04.jpg"><img src="/arch/hhs/ehr/processClaims/sd04.jpg" border="0" width="600" alt="" /></a><br />
+<span style="font-weight: bold;">4. Update Claim Status and Manage Exceptions<br />Sequence Diagram</span>
+</td></tr></table>
+
+<br />
+
+<!-- Table definition -->
+<p style="text-align: center; font-weight: bold;">Table of Interface and Functional Descriptions</p>
+<table align="center" id="custom">
+<tr><th width="9%">Req#</th><th width="70%">Type/Interface - Requirement Description</th><th>Required Response</th></tr>
+<tr>
+<td rowspan="16">44</td>
+<td style="font-weight: bold; background: lightgray;">Billing Staff/saveAndPrintRemittanceReports</td>
+<td rowspan="16">Explain how the system manages claims and exceptions in terms of the specified systems.</td>
+</tr>
+<tr>
+<td>The Billing Staff looks up and prints remittance reports from mail and online to determine which claims have been paid and which are outstanding/denied.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Conduct Claim Appeal Process</td>
+</tr>
+<tr>
+<td>See use case specification to <a href="/arch/hhs/ehr/conductClaimAppealProcess/">Conduct Claim Appeal Process</a>.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">TWICES/confirmTreatmentDetailsAndMedicaidNo</td>
+</tr>
+<tr>
+<td>The Billing Staff looks up the client in TWICES to verify the treatment, date of service, vaccine CPT codes, and customer’s address, legal name and responsible person.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Billing Staff/researchRemittanceReportHardCopy</td>
+</tr>
+<tr>
+<td>The Billing Staff looks up the patient information in the remittance reports, and compares the information with what was discovered in the original remittance reports. Additionally, this is cross-checked with the TWICES information (to confirm treatment dates, quantity, and vaccine provided including CPT codes).</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Conduct GAX Refund</td>
+</tr>
+<tr>
+<td>See use case specification <a href="/arch/hhs/ehr/conductGAXRefund/">Conduct GAX Refund</a>.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Cashier/checkIfPatientPaidForService</td>
+</tr>
+<tr>
+<td>The Billing Staff requests the Cashier to review the patient payment status for the date of service. If Cashier discovers payment for that date of service was made, a refund is required. If no payment was received, nothing else is done, and a note is made. If the patient paid, the Cashier makes a copy of the receipt (as well as credit card receipt if applicable) and provides to the billing office.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Medicaid Conversion Database (MCDB)/storeClaimInfo</td>
+</tr>
+<tr>
+<td>The IT Staff extracts Medicaid claims from the reconciliation file, and using SQL inserts table entries for each (or modifies the existing entries). The information included in the table population is Medicaid number, patient name, TWICES number, provider, site, date of claim, Summary of payment set to: PENDING. 
+<p>The Billing staff create and store the claim information by populating the following fields: Medicaid number, patient name, TWICES number, provider, site, date of claim, Summary of payment set to: PENDING. 
+<p>In cases where the patient information is missing but a remittance report indicates payment, the Billing Staff  manually creates the MCDB record for the patient treatment.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Initiate Refund</td>
+</tr>
+<tr>
+<td>See use case specification <a href="/arch/hhs/ehr/initiateRefund/">Initiate Refund</a>.</td>
+</tr>
+</table>
+
+<br />
+
+<!-- Image Title -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/arch/hhs/ehr/processClaims/sd05.jpg"><img src="/arch/hhs/ehr/processClaims/sd05.jpg" border="0" width="600" alt="" /></a><br />
+<span style="font-weight: bold;">5. Manage Unresolved Claims<br />Sequence Diagram</span>
+</td></tr></table>
+
+<br />
+
+<!-- Table definition -->
+<p style="text-align: center; font-weight: bold;">Table of Interface and Functional Descriptions</p>
+<table align="center" id="custom">
+<tr><th width="9%">Req#</th><th width="70%">Type/Interface - Requirement Description</th><th>Required Response</th></tr>
+<tr>
+<td rowspan="12">45</td>
+<td style="font-weight: bold; background: lightgray;">Medicaid Conversion Database (MCDB)/generatePendingStatusClaimsReport</td>
+<td rowspan="12">Explain how the system provides a mechanism by which to submit a claim with the Healthplan Providers (or resubmit a claim).</td>
+</tr>
+<tr>
+<td>The IT Staff uses the Medicaid Conversion Database, and runs a query - an Access database with an Excel spreadsheet output. The Excel spreadsheet contains the Medicaid number, date of service, status (payment summary), and payment action date. The extract is limited by a date range of the fiscal year (October 1 through year to date).</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">IT Staff/sendPendingClaimsReportToBillingStaff</td>
+</tr>
+<tr>
+<td>The IT Staff emails the Pending Status Report (an Excel file) to the Billing Supervisor.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">ExcelTrackingLog/lookupPendingCaseClaimInformation</td>
+</tr>
+<tr>
+<td>The Billing Staff uses the Excel spreadsheet to review Pending Cases (cases unpaid or in appeal and unpaid). The Staff creates a list of the applicable cases to process.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Healthplan Provider/researchClaimAndDiscussSolution</td>
+</tr>
+<tr>
+<td>The Billing Staff uses the Healthplan Provider's website or call center to inquire and verify claim information related to the pending claim/appeal.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Conduct Claim Appeal Process</td>
+</tr>
+<tr>
+<td>See use case specification Conduct Claim Appeal Process</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Decrease Communicable Disease Rates/updateClaimInformation</td>
+</tr>
+<tr>
+<td>This system contains all relevant information such as billing information, payment information, claim posting dates, current status of billing and with whom the billing occurred, as well as tracking of the paid status of claims. Note: It is desirable for a visual cue to be available to easily identify claims and their payment status. The system provides a mechanism by which the user can submit a claim with the Healthplan Providers (or resubmit a claim).</td>
+</tr>
+</table>
+
+<br />
+
+</td></tr></table>
+</td></tr></table></body></html>

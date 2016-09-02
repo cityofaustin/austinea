@@ -1,0 +1,181 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Obtain Leased Space</title>
+<link rel="Stylesheet" href="/style/hover.css" type="text/css" />
+</head>
+<body bgcolor="#ddd8c2">
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="650" align="center">
+<tr><td style="padding: 0;" height="130" valign="top"><a href="">
+<img src="/image/iTHeader.jpg" alt="austinea.org - home..." border="0"></a></td></tr>
+<!-- Text Area -->
+<tr><td>
+
+<p style="text-align: center; font-weight: bold; font-size: 20pt"> Obtain Leased Space<br />Use Case Specification</p>
+<!-- <p style="text-align: center;">10/01/2015 -->
+
+<!--  IF Printable document option Included  
+<p style="text-align: center;">download <a href="/arch/as/***.docx">printable version</a>
+-- >
+
+<b> Animal Shelter Logical Data Model </b>
+<!-- Image -  Logical Data Model -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="/arch/realEstate/RealEstateAcquisitionLDM.jpg"><img src="/arch/realEstate/RealEstateAcquisitionLDM.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Real Estate Acquisition Logical Data Model</p>
+</td></tr></table> 
+
+<!-- USE CASE IMAGE -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/arch/realEstate/obtainLeasedSpace/uc1.jpg"><img src="/arch/realEstate/obtainLeasedSpace/uc1.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;"> Obtain Leased Space <br />Use Case Model</span>
+</td></tr></table>
+
+<p><b>Scope: </b>When a Request for Facility Action form is completed and submitted to the Strategic Facility Governance Board, it is reviewed and when justified, approved. The Client Department contacts the Office of Real Estate Services and assigns a Property Agent to research compatible properties using Third Party Subscription services. Based on the needs identified on the Request for Facility Action, the Property Agent identifies compatible Space Availability and notifies the Client Department to review and determine the best option. The Selected Lease Option is returned to the Property Agent who requests the Appraiser to perform an appraisal to identify Fair Market Value. Once Fair Market value is identified, the Property Agent negotiates a lease agreement with the property owner, obtains City Council approval (when funding needs meet City Council review mandates), and facilitates review by the Legal Department. Once reviewed, the Lease Agreement is reviewed by Quality Assurance and Control for approval to proceed and the Lease Agreement is executed by the Property Agent.
+
+
+
+<!-- IF INTERACTION OVERVIEW IS INCLUDED 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/arch/as/***.jpg"><img src="/arch/as/***.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Interaction Overview</span>
+</td></tr></table>
+-->
+
+
+<br />
+
+
+<!-- SEQUENCE DIAGRAM  -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/arch/realEstate/obtainLeasedSpace/ad01.jpg"><img src="/arch/realEstate/obtainLeasedSpace/ad01.jpg" border="0" alt="" width="600" /></a><br />
+<span style="font-weight: bold;"> Obtain Leased Space <br />Activity Diagram</span>
+</td></tr></table>
+<br />
+
+
+<!-- INTERFACE TABLE  
+<table align="center" id="custom">
+<tr><th width="9%">Req#</th><th width="70%">Type/Interface - Requirement Description</th><th>Performance</th></tr>
+<tr>
+<td rowspan="2">001</td>
+<td style="font-weight: bold; background: lightgray;"> Provide Animal Shelter and Rescue/provideAvailableAnimals </td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Citizen accesses the City of Austin's Pet Adoption website, or sees an available animal on Facebook or other site such as Petango, Petfinder, adopt-a-dog.com, Instagram, etc.</td>
+</tr>
+<tr>
+<td rowspan="2">002</td>
+<td style="font-weight: bold; background: lightgray;">Customer Service/setUpForAdoption</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Citizen contacts Customer Service in person and expresses interest in adopting an animal. NOTE: It is desirable to have this be online instead of in person.</td>
+</tr>
+<tr>
+<td rowspan="2">003</td>
+<td style="font-weight: bold; background: lightgray;">Senior Customer Care Staff/vetPotentialAdoptee</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Senior Customer Care Staff talks with the Adoptee, reviews all notes within the Adoptee's PersonID record. Concerns are raised if the PersonID record has a "no adopt" flag, or shows citations or numerous owner surrenders.</td>
+</tr>
+<tr>
+<td rowspan="2">004</td>
+<td style="font-weight: bold; background: lightgray;">Citizen/clarifyAdoptionIssues</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Citizen responds to questions/concerns raised by the Senior Customer Care Staff.</td>
+</tr>
+<tr>
+<td rowspan="2">005</td>
+<td style="font-weight: bold; background: lightgray;">Citizen/signPetCareAgreement</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>Customer Service provides the Pet Care Agreement for the Citizen to sign. The agreement includes the following fields: </td>
+</tr>
+<tr>
+<td rowspan="2">006</td>
+<td style="font-weight: bold; background: lightgray;">Vet/checkIfAnimalCanBeReleased</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Vet uses the system to examine the animal's information. The Vet conveys pertinent information, and will make a decision as to whether the animal may be released immediately.</td>
+</tr>
+<tr>
+<td rowspan="2">007</td>
+<td style="font-weight: bold; background: lightgray;">Citizen/informOfAnimalHealth</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>Customer Service informs the Citizen that the animal is not currently available for adoption and explains the reason. Often a timeframe is provided for when the animal may be adopted in the future; however, the animal is not "reserved" for the Citizen in any way.</td>
+</tr>
+<tr>
+<td rowspan="2">008</td>
+<td style="font-weight: bold; background: lightgray;">Veterinary Technician/requestGeneralMedicalInformationToProvideToAdopter</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>Customer Service asks the Vet Technician about medical needs or history of an animal in preparation for adoption. Customer Service sometimes requests medications be prepared for an animal that is about to be adopted.</td>
+</tr>
+<tr>
+<td rowspan="2">009</td>
+<td style="font-weight: bold; background: lightgray;">Customer Service/printAdoptionPaperwork</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>Customer Service uses the system to generate an adoption packet, which consists of medical history, rabies certificate and behavioral information.</td>
+<tr>
+<td rowspan="2">010</td>
+<td style="font-weight: bold; background: lightgray;">Citizen/signMedicalSummary</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Citizen reviews all documentation and signs the medical summary indicating they understand the current medical history of the animal, as well as the current health condition of the animal and any behavioral observations.</td>
+</tr>
+<tr>
+<td rowspan="2">011</td>
+<td style="font-weight: bold; background: lightgray;">Provide Animal Rescue and Shelter/addAndUpdatePersonAndAnimalInfo</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>Customer Service/Foster Coordinator/Other users will access the system and add or update person and animal info. They will include information like owner, owner address, pet name, pet breed, pet sex, pet microchip info, rabies certificate information, as well as other important information. If the animal or person is already in the system, Customer Service uses the system to update the information. In the case of Trappers, add the date they signed the Standards of Conduct and the Standard Operating Procedure. In the event of Volunteer Applicant for Trappers, the Outreach Education Team will access the system and provide information from the TrapperApplication to create a PersonInfo record for the Applicant (including verification date and time for the signing of the Standard of Conduct, and the Standard Operating Procedure), if one does not already exist. If a PersonInfo record exists, the Outreach Education Team will update the information as necessary based on the Applicant's information. 
+For spay/neuter, the user modifies the sex of the animal from M/F (male/female) to S/N (spay/neuter), and records the date of surgery, date processed, vet clinic ID (the system maintains a list of all vet clinics on record within the area). Foster Coordinators/Rescue Coordinators create PersonInfo records for Citizens acting/assisting with foster care, and annotate AnimalInfo Records with information indicating Foster Care Providers who have taken ownership of the animals.</td>
+</tr>
+<tr>
+<td rowspan="2">012</td>
+<td style="font-weight: bold; background: lightgray;">Cashier/provideReceiptForPayment</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Citizen pays the current adoption fee (or provides voucher) to the Cashier. The Cashier uses the system to check the person's information to determine if any fees have been waived (or reduced). The Cashier provides a receipt for the monies received. This includes: date, time, amount, type of payment (cash, check or credit), the animal for which the payment is made (the animalID) and the PersonID. NOTE: It is desirable for the POINT OF SALE system to integrate with AIMs to record the money receipt. On reclaim, fees may be waived if the animal is already spayed/neutered and microchipped, or if the owner is expedient in their attempt to reclaim.</td>
+</tr>
+<tr>
+<td rowspan="2">013</td>
+<td style="font-weight: bold; background: lightgray;">Animal Care/deliverAnimalToAdopter</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>Customer Service uses a radio to contact Animal Care and request an animal be brought to the front for adoption. Customer Service provides the Kennel No. where the animal resides, or if multiple animals share a cage, the AnimalId/microchip information.</td>
+</tr>
+
+</table> -->
+
+
+<br />
+
+
+
+
+</td></tr></table>
+</td></tr></table></body></html>

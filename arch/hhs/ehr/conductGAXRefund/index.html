@@ -1,0 +1,85 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Conduct GAX Refund</title>
+<link rel="Stylesheet" href="/style/email.css" type="text/css" />
+</head>
+<body bgcolor="#ddd8c2">
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="650" align="center">
+<tr><td style="padding: 0;" height="130" valign="top"><a href="">
+<img src="/image/iTHeader.jpg" alt="austinea.org - home..." border="0"></a></td></tr>
+<!-- Text Area -->
+<tr><td>
+
+<p style="text-align: center; font-weight: bold;">Conduct GAX Refund<br />Use Case Specification
+
+<!-- Image Title -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/arch/hhs/ehr/conductGAXRefund/ucd.jpg"><img src="/arch/hhs/ehr/conductGAXRefund/ucd.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Conduct GAX Refund<br />Use Case Model</span>
+</td></tr></table>
+
+<p><b>Scope: </b>General Accounting eXpenditures (GAX) refunds are issued when monies have been paid by the City of Austin erroneously and need to be refunded. The Billing Staff completes a GaxRefundRequest, forwards it to Health and Human Services (HHS) Accounting Departmen<a href="index.html"></a>t. The HHS department reviews the request and accesses the AIMS system to mark a specific payment for reversal. The City of Austin's Accounts Payable team verifies the Advantage Information Management System (AIMS) registry entry and ultimately drafts the required refund check.
+
+<!-- Image Title -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/arch/hhs/ehr/conductGAXRefund/sd01.jpg"><img src="/arch/hhs/ehr/conductGAXRefund/sd01.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Conduct GAX Refund<br />Use Case Model</span>
+</td></tr></table>
+<br />
+<!-- Table definition -->
+<p style="text-align: center; font-weight: bold;">Table of Interface and Functional Descriptions</p>
+<table align="center" id="custom">
+<tr><th width="9%">Req#</th><th width="70%">Type/Interface - Requirement Description</th><th>Required Response</th></tr>
+<tr>
+<td rowspan="10"></td>
+<td style="font-weight: bold; background: lightgray;">Billing Staff/completeGAXRefundForm</td>
+<td rowspan="10">We beleive the refunding process to be out of scope of an EHR. However, the contractor may propose innovative solution to aid in the refunding process.</td>
+</tr>
+<tr>
+<td>The Billing Staff completes the GAXRefundform. The information provided is health provider, claim amount, address of health provider, patient, Medicaid ID number, date of service, claim number, check number, date of check, amount of check, date of request, funding code and reason.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">HHS Accounting/processGAXForm</td>
+</tr>
+<tr>
+<td>The Billing Staff makes a copy of the remittance report page(s) where patient and payment(s) appears, the TWICES screen, the TMHP screen and the GAX form copies and stores, and then sends the packet to Health and Human Services Accounting (packet contains everything except TWICES screen).</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">AIMS/recordGAXRefund</td>
+</tr>
+<tr>
+<td>HHS Accounting records the GAX refund information into Austin Integrated Management System (AIMS). Austin Integrated Management System (AIMS). COA financial system largely using Advantage software to account for collection and revenues for each program or unit.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">COA Accounts Payable/reviewGAXRefundInformation</td>
+</tr>
+<tr>
+<td>City of Austin (COA) Accounts Payable uses AIMS to confirm the GAX request information.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">COA Accounts Payable/reviewAndCutCheck</td>
+</tr>
+<tr>
+<td>Central Office Accounting reviews the GAX Refund Request along with all supporting attachments, creates the check and mails it to the health plan specified in the GAX Refund Request.</td>
+</tr>
+</table>
+
+<!-- Table definition
+<table align="center" id="custom">
+<tr><th>Number</th><th>Category</th><th>Description</th><th>Criticality</th></tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table> -->
+
+</td></tr></table>
+</td></tr></table></body></html>

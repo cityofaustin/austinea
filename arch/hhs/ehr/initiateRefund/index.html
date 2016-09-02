@@ -1,0 +1,128 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Initiate Refund</title>
+<link rel="Stylesheet" href="/style/email.css" type="text/css" />
+</head>
+<body bgcolor="#ddd8c2">
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="650" align="center">
+<tr><td style="padding: 0;" height="130" valign="top"><a href="">
+<img src="/image/iTHeader.jpg" alt="austinea.org - home..." border="0"></a></td></tr>
+<!-- Text Area -->
+<tr><td>
+
+<p style="text-align: center; font-weight: bold;">Initiate Refund<br />Use Case Specification
+
+<!-- Image Title -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/arch/hhs/ehr/initiateRefund/ucd.jpg"><img src="/arch/hhs/ehr/initiateRefund/ucd.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Initiate Refund<br />Use case Model</span>
+</td></tr></table>
+
+<p><b>Scope: </b>In certain situations, a Client is due a refund from the City of Austin. Normally this is the result of a customer paying and then the Health Plan Provider also paying the same claim. When this situation occurs, the Billing Staff accesses TWICES, TMHP, PaymentTech (if original payment was via credit card) and verifies the treatment and the amount paid. The Billing Staff completes a COA Request for Refund form and obtains the Billing Supervisor's approval signature. If the refund is cash or check, HHS Accounting prepares and sends a check to the Client. For credit card transactions, the Client returns to the treatment location, offers the credit card used for the original transaction, and the Billing Staff uses the card to reverse the charge via the credit card terminal. Lastly, the Billing Staff modifies the ExcelTrackingLog, reflecting activity with the customer and claim.
+
+<!-- Image Title -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/arch/hhs/ehr/initiateRefund/sd01.jpg"><img src="/arch/hhs/ehr/initiateRefund/sd01.jpg" border="0" width="600" alt="" /></a><br />
+<span style="font-weight: bold;">Initiate Refund<br />Sequence Diagram</span>
+</td></tr></table>
+<br />
+
+<!-- Table definition -->
+<p style="text-align: center; font-weight: bold;">Table of Interface and Functional Descriptions</p>
+<table align="center" id="custom">
+<tr><th width="9%">Req#</th><th width="70%">Type/Interface - Requirement Description</th><th>Required Response</th></tr>
+<tr>
+<td rowspan="24">47</td>
+<td style="font-weight: bold; background: lightgray;">Cashier/checkIfPatientPaidForService</td>
+<td rowspan="24">Explain how the system aids our current process description.</td>
+</tr>
+<tr>
+<td>The Billing Staff requests the Cashier to review the patient payment status for the date of service. If Cashier discovers payment for that date of service was made, a refund is required. If no payment was received, nothing else is done, and a note is made. If the patient paid, the Cashier makes a copy of the receipt (as well as credit card receipt if applicable) and provides to the billing office.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">TWICES/updatePatientFinancialInfo</td>
+</tr>
+<tr>
+<td>If the patient paid for the service and is Medicaid active for the date of service, the Cashier updates eligibility status for each of the vaccines given and populates Medicaid number, effective date and billing name.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">TMHP/verifyPatientActiveForDateOrService</td>
+</tr>
+<tr>
+<td>The Billing Staff uses the TMHP Website to look up Client information. This is done by providing date of service, name, date of birth, and Medicaid ID number (if available). The Website provides health plan, effective dates, benefit plan, medical coverage, date at which approved, known address, county, eligibility through date, and gender.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">confirmTreatmentDetailsAndMedicaidNo</td>
+</tr>
+<tr>
+<td>The Billing Staff looks up the client in TWICES to verify the treatment, date of service, vaccine CPT codes, and customer’s address, legal name and responsible person.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Billing Staff/completeCOARequestForRefundForm</td>
+</tr>
+<tr>
+<td>The Billing Staff completes the COA Request for Refund form with date of request, client info, person to whom the refund issued, payee relationship to patient, City funding code, receipt number, amount to refund, signature and date of signature of the Billing Staff completing the form.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">PaymentTech Website/verifyPayment</td>
+</tr>
+<tr>
+<td>The Billing Supervisor uses the PaymentTech Website to verify that records indicate specific paid card transaction. </td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Billing Staff Supervisor/approveRefundForm</td>
+</tr>
+<tr>
+<td>The Billing Supervisor checks all documents and signs the COA refund form.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">HHS Accounting/processRefundForm</td>
+</tr>
+<tr>
+<td>The Billing Staff makes a copy of the refund form, and files it by clinic and date of submission to include a copy of the TWICES screen. The signed COA Request for Refund form, copies of the receipt, and a TMHP screen print are sent to the Health and Human Services (HHS) Accounting department.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Billing Staff/findAlternateMailingAddress</td>
+</tr>
+<tr>
+<td>The Billing Staff Supervisor requests the staff to research and determine an alternate address.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Billing Staff Supervisor/useNewAddress</td>
+</tr>
+<tr>
+<td>The Billing Staff reviews TWICES and TMHP, makes phone calls to verify most recent address, and ultimately sends an email providing a new address for the payee to the Billing Staff Supervisor.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Billing Staff Supervisor/notifyCityAccountingWithNewAddress</td>
+</tr>
+<tr>
+<td>The Billing Staff Supervisor notifies/replies to email requesting another address, to the City Accounting and HHS Accounting with alternate address information for the payee.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Billing Staff/sendNoticeOfRefundToClientAndCashier</td>
+</tr>
+<tr>
+<td>The Billing Staff creates letters from templates (bilingual), notifying the Client they are due a refund. The letter includes payee name/card holder name, address, patient name, clinic (location), name and address of clinic, amount to be refunded, and the phone and name of Billing Staff with whom they communicate. Additionally, they are requested to return to the clinic with the credit card used on the day of service. The Billing Staff copies the Cashier on the refund notification.</td>
+</tr>
+</table>
+
+<!-- Table definition
+<table align="center" id="custom">
+<tr><th>Number</th><th>Category</th><th>Description</th><th>Criticality</th></tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table> -->
+
+</td></tr></table>
+</td></tr></table></body></html>

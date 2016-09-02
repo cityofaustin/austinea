@@ -1,0 +1,166 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Review Court Case</title>
+<link rel="Stylesheet" href="/style/hover.css" type="text/css" />
+</head>
+<body bgcolor="#ddd8c2">
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="650" align="center">
+<tr><td style="padding: 0;" height="130" valign="top"><a href="">
+<img src="/image/iTHeader.jpg" alt="austinea.org - home..." border="0"></a></td></tr>
+<!-- Text Area -->
+<tr><td>
+
+<p style="text-align: center; font-weight: bold;">Review Court Case<br />Use Case Specification</p>
+<p style="text-align: center;">06/27/2016
+
+<!--  IF Printable document option Included  
+<p style="text-align: center;">download <a href="/arch/code/***.docx">printable version</a>
+-- >
+
+<b> Austin Code Logical Data Model </b>
+<!-- Image -  Logical Data Model 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="/arch/code/ldm.jpg"><img src="/arch/code/ldm.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Austin Code Logical Data Model</p>
+</td></tr></table> -->
+
+<!-- USE CASE IMAGE -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/arch/code/reviewCourtCase/ucd.jpg"><img src="/arch/code/reviewCourtCase/ucd.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Review Court Case<br />Use Case Model</span>
+</td></tr></table>
+
+<p><b>Scope: </b>The Austin Code Legal Coordinator notifies Austin Code Officers of CourtCases on the Docket for the upcoming week. The Austin Code Legal Coordinator requests the Austin Code Officers perform Inspections on the Property. Afterwards, the Austin Code Legal Coordinator creates a Deferral for each CourtCase on the Docket. The Austin Code Legal Coordinator then uses the Case Management System to generate the Docket. The Austin Code Legal Coordinator provides legal case support to the Court including providing the Deferral, Inspection results, and necessary Permits. The Austin Code Legal Coordinator requests updates on the CourtCase from JEMS, if a Municipal CourtCase; or from a Legal Advisor, if a District CourtCase. The Austin Code Legal Coordinator updates the LegalCase in the Case Management System with the Court update. The CodeViolationCase is updated by the system. If the fine is paid by the Defendant, the Austin Code Legal Coordinator closes the LegalCase. LegalCases are only closed once the fine is paid.
+
+
+
+<!-- IF INTERACTION OVERVIEW IS INCLUDED 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/arch/code/***.jpg"><img src="/arch/code/***.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Interaction Overview</span>
+</td></tr></table>
+-->
+
+
+<br />
+
+
+<!-- SEQUENCE DIAGRAM  -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/arch/code/reviewCourtCase/sd01.jpg"><img src="/arch/code/reviewCourtCase/sd01.jpg" border="0" alt="" width="600"/></a><br />
+<span style="font-weight: bold;">Review Court Case<br />Sequence Diagram</span>
+</td></tr></table>
+<br />
+
+
+<!-- INTERFACE TABLE  -->
+<table align="center" id="custom">
+<tr><th width="9%">Req#</th><th width="70%">Type/Interface - Requirement Description</th><th>Performance</th></tr>
+<tr>
+<td rowspan="2">001</td>
+<td style="font-weight: bold; background: lightgray;">Austin Code Legal Coordinator/notifyAustinCodeOfficerOfDocketCases</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Legal Coordinator notifies the Austin Code Officers of CourtCases on the Docket for the week, and provides the relevant CauseNumbers. Notification is sent via email. The Austin Code Legal Coordinator includes a request for an Inspection, as well as any additional information as appropriate to the CourtCase. An email is sent each week, primarily on Mondays.</td>
+</tr>
+<tr>
+<td rowspan="2">002</td>
+<td style="font-weight: bold; background: lightgray;">Austin Code Officer/performInspection</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>If the violation concerns hazardous conditions, the Austin Code Officer applies Personal Protective Equipment (PPE). The Austin Code Officer inspects the Property. The Austin Code Officer inspects from the exterior (initially from the right of way) to the interior (if the interior is accessible and permission has been granted by legally interested party or someone in Care/Control of Property). The Austin Code Officer takes photographs and measurements as needed (hot water temperature, air quality, interior temperature, light meter, ground-fault circuit interrupter, gas meter, carbon monoxide, smoke detector, fences, grass height, driveway and walkways, checks impervious cover, etc.). As needed, the Austin Code Officer performs research to identify the Property Owner, offense, ViolationType, OwnerInformation, and relevant PropertyInformation (GIS system, ARR Site, annexation information, AMANDA permit history, site plan, TCAD/WCAD for OwnerHistory and DeedHistory, CC&B, ZoningHistory, CodeOfOrdinances, etc.). The Austin Code Officer interviews relevant parties. For Waste Hauler Inspection: The Austin Code Officer makes contact with driver, visually inspects vehicle for decals on door, asks driver about awareness requirement for waste hauler license, ensures driver is operating within City of Austin (outside of city is exempt), double checks the Waste Hauler license, checks for safety-equipment violations, driver's license of driver, and takes photos of truck (including both doors and front license plate). If a short-term rental complaint, the Austin Code Officer responds more quickly than other complaints. On Fridays and Saturdays, the Austin Code Officer performs inspection during day, and from 6:00 p.m. - 2:00 a.m. On Sundays, inspections occur from 8:00 a.m. - 12:00 p.m.</td>
+</tr>
+<tr>
+<td rowspan="2">003</td>
+<td style="font-weight: bold; background: lightgray;">Austin Code Legal Coordinator/createDeferral</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Legal Coordinator creates a Deferral for each CourtCase on the Docket, which includes: time frame for compliance, fee association, Responsible Party, Property Address, signature locations, if a final permit is required, who to contact for permit, and contact information for the Deferral.</tr>
+<tr>
+<td rowspan="2">004</td>
+<td style="font-weight: bold; background: lightgray;">Case Management System/createDeferral</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The user uses the system to create a Deferral. The user provides time frame for compliance, fee association, Responsible Party, Property Address, signature locations, if a final permit is required, who to contact for permit, and contact information for the Deferral.</td>
+</tr>
+<tr>
+<td rowspan="2">005</td>
+<td style="font-weight: bold; background: lightgray;">Austin Code Legal Coordinator/provideCourtLegalCaseSupport</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Legal Coordinator is on-site at the court for the hearing. The Austin Code Legal Coordinator provides CourtCase support including updates from Austin Code Officer, pulling up permits, and presenting Deferral as needed.</td>
+</tr>
+<tr>
+<td rowspan="2">006</td>
+<td style="font-weight: bold; background: lightgray;">JEMS/provideCaseUpdate</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Legal Coordinator requests JEMS provide an update on the CourtCase. The Austin Code Legal Coordinator provides the CauseNumber to JEMS.</td>
+</tr>
+<tr>
+<td rowspan="2">007</td>
+<td style="font-weight: bold; background: lightgray;">Legal Advisor/provideCaseUpdate</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Legal Coordinator requests a Legal Advisor from the City of Austin provide an update on a District Court CourtCase. The Austin Code Legal Coordinator provides the CauseNumber.</td>
+</tr>
+<tr>
+<td rowspan="2">008</td>
+<td style="font-weight: bold; background: lightgray;">Case Management System/updateLegalCase</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Legal Coordinator accesses the system and updates the relevant case with updates or follow ups from the BSC hearing (BSCDetermination, Order, etc.). The Austin Code Legal Coordinator updates the LegalCase to include the CauseNumber and final ruling of the case. The Austin Code Administrative Hearing Coordinator updates the LegalCase with the date of the hearing, outcome of hearing, penalty, isComplianceHearingNeeded, if penalty was paid, if penalty needs to be billed, and if the Violator came into compliance.</td>
+</tr>
+<tr>
+<td rowspan="2">009</td>
+<td style="font-weight: bold; background: lightgray;">Case Management System/updateCodeViolationCase</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The user updates the CodeViolationCase with relevant information to the case. If the CodeViolationCase generated a StopWorkOrder, the StopWorkOrder is attached to the CodeViolationCase.
+The user attaches a copy of the DiagramOfWorkRequired. If a board and secure occurs, a BoardAndSecureBill is attached to the CodeViolationCase by Austin Code Admin. If a sign was removed, the Austin Code Officer adds the sign and information to the CodeViolationCase. Additionally, if CautionBarriers were placed, information on the CautionBarriers is added to the CodeViolationCase. If property information was updated, the Case Management System includes updated property information.
+The user updates the CodeViolationCase with information relevant to the change. This includes, but is not limited to, BoardAndSecureBill, PropertyAbatementBill, FollowUpNotes, photographs (boarded, non-boarded, posted notifications, placards), emails, PhoneCallSummary, other relevant information and inter-department communications. If a ServiceCase is created, the Public Information Office Admin adds notes to the CodeViolationCase including the CitizenNeed and ServicesRecommended for ServiceCase. If CorrectiveResources are identified, the user updates the CodeViolationCase with a list of CorrectiveResources provided (three resources) and notes of contact with Owner/Tenant. HardshipReason is added to the CodeViolationCase.
+If new violations are identified, the user adds the new violation to the Case Management System and the violation is attached to the original CodeComplaintCase. If a TitleSearch is completed, the TitleSearch is added to the CodeViolationCase. If additional LegallyInterestedParties are identified, the parties are added to the CodeViolationCase. If a NoticeOfViolation is generated, the NoticeOfViolation is added to the CodeViolationCase. If posted at the property, photographs are attached to the CodeViolationCase. If the NoticeOfViolation is delivered and a certified mail receipt is received, the receipt is added to the CodeViolationCase.
+If a citation is created, the Case Management System attaches the citation to the CodeViolationCase. Additionally, the user scans and uploads a copy of the physical citation to the Case Management System. If an AdministrativeHearingWarning is issued, the user updates the CodeViolationCase with information on the issued AdministrativeHearingWarning.
+If an AdministrativeHearingCitation is issued, the user updates the CodeViolationCase with the AdministrativeHearingCitation, and a LegalCase is created. The user scans and uploads returned liens to the CodeViolationCase. If a lien is filed for the property, the TRVNumber is added to the CodeViolationCase.
+The Austin Code Officer updates the CodeViolationCase with information concerning Violation extensions, written request, reason for approval/denial, etc.
+If there is a payment, then the CodeViolationCase is updated by the user to include the payment.
+
+</td>
+</tr>
+<tr>
+<td rowspan="2">010</td>
+<td style="font-weight: bold; background: lightgray;">Case Management System/closeLegalCase</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The user uses the system to close the LegalCase. LegalCases are only closed once the Penalty has been paid for the LegalCase, or if the case was dismissed.</td>
+</tr>
+
+
+</table>
+
+
+<br/>
+
+
+
+
+</td></tr></table>
+</td></tr></table></body></html>

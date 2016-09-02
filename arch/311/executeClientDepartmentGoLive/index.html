@@ -1,0 +1,146 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Execute Client Department Go Live</title>
+<link rel="Stylesheet" href="/style/hover.css" type="text/css" />
+</head>
+<body bgcolor="#ddd8c2">
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="650" align="center">
+<tr><td style="padding: 0;" height="130" valign="top"><a href="">
+<img src="/image/iTHeader.jpg" alt="austinea.org - home..." border="0"></a></td></tr>
+<!-- Text Area -->
+<tr><td>
+
+<p style="text-align: center; font-weight: bold;">Execute Client Department Go Live<br />Use Case Specification</p>
+<p style="text-align: center;">05/30/16
+
+<!--  IF Printable document option Included  
+<p style="text-align: center;">download <a href="/arch/as/***.docx">printable version</a>
+-- >
+
+<b> Animal Services Logical Data Model </b>            
+<!-- Image -  Logical Data Model 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="/arch/as/ldm.jpg"><img src="/arch/as/ldm.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Animal Services Logical Data Model</p>
+</td></tr></table> -->
+
+<!-- USE CASE IMAGE -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/arch/311/executeClientDepartmentGoLive/ucd.jpg"><img src="/arch/311/executeClientDepartmentGoLive/ucd.jpg" border="0" alt="" width="620"/></a><br />
+<span style="font-weight: bold;">Execute Client Department Go Live<br />Use Case Model</span>
+</td></tr></table>
+
+<p><b>Scope: </b>After all services have been completed, the Client Management Team creates a ServiceLevelAgreement, or updates the ServiceLevelAgreement if one already exists for the Client Department. The Client Management Team meets with the CLient Department to review the ServiceLevelAgreement, services completed (ServiceRequestType, Website, ReferenceMaterial, etc.), and identify a go live date. After the go live date is identified the Client Management Team sends Notification of the go live date. The Client Management Team requests the 311 Command Center notify 311 staff of the go live date. The Client Management Team coordinates the go live by monitoring ServiceRequests, running Reports, and meeting with the Client Department. During the first 24-hours the Client Management Team monitors the Client Department exclusively, and monitors the Client Department for 2 weeks afterwards. After the go live the Client Management Team conducts lessons learned meetings internally with 311 staff and externally with the Client Department. If Feedback is identified during the lessons learned meetings the Create Feedback Request and Triage use case is started. Finally, if the Client Department is new, or adding a new service, the Client Management Team meets with the Client Department to transition the Client Department to an operational mode. The ClientProject is completed.  
+
+
+
+<!-- IF INTERACTION OVERVIEW IS INCLUDED 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/arch/as/***.jpg"><img src="/as/code/***.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Interaction Overview</span>
+</td></tr></table>
+-->
+
+<!-- ACTIVITY DIAGRAM -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/arch/311/executeClientDepartmentGoLive/ad01.jpg"><img src="/arch/311/executeClientDepartmentGoLive/ad01.jpg" border="0" alt="" width="600"/></a><br />
+<span style="font-weight: bold;">Execute Client Department Go Live<br />Activity Diagram</span>
+</td></tr></table>
+
+
+
+<br />
+
+
+<!-- SEQUENCE DIAGRAM             
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/arch/311/abatePropertyWithContractor/sd01.jpg"><img src="/arch/311/abatePropertyWithContractor/sd01.jpg" border="0" alt="" width="600"/></a><br />
+<span style="font-weight: bold;">Execute Client Department Go Live<br />Sequence Diagram</span>
+</td></tr></table>
+<br />
+-->
+
+<!-- INTERFACE TABLE  -->
+<table align="center" id="custom">
+<tr><th width="9%">Req#</th><th width="70%">Type/Interface - Requirement Description</th><th>Performance</th></tr>
+<tr>
+<td rowspan="2">001</td>
+<td style="font-weight: bold; background: lightgray;">Client Management Team/Create SLA or Modify SLA</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Client Management Team creates a ServiceLevelAgreement, if one doesn't exist already. If a ServiceLevelAgreement exists the Client Management Team updates the ServiceLevelAgreement.</td>
+</tr>
+<tr>
+<td rowspan="2">002</td>
+<td style="font-weight: bold; background: lightgray;">Client Management Team/Review Services Completed, SLA, Sign SLA, Identify Go-Live, and Send Notification</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Client Management Team meets with the Client Department to review the Services completed (SRs created, Reports, etc.), review ServiceLevelAgreement and identifies a go live date for the ClientProject. Go lives occur during the week (Wednesday or Thursday) at start of ClientBusinessDay. The Client Management Team sends a Notification (email) to the internal Austin 311 Staff (based on the scope of the ClientProject) and requests the 311 Command Center to post an IntranetUpdate with the go live date and a description (Scope) of the ClientProject. The Client Management Team sends a calendar invite to the Client Department for the go live date (sent immediately after GoLiveDate identified). Notification of go live date occurs 24 hours before go live.</td>
+</tr>
+<tr>
+<td rowspan="2">003</td>
+<td style="font-weight: bold; background: lightgray;">311 Command Center/Notify Staff of Go-Live</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The 311 Command Center notifies 311 staff of the go live.</td>
+</tr>
+<tr>
+<td rowspan="2">004</td>
+<td style="font-weight: bold; background: lightgray;">Client Management Team/Coordinate Go-Live</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Client Management Team coordinates the go live on the go live date. If a new Client Department the Client Management Team is available on site to assist the Client Department. If an existing Client Department, modification to an existing services, or the Client Department doesn't require the Client Management Team on site, then the Client Management Team coordinates the go live remotely. The Client Management Team actively checks ReferenceMaterials, ServiceRequests, PhoneRouting is correct, checks for related ServiceRequest311Feedback requests. The Client Management Team contacts the 311 Command Center or other Client Management Teams to determine if any issues have been identified. Go live lasts 1 business day (may be shorter depending on complexity of Scope). During go live the Client Management Team sends a morning, mid-day (if needed), and end of day Notification (ServiceRequest numbers, PhoneRouting numbers, Feedback received, and Client Management Team contact information and availability). The Client Management Team monitors the Client Department for at least 1 business week (5 business days). Heightened monitoring may last longer based on the Scope of the Client Department and Services. The Client Management Team follows up with the Client Department to determine if they've experienced any issues since go live, collects Feedback, and monitors other completed Services for issues. </td>
+</tr>
+<tr>
+<td rowspan="2">005</td>
+<td style="font-weight: bold; background: lightgray;">Client Management Team/Conduct Lessons Learned Meeting</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Client Management Team schedules a lessons learned meeting with Internal Staff. The Client Management Team solicits Feedback and reviews any submitted Feedback from Internal Staff. Lessons learned meeting is scheduled within 2 weeks of go live. The Client Management Team schedules a lessons learned meeting with the Client Department. The Client Management Team collects statistics on the Client Department go live (ServiceRequest numbers, etc.). The Client Management Team solicits Feedback and reviews any submitted Feedback from the Client Department. LessonsLearnedMeeting is scheduled within 2 weeks of go live. </td>
+</tr>
+<tr>
+<td rowspan="2">006</td>
+<td style="font-weight: bold; background: lightgray;">Create Feedback Request and Triage</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td><a href="/arch/311/createFeedbackRequestAndTriage/index.html" target="usecase"> Click to view use case </a></td>
+</tr>
+<tr>
+<td rowspan="2">007</td>
+<td style="font-weight: bold; background: lightgray;">Client Management Team/Transition Client Department to Operational Mode</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Client Management Team conducts a transition meeting with the Client Department to transition from the project phase to an operational phase. The reviews OperationalProcedures with the Client Department (requesting services, notification, etc.). Additionally, the identifies a RecurringMeeting time with the Client Department.</td>
+</tr>
+<tr>
+
+
+
+
+
+</table>
+
+
+<br />
+
+
+
+
+</td></tr></table>
+</td></tr></table></body></html>

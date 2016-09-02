@@ -1,0 +1,149 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Issue Lodging License</title>
+<link rel="Stylesheet" href="/style/hover.css" type="text/css" />
+</head>
+<body bgcolor="#ddd8c2">
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="650" align="center">
+<tr><td style="padding: 0;" height="130" valign="top"><a href="">
+<img src="/image/iTHeader.jpg" alt="austinea.org - home..." border="0"></a></td></tr>
+<!-- Text Area -->
+<tr><td>
+
+<p style="text-align: center; font-weight: bold;">Issue Lodging License<br />Use Case Specification</p>
+<p style="text-align: center;">10/30/2015
+
+<!--  IF Printable document option Included  
+<p style="text-align: center;">download <a href="/arch/code/***.docx">printable version</a>
+-- >
+
+<b> Austin Code Logical Data Model </b>
+<!-- Image -  Logical Data Model 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="/arch/code/ldm.jpg"><img src="/arch/code/ldm.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Austin Code Logical Data Model</p>
+</td></tr></table> -->
+
+<!-- USE CASE IMAGE -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/arch/code/issueLodgingLicense/ucd.jpg"><img src="/arch/code/issueLodgingLicense/ucd.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Issue Lodging License<br />Use Case Model</span>
+</td></tr></table>
+
+<p><b>Scope: </b>A Lodging Business receives a LodgingLicenseApplication from an Austin Code Officer. Alternatively, the Lodging Business contacts Austin 311 and requests a LodgingLicenseApplication. Austin 311 asks the Austin Code Program Specialist to provide the LodgingLicenseApplication to the Lodging Business. The Lodging Business then completes the LodgingLicenseApplication. The Lodging Business submits the LodgingLicenseApplication to the Austin Code Program Specialist for processing. The Austin Code Program Specialist creates a LodgingLicense in the Case Management System, and then creates a LodgingLicenseInvoice and sends to the Lodging Business. The Lodging Business either submits a Check to Austin Code Finance by mail or the Lodging Business submits a Check to the Austin Code Program Specialist. If by mail, the Austin Code Finance begins the Process Payment use case; otherwise, the Austin Code Program Specialist records the payment and begins the Process Payment use case. After payment is received, the Austin Code Program Specialist uses the Case Management System to print the LodgingLicense. The Austin Code Program Specialist mails the LodgingLicense to the Lodging Business, and the Inspect Lodging Business use case is initiated.
+
+
+
+<!-- IF INTERACTION OVERVIEW IS INCLUDED 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/arch/code/***.jpg"><img src="/arch/code/***.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Interaction Overview</span>
+</td></tr></table>
+-->
+
+
+<br />
+
+
+<!-- SEQUENCE DIAGRAM  -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/arch/code/issueLodgingLicense/sd01.jpg"><img src="/arch/code/issueLodgingLicense/sd01.jpg" border="0" alt="" width="600"/></a><br />
+<span style="font-weight: bold;">Issue Lodging License<br />Sequence Diagram</span>
+</td></tr></table>
+<br />
+
+
+<!-- INTERFACE TABLE  -->
+<table align="center" id="custom">
+<tr><th width="9%">Req#</th><th width="70%">Type/Interface - Requirement Description</th><th>Performance</th></tr>
+<tr>
+<td rowspan="2">001</td>
+<td style="font-weight: bold; background: lightgray;">Lodging Business/completeLodgingLicenseApplication</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>If in person, the Austin Code Officer provides a LodgingLicenseApplication and requests the Lodging Business to complete and submit it; otherwise, the Lodging Business completes the application that the Austin Code program Specialist emailed them.</td>
+</tr>
+<tr>
+<td rowspan="2">002</td>
+<td style="font-weight: bold; background: lightgray;">Austin 311/provideLodgingLicenseApplication</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Lodging Business contacts Austin 311 and requests a LodgingLicenseApplication be sent to them. They provide their name, phone number, email and physical address.</td>
+</tr>
+<tr>
+<td rowspan="2">003</td>
+<td style="font-weight: bold; background: lightgray;">Austin Code Program Specialist/provideLodgingLicenseApplication</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Program Specialist emails the LodgingLicenseApplication to the Lodging Business.</td>
+</tr>
+<tr>
+<td rowspan="2">004</td>
+<td style="font-weight: bold; background: lightgray;">Austin Code Program Specialist/processLodgingLicenseApplication</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Lodging Business completes the application and emails it to the Austin Code Program Specialist. They provide the following information: establishment address, phone number, owner info, manager info, billing info, type (hotel, motel, rooming house or boarding house) and number of rooms.</td>
+</tr>
+<tr>
+<td rowspan="2">005</td>
+<td style="font-weight: bold; background: lightgray;">Case Management System/createLodgingLicense</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Program Specialist uses the Case Management System to create the LodgingLicense. They provide the following information: establishment address, phone number, owner info, manager info, billing info, type (hotel, motel, rooming house or boarding house) and number of rooms.</td>
+</tr>
+<tr>
+<td rowspan="2">006</td>
+<td style="font-weight: bold; background: lightgray;">Austin Code Program Specialist/createLodgingLicenseInvoiceAndSendToLodgingBusiness</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Program Specialist uses the Case Management System to generate an invoice. The invoice is sent to the Lodging Business via email or US Postal System (depending how the original application was submitted). The invoice includes the following information: establishment address, phone number, owner info, manager info, billing info, number of rooms, case number, current date, type (hotel, motel, rooming house or boarding house), expiration date, and the license cost.</td>
+</tr>
+<tr>
+<td rowspan="2">007</td>
+<td style="font-weight: bold; background: lightgray;">Austin Code Program Specialist/recordPaymentReceived</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Program Specialist records the BillPayment (invoice) within the Case Management System. The Austin Code Program Specialist returns a receipt.</td>
+</tr>
+<tr>
+<td rowspan="2">008</td>
+<td style="font-weight: bold; background: lightgray;">Case Management System/printLodgingLicense</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Program Specialist uses the Case Management System to print the LodgingLicense.</td>
+</tr>
+<tr>
+<td rowspan="2">009</td>
+<td style="font-weight: bold; background: lightgray;">Austin Code Program Specialist/sendLodgingLicensetoLodgingBusiness</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Program Specialist uses the US Postal Service to send the printed LodgingLicense to the billing address provided with the application information.</td>
+</tr>
+
+</table>
+
+
+<br />
+
+
+
+
+</td></tr></table>
+</td></tr></table></body></html>

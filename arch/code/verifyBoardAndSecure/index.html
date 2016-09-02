@@ -1,0 +1,120 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Verify Board and Secure</title>
+<link rel="Stylesheet" href="/style/hover.css" type="text/css" />
+</head>
+<body bgcolor="#ddd8c2">
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="650" align="center">
+<tr><td style="padding: 0;" height="130" valign="top"><a href="">
+<img src="/image/iTHeader.jpg" alt="austinea.org - home..." border="0"></a></td></tr>
+<!-- Text Area -->
+<tr><td>
+
+<p style="text-align: center; font-weight: bold;">Verify Board and Secure<br />Use Case Specification</p>
+<p style="text-align: center;">02/22/16
+
+<!--  IF Printable document option Included  
+<p style="text-align: center;">download <a href="/arch/as/***.docx">printable version</a>
+-- >
+
+<b> Animal Services Logical Data Model </b>            
+<!-- Image -  Logical Data Model 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="/arch/as/ldm.jpg"><img src="/arch/as/ldm.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Animal Services Logical Data Model</p>
+</td></tr></table> -->
+
+<!-- USE CASE IMAGE -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/arch/code/verifyBoardAndSecure/ucd.jpg"><img src="/arch/code/verifyBoardAndSecure/ucd.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Verify Board and Secure<br />Use Case Model</span>
+</td></tr></table>
+
+<p><b>Scope: </b>After the board and secure, if a BoardAndSecureBill hasn't been received before the mandated notification, the Austin Code Program Specialist requests the Contractor provide a bill. The Austin Code Program Specialist requests the Austin Code Officer verify the board and secure. The Austin Code Program Specialist notifies the Owner of the board and secure through certified and regular mail. The Austin Code Officer posts the NoticeOfViolation within 10 days of work being completed and takes photographs of the posting.
+
+
+
+<!-- IF INTERACTION OVERVIEW IS INCLUDED 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/arch/as/***.jpg"><img src="/as/code/***.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Interaction Overview</span>
+</td></tr></table>
+-->
+
+
+<br />
+
+
+<!-- SEQUENCE DIAGRAM  -->                 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/arch/code/verifyBoardAndSecure/sd01.jpg"><img src="/arch/code/verifyBoardAndSecure/sd01.jpg" border="0" alt="" width="600"/></a><br />
+<span style="font-weight: bold;">Verify Board and Secure<br />Sequence Diagram</span>
+</td></tr></table>
+<br />
+
+
+<!-- INTERFACE TABLE  -->
+<table align="center" id="custom">
+<tr><th width="9%">Req#</th><th width="70%">Type/Interface - Requirement Description</th><th>Performance</th></tr>
+<tr>
+<td rowspan="2">001</td>
+<td style="font-weight: bold; background: lightgray;">Contractor/provideBill</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Admin contacts the Contractor and requests the BoardAndSecureBill per the CodeViolationCase's property information.</td>
+</tr>
+<tr>
+<td rowspan="2">002</td>
+<td style="font-weight: bold; background: lightgray;">Austin Code Officer/verifyBoardAndSecureCompletion</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Admin requests the Austin Code Officer verify that the BoardAndSecureBill matches the results of their previous inspection.
+</td>
+</tr>
+<tr>
+<td rowspan="2">003</td>
+<td style="font-weight: bold; background: lightgray;">Austin Code Program Specialist/notifyOwnerOfBoardAndSecure</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Admin is notified of the board or secure by the bill arriving from the Contractor for work completed or the NoticeOfViolation is created. The Austin Code Admin proofreads, prints and mails (regular and certified) notification to the Owner. International Property Maintenance and Local Government Code requires certified mail be sent in concordance with current State of Texas laws.
+ </td>
+</tr>
+<tr>
+<td rowspan="2">004</td>
+<td style="font-weight: bold; background: lightgray;">Austin Code Officer/postBoardAndSecureNotice</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Austin Code Officer posts the NoticeOfViolation at the Property. Alternatively, the NoticeOfViolation may be delivered by hand. Regardless of method posted/delivered the Austin Code Officer takes photographs of the NoticeOfViolation at the Property. </td>
+</tr>
+</td>
+</tr>
+
+
+
+
+
+
+
+
+</table>
+
+
+<br />
+
+
+
+
+</td></tr></table>
+</td></tr></table></body></html>

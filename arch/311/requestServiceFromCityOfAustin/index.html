@@ -1,0 +1,116 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Request Service from City of Austin</title>
+<link rel="Stylesheet" href="/style/hover.css" type="text/css" />
+</head>
+<body bgcolor="#ddd8c2">
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="650" align="center">
+<tr><td style="padding: 0;" height="130" valign="top"><a href="">
+<img src="/image/iTHeader.jpg" alt="austinea.org - home..." border="0"></a></td></tr>
+<!-- Text Area -->
+<tr><td>
+
+<p style="text-align: center; font-weight: bold;">Request Service from City of Austin<br />Use Case Specification</p>
+<p style="text-align: center;">03/22/16
+
+<!--  IF Printable document option Included  
+<p style="text-align: center;">download <a href="/arch/as/***.docx">printable version</a>
+-- >
+
+<b> Animal Services Logical Data Model </b>            
+<!-- Image -  Logical Data Model 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="/arch/as/ldm.jpg"><img src="/arch/as/ldm.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Animal Services Logical Data Model</p>
+</td></tr></table> -->
+
+<!-- USE CASE IMAGE -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/arch/311/requestServiceFromCityOfAustin/ucd.jpg"><img src="/arch/311/requestServiceFromCityOfAustin/ucd.jpg" border="0" alt="" width="620"/></a><br />
+<span style="font-weight: bold;">Request Service from City of Austin<br />Use Case Model</span>
+</td></tr></table>
+
+<p><b>Scope: </b>A Contact is received which triggers the Disposition CRM Use use case, to properly track the work requested by the Citizen. Alternatively, Issues are submitted directly to the system, bypassing the Disposition CRM Use use case. When an Issue is submitted the Intake Request for Service use case begins. The system provides multiple options to submit a ServiceRequest including via Mobile Application, Website, Social Media, etc.
+If the ServiceRequest interfaces with an external system the Create Service Request at Interfaced System use case begins, which sends a COAESBMessage to the Enterprise Service Bus to create the appropriate ServiceRequest in the interfaced system.
+The ServiceRequest is then completed by the CRM User through the Complete Assigned Work use case. The system provides multiple options to completing a ServiceRequest including through an interfaced system via the Enterprise Service Bus, or mobile device. Additionally, the system provides the CRM User with WorkRoutes, TrafficData, Dashboards, and ServiceRequestReports to facilitate completion of the ServiceRequest. After the ServiceRequest is completed the CRM User closes the ServiceRequest, and Citizens lookup the status of their ServiceRequest through the system.  
+
+
+
+<!-- IF INTERACTION OVERVIEW IS INCLUDED -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/arch/311/requestServiceFromCityOfAustin/io1.jpg"><img src="/arch/311/requestServiceFromCityOfAustin/io1.jpg" border="0" alt="" width="600"/></a><br />
+<span style="font-weight: bold;">Interaction Overview</span>
+</td></tr></table>
+
+
+
+<br />
+
+
+<!-- SEQUENCE DIAGRAM                   
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/arch/311/abatePropertyWithContractor/sd01.jpg"><img src="/arch/311/abatePropertyWithContractor/sd01.jpg" border="0" alt="" width="600"/></a><br />
+<span style="font-weight: bold;">Request Service from City of Austin<br />Sequence Diagram</span>
+</td></tr></table>
+<br />
+-->
+
+<!-- INTERFACE TABLE  -->
+<table align="center" id="custom">
+<tr><th width="9%">Req#</th><th width="70%">Type/Interface - Requirement Description</th><th>Performance</th></tr>
+<tr>
+<td rowspan="2">001</td>
+<td style="font-weight: bold; background: lightgray;">Disposition CRM Use</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td><a href="/arch/311/dispositionCRMUse/index.html" target="usecase"> Click to view use case </a></td>
+</tr>
+<tr>
+<td rowspan="2">002</td>
+<td style="font-weight: bold; background: lightgray;">Intake Requests for Service</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td><a href="/arch/311/intakeRequestsForService/index.html" target="usecase"> Click to view use case </a></td>
+</tr>
+<tr>
+<td rowspan="2">003</td>
+<td style="font-weight: bold; background: lightgray;">Create Service Request at Interfaced System</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td><a href="/arch/311/createServiceRequestAtInterfacedSystem/index.html" target="usecase"> Click to view use case </a></td>
+</tr>
+<tr>
+<td rowspan="2">004</td>
+<td style="font-weight: bold; background: lightgray;">Complete Assigned Work</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td><a href="/arch/311/completeAssignedWork/index.html" target="usecase"> Click to view use case </a></td>
+</tr>
+<tr>
+
+
+
+
+
+</table>
+
+
+<br />
+
+
+
+
+</td></tr></table>
+</td></tr></table></body></html>

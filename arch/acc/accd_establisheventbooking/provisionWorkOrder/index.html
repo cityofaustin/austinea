@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>Provision Work Order</title>
+
+
+
+<link rel="Stylesheet" href="/style/email.css" type="text/css"></head><body bgcolor="#ddd8c2">
+<!-- Border Background Table -->
+<table style="border-collapse: collapse; background-color: rgb(244, 202, 144);" align="center" border="0" cellpadding="4" cellspacing="0"><tbody><tr><td>
+<!-- Online reference
+<p class="lbl" style="text-align: center;">This report is also <a href="/">available online</a> by following link.</p> -->
+<!-- EA Motto -->
+<p style="color: gray; font-size: 8pt; text-align: center; font-weight: bold;">Enterprise Architecture <i>- aligning IT services with business needs</i></p>
+<!-- Main Body -->
+<table style="border-collapse: collapse; background-color: rgb(255, 255, 255);" align="center" border="0" cellpadding="5" cellspacing="0" width="650"><tbody><tr><td>
+
+<p style="text-align: center; font-weight: bold;">Provision Work Order Use Case Specification</p>
+
+<!-- Image Title -->
+<table style="border-collapse: collapse;" align="center" border="0" cellpadding="5" cellspacing="0"><tbody><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br>
+<a href="provisionWorkOrderUCD.jpg"><img style="border: 0px solid ; width: 600px; height: 323px;" src="provisionWorkOrderUCD.jpg" alt=""></a><br>
+<span style="font-weight: bold;">Provision Work Order Use Case Model</span>
+</td></tr></tbody></table>
+
+<p><b>Scope: </b>The Utility Services Coordinator uses the system to
+select a Pre Event Plan associated with a Contract ID and generates
+associated Work Orders. For pre-event, the Internal Operations Expert
+uses the system to display and select indicated Work Order items and
+indicates Work Order Status for each item listed. During the event, The
+Utility Services Coordinator uses the system to indicate Work Order
+Status. The Utility Services Coordinator uses the system to create
+supplemental Work Order items when there's a disparity in the Work
+Order item. The system provides a similar service for exhibitor Event
+Representatives to create supplemental Work Orders. If payment is
+required, the Event Representative processes payment with the Payment
+Gateway.</p>
+
+<!-- Image Title -->
+<table style="border-collapse: collapse;" align="center" border="0" cellpadding="5" cellspacing="0"><tbody><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br>
+<a href="1SD.jpg"><img style="border: 0px solid ; width: 600px; height: 641px;" src="1SD.jpg" alt=""></a><br>
+<span style="font-weight: bold;">Provision Work Order Sequence Diagram</span>
+</td></tr></tbody></table>
+
+<p style="text-align: center; font-weight: bold;">Table of Interface Descriptions 
+<!-- Table definition -->
+<table id="custom" align="center">
+<tbody><tr><th>Type/Interface</th><th>Description</th></tr>
+<tr>
+<td>FS069<br>Establish Event Booking/<br>generateWorkOrder</td>
+<td>The Utility Services Coordinator uses the system to lookup an Event
+Pre-Plan using a Contract ID to list the associated Work Orders. Work
+Orders include event representative name, contact information, booth
+identification, list of services, and additional notes entered by the
+Utility Services Coordinator. The system generates all the Work Order
+items to be processed by the Internal Operations Expert.</td>
+</tr>
+<tr>
+<td>FS070<br>Establish Event Booking/<br>indicateWorkOrderStatus</td>
+<td>Based on the Work Orders, the Internal Operations Expert
+accomplishes the service needs identified in the Work Order. Using a
+mobile device, the Internal Operations Expert or the Utility Services
+Coordinator uses the system to indicate Status change. Status
+indications include pending, completed, and verified. If it's the
+Internal Operations Expert, the Status change is completed - if it's
+the Utility Services Coordinator, it's verified. Status change captures
+user identification, date, time, an associated notes if entered. If a
+Work Order item is unable to be accomplished the Internal Operations
+Expert leaves the Status as pending and adds a note regarding the
+condition of the pending Work Order item. In the case of a floor audit,
+the Utility Services Coordinator may also include a note in the Work
+Order item.</td>
+</tr>
+<tr>
+<td>FS071<br>Establish Event Booking/<br>displayWorkOrderList</td>
+<td>Using a mobile device, the Internal Operations Expert uses the
+system to select an Event Name of interest provided by an enumerated
+list. The system provides a list of Work Order items ordered by
+location (includes booth number). The Work Order listed items are based
+on specialized roles such as Event Maintenance, Show IT, Security
+Coordinator, and Utility Services Coordinator (gets entire list).</td>
+</tr>
+<tr>
+<td>FS072<br>Establish Event Booking/<br>createSupplementalWorkOrder</td>
+<td>If the services in the booth are not the services ordered (i.e.,
+disparity in the work order), the Utility Services Coordinator uses a
+mobile device to create a Supplemental Work Order. The Supplemental
+Work Order may include but not limited to event name, contract
+identification, list of services, product information, quantity,
+company name, booth number, notes etc. Alternately, the Event
+Representative (for exhibitors only) may determine that services are
+missing or not operational. The Event Representative uses a mobile
+device to generate a Supplemental Work Order containing one or more
+service items. Services items may be conditional for example, the order
+of additional IP address may require a switch, or a specific Product
+may require additional labor, based upon quantity. Any Work Order Item
+can be reversed to provide a mechanism for Refund/Credits.</td>
+</tr>
+<tr>
+<td>Payment Gateway/<br>processPayment</td>
+<td>The Event Representative reviews customer order, enters their
+credit card information (credit card number, expiration date, name as
+shown on card, card type, security code, zip code, email address), and
+processes the payment for their order.</td>
+</tr>
+<tr>
+<td>Payment Gateway/<br>notifyOfPayment</td>
+<td>The Payment Gateway sends the Event Representative and Utility
+Services Coordinator an email notification of processed payment which
+includes contract ID, event name, payment total, last 4-digits of card.</td>
+</tr>
+</tbody></table>
+
+</p></td></tr></tbody></table>
+</td></tr></tbody></table></body></html>

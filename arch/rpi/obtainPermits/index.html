@@ -1,0 +1,199 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Obtain Permits</title>
+<link rel="Stylesheet" href="/style/hover.css" type="text/css" />
+</head>
+<body bgcolor="#ddd8c2">
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="650" align="center">
+<tr><td style="padding: 0;" height="130" valign="top"><a href="">
+<img src="/image/iTHeader.jpg" alt="austinea.org - home..." border="0"></a></td></tr>
+<!-- Text Area -->
+<tr><td>
+
+<p style="text-align: center; font-weight: bold;">Use Case Specification for Obtain Permits</p>
+<p style="text-align: center;">Last update: 11/18/2015
+
+<!-- Use Case Obtain Permits -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select for larger view</span><br />
+<a href="/arch/rpi/obtainPermits/obtainPermitsUC.jpg"><img src="/arch/rpi/obtainPermits/obtainPermitsUC.jpg" border="0" width="600" alt="Obtain Permits" /></a><br />
+<span style="font-weight: bold;">Use Case Diagram Obtain Permits</span>
+</td></tr></table>
+
+<p><b>Use Case Scope:</b> Permit Applicant obtains single purpose trade permits or manages permits relevant to a Submittal Package/Project Information. The system provides Web interface application forms relevant to the permit requested, calculates required remittance and adds permit application to a Review Queue for Reviewer review and comment when required. Permit Applicants may also transfer Building Permits to prescribed contractors, cancel Trade Permits, and/or reactivate Expired Permits.</p>
+
+<!-- Obtain Permits -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select for larger view</span><br />
+<a href="/arch/rpi/obtainPermits/obtainPermits.jpg"><img src="/arch/rpi/obtainPermits/obtainPermits.jpg" border="0" width="600" alt="Obtain Permits" /></a><br />
+<span style="font-weight: bold;">Sequence Diagram Obtain Permits</span>
+</td></tr></table>
+
+<p style="text-align: center; font-weight: bold;">Table of Interface Descriptions</p>
+<!-- Table definition -->
+<table align="center" id="custom">
+<tr><th>Type/Interface - Requirement Description</th></tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Ensure Regulatory Compliance/setupRequiredPermits</td>
+</tr>
+<tr>
+<td>Although permits were initially identified and setup by Perform Regulatory Review, the system provides the ability for Submittal Coordinators to review and determine additional permit requirements or required changes. The system provides the ability for the Submittal Coordinator to adjust permit requirements for any Submittal Package. The system provides the ability to administer various states of permits such as overriding normal day-to-day transactions such as suspension or revocation of permit.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Authorized Permit Applicant/reviewNotification</td>
+</tr>
+<tr>
+<td>The system provides Notification via text message or email when permits are ready for issuance. Notification may also include other indications of permit status.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Ensure Regulatory Compliance/associateSubmittalPackages</td>
+</tr>
+<tr>
+<td>Using the system, the Submittal Coordinator associates Submittal Packages. For example, a building permit application may require completion of a land use re-zoning case or a major event may require smaller, individual permit applicants.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Ensure Regulatory Compliance/issueSinglePurposePermit</td>
+</tr>
+<tr>
+<td>The Authorized Permit Person selects the desired trade permit (or mobile home building permit) for the system to issue. This function is limited to only the alternate flow to [request a permit] or [reactivate expired permit] and designated for selected trade contractors performing routine day-to-day activities requiring permits. When a mobile home is involved (only in mobile home parks), this requires issuance of a building permit to associate relevant trade permits to the project. This type of building permit can be issued as a single purpose permit.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Ensure Regulatory Compliance/obtainPermit</td>
+</tr>
+<tr>
+<td>During the final review and approval of a Submittal Package, the Review Notification provides an encoded link (URL) that directs the Authorized Permit Person to the associated Project Information and location to obtain required permits - the system provides a list of available permit requests. When a particular permit is selected, the link directs the Authorized Permit Person to the proper URL where the system looks up relevant permit information, status and provides various permit options.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Ensure Regulatory Compliance/lookUpPermitStatus</td>
+</tr>
+<tr>
+<td>The system looks up the Project Information encoded from the obtainPermit URL and presents the Authorized Permit Person with options to submit for selected permits previously identified during the Perform Regulatory Review process and/or updated by the Submittal Coordinator. The Authorized Permit Person is provided options based on available permits and their status.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Ensure Regulatory Compliance/selectPermitOption</td>
+</tr>
+<tr>
+<td>The Permit Applicant selects from the permitting options available depending on the Permit Status of the project. The applicant may request a permit, transfer a building permit, cancel a trade permit, reactivate expired permit, request extension, and withdraw permit.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Ensure Regulatory Compliance/determinePermitApplication</td>
+</tr>
+<tr>
+<td>Based on the Permit Applicant selection to request permit, the system provides the appropriate permit application form for the Permit Applicant to compete and submit. Permit Applicant attribute values known by the system automatically populate relevant values on the form.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Ensure Regulatory Compliance/completePermitApplication</td>
+</tr>
+<tr>
+<td>The Authorized Permit Person uses the system to complete the permit application. Known values of the system automatically populate relevant attributes of the form.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Ensure Regulatory Compliance/determineRemittance</td>
+</tr>
+<tr>
+<td>Based on the permit selected, the system automatically determines the Remittance required and presents the Remittance information to the Authorized Permit Person with indication of selected form of payment (i.e., credit card, ACH, etc.). The Remittance amounts must be modifiable by identified city staff and not hard coded into the system. The system identifies indication of fee wavers.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Ensure Regulatory Compliance/addToRemittanceQueue</td>
+</tr>
+<tr>
+<td>The Authorized Permit Person uses the system to process multiple permit requests (if needed). The system adds remittance to a Remittance Queue until completing permit requests.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Ensure Regulatory Compliance/payRemittance</td>
+</tr>
+<tr>
+<td>Using traditional online Electronic Financial Services approved by the city, the Authorized Permit Person pays the required Remittance and receives Acknowledgment of payment.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Electronic Financial Service/processRemittance</td>
+</tr>
+<tr>
+<td>The system provides an interface to city approved financial vendor to process online electronic transactions.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Ensure Regulatory Compliance/addToReviewQueue</td>
+</tr>
+<tr>
+<td>The system provides a modifiable rules engine that places certain permit requests into a review queue for Reviewer to ensure completeness and relevance to the request. Common trade permits by established contractors may not require review, but the rules engine may require some trade permit requests to be reviewed.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Ensure Regulatory Compliance/reviewPermitApplication</td>
+</tr>
+<tr>
+<td>The Reviewer selects the Permit Application from the Review Queue and reviews for completeness and accuracy. If approved, the Authorize Permit Person is provided a URL encoded link to select to acknowledge inspection responsibility and permit issuance. If declined, the Notification provides indication of the deficiencies of the Permit Application and provides a URL encoded with information to redirect the Permit Applicant to the application to correct and resubmit.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Ensure Regulatory Compliance/acknowledgeInspectionResponsibility</td>
+</tr>
+<tr>
+<td>Once a permit is prepared by the system, the system indicates to the Authorized Permit Person responsibility for proper inspection and provides selected indication that this responsibility is accepted in the form of an Acknowledgment before a printable permit is issued by the system.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Ensure Regulatory Compliance/issuePermit</td>
+</tr>
+<tr>
+<td>When the system receives the proper Acknowledgment of inspection responsibility, the system prepares the selected permit in a printable form (i.e., PDF, etc.).</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Ensure Regulatory Compliance/printIssuedPermit</td>
+</tr>
+<tr>
+<td>The Authorized Permit Person uses the system to download and print the permit for proper display or other required use.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Ensure Regulatory Compliance/transferBuildingPermit</td>
+</tr>
+<tr>
+<td>The system provides an Authorized Permit Person the ability to transfer a building permit to a prescribed contractor. The Authorize Permit Person enters relevant information into the system that clearly identifies the contractor receiving the transferred building permit and stores it into the system. Once transferred, the contractor plays the role of Authorized Permit Person to obtain future permits relevant to the Project Information associated with the case file building permit. The system provides a means for supporting letters and/or documents to uploaded to the system.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Ensure Regulatory Compliance/reviewPermitRequest</td>
+</tr>
+<tr>
+<td>The permit Reviewer reviews the permit request to transfer building permit or request a permit extension along with any supporting documentation such as contractor Transfer Letter and authorizes or denies permit request.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Ensure Regulatory Compliance/cancelTradePermit</td>
+</tr>
+<tr>
+<td>The Authorized Permit Person uses the system to cancel permits already issued. If an inspection already occurred at the time of cancellation, there is no refund of Remittance; otherwise, a percentage of the Remittance is returned to Electronic Financial Service account. If a refund is issued, a new contractor must pay 100% of the required Remittance. If no refund issued, the contractor must pay 50% of the required Remittance to reissue the permit.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Ensure Regulatory Compliance/determineExpiredPermits</td>
+</tr>
+<tr>
+<td>The system determines the relevant expired permit(s) associated with the Submittal Package Project Information and presents to the Authorized Permit Person for selection to reactivate.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Ensure Regulatory Compliance/reactivateExpiredPermit</td>
+</tr>
+<tr>
+<td>The Authorized Permit Person uses the system to reactivate an expired permit. This requires a form to enter pertinent information (such as reason for reactivation) prior to reactivation.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Ensure Regulatory Compliance/determinePermitFee</td>
+</tr>
+<tr>
+<td>Based on the selected permit requested to be reactivated, the system determines the necessary permit fee.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Ensure Regulatory Compliance/requestPermitExtension</td>
+</tr>
+<tr>
+<td>The Authorized Permit Person uses the system to request a one time extension by completing an online form. The system provides the ability to upload any supporting documentation.</td>
+</tr>
+<tr>
+<td style="font-weight: bold; background: lightgray;">Ensure Regulatory Compliance/withdrawPermit</td>
+</tr>
+<tr>
+<td>The Authorized Permit Person may withdraw a permit possibly due to the fact that they are no longer performing the work - this requires a complete resubmission for a permit.</td>
+</tr>
+</table>
+<br />
+</td></tr></table>
+</td></tr></table></body></html>
