@@ -34,7 +34,7 @@ function stepview(url)
 					</td>
 				</tr>
 			</table>
-Over the past decade, the UML has emerged as a popular approach to modeling information technology (IT) intensive enterprises - leading to the recognized need for Enterprise Architecture (EA). EA is the process of translating business vision and strategy into effective enterprise change by creating, communicating, and improving the key requirements, principles, and models that describe the enterprise’'s future state and enable its evolution and transformation. The transformation process entails the analysis and design of an enterprise in its current and future states from a strategic, organizational, and technological perspective. The goals of EA are to improve the organizational efficiency, effectiveness, and agility by delivering business-aligned enterprise systems.
+Over the past decade, the UML has emerged as a popular approach to modeling information technology (IT) intensive enterprises - leading to the recognized need for Enterprise Architecture (EA). EA is the process of translating business vision and strategy into effective enterprise change by creating, communicating, and improving the key requirements, principles, and models that describe the enterpriseâ€™'s future state and enable its evolution and transformation. The transformation process entails the analysis and design of an enterprise in its current and future states from a strategic, organizational, and technological perspective. The goals of EA are to improve the organizational efficiency, effectiveness, and agility by delivering business-aligned enterprise systems.
 
 <p>The Use Case Model provides an approach for defining a process that delivers <a href="../../definition/index.html#result_of_value" target="definitions">result of value</a> (ROV) and is the foundational instrument of a skilled Enterprise Architect. Using an  <a href="http://en.wikipedia.org/wiki/Object-oriented_analysis_and_design" target="definitions">object-oriented analysis and design (OOAD)</a> <a class="smallfont" href="#1">[1]</a> method, the architect analyzes the required interacting objects referred to as Capability Roles. <a href="../../definition/index.html#role" target="definitions">Roles</a> are shown as green actors with an oval in left corner (Figure 1) and represent the functional responsibility of people or systems (i.e., objects). Each <a href="http://en.wikipedia.org/wiki/Object_(computer_science)" target="definitions">object</a> represents a role of interest of the subject modeled by the Use Case. Object-oriented analysis applies object-modeling techniques to analyze the functional responsibilities and interface requirements for a system; therefore, the Use Case Model represents the requirements of the capability being modeled - ex., <b>Citizen Engagement</b>. This approach eliminates the need for alternative requirements management tooling used to define system functional requirements.</p>
 
@@ -88,11 +88,11 @@ Figure 2: UML Sequence Diagram for Interaction Overview<br />Step 1. Process Cre
 <div style="text-align:center; width:630px; margin-left:auto; margin-right:auto; ">
 <img id="Image-Maps_7201209061459239" src="activitymodel.png" usemap="#Image-Maps_7201209061459239" border="0" width="630" alt="" />
 <map id="_Image-Maps_7201209061459239" name="Image-Maps_7201209061459239">
-<area shape="rect" coords="236,72,410,103" onclick="stepview('sequencediagram.png')" alt="" title="Step 1" target="stepview"   />
-<area shape="rect" coords="20,211,166,244" onclick="stepview('step2.png')" alt="" title="Step 2" target="stepview"  />
-<area shape="rect" coords="192,209,323,242" onclick="stepview('step3.png')" alt="" title="Step 3" target="stepview"   />
-<area shape="rect" coords="332,209,465,242" onclick="stepview('step4.png')" alt="" title="Step 4" target="stepview"   />
-<area shape="rect" coords="479,231,654,274" onclick="stepview('step5.png')" alt="" title="Step 5" target="stepview"   />
+<area shape="rect" coords="236,72,410,103" onclick="stepview('SequenceDiagram.png')" alt="" title="Step 1" target="stepview"   />
+<area shape="rect" coords="20,211,166,244" onclick="stepview('Step2.png')" alt="" title="Step 2" target="stepview"  />
+<area shape="rect" coords="192,209,323,242" onclick="stepview('Step3.png')" alt="" title="Step 3" target="stepview"   />
+<area shape="rect" coords="332,209,465,242" onclick="stepview('Step4.png')" alt="" title="Step 4" target="stepview"   />
+<area shape="rect" coords="479,231,654,274" onclick="stepview('Step5.png')" alt="" title="Step 5" target="stepview"   />
 <area shape="rect" coords="689,394,691,396" href="http://www.image-maps.com/index.php?aff=mapped_users_7201209061459239" alt="Image Map" title="Image Map" />
 </map>
 <!-- Image map text links - End - --><br />
@@ -100,7 +100,7 @@ Figure 2: UML Sequence Diagram for Interaction Overview<br />Step 1. Process Cre
 </div>
 </td></tr></table>
 
-<p>Each activity (blue round corner rectangles) on the interaction overview (Figure 3) is linked to its defined sequence diagram providing a description of the dialog between the objects (messages on the UML sequence diagram). Using the activity diagram above, select (it's clickable) an activity to see its related sequence diagram view. Select Step 2 and study the related sequence diagram and observe its information elements on the activity diagram until you understand what's going on. Each message on the sequence diagram contains an information element in the signature [ex., seqeunceMessage( :Signture ) : ReturnObject] of the message with functional responsibility assigned to the object by the direction of the arrow. For example on <a href="#activity_model"  onclick="stepview('sequencediagram.png')">Figure 2, the sequence diagram</a> begins when the Internet User makes a request on the Department Internet System to processTransactionItemForPayment using the TransactionItem information element as its signature. The Department Internet System then passes the same function to the Online Payment Service; therefore, capturing the system functional need for the Internet System to pass credit card transaction requests to the Online Payment Service. To further understand the relationships or dependencies of information elements, the architect develops a class diagram.
+<p>Each activity (blue round corner rectangles) on the interaction overview (Figure 3) is linked to its defined sequence diagram providing a description of the dialog between the objects (messages on the UML sequence diagram). Using the activity diagram above, select (it's clickable) an activity to see its related sequence diagram view. Select Step 2 and study the related sequence diagram and observe its information elements on the activity diagram until you understand what's going on. Each message on the sequence diagram contains an information element in the signature [ex., seqeunceMessage( :Signture ) : ReturnObject] of the message with functional responsibility assigned to the object by the direction of the arrow. For example on <a href="#activity_model"  onclick="stepview('SequenceDiagram.png')">Figure 2, the sequence diagram</a> begins when the Internet User makes a request on the Department Internet System to processTransactionItemForPayment using the TransactionItem information element as its signature. The Department Internet System then passes the same function to the Online Payment Service; therefore, capturing the system functional need for the Internet System to pass credit card transaction requests to the Online Payment Service. To further understand the relationships or dependencies of information elements, the architect develops a class diagram.
 
 <p><a href="../../definition/index.html#class_diagram" target="definitions">Class Diagrams</a> (Figure 4) capture the association (dependencies) of the information elements and represent the <a href="../../definition/index.html#logical_data_model" target="definitions">logical data model</a> of the use case. Database administrators use the logical data model to develop relational databases to implement the object flow defined by the use case. In the future, the logical data model guides the Enterprise Database layer of the ISO model. Another value of the UML is in its ability to put information elements in context of its use better guiding capability realization by applications developers or to evaluating commercial-off-the-shelf-software (COTS) for its ability to implement the business process when certain information elements provide important outcomes.  
 
@@ -123,12 +123,12 @@ Figure 4: UML Class Diagram Defines Relationships of Information Elements</p>
 <p class="smallfont"><b>References:</b><br>
 <a name="1">1.</a> <a href="http://www.wikipedia.org/" target="definitions">Wikipedia</a> - the online, open source encyclopedia<br>
 2. <a href="../../definition/index.html" target="definitions">Enterprise Architecture Terms and Definitions</a>
-
+<!--
 <p><b>Rob Byrd</b> <b class="red">|</b> <b>City of Austin</b><br>
 Chief Enterprise Architect - Corporate<br>
 Direct: (512) 974-1615<br>
 <a href="mailto: rob.byrd@austintexas.gov">rob.byrd@austintexas.gov</a>
-
+-->
 </td></tr>
 <tr><td style="padding: 0;" height="50" valign="top"><a href="http://austintexas.gov/information-technology/">
 <img src="/austinea/image/footer.jpg" alt="Austin Information Technology" border="0"></a></table>
