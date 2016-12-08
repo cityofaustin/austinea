@@ -1,0 +1,162 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Add Case To Collections</title>
+
+<link rel="Stylesheet" href="/austinea/style/hover.css" type="text/css">
+</head>
+
+<body style="background-color: rgb(221, 216, 194);">
+<!-- Border Background Table -->
+<table style="border-collapse: collapse; background-color: rgb(244, 202, 144);" align="center" border="0" cellpadding="4" cellspacing="0"><tbody><tr><td>
+<!-- Main Body -->
+<table style="border-collapse: collapse; background-color: rgb(255, 255, 255);" align="center" border="0" cellpadding="5" cellspacing="0" width="650">
+<tbody><tr><td style="padding: 0pt;" height="130" valign="top"><a href="">
+<img src="/austinea/image/iTHeader.jpg" alt="austinea.org - home..." border="0"></a></td></tr>
+<!-- Text Area -->
+<tr><td>
+<p style="text-align: center; font-weight: bold;">Add Case To Collections<br>Use Case Specification</p>
+<p style="text-align: center;">10/06/2016
+<!-- IF Printable document option Included <p style="text-align: center;">download <a href="/austinea/arch/code/***.docx">printable version</a>
+-- >
+<b> Municipal Court Logical Data Model </b>
+<!-- Image - Logical Data Model <table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="/austinea/arch/code/ldm.jpg"><img src="/austinea/arch/code/ldm.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Austin Code Logical Data Model</p>
+</td></tr></table> -->
+<!-- USE CASE IMAGE -->
+<table style="border-collapse: collapse;" align="center" border="0" cellpadding="5" cellspacing="0"><tbody><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br>
+<a href="/austinea/arch/municourt/addCaseToCollections/ucd.jpg"><img src="/austinea/arch/municourt/addCaseToCollections/ucd.jpg" alt="" border="0"></a><br>
+<span style="font-weight: bold;">Add Case To Collections<br>Use Case Model</span>
+</td></tr></tbody></table>
+</p><p><b>Scope: </b>Cases with an outstanding balance greater than $25
+are automatically added to collections 1 year from file date on all
+non-parking (configurable) and 6 months from file date for parking
+(configurable). The cases are added by a scheduled process that
+evaluates the criteria listed below for parking and non-parking cases.
+Once the case is added the case is updated with an action code
+indicating that the case has been sent to collections ("COLL").
+</p>
+<br>
+<h2>Selection criteria for all Traffic cases:</h2>
+<ul>
+<li>All traffic, Criminal Misdemeanor or Seat Belt cases that are not
+finalized or in SV (sold vehicle) status. (TR, CM or SB) case types.</li>
+<li>Case must have a balance of $25.00 or more.</li>
+<li>If case file date equal to 1 year.</li>
+<li>The Case scheduled Event/Action/Task date must be 40 or more days old.</li>
+<li>If status is = ‘CM’ or filing of ‘COMM’ exists then conviction/plea exists on the case.</li>
+<li>If case is for Juvenile and no plea exists on case do not process.</li>
+<li>If the offense code is 00050, then, we add the offense description from original off to description sent over to MSB.</li>
+<li>If case has no PID (Person Id) check for Defendant party type.</li>
+<li>If state is in AZ, HI, MA or CT = do not send.</li>
+<li>If an uncompleted action of WARR or COMM is not on case then MSB status is N.</li>
+<li>If uncompleted COMM action exists on case, then collection status = C.</li>
+<li>If uncompleted WARR action exists on case, then collection status = A.</li>
+<li>Check for Bond. If bond is posted before collection do not send, otherwise, send only after bond has been applied.</li>
+</ul>
+<br>
+<h2>Selection criteria for all all parking cases:</h2>
+<ul>
+<li>All parking or Boot Tow cases (PK or BT) case types.</li>
+<li>Plea is automatic on case.</li>
+<li>Case must be 6 mos. old </li>
+<li>The Case Scheduled Event/Action/Task date must be 40 or more days old.</li>
+<li>If case has no PID check the REO party type for name &amp; address.</li>
+<li>If state is in AZ, HI, MA or CT – do not send.</li>
+<li>If an uncompleted action of WARR or COMM is not on case then MSB status is N.</li>
+<li>If uncompleted COMM action exists on case, then collection status = C.</li>
+<li>If uncompleted WARR action exists on case, then collection status = A.</li>
+<li>Check for Bond. If bond is posted before collection do not send, otherwise, send only after bond has been applied.</li>
+</ul>
+<p></p>
+<!-- IF INTERACTION OVERVIEW IS INCLUDED <table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/austinea/arch/municourt/***.jpg"><img src="/austinea/arch/municourt/***.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Interaction Overview</span>
+</td></tr></table>
+-->
+<p>This Use case also depends upon the Send Message To Collections Use Case</p>
+<br>
+<!-- SEQUENCE DIAGRAM -->
+<table style="border-collapse: collapse;" align="center" border="0" cellpadding="5" cellspacing="0"><tbody><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br>
+<a href="/austinea/arch/municourt/addCaseToCollections/sd01.jpg"><img src="/austinea/arch/municourt/addCaseToCollections/sd01.jpg" alt="" border="0" width="600"></a><br>
+<span style="font-weight: bold;">Add Case To Collections<br>Sequence Diagram</span>
+</td></tr></tbody></table>
+<br>
+<!-- INTERFACE TABLE -->
+<table id="custom" align="center">
+<tbody><tr><th width="9%">Req#</th><th width="70%">Type/Interface - Requirement Description</th><th>Performance</th></tr>
+<tr>
+<td rowspan="2">001</td>
+<td style="background: lightgray none repeat scroll 0%; font-weight: bold; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">Manage Court Case/calculateCollectionFee</td>
+<td rowspan="2"> </td>
+</tr>
+<tr>
+<td>The case management system calculates the collection fee on the
+case. As required by law, the system must recalculate the collection
+fee as partial jail time credit or community service is applied to a
+case in third party collections within the case management system. The
+fee will be recalculated on the reduced balance on the case. The new
+case balance will be sent to the collection agency along with the
+recalculated fee.
+The system is required to log a case note indicating a collection fee
+was added, reduced or removed from collections. If reduced, the system
+is required to log the reduced amount, date and time. The system is
+required to maintain a reference of the original collection fee amount
+as well.
+If a case that does not have a plea is assigned to collections, then
+when there is a guilty plea and the judge imposes a lower fine than the
+default fine amount then the collection fee is recalculated.
+The case management system always disburses the collection fee last.
+</td>
+</tr>
+<tr>
+<td rowspan="2">002</td>
+<td style="background: lightgray none repeat scroll 0%; font-weight: bold; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">Manage Court Case/adjustCollectionFee</td>
+<td rowspan="2"> </td>
+</tr>
+<tr>
+<td>The case management system adds the collection fee to the case
+using the case number as the case reference. The collection fee is
+added to the collection send changes object. The new case balance will
+be sent to the collection agency along with the recalculated fee.
+</td>
+</tr>
+<tr>
+<td rowspan="2">003</td>
+<td style="background: lightgray none repeat scroll 0%; font-weight: bold; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">Manage Court Case/addCollectionFeeLogRecord</td>
+<td rowspan="2"> </td>
+</tr>
+<tr>
+<td>Create a log record stating that a collection fee is added, reduced
+or removed. The record includes the starting balance, balance total
+(case balance), collection fee amount, and date and time when the
+change event occurred.
+</td>
+</tr>
+<tr>
+<td rowspan="2">004</td>
+<td style="background: lightgray none repeat scroll 0%; font-weight: bold; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">Manage Court Case/Update Code Violation Case</td>
+<td rowspan="2"> </td>
+</tr>
+<tr>
+<td>The case management system compiles all of the relevant case
+information for the collections service and adds it to a collection
+send changes object that includes:
+<ul>
+<li>Case Number</li>
+<li>Citation information</li>
+<li>Vehicle information (when applicable)</li>
+<li>Personal identifiers and contact information</li>
+<li>Case starting balance</li>
+<li>Case balance</li>
+<li>Total calculated collection fee</li>
+<li>Case status</li>
+</ul></td>
+</tr>
+</tbody></table>
+<br>
+</td></tr></tbody></table>
+</td></tr></tbody></table></body></html>
