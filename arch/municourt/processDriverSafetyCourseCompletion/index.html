@@ -1,0 +1,158 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Process Driver Safety Course Completion</title>
+<link rel="Stylesheet" href="/austinea/style/hover.css" type="text/css" />
+</head>
+<body bgcolor="#ddd8c2">
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="650" align="center">
+<tr><td style="padding: 0;" height="130" valign="top"><a href="">
+<img src="/austinea/image/iTHeader.jpg" alt="austinea.org - home..." border="0"></a></td></tr>
+<!-- Text Area -->
+<tr><td>
+
+<p style="text-align: center; font-weight: bold;">Process Driver Safety Course Completion<br />Use Case Specification</p>
+<p style="text-align: center;">12/09/2016
+
+<!--  IF Printable document option Included  
+<p style="text-align: center;">download <a href="/austinea/arch/code/***.docx">printable version</a>
+-- >
+
+<b> Municipal Court Logical Data Model </b>
+<!-- Image -  Logical Data Model 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="/austinea/arch/code/ldm.jpg"><img src="/austinea/arch/code/ldm.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Austin Code Logical Data Model</p>
+</td></tr></table> -->
+
+<!-- USE CASE IMAGE -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/austinea/arch/municourt/processDriverSafetyCourseCompletion/ucd.jpg"><img src="/austinea/arch/municourt/processDriverSafetyCourseCompletion/ucd.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Process Driver Safety Course Completion<br />Use Case Model</span>
+</td></tr></table>
+
+<p><b>Scope: </b>The Court Clerk processes the submitted mandated DSC program completion form from the Defendant: 
+The defendant presents the mandated DSC program completion form to the Court Clerk. The Court Clerk takes the form 
+and processes it by scanning it onto the case and creating a case action recording the completion of service.
+</p>
+<!-- IF INTERACTION OVERVIEW IS INCLUDED 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/austinea/arch/municourt/***.jpg"><img src="/austinea/arch/municourt/***.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Interaction Overview</span>
+</td></tr></table>
+-->
+
+<!-- SEQUENCE DIAGRAM  -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/austinea/arch/municourt/processDriverSafetyCourseCompletion/sd01.jpg"><img src="/austinea/arch/municourt/processDriverSafetyCourseCompletion/sd01.jpg" border="0" alt="" width="600"/></a><br />
+<span style="font-weight: bold;">Process Driver Safety Course Completion<br />Sequence Diagram</span>
+</td></tr></table>
+<br />
+
+
+<!-- INTERFACE TABLE  -->
+<table align="center" id="custom">
+<tr><th width="9%">Req#</th><th width="70%">Type/Interface - Requirement Description</th><th>Performance</th></tr>
+<tr>
+<td rowspan="2">001</td>
+<td style="font-weight: bold; background: lightgray;">Court Clerk/processCompletionForm</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+The Court Clerk processes the submitted mandated program completion form from the Defendant.
+</td>
+</tr>
+<tr>
+<td rowspan="2">002</td>
+<td style="font-weight: bold; background: lightgray;">Manage Court Case/processCompletedProgramForm</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+The case management system processes the completed program form noting the program type completed, the document 
+submitter and the date the program was completed.
+</td>
+</tr>
+<tr>
+<td rowspan="2">003</td>
+<td style="font-weight: bold; background: lightgray;">Manage Court Case/addActionToCase</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+The case management system adds an action, specified by an action code, to the case (referenced by the case number) to create the action record. 
+If a DSC completion paperwork is being submitted the action reflects the sentence completion.
+</td>
+</tr>
+<tr>
+<td rowspan="2">004</td>
+<td style="font-weight: bold; background: lightgray;">Manage Court Case/attachDocumentToCase</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+The case management system takes the document which has been uploaded and attaches it to the case file.
+The document can be any document when the use case is "Accept Case File document."<br>
+If it is a case generated from a CARL citation the documents are:
+<ol>
+	<li>The two images of the violating vehicle - position in the intersection and zoomed in license plate.</li>
+	<li>The citation</li>
+</ol>
+If a case is being generated from a parking citation, the document is the citation.<br>
+If it is a criminal parking case the documents are:
+<ol>
+	<li>The affidavit</li>
+	<li>The placard</li>
+	<li>The scanned image of the customer's driver license</li>
+</ol>
+If a cash bond is being posted the document is the bond.<br>
+If a scheduled time payment plan is being established or modified the document is the STPP.<br>
+If an appeal is being processed the documents are:
+<ol>
+	<li>Order ofTransfer (2 copies)</li>
+	<li>Certificate of Transfer </li>
+	<li>Approval of Trial Judge</li>
+	<li>Letter to Defendant</li>
+	<li>Letter to Prosecutor</li>
+	<li>Transcription file</li>
+	<li>The appeal document</li>
+</ol>
+If a late representation request is being filed the documents are:
+Attorney's letter of representation
+<ol>
+	<li>The motion to proceed</li>
+	<li>Appearance motion</li>
+	<li>Emergency order or motion</li>
+</ol>
+If a customer has completed a Driver Safety Course the document is the completion certificate.<br>
+If a probable cause affidavit is being filed, the document is the affidavit<br>
+If an appeal is being initiated the documents are:
+<ol>
+	<li>The motion to proceed document</li>
+	<li>The appeal bond</li>
+</ol>
+If a general or Youth Services complaint is being generated, the document is the complaint.
+</td>
+</tr>
+<tr>
+<td rowspan="2">005</td>
+<td style="font-weight: bold; background: lightgray;">Manage Court Case/scanCaseDocument</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+The Court Clerk scans the document onto the case. The case management system attaches the document to the case.
+</td>
+</tr>
+</table>
+<br/>
+</td></tr></table>
+</td></tr></table></body></html>
