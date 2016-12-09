@@ -1,0 +1,364 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Withdraw Case From Collections</title>
+<link rel="Stylesheet" href="/austinea/style/hover.css" type="text/css" />
+</head>
+<body bgcolor="#ddd8c2">
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="650" align="center">
+<tr><td style="padding: 0;" height="130" valign="top"><a href="">
+<img src="/austinea/image/iTHeader.jpg" alt="austinea.org - home..." border="0"></a></td></tr>
+<!-- Text Area -->
+<tr><td>
+
+<p style="text-align: center; font-weight: bold;">Withdraw Case From Collections<br />Use Case Specification</p>
+<p style="text-align: center;">12/09/2016
+
+<!--  IF Printable document option Included  
+<p style="text-align: center;">download <a href="/austinea/arch/code/***.docx">printable version</a>
+-- >
+
+<b> Municipal Court Logical Data Model </b>
+<!-- Image -  Logical Data Model 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="/austinea/arch/code/ldm.jpg"><img src="/austinea/arch/code/ldm.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Austin Code Logical Data Model</p>
+</td></tr></table> -->
+
+<!-- USE CASE IMAGE -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/austinea/arch/municourt/withdrawCaseFromCollections/ucd.jpg"><img src="/austinea/arch/municourt/withdrawCaseFromCollections/ucd.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Withdraw Case From Collections<br />Use Case Model</span>
+</td></tr></table>
+
+<p><b>Scope: </b>A case can be withdrawn from collections under any of the following four conditions:
+<ol>
+	<li>The Defendant has been arrested by an Officer</li>
+	<li>The case has been dismissed by a Judge</li>
+	<li>The case collection activity has exceeded its time limit</li>
+	<li>The case has been withdrawn for other reasons:
+		<ol type="a">
+			<li>Case dismissed - re-filed</li>
+			<li>Case disposed not guilty-transferred to Muni Court</li>
+			<li>Defendant found not liable</li>
+			<li>Case transferred out</li>
+			<li>Defendant completed alcohol awareness class</li>
+			<li>Defendant completed driving safety course</li>
+		</ol>
+	</li>
+</ol>
+       
+</p>
+<!-- IF INTERACTION OVERVIEW IS INCLUDED 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/austinea/arch/municourt/***.jpg"><img src="/austinea/arch/municourt/***.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Interaction Overview</span>
+</td></tr></table>
+-->
+
+<p>This Use case also depends upon the following use cases:</p>
+<ul>
+	<li><a href="/austinea/arch/municourt/issueWarrants/index.html">Issue Warrants Use Case</a></li>
+	<li><a href="/austinea/arch/municourt/sendMessageToCollections/index.html">Send Message To Collections Use Case</a></li>
+	<li><a href="/austinea/arch/municourt/accountForCommunityServiceTime/index.html">Account For Community Service Time Use Case</a></li>
+	<li><a href="/austinea/arch/municourt/processDriverSafetyCourseCompletion/index.html">Process Driver Safety Course Completion Use Case</a></li>		
+</ul>
+<br />
+
+
+<!-- SEQUENCE DIAGRAM  -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/austinea/arch/municourt/withdrawCaseFromCollections/sd01.jpg"><img src="/austinea/arch/municourt/withdrawCaseFromCollections/sd01.jpg" border="0" alt="" width="600"/></a><br />
+<span style="font-weight: bold;">Withdraw Case From Collections<br />Sequence Diagram</span>
+</td></tr></table>
+<br />
+
+
+<!-- INTERFACE TABLE  -->
+<table align="center" id="custom">
+<tr><th width="9%">Req#</th><th width="70%">Type/Interface - Requirement Description</th><th>Performance</th></tr>
+<tr>
+<td rowspan="2">001</td>
+<td style="font-weight: bold; background: lightgray;"><a href="/austinea/arch/municourt/issueWarrants/index.html">Issue Warrants</a></td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+When the defendant fails to appear or comply with conditions on the case a warrant is issued.
+</td>
+</tr>
+<tr>
+<td rowspan="2">002</td>
+<td style="font-weight: bold; background: lightgray;">Officer/processWarrant</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+The Officer receives and processes the warrant on the case by pursuing the Defendant, taking them into custody and delivering them to the Judge.
+</td>
+</tr>
+<tr>
+<td rowspan="2">003</td>
+<td style="font-weight: bold; background: lightgray;">Manage Court Case/addCollectionWithdrawl</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+The case management system adds the case and a collection withdrawal flag to the collection send changes object.
+</td>
+</tr>
+<tr>
+<td rowspan="2">004</td>
+<td style="font-weight: bold; background: lightgray;">Defendant/surrenderToCustody</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+The Defendant surrenders to custody.
+</td>
+</tr>
+<tr>
+<td rowspan="2">005</td>
+<td style="font-weight: bold; background: lightgray;">Judge/deliverDefendantToJudge</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+The Officer delivers the Defendant to the Judge.
+</td>
+</tr>
+<tr>
+<td rowspan="2">006</td>
+<td style="font-weight: bold; background: lightgray;">Manage Court Case/<a href="/austinea/arch/municourt/sendMessageToCollections/index.html">Send Message To Collections Use Case</a></td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+The case management system creates a collections send file (coordinated with the collections vendor) for all cases added 
+that includes the citation information, vehicle information (when applicable), personal identifiers and contact information, 
+case starting balance, case balance, total calculated collection fee and status for any case that is being added or is 
+already in the collections process. The entire data set is transferred to the collection vendor every time there is an 
+update or change to the data. The collection vendor evaluates the entire file and compares the data values for each case 
+to what they have on record. Any changes detected are used to add or update their records.
+</td>
+</tr>
+<tr>
+<td rowspan="2">007</td>
+<td style="font-weight: bold; background: lightgray;">Judge/evaluateCase</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+The Judge evaluates the case for a dismissal condition.
+</td>
+</tr>
+<tr>
+<td rowspan="2">008</td>
+<td style="font-weight: bold; background: lightgray;">Manage Court Case/dismissOrRejectCase</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+The judge reviews all elements of the case file, and selects one of two Case Rulings: "Dismiss" or "Reject" on the case 
+selected from their work queue. The system attaches their signature,and adds the judge's Ruling to the case. If the judge 
+rejects the case, they will annotate the case file with further instructions for the County Clerk. Dismissing the case indicates 
+the case file is now completed, and the matter is closed. Withdrawn Dismissed disposition codes that qualify case selection for withdrawal form collections:
+<ul>
+	<li>DEV Dismissed Insufficient Evidence</li>
+	<li>DIS Dismissed</li>
+	<li>DMA Dismiss - Juror</li>
+	<li>DMB Dismiss Govt Business - Meter Only</li>
+	<li>DMF Dismiss - News Media</li>
+	<li>DMJ Dismissed by Judge</li>
+	<li>DMS Dismissed - Sold Vehicle</li>
+	<li>DMZ Dismissed - Capitol Complex</li>
+	<li>DM5 Dismiss Motion by State & Order by Court</li>
+	<li>DNN Dismissed Officer Not Notified</li>
+	<li>DOF Dismissed Officer Not Present</li>
+	<li>DRE Dismissed - Re-filed</li>
+	<li>DSL Dismissed - State Legislature</li>
+	<li>DML Dismiss - Humanitarian</li>
+	<li>DMO Dismiss - Ticket Error Fatal Error</li>
+	<li>DMQ Dismiss - Officer Request Retract Ticket</li>
+	<li>DM2 No Complaint Filed Within 2 Years of Violation</li>
+	<li>NLA Case Closed Defendant Deceased</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td rowspan="2">009</td>
+<td style="font-weight: bold; background: lightgray;">Manage Court Case/addCollectionWithdrawl</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+The case management system adds the case and a collection withdrawal flag to the collection send changes object.
+</td>
+</tr>
+<tr>
+<td rowspan="2">010</td>
+<td style="font-weight: bold; background: lightgray;">Manage Court Case/<a href="/austinea/arch/municourt/sendMessageToCollections/index.html">Send Message To Collections Use Case</a></td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+The case management system creates a collections send file (coordinated with the collections vendor) for all cases added 
+that includes the citation information, vehicle information (when applicable), personal identifiers and contact information, 
+case starting balance, case balance, total calculated collection fee and status for any case that is being added or is 
+already in the collections process. The entire data set is transferred to the collection vendor every time there is an 
+update or change to the data. The collection vendor evaluates the entire file and compares the data values for each case 
+to what they have on record. Any changes detected are used to add or update their records.
+</td>
+</tr>
+<tr>
+<td rowspan="2">011</td>
+<td style="font-weight: bold; background: lightgray;">Manage Court Case/monitorCollectionsTimeLimit</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+The case management system monitors the elapsed time that the case has been in collections without any activity by the collection service.
+</td>
+</tr>
+<tr>
+<td rowspan="2">012</td>
+<td style="font-weight: bold; background: lightgray;">Manage Court Case/addCollectionWithdrawl</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+If the case collection effort has exceeded its time limit: The case management system adds the case and a collection withdrawal 
+flag to the collection send changes object.
+</td>
+</tr>
+<tr>
+<td rowspan="2">013</td>
+<td style="font-weight: bold; background: lightgray;">Manage Court Case/<a href="/austinea/arch/municourt/sendMessageToCollections/index.html">Send Message To Collections Use Case</a></td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+The case management system creates a collections send file (coordinated with the collections vendor) for all cases added 
+that includes the citation information, vehicle information (when applicable), personal identifiers and contact information, 
+case starting balance, case balance, total calculated collection fee and status for any case that is being added or is 
+already in the collections process. The entire data set is transferred to the collection vendor every time there is an 
+update or change to the data. The collection vendor evaluates the entire file and compares the data values for each case 
+to what they have on record. Any changes detected are used to add or update their records.
+</td>
+</tr>
+<tr>
+<td rowspan="2">014</td>
+<td style="font-weight: bold; background: lightgray;">Manage Court Case/processCompletionForm</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+When the case is withdrawn from collections for other reasons: The Court Clerk processes the submitted mandated program completion form from the Defendant.<br>
+Codes indicating a withdrawl for other reasons:
+<ul>
+	<li>DRE   Dismissed - Refiled</li>
+	<li>NGT   Not Guilty-Transferred to Muni Court</li>
+	<li>NLB   Not Liable</li>
+	<li>TO    Transferred Out</li>
+	<li>CAC   Completed Alcohol Awareness Class</li>
+	<li>CDS   Completed Driving Safety Course</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td rowspan="2">015</td>
+<td style="font-weight: bold; background: lightgray;">Manage Court Case/<a href="/austinea/arch/municourt/accountForCommunityServiceTime/index.html">Account For Community Service Time Use Case</a></td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+The Defendant submits proof of community Service hours. The Clerk locates the community Service Plan, and applies the hours reported to the 
+Community Service Plan. The Clerk attaches the community service document to the community Service Plan. The upload creates a unique reference 
+number for tracking the "Receipt" document. 
+The System offers the clerk the option to either print or email the Receipt to the Defendant/Attorney/etc., and attaches a Receipt to the community 
+Service Plan and associated credited case, for future printing. 
+The system updates each case affected with a case specific credit for the associated community Service and records the associated reference 
+document number of the scanned community service hours. Both Dollars and Hour totals are reflected at the Case level. The system adjusts the 
+balances against the plan, and generates a receipt for the Defendant. The Community Service Plan update is added to the Clerk queue for later 
+confirmation. The Clerk contacts the Community Service Provider to verify the hours submitted. 
+</td>
+</tr>
+<tr>
+<td rowspan="2">016</td>
+<td style="font-weight: bold; background: lightgray;">Manage Court Case/<a href="/austinea/arch/municourt/processDriverSafetyCourseCompletion/index.html">Process Driver Safety Course Completion Use Case</a></td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+The Court Clerk processes the submitted mandated DSC program completion form from the Defendant: The defendant presents the mandated DSC program 
+completion form to the Court Clerk. The Court Clerk takes the form and processes it by scanning it onto the case and creating a case action 
+recording the completion of service.
+</td>
+</tr>
+<tr>
+<td rowspan="2">017</td>
+<td style="font-weight: bold; background: lightgray;">Judge/evaluateCase</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+If the Judge makes a collection withdrawal qualifying disposition on the case: The Judge evaluates the case for a dismissal condition.
+</td>
+</tr>
+<tr>
+<td rowspan="2">018</td>
+<td style="font-weight: bold; background: lightgray;">Judge/makeDisposition</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+The Judge makes a disposition on the case.
+</td>
+</tr>
+<tr>
+<td rowspan="2">019</td>
+<td style="font-weight: bold; background: lightgray;">Manage Court Case/addActionToCase</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+The case management system adds an action, specified by an action code, to the case (referenced by the case number) to create the action record. 
+If a DSC completion paperwork is being submitted the action reflects the sentence completion.
+</td>
+</tr>
+<tr>
+<td rowspan="2">020</td>
+<td style="font-weight: bold; background: lightgray;">Manage Court Case/addCollectionWithdrawl</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+The case management system adds the case and a collection withdrawal flag to the collection send changes object.
+</td>
+</tr>
+<tr>
+<td rowspan="2">021</td>
+<td style="font-weight: bold; background: lightgray;">Manage Court Case/<a href="/austinea/arch/municourt/sendMessageToCollections/index.html">Send Message To Collections Use Case</a></td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+The case management system creates a collections send file (coordinated with the collections vendor) for all cases added 
+that includes the citation information, vehicle information (when applicable), personal identifiers and contact information, 
+case starting balance, case balance, total calculated collection fee and status for any case that is being added or is 
+already in the collections process. The entire data set is transferred to the collection vendor every time there is an 
+update or change to the data. The collection vendor evaluates the entire file and compares the data values for each case 
+to what they have on record. Any changes detected are used to add or update their records.
+</td>
+</tr>
+</table>
+<br/>
+</td></tr></table>
+</td></tr></table></body></html>
