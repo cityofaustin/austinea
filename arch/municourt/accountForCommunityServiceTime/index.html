@@ -1,0 +1,156 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Account For Community Service Time</title>
+<link rel="Stylesheet" href="/austinea/style/hover.css" type="text/css" />
+</head>
+<body bgcolor="#ddd8c2">
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="650" align="center">
+<tr><td style="padding: 0;" height="130" valign="top"><a href="">
+<img src="/austinea/image/iTHeader.jpg" alt="austinea.org - home..." border="0"></a></td></tr>
+<!-- Text Area -->
+<tr><td>
+
+<p style="text-align: center; font-weight: bold;">Account For Community Service Time<br />Use Case Specification</p>
+<p style="text-align: center;">12/09/2016
+
+<!--  IF Printable document option Included  
+<p style="text-align: center;">download <a href="/austinea/arch/code/***.docx">printable version</a>
+-- >
+
+<b> Municipal Court Logical Data Model </b>
+<!-- Image -  Logical Data Model 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="/austinea/arch/code/ldm.jpg"><img src="/austinea/arch/code/ldm.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Austin Code Logical Data Model</p>
+</td></tr></table> -->
+
+<!-- USE CASE IMAGE -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/austinea/arch/municourt/accountForCommunityServiceTime/ucd.jpg"><img src="/austinea/arch/municourt/accountForCommunityServiceTime/ucd.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Account For Community Service Time<br />Use Case Model</span>
+</td></tr></table>
+
+<p><b>Scope: </b>The Defendant submits proof of community Service hours. The Clerk locates the community Service Plan, and applies the hours reported to the Community Service Plan. 
+The Clerk attaches the community service document to the community Service Plan. The upload creates a unique reference number for tracking the "Receipt" document. 
+The System offers the clerk the option to either print or email the Receipt to the Defendant/Attorney/etc., and attaches a Receipt to the community Service Plan and associated credited case, for future printing. 
+The system updates each case affected with a case specific credit for the associated community Service and records the associated reference document number of the scanned community service hours. 
+Both Dollars and Hour totals are reflected at the Case level. The system adjusts the balances against the plan, and generates a receipt for the Defendant. 
+The Community Service Plan update is added to the Clerk queue for later confirmation. The Clerk contacts the Community Service Provider to verify the 
+hours submitted. 
+</p>
+<!-- IF INTERACTION OVERVIEW IS INCLUDED 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/austinea/arch/municourt/***.jpg"><img src="/austinea/arch/municourt/***.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Interaction Overview</span>
+</td></tr></table>
+-->
+
+<!-- SEQUENCE DIAGRAM  -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/austinea/arch/municourt/accountForCommunityServiceTime/sd01.jpg"><img src="/austinea/arch/municourt/accountForCommunityServiceTime/sd01.jpg" border="0" alt="" width="600"/></a><br />
+<span style="font-weight: bold;">Account For Community Service Time<br />Sequence Diagram</span>
+</td></tr></table>
+<br />
+
+
+<!-- INTERFACE TABLE  -->
+<table align="center" id="custom">
+<tr><th width="9%">Req#</th><th width="70%">Type/Interface - Requirement Description</th><th>Performance</th></tr>
+<tr>
+<td rowspan="2">001</td>
+<td style="font-weight: bold; background: lightgray;">Manage Court Case/locatePID</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+The User is presented a list of fields to provide information for the system to locate the Person ID (PID) for a Defendant. 
+The fields used for the PID search include, but are not limited to, Partial First name, Partial Last Name, First Name, Last Name, 
+Address, Driver's License Number, Plate Number, Date of Birth, Telephone number. The System conducts a search and provides a list of 
+matching Defendants from which the User can choose. 
+If the case management system is performing the search for the defendant PID (by case number) then the system searches for the PID 
+associated with the defendant case party listed on the case.
+</td>
+</tr>
+<tr>
+<td rowspan="2">002</td>
+<td style="font-weight: bold; background: lightgray;">Manage Court Case/locateCommunityServicePlanByDefendant</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+The User specifies the Personal ID (PID) for the defendant, or selects the name of a defendant which provides the PID to be used for 
+subsequent actions. The system returns a designator indicating the number of Community Service Case plans the Defendant has. If at 
+least one exists, the system returns a list of plans established. The list of Plans also includes a list of the associated cases for 
+each plan. Additionally the system returns a list of ALL cases associate with the PID not currently assigned to a Community Service Plan.
+</td>
+</tr>
+<tr>
+<td rowspan="2">003</td>
+<td style="font-weight: bold; background: lightgray;">Manage Court Case/applyHoursToCommunityServicePlan</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+The Clerk selects the Community Plan listed which is associated with the case whose hours are to be credited. The System prompts 
+the Clerk to provide documentation/proof to be scanned. Once the document is scanned, the Clerk verifies the scan is acceptable, 
+and is offered the opportunity to rescan the document should the image not be satisfactory. Once acceptable, the system generates 
+a Receipt which should be stored and printable. The Receipt is locatable and printable by both the case and the community service 
+plan to which the case belongs. 
+</td>
+</tr>
+<tr>
+<td rowspan="2">004</td>
+<td style="font-weight: bold; background: lightgray;">Manage Court Case/specifyReceiptOptions</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+The System provides a selection for managing Receipts associated with a Case or Community Service Plan. The Clerk can either print or email a receipt.
+</td>
+</tr>
+<tr>
+<td rowspan="2">005</td>
+<td style="font-weight: bold; background: lightgray;">Manage Court Case/sendEmail</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+If email receipt is requested: The System provides a selection for managing Receipts associated with a Case or Community Service Plan. 
+The Clerk can either print or email a receipt.
+</td>
+</tr>
+<tr>
+<td rowspan="2">006</td>
+<td style="font-weight: bold; background: lightgray;">Manage Court Case/printReceipt</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+If printed receipt is requested: The Clerk has requested that a Receipt for Community Service Hours be Printed. The Clerk specifies the printer at 
+which the Community Service Receipt will be printed. The Clerk is given the opportunity to print multiple copies if desired.
+</td>
+</tr>
+<tr>
+<td rowspan="2">007</td>
+<td style="font-weight: bold; background: lightgray;">Manage Court Case/addCommunityPlanUpdateToClerkQueue</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+A Community Service Plan has been updated in some fashion (hours applied, new cases added to the plan, cases removed 
+from the plan, or plan deleted). The Community Service plan is added to the Clerk Queue for referential integrity checks; 
+the Clerk will reach out to each community service provider the Defendant has listed, to verify the hours worked (credited) at a later date.
+</td>
+</tr>
+</table>
+<br/>
+</td></tr></table>
+</td></tr></table></body></html>
