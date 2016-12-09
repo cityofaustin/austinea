@@ -1,0 +1,100 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Restart Collections On Case</title>
+<link rel="Stylesheet" href="/austinea/style/hover.css" type="text/css" />
+</head>
+<body bgcolor="#ddd8c2">
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="650" align="center">
+<tr><td style="padding: 0;" height="130" valign="top"><a href="">
+<img src="/austinea/image/iTHeader.jpg" alt="austinea.org - home..." border="0"></a></td></tr>
+<!-- Text Area -->
+<tr><td>
+
+<p style="text-align: center; font-weight: bold;">Restart Collections On Case<br />Use Case Specification</p>
+<p style="text-align: center;">12/09/2016
+
+<!--  IF Printable document option Included  
+<p style="text-align: center;">download <a href="/austinea/arch/code/***.docx">printable version</a>
+-- >
+
+<b> Municipal Court Logical Data Model </b>
+<!-- Image -  Logical Data Model 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="/austinea/arch/code/ldm.jpg"><img src="/austinea/arch/code/ldm.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Austin Code Logical Data Model</p>
+</td></tr></table> -->
+
+<!-- USE CASE IMAGE -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/austinea/arch/municourt/restartCollectionsOnCase/ucd.jpg"><img src="/austinea/arch/municourt/restartCollectionsOnCase/ucd.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Restart Collections On Case<br />Use Case Model</span>
+</td></tr></table>
+
+<p><b>Scope: </b>The case management system checks cases placed into collections that were stopped because of a motion, appeal or event 
+set on the case subsequent to the case being submitted to the collections system. If all of these stop conditions have processed and/or 
+resolved, the 'days until restart' setting on the case has lapsed and a balance greater than $25 remains on the case then the case management 
+system will send a record to the collections service indicating that the collections can resume.
+</p>
+<!-- IF INTERACTION OVERVIEW IS INCLUDED 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/austinea/arch/municourt/***.jpg"><img src="/austinea/arch/municourt/***.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Interaction Overview</span>
+</td></tr></table>
+-->
+<p>This Use case also depends upon the following use cases:</p>
+<ul>
+	<li><a href="/austinea/arch/municourt/sendMessageToCollections/index.html">Send Message To Collections Use Case</a></li>
+</ul>
+
+<!-- SEQUENCE DIAGRAM  -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/austinea/arch/municourt/restartCollectionsOnCase/sd01.jpg"><img src="/austinea/arch/municourt/restartCollectionsOnCase/sd01.jpg" border="0" alt="" width="600"/></a><br />
+<span style="font-weight: bold;">Restart Collections On Case<br />Sequence Diagram</span>
+</td></tr></table>
+<br />
+
+
+<!-- INTERFACE TABLE  -->
+<table align="center" id="custom">
+<tr><th width="9%">Req#</th><th width="70%">Type/Interface - Requirement Description</th><th>Performance</th></tr>
+<tr>
+<td rowspan="2">001</td>
+<td style="font-weight: bold; background: lightgray;">Manage Court Case/removeCollectionPause</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+If daysUntilRestart have lapsed and stop conditions are lifted the case management system removes the collection pause 
+flag (sets it to null) in the collection send changes object (referenced by case number). 
+The collection pause flag is set and added to the collection send changes object.<br>
+* If the case balance is $0 and the minimum balance is set greater than $0, the case cannot be restarted even 
+if all the other requirements are satisfied.
+</td>
+</tr>
+<tr>
+<td rowspan="2">002</td>
+<td style="font-weight: bold; background: lightgray;">Manage Court Case/<a href="/austinea/arch/municourt/sendMessageToCollections/index.html">Send Message To Collections Use Case</a></td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+The case management system creates a collections send file (coordinated with the collections vendor) for all cases added 
+that includes the citation information, vehicle information (when applicable), personal identifiers and contact information, 
+case starting balance, case balance, total calculated collection fee and status for any case that is being added or is 
+already in the collections process. The entire data set is transferred to the collection vendor every time there is an 
+update or change to the data. The collection vendor evaluates the entire file and compares the data values for each case 
+to what they have on record. Any changes detected are used to add or update their records.
+</td>
+</tr>
+</table>
+<br/>
+</td></tr></table>
+</td></tr></table></body></html>
