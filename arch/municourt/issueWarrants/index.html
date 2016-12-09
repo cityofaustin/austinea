@@ -1,0 +1,303 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Issue Warrants</title>
+<link rel="Stylesheet" href="/austinea/style/hover.css" type="text/css" />
+</head>
+<body bgcolor="#ddd8c2">
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="650" align="center">
+<tr><td style="padding: 0;" height="130" valign="top"><a href="">
+<img src="/austinea/image/iTHeader.jpg" alt="austinea.org - home..." border="0"></a></td></tr>
+<!-- Text Area -->
+<tr><td>
+
+<p style="text-align: center; font-weight: bold;">Issue Warrants<br />Use Case Specification</p>
+<p style="text-align: center;">12/09/2016
+
+<!--  IF Printable document option Included  
+<p style="text-align: center;">download <a href="/austinea/arch/code/***.docx">printable version</a>
+-- >
+
+<b> Municipal Court Logical Data Model </b>
+<!-- Image -  Logical Data Model 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="/austinea/arch/code/ldm.jpg"><img src="/austinea/arch/code/ldm.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Austin Code Logical Data Model</p>
+</td></tr></table> -->
+
+<!-- USE CASE IMAGE -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/austinea/arch/municourt/issueWarrants/ucd.jpg"><img src="/austinea/arch/municourt/issueWarrants/ucd.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Issue Warrants<br />Use Case Model</span>
+</td></tr></table>
+
+<p><b>Scope: </b>The Court Clerk selects a list of cases to review for warrant activation by submitting the type of warrant being processed. 
+The case management evaluates all active cases and returns the list of cases that are eligible for warrant status. Types of warrants includes:
+<ul>
+<li>WARR (Capias: PCA</li>
+<li>Probable Cause Affidavit)</li>
+<li>CAPW (Capias Pro Fine)</li>
+</ul>
+</p>
+<p></p>
+For all of the cases returned by the selection:
+The Clerk places the warrant in the Judge's queue for signature and activation. The Judge signs the warrant.
+When it's a Capias PCA (Probable Cause Affidavit) Warrant the Court Clerk reviews the case for any actions after the PCA. 
+The Clerk reviews the action and makes sure the defendant isn’t on extension. These extensions could be for payments, judge’s 
+orders, dockets, etc. The Court Clerk verifies all the components of the case. The case has to have a ticket, complaint, and 
+(if capias) a PCA (Probable Cause Affidavit).  Any other documents in the case such as motions, defendant’s correspondences, 
+a docket, or an extension will cause the PCA to not be issued. The Court Clerk reviews and verifies information on the PCA matches case. 
+The Court Clerk verifies PCA has three signatures (two clerk and Judge). If the case meets all of the criteria for a warrant 
+to be issued then the Court Clerk activates a warrant on the case. The case management system sets a "Warrant Issued" primary status on the case.
+</p>
+<p>
+When issuing a Capias Pro Fine warrant:
+<ul>
+<li>The Court Clerk reviews the case ticket and verifies that the name and charge match what is on the case.</li>
+<li>The Court Clerk reviews the case for plea and conviction information and verifies that plea and conviction information has been entered. The Court Clerk also verifies that it has been 30 days from the conviction date.</li>
+<li>The Court Clerk review images the judgment document images on the case and verifies that a  judgment is filed in case, there is a judge’s signature and the fine amount is on the document. List of documents used to reflect conviction: Judgment form and/or Order of revocation.</li>
+<li>The Court Clerk verifies that a time payment fee has been added and that the fine/cost total equals the judgment amount plus the time payment fee (plus collection fee and DPS fee if they are on case). The Court Clerk also looks for DSC Fee of $9.90 and confirms that it is on the case.</li>
+<li>If the "Time Payment Fee" is not on the case, The Court Clerk adds it and verifies that the case total = the case Judgment amount + time payment fee + additional cost ie: (DPS fee, Collection Fee, Warrant on commitment fee).</li>
+<li>The Court Clerk reviews the capias pro fine document to ensure all information is present and correct by checking the Defendant’s name and Charge  as well as the Date of Judgment and Judgment Amount.</li>
+<li>If the case meets the criteria for issuing a warrant: The Clerk issues the commitment warrant if all information is correct and no new actions occurred after the production of the document.</li>
+<li>If the case meets the criteria for issuing a Capias Pro Fine Warrant the clerk activates the warrant.</li>
+<li>The case management system issues a Commitment (COMM) warrant on the case and runs the CIF process.</li>
+<li>The case management system sets a (warrant) "Commitment" primary status on the case.</li>
+</ul>
+</p>
+<!-- IF INTERACTION OVERVIEW IS INCLUDED 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/austinea/arch/municourt/***.jpg"><img src="/austinea/arch/municourt/***.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Interaction Overview</span>
+</td></tr></table>
+-->
+<br />
+
+
+<!-- SEQUENCE DIAGRAM  -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/austinea/arch/municourt/issueWarrants/sd01.jpg"><img src="/austinea/arch/municourt/issueWarrants/sd01.jpg" border="0" alt="" width="600"/></a><br />
+<span style="font-weight: bold;">Issue Warrants<br />Sequence Diagram</span>
+</td></tr></table>
+<br />
+
+
+<!-- INTERFACE TABLE  -->
+<table align="center" id="custom">
+<tr><th width="9%">Req#</th><th width="70%">Type/Interface - Requirement Description</th><th>Performance</th></tr>
+<tr>
+<td rowspan="2">001</td>
+<td style="font-weight: bold; background: lightgray;">Manage Court Case/selectWarrantQueue</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Court Clerk selects a list of cases to review for warrant activation by submitting the type of warrant being processed. 
+The case management evaluates all active cases and returns the list of cases that are eligible for warrant status.
+</td>
+</tr>
+<tr>
+<td rowspan="2">002</td>
+<td style="font-weight: bold; background: lightgray;">Manage Court Case/submitForSignature</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+When issuing Capias PCA Probable Cause Affidavit Warrant The Court Clerk submits a document for 
+placement in a queue for signature. The case management system puts the documents in the Judge's queue.
+</td>
+</tr>
+<tr>
+<td rowspan="2">003</td>
+<td style="font-weight: bold; background: lightgray;">Judge/signDocument</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+The Judge signs the document(s).
+</td>
+</tr>
+<tr>
+<td rowspan="2">004</td>
+<td style="font-weight: bold; background: lightgray;">Court Clerk/reviewWarrantCandidateCase</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+If Judge has approved warrant document the Court Clerk further reviews the case actions and components to 
+qualify whether a warrant can be issued on the case.
+</td>
+</tr>
+<tr>
+<td rowspan="2">005</td>
+<td style="font-weight: bold; background: lightgray;">Court Clerk/reviewCaseActions</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+The Court Clerk reviews the case for any actions after the PCA (Probable Cause Affidavit). The Clerk reviews the 
+action and makes sure the defendant isn’t on extension. These extensions could be for payments, judge’s orders, dockets, etc.
+</td>
+</tr>
+<tr>
+<td rowspan="2">006</td>
+<td style="font-weight: bold; background: lightgray;">Court Clerk/verifyCaseComponents</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+The Court Clerk verifies all the components of the case. The case has to have a ticket, complaint, 
+and (if capias) a PCA (Probable Cause Affidavit).  Any other documents in the case such as motions, 
+defendant’s correspondences, a docket, or an extension will cause the PCA to not be issued. 
+</td>
+</tr>
+<tr>
+<td rowspan="2">007</td>
+<td style="font-weight: bold; background: lightgray;">Court Clerk/reviewPCA</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+The Court Clerk reviews and verifies information on the PCA (Probable Cause Affidavit) 
+matches what is in the case. The Court Clerk verifies that the PCA has three signatures (two clerk and Judge).
+</td>
+</tr>
+<td rowspan="2">008</td>
+<td style="font-weight: bold; background: lightgray;">Manage Court Case/activateWarrant</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+If case meets criteria for warrant activation the Court Clerk uses the case management system to activate a warrant on the case.
+</td>
+</tr>
+<td rowspan="2">009</td>
+<td style="font-weight: bold; background: lightgray;">Manage Court Case/setCaseStatus</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+The case management system sets the status on the case. If a warrant is being issued the case status is et to an active warrant status.
+</td>
+</tr>
+<tr>
+<td rowspan="2">010</td>
+<td style="font-weight: bold; background: lightgray;">Court Clerk/reviewWarrantCandidateCase</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+When issuing a Capias Pro Fine Warrant the Court Clerk further reviews the case actions and components to qualify whether a 
+warrant can be issued on the case.
+</td>
+</tr>
+<tr>
+<td rowspan="2">011</td>
+<td style="font-weight: bold; background: lightgray;">Court Clerk/reviewComplaint</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+The Court Clerk reviews the complaint for accuracy and formatting.
+</td>
+</tr>
+<tr>
+<td rowspan="2">012</td>
+<td style="font-weight: bold; background: lightgray;">Court Clerk/reviewCaseChargesPlea</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+The Court Clerk reviews the case for plea and conviction information and verifies whether or 
+not plea and conviction information has been entered.
+</td>
+</tr>
+<tr>
+<td rowspan="2">013</td>
+<td style="font-weight: bold; background: lightgray;">Court Clerk/confirm30DayPostJudgement</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+The Court Clerk verifies that it has been 30 days from the conviction date.
+</td>
+</tr>
+<tr>
+<td rowspan="2">014</td>
+<td style="font-weight: bold; background: lightgray;">Court Clerk/reviewCaseJudgement</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+The Court Clerk review images the judgment document images on the case and verifies that a  judgment 
+is filed in case, there is a judge’s signature and the fine amount is on the document. List of documents 
+used to reflect conviction: Judgment form and/or Order of revocation.
+</td>
+</tr>
+<tr>
+<td rowspan="2">015</td>
+<td style="font-weight: bold; background: lightgray;">Court Clerk/verifyWarrantFeeFine</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+The Court Clerk verifies that a time payment fee has been added and that the fine/cost total 
+equals the judgment amount plus the time payment fee (plus collection fee and DPS fee if they are on case). 
+The Court Clerk also looks for DSC Fee of $9.90 and confirms that it is on the case.
+</td>
+</tr>
+<tr>
+<td rowspan="2">016</td>
+<td style="font-weight: bold; background: lightgray;">Manage Court Case/addCostFeeToCase</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+If time payment fee is not on case (after 30 days): The case management system adds it and verifies that 
+the case total = the case Judgment amount + time payment fee + additional cost ie: (DPS fee, Collection Fee, 
+Warrant on commitment fee, OMNIBASE administrative fee).
+</td>
+</tr>
+<tr>
+<td rowspan="2">017</td>
+<td style="font-weight: bold; background: lightgray;">Court Clerk/reviewCapiasDoc</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+The Court Clerk reviews the capias pro fine document to ensure all information is present and correct by 
+checking the Defendant’s name and Charge as well as the Date of Judgment and Judgment Amount.
+</td>
+</tr>
+<tr>
+<td rowspan="2">018</td>
+<td style="font-weight: bold; background: lightgray;">Manage Court Case/activateWarrant</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+If the case meets the criteria for warrant activation the Court Clerk uses the case management system to activate a warrant on the case.
+</td>
+</tr>
+<tr>
+<td rowspan="2">019</td>
+<td style="font-weight: bold; background: lightgray;">Manage Court Case/setCaseStatus</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+The case management system sets the status on the case.
+If a warrant is being issued the case status is et to a active warrant status. in this case: The case management system 
+issues a Commitment (COMM) warrant on the case and runs the CIF process.
+</td>
+</tr>
+</table>
+<br/>
+</td></tr></table>
+</td></tr></table></body></html>
