@@ -1,0 +1,138 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Monitor Case Compliance</title>
+<link rel="Stylesheet" href="/austinea/style/hover.css" type="text/css" />
+</head>
+<body bgcolor="#ddd8c2">
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="650" align="center">
+<tr><td style="padding: 0;" height="130" valign="top"><a href="">
+<img src="/austinea/image/iTHeader.jpg" alt="austinea.org - home..." border="0"></a></td></tr>
+<!-- Text Area -->
+<tr><td>
+
+<p style="text-align: center; font-weight: bold;">Monitor Case Compliance<br />Use Case Specification</p>
+<p style="text-align: center;">12/09/2016
+
+<!--  IF Printable document option Included  
+<p style="text-align: center;">download <a href="/austinea/arch/code/***.docx">printable version</a>
+-- >
+
+<b> Municipal Court Logical Data Model </b>
+<!-- Image -  Logical Data Model 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="/austinea/arch/code/ldm.jpg"><img src="/austinea/arch/code/ldm.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Austin Code Logical Data Model</p>
+</td></tr></table> -->
+
+<!-- USE CASE IMAGE -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/austinea/arch/municourt/monitorCaseCompliance/ucd.jpg"><img src="/austinea/arch/municourt/monitorCaseCompliance/ucd.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Monitor Case Compliance<br />Use Case Model</span>
+</td></tr></table>
+
+<p><b>Scope: </b>The Defendant either complies or fails to comply with appearances, payments and sentencing guidelines mandated the law on their case. 
+The case management system monitors the Defendant's compliance by keeping track of appearance dates, payments and the Defendant's timely filing proof 
+of sentence completion.
+</p>
+<!-- IF INTERACTION OVERVIEW IS INCLUDED 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/austinea/arch/municourt/***.jpg"><img src="/austinea/arch/municourt/***.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Interaction Overview</span>
+</td></tr></table>
+-->
+<br />
+
+
+<!-- SEQUENCE DIAGRAM  -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/austinea/arch/municourt/monitorCaseCompliance/sd01.jpg"><img src="/austinea/arch/municourt/monitorCaseCompliance/sd01.jpg" border="0" alt="" width="600"/></a><br />
+<span style="font-weight: bold;">Monitor Case Compliance<br />Sequence Diagram</span>
+</td></tr></table>
+<br />
+
+
+<!-- INTERFACE TABLE  -->
+<table align="center" id="custom">
+<tr><th width="9%">Req#</th><th width="70%">Type/Interface - Requirement Description</th><th>Performance</th></tr>
+<tr>
+<td rowspan="2">001</td>
+<td style="font-weight: bold; background: lightgray;">Defendant/complyWithCaseConditions</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The Defendant has the responsibility to manage any deadlines, appearances, payments, sentencing programs or DSC 
+completion and additional requirements on their case. The Defendant either stays within compliance by paying, 
+appearing and submitting proof to the Court in a timely manner or they don't. Every time the defendant's compliance 
+is evaluated a compliance result value is generated and the case management system will take the appropriate action 
+based upon that result (including no action).
+</td>
+</tr>
+<tr>
+<td rowspan="2">002</td>
+<td style="font-weight: bold; background: lightgray;">Manage Court Case/retrieveCaseFileByCaseNumber</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>The case management system retrieves the case file using the provided case number.
+</td>
+</tr>
+<tr>
+<td rowspan="2">003</td>
+<td style="font-weight: bold; background: lightgray;">Manage Court Case/monitorAppearance</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+If appearance events are scheduled the case management system checks for any upcoming appearance 
+dates (phone dialer notification) or failure to appear conditions on the case. If the defendant 
+is out of compliance then a compliance action is generated.
+</td>
+</tr>
+<tr>
+<td rowspan="2">004</td>
+<td style="font-weight: bold; background: lightgray;">Manage Court Case/monitorCaseBalance</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+If there is a balance on the case greater than $25 the case management system monitors the 
+case balance including the last payment date, the next payment plan due date until the case is paid 
+off or dismissed. If the defendant is out of compliance (past due payment) then a compliance action is generated.
+</td>
+</tr>
+<tr>
+<td rowspan="2">005</td>
+<td style="font-weight: bold; background: lightgray;">Manage Court Case/monitorCommunityService</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+If there is a sentence to community service the case management system monitors any community service on the case 
+until it is completed and all compliance paperwork is submitted. If the defendant is out of compliance (no proof of 
+service complying with the individual's community service schedule on record) then a compliance action is generated.
+</td>
+</tr>
+<tr>
+<td rowspan="2">006</td>
+<td style="font-weight: bold; background: lightgray;">Manage Court Case/monitorWarrantStatus</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+If there is an outstanding warrant on the defendant's case the case management system monitors the warrant 
+status on the case. If the defendant is out of compliance (there is an active warrant on the case) then a 
+compliance action is generated.
+</td>
+</tr>
+</table>
+<br/>
+</td></tr></table>
+</td></tr></table></body></html>
