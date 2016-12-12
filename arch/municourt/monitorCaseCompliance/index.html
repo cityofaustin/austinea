@@ -36,7 +36,7 @@
 <span style="font-weight: bold;">Monitor Case Compliance<br />Use Case Model</span>
 </td></tr></table>
 
-<p><b>Scope: </b>The Defendant either complies or fails to comply with appearances, payments and sentencing guidelines mandated the law on their case. 
+<p><b>Scope: </b>The Defendant either complies or fails to comply with appearances, payments and sentencing guidelines mandated by the law on their case. 
 The case management system monitors the Defendant's compliance by keeping track of appearance dates, payments and the Defendant's timely filing proof 
 of sentence completion.
 </p>
@@ -74,9 +74,25 @@ appearing and submitting proof to the Court in a timely manner or they don't. Ev
 is evaluated a compliance result value is generated and the case management system will take the appropriate action 
 based upon that result (including no action).
 </td>
-</tr>
+  </tr>
 <tr>
 <td rowspan="2">002</td>
+<td style="font-weight: bold; background: lightgray;">Manage Court Case/reviewCaseForCompliance</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+The case management system reviews the case for compliance by examining:
+<ul> 
+<li>Appearance dates and whether the Defendant has made timely appearances on the case</li>
+<li>The case balance, payment plan, scheduled payment dates and actual payments to verify that the Defendant is current with payment on the case</li>
+<li>The sentence program and certified community service hour completion or DSC completion</li>
+</ul>
+</td>
+</tr>
+</tr>
+<tr>
+<td rowspan="2">003</td>
 <td style="font-weight: bold; background: lightgray;">Manage Court Case/retrieveCaseFileByCaseNumber</td>
 <td rowspan="2">  </td>
 </tr>
@@ -85,7 +101,7 @@ based upon that result (including no action).
 </td>
 </tr>
 <tr>
-<td rowspan="2">003</td>
+<td rowspan="2">004</td>
 <td style="font-weight: bold; background: lightgray;">Manage Court Case/monitorAppearance</td>
 <td rowspan="2">  </td>
 </tr>
@@ -97,7 +113,7 @@ is out of compliance then a compliance action is generated.
 </td>
 </tr>
 <tr>
-<td rowspan="2">004</td>
+<td rowspan="2">005</td>
 <td style="font-weight: bold; background: lightgray;">Manage Court Case/monitorCaseBalance</td>
 <td rowspan="2">  </td>
 </tr>
@@ -109,7 +125,7 @@ off or dismissed. If the defendant is out of compliance (past due payment) then 
 </td>
 </tr>
 <tr>
-<td rowspan="2">005</td>
+<td rowspan="2">006</td>
 <td style="font-weight: bold; background: lightgray;">Manage Court Case/monitorCommunityService</td>
 <td rowspan="2">  </td>
 </tr>
@@ -121,7 +137,7 @@ service complying with the individual's community service schedule on record) th
 </td>
 </tr>
 <tr>
-<td rowspan="2">006</td>
+<td rowspan="2">007</td>
 <td style="font-weight: bold; background: lightgray;">Manage Court Case/monitorWarrantStatus</td>
 <td rowspan="2">  </td>
 </tr>
