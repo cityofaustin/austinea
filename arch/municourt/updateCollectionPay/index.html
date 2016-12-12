@@ -1,0 +1,121 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Update Collection Pay</title>
+<link rel="Stylesheet" href="/austinea/style/hover.css" type="text/css" />
+</head>
+<body bgcolor="#ddd8c2">
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="650" align="center">
+<tr><td style="padding: 0;" height="130" valign="top"><a href="">
+<img src="/austinea/image/iTHeader.jpg" alt="austinea.org - home..." border="0"></a></td></tr>
+<!-- Text Area -->
+<tr><td>
+
+<p style="text-align: center; font-weight: bold;">Update Collection Pay<br />Use Case Specification</p>
+<p style="text-align: center;">12/12/2016
+
+<!--  IF Printable document option Included  
+<p style="text-align: center;">download <a href="/austinea/arch/code/***.docx">printable version</a>
+-- >
+
+<b> Municipal Court Logical Data Model </b>
+<!-- Image -  Logical Data Model 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="/austinea/arch/code/ldm.jpg"><img src="/austinea/arch/code/ldm.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Austin Code Logical Data Model</p>
+</td></tr></table> -->
+
+<!-- USE CASE IMAGE -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/austinea/arch/municourt/updateCollectionPay/ucd.jpg"><img src="/austinea/arch/municourt/updateCollectionPay/ucd.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Update Collection Pay<br />Use Case Model</span>
+</td></tr></table>
+
+<p><b>Scope: </b>When the collections service takes a payment from the Defendant it records the payment and sends a record to the case management 
+system that includes the payment amount, payment date, payment type, next payment due date and an extension to pay date (when applicable). If the 
+collections service determines through their contact with the Defendant that they have a new mail email address, emial address or phone number 
+then they set a flag indicating that the contact information has changed and include the corrected contact info in the file they send to Muni Court.
+</p>
+<!-- IF INTERACTION OVERVIEW IS INCLUDED 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/austinea/arch/municourt/***.jpg"><img src="/austinea/arch/municourt/***.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Interaction Overview</span>
+</td></tr></table>
+-->
+<p>This Use case also depends upon the following use cases:</p>
+<ul>
+	<li><a href="/austinea/arch/municourt/sendMessageToCollections/index.html">Send Message To Collections Use Case</a></li>
+</ul>
+
+<!-- SEQUENCE DIAGRAM  -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/austinea/arch/municourt/updateCollectionPay/sd01.jpg"><img src="/austinea/arch/municourt/updateCollectionPay/sd01.jpg" border="0" alt="" width="600"/></a><br />
+<span style="font-weight: bold;">Update Collection Pay<br />Sequence Diagram</span>
+</td></tr></table>
+<br />
+
+
+<!-- INTERFACE TABLE  -->
+<table align="center" id="custom">
+<tr><th width="9%">Req#</th><th width="70%">Type/Interface - Requirement Description</th><th>Performance</th></tr>
+<tr>
+<td rowspan="2">001</td>
+<td style="font-weight: bold; background: lightgray;">Collections/processPayment</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+The collection service processes a payment on the collections case record. Payments can be made online, by mail and in person if the 
+vendor has a local presence. The payment is referenced by the case number. The payment record includes the payment amount, the payment 
+date and the type of payment (partial or full), starting case balance, case balance, collection fee and is added to the collection receive update object.
+</td>
+</tr>
+<tr>
+<td rowspan="2">002</td>
+<td style="font-weight: bold; background: lightgray;">Collections/addCollectionPaymentUpdate</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+The collection service processes a payment on the collections case record. The payment is referenced by the case number. 
+The payment record includes the payment amount, the payment date and the type of payment (partial or full), starting case balance, 
+case balance, collection fee and is added to the collection receive update object.
+</td>
+</tr>
+<tr>
+<td rowspan="2">003</td>
+<td style="font-weight: bold; background: lightgray;">Collections/processContactChanges</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+In the course of corresponding with the defendant by mail, email, text or telephone, if there are any changes in the defendant contact 
+parameters the collection service compiles the changes and includes them in the collection receive changes object.
+</td>
+</tr>
+<tr>
+<td rowspan="2">004</td>
+<td style="font-weight: bold; background: lightgray;">Manage Court Case/<a href="/austinea/arch/municourt/sendMessageToCollections/index.html">Send Message To Collections Use Case</a></td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+The case management system creates a collections send file (coordinated with the collections vendor) for all cases added 
+that includes the citation information, vehicle information (when applicable), personal identifiers and contact information, 
+case starting balance, case balance, total calculated collection fee and status for any case that is being added or is 
+already in the collections process. The entire data set is transferred to the collection vendor every time there is an 
+update or change to the data. The collection vendor evaluates the entire file and compares the data values for each case 
+to what they have on record. Any changes detected are used to add or update their records.
+</td>
+</tr>
+</table>
+<br/>
+</td></tr></table>
+</td></tr></table></body></html>
