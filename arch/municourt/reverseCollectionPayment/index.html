@@ -1,0 +1,138 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Reverse Collection Payment</title>
+<link rel="Stylesheet" href="/austinea/style/hover.css" type="text/css" />
+</head>
+<body bgcolor="#ddd8c2">
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="650" align="center">
+<tr><td style="padding: 0;" height="130" valign="top"><a href="">
+<img src="/austinea/image/iTHeader.jpg" alt="austinea.org - home..." border="0"></a></td></tr>
+<!-- Text Area -->
+<tr><td>
+
+<p style="text-align: center; font-weight: bold;">Reverse Collection Payment<br />Use Case Specification</p>
+<p style="text-align: center;">12/12/2016
+
+<!--  IF Printable document option Included  
+<p style="text-align: center;">download <a href="/austinea/arch/code/***.docx">printable version</a>
+-- >
+
+<b> Municipal Court Logical Data Model </b>
+<!-- Image -  Logical Data Model 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="/austinea/arch/code/ldm.jpg"><img src="/austinea/arch/code/ldm.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Austin Code Logical Data Model</p>
+</td></tr></table> -->
+
+<!-- USE CASE IMAGE -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/austinea/arch/municourt/reverseCollectionPayment/ucd.jpg"><img src="/austinea/arch/municourt/reverseCollectionPayment/ucd.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Reverse Collection Payment<br />Use Case Model</span>
+</td></tr></table>
+
+<p><b>Scope: </b>If a payment is taken on a case in collections and the payment needs to be reversed (for example: a bad check or a 
+payment applied to the case by mistake) then a 'reversal' record with the reversed payment amount and the new case balance is 
+sent over to the collections service.
+</p>
+<!-- IF INTERACTION OVERVIEW IS INCLUDED 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/austinea/arch/municourt/***.jpg"><img src="/austinea/arch/municourt/***.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Interaction Overview</span>
+</td></tr></table>
+-->
+
+<p>This Use case also depends upon the following use cases:</p>
+<ul>
+	<li><a href="/austinea/arch/municourt/updateCourtPay/index.html">Update Court Pay Use Case</a></li>
+	<li><a href="/austinea/arch/municourt/updateCollectionPay/index.html">Update Collection Pay Use Case</a></li>
+	<li><a href="/austinea/arch/municourt/sendMessageToCollections/index.html">Send Message To Collections Use Case</a></li>
+</ul>
+<br />
+
+
+<!-- SEQUENCE DIAGRAM  -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/austinea/arch/municourt/reverseCollectionPayment/sd01.jpg"><img src="/austinea/arch/municourt/reverseCollectionPayment/sd01.jpg" border="0" alt="" width="600"/></a><br />
+<span style="font-weight: bold;">Reverse Collection Payment<br />Sequence Diagram</span>
+</td></tr></table>
+<br />
+
+
+<!-- INTERFACE TABLE  -->
+<table align="center" id="custom">
+<tr><th width="9%">Req#</th><th width="70%">Type/Interface - Requirement Description</th><th>Performance</th></tr>
+<tr>
+<td rowspan="2">001</td>
+<td style="font-weight: bold; background: lightgray;"><a href="/austinea/arch/municourt/updateCourtPay/index.html">Update Court Pay Use Case</a></td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+If the Defendant pays at Court:
+<br>&nbsp;<br>
+After a case has been sent to collections, when the Defendant makes a payment on the case at the Court, a record is sent to the 
+collections system indicating that payment has been made and including the payment amount, payment date and case balance. 
+<br>&nbsp;<br>
+However, if the transaction type is a layout, community service or a judicial order then only the case balance (balance adjustment) 
+is sent to the collections system. If the transaction type is BO (bond) then the case management system checks first to see if the bond 
+is applied before or after the case has been sent to collections.  If the bond was posted before, the collections vendor does not get credit 
+and only a case balance adjustment is sent to the collections system. If the bond was posted after the case was sent, then the case management 
+system checks for the Bond dispersed code. If bond is applied, the case management system sends the collection system a payment transaction 
+record with the bond amount. Furthermore, when a bond gets posted on a case that has already been sent to collections, the case is then checked 
+daily, until the bond is disposed.  If the bond becomes 'disposed' then the case management system ceases checking on the bond dispersal 
+and proceeds to process the the disbursed bond amount as a payment or reversal with the collection system.
+</td>
+</tr>
+<tr>
+<td rowspan="2">002</td>
+<td style="font-weight: bold; background: lightgray;"><a href="/austinea/arch/municourt/updateCollectionPay/index.html">Update Collection Pay Use Case</a></td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+If the Defendant Pays the Collection vendor:
+<br>&nbsp;<br>
+When the collections service takes a payment from the Defendant it records the payment and sends a record to the case management 
+system that includes the payment amount, payment date, payment type, next payment due date and an extension to pay date (when applicable). If the 
+collections service determines through their contact with the Defendant that they have a new mail email address, emial address or phone number 
+then they set a flag indicating that the contact information has changed and include the corrected contact info in the file they send to Muni Court.
+</td>
+</tr>
+<tr>
+<td rowspan="2">003</td>
+<td style="font-weight: bold; background: lightgray;">Manage Court Case/reverseCollectionPaymentOnCase</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+If a payment is 'bad' or applied by mistake on a case already in collections: The case management system reverses the payment on the case. The case number, Payment, reversed payment amount, payment type, starting case balance, 
+case balance, and collection fee are added to the collection send changes object.
+</td>
+</tr>
+<tr>
+<td rowspan="2">004</td>
+<td style="font-weight: bold; background: lightgray;">Manage Court Case/<a href="/austinea/arch/municourt/sendMessageToCollections/index.html">Send Message To Collections Use Case</a></td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+The case management system creates a collections send file (coordinated with the collections vendor) for all cases added 
+that includes the citation information, vehicle information (when applicable), personal identifiers and contact information, 
+case starting balance, case balance, total calculated collection fee and status for any case that is being added or is 
+already in the collections process. The entire data set is transferred to the collection vendor every time there is an 
+update or change to the data. The collection vendor evaluates the entire file and compares the data values for each case 
+to what they have on record. Any changes detected are used to add or update their records.
+</td>
+</tr>
+</table>
+<br/>
+</td></tr></table>
+</td></tr></table></body></html>
