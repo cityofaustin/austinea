@@ -1,0 +1,298 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Update Court Pay</title>
+<link rel="Stylesheet" href="/austinea/style/hover.css" type="text/css" />
+</head>
+<body bgcolor="#ddd8c2">
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="650" align="center">
+<tr><td style="padding: 0;" height="130" valign="top"><a href="">
+<img src="/austinea/image/iTHeader.jpg" alt="austinea.org - home..." border="0"></a></td></tr>
+<!-- Text Area -->
+<tr><td>
+
+<p style="text-align: center; font-weight: bold;">Update Court Pay<br />Use Case Specification</p>
+<p style="text-align: center;">12/09/2016
+
+<!--  IF Printable document option Included  
+<p style="text-align: center;">download <a href="/austinea/arch/code/***.docx">printable version</a>
+-- >
+
+<b> Municipal Court Logical Data Model </b>
+<!-- Image -  Logical Data Model 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="/austinea/arch/code/ldm.jpg"><img src="/austinea/arch/code/ldm.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Austin Code Logical Data Model</p>
+</td></tr></table> -->
+
+<!-- USE CASE IMAGE -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/austinea/arch/municourt/updateCourtPay/ucd.jpg"><img src="/austinea/arch/municourt/updateCourtPay/ucd.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Update Court Pay<br />Use Case Model</span>
+</td></tr></table>
+
+<p><b>Scope: </b>After a case has been sent to collections, when the Defendant makes a payment on the case at the Court, a record is sent to the 
+collections system indicating that payment has been made and including the payment amount, payment date and case balance. 
+<br>&nbsp;<br>
+However, if the transaction type is a layout, community service or a judicial order then only the case balance (balance adjustment) 
+is sent to the collections system. If the transaction type is BO (bond) then the case management system checks first to see if the bond 
+is applied before or after the case has been sent to collections.  If the bond was posted before, the collections vendor does not get credit 
+and only a case balance adjustment is sent to the collections system. If the bond was posted after the case was sent, then the case management 
+system checks for the Bond dispersed code. If bond is applied, the case management system sends the collection system a payment transaction 
+record with the bond amount. Furthermore, when a bond gets posted on a case that has already been sent to collections, the case is then checked 
+daily, until the bond is disposed.  If the bond becomes 'disposed' then the case management system ceases checking on the bond dispersal 
+and proceeds to process the the disbursed bond amount as a payment or reversal with the collection system.
+</p>
+<!-- IF INTERACTION OVERVIEW IS INCLUDED 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/austinea/arch/municourt/***.jpg"><img src="/austinea/arch/municourt/***.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Interaction Overview</span>
+</td></tr></table>
+-->
+
+<p>This Use case also depends upon the following use cases:</p>
+<ul>
+	<li><a href="/austinea/arch/municourt/postCashBond/index.html">Monitor Case Compliance Use Case</a></li>
+	<li><a href="/austinea/arch/municourt/sendMessageToCollections/index.html">Send Message To Collections Use Case</a></li>
+</ul>
+<br />
+
+
+<!-- SEQUENCE DIAGRAM  -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/austinea/arch/municourt/updateCourtPay/sd01.jpg"><img src="/austinea/arch/municourt/updateCourtPay/sd01.jpg" border="0" alt="" width="600"/></a><br />
+<span style="font-weight: bold;">Update Court Pay<br />Sequence Diagram</span>
+</td></tr></table>
+<br />
+
+
+<!-- INTERFACE TABLE  -->
+<table align="center" id="custom">
+<tr><th width="9%">Req#</th><th width="70%">Type/Interface - Requirement Description</th><th>Performance</th></tr>
+<tr>
+<td rowspan="2">001</td>
+<td style="font-weight: bold; background: lightgray;">Defendant/makeCasePayment</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+When it is a regular payment (partial or full): The Defendant makes a payment on the case.
+</td>
+</tr>
+<tr>
+<td rowspan="2">002</td>
+<td style="font-weight: bold; background: lightgray;">Court Clerk/processPayment</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+The Court Clerk takes the payment from the Defendant and records the payment in the case management system as a record 
+referencing the case number and noting the type of payment and the date it is made.
+</td>
+</tr>
+<tr>
+<td rowspan="2">003</td>
+<td style="font-weight: bold; background: lightgray;">Electronic Financial Service/processRemittance</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+When paying by credit card: An electronic financial service processes online financial transactions to acknowledge Remittance payment. 
+Includes point of sale (POS) or Web interface to Electronic Financial Service for automated clearing house (ACH), credit or debit card.
+</td>
+</tr>
+<tr>
+<td rowspan="2">004</td>
+<td style="font-weight: bold; background: lightgray;">Manage Court Case/processPayment</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+The case management system records the payment on the case. The fee is then disbursed to various accounts depending on the 
+type of fee and the disburse action. A receipt is generated to be delivered to the person making the payment.
+</td>
+</tr>
+<tr>
+<td rowspan="2">005</td>
+<td style="font-weight: bold; background: lightgray;">Defendant/takePaymentReceipt</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+The Defendant (or whoever made the payment) takes the payment receipt.
+</td>
+</tr>
+<tr>
+<td rowspan="2">006</td>
+<td style="font-weight: bold; background: lightgray;">Manage Court Case/adjustCollectionBalance</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+If the transaction type is a layout, community service or a judicial order: The case management system adds the case balance adjustment, 
+case balance and collection fee to the send collections update object.
+</td>
+</tr>
+<tr>
+<td rowspan="2">007</td>
+<td style="font-weight: bold; background: lightgray;">Manage Court Case/addCollectionPayment</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+If the transaction type is cash, check or credit card: The case management system processes a payment on the collections case record. 
+Payments can be made online, by mail and in person if the vendor has a local presence. The payment is referenced by the case number. 
+The payment record includes the payment amount, the payment date and the type of payment (partial or full), starting case balance, 
+case balance, collection fee and is added to the collection send update object.
+</td>
+</tr>
+<tr>
+<td rowspan="2">008</td>
+<td style="font-weight: bold; background: lightgray;">Manage Court Case/<a href="/austinea/arch/municourt/postCashBond/index.html">Post Cash Bond Use Case</a></td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+When a non-surety bond is posted: The Customer (who is either the Defendant or another individual posting a cash bond on the case) submits a request to post a cash bond. 
+The Clerk receives the request and begins processing a cash bond on the case (usually for an extension). The clerk retrieves the case file using the 
+case number. The Court Clerk enters the bond amount (full cost of the ticket or the amount set on the Judge's order) and uses the current date 
+(by default) before printing the bond form to be given to the Customer for completion. The Customer completes and submits the form to the Clerk for 
+processing. The Clerk accepts the form and uses the information on it to process the cash bond for the case.
+<br>&nbsp;<br>
+If Customer is not the Defendant on the case then the Clerk submits the demographics provided by the Customer on the bond form and searches the case 
+parties for a match. If the Customer is a case party the Clerk sets them as the bond poster. If the Customer is not a case party on the case, the 
+Clerk adds the customer as an additional case party on the case and sets them as the bond poster.
+<br>&nbsp;<br>
+The Clerk requests payment for the bond from the Customer. The Customer remits the requested payment to the Court Clerk. The Clerk processes the 
+remittance for the cash bond by setting the bond type ('CB'), payment type and transaction type ('BO'). The Clerk scans and attaches the completed bond 
+form to the case.
+<br>&nbsp;<br>
+If the Defendant missed an appearance with the prosecutor the Clerk adds an action to the case indicating that with one of the codes: TRAD, CMAD, ENAD
+<br>&nbsp;<br>
+The case management system presents the appropriate docket schedule to the Clerk depending upon information submitted in the bond request. The Court 
+Clerk reviews the docket schedule and suggests the first court appearance date available to the Customer. If the Customer prefers a different date 
+on the docket schedule they present that preference to the Clerk. The Clerk generates the Notice To appear document. The clerk gives a copy of the 
+completed bond form, a receipt for the bond payment and the Notice To Appear to the Customer.
+</td>
+</tr>
+<tr>
+<td rowspan="2">009</td>
+<td style="font-weight: bold; background: lightgray;">Manage Court Case/verifyCollectionAdjustment</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+The case management system compares the date the bond was posted with the date the case was sent to collections. If the bond was 
+posted before the case was sent then the collections service does not get credit for the payment. If the bond was posted after the 
+case was sent to collections then and the bond was disbursed then the payment is credited to the collections service.
+</td>
+</tr>
+<tr>
+<td rowspan="2">010</td>
+<td style="font-weight: bold; background: lightgray;">Manage Court Case/calculateCollectionFee</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+The case management system calculates the collection fee on the case. As required by law, the system must recalculate the collection fee as 
+partial jail time credit or community service is applied to a case in third party collections within the case management system. The fee will 
+be recalculated on the reduced balance on the case. The new case balance will be sent to the collection agency along with the recalculated fee.
+<br>&nbsp;<br>
+The system is required to log a case note indicating a collection fee was added, reduced or removed from collections. If reduced, the system is required 
+to log the reduced amount, date and time. The system is required to maintain a reference of the original collection fee amount as well.
+<br>&nbsp;<br>
+If a case that does not have a plea is assigned to collections, then when there is a guilty plea and the judge imposes a lower fine than the default 
+fine amount then the collection fee is recalculated.
+Track starting balance, total fees disbursed on the case and all transactions and recalculations to resolve disputes with the vendor.
+<br>&nbsp;<br>
+Note: always disburse the collection fee last.
+</td>
+</tr>
+<tr>
+<td rowspan="2">011</td>
+<td style="font-weight: bold; background: lightgray;">Manage Court Case/addCollectionBalanceAdjustment</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+If bond applied before sending to collections: The case management system adds the case balance adjustment, case balance 
+and collection fee to the send collections update object.
+</td>
+</tr>
+<tr>
+<td rowspan="2">012</td>
+<td style="font-weight: bold; background: lightgray;">Manage Court Case/checkBondDisburseCode</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+If bond posted after case sent to collections (until the bond is disbursed): The case management system checks the disburse code on the disbursement transaction.
+</td>
+</tr>
+<tr>
+<td rowspan="2">013</td>
+<td style="font-weight: bold; background: lightgray;">Manage Court Case/addCollectionBondPayment</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+If bond is applied, disposed and processed as a payment then the case management system processes a payment on the collections case record. Payments can be made online, by mail 
+and in person if the vendor has a local presence. The payment is referenced by the case number. The payment record (which is is added 
+to the collection send update object) includes:
+<ul>
+	<li>case number</li>
+	<li>payment amount</li>
+	<li>payment date</li>
+	<li>payment type (partial, full, bond application)</li>
+	<li>starting balance</li>
+	<li>case balance</li>
+	<li>collection fee</li>
+</ul>
+payment amount, the payment date and the type of , starting case balance, case balance, collection fee and .
+</td>
+</tr>
+<tr>
+<td rowspan="2">014</td>
+<td style="font-weight: bold; background: lightgray;">Manage Court Case/addCollectionBondReversal</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+If the bond is processed as reversal then the case management system adds the bond payment reversal to the collections send changes object: 
+<ul>
+	<li>case number</li>
+	<li>payment amount</li>
+	<li>payment date</li>
+	<li>payment action</li>
+	<li>starting balance</li>
+	<li>case balance</li>
+	<li>collection fee</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td rowspan="2">015</td>
+<td style="font-weight: bold; background: lightgray;">Manage Court Case/<a href="/austinea/arch/municourt/sendMessageToCollections/index.html">Send Message To Collections Use Case</a></td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+The case management system creates a collections send file (coordinated with the collections vendor) for all cases added 
+that includes the citation information, vehicle information (when applicable), personal identifiers and contact information, 
+case starting balance, case balance, total calculated collection fee and status for any case that is being added or is 
+already in the collections process. The entire data set is transferred to the collection vendor every time there is an 
+update or change to the data. The collection vendor evaluates the entire file and compares the data values for each case 
+to what they have on record. Any changes detected are used to add or update their records.
+</td>
+</tr>
+</table>
+<br/>
+</td></tr></table>
+</td></tr></table></body></html>
