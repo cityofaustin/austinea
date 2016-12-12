@@ -1,0 +1,171 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Verify Jail Credit</title>
+<link rel="Stylesheet" href="/austinea/style/hover.css" type="text/css" />
+</head>
+<body bgcolor="#ddd8c2">
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="650" align="center">
+<tr><td style="padding: 0;" height="130" valign="top"><a href="">
+<img src="/austinea/image/iTHeader.jpg" alt="austinea.org - home..." border="0"></a></td></tr>
+<!-- Text Area -->
+<tr><td>
+
+<p style="text-align: center; font-weight: bold;">Verify Jail Credit<br />Use Case Specification</p>
+<p style="text-align: center;">12/12/2016
+
+<!--  IF Printable document option Included  
+<p style="text-align: center;">download <a href="/austinea/arch/code/***.docx">printable version</a>
+-- >
+
+<b> Municipal Court Logical Data Model </b>
+<!-- Image -  Logical Data Model 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="/austinea/arch/code/ldm.jpg"><img src="/austinea/arch/code/ldm.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Austin Code Logical Data Model</p>
+</td></tr></table> -->
+
+<!-- USE CASE IMAGE -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/austinea/arch/municourt/verifyJailCredit/ucd.jpg"><img src="/austinea/arch/municourt/verifyJailCredit/ucd.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Verify Jail Credit<br />Use Case Model</span>
+</td></tr></table>
+
+<p><b>Scope: </b>The Defendant requests Jail Credit Verification and presents a photo ID to the Court Clerk.
+<br>&nbsp;<br>
+If the Defendant has a valid ID:<br>
+<ul>
+	<li>The Court Clerk verifies the person's identity in the case management system and retrieves the PID associated with the Defendant.</li>
+	<li>The Court Clerk runs the jail credit query in Tiburon using the Defendants's name, date of birth, and time frame of incarceration to retrieve the 
+	Jail Credit information and confirm that there is Jail Credit.</li>
+</ul>
+<br>&nbsp;<br>
+If the Defendant does not have a valid ID to use for confirmation of their identity then the Court Clerk directs the Defendant to the Walk-In Court to 
+determine if the Judge will grant an exception. The Clerk may generate the Tiburon Jail Credit Report for the Defendant using provided demographics and 
+walk it over to the court and present it to the Judge (but not delivering it to the Defendant).
+</p>
+<!-- IF INTERACTION OVERVIEW IS INCLUDED 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/austinea/arch/municourt/***.jpg"><img src="/austinea/arch/municourt/***.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Interaction Overview</span>
+</td></tr></table>
+
+<p>This Use case also depends upon the following use cases:</p>
+<ul>
+	<li><a href="/austinea/arch/municourt/sendMessageToCollections/index.html">Send Message To Collections Use Case</a></li>
+</ul>-->
+
+<!-- SEQUENCE DIAGRAM  -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/austinea/arch/municourt/verifyJailCredit/sd01.jpg"><img src="/austinea/arch/municourt/verifyJailCredit/sd01.jpg" border="0" alt="" width="600"/></a><br />
+<span style="font-weight: bold;">Verify Jail Credit<br />Sequence Diagram</span>
+</td></tr></table>
+<br />
+
+
+<!-- INTERFACE TABLE  -->
+<table align="center" id="custom">
+<tr><th width="9%">Req#</th><th width="70%">Type/Interface - Requirement Description</th><th>Performance</th></tr>
+<tr>
+<td rowspan="2">001</td>
+<td style="font-weight: bold; background: lightgray;">Court Clerk/requestJailCreditVerification</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+The Defendant requests Jail Credit Verification and presents a photo ID to the Court Clerk.
+</td>
+</tr>
+<tr>
+<td rowspan="2">002</td>
+<td style="font-weight: bold; background: lightgray;">Manage Court Case/verifyPersonIdentity</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+The Court Clerk enters the first three letters of the Customer's last name and their date of birth and verifies their identity.
+</td>
+</tr>
+<tr>
+<td rowspan="2">003</td>
+<td style="font-weight: bold; background: lightgray;">Tiburon/retrieveJailCreditInfo</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+If the Defendant has a valid ID: The Court Clerk runs the jail credit query in Tiburon using the Defendants's name, date of birth, and time frame of 
+incarceration to retrieve the Jail Credit information and confirm that there is Jail Credit.
+</td>
+</tr>
+<tr>
+<td rowspan="2">004</td>
+<td style="font-weight: bold; background: lightgray;">Court Clerk/printTiburonJailCreditReport</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+If there is Jail Credit: The Court Clerk reviews and verifies the submitted community service hours and certification (proof the hours were served).
+</td>
+</tr>
+<tr>
+<td rowspan="2">005</td>
+<td style="font-weight: bold; background: lightgray;">Defendant/takeDocument</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+The Customer takes the document from the Court Clerk.
+</td>
+</tr>
+<tr>
+<td rowspan="2">006</td>
+<td style="font-weight: bold; background: lightgray;">Defendant/proceedToWalkInCourt</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+If the Defendant does not have a valid ID: The Defendant receives instructions from the Court Clerk and proceeds to the Walk-In Court.
+</td>
+</tr>
+<tr>
+<td rowspan="2">007</td>
+<td style="font-weight: bold; background: lightgray;">Tiburon/retrieveJailCreditInfo</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+If the Defendant's demographics match a defendant case party on a case: The Court Clerk runs the jail credit query in Tiburon using the 
+Defendants's name, date of birth, and time frame of incarceration to retrieve the Jail Credit information and confirm that there is Jail Credit.
+</td>
+</tr>
+<tr>
+<td rowspan="2">008</td>
+<td style="font-weight: bold; background: lightgray;">Court Clerk/walkDocumentToJudge</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+The Court Clerk takes the printed document and walks it over to the court and hands it to the presiding Judge.
+</td>
+</tr>
+<tr>
+<td rowspan="2">009</td>
+<td style="font-weight: bold; background: lightgray;">Judge/signDocument</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+The Judge signs the document(s).
+</td>
+</tr>
+</table>
+<br/>
+</td></tr></table>
+</td></tr></table></body></html>
