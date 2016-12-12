@@ -1,0 +1,202 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Modify Collection Fee</title>
+<link rel="Stylesheet" href="/austinea/style/hover.css" type="text/css" />
+</head>
+<body bgcolor="#ddd8c2">
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="650" align="center">
+<tr><td style="padding: 0;" height="130" valign="top"><a href="">
+<img src="/austinea/image/iTHeader.jpg" alt="austinea.org - home..." border="0"></a></td></tr>
+<!-- Text Area -->
+<tr><td>
+
+<p style="text-align: center; font-weight: bold;">Modify Collection Fee<br />Use Case Specification</p>
+<p style="text-align: center;">12/12/2016
+
+<!--  IF Printable document option Included  
+<p style="text-align: center;">download <a href="/austinea/arch/code/***.docx">printable version</a>
+-- >
+
+<b> Municipal Court Logical Data Model </b>
+<!-- Image -  Logical Data Model 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="/austinea/arch/code/ldm.jpg"><img src="/austinea/arch/code/ldm.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Austin Code Logical Data Model</p>
+</td></tr></table> -->
+
+<!-- USE CASE IMAGE -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/austinea/arch/municourt/modifyCollectionFee/ucd.jpg"><img src="/austinea/arch/municourt/modifyCollectionFee/ucd.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Modify Collection Fee<br />Use Case Model</span>
+</td></tr></table>
+
+<p><b>Scope: </b> As required by law, the case management system must recalculate the collection fee as the Defendant receives partial jail time 
+credit or as the Defendant's community service is applied to a case in third party collections. The system must log a statement indicating a 
+collection fee was added, reduced or removed. If reduced, the system must log the reduced amount, date and time. The system must maintain a 
+reference of the original collection fee amount as well.
+</p>
+<!-- IF INTERACTION OVERVIEW IS INCLUDED 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/austinea/arch/municourt/***.jpg"><img src="/austinea/arch/municourt/***.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Interaction Overview</span>
+</td></tr></table>
+-->
+
+<p>This Use case also depends upon the following use cases:</p>
+<ul>
+	<li><a href="/austinea/arch/municourt/verifyJailCredit/index.html">Verify Jail Credit Use Case</a></li>
+	<li><a href="/austinea/arch/municourt/sendMessageToCollections/index.html">Send Message To Collections Use Case</a></li>
+</ul>
+<br />
+
+
+<!-- SEQUENCE DIAGRAM  -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/austinea/arch/municourt/modifyCollectionFee/sd01.jpg"><img src="/austinea/arch/municourt/modifyCollectionFee/sd01.jpg" border="0" alt="" width="600"/></a><br />
+<span style="font-weight: bold;">Modify Collection Fee<br />Sequence Diagram</span>
+</td></tr></table>
+<br />
+
+
+<!-- INTERFACE TABLE  -->
+<table align="center" id="custom">
+<tr><th width="9%">Req#</th><th width="70%">Type/Interface - Requirement Description</th><th>Performance</th></tr>
+<tr>
+<td rowspan="2">001</td>
+<td style="font-weight: bold; background: lightgray;">Defendant/submitCommunityServiceHours</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+When receiving credit for community service: The Defendant submits proof (certification) that they have 
+completed working assigned community service hours.
+</td>
+</tr>
+<tr>
+<td rowspan="2">002</td>
+<td style="font-weight: bold; background: lightgray;">Court Clerk/processCommunityServiceHours</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+The Court Clerk reviews and verifies the submitted community service hours and certification (proof the hours were served).
+</td>
+</tr>
+<tr>
+<td rowspan="2">003</td>
+<td style="font-weight: bold; background: lightgray;">Manage Court Case/applyHoursToCommunityServicePlan</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+The Clerk selects the Community Plan listed which is associated with the case whose hours are to be credited. The System prompts the Clerk to 
+provide documentation/proof to be scanned. Once the document is scanned, the Clerk verifies the scan is acceptable, and is offered the 
+opportunity to rescan the document should the image not be satisfactory. Once acceptable, the system generates a Receipt which should be 
+stored and printable. The Receipt is locatable and printable by both the case and the community service plan to which the case belongs
+</td>
+</tr>
+<tr>
+<td rowspan="2">004</td>
+<td style="font-weight: bold; background: lightgray;">Court Clerk/presentCommunityServiceHoursReceipt</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+The receipt for recorded community service hours is sent to a printer that the Court Clerk can access.
+</td>
+</tr>
+<tr>
+<td rowspan="2">005</td>
+<td style="font-weight: bold; background: lightgray;">Defendant/takePaymentReceipt</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+The Defendant (or whoever made the payment) takes the payment receipt.
+</td>
+</tr>
+<tr>
+<td rowspan="2">006</td>
+<td style="font-weight: bold; background: lightgray;">Manage Court Case/<a href="/austinea/arch/municourt/verifyJailCredit/index.html">Verify Jail Credit Use Case</a></td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+When receiving partial jail credit:<br>
+The Defendant requests Jail Credit Verification and presents a photo ID to the Court Clerk.
+<br>&nbsp;<br>
+If the Defendant has a valid ID:<br>
+<ul>
+	<li>The Court Clerk verifies the person's identity in the case management system and retrieves the PID associated with the Defendant.</li>
+	<li>The Court Clerk runs the jail credit query in Tiburon using the Defendants's name, date of birth, and time frame of incarceration to retrieve the 
+	Jail Credit information and confirm that there is Jail Credit.</li>
+</ul>
+<br>&nbsp;<br>
+If the Defendant does not have a valid ID to use for confirmation of their identity then the Court Clerk directs the Defendant to the Walk-In Court to 
+determine if the Judge will grant an exception. The Clerk may generate the Tiburon Jail Credit Report for the Defendant using provided demographics and 
+walk it over to the court and present it to the Judge (but not delivering it to the Defendant).
+</td>
+</tr>
+<tr>
+<td rowspan="2">007</td>
+<td style="font-weight: bold; background: lightgray;">Manage Court Case/recalculateCollectionFee</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+As required by law, the case management system must recalculate the collection fee as partial jail time credit or 
+community service is applied to a case. The case management system recalculates the collection fee.
+</td>
+</tr>
+<tr>
+<tr>
+<td rowspan="2">008</td>
+<td style="font-weight: bold; background: lightgray;">Manage Court Case/logCollectionBalanceModification</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+The case management system logs a statement indicating a collection fee was added, reduced or removed. If reduced, the system 
+logs the reduced amount, date and time. The system maintains a reference of the original collection fee amount.
+</td>
+</tr>
+<tr>
+<tr>
+<td rowspan="2">009</td>
+<td style="font-weight: bold; background: lightgray;">Manage Court Case/addModifiedCollectionFee</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+The case management system adds the case number, starting case balance, case balance and recalculated 
+collection fee to the collection send changes object.
+</td>
+</tr>
+<tr>
+<tr>
+<td rowspan="2">010</td>
+<td style="font-weight: bold; background: lightgray;">Manage Court Case/<a href="/austinea/arch/municourt/sendMessageToCollections/index.html">Send Message To Collections Use Case</a></td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+The case management system creates a collections send file (coordinated with the collections vendor) for all cases added 
+that includes the citation information, vehicle information (when applicable), personal identifiers and contact information, 
+case starting balance, case balance, total calculated collection fee and status for any case that is being added or is 
+already in the collections process. The entire data set is transferred to the collection vendor every time there is an 
+update or change to the data. The collection vendor evaluates the entire file and compares the data values for each case 
+to what they have on record. Any changes detected are used to add or update their records.
+</td>
+</tr>
+</table>
+<br/>
+</td></tr></table>
+</td></tr></table></body></html>
