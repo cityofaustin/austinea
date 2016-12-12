@@ -1,0 +1,342 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Post Cash Bond</title>
+<link rel="Stylesheet" href="/austinea/style/hover.css" type="text/css" />
+</head>
+<body bgcolor="#ddd8c2">
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="650" align="center">
+<tr><td style="padding: 0;" height="130" valign="top"><a href="">
+<img src="/austinea/image/iTHeader.jpg" alt="austinea.org - home..." border="0"></a></td></tr>
+<!-- Text Area -->
+<tr><td>
+
+<p style="text-align: center; font-weight: bold;">Post Cash Bond<br />Use Case Specification</p>
+<p style="text-align: center;">12/12/2016
+
+<!--  IF Printable document option Included  
+<p style="text-align: center;">download <a href="/austinea/arch/code/***.docx">printable version</a>
+-- >
+
+<b> Municipal Court Logical Data Model </b>
+<!-- Image -  Logical Data Model 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="/austinea/arch/code/ldm.jpg"><img src="/austinea/arch/code/ldm.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Austin Code Logical Data Model</p>
+</td></tr></table> -->
+
+<!-- USE CASE IMAGE -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/austinea/arch/municourt/postCashBond/ucd.jpg"><img src="/austinea/arch/municourt/postCashBond/ucd.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Post Cash Bond<br />Use Case Model</span>
+</td></tr></table>
+
+<p><b>Scope: </b>The Customer (who is either the Defendant or another individual posting a cash bond on the case) submits a request to post a cash bond. 
+The Clerk receives the request and begins processing a cash bond on the case (usually for an extension). The clerk retrieves the case file using the 
+case number. The Court Clerk enters the bond amount (full cost of the ticket or the amount set on the Judge's order) and uses the current date 
+(by default) before printing the bond form to be given to the Customer for completion. The Customer completes and submits the form to the Clerk for 
+processing. The Clerk accepts the form and uses the information on it to process the cash bond for the case.
+<br>&nbsp;<br>
+If Customer is not the Defendant on the case then the Clerk submits the demographics provided by the Customer on the bond form and searches the case 
+parties for a match. If the Customer is a case party the Clerk sets them as the bond poster. If the Customer is not a case party on the case, the 
+Clerk adds the customer as an additional case party on the case and sets them as the bond poster.
+<br>&nbsp;<br>
+The Clerk requests payment for the bond from the Customer. The Customer remits the requested payment to the Court Clerk. The Clerk processes the 
+remittance for the cash bond by setting the bond type ('CB'), payment type and transaction type ('BO'). The Clerk scans and attaches the completed bond 
+form to the case.
+<br>&nbsp;<br>
+If the Defendant missed an appearance with the prosecutor the Clerk adds an action to the case indicating that with one of the codes: TRAD, CMAD, ENAD
+<br>&nbsp;<br>
+The case management system presents the appropriate docket schedule to the Clerk depending upon information submitted in the bond request. The Court 
+Clerk reviews the docket schedule and suggests the first court appearance date available to the Customer. If the Customer prefers a different date 
+on the docket schedule they present that preference to the Clerk. The Clerk generates the Notice To appear document. The clerk gives a copy of the 
+completed bond form, a receipt for the bond payment and the Notice To Appear to the Customer.
+</p>
+<!-- IF INTERACTION OVERVIEW IS INCLUDED 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/austinea/arch/municourt/***.jpg"><img src="/austinea/arch/municourt/***.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Interaction Overview</span>
+</td></tr></table>
+-->
+
+
+<!-- SEQUENCE DIAGRAM  -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/austinea/arch/municourt/postCashBond/sd01.jpg"><img src="/austinea/arch/municourt/postCashBond/sd01.jpg" border="0" alt="" width="600"/></a><br />
+<span style="font-weight: bold;">Post Cash Bond<br />Sequence Diagram</span>
+</td></tr></table>
+<br />
+
+
+<!-- INTERFACE TABLE  -->
+<table align="center" id="custom">
+<tr><th width="9%">Req#</th><th width="70%">Type/Interface - Requirement Description</th><th>Performance</th></tr>
+<tr>
+<td rowspan="2">001</td>
+<td style="font-weight: bold; background: lightgray;">Court Clerk/processRequestToPostCashBond</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+The Customer (who is either the Defendant or another individual posting a cash bond on the case) submits a request to post a cash bond 
+to the Court Clerk. The Court Clerk receives the request and begins processing it (usually for an extension).
+</td>
+</tr>
+<tr>
+<td rowspan="2">002</td>
+<td style="font-weight: bold; background: lightgray;">Manage Court Case/retrieveCaseFileByCaseNumber</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+The case management system retrieves the case file using the provided case number.
+</td>
+</tr>
+<tr>
+<td rowspan="2">003</td>
+<td style="font-weight: bold; background: lightgray;">Court Clerk/printBondForm</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+The Court Clerk enters the bond amount (full cost of the ticket or the amount set on the Judge's order) and uses the current date 
+(by default) before printing the bond form to be given to the Customer for completion.
+</td>
+</tr>
+<tr>
+<td rowspan="2">004</td>
+<td style="font-weight: bold; background: lightgray;">Customer/completeForm</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+The Customer completes the form.
+</td>
+</tr>
+<tr>
+<td rowspan="2">005</td>
+<td style="font-weight: bold; background: lightgray;">Court Clerk/processCompletedBondForm</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+The Court Clerk receives the completed bond form and processes it.
+</td>
+</tr>
+<tr>
+<td rowspan="2">006</td>
+<td style="font-weight: bold; background: lightgray;">Manage Court Case/processCompletedBondForm</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+The case management system processes the cash bond for the case by attaching the bond form to the case file.
+</td>
+</tr>
+<tr>
+<td rowspan="2">007</td>
+<td style="font-weight: bold; background: lightgray;">Manage Court Case/setDefendantAsBondPoster</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+If the bond poster is the Defendant: The case management system sets the sets the bond poster on the case as the Defendant.
+</td>
+</tr>
+<tr>
+<td rowspan="2">008</td>
+<td style="font-weight: bold; background: lightgray;">Manage Court Case/searchCaseParties</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+If the bond poster is NOT the Defendant: The Court Clerk searches the case parties on the case to determine 
+if the Customer is listed. The case management system performs the search.
+</td>
+</tr>
+<tr>
+<td rowspan="2">009</td>
+<td style="font-weight: bold; background: lightgray;">Manage Court Case/addCaseParty</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+If Customer is not a case party: The Court Clerk adds the Customer (who was unlisted as a case party) 
+to the case. The case management system adds the customer as a case party.
+</td>
+</tr>
+<tr>
+<td rowspan="2">010</td>
+<td style="font-weight: bold; background: lightgray;">Court Clerk/requestBondPayment</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+The Clerk requests payment for the bond from the Customer.
+</td>
+</tr>
+<tr>
+<td rowspan="2">011</td>
+<td style="font-weight: bold; background: lightgray;">Court Clerk/processBondPayment</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+The Customer remits the requested payment to the Court Clerk. The Court Clerk processes the bond payment.
+</td>
+</tr>
+<tr>
+<td rowspan="2">012</td>
+<td style="font-weight: bold; background: lightgray;">Manage Court Case/processBondPayment</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+The bond type, payment type and transaction types are recorded on the case. The bond payment is recorded on the case. 
+The payment is processed for the bond. 
+</td>
+</tr>
+<tr>
+<td rowspan="2">013</td>
+<td style="font-weight: bold; background: lightgray;">Manage Court Case/attachDocumentToCase</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+The case management system takes the document which has been uploaded and attaches it to the case file.
+The document can be any document when the use case is "Accept Case File document."<br>
+If it is a case generated from a CARL citation the documents are:
+<ol>
+	<li>The two images of the violating vehicle - position in the intersection and zoomed in license plate.</li>
+	<li>The citation</li>
+</ol>
+If a case is being generated from a parking citation, the document is the citation.<br>
+If it is a criminal parking case the documents are:
+<ol>
+	<li>The affidavit</li>
+	<li>The placard</li>
+	<li>The scanned image of the customer's driver license</li>
+</ol>
+If a cash bond is being posted the document is the bond.<br>
+If a scheduled time payment plan is being established or modified the document is the STPP.<br>
+If an appeal is being processed the documents are:
+<ol>
+	<li>Order ofTransfer (2 copies)</li>
+	<li>Certificate of Transfer </li>
+	<li>Approval of Trial Judge</li>
+	<li>Letter to Defendant</li>
+	<li>Letter to Prosecutor</li>
+	<li>Transcription file</li>
+	<li>The appeal document</li>
+</ol>
+If a late representation request is being filed the documents are:
+Attorney's letter of representation
+<ol>
+	<li>The motion to proceed</li>
+	<li>Appearance motion</li>
+	<li>Emergency order or motion</li>
+</ol>
+If a customer has completed a Driver Safety Course the document is the completion certificate.<br>
+If a probable cause affidavit is being filed, the document is the affidavit<br>
+If an appeal is being initiated the documents are:
+<ol>
+	<li>The motion to proceed document</li>
+	<li>The appeal bond</li>
+</ol>
+If a general or Youth Services complaint is being generated, the document is the complaint.
+</td>
+</tr>
+<tr>
+<td rowspan="2">014</td>
+<td style="font-weight: bold; background: lightgray;">Manage Court Case/addActionToCase</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+The case management system adds an action, specified by an action code, to the case (referenced by the case number) to create the action record.
+<ul>
+	<li>If a DSC completion paperwork is being submitted the action reflects the sentence completion.</li>
+	<li>If the action records a missed appearance with the prosecutor then the action codes include: TRAD, CMAD or ENAD</li>
+	<li>If the action records a missed trial then the action codes include: JTRI, BTRI</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td rowspan="2">015</td>
+<td style="font-weight: bold; background: lightgray;">Court Clerk/presentDocketSchedule</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+The case management system presents the appropriate docket schedule to the Clerk depending upon information submitted in the bond request.
+</td>
+</tr>
+<tr>
+<td rowspan="2">016</td>
+<td style="font-weight: bold; background: lightgray;">Manage Court Case/reviewDocketSchedule</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+The Court Clerk reviews the docket schedule and suggests the first (or next) court appearance date available to the Customer.
+</td>
+</tr>
+<tr>
+<td rowspan="2">017</td>
+<td style="font-weight: bold; background: lightgray;">Court Clerk/processCourtDateRequest</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+If the Customer prefers a different date on the docket schedule they present that preference to the Clerk.
+</td>
+</tr>
+<tr>
+<td rowspan="2">018</td>
+<td style="font-weight: bold; background: lightgray;">Manage Court Case/setCaseOndocket</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+The case management system sets the date on the docket calendar when the Defendant must appear in court before the Judge.
+<ul>
+	<li>If the Judge orders an appearance to review the case or the Court Clerk schedules a court event.</li>
+	<li>If the case management system presented the first available date to the Court Clerk and they secured the 
+	Defendants consent to that date then the date presented is set on the docket schedule.</li>
+	<li>If the Defendant prefers another date other than the date first presented and that date is available on 
+	the docket schedule then that date is set on the docket.</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td rowspan="2">019</td>
+<td style="font-weight: bold; background: lightgray;">Manage Court Case/generateNoticeToAppear</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+The case management system generates the Notice To appear document.
+</td>
+</tr>
+<tr>
+<td rowspan="2">020</td>
+<td style="font-weight: bold; background: lightgray;">Customer/takeBondDocs</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+The clerk gives a copy of the completed bond form, a receipt for the bond payment and the Notice To Appear to the Customer. 
+The Customer receives the copy of the form and the receipt.
+</td>
+</tr>
+</table>
+<br/>
+</td></tr></table>
+</td></tr></table></body></html>
