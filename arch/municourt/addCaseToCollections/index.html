@@ -138,7 +138,7 @@ change event occurred.
 </tr>
 <tr>
 <td rowspan="2">004</td>
-<td style="background: lightgray none repeat scroll 0%; font-weight: bold; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">Manage Court Case/Update Code Violation Case</td>
+<td style="background: lightgray none repeat scroll 0%; font-weight: bold; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;">Manage Court Case/addCollectionAdditions</td>
 <td rowspan="2"> </td>
 </tr>
 <tr>
@@ -155,6 +155,21 @@ send changes object that includes:
 <li>Total calculated collection fee</li>
 <li>Case status</li>
 </ul></td>
+</tr>
+<tr>
+<td rowspan="2">008</td>
+<td style="font-weight: bold; background: lightgray;">Manage Court Case/<a href="/austinea/arch/municourt/sendMessageToCollections/index.html">Send Message To Collections Use Case</a></td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+The case management system creates a collections send file (coordinated with the collections vendor) for all cases added 
+that includes the citation information, vehicle information (when applicable), personal identifiers and contact information, 
+case starting balance, case balance, total calculated collection fee and status for any case that is being added or is 
+already in the collections process. The entire data set is transferred to the collection vendor every time there is an 
+update or change to the data. The collection vendor evaluates the entire file and compares the data values for each case 
+to what they have on record. Any changes detected are used to add or update their records.
+</td>
 </tr>
 </tbody></table>
 <br>
