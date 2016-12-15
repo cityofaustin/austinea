@@ -37,7 +37,7 @@
 <span style="font-weight: bold;">Create Code Complaint Case<br />Use Case Model</span>
 </td></tr></table>
 
-<p><b>Scope: </b>Violations are identified either by Complainants or Austin Code Officers. If a Complainant identifies the Violation, the Complainant contacts Austin 311 to report the Violation. Austin 311 uses the CSR system to create an Austin Code ServiceRequest (ServiceRequestAustinCode). If the ServiceRequest involves a short-term rental, the CSR system sends a Notification to the Austin Code Officer. ARR Customer Service queries the CSR system for new Austin Code ServiceRequests, and then creates a CodeComplaintCase for each ServiceRequestAustinCode in the queue within the Case Management System. Alternatively, Violations are identified by Austin Code Officers while out in the field. Once the Violation is identified, the Austin Code Officer notifies ARR Customer Service to create a CodeComplaintCase. ARR Customer Service uses the CSR system to create a ServiceRequestAustinCode for the Violation (primarily for tracking and reporting purposes), and then creates the CodeComplaintCase in the Case Management System. ARR Customer Service assigns an Austin Code Officer (AssignedCodeOfficer) and Austin Code Program Specialist (AssignedProgramSpecialist) to the CodeComplaintCase. ARR Customer Service then updates the ServiceRequestAustinCode with the CodeComplaintCase information and closes the ServiceRequest. If the CodeComplaintCase needs to be reassigned, the Chain of Command reasisgns the CodeComplaintCase to the appropriate Austin Code Officer. This is primarily a district and/or zoning alignment.
+<p><b>Scope: </b>Violations are identified either by Complainants or Austin Code Officers. If a Complainant identifies the Violation, the Complainant contacts Austin 311 to report the Violation. Austin 311 uses the CSR system to create an Austin Code ServiceRequest (ServiceRequestAustinCode). If the ServiceRequest involves a short-term rental, the CSR system sends a Notification to the Austin Code Officer. Alternatively, Violations are identified by Austin Code Officers while out in the field. Once the Violation is identified, the Austin Code Officer notifies ACD Customer Care to create a CodeComplaintCase. ACD Customer Care uses the CSR system to create a ServiceRequestAustinCode for the Violation (primarily for tracking and reporting purposes). After the ServiceRequest is created the CSR system requests the Enterprise Service Bus create a CodeComplaintCase in the Case Management System. The Enterprise Service Bus requests the Case Management System create the CodeComplaintCase. The Case Management System then assigns an Inspector to the case based on the case disposition and geographic location. The Case Management System requests an update to the original ServiceRequest via the Enterprise Service Bus. The Case Management System includes the assigned Inspector, Inspector's phone number, and CaseNum. The Enterprise Service Bus requests the CSR system update the ServiceRequest and then close the ServiceRequest. If the CodeComplaintCase needs to be reassigned, the Chain of Command reassigns the CodeComplaintCase to the appropriate Austin Code Officer. This is primarily a district and/or zoning alignment.
 
 
 
@@ -87,55 +87,68 @@
 <td rowspan="2">  </td>
 </tr>
 <tr>
-<td>The CSR system sends a notification to the Austin Code Officer with description of issue, issue type, complaint SR, SR number, date entered, reported location, comments, nature of concern, time happening, date happening, type of short-term rental, and geo information).</td>
+<td>The CSR system sends a notification to the Austin Code Officer with description of issue (issue type, complaint SR, SR number, date entered, reported location, comments, nature of concern, time happening, date happening, type of short-term rental, and geo information).</td>
 </tr>
-<tr>
 <td rowspan="2">004</td>
-<td style="font-weight: bold; background: lightgray;">CSR/queryQueueOfServiceRequests</td>
+<td style="font-weight: bold; background: lightgray;">ACD Customer Service/createCodeComplaintCase</td>
 <td rowspan="2">  </td>
-</tr>
+  </tr>
 <tr>
-<td>ARR Customer Service uses the CSR system to query (CSRQuery) for new ServiceRequests for Austin Code (ServiceRequestAustinCode). The system returns new ServiceRequestAustinCode records.</td>
+<td>The Austin Code Officer requests ACD Customer Care, via email, to create a CodeComplaintCase based on the officer's observation in the field.</td>
 </tr>
-<tr>
+
 <td rowspan="2">005</td>
-<td style="font-weight: bold; background: lightgray;">Case Management System/createCodeComplaintCase</td>
+<td style="font-weight: bold; background: lightgray;">Enterprise Servicve Bus/createCodeComplaintCase</td>
 <td rowspan="2">  </td>
-</tr>
+  </tr>
 <tr>
-<td>ARR Customer Service uses the system to create CodeComplaintCases for each ServiceRequestAustinCode in the queue.</td>
-</tr>
-<tr>
+<td>The CSR system requests the Enterprise Service Bus create a CodeComplaintCase in the Case Management System.</td>
+</tr> 
+  
 <td rowspan="2">006</td>
-<td style="font-weight: bold; background: lightgray;">ARR Customer Service/createCodeComplaintCase</td>
+<td style="font-weight: bold; background: lightgray;">Cse Management System/createCodeComplaintCase</td>
 <td rowspan="2">  </td>
-</tr>
+  </tr>
 <tr>
-<td>TThe Austin Code Officer requests ARR Customer Service, typically through email, to create a CodeComplaintCase based on their observation of a Violation from the field.</td>
-</tr>
+<td>The Enterprise Service Bus requests the Case Management System create a CodeComplaintCase. The ServiceRequest is provided and a CodeComplaintCase is generated from the ServiceRequest.</td>
+</tr>   
+  
 <tr>
 <td rowspan="2">007</td>
 <td style="font-weight: bold; background: lightgray;">Case Management System/assignInspectorToCase</td>
 <td rowspan="2">  </td>
 </tr>
 <tr>
-<td>The Austin Code Officer and the Austin Code Program Specialist are assigned to the case simultaneously. Both are assigned based on location/district.</td>
+<td>The Case Management System assigns a Code Officer (AssignedCodeOfficer) to the CodeComplaintCase based on the geographic information in the CodeComplaintCase (location, district, and case disposition). Alternatively, the Chain of Command reassigns the CodeComplaintCase to another Officer due to zoning or district requirements.</td>
+</tr>
+
+  <tr>
+<td rowspan="2">008</td>
+<td style="font-weight: bold; background: lightgray;">Enterprise Service Bus/updateServiceRequest</td>
+<td rowspan="2">  </td>
 </tr>
 <tr>
-<td rowspan="2">008</td>
+<td>The Case Management System requests the Enterprise Service Bus update the original ServiceRequest (ServiceRequestAustinCode) with information from the CodeComplaintCase including: AssignedCodeOfficer name and phone number, and CaseNum. The Enterprise Service Bus translates the CodeComplaintCase into a ServiceRequest.</td>
+</tr>
+
+  <tr>
+<td rowspan="2">009</td>
 <td style="font-weight: bold; background: lightgray;">CSR/updateServiceRequest</td>
 <td rowspan="2">  </td>
 </tr>
 <tr>
-<td>The user updates the ServiceRequest with notes concerning their resolution of the ServiceRequest. For Austin Code ServiceRequests (ServiceRequestAustinCode), the ServiceRequest is closed once the CodeComplaintCase is created and assigned to an Austin Code Officer (AssignedCodeOfficeR).</td>
-</tr>
+<td>The user/system updates the ServiceRequest with notes concerning their resolution of the ServiceRequest. For Austin Code ServiceRequests (ServiceRequestAustinCode), the AssignedCodeOfficer's name and phone number, and CaseNum are included for the CodeComplaintCase. The ServiceRequest is closed once the CodeComplaintCase is created and assigned to an Austin Code Officer (AssignedCodeOfficer).</td>
+</tr>  
+  
+  
+  
 <tr>
-<td rowspan="2">009</td>
+<td rowspan="2">010</td>
 <td style="font-weight: bold; background: lightgray;">CSR/closeServiceRequest</td>
 <td rowspan="2">  </td>
 </tr>
 <tr>
-<td>The ServiceRequest is closed by a user or the system. Closed ServiceRequests may not be edited by users or reopened per the user's access permissions.</td>
+<td>The ServiceRequest is closed by the system. Closed ServiceRequests may not be edited by users or reopened per the user's access permissions.</td>
 </tr>
 
 </table>
