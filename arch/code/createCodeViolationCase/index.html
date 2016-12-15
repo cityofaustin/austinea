@@ -81,11 +81,11 @@ The Austin Code Officer updates the CodeViolationCase in the system with notes o
 <tr><th width="9%">Req#</th><th width="70%">Type/Interface - Requirement Description</th><th>Performance</th></tr>
 <tr>
 <td rowspan="2">001</td>
-<td style="font-weight: bold; background: lightgray;">Case Management System/lookupAndVerifyCaseInformationolation</td>
+<td style="font-weight: bold; background: lightgray;">Case Management System/lookupAndVerifyCaseInformation</td>
 <td rowspan="2">  </td>
 </tr>
 <tr>
-<td>The Austin Code Officer requests the Case Management System to verify that the case information is accurate (i.e., Owner, Tenant, billing, etc.). CC&B is used to lookup Tenant information and verify property information.</td>
+<td>The Austin Code Officer verifies the case information is accurate (i.e., Owner, Tenant, billing, etc.). CC&B is used to lookup Tenant information and verify property information.</td>
 </tr>
 <tr>
 <td rowspan="2">002</td>
@@ -93,8 +93,9 @@ The Austin Code Officer updates the CodeViolationCase in the system with notes o
 <td rowspan="2">  </td>
 </tr>
 <tr>
-<td>The user creates a CodeViolationCase. If citation is created, it indicates the ticket number, person who wrote it, date of birth, and person cited (CT Folder in Amanda). No NoticeOfViolation is required if cited immediately without a CodeViolationCase. If Contractor cited, then NoticeOfViolation is sent to the Owner. Continuation of CodeComplaintCase, adding:
-<ul><li>Deficiencies/Violations (actual code violated)
+<td>The user creates a CodeViolationCase. If citation is created, it indicates the ticket number, person who wrote it, date of birth, and person cited (CT/CL Folder in Amanda). No NoticeOfViolation is required if cited immediately without a CodeViolationCase. If Contractor cited, then NoticeOfViolation is sent to the Owner. Continuation of CodeComplaintCase, adding:
+<ul><li>Deficiencies/Violations (actual code violated, date observed)
+  <li>Date issued
 <li>Remedy (time to correct, work required)
 <li>Photographs
 <li>Notes
@@ -134,7 +135,7 @@ The Austin Code Officer updates the CodeViolationCase with information concernin
 <td rowspan="2">  </td>
 </tr>
 <tr>
-<td>The Austin Code Officer issues a Warning to the Violator. Note: Warnings are non-legal notices. A NoticeOfViolation is still required after a Warning is issued.</td></tr>
+<td>The Austin Code Officer issues a warning to the Violator. Note: Warnings are non-legal notices. A NoticeOfViolation is still required after a warning is issued. NOTE: A warning may serve as a legal notice, pending Law Department review. </td></tr>
 <tr>
 <td rowspan="2">006</td>
 <td style="font-weight: bold; background: lightgray;">Austin Code Officer/contactComplainantWithFindings</td>
