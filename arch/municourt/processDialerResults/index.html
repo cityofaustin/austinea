@@ -1,0 +1,294 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Process Dialer Results</title>
+<link rel="Stylesheet" href="/austinea/style/hover.css" type="text/css" />
+</head>
+<body bgcolor="#ddd8c2">
+<!-- Border Background Table -->
+<table border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse; background-color: #F4CA90;" align="center"><tr><td>
+<!-- Main Body -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse; background-color: #ffffff;" width="650" align="center">
+<tr><td style="padding: 0;" height="130" valign="top"><a href="">
+<img src="/austinea/image/iTHeader.jpg" alt="austinea.org - home..." border="0"></a></td></tr>
+<!-- Text Area -->
+<tr><td>
+
+<p style="text-align: center; font-weight: bold;">Process Dialer Results<br />Use Case Specification</p>
+<p style="text-align: center;">12/16/2016
+
+<!--  IF Printable document option Included  
+<p style="text-align: center;">download <a href="/austinea/arch/code/***.docx">printable version</a>
+-- >
+
+<b> Municipal Court Logical Data Model </b>
+<!-- Image -  Logical Data Model 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br>
+<a href="/austinea/arch/code/ldm.jpg"><img src="/austinea/arch/code/ldm.jpg" border="0" width="600"></a>
+<p style="text-align: center; font-weight: bold;">Austin Code Logical Data Model</p>
+</td></tr></table> -->
+
+<!-- USE CASE IMAGE -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/austinea/arch/municourt/processDialerResults/ucd.jpg"><img src="/austinea/arch/municourt/processDialerResults/ucd.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Process Dialer Results<br />Use Case Model</span>
+</td></tr></table>
+
+<p><b>Scope: </b>Following the processing of a phone dialer campaign, the phone dialer service compiles the results for all calls placed and generates a 
+return file that is processed by the case management system. The CMS Scheduler initiates a transfer of the file to the case management system. The action 
+for each call is stored on each case. If a Defendant was unsuccessfully contacted but the call was not in error, then the Defendant can be recontacted in a 
+subsequent campaign as qualifying criteria allow.
+</p>
+<!-- IF INTERACTION OVERVIEW IS INCLUDED 
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/austinea/arch/municourt/***.jpg"><img src="/austinea/arch/municourt/***.jpg" border="0" alt="" /></a><br />
+<span style="font-weight: bold;">Interaction Overview</span>
+</td></tr></table>
+
+<p>This Use case also depends upon the following use cases:</p>
+<ul>
+	<li><a href="/austinea/arch/municourt/sendMessageToCollections/index.html">Send Message To Collections Use Case</a></li>
+</ul>-->
+
+<!-- SEQUENCE DIAGRAM  -->
+<table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
+<span class="lbl">Select to enlarge...</span><br />
+<a href="/austinea/arch/municourt/processDialerResults/sd01.jpg"><img src="/austinea/arch/municourt/processDialerResults/sd01.jpg" border="0" alt="" width="600"/></a><br />
+<span style="font-weight: bold;">Process Dialer Results<br />Sequence Diagram</span>
+</td></tr></table>
+<br />
+
+
+<!-- INTERFACE TABLE  -->
+<table align="center" id="custom">
+<tr><th width="9%">Req#</th><th width="70%">Type/Interface - Requirement Description</th><th>Performance</th></tr>
+<tr>
+<td rowspan="2">001</td>
+<td style="font-weight: bold; background: lightgray;">Phone Dialer/compileDialerCampaignResults</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+The phone dialer service compiles the results from the dialer campaign. Results include:
+<ul>
+	<li>Call answered</li>
+	<li>Left Voicemail</li>
+	<li>Line busy</li>
+	<li>Bad telephone number (fax, modem, error)</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td rowspan="2">002</td>
+<td style="font-weight: bold; background: lightgray;">Phone Dialer/generateDialerDownloadFile</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+The phone dialer service generates the dialer download (return) file in XML format.
+The records include values for:
+<ul>
+	<li>PhoneResultID (Number)</li>
+	<li>LastResult (Text)</li>
+	<li>LastResultDate (DterTime)</li>
+	<li>Attempts (Number)</li>
+	<li>Minutes (Number)</li>
+	<li>PhoneNumber</li>
+	<li>Citation (Number)</li>
+	<li>Name</li>
+	<li>Clerk</li>
+	<li>CaseNumber(s)</li>
+	<li>CaseActionSeqNumber(s)</li>
+</ul>
+XML Schema:<br>
+&lt;?xml version="1.0" encoding="utf-8"?&gt;<br>
+&lt;xs:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified"&gt;<br>
+  &lt;xsd:element name="Broadcast"&gt;<br>
+    &lt;xsd:complexType&gt;<br>
+      &lt;xsd:sequence&gt;<br>
+        &lt;xsd:element name="BroadcastResult"&gt;<br>
+          &lt;xsd:complexType&gt;<br>
+            &lt;xsd:sequence&gt;<br>
+              &lt;xsd:element name="BroadcastResultSummary"&gt;<br>
+                &lt;xsd:complexType&gt;<br>
+                  &lt;xsd:sequence&gt;<br>
+                    &lt;xsd:element name="ExtensionData" /&gt;<br>
+                    &lt;xsd:element name="TotalPhoneNumbers" type="xsd:unsignedByte" /&gt;<br>
+                    &lt;xsd:element name="CallsNotAttempted" type="xsd:unsignedByte" /&gt;<br>
+                    &lt;xsd:element name="CallsAttempted" type="xsd:unsignedByte" /&gt;<br>
+                    &lt;xsd:element name="AverageCallTimeMinutes" type="xsd:decimal" /&gt;<br>
+                    &lt;xsd:element name="AnsweredHuman" type="xsd:unsignedByte" /&gt;<br>
+                    &lt;xsd:element name="AnsweredVoicemail" type="xsd:unsignedByte" /&gt;<br>
+                    &lt;xsd:element name="Busy" type="xsd:unsignedByte" /&gt;<br>
+                    &lt;xsd:element name="RingNoAnswer" type="xsd:unsignedByte" /&gt;<br>
+                    &lt;xsd:element name="Other" type="xsd:unsignedByte" /&gt;<br>
+                  &lt;/xsd:sequence&gt;<br>
+                &lt;/xsd:complexType&gt;<br>
+              &lt;/xsd:element&gt;<br>
+              &lt;xsd:element name="BroadcastResultDetail"&gt;<br>
+                &lt;xsd:complexType&gt;<br>
+                  &lt;xsd:sequence&gt;<br>
+                    &lt;xsd:element maxOccurs="unbounded" name="PhoneResultDetail"&gt;<br>
+                      &lt;xsd:complexType&gt;<br>
+                        &lt;xsd:sequence&gt;<br>
+                          &lt;xsd:element name="ExtensionData" /&gt;<br>
+                          &lt;xsd:element name="PhoneResultID" type="xsd:unsignedInt" /&gt;<br>
+                          &lt;xsd:element name="PhoneNumber" type="xsd:unsignedLong" /&gt;<br>
+                          &lt;xsd:element name="LastResult" type="xsd:string" /&gt;<br>
+                          &lt;xsd:element name="LastResultDate" type="xsd:dateTime" /&gt;<br>
+                          &lt;xsd:element name="Attempts" type="xsd:unsignedByte" /&gt;<br>
+                          &lt;xsd:element name="Minutes" type="xsd:decimal" /&gt;<br>
+                          &lt;xsd:element name="MergeValueResults"&gt;<br>
+                            &lt;xsd:complexType&gt;<br>
+                              &lt;xsd:sequence&gt;<br>
+                                &lt;xsd:element maxOccurs="unbounded" name="MergeValueResult"&gt;<br>
+                                  &lt;xsd:complexType&gt;<br>
+                                    &lt;xsd:sequence&gt;<br>
+                                      &lt;xsd:element name="ExtensionData" /&gt;<br>
+                                      &lt;xsd:element name="VariableName" type="xsd:string" /&gt;<br>
+                                      &lt;xsd:element name="Value" type="xsd:string" /&gt;<br>
+                                    &lt;/xsd:sequence&gt;<br>
+                                  &lt;/xsd:complexType&gt;<br>
+                                &lt;/xsd:element&gt;<br>
+                              &lt;/xsd:sequence&gt;<br>
+                            &lt;/xsd:complexType&gt;<br>
+                          &lt;/xsd:element&gt;<br>
+                        &lt;/xsd:sequence&gt;<br>
+                      &lt;/xsd:complexType&gt;<br>
+                    &lt;/xsd:element&gt;<br>
+                  &lt;/xsd:sequence&gt;<br>
+                &lt;/xsd:complexType&gt;<br>
+              &lt;/xsd:element&gt;<br>
+              &lt;xsd:element name="EndDate" type="xsd:dateTime" /&gt;<br>
+              &lt;xsd:element name="StartDate" type="xsd:dateTime" /&gt;<br>
+              &lt;xsd:element name="State" type="xsd:string" /&gt;<br>
+              &lt;xsd:element name="BroadcastID" type="xsd:unsignedShort" /&gt;<br>
+            &lt;/xsd:sequence&gt;<br>
+          &lt;/xsd:complexType&gt;<br>
+        &lt;/xsd:element&gt;<br>
+        &lt;xsd:element name="BroadcastCompilationResults"&gt;<br>
+          &lt;xsd:complexType&gt;<br>
+            &lt;xsd:sequence&gt;<br>
+              &lt;xsd:element name="PhoneNumbersExcluded" type="xsd:byte" /&gt;<br>
+              &lt;xsd:element name="PhoneNumbersIncluded" type="xsd:byte" /&gt;<br>
+              &lt;xsd:element name="TotalPhoneNumbers" type="xsd:byte" /&gt;<br>
+              &lt;xsd:element name="ContactsExcluded" type="xsd:byte" /&gt;<br>
+              &lt;xsd:element name="ContactsIncludedPartial" type="xsd:byte" /&gt;<br>
+              &lt;xsd:element name="ContactsIncluded" type="xsd:byte" /&gt;<br>
+              &lt;xsd:element name="TotalContacts" type="xsd:byte" /&gt;<br>
+              &lt;xsd:element name="BroadcastState1" type="xsd:string" /&gt;<br>
+            &lt;/xsd:sequence&gt;<br>
+          &lt;/xsd:complexType&gt;<br>
+        &lt;/xsd:element&gt;<br>
+        &lt;xsd:element name="Configuration"&gt;<br>
+          &lt;xsd:complexType&gt;<br>
+            &lt;xsd:sequence&gt;<br>
+              &lt;xsd:element name="BroadcastName" type="xsd:string" /&gt;<br>
+              &lt;xsd:element name="Description" type="xsd:string" /&gt;<br>
+              &lt;xsd:element name="DailyStartTime" type="xsd:unsignedShort" /&gt;<br>
+              &lt;xsd:element name="DailyEndTime" type="xsd:unsignedShort" /&gt;<br>
+              &lt;xsd:element name="UseExpiration" type="xsd:boolean" /&gt;<br>
+              &lt;xsd:element name="Priority" type="xsd:string" /&gt;<br>
+              &lt;xsd:element name="PortCapacity" type="xsd:string" /&gt;<br>
+              &lt;xsd:element name="CallerID" type="xsd:unsignedLong" /&gt;<br>
+              &lt;xsd:element name="AvailableTransferPorts" type="xsd:unsignedByte" /&gt;<br>
+              &lt;xsd:element name="TransferNumber" type="xsd:unsignedLong" /&gt;<br>
+              &lt;xsd:element name="LeaveVoicemail" type="xsd:boolean" /&gt;<br>
+              &lt;xsd:element name="MaxRetry" type="xsd:unsignedByte" /&gt;<br>
+              &lt;xsd:element name="MinRetryDuration" type="xsd:string" /&gt;<br>
+              &lt;xsd:element name="Message" type="xsd:string" /&gt;<br>
+            &lt;/xsd:sequence&gt;<br>
+          &lt;/xsd:complexType&gt;<br>
+        &lt;/xsd:element&gt;<br>
+      &lt;/xsd:sequence&gt;<br>
+    &lt;/xsd:complexType&gt;<br>
+  &lt;/xsd:element&gt;<br>
+&lt;/xs:schema&gt;                         
+</td>
+</tr>
+<tr>
+<td rowspan="2">003</td>
+<td style="font-weight: bold; background: lightgray;">CMS Scheduler/initiateDialerResultProcessing</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+The CMS Scheduler initiates a process (for each notification campaign a different times during the day) 
+to transfer (ftp) the dialer download file to a location where the case management system can access, read and process the campaign results. 
+</td>
+</tr>
+<tr>
+<td rowspan="2">004</td>
+<td style="font-weight: bold; background: lightgray;">Manage Court Case/processDialerResults</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+Triggered by the CMS scheduler, the case management system processes begins
+</td>
+</tr>
+<tr>
+<td rowspan="2">005</td>
+<td style="font-weight: bold; background: lightgray;">Manage Court Case/transferDialerDownload</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+The case management system performs an ftp transfer of the dialer download file.
+</td>
+</tr>
+<tr>
+<td rowspan="2">006</td>
+<td style="font-weight: bold; background: lightgray;">Manage Court Case/processDialerDownload</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+Until all dialer campaign results have been processed: The case management system reads the case number and dialer service results and 
+extracts the action code that will be put on the case. If the action code is final then the case will be excluded form future notification campaigns.
+Action codes include:<br>&nbsp;<br>
+
+DDOKBSY = Dialer Call Busy <br>
+DDOKERR = Dialer Call Error<br>
+DDOKFAX = Dialer Call Answered by Fax<br>
+DDOKHUM = Dialer Call Answered<br>
+DDOKMOD = Dialer Call Answered by Modem<br>
+DDOKNOA = Dialer Call No Answer<br>
+DDOKNOT = Remove Initial Code<br>
+DDOKOPR = Dialer Call Phone Number No Longer in Service<br>
+DDOKVOI = Dialer Call Left Voice Message<br>
+DIALDOK = Pre Docket Dialer Call<br>
+DIALERR = Dialer call attempt resulted in an error<br>
+DIALFAX = Dialer call answered by fax<br>
+DIALINT = Pre Initial Appearance Dialer Call<br>
+DIALMOD = Dialer call answered by modem<br>
+DIALNOA = Dialer call not answered<br>
+DIALOPR = Dialer call - phone number no longer in service.<br>
+DIALPAS = Past Due Dialer Call<br>
+DIALSTP = Past Due STPP Dialer Call<br>
+DIALVOI = Dialer call left voice message<br>
+DIALWAR = Warrant Dialer Call<br>
+DIALWRP = Warrant Round Up Prk Dialer Call<br>
+DIALWRT = Post Warrant dialer call<br>
+DIALWRU = Warrant Round Up Traff Dialer Call
+</td>
+</tr>
+<tr>
+<td rowspan="2">007</td>
+<td style="font-weight: bold; background: lightgray;">Manage Court Case/determineLegalOptions</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+The case management system adds an action, specified by an action code, to the case (referenced by the case number) to create the action record. <br>
+If a DSC completion paperwork is being submitted the action reflects the sentence completion.<br>
+If the action records a missed appearance with the prosecutor then the action codes include: TRAD, CMAD or ENAD<br>
+If the action records a missed trial then the action codes include: JTRI, BTRI
+</tr>
+</table>
+<br/>
+</td></tr></table>
+</td></tr></table></body></html>
