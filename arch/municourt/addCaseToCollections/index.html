@@ -63,11 +63,6 @@ finalized or in SV (sold vehicle) status. (TR, CM or SB) case types.</li>
 <li>Case must be 6 mos. old </li>
 <li>The Case Scheduled Event/Action/Task date must be 40 or more days old.</li>
 <li>If case has no PID check the REO party type for name &amp; address.</li>
-<li>If state is in AZ, HI, MA or CT – do not send.</li>
-<li>If an uncompleted action of WARR or COMM is not on case then MSB status is N.</li>
-<li>If uncompleted COMM action exists on case, then collection status = C.</li>
-<li>If uncompleted WARR action exists on case, then collection status = A.</li>
-<li>Check for Bond. If bond is posted before collection do not send, otherwise, send only after bond has been applied.</li>
 </ul>
 <p></p>
 <!-- IF INTERACTION OVERVIEW IS INCLUDED <table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
@@ -95,7 +90,9 @@ finalized or in SV (sold vehicle) status. (TR, CM or SB) case types.</li>
 </tr>
 <tr>
 <td>The case management system calculates the collection fee on the
-case. As required by law, the system must recalculate the collection
+case. Once a case is eligible for third party collections changes to case 
+to case balances and status will be sent as an update.As required by law, 
+the system must recalculate the collection
 fee as partial jail time credit or community service is applied to a
 case in third party collections within the case management system. The
 fee will be recalculated on the reduced balance on the case. The new
