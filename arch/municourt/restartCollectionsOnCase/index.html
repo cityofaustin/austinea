@@ -36,8 +36,8 @@
 <span style="font-weight: bold;">Restart Collections On Case<br />Use Case Model</span>
 </td></tr></table>
 
-<p><b>Scope: </b>The case management system checks cases placed into collections that were stopped because of a motion, appeal or event 
-set on the case subsequent to the case being submitted to the collections system. If all of these stop conditions have processed and/or 
+<p><b>Scope: </b>The case management system checks cases placed into collections that were pauseded because of a motion, appeal or event 
+set on the case subsequent to the case being submitted to the collections system. If all of these pause conditions have processed and/or 
 resolved, the 'days until restart' setting on the case has lapsed and a balance greater than $25 remains on the case then the case management 
 system will send a record to the collections service indicating that the collections can resume.
 </p>
@@ -72,7 +72,7 @@ system will send a record to the collections service indicating that the collect
 </tr>
 <tr>
 <td>
-If daysUntilRestart have lapsed and stop conditions are lifted the case management system removes the collection pause 
+If daysUntilRestart have lapsed and pause conditions are lifted the case management system removes the collection pause 
 flag (sets it to null) in the collection send changes object (referenced by case number). 
 The collection pause flag is set and added to the collection send changes object.<br>
 * If the case balance is $0 and the minimum balance is set greater than $0, the case cannot be restarted even 
