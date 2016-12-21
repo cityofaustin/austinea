@@ -47,8 +47,6 @@
 			<li>Case disposed not guilty-transferred to Muni Court</li>
 			<li>Defendant found not liable</li>
 			<li>Case transferred out</li>
-			<li>Defendant completed alcohol awareness class</li>
-			<li>Defendant completed driving safety course</li>
 		</ol>
 	</li>
 </ol>
@@ -66,8 +64,6 @@
 <ul>
 	<li><a href="/austinea/arch/municourt/issueWarrants/index.html">Issue Warrants Use Case</a></li>
 	<li><a href="/austinea/arch/municourt/sendMessageToCollections/index.html">Send Message To Collections Use Case</a></li>
-	<li><a href="/austinea/arch/municourt/accountForCommunityServiceTime/index.html">Account For Community Service Time Use Case</a></li>
-	<li><a href="/austinea/arch/municourt/processDriverSafetyCourseCompletion/index.html">Process Driver Safety Course Completion Use Case</a></li>		
 </ul>
 <br />
 
@@ -220,38 +216,7 @@ Codes indicating a withdrawl for other reasons:
 </ul>
 </td>
 </tr>
-<tr>
-<td rowspan="2">011</td>
-<td style="font-weight: bold; background: lightgray;">Manage Court Case/<a href="/austinea/arch/municourt/accountForCommunityServiceTime/index.html">Account For Community Service Time Use Case</a></td>
-<td rowspan="2">  </td>
-</tr>
-<tr>
-<td>
-The Defendant submits proof of community Service hours. The Clerk locates the community Service Plan, and applies the hours reported to the 
-Community Service Plan. The Clerk attaches the community service document to the community Service Plan. The upload creates a unique reference 
-number for tracking the "Receipt" document. 
-The System offers the clerk the option to either print or email the Receipt to the Defendant/Attorney/etc., and attaches a Receipt to the community 
-Service Plan and associated credited case, for future printing. 
-The system updates each case affected with a case specific credit for the associated community Service and records the associated reference 
-document number of the scanned community service hours. Both Dollars and Hour totals are reflected at the Case level. The system adjusts the 
-balances against the plan, and generates a receipt for the Defendant. The Community Service Plan update is added to the Clerk queue for later 
-confirmation. The Clerk contacts the Community Service Provider to verify the hours submitted. 
-</td>
-</tr>
-<tr>
-<td rowspan="2">012</td>
-<td style="font-weight: bold; background: lightgray;">Manage Court Case/<a href="/austinea/arch/municourt/processDriverSafetyCourseCompletion/index.html">Process Driver Safety Course Completion Use Case</a></td>
-<td rowspan="2">  </td>
-</tr>
-<tr>
-<td>
-The Court Clerk processes the submitted mandated DSC program completion form from the Defendant: The defendant presents the mandated DSC program 
-completion form to the Court Clerk. The Court Clerk takes the form and processes it by scanning it onto the case and creating a case action 
-recording the completion of service.
-</td>
-</tr>
-<tr>
-<td rowspan="2">013</td>
+<td rowspan="2">010</td>
 <td style="font-weight: bold; background: lightgray;">Judge/evaluateCase</td>
 <td rowspan="2">  </td>
 </tr>
@@ -261,7 +226,7 @@ If the Judge makes a collection withdrawal qualifying disposition on the case: T
 </td>
 </tr>
 <tr>
-<td rowspan="2">014</td>
+<td rowspan="2">011</td>
 <td style="font-weight: bold; background: lightgray;">Judge/makeDisposition</td>
 <td rowspan="2">  </td>
 </tr>
@@ -271,7 +236,7 @@ The Judge makes a disposition on the case.
 </td>
 </tr>
 <tr>
-<td rowspan="2">015</td>
+<td rowspan="2">012</td>
 <td style="font-weight: bold; background: lightgray;">Manage Court Case/addActionToCase</td>
 <td rowspan="2">  </td>
 </tr>
