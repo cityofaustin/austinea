@@ -39,13 +39,13 @@
 <p><b>Scope: </b>After a case has been sent to collections, when the Defendant makes a payment on the case at the Court, a record is sent to the 
 collections system indicating that payment has been made and including the payment amount, payment date and case balance. 
 <br>&nbsp;<br>
-However, if the transaction type is a layout, community service or a judicial order then only the case balance (balance adjustment) 
+However, if the transaction type is non-monetary (jail credit, community service or a judicial waiver) then only the case balance (balance adjustment) 
 is sent to the collections system. If the transaction type is BO (bond) then the case management system checks first to see if the bond 
 is applied before or after the case has been sent to collections.  If the bond was posted before, the collections vendor does not get credit 
 and only a case balance adjustment is sent to the collections system. If the bond was posted after the case was sent, then the case management 
 system checks for the Bond dispersed code. If bond is applied, the case management system sends the collection system a payment transaction 
 record with the bond amount. Furthermore, when a bond gets posted on a case that has already been sent to collections, the case is then checked 
-daily, until the bond is disposed.  If the bond becomes 'disposed' then the case management system ceases checking on the bond dispersal 
+daily, until the bond is satisfied.  If the bond becomes 'satisfied' then the case management system ceases checking on the bond dispersal 
 and proceeds to process the the disbursed bond amount as a payment or reversal with the collection system.
 </p>
 <!-- IF INTERACTION OVERVIEW IS INCLUDED 
@@ -136,7 +136,7 @@ The Defendant (or whoever made the payment) takes the payment receipt.
 </tr>
 <tr>
 <td>
-If the transaction type is a layout, community service or a judicial order: The case management system adds the case balance adjustment, 
+If the transaction type is non-monetary (jail credit, community service or a judicial waiver): The case management system adds the case balance adjustment, 
 case balance and collection fee to the send collections update object.
 </td>
 </tr>
@@ -243,7 +243,7 @@ If bond posted after case sent to collections (until the bond is disbursed): The
 </tr>
 <tr>
 <td>
-If bond is applied, disposed and processed as a payment then the case management system processes a payment on the collections case record. Payments can be made online, by mail 
+If bond is applied, satisfied and processed as a payment then the case management system processes a payment on the collections case record. Payments can be made online, by mail 
 and in person if the vendor has a local presence. The payment is referenced by the case number. The payment record (which is is added 
 to the collection send update object) includes:
 <ul>
