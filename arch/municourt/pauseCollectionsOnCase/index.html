@@ -36,8 +36,8 @@
 <span style="font-weight: bold;">Pause Collections On Case<br />Use Case Model</span>
 </td></tr></table>
 
-<p><b>Scope: </b>The case management system monitors the case sent to collections for any 'stop collections' condition. If a Defendant files a motion or appeal on a case, 
-or if an event (appearance for example) is scheduled after the case has been sent to collections then the case management system sends a 'stop collections' message to the collections service.
+<p><b>Scope: </b>The case management system monitors the case sent to collections for any 'pause collections' condition. If a Defendant files a motion or appeal on a case, 
+or if an event (appearance for example) is scheduled after the case has been sent to collections then the case management system sends a 'pause collections' message to the collections service.
 </p>
 <!-- IF INTERACTION OVERVIEW IS INCLUDED 
 <table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
@@ -140,7 +140,7 @@ The case management system sets the date on the docket calendar when the Defenda
 <td>
 If action on case is a motion, appeal or scheduled event: The case management system sets the value of the collection pause 
 flag to 'true' in the collection send changes object (referencing the case to be paused by case number). Pausing collections 
-means ceasing collection activity. If the case is paused for an appeal the vendor may not collect or accept payment until 
+means temporarily ceasing collection activity. If the case is paused for an appeal the vendor may not collect or accept payment until 
 the appeal pause is lifted. Under other pause conditions the vendor ceases collection activity but may accept payment.
 <br>&nbsp;<br>
 Pause Codes:
