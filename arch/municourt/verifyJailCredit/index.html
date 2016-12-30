@@ -75,97 +75,154 @@ walk it over to the court and present it to the Judge (but not delivering it to 
 <tr><th width="9%">Req#</th><th width="70%">Type/Interface - Requirement Description</th><th>Performance</th></tr>
 <tr>
 <td rowspan="2">001</td>
-<td style="font-weight: bold; background: lightgray;">Court Clerk/requestJailCreditVerification</td>
+<td style="font-weight: bold; background: lightgray;">Manage Court Case/generateJailCreditVerificationForm</td>
 <td rowspan="2">  </td>
 </tr>
 <tr>
 <td>
-The Defendant requests Jail Credit Verification and presents a photo ID to the Court Clerk.
+If the Defendant is not in custody:<br>&nbsp;<br>
+The Court Clerk, Customer (Defendant), or Jail Custodian requests the Jail Credit Verification form. The case management 
+system generates the form and delivers it to the requestor either as 
+<ul>
+<li>(If the Defendant is not a walk-in) a web form to be completed and submitted electronically</li>
+<li>(If the Defendant is not a walk-in) a form (file) attached to an email or text message to be printed, completed 
+and returned by mail or as a scanned file via email or text message</li>
+<li>(If the Defendant is not a walk-in) a paper form delivered by the mail to be completed and returned by mail or 
+as a scanned file via email or text message</li>
+<li>(If the Defendant is a walk-in) a paper form delivered to the Defendant (or requestor) at the Court lobby 
+front counter to be completed and returned to the Court for processing</li>
+</ul>
 </td>
 </tr>
 <tr>
 <td rowspan="2">002</td>
-<td style="font-weight: bold; background: lightgray;">Manage Court Case/verifyPersonIdentity</td>
+<td style="font-weight: bold; background: lightgray;">Manage Court Case/completeJailCreditForm</td>
 <td rowspan="2">  </td>
 </tr>
 <tr>
 <td>
-The Court Clerk enters the first three letters of the Customer's last name and their date of birth and verifies their identity.
+The Defendant completes the Jail Credit Verification form and submits it to the Court either
+<ul>
+<li>via the web</li>
+<li>electronically as a scanned file (from a printed copy of the form) attached to an email or text message</li>
+<li>a paper form delivered by the mail to the Court's mail address</li>
+</ul>
 </td>
 </tr>
 <tr>
 <td rowspan="2">003</td>
-<td style="font-weight: bold; background: lightgray;">Tiburon/retrieveJailCreditInfo</td>
+<td style="font-weight: bold; background: lightgray;">Defendant/requestJailCredit</td>
 <td rowspan="2">  </td>
 </tr>
 <tr>
 <td>
-If the Defendant has a valid ID: The Court Clerk runs the jail credit query in Tiburon using the Defendants's name, date of birth, and time frame of 
-incarceration to retrieve the Jail Credit information and confirm that there is Jail Credit.
+The incarcerated Defendant requests a Jail Credit form from the Court (Collections or Communications units). 
+The request is submitted to the Court by either the Defendant's representative or by the Jail Custodian.
 </td>
 </tr>
 <tr>
 <td rowspan="2">004</td>
-<td style="font-weight: bold; background: lightgray;">Court Clerk/printTiburonJailCreditReport</td>
+<td style="font-weight: bold; background: lightgray;">Jail Custodian/completeJailCreditForms</td>
 <td rowspan="2">  </td>
 </tr>
 <tr>
 <td>
-If there is Jail Credit: The Court Clerk reviews and verifies the submitted community service hours and certification (proof the hours were served).
+The Jail Custodian completes the Jail Credit form on behalf of the Defendant in custody. The form and verification 
+of the jail time served at the institution of incarceration outside Travis County is delivered to the Court by mail 
+or as attachments (scanned files) to an email or text message.
 </td>
 </tr>
 <tr>
 <td rowspan="2">005</td>
-<td style="font-weight: bold; background: lightgray;">Defendant/takeDocument</td>
+<td style="font-weight: bold; background: lightgray;">Court Clerk/reviewJailCreditSubmission</td>
 <td rowspan="2">  </td>
 </tr>
 <tr>
 <td>
-The Customer takes the document from the Court Clerk.
+The Defendant submits the completed Jail Credit form as well as proof of incarceration (which could be 
+the assertion that the jail time was served in Travis County and can be verified by a TIBURON inquiry.) 
+The form is verified by the Court Clerk for completeness. If the form is completed correctly it is forwarded 
+along with the proof of incarceration to the Central Booking Clerk.
 </td>
 </tr>
 <tr>
 <td rowspan="2">006</td>
-<td style="font-weight: bold; background: lightgray;">Defendant/proceedToWalkInCourt</td>
-<td rowspan="2">  </td>
-</tr>
-<tr>
-<td>
-If the Defendant does not have a valid ID: The Defendant receives instructions from the Court Clerk and proceeds to the Walk-In Court.
-</td>
-</tr>
-<tr>
-<td rowspan="2">007</td>
 <td style="font-weight: bold; background: lightgray;">Tiburon/retrieveJailCreditInfo</td>
 <td rowspan="2">  </td>
 </tr>
 <tr>
 <td>
-If the Defendant's demographics match a defendant case party on a case: The Court Clerk runs the jail credit query in Tiburon using the 
-Defendants's name, date of birth, and time frame of incarceration to retrieve the Jail Credit information and confirm that there is Jail Credit.
+If the Defendant served jail time in Travis County, the Court Clerk (Central Booking) runs the jail credit query 
+in Tiburon using the Defendants's name, date of birth, and time frame of incarceration to retrieve the Jail Credit 
+information and confirm that there is Jail Credit.
+</td>
+</tr>
+<tr>
+<td rowspan="2">007</td>
+<td style="font-weight: bold; background: lightgray;">Jail Custodian/retrieveJailCreditInfo</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+If the Defendant served time outside of Travis County, the Central Booking Clerk contacts the institution of incarceration 
+outside Travis County, providing the Defendant's demographics and the dates of incarceration, to verify that the Defendant 
+served the jail time indicated on the submitted proof. The Jail Custodian verifies the information.
 </td>
 </tr>
 <tr>
 <td rowspan="2">008</td>
-<td style="font-weight: bold; background: lightgray;">Court Clerk/walkDocumentToJudge</td>
+<td style="font-weight: bold; background: lightgray;">Judge/putJailCreditRequestInJudgesQueue</td>
 <td rowspan="2">  </td>
 </tr>
 <tr>
 <td>
-The Court Clerk takes the printed document and walks it over to the court and hands it to the presiding Judge.
+If Jail Credit form and proof of incarceration are valid and complete: The Central Booking Clerk puts the request for 
+Jail Credit Verification (including the completed form, proof of incarceration/TIBURON report) in the Judge's queue for 
+review and action.
 </td>
 </tr>
 <tr>
 <td rowspan="2">009</td>
-<td style="font-weight: bold; background: lightgray;">Judge/signDocument</td>
+<td style="font-weight: bold; background: lightgray;">Judge/reviewJailCreditVerification</td>
 <td rowspan="2">  </td>
 </tr>
 <tr>
 <td>
-The Judge signs the document(s).
+The Judge reviews the Jail Credit request and either approves or rejects it. The result is a Judge's order specifying a 
+case balance credit amount for the jail time served that is returned to Central Booking for a case update.
+</td>
+</tr>
+<tr>
+<td rowspan="2">010</td>
+<td style="font-weight: bold; background: lightgray;">Manage Court Case/applyJailCredit</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+If the Jail Credit is approved by the Judge: The Central Booking Clerk receives the judicial order specifying the case 
+balance credit amount to be applied to the case. The Clerk submits the case balance credit amount to the case management 
+system and the credit is applied to the current balance on the case resulting in a new (reduced) balance. An case action is 
+generated to be added to the case.
+</td>
+</tr>
+	<tr>
+<td rowspan="2">011</td>
+<td style="font-weight: bold; background: lightgray;">Manage Court Case/addActionToCase</td>
+<td rowspan="2">  </td>
+</tr>
+<tr>
+<td>
+an action is applied to the case:  Jail Credit Verification activity the action codes include:
+<ul>
+<li>JCASORD - Jail Case Order Form</li>
+<li>JRTN - Jail Case Order Form - Return</li>
+<li>JTLOF - Jail Case Order Form - Total Layout</li>
+<li>PROOJ - Proof Submitted - Jail Credit Letter</li>
+<li>JC - Request for Jail Credit</li>
+<li>RJCR - Response to Jail Credit Request</li>
+</ul>
 </td>
 </tr>
 </table>
-<br/>
 </td></tr></table>
 </td></tr></table></body></html>
