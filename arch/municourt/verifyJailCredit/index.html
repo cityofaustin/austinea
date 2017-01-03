@@ -36,18 +36,31 @@
 <span style="font-weight: bold;">Verify Jail Credit<br />Use Case Model</span>
 </td></tr></table>
 
-<p><b>Scope: </b>The Defendant requests Jail Credit Verification and presents a photo ID to the Court Clerk.
-<br>&nbsp;<br>
-If the Defendant has a valid ID:<br>
-<ul>
-	<li>The Court Clerk verifies the person's identity in the case management system and retrieves the PID associated with the Defendant.</li>
-	<li>The Court Clerk runs the jail credit query in Tiburon using the Defendants's name, date of birth, and time frame of incarceration to retrieve the 
-	Jail Credit information and confirm that there is Jail Credit.</li>
-</ul>
-<br>&nbsp;<br>
-If the Defendant does not have a valid ID to use for confirmation of their identity then the Court Clerk directs the Defendant to the Walk-In Court to 
-determine if the Judge will grant an exception. The Clerk may generate the Tiburon Jail Credit Report for the Defendant using provided demographics and 
-walk it over to the court and present it to the Judge (but not delivering it to the Defendant).
+<p><b>Scope: </b>Jail Credit Verifications requests can be initiated by defendants who are in custody (incarcerated) or by 
+	defendants not (Walk-In). In either case they obtain a Jail Credit Verification form from the Court. Incarcerated 
+	Defendants may request the form via the Web and Walk-In Defendants can obtain the form over the Web or by contacting 
+	the Court and arranging its delivery (email/ text attachment, mail or in person at the Court Front Counter window.)  
+	Incarcerated Defendants must have the form completed and delivered by a Jail Custodian. Walk-In Defendants complete the 
+	form themselves.
+	<br>&nbsp;<br>
+A Walk-In Defendant must also produce documented proof of their incarceration (dates and facility.) If the Walk-In Defendant served
+	time in Travis County then their incarceration dates can be verified by a TIBURON inquiry. If the Defendant presents proof of 
+	incarceration for time served in facility outside Travis County then the incarceration dates must be verified by contacting 
+	the facility. Receiving a completed form from a Jail Custodian via certified mail is adequate proof of incarceration.
+	<br>&nbsp;<br>
+The Court Clerk reviews the submitted form and confirms the method for determining the Defendants incarceration dates and (if everything 
+	is valid and complete) forwards the documents (and Walk-In Defendant when in person) to the Central Booking Clerk to continue 
+	the Jail Credit Verification process.
+	<br>&nbsp;<br>
+The Central Booking Clerk processes the Jail Credit Verification form by submitting the Defendants demographic information and 
+	incarceration dates to either TIBURON for jail time served in Travis County or by contacting the jail facility outside Travis 
+	County.
+	<br>&nbsp;<br>
+If the jail time is verified and correct then the Jail Credit request is put in the Judge’s queue for review. The Judge reviews the 
+	request and case information and makes a decision. If the request is approved then a judicial order is issued to Central Booking 
+	to apply the jail time served to the case and reduce the balance by either a calculated amount or an amount specified by the 
+	Judge. The Central Booking Clerk uses the case management system to reduce the balance due on the case and to add an action to 
+	the case documenting the Jail Credit balance reduction.
 </p>
 <!-- IF INTERACTION OVERVIEW IS INCLUDED 
 <table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center">
