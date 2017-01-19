@@ -1,0 +1,194 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Move File To FTP Site</title>
+
+<link rel="stylesheet" href="https://cityofaustin.github.io/austinea/style/hover.css" type="text/css">
+</head>
+
+<body style="background-color: rgb(221, 216, 194);">
+<img><!-- Border Background Table -->
+<table style="border-collapse: collapse; background-color: rgb(244, 202, 144);" align="center" border="0" cellpadding="4" cellspacing="0">
+<tbody>
+<tr>
+<td><!-- Main Body -->
+<table style="border-collapse: collapse; background-color: rgb(255, 255, 255);" align="center" border="0" cellpadding="5" cellspacing="0" width="650">
+<tbody>
+<tr>
+<td style="padding: 0pt;" height="130" valign="top"><a href=""><img src="https://cityofaustin.github.io/austinea/image/iTHeader.jpg" alt="http://www.austintexas.gov/austinea" border="0"></a></td>
+</tr>
+<!-- Text Area -->
+<tr>
+<td>
+<p style="text-align: center; font-weight: bold;">Move File To FTP Site<br>
+Use Case Specification</p>
+<!-- IF Printable document option Included <p style="text-align: center;">download <a href="http://austinea.org/arch/law/***.docx">printable version</a> -- > <b> Law Office Logical Data Model </b> <!-- Image - Logical Data Model <table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center"> <p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br> <a href="http://austinea.org/arch/law/ldm.jpg"><img src="http://austinea.org/arch/law/ldm.jpg" border="0" width="600"></a> <p style="text-align: center; font-weight: bold;">Law Office Logical Data Model</p> </td></tr></table> --><!-- USE CASE IMAGE -->
+<table style="border-collapse: collapse;" align="center" border="0" cellpadding="5" cellspacing="0">
+<tbody>
+<tr>
+<td align="center"><span class="lbl">Select
+to enlarge...</span><br>
+<a href="https://cityofaustin.github.io/austinea/arch/ctm/moveFileToFTPSite/ucd.jpg"><img src="https://cityofaustin.github.io/austinea/arch/ctm/moveFileToFTPSite/ucd.jpg" alt="" border="0"></a><br>
+<span style="font-weight: bold;">Move File To FTP Site<br>
+Use Case Model</span>
+</td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<p><b>Scope: </b>The Customer uses the Operating system to copy a file from their disk location into the designated FTP site. The operating system displays an acceptable use banner, and prompts the user to acknowledge and confirm their data is in accordance with City policy related to placing data on an FTP site. Once confirmed, the Operating system moves the file to the FTP location. Once the copy to the new location is complete, DLP services evaluate the file and determine if there is a pattern match indicating potential policy violation. If issues are perceived, the DLP software moves the offending file into a "Quarantine" area for further evaluation. The DLP software sends email to a distribution list of Security team members, as well as notifies the Customer of a potential problem. Security evaluates the quarantined file. If problems are confirmed, Security notifies the Chain of Command (of the Customer) of the issue, and determines next steps. If a false positive was reported, the Security Team moves the quarantined file into FTP site, and notifies the Customer of file acceptance.  
+
+<!-- IF INTERACTION OVERVIEW IS INCLUDED <table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center"> <span class="lbl">Select to enlarge...</span><br /> <a href="http://austinea.org/arch/law/***.jpg"><img src="http://austinea.org/arch/law/***.jpg" border="0" alt="" /></a><br /> <span style="font-weight: bold;">Interaction Overview</span> </td></tr></table> -->
+<br>
+<!-- SEQUENCE DIAGRAM -->
+<table style="border-collapse: collapse;" align="center" border="0" cellpadding="5" cellspacing="0">
+<tbody>
+<tr>
+<td align="center"><span class="lbl">Select
+to enlarge...</span><br>
+<a href="https://cityofaustin.github.io/austinea/arch/ctm/moveFileToFTPSite/sd01.jpg"><img src="https://cityofaustin.github.io/austinea/arch/ctm/moveFileToFTPSite/sd01.jpg" alt="" border="0" width="600"></a><br>
+<span style="font-weight: bold;">Move File To FTP Site<br>
+Sequence Diagram</span>
+</td>
+</tr>
+</tbody>
+</table>
+<br>
+<!-- INTERFACE TABLE -->
+<table id="custom" align="center">
+<tbody>
+<tr>
+<th width="9%">Req#</th>
+<th width="70%">Type/Interface -
+Requirement Description</th>
+<th>Performance</th>
+</tr>
+<tr>
+<td rowspan="2">001</td>
+<td style="background: lightgray none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; font-weight: bold;">Operating System/copyFileToFTPSite</td>
+<td rowspan="2"> </td>
+</tr>
+<tr>
+<td>The Customer uses the Operating System to move a file to their FTP location.  </td>
+</tr>
+<tr>
+<td rowspan="2">002</td>
+<td style="background: lightgray none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; font-weight: bold;">Operating System/displayWarningBanner</td>
+<td rowspan="2"> </td>
+</tr>
+<tr>
+<td>The Operating System detects a new file has been placed into an FTP Directory and displays an "acceptable use policy", and requests the customer confirm understanding.  </p>
+</td>
+</tr>
+<tr>
+<td rowspan="2">003</td>
+<td style="background: lightgray none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; font-weight: bold;">Customer/confirmFTPRuleUnderstanding</td>
+<td rowspan="2"> </td>
+</tr>
+<tr>
+<td>The Customer confirms their understanding of the "Acceptable Use Policy" by checking a box, or clicking a visual queue on their screen. NOTE: If the Customer does not provide this confirmation, the operating system does not copy the requested file to the FTP location. </td>
+</tr>
+<tr>
+<td rowspan="2">004</td>
+<td style="background: lightgray none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; font-weight: bold;">Operating System/moveFileToFTPSite</td>
+<td rowspan="2"> </td>
+</tr>
+<tr>
+<td>Having received a confirmation of understanding of the "Acceptable Use Policy" for FTP sites, the operating system copies the designated file into the FTP directory as requested by the Customer.  </td>
+</tr>
+<tr>
+<td rowspan="2">005</td>
+<td style="background: lightgray none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; font-weight: bold;">DLP Services/detectNewFileAndRunDLPChecks</td>
+<td rowspan="2"> </td>
+</tr>
+<tr>
+<td>The DLP Service monitors the FTP directory, and upon successful movement of a new file into an FTP directory, runs a scan of the file placed there - checking it for various policy violations ( credit card numbers, social security numbers, citizen private data, etc.). </td>
+</tr>
+<tr>
+<td rowspan="2">006</td>
+<td style="background: lightgray none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; font-weight: bold;">Operating System/moveFileToQuarantine</td>
+<td rowspan="2"> </td>
+</tr>
+<tr>
+<td>Having detected a violation of Acceptable Use Policy, the DLP Service uses the Operating system to move the file from the FTP Site to a quarantine area.  </td>
+</tr>
+<tr>
+<td rowspan="2">007</td>
+<td style="background: lightgray none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; font-weight: bold;">DLP Services/notifyCustomerOfIssue</td>
+<td rowspan="2"> </td>
+</tr>
+<tr>
+<td>The DLP Service notifies the customer via email of issues with their file, and indicates research will be conducted on their file before allowing it to be released to their FTP site. </td>
+</tr>
+<tr>
+<td rowspan="2">008</td>
+<td style="background: lightgray none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; font-weight: bold;">DLP Services/notifySecurityOfIssue</td>
+<td rowspan="2"> </td>
+</tr>
+<tr>
+<td>The DLP Service notifies the Security Team (a configurable distribution list) via email with the Customer's filename, information about errors perceived, Customer name and contact information, Customer Supervisor name, FTP Site Location, File name, Quarantine Location and where the file now resides.  </td>
+</tr>
+<tr>
+<td rowspan="2">009</td>
+<td style="background: lightgray none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; font-weight: bold;">Security/evaluateFile</td>
+<td rowspan="2"> </td>
+</tr>
+<tr>
+<td>The Security team evaluates the File and determines if, in fact, a policy violation has occurred with the file, as indicated by the DLP Service.  </td>
+</tr>
+
+
+
+<tr>
+<td rowspan="2">010</td>
+<td style="background: lightgray none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; font-weight: bold;">DLP Services/releaseFileForDistribution</td>
+<td rowspan="2"> </td>
+</tr>
+<tr>
+<td>The Security team uses DLP Services to indicate the pattern located within the Customer's file is acceptable, preventing false positives from occurring for this specific file again.  </td>
+</tr>
+<tr>
+<td rowspan="2">011</td>
+<td style="background: lightgray none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; font-weight: bold;">Operating System/moveFileFromQuarantineToFTPSite</td>
+<td rowspan="2"> </td>
+</tr>
+<tr>
+<td>The Security Team uses the Operating system to move the file from the Quarantine area back to the Customer FTP Site.  </td>
+</tr>
+<tr>
+<td rowspan="2">012</td>
+<td style="background: lightgray none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; font-weight: bold;">Security/notifyCustomerFileClearedForDistribution</td>
+<td rowspan="2"> </td>
+</tr>
+<tr>
+<td>The Security Team sends email to the Customer confirming successful clearance of any perceived issues with the file distribution, and communicating movement of the file from Quarantine to the Customers FTP Site.  </td>
+</tr>
+<tr>
+<td rowspan="2">013</td>
+<td style="background: lightgray none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; font-weight: bold;">Security/notifyChainOfCommandAboutFileIssue</td>
+<td rowspan="2"> </td>
+</tr>
+<tr>
+<td>The Security Team sends email to the Chain of Command, confirming Acceptable Use Policy Violations with the file distribution, and suggesting next steps.  </td>
+</tr>
+
+
+
+
+
+
+
+
+
+
+</tbody>
+</table>
+<br>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</body></html>
