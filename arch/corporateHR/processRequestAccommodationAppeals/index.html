@@ -1,0 +1,156 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Process Appeal of Reasonable Accommodation Request</title>
+
+<link rel="stylesheet" href="https://cityofaustin.github.io/austinea/style/hover.css" type="text/css">
+</head>
+
+<body style="background-color: rgb(221, 216, 194);">
+<img><!-- Border Background Table -->
+<table style="border-collapse: collapse; background-color: rgb(244, 202, 144);" align="center" border="0" cellpadding="4" cellspacing="0">
+<tbody>
+<tr>
+<td><!-- Main Body -->
+<table style="border-collapse: collapse; background-color: rgb(255, 255, 255);" align="center" border="0" cellpadding="5" cellspacing="0" width="650">
+<tbody>
+<tr>
+<td style="padding: 0pt;" height="130" valign="top"><a href=""><img src="https://cityofaustin.github.io/austinea/image/iTHeader.jpg" alt="http://www.austintexas.gov/austinea" border="0"></a></td>
+</tr>
+<!-- Text Area -->
+<tr>
+<td>
+<p style="text-align: center; font-weight: bold;">Process Appeal of Reasonable Accommodation Request<br>
+Use Case Specification</p>
+<!-- IF Printable document option Included <p style="text-align: center;">download <a href="http://austinea.org/arch/law/***.docx">printable version</a> -- > <b> Law Office Logical Data Model </b> <!-- Image - Logical Data Model <table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center"> <p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br> <a href="http://austinea.org/arch/law/ldm.jpg"><img src="http://austinea.org/arch/law/ldm.jpg" border="0" width="600"></a> <p style="text-align: center; font-weight: bold;">Law Office Logical Data Model</p> </td></tr></table> --><!-- USE CASE IMAGE -->
+<table style="border-collapse: collapse;" align="center" border="0" cellpadding="5" cellspacing="0">
+<tbody>
+<tr>
+<td align="center"><span class="lbl">Select
+to enlarge...</span><br>
+<a href="https://cityofaustin.github.io/austinea/arch/corporateHR/processRequestAccommodationAppeals/ucd.jpg"><img src="https://cityofaustin.github.io/austinea/arch/corporateHR/processRequestAccommodationAppeals/ucd.jpg" alt="" border="0"></a><br>
+<span style="font-weight: bold;">Process Appeal of Reasonable Accommodation Request<br>
+Use Case Model</span>
+</td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<p><b>Scope: </b>The Customer uses the Operating system to copy a file from their disk location into the designated FTP site. The operating system displays an acceptable use banner, and prompts the user to acknowledge and confirm their data is in accordance with City policy related to placing data on an FTP site. Once confirmed, the Operating system moves the file to the FTP location. Once the copy to the new location is complete, DLP services evaluate the file and determine if there is a pattern match indicating potential policy violation. If issues are perceived, the DLP software moves the offending file into a "Quarantine" area for further evaluation. The DLP software sends email to a distribution list of Security team members, as well as notifies the Customer of a potential problem. Security evaluates the quarantined file. If problems are confirmed, Security notifies the Chain of Command (of the Customer) of the issue, and determines next steps. If a false positive was reported, the Security Team moves the quarantined file into FTP site, and notifies the Customer of file acceptance.  
+
+<!-- IF INTERACTION OVERVIEW IS INCLUDED <table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center"> <span class="lbl">Select to enlarge...</span><br /> <a href="http://austinea.org/arch/law/***.jpg"><img src="http://austinea.org/arch/law/***.jpg" border="0" alt="" /></a><br /> <span style="font-weight: bold;">Interaction Overview</span> </td></tr></table> -->
+<br>
+<!-- SEQUENCE DIAGRAM -->
+<table style="border-collapse: collapse;" align="center" border="0" cellpadding="5" cellspacing="0">
+<tbody>
+<tr>
+<td align="center"><span class="lbl">Select
+to enlarge...</span><br>
+<a href="https://cityofaustin.github.io/austinea/arch/corporateHR/processRequestAccommodationAppeals/sd01.jpg"><img src="https://cityofaustin.github.io/austinea/arch/corporateHR/processRequestAccommodationAppeals/sd01.jpg" alt="" border="0" width="600"></a><br>
+<span style="font-weight: bold;">Process Appeal of Reasonable Accommodation Request<br>
+Sequence Diagram</span>
+</td>
+</tr>
+</tbody>
+</table>
+<br>
+<!-- INTERFACE TABLE -->
+<table id="custom" align="center">
+<tbody>
+<tr>
+<th width="9%">Req#</th>
+<th width="70%">Type/Interface -
+Requirement Description</th>
+<th>Performance</th>
+</tr>
+<tr>
+<td rowspan="2">001</td>
+<td style="background: lightgray none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; font-weight: bold;">City Managers Office/acceptAppeal</td>
+<td rowspan="2"> </td>
+</tr>
+<tr>
+<td>Original Applicant or Agent of Applicant appeals the WrittenDecision to deny or grant an AlternativeReasonableAccommodation within 30 calendar days from the mailing of the WrittenDecision. The Applicant appeals in writing and includes the grounds for Appeal. The Applicant has the option to submit multiple Appeal(s). The AppealDecision is determined by the City Managers Office (CMO). If the AppealDecision is not issued in 30 calendar days from the date the Appeal is received, the RequestAccommodation is granted. The CMO mails the written AppealDecision to the ADA office and the Applicant.  </td>
+</tr>
+<tr>
+<td rowspan="2">002</td>
+<td style="background: lightgray none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; font-weight: bold;">City Managers Office/transcribeAppealRequest</td>
+<td rowspan="2"> </td>
+</tr>
+<tr>
+<td>If the Applicant needs assistance to submit an Appeal the Department Director Designee provides assistance transcribing a verbal request into a written Appeal.  </p>
+</td>
+</tr>
+<tr>
+<td rowspan="2">003</td>
+<td style="background: lightgray none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; font-weight: bold;">City Managers Office/accommodateExpediteRequest</td>
+<td rowspan="2"> </td>
+</tr>
+<tr>
+<td>The Applicant has the option to request an expedited review of Appeal. The CMO office does the best they can to meet the expedited review. </td>
+</tr>
+<tr>
+<td rowspan="2">004</td>
+<td style="background: lightgray none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; font-weight: bold;">Law Office/createConsultationMeeting</td>
+<td rowspan="2"> </td>
+</tr>
+<tr>
+<td>In the event of an Appeal, a formal review by CMO, Legal Department, and the American's with Disabilities (ADA) office is convened for final disposition prior to the 30 calendar day expiration. All interested parties must come to a unanimous decision.   </td>
+</tr>
+<tr>
+<td rowspan="2">005</td>
+<td style="background: lightgray none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; font-weight: bold;">Law Office/reviewRisksToCity</td>
+<td rowspan="2"> </td>
+</tr>
+<tr>
+<td>If the decision is a denial of Appeal, the City Manager’s Office and Legal Department review risks of denial resulting in either upholding the denial or approval of Appeal.  </td>
+</tr>
+<tr>
+<td rowspan="2">006</td>
+<td style="background: lightgray none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; font-weight: bold;">City Managers Office/createAppealDecision</td>
+<td rowspan="2"> </td>
+</tr>
+<tr>
+<td>The CMO creates an AppealDecision. The status is 'closed - with appeal'  </td>
+</tr>
+<tr>
+<td rowspan="2">007</td>
+<td style="background: lightgray none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; font-weight: bold;">City Managers Office/approveOriginalRequestAccommodation</td>
+<td rowspan="2"> </td>
+</tr>
+<tr>
+<td>The CMO approves original RequestAccommodation. </td>
+</tr>
+<tr>
+<td rowspan="2">008</td>
+<td style="background: lightgray none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; font-weight: bold;">Accommodation Requestor/receiveAppealDecision</td>
+<td rowspan="2"> </td>
+</tr>
+<tr>
+<td>The CMO sends the AppealDecision to original Applicant.  </td>
+</tr>
+<tr>
+<td rowspan="2">009</td>
+<td style="background: lightgray none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; font-weight: bold;">Americans With Disablities Office/receiveAppealDecision</td>
+<td rowspan="2"> </td>
+</tr>
+<tr>
+<td>The CMO sends the AppealDecision to ADA offices.  </td>
+</tr>
+
+
+
+
+
+
+
+</tbody>
+</table>
+<br>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</body></html>
