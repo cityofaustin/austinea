@@ -1,0 +1,325 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Perform Adjustment to Utility Bill</title>
+
+<link rel="stylesheet" href="https://cityofaustin.github.io/austinea/style/hover.css" type="text/css">
+</head>
+<body style="background-color: rgb(221, 216, 194);">
+<img><!-- Border Background Table -->
+<table style="border-collapse: collapse; background-color: rgb(244, 202, 144);" align="center" border="0" cellpadding="4" cellspacing="0">
+<tbody>
+<tr>
+<td><!-- Main Body -->
+<table style="border-collapse: collapse; background-color: rgb(255, 255, 255);" align="center" border="0" cellpadding="5" cellspacing="0" width="650">
+<tbody>
+<tr>
+<td style="padding: 0pt;" height="130" valign="top"><a href=""><img src="https://cityofaustin.github.io/austinea/image/iTHeader.jpg" alt="http://www.austintexas.gov/austinea" border="0"></a></td>
+</tr>
+<!-- Text Area -->
+<tr>
+<td>
+<p style="text-align: center; font-weight: bold;">Perform
+Adjustment to Utility Bill<br>
+Use Case Specification</p>
+<!-- IF Printable document option Included <p style="text-align: center;">download <a href="http://austinea.org/arch/law/***.docx">printable version</a> -- > <b> Law Office Logical Data Model </b> <!-- Image - Logical Data Model <table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center"> <p style="color: gray; font-size: 7pt;">Note: Select image for larger view<br> <a href="http://austinea.org/arch/law/ldm.jpg"><img src="http://austinea.org/arch/law/ldm.jpg" border="0" width="600"></a> <p style="text-align: center; font-weight: bold;">Law Office Logical Data Model</p> </td></tr></table> --><!-- USE CASE IMAGE -->
+<table style="border-collapse: collapse;" align="center" border="0" cellpadding="5" cellspacing="0">
+<tbody>
+<tr>
+<td align="center"><span class="lbl">Select
+to enlarge...</span><br>
+<a href="https://cityofaustin.github.io/austinea/arch/arr/performAdjustmentToUtilityBill/ucd.jpg"><img src="https://cityofaustin.github.io/austinea/arch/arr/performAdjustmentToUtilityBill/ucd.jpg" alt="" border="0"></a><br>
+<span style="font-weight: bold;">Perform
+Adjustment to Utility Bill<br>
+Use Case Model</span>
+</td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<p><b>Scope: </b>The Customer calls into
+AE's call center, or the ARR Pro center to Inquire about an adjustment.
+If the original request is made through AE's call center, a "To Do"
+activity is created and forwarded to the ARR Pro center. The ARR call
+center CSR. If more information is needed, the ARR Call center will
+reach out to the customer. If a field check is needed (verification of
+the cart at the premise) The ARR Call center CSR will initiate the
+check using CC&amp;B, who then propagates it to the Solid waste
+Tracking System. The ARR Call Center CSR sends the request to the
+Utility Account Analyst. The Utility Account analyst will research the
+"to do" by using Google Maps, using CC&amp;B, or Solid Waste
+Tracking system, And make a decision about approval or denial of the
+adjustment to the customers billing. If the request is approved, the
+Utility Account analyst will create a "to do" in the CC&amp;B
+billing system, and a contact note is added to the account. The request
+is forwarded to the AE Billing team for resolution. If issues are
+discovered, the AE Billing team will send an email requesting
+additional information to provision the request. The Utility Account
+Analyst will provide requested information. If the request is denied
+the Utility Account analyst will add a "contact note" on the original
+"To Do" within CC&amp;B, and a contact note on the account itself
+(within CC&amp;B). The original AE CSR will reach out to the
+customer and indicate actions taken.
+</p>
+<p>*NOTE: The adjustment will be effective within 1
+to 2 billing cycles<!-- IF INTERACTION OVERVIEW IS INCLUDED <table border="0" cellpadding="5" cellspacing="0" style="border-collapse: collapse;" align="center"><tr><td align="center"> <span class="lbl">Select to enlarge...</span><br /> <a href="http://austinea.org/arch/law/***.jpg"><img src="http://austinea.org/arch/law/***.jpg" border="0" alt="" /></a><br /> <span style="font-weight: bold;">Interaction Overview</span> </td></tr></table> -->
+<br>
+<!-- SEQUENCE DIAGRAM -->
+<table style="border-collapse: collapse;" align="center" border="0" cellpadding="5" cellspacing="0">
+<tbody>
+<tr>
+<td align="center"><span class="lbl">Select
+to enlarge...</span><br>
+<a href="https://cityofaustin.github.io/austinea/arch/arr/performAdjustmentToUtilityBill/sd01.jpg"><img src="https://cityofaustin.github.io/austinea/arch/arr/performAdjustmentToUtilityBill/sd01.jpg" alt="" border="0" width="600"></a><br>
+<span style="font-weight: bold;">Perform
+Adjustment to Utility Bill<br>
+Sequence Diagram</span>
+</td>
+</tr>
+</tbody>
+</table>
+<br>
+<!-- INTERFACE TABLE -->
+<table id="custom" align="center">
+<tbody>
+<tr>
+<th width="9%">Req#</th>
+<th width="70%">Type/Interface -
+Requirement Description</th>
+<th>Performance</th>
+</tr>
+<tr>
+<td rowspan="2">001</td>
+<td style="background: lightgray none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; font-weight: bold;">ARR
+Call Center CSR/requestBillModification</td>
+<td rowspan="2"> </td>
+</tr>
+<tr>
+<td>The ARR Call center CSR records the concern
+for the customer. Ensures the customer is within the service area of
+the Austin Resource Recovery. They look up the ARR record for the
+customer based on address. </td>
+</tr>
+<tr>
+<td rowspan="2">002</td>
+<td style="background: lightgray none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; font-weight: bold;">CC&amp;B/verifyCustomerInformation</td>
+<td rowspan="2"> </td>
+</tr>
+<tr>
+<td>The CSR looks up the customer account using
+the address. The Customer is asked three "verifying questions"
+(address, account holder's name, account number) to validate they are
+the customer at the address in question. The CSR associate will then
+ask details associated with the problem. </td>
+</tr>
+<tr>
+<td rowspan="2">003</td>
+<td style="background: lightgray none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; font-weight: bold;">AE
+Utility CSR/requestBillModification</td>
+<td rowspan="2"> </td>
+</tr>
+<tr>
+<td>The AE Call center CSR records the concern
+for the customer. Ensures the customer is within the service area of
+the Austin Resource Recovery. They look up the ARR record for the
+customer based on address.</td>
+</tr>
+<tr>
+<td rowspan="2">004</td>
+<td style="background: lightgray none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; font-weight: bold;">CC&amp;B/verifyCustomerInformation</td>
+<td rowspan="2"> </td>
+</tr>
+<tr>
+<td>The CSR looks up the customer account using
+the address. The Customer is asked three "verifying questions"
+(address, account holder's name, account number) to validate they are
+the customer at the address in question. The CSR associate will then
+ask details associated with the problem. </td>
+</tr>
+<tr>
+<td rowspan="2">005</td>
+<td style="background: lightgray none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; font-weight: bold;">CC&amp;B/requestBillModificationFromAE</td>
+<td rowspan="2"> </td>
+</tr>
+<tr>
+<td>The AE Utility CSR records the concern for
+the customer. Ensures the customer is within the service area of the
+Austin Resource Recovery. They look up the ARR record for the customer
+based on address. </td>
+</tr>
+<tr>
+<td rowspan="2">006</td>
+<td style="background: lightgray none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; font-weight: bold;">Customer/provideInformation</td>
+<td rowspan="2"> </td>
+</tr>
+<tr>
+<td>The ARR Call Center CSR reaches out to the
+customer to verify or clarify information in question. &nbsp; </td>
+</tr>
+<tr>
+<td rowspan="2">007</td>
+<td style="background: lightgray none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; font-weight: bold;">CC&amp;B/initiateFieldCheck</td>
+<td rowspan="2"> </td>
+</tr>
+<tr>
+<td>The ARR call center CSR uses CC&amp;B
+to create a field activity. The following information is provided: The
+Type of Field activity ("FIELD CHECK"), an Instructional note, the date
+the check is requested. </td>
+</tr>
+<tr>
+<td rowspan="2">008</td>
+<td style="background: lightgray none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; font-weight: bold;">Solid
+Waste Tracking System/initiateFieldCheck</td>
+<td rowspan="2"> </td>
+</tr>
+<tr>
+<td>CC&amp;B communicates with Solid Waste
+Tracking System the Address, the customer name, the information note,
+the date requested, the field activity type, the cart type and cart
+size in question.&nbsp; </td>
+</tr>
+<tr>
+<td rowspan="2">009</td>
+<td style="background: lightgray none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; font-weight: bold;">CC&amp;B/forwardTODOToUtilityAccountAnalystQueue</td>
+<td rowspan="2"> </td>
+</tr>
+<tr>
+<td>The ARR Call Center CSR looks at the
+billing calendar to determine the proper Utility Account Analyst
+covering the TODO's for that date.&nbsp; </td>
+</tr>
+<tr>
+<td rowspan="2">010</td>
+<td style="background: lightgray none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; font-weight: bold;">CC&amp;B/evaluateTODOActivity</td>
+<td rowspan="2"> </td>
+</tr>
+<tr>
+<td>The ARR Utility Analyst accesses
+CC&amp;B and reads the TODO activity on the customer record. They
+check the billing history, the appropriate fees, Customer contacts, and
+the cart size for which the customer is being billed. </td>
+</tr>
+<tr>
+<td rowspan="2">011</td>
+<td style="background: lightgray none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; font-weight: bold;">Google
+Maps/examiningPropertyImages</td>
+<td rowspan="2"> </td>
+</tr>
+<tr>
+<td>The Analyst uses Google Maps to examine the
+images associated with the address. This may include evaluating images
+from previous years as well. This is all accomplished via the Google
+Maps service. </td>
+</tr>
+<tr>
+<td rowspan="2">012</td>
+<td style="background: lightgray none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; font-weight: bold;">CC&amp;B/evaluateCustomerAccount</td>
+<td rowspan="2"> </td>
+</tr>
+<tr>
+<td>The ARR Utility Analyst accesses
+CC&amp;B and evaluates the customer record. They check the billing
+history, the appropriate fees, Customer contacts, and the cart size for
+which the customer is being billed.&nbsp; </td>
+</tr>
+<tr>
+<td rowspan="2">013</td>
+<td style="background: lightgray none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; font-weight: bold;">Solid
+Waste Tracking System/evaluateSolidWastePickupInformation</td>
+<td rowspan="2"> </td>
+</tr>
+<tr>
+<td>The Utility Analyst accesses the Solid
+Waste Tracking System to determine the cart sizes when the customer
+took possession of the property, if a cart was delivered to the
+customer at any time, or any other cart related activities at the
+property. </td>
+</tr>
+<tr>
+<td rowspan="2">014</td>
+<td style="background: lightgray none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; font-weight: bold;">CC&amp;B/modifyAccountToAccommodateFix</td>
+<td rowspan="2"> </td>
+</tr>
+<tr>
+<td>The User uses CC&amp;B to correct
+information associated with the request. This might be carts sizes, or
+cart usage or other billing concerns (i.e. customer base fee, clean
+community fee, etc.) This could also be the final adjustment to the
+bill as well.&nbsp; </td>
+</tr>
+<tr>
+<td rowspan="2">015</td>
+<td style="background: lightgray none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; font-weight: bold;">CC&amp;B/createToDoAndAddContactNote</td>
+<td rowspan="2"> </td>
+</tr>
+<tr>
+<td>The Utility Account Analyst accesses
+CC&amp;B and creates a new TODO request indicating modification to
+the utility account is necessary, and adds contact notes to the
+original TODO record.&nbsp; </td>
+</tr>
+<tr>
+<td rowspan="2">016</td>
+<td style="background: lightgray none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; font-weight: bold;">AE
+Billing Team/modifyBill</td>
+<td rowspan="2"> </td>
+</tr>
+<tr>
+<td>CC&amp;B routes the TODO request to the
+AE Billing team.&nbsp; </td>
+</tr>
+<tr>
+<td rowspan="2">017</td>
+<td style="background: lightgray none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; font-weight: bold;">AE
+Billing Team/sendEmailToARRRequestingClarification</td>
+<td rowspan="2"> </td>
+</tr>
+<tr>
+<td>The AE billing team sends email requesting
+clarification from the ARR Utility analysts.&nbsp; </td>
+</tr>
+<tr>
+<td rowspan="2">018</td>
+<td style="background: lightgray none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; font-weight: bold;">AE
+Billing Team/recordAdditionalInformation</td>
+<td rowspan="2"> </td>
+</tr>
+<tr>
+<td>The ARR Utility Analyst provides the
+requested information. </td>
+</tr>
+<tr>
+<td rowspan="2">019</td>
+<td style="background: lightgray none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; font-weight: bold;">CC&amp;B/modifyAccountToAccommodateFix</td>
+<td rowspan="2"> </td>
+</tr>
+<tr>
+<td>The User uses CC&amp;B to correct
+information associated with the request. This might be carts sizes, or
+cart usage or other billing concerns (i.e. customer base fee, clean
+community fee, etc.) This could also be the final adjustment to the
+bill as well.&nbsp; </td>
+</tr>
+<tr>
+<td rowspan="2">020</td>
+<td style="background: lightgray none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; font-weight: bold;">CC&amp;B/addContactNote</td>
+<td rowspan="2"> </td>
+</tr>
+<tr>
+<td>The ARR Utility Analyst adds a contact note
+to the original TODO indicating the request is denied. And also adds a
+contact note on the customer account. This include the reason for
+denial. </td>
+</tr>
+</tbody>
+</table>
+<br>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</body></html>
